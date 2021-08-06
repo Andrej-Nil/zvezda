@@ -217,4 +217,80 @@ body {
 .icon-nav__link--search {
   background-image: url("../../img/icon/search-light.svg");
 }
+
+.header-content {
+  position: relative;
+  border-bottom: 5px solid #515151;
+}
+
+.header__video-item {
+  display: block;
+}
+
+.header__video-item {
+  width: 100%;
+}
+
+.header-video-nav {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+.header-tab {
+  position: relative;
+  width: 33.5%;
+}
+
+.header-tab__link {
+  display: block;
+  height: 70px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+  transition: 0.5s ease-in-out;
+}
+
+.header-tab__link:hover {
+  color: #fba50d;
+}
+
+.header-tab__link:hover .header-tab__line-bg {
+  width: 100%;
+}
+
+.header-tab__link--active {
+  color: #fba50d;
+}
+
+.header-tab__line {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+}
+
+.header-tab__line-bg {
+  width: 0;
+  height: 5px;
+  background: #8f8f8f;
+  transition: 0.5s ease-in-out;
+}
+
+.header-tab__line-bg--aciove {
+  width: 100%;
+}
+
+.header-tab__progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 5px;
+  background: #fba50d;
+}
 /*# sourceMappingURL=style.css.map */
