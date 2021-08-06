@@ -1,0 +1,54 @@
+{
+	"rez": 1,
+	"desc": "",
+	"error": {
+		"id": 456454,
+		"desc": "Произошла ошибка!"
+	},
+	"content": [
+		{
+			"id": "515461",
+			"slug":"#!", 
+			"title": "Лист латунный", 
+			"show_title": "Перейти в категорию...",
+			"photo_webp": "",
+			"photo": "",
+			"desc": "",
+			"isSubmenu": false,
+			"isActive": false
+		},
+		{
+			"id": "515461",
+			"slug":"#!", 
+			"title": "Лист латунный", 
+			"show_title": "Перейти в категорию...",
+			"photo_webp": "",
+			"photo": "",
+			"desc": "",
+			"isSubmenu": false,
+			"isActive": false
+		},
+		{
+			"id": "515461",
+			"slug":"#!", 
+			"title": "Лист латунный", 
+			"show_title": "Перейти в категорию...",
+			"photo_webp": "",
+			"photo": "",
+			"desc": "",
+			"isSubmenu": false,
+			"isActive": false
+		},
+		{
+			"id": "515461",
+			"slug":"#!", 
+			"title": "Лист латунный", 
+			"show_title": "Перейти в категорию...",
+			"photo_webp": "",
+			"photo": "",
+			"desc": "",
+			"isSubmenu": false,
+			"isActive": false
+		}
+	]
+}

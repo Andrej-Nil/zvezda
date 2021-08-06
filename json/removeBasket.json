@@ -1,0 +1,33 @@
+{
+	"rez": 1,
+	"desc": "",
+	"error": {
+		"id": 456454,
+		"desc": "Произошла ошибка, товар не был добавлен"
+	},
+	"toggle": true,
+	"content": [
+		{
+			"id": "546545",
+			"category": "Лист нержавеющий",
+			"slug":"#", 
+			"title": "Лист нержавеющий 8х1250х2500 мм 03Х13Н6К10М4ФБ-ВД", 
+			"photo": "img/production.png", 
+			"photo_webp": "img/production.webp", 
+			"unit": "",	
+			"price": "3000",
+			"count": 5,
+			"isSale": true, 
+			"percent": "10%",
+			"price_old": "3500", 
+			"isFavorite": false,
+			"isBusket": true
+		}
+	],
+	"card": {
+		"count": 7,
+		"total_price": 31000,
+		"percent": "10%",
+		"price_old": "35000"
+	}
+}
