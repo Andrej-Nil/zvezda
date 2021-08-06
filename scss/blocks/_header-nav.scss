@@ -1,0 +1,28 @@
+.header-nav {
+  margin-right: 70px;
+}
+.header-nav__list {
+  display: flex;
+}
+
+.header-nav__item {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.header-nav__link {
+  color: $white;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.header-nav__arrow {
+  margin: 3px 0 0 6px;
+  width: 10px;
+  height: 5px;
+}

@@ -1,0 +1,17 @@
+.header__connection {
+  margin-right: 30px;
+}
+
+.header__contact {
+  margin-right: 10px;
+  font-size: 12px;
+  line-height: 16px;
+  color: $white;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.header__contact--mail {
+  text-decoration: underline;
+}
