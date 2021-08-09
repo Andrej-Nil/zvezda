@@ -8,6 +8,7 @@
 
 .icon-nav__item {
   margin-right: 45px;
+  cursor: pointer;
   &:last-child {
     margin-right: 0;
   }
@@ -29,14 +30,45 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .icon-nav__link--basket {
   &::before {
     background-image: url("../../img/icon/basket-light.svg");
   }
+  &::after {
+    background-image: url("../../img/icon/basket-yellow.svg");
+  }
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
 }
 
 .icon-nav__link--search {
-  background-image: url("../../img/icon/search-light.svg");
+  &::before {
+    background-image: url("../../img/icon/search-light.svg");
+  }
+  &::after {
+    background-image: url("../../img/icon/search-yellow.svg");
+  }
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
 }
