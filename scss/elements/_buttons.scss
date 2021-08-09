@@ -1,0 +1,23 @@
+.btn {
+  padding: 15px 0;
+  outline: none;
+
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.yellow-btn {
+  background: $yellowMain;
+  border: 2px solid $yellowMain;
+
+  color: $black;
+}
+
+.clear-btn {
+  border: 2px solid $white;
+
+  color: $white;
+}
