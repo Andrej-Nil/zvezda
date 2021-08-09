@@ -1,6 +1,13 @@
 @import "./fonts";
 @import "./main";
 
+@import "./elements/buttons";
+@import "./elements/category-card";
+@import "./elements/category-more";
+
+@import "./elements/product-card";
+@import "./elements/product-more";
+
 @import "./blocks/header";
 @import "./blocks/header-top";
 @import "./blocks/header-nav";
@@ -14,8 +21,5 @@
 @import "./blocks/header-video-nav";
 
 @import "./blocks/section";
-@import "./blocks/category-card-list";
-
-@import "./elements/buttons";
-@import "./elements/category-card";
-@import "./elements/category-more";
+@import "./blocks/category-card-tile";
+@import "./blocks/product-card-tile";

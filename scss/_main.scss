@@ -6,7 +6,10 @@ $blackMain: #444a52;
 $yellowMain: #fba50d;
 $yellowHover: #ffc201;
 $bgBlack: #2d3035;
+
 $text: #757575;
+$textBlack: #232323;
+
 $pearl: #f5f5f5;
 $greyLight: #ababab;
 $grey: #8f8f8f;
@@ -63,8 +66,18 @@ body {
   margin: 0 auto;
 }
 
+.tile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .dark-bg {
   background: $bgBlack;
+}
+
+.white-color {
+  color: $white;
 }
 
 .logo {
