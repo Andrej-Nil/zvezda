@@ -1,0 +1,27 @@
+.service-more {
+  position: relative;
+  border: 1px solid #494b4f;
+  color: $white;
+  width: 305px;
+  height: 305px;
+  &:hover .service-more__bg {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.service-more__bg {
+  position: absolute;
+  transform: translate(40%, 50%);
+  width: 100%;
+  height: 100%;
+  background: $yellowMain;
+  opacity: 0;
+  transition: 0.2s ease-out;
+}
+
+.service-more_all {
+  &::before {
+    background-image: url("../../img/icon/arrow-more-white.svg");
+  }
+}

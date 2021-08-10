@@ -1,0 +1,86 @@
+.service-card {
+  position: relative;
+  border: 1px solid #494b4f;
+  height: 305px;
+  width: 305px;
+  margin: 0 0 20px 0;
+  overflow: hidden;
+  &:hover .service-card__title {
+    top: 50px;
+  }
+
+  &:hover {
+    .service-card__curtain {
+      transform: translate(0, 0%);
+    }
+  }
+}
+
+.service-card--big {
+  width: 630px;
+}
+
+.service-card__link {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+.service-card__title {
+  position: absolute;
+  top: 227px;
+  left: 30px;
+  transition: 0.4s ease-in-out;
+  color: $white;
+  font-size: 20px;
+  line-height: 27px;
+  z-index: 100;
+}
+
+.service-card__curtain {
+  display: flex;
+  padding: 90px 30px 50px 30px;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: $yellowMain;
+  transform: translate(0, 100%);
+  transition: 0.4s ease-in-out;
+}
+
+.service-card__desc {
+  max-width: 350px;
+  width: 100%;
+  margin-bottom: auto;
+  color: $white;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 160%;
+}
+
+.service-card__detail {
+  position: relative;
+  display: inline-block;
+  padding-right: 30px;
+  color: $white;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: block;
+    width: 16px;
+    height: 14px;
+    transform: translate(0, -50%);
+    background-image: url("../../img/icon/arrow-more-white.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}

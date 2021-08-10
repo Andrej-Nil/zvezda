@@ -12,6 +12,9 @@
 @import "./elements/product-card";
 @import "./elements/product-more";
 
+@import "./elements/service-card";
+@import "./elements/_service-more";
+
 @import "./blocks/header";
 @import "./blocks/header-top";
 @import "./blocks/header-nav";
@@ -29,3 +32,5 @@
 @import "./blocks/product-card-tile";
 
 @import "./blocks/feedback";
+
+@import "./important";

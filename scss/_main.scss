@@ -7,6 +7,8 @@ $yellowMain: #fba50d;
 $yellowHover: #ffc201;
 $bgBlack: #2d3035;
 
+$bgDark: #35383e;
+
 $text: #757575;
 $textBlack: #232323;
 
@@ -72,8 +74,12 @@ body {
   justify-content: space-between;
 }
 
-.dark-bg {
+.black-bg {
   background: $bgBlack;
+}
+
+.dark-bg {
+  background: $bgDark;
 }
 
 .white-color {
