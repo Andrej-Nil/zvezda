@@ -500,6 +500,49 @@
     </section>
     <!-- Акционные предложения -->
 
+    <!-- Есть вопросы -->
+    <section class="section dark-bg">
+      <div class="feedback container">
+        <div class="feedback__left">
+          <div class="feedback__text">
+            <h2 class="feedback__title">
+              Есть вопросы по нашей продукции?
+            </h2>
+
+            <p class="feedback__desc">
+              Оставьте заявку и наши менеджеры свяжуться с Вами, чтобы обсудить все вопросы
+            </p>
+          </div>
+
+
+          <form id="feedbackForm" action="./json/send-form.json" class="feedback-form">
+            <div class="feedback__body">
+              <input type="text" data-input name="phone" class="feedback__input input"
+                placeholder="+7 (999)-999-99-99" />
+
+              <input type="text" data-input name="name" class="feedback__input input" placeholder="Иванов Иван" />
+
+              <input type="submit" class="feedback__submit btn clear-yellow-btn " value="Отправить запрос">
+            </div>
+            <label class="feedback__label" data-label>
+              <input data-checkbox type="checkbox" class="feedback__checkbox" />
+              <span class="feedback__fake"></span>
+              <span class="feedback__label-text">я принимаю условия политики конфиденциальности</span>
+
+            </label>
+          </form>
+        </div>
+
+        <div class="feedback__right">
+          <img src="./img/image/other/manager.png" alt="" class="feedback__img">
+        </div>
+
+
+
+      </div>
+    </section>
+    <!-- Есть вопросы -->
+
   </div>
   <script src="js/main.js"></script>
 </body>

@@ -1,0 +1,106 @@
+.feedback {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedback__left {
+  padding: 100px 0;
+}
+
+.feedback__text {
+  width: 414px;
+  margin-bottom: 40px;
+}
+
+.feedback__title {
+  margin-bottom: 30px;
+
+  color: $white;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.feedback__desc {
+  color: $white;
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.feedback__body {
+  display: flex;
+  margin-bottom: 50px;
+}
+.feedback__input {
+  width: 197px;
+  margin-right: 20px;
+}
+.feedback__submit {
+  width: 197px;
+  padding: 12px 0 13px;
+  background: rgba(0, 0, 0, 0);
+  transition: 0.2s ease-in-out;
+
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 180%;
+  &:hover {
+    background: $yellowMain;
+    color: $white;
+  }
+}
+
+.feedback__label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.feedback__checkbox {
+  display: none;
+  &:checked + .feedback__fake {
+    &::before {
+      background-image: url("../../img/icon/tick.svg");
+    }
+    background: $yellowMain;
+  }
+}
+
+.feedback__fake {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  background: #e0e0e0;
+  transition: 0.2s ease-in-out;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+.feedback__fake--active {
+  &::before {
+    background-image: url("../../img/icon/tick.svg");
+  }
+  background: $yellowMain;
+}
+
+.feedback__label-text {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 180%;
+}
+
+.feedback__img {
+  width: 630px;
+  height: 542px;
+}

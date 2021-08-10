@@ -1,0 +1,32 @@
+.input {
+  //height: 50px;
+  outline: none;
+
+  padding: 11px 20px 12px;
+  border: 1px solid $white;
+  background: rgba(0, 0, 0, 0);
+  font-size: 14px;
+  line-height: 180%;
+  color: $white;
+}
+
+.input::-webkit-input-placeholder {
+  color: $greyLight;
+  font-size: 14px;
+  line-height: 180%;
+}
+.input:-ms-input-placeholder {
+  color: $greyLight;
+  font-size: 14px;
+  line-height: 180%;
+}
+.input::-ms-input-placeholder {
+  color: $greyLight;
+  font-size: 14px;
+  line-height: 180%;
+}
+.input::placeholder {
+  color: $greyLight;
+  font-size: 14px;
+  line-height: 180%;
+}
