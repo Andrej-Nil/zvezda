@@ -1,0 +1,53 @@
+.more-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+
+.more-card__content {
+  text-align: center;
+}
+
+.more-card__count {
+  margin-bottom: 20px;
+
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.more-card__all {
+  position: relative;
+  display: inline-block;
+  padding-right: 23px;
+
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    display: block;
+    width: 15px;
+    height: 13px;
+    background-image: url("../../img/icon/arrow-more-yellow.svg");
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    display: block;
+    width: 15px;
+    height: 13px;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    background-image: url("../../img/icon/arrow-more-white.svg");
+  }
+}

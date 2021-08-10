@@ -113,6 +113,60 @@ body {
   color: #fff;
 }
 
+.more-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+
+.more-card__content {
+  text-align: center;
+}
+
+.more-card__count {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.more-card__all {
+  position: relative;
+  display: inline-block;
+  padding-right: 23px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.more-card__all:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  display: block;
+  width: 15px;
+  height: 13px;
+  background-image: url("../../img/icon/arrow-more-yellow.svg");
+}
+
+.more-card__all:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  display: block;
+  width: 15px;
+  height: 13px;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+  background-image: url("../../img/icon/arrow-more-white.svg");
+}
+
 .category-card {
   position: relative;
   width: 414px;
@@ -169,14 +223,9 @@ body {
 }
 
 .category-more {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid #fba50d;
   width: 414px;
   height: 320px;
-  transition: 0.2s ease-in-out;
   color: #fba50d;
 }
 
@@ -189,49 +238,11 @@ body {
   opacity: 1;
 }
 
-.category-more__content {
-  text-align: center;
-}
-
-.category-more__count {
-  margin-bottom: 20px;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 25px;
-}
-
-.category-more__all {
-  position: relative;
-  display: inline-block;
-  padding-right: 23px;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 19px;
-}
-
 .category-more__all:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translate(0, -50%);
-  display: block;
-  width: 15px;
-  height: 13px;
   background-image: url("../../img/icon/arrow-more-yellow.svg");
 }
 
 .category-more__all:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translate(0, -50%);
-  display: block;
-  width: 15px;
-  height: 13px;
-  opacity: 0;
-  transition: 0.2s ease-in-out;
   background-image: url("../../img/icon/arrow-more-white.svg");
 }
 
@@ -302,10 +313,41 @@ body {
   margin-bottom: 2px;
 }
 
+.product-card__current--text {
+  font-size: 12px;
+  line-height: 16px;
+}
+
 .product-card__old {
   font-size: 12px;
   line-height: 16px;
   text-decoration-line: line-through;
+}
+
+.product-more {
+  border: 1px solid rgba(139, 139, 139, 0.3);
+  width: 305px;
+  height: 440px;
+  transition: 0.2s ease-in-out;
+  color: #444a52;
+}
+
+.product-more:hover {
+  border: 1px solid #fba50d;
+  transform: scale(1.02);
+  color: #fba50d;
+}
+
+.product-more:hover .product-more__all:after {
+  opacity: 1;
+}
+
+.product-more__all:before {
+  background-image: url("../../img/icon/arrow-more-grey.svg");
+}
+
+.product-more__all:after {
+  background-image: url("../../img/icon/arrow-more-yellow.svg");
 }
 
 .header {

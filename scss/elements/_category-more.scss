@@ -1,12 +1,7 @@
 .category-more {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid $yellowMain;
   width: 414px;
   height: 320px;
-  transition: 0.2s ease-in-out;
   color: $yellowMain;
   &:hover {
     background: $yellowMain;
@@ -20,48 +15,11 @@
   }
 }
 
-.category-more__content {
-  text-align: center;
-}
-
-.category-more__count {
-  margin-bottom: 20px;
-
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 25px;
-}
-
 .category-more__all {
-  position: relative;
-  display: inline-block;
-  padding-right: 23px;
-
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 19px;
   &:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(0, -50%);
-    display: block;
-    width: 15px;
-    height: 13px;
     background-image: url("../../img/icon/arrow-more-yellow.svg");
   }
   &:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(0, -50%);
-    display: block;
-    width: 15px;
-    height: 13px;
-    opacity: 0;
-    transition: 0.2s ease-in-out;
     background-image: url("../../img/icon/arrow-more-white.svg");
   }
 }

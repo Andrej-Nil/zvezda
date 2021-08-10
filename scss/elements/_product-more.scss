@@ -1,0 +1,27 @@
+.product-more {
+  border: 1px solid rgba(139, 139, 139, 0.3);
+  width: 305px;
+  height: 440px;
+  transition: 0.2s ease-in-out;
+  color: $blackMain;
+  &:hover {
+    border: 1px solid $yellowMain;
+    transform: scale(1.02);
+    color: $yellowMain;
+  }
+
+  &:hover .product-more__all {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.product-more__all {
+  &:before {
+    background-image: url("../../img/icon/arrow-more-grey.svg");
+  }
+  &:after {
+    background-image: url("../../img/icon/arrow-more-yellow.svg");
+  }
+}
