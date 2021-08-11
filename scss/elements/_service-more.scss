@@ -7,6 +7,8 @@
   &:hover .service-more__bg {
     transform: translate(0, 0);
     opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
   }
 }
 
@@ -17,7 +19,8 @@
   height: 100%;
   background: $yellowMain;
   opacity: 0;
-  transition: 0.2s ease-out;
+  visibility: hidden;
+  transition: opacity 0.3s, transform 0.3s, visibility 0s ease-in-out 0.3s;
 }
 
 .service-more_all {

@@ -14,11 +14,6 @@
   border: 2px solid $yellowMain;
   transition: 0.2s ease-in-out;
   color: $black;
-
-  &:hover {
-    background: $yellowHover;
-    border: 2px solid $yellowHover;
-  }
 }
 
 .clear-btn {
@@ -29,4 +24,12 @@
 .clear-yellow-btn {
   border: 2px solid $yellowMain;
   color: $yellowMain;
+}
+
+.hover-yellow {
+  &:hover {
+    background: $yellowMain;
+    border: 2px solid $yellowMain;
+    color: $black;
+  }
 }
