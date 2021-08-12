@@ -28,8 +28,8 @@
 
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/icomoon/icomoon.eot?j1i1hs");
-  src: url("../fonts/icomoon/icomoon.eot?j1i1hs#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?j1i1hs") format("truetype"), url("../fonts/icomoon/icomoon.woff?j1i1hs") format("woff"), url("../fonts/icomoon/icomoon.svg?j1i1hs#icomoon") format("svg");
+  src: url("../fonts/icomoon/icomoon.eot?boc7fg");
+  src: url("../fonts/icomoon/icomoon.eot?boc7fg#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?boc7fg") format("truetype"), url("../fonts/icomoon/icomoon.woff?boc7fg") format("woff"), url("../fonts/icomoon/icomoon.svg?boc7fg#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -48,6 +48,18 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-slider-prev:before {
+  content: "\e916";
+}
+
+.icon-slider-next:before {
+  content: "\e917";
+}
+
+.icon-severstal:before {
+  content: "\e921";
 }
 
 .icon-sng-white:before {
@@ -989,7 +1001,6 @@ body {
   font-size: 18px;
   line-height: 160%;
   color: #fff;
-  margin-bottom: 90px;
 }
 
 .partner-card__item {
@@ -1026,6 +1037,71 @@ body {
 
 .bt {
   border-top: 1px solid #636363;
+}
+
+.review-card {
+  min-width: 630px;
+  height: 380px;
+  padding: 50px;
+  background: #f5f5f5;
+  margin-right: 20px;
+}
+
+.review-card__img {
+  position: relative;
+  display: block;
+  width: 150px;
+  height: 80px;
+  margin-left: auto;
+  color: #004e94;
+}
+
+.review-card__img::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.review-card__img--severstal::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 45px;
+}
+
+.review-card__img--nlmk::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 60px;
+}
+
+.review-card__title {
+  margin-bottom: 20px;
+  color: #000;
+  font-size: 24px;
+  line-height: 160%;
+}
+
+.review-card__text {
+  color: #000;
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.certificates-card {
+  width: 305px;
+  height: 386px;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 .header {
@@ -1361,6 +1437,14 @@ body {
   background: #fba50d;
 }
 
+.slider {
+  overflow: hidden;
+}
+
+.slider__track {
+  display: flex;
+}
+
 .section {
   position: relative;
 }
@@ -1390,6 +1474,90 @@ body {
   color: #fff;
   font-size: 14px;
   line-height: 24px;
+}
+
+.section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.section__see-more {
+  position: relative;
+  color: #000;
+  padding-right: 35px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.section__see-more::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  display: block;
+  width: 15px;
+  height: 14px;
+}
+
+.section-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.section-controls__btn {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 32px;
+  cursor: pointer;
+  color: #444a52;
+  margin-right: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.section-controls__btn::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+.section-controls__btn:last-child {
+  margin-right: 0;
+}
+
+.section-controls__btn:hover {
+  color: #fba50d;
+}
+
+.section-controls__prev::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 40px;
+}
+
+.section-controls__next::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 40px;
 }
 
 .category-card-tile {
@@ -1610,16 +1778,21 @@ body {
   padding: 40px 0 80px;
 }
 
+.partner__list {
+  margin-bottom: 90px;
+}
+
 .partners-slider {
   display: flex;
   align-items: center;
 }
 
-.partners-slider__track {
-  display: flex;
+.partners-slider__body {
   width: 1170px;
+}
+
+.partners-slider__track {
   height: 95px;
-  overflow: hidden;
 }
 
 .partners-slider__item {
@@ -1631,11 +1804,25 @@ body {
   cursor: pointer;
 }
 
+.partners-slider__item:hover .partners-slider__icon {
+  color: #fba50d;
+}
+
+.partners-slider__item--active .partners-slider__icon {
+  color: #fff;
+  cursor: default;
+}
+
+.partners-slider__item--active .partners-slider__icon:hover {
+  color: #fff;
+}
+
 .partners-slider__icon {
   position: relative;
   height: 55px;
   padding: 20px 30px;
   color: #898989;
+  transition: 0.3s ease-in-out;
 }
 
 .partners-slider__icon::before {
@@ -1768,6 +1955,22 @@ body {
   line-height: 1;
   content: "";
   font-size: 18px;
+}
+
+.reviews-block {
+  padding-bottom: 40px;
+}
+
+.reviews-block__track {
+  margin-bottom: 80px;
+}
+
+.certificates-block {
+  padding-bottom: 80px;
+}
+
+.mb0 {
+  margin-bottom: 0px;
 }
 
 .mb30 {

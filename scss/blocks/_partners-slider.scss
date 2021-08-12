@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
 }
-.partners-slider__track {
-  display: flex;
+.partners-slider__body {
   width: 1170px;
+}
+.partners-slider__track {
   height: 95px;
-  overflow: hidden;
 }
 
 .partners-slider__item {
@@ -16,6 +16,17 @@
   min-width: 234px;
   height: 95px;
   cursor: pointer;
+  &:hover .partners-slider__icon {
+    color: $yellowMain;
+  }
+}
+
+.partners-slider__item--active .partners-slider__icon {
+  color: $white;
+  cursor: default;
+  &:hover {
+    color: $white;
+  }
 }
 
 .partners-slider__icon {
@@ -23,6 +34,7 @@
   height: 55px;
   padding: 20px 30px;
   color: #898989;
+  transition: 0.3s ease-in-out;
   &::before {
     position: absolute;
     top: 50%;

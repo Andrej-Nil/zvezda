@@ -20,6 +20,8 @@
 @import "./elements/advantage-item";
 
 @import "./elements/partner-card";
+@import "./elements/review-card";
+@import "./elements/certificates-card";
 
 @import "./blocks/header";
 @import "./blocks/header-top";
@@ -33,6 +35,8 @@
 @import "./blocks/header-video";
 @import "./blocks/header-video-nav";
 
+@import "./blocks/slider";
+
 @import "./blocks/section";
 @import "./blocks/category-card-tile";
 @import "./blocks/product-card-tile";
@@ -42,5 +46,7 @@
 @import "./blocks/feedback";
 @import "./blocks/partners";
 @import "./blocks/partners-slider";
+@import "./blocks/reviews-block";
+@import "./blocks/certificates";
 
 @import "./important";
