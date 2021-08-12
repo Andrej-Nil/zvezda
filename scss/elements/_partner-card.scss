@@ -1,0 +1,61 @@
+.partner-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.partner-card__logo {
+  position: relative;
+  width: auto;
+  height: 95px;
+  color: $white;
+  margin-bottom: 45px;
+  &::before {
+    @include font-icon-style("\e906", 95px);
+  }
+}
+
+.partner-card__info {
+  width: 475px;
+  font-size: 18px;
+  line-height: 160%;
+  color: $white;
+  margin-bottom: 90px;
+}
+
+.partner-card__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 305px;
+  height: 180px;
+
+  color: $white;
+}
+
+.partner-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  width: 610px;
+}
+
+.partner-card__number {
+  margin-bottom: 5px;
+
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 66px;
+}
+
+.partner-card__text {
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.br {
+  border-right: 1px solid #636363;
+}
+
+.bt {
+  border-top: 1px solid #636363;
+}

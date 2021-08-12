@@ -26,6 +26,17 @@ $shadow: linear-gradient(
 $line: rgba(139, 139, 139, 0.3);
 $black: #000;
 $white: #fff;
+
+@mixin font-icon-style($code, $size) {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: $code;
+  font-size: $size;
+}
+
 * {
   padding: 0;
   margin: 0;

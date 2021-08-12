@@ -22,9 +22,3 @@
   visibility: hidden;
   transition: opacity 0.3s, transform 0.3s, visibility 0s ease-in-out 0.3s;
 }
-
-.service-more_all {
-  &::before {
-    background-image: url("../../img/icon/arrow-more-white.svg");
-  }
-}

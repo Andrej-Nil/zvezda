@@ -22,13 +22,13 @@
 .more-card__all {
   position: relative;
   display: inline-block;
-  padding-right: 23px;
+  padding-right: 30px;
 
   font-weight: bold;
   font-size: 14px;
   line-height: 19px;
   &:before {
-    content: "";
+    @include font-icon-style("\e91d", 14px);
     position: absolute;
     top: 50%;
     right: 0;
@@ -36,19 +36,5 @@
     display: block;
     width: 15px;
     height: 13px;
-    background-image: url("../../img/icon/arrow-more-yellow.svg");
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(0, -50%);
-    display: block;
-    width: 15px;
-    height: 13px;
-    opacity: 0;
-    transition: 0.2s ease-in-out;
-    background-image: url("../../img/icon/arrow-more-white.svg");
   }
 }

@@ -56,7 +56,7 @@
   display: none;
   &:checked + .feedback__fake {
     &::before {
-      background-image: url("../../img/icon/tick.svg");
+      @include font-icon-style("\e91f", 16px);
     }
     background: $yellowMain;
   }
@@ -71,21 +71,18 @@
   background: #e0e0e0;
   transition: 0.2s ease-in-out;
   &::before {
-    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 16px;
     height: 16px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    color: black;
   }
 }
 
 .feedback__fake--active {
   &::before {
-    background-image: url("../../img/icon/tick.svg");
+    @include font-icon-style("\e91f", 16px);
   }
   background: $yellowMain;
 }

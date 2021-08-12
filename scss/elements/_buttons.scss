@@ -33,3 +33,31 @@
     color: $black;
   }
 }
+
+.hover-yellow-light {
+  &:hover {
+    background: $yellowHover;
+    border: 2px solid $yellowHover;
+    color: $black;
+  }
+}
+
+.close-btn {
+  position: relative;
+  cursor: pointer;
+
+  color: $black;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  &::before {
+    @include font-icon-style("\e91e", 14px);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    display: block;
+    width: 14px;
+    height: 14px;
+  }
+}

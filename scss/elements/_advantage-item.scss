@@ -63,38 +63,57 @@
   position: relative;
   width: 40px;
   height: 40px;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  &::before {
+    font-family: "icomoon";
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+    line-height: 1;
+    font-size: 40px;
+    color: $black;
+  }
 }
 
 .advantage-item__img--clock {
-  background-image: url("../../img/icon/clock.svg");
+  &::before {
+    content: "\e912";
+  }
 }
 
 .advantage-item__img--box {
-  background-image: url("../../img/icon/box.svg");
+  &::before {
+    content: "\e914";
+  }
 }
 
 .advantage-item__img--pay-card {
-  background-image: url("../../img/icon/pay-card.svg");
+  &::before {
+    content: "\e90f";
+  }
 }
 
 .advantage-item__img--cash {
-  background-image: url("../../img/icon/cash.svg");
+  &::before {
+    content: "\e913";
+  }
 }
 
 .advantage-item__img--doc {
-  background-image: url("../../img/icon/doc.svg");
+  &::before {
+    content: "\e910";
+  }
 }
 
 .advantage-item__img--time {
-  background-image: url("../../img/icon/time.svg");
+  &::before {
+    content: "\e90a";
+  }
 }
 
 .advantage-item__img--question {
-  background-image: url("../../img/icon/question.svg");
+  &::before {
+    content: "\e90c";
+  }
 }
 
 .advantage-item__count {

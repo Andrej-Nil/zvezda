@@ -1,4 +1,5 @@
 @import "./fonts";
+@import "./icon-font";
 @import "./main";
 
 @import "./elements/buttons";
@@ -18,6 +19,8 @@
 @import "./elements/advantage-card";
 @import "./elements/advantage-item";
 
+@import "./elements/partner-card";
+
 @import "./blocks/header";
 @import "./blocks/header-top";
 @import "./blocks/header-nav";
@@ -36,7 +39,8 @@
 @import "./blocks/services";
 @import "./blocks/about-block";
 @import "./blocks/advantages";
-
 @import "./blocks/feedback";
+@import "./blocks/partners";
+@import "./blocks/partners-slider";
 
 @import "./important";

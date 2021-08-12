@@ -117,23 +117,6 @@
   padding: 10px 30px 10px 10px;
   opacity: 0;
   visibility: hidden;
-  cursor: pointer;
-
-  color: $black;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 25px;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(0, -50%);
-    display: block;
-    width: 14px;
-    height: 14px;
-    background-image: url("../../img/controls/close.svg");
-  }
 }
 
 .advantage-card__header {

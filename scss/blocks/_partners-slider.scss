@@ -1,0 +1,118 @@
+.partners-slider {
+  display: flex;
+  align-items: center;
+}
+.partners-slider__track {
+  display: flex;
+  width: 1170px;
+  height: 95px;
+  overflow: hidden;
+}
+
+.partners-slider__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 234px;
+  height: 95px;
+  cursor: pointer;
+}
+
+.partners-slider__icon {
+  position: relative;
+  height: 55px;
+  padding: 20px 30px;
+  color: #898989;
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.icon-gasprom {
+  &::before {
+    @include font-icon-style("\e906", 60px);
+  }
+}
+
+.icon-sibur {
+  &::before {
+    @include font-icon-style("\e901", 30px);
+  }
+}
+
+.icon-luk {
+  &::before {
+    @include font-icon-style("\e905", 55px);
+  }
+}
+
+.icon-rosatom {
+  &::before {
+    @include font-icon-style("\e902", 60px);
+  }
+}
+
+.icon-rd {
+  &::before {
+    @include font-icon-style("\e903", 45px);
+  }
+}
+
+.icon-nlmk {
+  &::before {
+    @include font-icon-style("\e904", 65px);
+  }
+}
+
+.icon-sng {
+  &::before {
+    @include font-icon-style("\e900", 65px);
+  }
+}
+
+.partners-slider__control {
+  display: flex;
+  width: 110px;
+}
+
+.partners-slider__btn {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: $bgBlack;
+  transition: 0.2s ease-in-out;
+  margin-right: 10px;
+  cursor: pointer;
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 8px;
+    height: 16px;
+    transform: translate(-50%, -50%);
+    color: $white;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background: $yellowMain;
+  }
+}
+
+.partners-slider__prev {
+  &::before {
+    @include font-icon-style("\e91a", 18px);
+  }
+}
+.partners-slider__next {
+  &::before {
+    @include font-icon-style("\e91b", 18px);
+  }
+}

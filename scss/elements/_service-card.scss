@@ -70,7 +70,7 @@
   font-size: 16px;
   line-height: 22px;
   &::before {
-    content: "";
+    @include font-icon-style("\e91d", 14px);
     position: absolute;
     top: 50%;
     right: 0;
@@ -78,9 +78,5 @@
     width: 16px;
     height: 14px;
     transform: translate(0, -50%);
-    background-image: url("../../img/icon/arrow-more-white.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
   }
 }

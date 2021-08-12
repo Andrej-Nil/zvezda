@@ -60,17 +60,17 @@
     border: 2px solid $yellowHover;
   }
   &::before {
-    content: "";
     position: absolute;
     top: 50%;
     left: 0;
     transform: translate(50%, -50%);
+
     display: block;
     width: 18px;
     height: 18px;
-    background-image: url("../../img/icon/basket-black.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
+
+    @include font-icon-style("\e915", 19px);
+    color: #000;
   }
 }
 
