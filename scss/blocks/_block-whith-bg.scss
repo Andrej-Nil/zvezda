@@ -1,0 +1,21 @@
+.block-whith-bg {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-end;
+}
+
+.block-whith-bg__img {
+  width: 100%;
+  height: 100%;
+}
+
+.block-whith-bg__inner {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 100%;
+}

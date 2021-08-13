@@ -1,0 +1,22 @@
+.callback-block {
+  max-height: 620px;
+}
+
+.callback-block__title {
+  color: $white;
+  font-size: 36px;
+  line-height: 49px;
+  width: 414px;
+  margin-bottom: 50px;
+}
+
+.callback-block__btn {
+  display: block;
+  width: 197px;
+  padding: 13px 0 14px;
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

@@ -1,22 +1,5 @@
 .about-block {
-  position: relative;
   max-height: 676px;
-  z-index: 1000;
-  display: flex;
-  overflow: hidden;
-  align-items: flex-end;
-}
-.about-block__bg {
-  width: 100%;
-  height: 100%;
-}
-.about-block__inner {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  left: 50%;
-  transform: translate(-50%, 0);
-  height: 100%;
 }
 
 .about-block__left {
