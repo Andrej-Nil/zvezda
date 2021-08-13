@@ -3,4 +3,8 @@
   height: 386px;
   margin-right: 20px;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05) translate(0, 3%);
+  }
 }
