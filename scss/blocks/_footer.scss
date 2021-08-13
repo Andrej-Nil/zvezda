@@ -21,22 +21,12 @@
   height: 125px;
 }
 
-.footer__logo {
+.footer-main {
+  border-bottom: 1px solid $line;
+}
+
+.footer-main__inner {
+  height: 235px;
+  padding: 30px 0 50px;
   display: flex;
-  align-items: center;
-}
-
-.footer__logo-img {
-  width: 146px;
-  height: auto;
-  margin-right: 25px;
-}
-
-.footer__title {
-  width: 110px;
-
-  color: $white;
-  font-weight: normal;
-  font-size: 9px;
-  line-height: 140%;
 }

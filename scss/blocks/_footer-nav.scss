@@ -1,0 +1,13 @@
+.footer-nav__item {
+  margin-bottom: 16px;
+}
+
+.footer-nav__link {
+  color: $white;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

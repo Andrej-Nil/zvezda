@@ -1,0 +1,37 @@
+.footer-bottom {
+  display: flex;
+  height: 70px;
+  align-items: center;
+}
+
+.footer-bottom__text,
+.footer-bottom__link {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.footer-bottom__dizain {
+  display: flex;
+  align-items: center;
+}
+
+.footer-bottom__dizain-logo {
+  position: relative;
+  display: block;
+  margin-left: 20px;
+  width: 121px;
+  height: 16px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    display: block;
+    width: 121px;
+    height: 16px;
+    background-image: url("../../img/dizain.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
