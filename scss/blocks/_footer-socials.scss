@@ -1,0 +1,40 @@
+.footer-socials {
+  display: flex;
+  align-items: center;
+}
+
+.footer-socials__item {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+  color: #6c6e72;
+  transition: 0.2s ease-in-out;
+  &:last-child {
+    margin-right: 0;
+  }
+  &::before {
+    top: 0;
+    left: 0;
+    display: block;
+  }
+  &:hover {
+    color: $yellowMain;
+  }
+}
+
+.socials-watsapp {
+  &::before {
+    @include font-icon-style("\e907", 24px);
+  }
+}
+.socials-telegram {
+  &::before {
+    @include font-icon-style("\e909", 24px);
+  }
+}
+.socials-vk {
+  &::before {
+    @include font-icon-style("\e908", 24px);
+  }
+}
