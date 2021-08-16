@@ -1,4 +1,4 @@
-.footer-address__item {
+.address {
   margin-bottom: 33px;
   color: $white;
   &:last-child {
@@ -6,7 +6,7 @@
   }
 }
 
-.footer-address__title {
+.address__title {
   display: block;
   margin-bottom: 7px;
 
@@ -15,7 +15,7 @@
   line-height: 19px;
 }
 
-.footer-address__info {
+.address__info {
   font-size: 12px;
   line-height: 16px;
 }

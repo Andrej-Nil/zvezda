@@ -1,0 +1,32 @@
+.city-card {
+  width: 300px;
+  margin-right: 25px;
+  color: $white;
+}
+
+.city-card__title {
+  margin-bottom: 40px;
+
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.city-card__contacts {
+  margin-bottom: 28px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.city-card__contact {
+  margin-bottom: 24px;
+}
+
+.city-card__addresses {
+  margin-bottom: 40px;
+}
+
+.city-card__btn {
+  display: block;
+  width: 188px;
+}

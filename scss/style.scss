@@ -6,6 +6,11 @@
 @import "./elements/inputs";
 @import "./elements/search";
 
+@import "./elements/contact";
+@import "./elements/address";
+
+@import "./elements/city-card";
+
 @import "./elements/more-card";
 
 @import "./elements/category-card";
@@ -25,7 +30,6 @@
 @import "./elements/certificates-card";
 
 @import "./elements/footer-logo";
-@import "./elements/footer-contact";
 @import "./elements/footer-support";
 
 @import "./blocks/header";
@@ -41,6 +45,8 @@
 @import "./blocks/header-video-nav";
 @import "./blocks/header-top-white";
 @import "./blocks/header-catalog";
+@import "./blocks/header-cities";
+@import "./blocks/region";
 
 @import "./blocks/slider";
 @import "./blocks/block-whith-bg";
@@ -61,7 +67,6 @@
 @import "./blocks/footer";
 @import "./blocks/footer-socials";
 @import "./blocks/footer-nav";
-@import "./blocks/footer-address";
 @import "./blocks/footer-bottom";
 
 //header-modals
