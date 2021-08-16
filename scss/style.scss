@@ -4,6 +4,7 @@
 
 @import "./elements/buttons";
 @import "./elements/inputs";
+@import "./elements/search";
 
 @import "./elements/more-card";
 
@@ -38,6 +39,8 @@
 @import "./blocks/header-slider";
 @import "./blocks/header-video";
 @import "./blocks/header-video-nav";
+@import "./blocks/header-top-white";
+@import "./blocks/header-catalog";
 
 @import "./blocks/slider";
 @import "./blocks/block-whith-bg";
@@ -60,5 +63,8 @@
 @import "./blocks/footer-nav";
 @import "./blocks/footer-address";
 @import "./blocks/footer-bottom";
+
+//header-modals
+@import "./blocks/header-modal";
 
 @import "./important";

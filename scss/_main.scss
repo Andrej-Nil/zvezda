@@ -52,6 +52,12 @@ a {
   color: $text;
 }
 
+input {
+  outline: none;
+  border: none;
+  background: rgba(0, 0, 0, 0);
+}
+
 h1,
 h2,
 h3,
@@ -95,9 +101,4 @@ body {
 
 .white-color {
   color: $white;
-}
-
-.logo {
-  width: 100%;
-  height: 100%;
 }

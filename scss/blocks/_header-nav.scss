@@ -6,6 +6,7 @@
 }
 
 .header-nav__item {
+  position: relative;
   display: flex;
   align-items: center;
   margin-right: 30px;
@@ -31,9 +32,9 @@
   width: 10px;
   height: 22px;
   cursor: pointer;
+  color: $white;
   &::before {
     @include font-icon-style("\e919", 5px);
-    color: $white;
     position: absolute;
     top: 50%;
     left: 0;
@@ -44,8 +45,23 @@
     transition: 0.2s ease-in-out;
   }
   &:hover {
-    &::before {
-      color: $yellowMain;
-    }
+    color: $yellowMain;
+  }
+}
+
+.header-nav__modal-arrow {
+  position: absolute;
+  left: 5px;
+  top: 54px;
+  transform: translate(-50%, 0);
+
+  &::before {
+    content: "";
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 26px;
+    background: $blackMain;
+    transform: rotate(45deg);
   }
 }

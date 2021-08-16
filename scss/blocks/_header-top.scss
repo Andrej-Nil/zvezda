@@ -1,5 +1,5 @@
 .header__top {
-  height: 100px;
+  height: 110px;
   display: flex;
   align-items: center;
 }
@@ -20,4 +20,8 @@
   width: 96px;
   height: 41px;
   margin: 0 70px 10px 0;
+  background-image: url("../../img/logo-light.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }

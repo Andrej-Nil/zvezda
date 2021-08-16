@@ -1,0 +1,28 @@
+.search {
+  position: relative;
+}
+
+.search__input {
+  width: 100%;
+}
+
+.search__btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  width: 44px;
+  height: 44px;
+  color: $white;
+  cursor: pointer;
+  &::before {
+    @include font-icon-style("\e90b", 20px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+}

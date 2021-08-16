@@ -1,0 +1,17 @@
+.header-modal {
+  position: absolute;
+  left: 0;
+  top: 110px;
+  width: 100%;
+  background: $blackMain;
+  min-height: 800px;
+  z-index: 1000;
+}
+
+.header-modal__inner {
+  padding: 40px 0;
+}
+
+.header-modal__search {
+  margin-bottom: 40px;
+}

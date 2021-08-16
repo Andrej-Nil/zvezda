@@ -1,0 +1,9 @@
+.header__top--white {
+  background: $white;
+  & * {
+    color: $blackMain;
+  }
+  & .header__logo {
+    background-image: url("../../img/logo-dark.svg");
+  }
+}

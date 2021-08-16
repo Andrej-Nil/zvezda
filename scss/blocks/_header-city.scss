@@ -6,9 +6,7 @@
   }
 
   &:hover .header-city__arrow {
-    &::before {
-      color: $yellowMain;
-    }
+    color: $yellowMain;
   }
 }
 
@@ -27,9 +25,9 @@
   right: 0;
   width: 10px;
   height: 5px;
+  color: $white;
   &::before {
     @include font-icon-style("\e919", 4px);
-    color: $white;
     position: absolute;
     top: 50%;
     left: 0;

@@ -15,10 +15,9 @@
     <header class="header">
 
       <!-- header__top -->
-      <div class="header__top header__top--absolute">
+      <div class="header__top header__top--white header__top--absolute">
         <div class="header__top-inner container">
           <a href="index.html" class="header__logo">
-            <img src="./img/logo-light.svg" alt="" class="logo">
           </a>
 
           <nav class="header-nav">
@@ -27,7 +26,10 @@
 
               <li class="header-nav__item">
                 <a href="#!" class="header-nav__link">Каталог</a>
-                <i class="header-nav__arrow"></i>
+                <span class="header-nav__arrow">
+                  <!--<span class="header-nav__modal-arrow"></span>-->
+                </span>
+
               </li>
 
               <li class="header-nav__item">
@@ -40,7 +42,9 @@
 
               <li class="header-nav__item">
                 <a href="about.html" class="header-nav__link">О компании</a>
-                <i class="header-nav__arrow"></i>
+                <span class="header-nav__arrow">
+                  <!--<span class="header-nav__modal-arrow"></span>-->
+                </span>
               </li>
 
               <li class="header-nav__item">
@@ -1302,6 +1306,70 @@
         </div>
       </div>
     </footer>
+
+
+
+    <!--header-modals-->
+
+    <!-- headerCatalogModal -->
+    <div id="headerCatalogModal" class="header-modal">
+      <!-- header-modal__inner -->
+      <div class="header-modal__inner container">
+
+        <div class="header-modal__search search">
+          <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу">
+          <span class="search__btn"></span>
+        </div>
+        <!-- header-modal__main -->
+        <div class="header-modal__main">
+
+          <nav class="header-catalog">
+            <!-- header-catalog__list -->
+            <ul class="header-catalog__list">
+              <!-- header-catalog__item -->
+              <li class="header-catalog__item">
+                <a href="#!" class="header-catalog__link header-catalog__link--with-sublist">
+                  Полоса металлическая
+                </a>
+                <!-- header-catalog__sublist -->
+                <ul class="header-catalog__sublist">
+                  <!-- header-catalog__item -->
+                  <li class="header-catalog__item">
+                    <a href="#!" class="header-catalog__link header-catalog__link--with-sublist">
+                      Полоса металлическая
+                    </a>
+                    <!-- header-catalog__sublist -->
+                    <ul class="header-catalog__sublist">
+                      <!-- header-catalog__item -->
+                      <li class="header-catalog__item">
+                        <a href="#!" class="header-catalog__link">
+                          Полоса металлическая
+                        </a>
+                      </li>
+                      <!-- header-catalog__item -->
+                    </ul>
+                    <!--header-catalog__sublist-->
+                  </li>
+                  <!-- header-catalog__item -->
+                </ul>
+                <!-- header-catalog__sublist -->
+
+
+              </li>
+              <!-- header-catalog__item -->
+
+
+            </ul>
+            <!-- header-catalog__list -->
+          </nav>
+        </div>
+        <!-- header-modal__main -->
+      </div>
+      <!-- header-modal__inner -->
+    </div>
+    <!-- headerCatalogModal -->
+    <!--header-modals-->
+
 
 
   </div>

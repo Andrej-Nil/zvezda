@@ -1,7 +1,33 @@
 .input {
-  //height: 50px;
-  outline: none;
+  padding: 10px;
+  border: 1px solid $line;
+  font-size: 16px;
+  line-height: 22px;
+  color: $white;
+}
 
+.input::-webkit-input-placeholder {
+  color: #adadad;
+  font-size: 16px;
+  line-height: 22px;
+}
+.input:-ms-input-placeholder {
+  color: #adadad;
+  font-size: 16px;
+  line-height: 22px;
+}
+.input::-ms-input-placeholder {
+  color: #adadad;
+  font-size: 16px;
+  line-height: 22px;
+}
+.input::placeholder {
+  color: #adadad;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.feedback__input {
   padding: 11px 20px 12px;
   border: 1px solid $white;
   background: rgba(0, 0, 0, 0);
@@ -10,22 +36,22 @@
   color: $white;
 }
 
-.input::-webkit-input-placeholder {
+.feedback__input::-webkit-input-placeholder {
   color: $greyLight;
   font-size: 14px;
   line-height: 180%;
 }
-.input:-ms-input-placeholder {
+.feedback__input:-ms-input-placeholder {
   color: $greyLight;
   font-size: 14px;
   line-height: 180%;
 }
-.input::-ms-input-placeholder {
+.feedback__input::-ms-input-placeholder {
   color: $greyLight;
   font-size: 14px;
   line-height: 180%;
 }
-.input::placeholder {
+.feedback__input::placeholder {
   color: $greyLight;
   font-size: 14px;
   line-height: 180%;
