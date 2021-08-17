@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.min.css" />
+  <meta name="csrf-token" content="p5q8mFhMdAS9z3KSayI05bO34EEXjhMl9ysZOAS3">
+  <title>Новости</title>
+</head>
+
+<body>
+  <div class="app">
+    <header class="header">
+
+      <!-- header__top -->
+      <div class="header__top header__top--absolute">
+        <div class="header__top-inner container">
+          <a href="index.html" class="header__logo">
+          </a>
+
+          <nav class="header-nav">
+
+            <ul class="header-nav__list">
+
+              <li class="header-nav__item">
+                <a href="#!" class="header-nav__link">Каталог</a>
+                <span class="header-nav__arrow">
+                  <!--<span class="header-nav__modal-arrow"></span>-->
+                </span>
+
+              </li>
+
+              <li class="header-nav__item">
+                <a href="catalog.html" class="header-nav__link">Услуги</a>
+              </li>
+
+              <li class="header-nav__item">
+                <a href="catalog.html" class="header-nav__link">Производство</a>
+              </li>
+
+              <li class="header-nav__item">
+                <a href="about.html" class="header-nav__link">О компании</a>
+                <span class="header-nav__arrow">
+                  <!--<span class="header-nav__modal-arrow"></span>-->
+                </span>
+                <!--about-nav-->
+                <div class="about-nav header-modal--hide">
+                  <ul class="about-nav__list">
+                    <li class="about-nav__item">
+                      <a href="about.html" class="about-nav__link">О компании</a>
+                    </li>
+
+                    <li class="about-nav__item">
+                      <a href="news.html" class="about-nav__link">Новости</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- about-nav -->
+              </li>
+
+              <li class="header-nav__item">
+                <a href="contacts.html" class="header-nav__link">Контакты</a>
+              </li>
+
+            </ul>
+
+          </nav>
+
+          <!-- header__connection -->
+          <div class="header__connection">
+            <a href="tel:+7343318017" class="header__contact">+7 (343) 3-180-170</a>
+            <a href="mailto:" class="header__contact header__contact--mail">info@zvezda.ru</a>
+          </div>
+          <!-- header__connection -->
+
+          <div class="header-city">
+            <span class="header-city__name">Екатеринбург</span>
+            <span class="header-city__arrow header-nav__arrow">
+              <!--<span class="header-nav__modal-arrow"></span>-->
+            </span>
+          </div>
+
+
+          <nav class="icon-nav">
+            <ul class="icon-nav__list">
+              <li class="icon-nav__item">
+                <a href="basket.html" class="icon-nav__link icon-nav__link--basket"></a>
+              </li>
+
+              <li class="icon-nav__item">
+                <span class="icon-nav__link icon-nav__link--search"></span>
+              </li>
+            </ul>
+          </nav>
+
+
+        </div>
+      </div>
+      <!--header__top-->
+
+      <!--header-content-->
+      <div class="header-content">
+
+
+        <!--header__main-->
+        <div class="header__main">
+          <!-- header__slider -->
+          <div class="header__slider container">
+            <div class="header__slide">
+              <h2 class="header__title">
+                Металлопрокат
+                высокого качества
+              </h2>
+
+              <p class="header__desc">
+                Поставляем продукцию из металлопроката выского качества. Собираем и устанавливаем металлоконструкции.
+                Предоставляем услуги по обработке металла и производству
+              </p>
+              <div class="header__buttons">
+                <a href="" class="header__btn btn yellow-btn hover-yellow-light">Каталог продукции</a>
+                <span class="header__btn btn clear-btn">Оставить заявку</span>
+              </div>
+            </div>
+          </div>
+          <!-- header__slider -->
+
+        </div>
+        <!-- header__main -->
+
+        <!-- header__video -->
+        <div class="header__video">
+          <video class="header__video-item" autoplay>
+            <source src="./video/video1.webm" type="video/webm">
+          </video>
+
+
+          <nav class="header-video-nav">
+
+            <div class="header-tab">
+              <a href="#!" class="header-tab__link header-tab__link--active">
+                <p class="header-tab__title ">Поставка продукции</p>
+                <div class="header-tab__line">
+                  <div class="header-tab__line-bg header-tab__line-bg--aciove"></div>
+                  <div class="header-tab__progress"></div>
+                </div>
+              </a>
+            </div>
+
+            <div class="header-tab">
+              <a href="#!" class="header-tab__link">
+                <p class="header-tab__title">Услуги компании</p>
+                <div class="header-tab__line">
+                  <div class="header-tab__line-bg"></div>
+                  <!--<div class="header-tab__progress"></div>-->
+                </div>
+              </a>
+            </div>
+
+            <div class="header-tab">
+              <a href="#!" class="header-tab__link">
+                <p class="header-tab__title">Производство</p>
+                <div class="header-tab__line">
+                  <div class="header-tab__line-bg"></div>
+                  <!--<div class="header-tab__progress"></div>-->
+                </div>
+              </a>
+            </div>
+          </nav>
+        </div>
+        <!-- header__video -->
+
+      </div>
+      <!--header-content-->
+    </header>
+
+
+
+    <!--header-modals-->
+
+    <!-- headerCatalogModal -->
+    <div id="headerCatalogModal" class="header-modal header-modal--hide">
+      <!-- header-modal__inner -->
+      <div class="header-modal__inner container">
+
+        <div class="header-modal__search search">
+          <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу">
+          <span class="search__btn"></span>
+        </div>
+        <!-- header-modal__main -->
+        <div class="header-modal__main">
+
+          <nav class="header-catalog">
+            <!-- header-catalog__list -->
+            <ul class="header-catalog__list">
+              <!-- header-catalog__item -->
+              <li class="header-catalog__item">
+                <a href="#!" class="header-catalog__link header-catalog__link--with-sublist">
+                  Полоса металлическая
+                </a>
+                <!-- header-catalog__sublist -->
+                <ul class="header-catalog__sublist">
+                  <!-- header-catalog__item -->
+                  <li class="header-catalog__item">
+                    <a href="#!" class="header-catalog__link header-catalog__link--with-sublist">
+                      Полоса металлическая
+                    </a>
+                    <!-- header-catalog__sublist -->
+                    <ul class="header-catalog__sublist">
+                      <!-- header-catalog__item -->
+                      <li class="header-catalog__item">
+                        <a href="#!" class="header-catalog__link">
+                          Полоса металлическая
+                        </a>
+                      </li>
+                      <!-- header-catalog__item -->
+                    </ul>
+                    <!--header-catalog__sublist-->
+                  </li>
+                  <!-- header-catalog__item -->
+                </ul>
+                <!-- header-catalog__sublist -->
+
+
+              </li>
+              <!-- header-catalog__item -->
+
+
+            </ul>
+            <!-- header-catalog__list -->
+          </nav>
+        </div>
+        <!-- header-modal__main -->
+      </div>
+      <!-- header-modal__inner -->
+    </div>
+    <!-- headerCatalogModal -->
+
+    <!--search-city-->
+    <div id="selectCityModal" class="header-modal header-modal--hide">
+      <!-- header-modal__inner -->
+      <div class="header-modal__inner container">
+
+        <div class="header-modal__search search">
+          <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу">
+          <span class="search__btn"></span>
+        </div>
+        <!-- header-modal__main -->
+
+        <div class="header-modal__main">
+          <!-- cities -->
+
+          <div class="cities">
+            <!-- city-card -->
+            <div class="city-card">
+              <h4 class="city-card__title">Екатеринбург</h4>
+              <div class="city-card__contacts">
+                <div class="city-card__contact contact">
+                  <span class="contact__title">Звонок по России бесплатный:</span>
+                  <a href="tel:+73433180170" class=" contact__link">+7 (343) 3-180-170</a>
+                </div>
+
+                <div class="city-card__contact contact">
+                  <span class=" contact__title">Напишите нам:</span>
+                  <a href="mailto:info@ntmk.ru" class=" contact__link">info@ntmk.ru</a>
+                </div>
+              </div>
+
+              <div class="city-card__addresses">
+                <div class="address">
+                  <span class="address__title">Наш адрес:</span>
+
+                  <p class="address__info">
+                    Россия, Свердловская область, Екатеринбург,
+                    улица Малышева, 51, оф 16/05
+                  </p>
+                </div>
+                <div class="address">
+                  <span class="address__title">Режим работы:</span>
+
+                  <p class="address__info">
+                    ПН-ПТ: с 9.00 до 18.00
+                  </p>
+                  <p class="address__info">
+                    СБ-ВС: Выходной
+                  </p>
+                </div>
+              </div>
+
+              <span class="city-card__btn btn clear-btn">
+                Оставить заявку
+              </span>
+
+            </div>
+            <!-- city-card -->
+
+            <!-- cities__regions -->
+            <div class="cities__regions">
+              <!-- region -->
+              <div class="region">
+                <h4 class="region__title">
+                  Центральный федеральный округ
+                </h4>
+                <!-- region__list -->
+                <ul class="region__list">
+                  <li class="region__item">
+                    <!-- region__area -->
+                    <div class="area">
+                      <h5 class="area__title ">
+                        Белгородская область
+                      </h5>
+                      <!-- area__list -->
+                      <ul class="area__list">
+
+                        <li class="area__item">
+                          <a href="" class="area__city">
+                            Екатеринбург
+
+                          </a>
+                        </li>
+
+                        <li class="area__item">
+                          <a href="" class="area__city">
+                            Екатеринбург
+
+                          </a>
+                        </li>
+
+                      </ul>
+                      <!-- area__list -->
+                    </div>
+                    <!-- region__area -->
+                  </li>
+
+
+
+                </ul>
+                <!-- region__list -->
+              </div>
+              <!-- region -->
+
+              <!-- region -->
+              <div class="region">
+                <h4 class="region__title">
+                  Центральный федеральный округ
+                </h4>
+                <!-- region__list -->
+                <ul class="region__list">
+                  <li class="region__item">
+                    <!-- region__area -->
+                    <div class="area">
+                      <h5 class="area__title ">
+                        Белгородская область
+                      </h5>
+                      <!-- area__list -->
+                      <ul class="area__list">
+
+                        <li class="area__item">
+                          <a href="" class="area__city">
+                            Екатеринбург
+
+                          </a>
+                        </li>
+
+                        <li class="area__item">
+                          <a href="" class="area__city">
+                            Екатеринбург
+
+                          </a>
+                        </li>
+
+                      </ul>
+                      <!-- area__list -->
+                    </div>
+                    <!-- region__area -->
+                  </li>
+
+
+
+                </ul>
+                <!-- region__list -->
+              </div>
+              <!-- region -->
+
+              <!-- region -->
+              <div class="region">
+                <h4 class="region__title">
+                  Центральный федеральный округ
+                </h4>
+                <!-- region__list -->
+                <ul class="region__list">
+                  <li class="region__item">
+                    <!-- region__area -->
+                    <div class="area">
+                      <h5 class="area__title ">
+                        Белгородская область
+                      </h5>
+                      <!-- area__list -->
+                      <ul class="area__list">
+
+                        <li class="area__item">
+                          <a href="" class="area__city">
+                            Екатеринбург
+
+                          </a>
+                        </li>
+
+                        <li class="area__item">
+                          <a href="" class="area__city">
+                            Екатеринбург
+
+                          </a>
+                        </li>
+
+                      </ul>
+                      <!-- area__list -->
+                    </div>
+                    <!-- region__area -->
+                  </li>
+
+
+
+                </ul>
+                <!-- region__list -->
+              </div>
+              <!-- region -->
+            </div>
+            <!-- cities__regions -->
+          </div>
+          <!-- cities -->
+
+        </div>
+        <!-- header-modal__main -->
+      </div>
+      <!-- header-modal__inner -->
+    </div>
+    <!--search-city-->
+
+
+    <!--header-modals-->
+
+
+
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

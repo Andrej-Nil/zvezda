@@ -1,0 +1,27 @@
+.about-nav {
+  position: absolute;
+  top: 67px;
+  min-width: 175px;
+  padding: 20px;
+  background: $blackMain;
+}
+
+.about-nav__item {
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.about-nav__link {
+  display: block;
+  transition: 0.2s ease-in-out;
+
+  color: $white;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  &:hover {
+    color: $yellowMain;
+  }
+}

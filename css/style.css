@@ -1747,6 +1747,35 @@ body {
   color: #fba50d;
 }
 
+.about-nav {
+  position: absolute;
+  top: 67px;
+  min-width: 175px;
+  padding: 20px;
+  background: #444a52;
+}
+
+.about-nav__item {
+  margin-bottom: 10px;
+}
+
+.about-nav__item:last-child {
+  margin-bottom: 0;
+}
+
+.about-nav__link {
+  display: block;
+  transition: 0.2s ease-in-out;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.about-nav__link:hover {
+  color: #fba50d;
+}
+
 .slider {
   overflow: hidden;
 }
