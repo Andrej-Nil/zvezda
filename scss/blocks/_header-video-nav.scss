@@ -4,6 +4,7 @@
   bottom: 0;
   width: 100%;
   display: flex;
+  z-index: 1000;
 }
 
 .header-tab {
@@ -36,7 +37,7 @@
 .header-tab__line {
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: 0px;
   width: 100%;
 }
 
