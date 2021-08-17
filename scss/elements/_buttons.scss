@@ -45,8 +45,9 @@
 
 .close-btn {
   position: relative;
+  display: inline-block;
+  padding: 10px 30px 10px 10px;
   cursor: pointer;
-
   color: $black;
   font-weight: bold;
   font-size: 18px;

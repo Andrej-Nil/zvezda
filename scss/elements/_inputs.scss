@@ -1,30 +1,109 @@
 .input {
-  padding: 10px;
-  border: 1px solid $line;
+  padding: 13px 10px 13px;
+  border: 1px solid #a7a7a7;
   font-size: 16px;
   line-height: 22px;
-  color: $white;
+  color: $blackMain;
 }
 
 .input::-webkit-input-placeholder {
-  color: #adadad;
+  color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
 }
 .input:-ms-input-placeholder {
-  color: #adadad;
+  color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
 }
 .input::-ms-input-placeholder {
-  color: #adadad;
+  color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
 }
 .input::placeholder {
-  color: #adadad;
+  color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
+}
+
+.textarea {
+  height: 182px;
+  padding: 13px 10px 13px;
+  border: 1px solid #a7a7a7;
+  resize: none;
+
+  $color: $blackMain;
+  font-size: 16px;
+  line-height: 180%;
+}
+
+.textarea::-webkit-input-placeholder {
+  color: #a7a7a7;
+  font-size: 16px;
+  line-height: 22px;
+}
+.textarea:-ms-input-placeholder {
+  color: #a7a7a7;
+  font-size: 16px;
+  line-height: 22px;
+}
+.textarea::-ms-input-placeholder {
+  color: #a7a7a7;
+  font-size: 16px;
+  line-height: 22px;
+}
+.textarea::placeholder {
+  color: #a7a7a7;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox__input {
+  display: none;
+  &:checked + .checkbox__fake {
+    &::before {
+      @include font-icon-style("\e91f", 16px);
+    }
+    background: $yellowMain;
+  }
+}
+
+.checkbox__fake {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  background: #e0e0e0;
+  transition: 0.2s ease-in-out;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    color: black;
+  }
+}
+
+.checkbox__fake--active {
+  &::before {
+    @include font-icon-style("\e91f", 16px);
+  }
+  background: $yellowMain;
+}
+
+.checkbox__text {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 180%;
 }
 
 .feedback__input {

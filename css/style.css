@@ -28,8 +28,8 @@
 
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/icomoon/icomoon.eot?boc7fg");
-  src: url("../fonts/icomoon/icomoon.eot?boc7fg#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?boc7fg") format("truetype"), url("../fonts/icomoon/icomoon.woff?boc7fg") format("woff"), url("../fonts/icomoon/icomoon.svg?boc7fg#icomoon") format("svg");
+  src: url("../fonts/icomoon/icomoon.eot?jajtqx");
+  src: url("../fonts/icomoon/icomoon.eot?jajtqx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?jajtqx") format("truetype"), url("../fonts/icomoon/icomoon.woff?jajtqx") format("woff"), url("../fonts/icomoon/icomoon.svg?jajtqx#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -48,6 +48,11 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Vector-182-Stroke-1:before {
+  content: "\e922";
+  color: #444a52;
 }
 
 .icon-slider-prev:before {
@@ -312,6 +317,8 @@ body {
 
 .close-btn {
   position: relative;
+  display: inline-block;
+  padding: 10px 30px 10px 10px;
   cursor: pointer;
   color: #000;
   font-weight: bold;
@@ -337,17 +344,95 @@ body {
 }
 
 .input {
-  padding: 10px;
-  border: 1px solid rgba(139, 139, 139, 0.3);
+  padding: 13px 10px 13px;
+  border: 1px solid #a7a7a7;
   font-size: 16px;
   line-height: 22px;
-  color: #fff;
+  color: #444a52;
 }
 
 .input::placeholder {
-  color: #adadad;
+  color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
+}
+
+.textarea {
+  height: 182px;
+  padding: 13px 10px 13px;
+  border: 1px solid #a7a7a7;
+  resize: none;
+  font-size: 16px;
+  line-height: 180%;
+}
+
+.textarea::placeholder {
+  color: #a7a7a7;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox__input {
+  display: none;
+}
+
+.checkbox__input:checked + .checkbox__fake {
+  background: #fba50d;
+}
+
+.checkbox__input:checked + .checkbox__fake::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 16px;
+}
+
+.checkbox__fake {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  background: #e0e0e0;
+  transition: 0.2s ease-in-out;
+}
+
+.checkbox__fake::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  color: black;
+}
+
+.checkbox__fake--active {
+  background: #fba50d;
+}
+
+.checkbox__fake--active::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 16px;
+}
+
+.checkbox__text {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 180%;
 }
 
 .feedback__input {
@@ -371,6 +456,7 @@ body {
 
 .search__input {
   width: 100%;
+  color: #fff;
 }
 
 .search__btn {
@@ -399,6 +485,52 @@ body {
   display: block;
   width: 20px;
   height: 20px;
+}
+
+.file__label {
+  display: block;
+  padding: 13px 20px 14px 16px;
+  border: 1px solid rgba(139, 139, 139, 0.3);
+  cursor: pointer;
+}
+
+.file__text {
+  position: relative;
+  display: inline-block;
+  padding-left: 30px;
+  color: #444a52;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.file__text::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 23px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.file__input {
+  display: none;
+}
+
+.file__desc {
+  margin-top: 20px;
+  color: #757575;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.modal__submit {
+  display: inline-block;
+  width: 100%;
 }
 
 .contact__title {
@@ -930,8 +1062,6 @@ body {
   position: absolute;
   top: 40px;
   right: -100px;
-  display: block;
-  padding: 10px 30px 10px 10px;
   opacity: 0;
   visibility: hidden;
 }
@@ -2048,69 +2178,6 @@ body {
   line-height: 180%;
 }
 
-.feedback__label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.feedback__checkbox {
-  display: none;
-}
-
-.feedback__checkbox:checked + .feedback__fake {
-  background: #fba50d;
-}
-
-.feedback__checkbox:checked + .feedback__fake::before {
-  font-family: "icomoon";
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-  line-height: 1;
-  content: "";
-  font-size: 16px;
-}
-
-.feedback__fake {
-  position: relative;
-  display: inline-block;
-  margin-right: 10px;
-  width: 16px;
-  height: 16px;
-  background: #e0e0e0;
-  transition: 0.2s ease-in-out;
-}
-
-.feedback__fake::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 16px;
-  height: 16px;
-  color: black;
-}
-
-.feedback__fake--active {
-  background: #fba50d;
-}
-
-.feedback__fake--active::before {
-  font-family: "icomoon";
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-  line-height: 1;
-  content: "";
-  font-size: 16px;
-}
-
-.feedback__label-text {
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 180%;
-}
-
 .feedback__img {
   width: 630px;
   height: 542px;
@@ -2500,6 +2567,83 @@ body {
 
 .header-modal__search {
   margin-bottom: 40px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  background: rgba(228, 228, 228, 0.6);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  transition: 0.5s ease-in-out;
+}
+
+.modal:hover {
+  background: rgba(228, 228, 228, 0.6);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+}
+
+.modal:hover .modal__inner {
+  transform: translate(0, 0);
+}
+
+.modal--is-show {
+  display: block;
+}
+
+.modal__inner {
+  position: relative;
+  width: 473px;
+  min-height: 100vh;
+  background: #fff;
+  margin-left: auto;
+  padding: 95px 50px 50px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.5s ease-in-out;
+}
+
+.modal__close {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+}
+
+.modal__title {
+  margin-bottom: 50px;
+  color: #444a52;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.modal__inputs-block {
+  margin-bottom: 30px;
+}
+
+.modal__input {
+  width: 100%;
+  margin-bottom: 30px;
+  outline: none;
+}
+
+.modal__input:last-child {
+  margin-bottom: 0;
+}
+
+.modal__file {
+  margin-bottom: 60px;
+}
+
+.modal__submit {
+  color: #444a52;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 30px;
 }
 
 .mb0 {

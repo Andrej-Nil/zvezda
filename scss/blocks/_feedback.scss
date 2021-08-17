@@ -46,53 +46,6 @@
   line-height: 180%;
 }
 
-.feedback__label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.feedback__checkbox {
-  display: none;
-  &:checked + .feedback__fake {
-    &::before {
-      @include font-icon-style("\e91f", 16px);
-    }
-    background: $yellowMain;
-  }
-}
-
-.feedback__fake {
-  position: relative;
-  display: inline-block;
-  margin-right: 10px;
-  width: 16px;
-  height: 16px;
-  background: #e0e0e0;
-  transition: 0.2s ease-in-out;
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 16px;
-    height: 16px;
-    color: black;
-  }
-}
-
-.feedback__fake--active {
-  &::before {
-    @include font-icon-style("\e91f", 16px);
-  }
-  background: $yellowMain;
-}
-
-.feedback__label-text {
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 180%;
-}
-
 .feedback__img {
   width: 630px;
   height: 542px;

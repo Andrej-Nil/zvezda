@@ -544,10 +544,10 @@
                 <input type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
                   value="Отправить запрос">
               </div>
-              <label class="feedback__label" data-label>
-                <input data-checkbox type="checkbox" class="feedback__checkbox" />
-                <span class="feedback__fake"></span>
-                <span class="feedback__label-text">я принимаю условия политики конфиденциальности</span>
+              <label class="feedback__label checkbox" data-label>
+                <input data-checkbox type="checkbox" checked class="feedback__checkbox checkbox__input" />
+                <span class="feedback__fake checkbox__fake"></span>
+                <span class="feedback__label-text checkbox__text">я принимаю условия политики конфиденциальности</span>
 
               </label>
             </form>
@@ -1327,7 +1327,7 @@
     <!--header-modals-->
 
     <!-- headerCatalogModal -->
-    <div id="headerCatalogModal" class="header-modal header-modal--hide">
+    <div id="headerCatalogModal" class="header-modal ">
       <!-- header-modal__inner -->
       <div class="header-modal__inner container">
 
@@ -1583,9 +1583,51 @@
       <!-- header-modal__inner -->
     </div>
     <!--search-city-->
-
-
     <!--header-modals-->
+
+    <!--modal-->
+    <div data-close id="supportModal" class="modal">
+      <!--modal__inner-->
+      <div class="modal__inner">
+        <span data-close class="modal__close close-btn">Закрыть</span>
+
+        <h3 class="modal__title">
+          Обращение в техподдержку
+        </h3>
+
+        <form class="modal__form">
+          <div class="modal__inputs-block">
+            <input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*">
+            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail">
+            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*">
+
+            <textarea data-textarea name="message" class="modal__input modal__textarea textarea"
+              placeholder="Опишите проблему"></textarea>
+          </div>
+          <div class="modal__file file">
+            <label class="file__label">
+              <span class="file__text">Прикрепить файл</span>
+              <input data-file type="file" name="file" class="file__input">
+            </label>
+            <p class="file__desc">
+              Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
+            </p>
+          </div>
+
+          <input type="text" class="modal__submit btn yellow-btn hover-yellow-light" value="Отправить заявку">
+
+          <label class="checkbox" data-label>
+            <input data-checkbox type="checkbox" checked class="checkbox__input" />
+            <span class="checkbox__fake"></span>
+            <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
+          </label>
+        </form>
+
+      </div>
+      <!--modal__inner-->
+    </div>
+    <!--modal-->
 
 
 
