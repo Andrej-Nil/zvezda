@@ -27,6 +27,10 @@
   }
 }
 
+.header-nav__link--active {
+  color: $yellowMain;
+}
+
 .header-nav__arrow {
   position: relative;
   margin: 0 0 0 10px;

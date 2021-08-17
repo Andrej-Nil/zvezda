@@ -1548,6 +1548,10 @@ body {
   color: #fba50d;
 }
 
+.header-nav__link--active {
+  color: #fba50d;
+}
+
 .header-nav__arrow {
   position: relative;
   margin: 0 0 0 10px;
@@ -2141,6 +2145,18 @@ body {
 
 .services {
   padding-bottom: 156px;
+}
+
+.services::before {
+  content: "";
+  width: 305px;
+  order: 1;
+}
+
+.services::after {
+  content: "";
+  width: 305px;
+  order: 1;
 }
 
 .about-block {

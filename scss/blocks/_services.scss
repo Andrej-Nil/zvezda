@@ -1,3 +1,13 @@
 .services {
   padding-bottom: 156px;
+  &::before {
+    content: "";
+    width: 305px;
+    order: 1;
+  }
+  &::after {
+    content: "";
+    width: 305px;
+    order: 1;
+  }
 }
