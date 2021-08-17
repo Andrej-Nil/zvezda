@@ -1,0 +1,76 @@
+.select {
+  position: relative;
+  width: 100%;
+}
+
+.select__title {
+  position: relative;
+  display: block;
+  padding: 15px 20px 16px;
+  cursor: pointer;
+
+  background: $pearl;
+  color: $blackMain;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+
+  &::before {
+    @include font-icon-style("\e919", 8px);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+    height: 8px;
+    width: auto;
+    transition: 0.2s ease-in-out;
+    //transform: translate(0, -50%);
+  }
+  &:hover {
+    &::before {
+      transform: rotateX(-180deg);
+    }
+  }
+}
+
+.select__body {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 0;
+}
+
+.select__list {
+  border: 1px solid $line;
+  width: 100%;
+  background: $white;
+}
+
+.select__item {
+  border-bottom: 1px solid $line;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.select__label {
+  display: block;
+  padding: 15px 20px 16px;
+  cursor: pointer;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background: $pearl;
+  }
+}
+
+.select__text {
+  color: $blackMain;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+}

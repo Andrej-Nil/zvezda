@@ -1627,6 +1627,82 @@
       </div>
       <!--modal__inner-->
     </div>
+
+    <div id="orderModal" class="modal modal--is-show">
+      <!--modal__inner-->
+      <div class="modal__inner">
+        <span data-close class="modal__close close-btn">Закрыть</span>
+
+        <h3 class="modal__title">
+          Обращение в техподдержку
+        </h3>
+
+        <form class="modal__form">
+          <div class="modal__inputs-block">
+            <input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*">
+
+            <input data-input type="text" name="company" class="modal__input input" placeholder="Название организации">
+
+            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail">
+
+            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*">
+
+            <input data-input type="text" name="address" class="modal__input input" placeholder="Адрес доставки*">
+
+            <div class="modal__select select">
+              <span class="select__title">
+                Доставка транспортной компанией
+              </span>
+              <div class="select__body">
+                <ul class="select__list">
+                  <li class="select__item">
+                    <label class="select__label">
+                      <span class="select__text">
+                        Кит
+                      </span>
+                      <input class="radio" type="radio" name="delivery" value="">
+                    </label>
+                  </li>
+                  <li class="select__item">
+                    <label class="select__label">
+                      <span class="select__text">
+                        сдек
+                      </span>
+                      <input class="radio" type="radio" name="delivery" value="">
+                    </label>
+                  </li>
+                </ul>
+              </div>
+
+
+            </div>
+
+            <textarea data-textarea name="message" class="modal__input modal__textarea textarea"
+              placeholder="Комменатрий к заказу"></textarea>
+          </div>
+          <div class="modal__file file">
+            <label class="file__label">
+              <span class="file__text">Добавить реквизиты</span>
+              <input data-file type="file" name="file" class="file__input">
+            </label>
+            <p class="file__desc">
+              Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
+            </p>
+          </div>
+
+          <input type="text" class="modal__submit btn yellow-btn hover-yellow-light" value="Отправить заявку">
+
+          <label class="checkbox" data-label>
+            <input data-checkbox type="checkbox" checked class="checkbox__input" />
+            <span class="checkbox__fake"></span>
+            <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
+          </label>
+        </form>
+
+      </div>
+      <!--modal__inner-->
+    </div>
     <!--modal-->
 
 

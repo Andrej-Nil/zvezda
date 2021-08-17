@@ -533,6 +533,86 @@ body {
   width: 100%;
 }
 
+.select {
+  position: relative;
+  width: 100%;
+}
+
+.select__title {
+  position: relative;
+  display: block;
+  padding: 15px 20px 16px;
+  cursor: pointer;
+  background: #f5f5f5;
+  color: #444a52;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.select__title::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 8px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: block;
+  height: 8px;
+  width: auto;
+  transition: 0.2s ease-in-out;
+}
+
+.select__title:hover::before {
+  transform: rotateX(-180deg);
+}
+
+.select__body {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 0;
+}
+
+.select__list {
+  border: 1px solid rgba(139, 139, 139, 0.3);
+  width: 100%;
+  background: #fff;
+}
+
+.select__item {
+  border-bottom: 1px solid rgba(139, 139, 139, 0.3);
+}
+
+.select__item:last-child {
+  border-bottom: none;
+}
+
+.select__label {
+  display: block;
+  padding: 15px 20px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  transition: 0.2s ease-in-out;
+}
+
+.select__label:hover {
+  background: #f5f5f5;
+}
+
+.select__text {
+  color: #444a52;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+}
+
 .contact__title {
   display: block;
   margin-bottom: 10px;
@@ -2643,6 +2723,10 @@ body {
   color: #444a52;
   font-size: 16px;
   line-height: 22px;
+  margin-bottom: 30px;
+}
+
+.modal__select {
   margin-bottom: 30px;
 }
 
