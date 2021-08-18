@@ -1484,6 +1484,74 @@ body {
   display: block;
 }
 
+.result-card {
+  margin-bottom: 20px;
+  padding: 30px;
+  background: #f8f8f8;
+  color: #444a52;
+  transition: 0.2s ease-in-out;
+}
+
+.result-card:last-child {
+  margin-bottom: 0;
+}
+
+.result-card:hover {
+  background: #e9e9e9;
+}
+
+.result-card__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.result-card__area {
+  position: relative;
+  display: block;
+  margin-right: 80px;
+  transition: 0.2s ease-in-out;
+  color: #444a52;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.result-card__area::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(48px, -50%);
+  display: block;
+  width: 17px;
+  height: 2px;
+  background: #444a52;
+}
+
+.result-card__area:hover {
+  transition: 0.2s ease-in-out;
+  color: #fba50d;
+}
+
+.result-card__link {
+  color: #444a52;
+  transition: 0.2s ease-in-out;
+}
+
+.result-card__link:hover {
+  color: #fba50d;
+}
+
+.result-card__desc {
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.result-card__light {
+  background: #fba50d;
+}
+
 .header {
   position: relative;
 }
@@ -2742,6 +2810,7 @@ body {
 
 .modal__inner {
   position: relative;
+  transform: translate(100%, 0);
   width: 473px;
   min-height: 100vh;
   background: #fff;
@@ -2791,6 +2860,61 @@ body {
 
 .modal__select {
   margin-bottom: 30px;
+}
+
+.search-modal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transform: translate(0, 0);
+}
+
+.search-form {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.search-form__input {
+  color: #444a52;
+}
+
+.search-form__btn {
+  color: #444a52;
+}
+
+.search-result__count {
+  display: block;
+  margin-bottom: 30px;
+  color: #444a52;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.selecting-area {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.selecting-area__item {
+  margin-right: 60px;
+}
+
+.selecting-area__area-name {
+  color: #444a52;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.selecting-area__radio {
+  display: none;
+}
+
+.selecting-area__radio:checked + .selecting-area__area-name {
+  color: #fba50d;
 }
 
 .mb0 {

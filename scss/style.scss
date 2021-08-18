@@ -34,6 +34,8 @@
 @import "./elements/footer-logo";
 @import "./elements/footer-support";
 
+@import "./elements/result-card";
+
 @import "./blocks/header";
 @import "./blocks/header-top";
 @import "./blocks/header-nav";
@@ -76,5 +78,8 @@
 //header-modals
 @import "./blocks/header-modal";
 @import "./blocks/modal";
+
+@import "./blocks/search-modal";
+@import "./blocks/selecting-area";
 
 @import "./important";

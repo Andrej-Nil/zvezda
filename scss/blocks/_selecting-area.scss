@@ -1,0 +1,24 @@
+.selecting-area {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.selecting-area__item {
+  margin-right: 60px;
+}
+
+.selecting-area__area-name {
+  color: $blackMain;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.selecting-area__radio {
+  display: none;
+  &:checked + .selecting-area__area-name {
+    color: $yellowMain;
+  }
+}

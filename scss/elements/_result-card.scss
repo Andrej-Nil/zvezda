@@ -1,0 +1,65 @@
+.result-card {
+  margin-bottom: 20px;
+  padding: 30px;
+  background: #f8f8f8;
+  color: $blackMain;
+  transition: 0.2s ease-in-out;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:hover {
+    background: #e9e9e9;
+  }
+}
+
+.result-card__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.result-card__area {
+  position: relative;
+  display: block;
+  margin-right: 80px;
+  transition: 0.2s ease-in-out;
+
+  color: $blackMain;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(48px, -50%);
+    display: block;
+    width: 17px;
+    height: 2px;
+    background: $blackMain;
+  }
+
+  &:hover {
+    transition: 0.2s ease-in-out;
+    color: $yellowMain;
+  }
+}
+
+.result-card__link {
+  color: $blackMain;
+
+  transition: 0.2s ease-in-out;
+  &:hover {
+    color: $yellowMain;
+  }
+}
+
+.result-card__desc {
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.result-card__light {
+  background: $yellowMain;
+}

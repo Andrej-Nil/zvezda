@@ -1,0 +1,30 @@
+.search-modal {
+  display: flex;
+  flex-direction: column;
+  //align-items: center;
+  width: 100%;
+  transform: translate(0, 0);
+}
+
+.search-form {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.search-form__input {
+  color: $blackMain;
+}
+
+.search-form__btn {
+  color: $blackMain;
+}
+
+.search-result__count {
+  display: block;
+  margin-bottom: 30px;
+
+  color: $blackMain;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+}
