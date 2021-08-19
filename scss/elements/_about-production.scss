@@ -1,0 +1,33 @@
+.about-production {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  height: 500px;
+  padding: 0 0 0 100px;
+  background: $pearl;
+}
+
+.about-production--reverse {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 0 100px 0 0;
+}
+
+.about-production__desc {
+  width: 520px;
+}
+
+.about-production__title {
+  margin-bottom: 30px;
+
+  color: $textBlack;
+  font-size: 30px;
+  line-height: 41px;
+}
+
+.about-production__text {
+  color: $blackMain;
+  font-size: 14px;
+  line-height: 24px;
+}

@@ -4,6 +4,9 @@
   color: $white;
   width: 305px;
   height: 305px;
+  &:hover {
+    color: $white;
+  }
   &:hover .service-more__bg {
     transform: translate(0, 0);
     opacity: 1;
