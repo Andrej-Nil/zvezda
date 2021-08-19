@@ -252,23 +252,24 @@ body {
 }
 
 .container {
-  max-width: 1279px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__wrap {
+  width: 955px;
 }
 
 .tile {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.black-bg {
-  background: #2d3035;
-}
-
-.dark-bg {
-  background: #35383e;
 }
 
 .white-color {
@@ -352,6 +353,7 @@ body {
 }
 
 .input::placeholder {
+  font-family: Manrope, sans-serif;
   color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
@@ -362,11 +364,13 @@ body {
   padding: 13px 10px 13px;
   border: 1px solid #a7a7a7;
   resize: none;
+  font-family: Manrope, sans-serif;
   font-size: 16px;
   line-height: 180%;
 }
 
 .textarea::placeholder {
+  font-family: Manrope, sans-serif;
   color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
@@ -2135,16 +2139,53 @@ body {
   height: 100%;
 }
 
+.sidebar {
+  position: relative;
+  min-width: 305px;
+  margin-right: 20px;
+}
+
+.page-nav {
+  padding: 100px 0 80px;
+  width: 100%;
+}
+
+.page-nav__item {
+  margin-bottom: 20px;
+}
+
+.page-nav__link {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  color: #444a52;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.page-nav__link:hover {
+  color: #fba50d;
+}
+
+.page-nav__link--active {
+  color: #fba50d;
+}
+
 .section {
   position: relative;
+  background: #fff;
+}
+
+.black-bg {
+  background: #2d3035;
+}
+
+.dark-bg {
+  background: #35383e;
 }
 
 .section__bg {
   width: 100%;
-}
-
-.section__inner {
-  padding-top: 80px;
 }
 
 .section__title {
@@ -2152,6 +2193,10 @@ body {
   line-height: 49px;
   margin-bottom: 60px;
   color: #232323;
+}
+
+.section__inner {
+  padding-top: 80px;
 }
 
 .section__title--white {
@@ -2610,6 +2655,124 @@ body {
 
 .callback-block__btn:last-child {
   margin-right: 0;
+}
+
+.about-service {
+  padding-top: 80px;
+}
+
+.about-service__title {
+  margin-bottom: 30px;
+  color: #444a52;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.about-service__desc {
+  color: #757575;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.about-service___img {
+  margin-top: 60px;
+  width: 100%;
+  height: auto;
+}
+
+.application {
+  padding: 60px;
+  background: #f5f5f5;
+  margin-bottom: 60px;
+}
+
+.application__title {
+  margin-bottom: 20px;
+  color: #444a52;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.application__text {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 160%;
+  margin-bottom: 90px;
+}
+
+.form__body {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.form__side {
+  width: 49%;
+}
+
+.form__input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form__input-block {
+  display: flex;
+}
+
+.mr20 {
+  margin-right: 20px;
+}
+
+.form__textarea {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+
+.form__file {
+  position: relative;
+  display: flex;
+  height: 50px;
+  padding-left: 40px;
+  align-items: center;
+  border: 1px dashed #a7a7a7;
+  color: #a7a7a7;
+}
+
+.form__file::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 18px;
+  position: absolute;
+  transform: rotate(45deg);
+  left: 20px;
+}
+
+.form__file-text {
+  margin-right: 20px;
+  font-size: 14px;
+  line-height: 180%;
+}
+
+.form__file-format {
+  font-size: 10px;
+  line-height: 180%;
+}
+
+.form__bottom {
+  display: flex;
+}
+
+.form__submit {
+  width: 200px;
+  margin-right: 20px;
 }
 
 .footer {

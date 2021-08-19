@@ -1,13 +1,18 @@
 .section {
   position: relative;
+  background: $white;
+}
+
+.black-bg {
+  background: $bgBlack;
+}
+
+.dark-bg {
+  background: $bgDark;
 }
 
 .section__bg {
   width: 100%;
-}
-
-.section__inner {
-  padding-top: 80px;
 }
 
 .section__title {
@@ -15,6 +20,10 @@
   line-height: 49px;
   margin-bottom: 60px;
   color: $textBlack;
+}
+
+.section__inner {
+  padding-top: 80px;
 }
 
 .section__title--white {

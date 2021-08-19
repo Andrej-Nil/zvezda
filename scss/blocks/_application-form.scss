@@ -1,0 +1,21 @@
+.application {
+  padding: 60px;
+  background: $pearl;
+  margin-bottom: 60px;
+}
+
+.application__title {
+  margin-bottom: 20px;
+
+  color: $blackMain;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.application__text {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 160%;
+  margin-bottom: 90px;
+}

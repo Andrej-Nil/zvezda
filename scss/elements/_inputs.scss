@@ -7,21 +7,25 @@
 }
 
 .input::-webkit-input-placeholder {
+  font-family: $manrope;
   color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
 }
 .input:-ms-input-placeholder {
+  font-family: $manrope;
   color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
 }
 .input::-ms-input-placeholder {
+  font-family: $manrope;
   color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
 }
 .input::placeholder {
+  font-family: $manrope;
   color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
@@ -33,27 +37,32 @@
   border: 1px solid #a7a7a7;
   resize: none;
 
+  font-family: $manrope;
   $color: $blackMain;
   font-size: 16px;
   line-height: 180%;
 }
 
 .textarea::-webkit-input-placeholder {
+  font-family: $manrope;
   color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
 }
 .textarea:-ms-input-placeholder {
+  font-family: $manrope;
   color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
 }
 .textarea::-ms-input-placeholder {
+  font-family: $manrope;
   color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;
 }
 .textarea::placeholder {
+  font-family: $manrope;
   color: #a7a7a7;
   font-size: 16px;
   line-height: 22px;

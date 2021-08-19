@@ -1,0 +1,25 @@
+.about-service {
+  padding-top: 80px;
+}
+
+.about-service__title {
+  margin-bottom: 30px;
+
+  color: $blackMain;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.about-service__desc {
+  color: $text;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.about-service___img {
+  margin-top: 60px;
+  width: 100%;
+  height: auto;
+}

@@ -80,23 +80,25 @@ body {
 }
 
 .container {
-  max-width: 1279px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__wrap {
+  //padding-top: 80px;
+  width: 955px;
 }
 
 .tile {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.black-bg {
-  background: $bgBlack;
-}
-
-.dark-bg {
-  background: $bgDark;
 }
 
 .white-color {

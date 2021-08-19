@@ -1,0 +1,25 @@
+.page-nav {
+  padding: 100px 0 80px;
+  width: 100%;
+}
+
+.page-nav__item {
+  margin-bottom: 20px;
+}
+
+.page-nav__link {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  color: $blackMain;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  &:hover {
+    color: $yellowMain;
+  }
+}
+
+.page-nav__link--active {
+  color: $yellowMain;
+}
