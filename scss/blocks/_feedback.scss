@@ -50,3 +50,15 @@
   width: 630px;
   height: 542px;
 }
+
+.feedback--light-bg {
+  .feedback__title {
+    color: $blackMain;
+  }
+  .feedback__desc {
+    color: $blackMain;
+  }
+  .feedback__input {
+    border: 1px solid $blackMain;
+  }
+}

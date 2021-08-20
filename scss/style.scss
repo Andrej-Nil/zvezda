@@ -40,6 +40,8 @@
 
 @import "./elements/about-production";
 
+@import "./elements/application-card";
+
 @import "./blocks/header";
 @import "./blocks/header-top";
 @import "./blocks/header-nav";
@@ -54,6 +56,9 @@
 @import "./blocks/header-top-white";
 @import "./blocks/header-catalog";
 @import "./blocks/header-cities";
+
+@import "./blocks/production-select";
+
 @import "./blocks/region";
 @import "./blocks/about-nav";
 

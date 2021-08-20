@@ -103,37 +103,59 @@
       <!--header-content-->
       <div class="header-content">
 
-        <!--header__main-->
-        <div class="header__main">
-          <!-- header__slider -->
-          <div class="header__slider container">
-            <div class="header__slide">
-              <h2 class="header__title">
-                Металлопрокат
-                высокого качества
-              </h2>
-
-              <p class="header__desc">
-                Поставляем продукцию из металлопроката выского качества. Собираем и устанавливаем металлоконструкции.
-                Предоставляем услуги по обработке металла и производству
-              </p>
-              <div class="header__buttons">
-                <a href="" class="header__btn btn yellow-btn hover-yellow-light">Каталог продукции</a>
-                <span class="header__btn btn clear-btn">Оставить заявку</span>
-              </div>
-            </div>
-          </div>
-          <!-- header__slider -->
-
-        </div>
-        <!-- header__main -->
-
         <!-- header__bg -->
         <div class="header__bg">
-          <picture>
-            <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
-            <img class="header__img" src="./img/image/other/img-bg2.jpg" alt="">
-          </picture>
+          <div class="production-select">
+            <div class="production-select__tab production-select__tab--serial">
+              <picture>
+                <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
+                <img class="production-select__img production-select__img--left" src="./img/image/bg/serial.jpg" alt="">
+              </picture>
+              <div class="production-select__wrap ">
+
+                <div class="production-select__desc container">
+                  <h2 class="header__title">
+                    Серийное производство
+                  </h2>
+
+                  <p class="production-select__text ">
+                    Безпрерывное конвейреное производство изделий на нашем заводе. Самая популярная продукция из стали и
+                    металлопрокат с гарантией качества
+                  </p>
+                  <a href="services.html" class="production-select__btn btn clear-btn hover-yellow">
+                    Каталог продукции
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="production-select__tab production-select__tab--individual">
+              <picture>
+                <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
+                <img class="production-select__img" src="./img/image/bg/individual.jpg" alt="">
+              </picture>
+              <!--<div class="production-select__wrap">
+
+                <div class="production-select__desc container">
+                  <h2 class="header__title">
+                    Индивидуальное производство
+                  </h2>
+
+                  <p class="production-select__text ">
+                    Изучим чертежи и произведём конструкцию под Ваши нужды. Металлопрокат и металлоконструкции любой
+                    сложности и из любого металла.
+                  </p>
+                  <a href="services.html" class="production-select__btn btn clear-btn hover-yellow">
+                    Каталог продукции
+                  </a>
+                </div>
+
+              </div>-->
+            </div>
+
+          </div>
+
 
 
         </div>
@@ -399,6 +421,78 @@
           </div>
         </section>
         <!-- Мы производим -->
+
+        <!-- Сфера применения металлов -->
+        <section class="section">
+          <div class="section__inner container">
+
+            <h2 class="section__title">
+              Сфера применения металлов
+            </h2>
+
+            <!-- section__content -->
+            <div class="section__content">
+
+              <!-- areas-application -->
+              <div class="areas-application">
+
+                <div class="application-card">
+                  <div class="application-card__desc">
+                    <h3 class="application-card__title">В ядерной энергетике</h3>
+                    <p class="application-card__text">
+                      В качестве конструкционных материалов в ядерной технике используют редкоземельные металлы и сплавы
+                    </p>
+                  </div>
+
+                  <img src="./img/image/application/application1.png" alt="" class="">
+
+                </div>
+
+                <div class="application-card">
+                  <div class="application-card__desc">
+                    <h3 class="application-card__title">Нефтехимической области</h3>
+                    <p class="application-card__text">
+                      Используются в условиях низких температур цветные металлы и их сплавы, не подверженные
+                      хладноломкости.
+                    </p>
+                  </div>
+
+                  <img src="./img/image/application/application2.png" alt="" class="">
+
+                </div>
+
+                <div class="application-card">
+                  <div class="application-card__desc">
+                    <h3 class="application-card__title">В ракетостроении</h3>
+                    <p class="application-card__text">
+                      Из титана делают детали жидко- и твердотопливных двигателей, обшивку космических аппаратов,
+                      стыковые конструкции жилых отсеков и баллоны
+                    </p>
+                  </div>
+
+                  <img src="./img/image/application/application3.png" alt="" class="">
+
+                </div>
+
+                <div class="application-card">
+                  <div class="application-card__desc">
+                    <h3 class="application-card__title">Электронной промышленности</h3>
+                    <p class="application-card__text">
+                      Сплавы служат незаменимым материалом при изготовлении особо чувствительных и высокоточных приборов
+                    </p>
+                  </div>
+
+                  <img src="./img/image/application/application4.png" alt="" class="">
+
+                </div>
+              </div>
+              <!-- areas-application -->
+
+            </div>
+            <!-- section__content -->
+          </div>
+        </section>
+        <!-- Сфера применения металлов -->
       </div>
 
       <div id="individual" class="production-block production-block--hide">
@@ -801,10 +895,56 @@
       </section>
       <!-- Наши преимущества -->
 
+      <!-- Есть вопросы -->
+      <section id="serialForm" class="section light-bg">
+        <div class="feedback mb60 feedback--light-bg container">
+          <div class="feedback__left">
+            <div class="feedback__text">
+              <h2 class="feedback__title">
+                Есть вопросы по нашей продукции?
+              </h2>
+
+              <p class="feedback__desc">
+                Оставьте заявку и наши менеджеры свяжуться с Вами, чтобы обсудить все вопросы
+              </p>
+            </div>
+
+
+            <form id="feedbackForm" action="./json/send-form.json" class="feedback-form ">
+              <div class="feedback__body">
+                <input type="text" data-input name="phone" class="feedback__input input"
+                  placeholder="+7 (999)-999-99-99" />
+
+                <input type="text" data-input name="name" class="feedback__input input" placeholder="Иванов Иван" />
+
+                <input type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
+                  value="Отправить запрос">
+              </div>
+              <label class="feedback__label checkbox" data-label>
+                <input data-checkbox type="checkbox" checked class="feedback__checkbox checkbox__input" />
+                <span class="feedback__fake checkbox__fake"></span>
+                <span class="feedback__label-text checkbox__text">я принимаю условия политики
+                  конфиденциальности</span>
+
+              </label>
+            </form>
+          </div>
+
+          <div class="feedback__right">
+            <img src="./img/image/other/manager.png" alt="" class="feedback__img">
+          </div>
+
+
+
+        </div>
+      </section>
+      <!-- Есть вопросы -->
+
       <!-- Хотите заказать услугу? -->
-      <div class="application container">
-        <div class="application__title">Хотите заказать услугу?</div>
-        <p class="application__text">Оставьте заявку для </p>
+      <div id="individualForm" class="application production-block--hide container">
+        <div class="application__title">Оставить заявку на производство</div>
+        <p class="application__text">Вы можете прикрепить документ чертежа или другую техническую документацию изделия.
+          Также можно оставить заявку и наши специалист свяжуться с Вами для уточнения деталей.</p>
 
         <form action="" class="application__form form">
           <div class="form__body">

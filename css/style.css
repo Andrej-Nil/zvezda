@@ -1678,6 +1678,41 @@ body {
   line-height: 24px;
 }
 
+.areas-application {
+  margin-bottom: 80px;
+}
+
+.application-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 356px;
+  padding: 0 50px;
+  background: #f5f5f5;
+  margin-bottom: 20px;
+}
+
+.application-card:last-child {
+  margin-bottom: 0;
+}
+
+.application-card__desc {
+  width: 580px;
+}
+
+.application-card__title {
+  margin-bottom: 20px;
+  color: #000;
+  font-size: 30px;
+  line-height: 160%;
+}
+
+.application-card__text {
+  color: #444a52;
+  font-size: 14px;
+  line-height: 180%;
+}
+
 .header {
   position: relative;
 }
@@ -2150,6 +2185,53 @@ body {
   display: flex;
 }
 
+.production-select {
+  display: flex;
+  width: 100%;
+}
+
+.production-select__tab {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  cursor: pointer;
+}
+
+.production-select__tab--individual {
+  background-image: url("../../img/image/bg/individual.jpg");
+}
+
+.production-select__tab--serial {
+  width: 60%;
+  background-image: url("../../img/image/bg/serial.jpg");
+}
+
+.production-select__wrap {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 100%;
+}
+
+.production-select__text {
+  margin-bottom: 60px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 160%;
+  width: 424px;
+}
+
+.production-select__btn {
+  display: block;
+  width: 200px;
+  transition: 0.2s ease-in-out;
+}
+
+.production-select__img {
+  opacity: 0;
+}
+
 .cities__regions {
   display: flex;
   justify-content: space-between;
@@ -2304,6 +2386,10 @@ body {
 
 .dark-bg {
   background: #35383e;
+}
+
+.light-bg {
+  background: #f5f5f5;
 }
 
 .section__bg {
@@ -2559,6 +2645,18 @@ body {
 .feedback__img {
   width: 630px;
   height: 542px;
+}
+
+.feedback--light-bg .feedback__title {
+  color: #444a52;
+}
+
+.feedback--light-bg .feedback__desc {
+  color: #444a52;
+}
+
+.feedback--light-bg .feedback__input {
+  border: 1px solid #444a52;
 }
 
 .partners {
@@ -2819,6 +2917,7 @@ body {
 }
 
 .application__text {
+  width: 740px;
   font-weight: normal;
   font-size: 16px;
   line-height: 160%;
@@ -3212,5 +3311,9 @@ body {
 
 .mb30 {
   margin-bottom: 30px;
+}
+
+.mb60 {
+  margin-bottom: 60px;
 }
 /*# sourceMappingURL=style.css.map */
