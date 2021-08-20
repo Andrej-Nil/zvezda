@@ -1,0 +1,88 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  width: 470px;
+  margin: 30px auto 60px;
+}
+
+.pagination__arrow {
+  position: relative;
+  display: block;
+  color: $bgBlack;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  &:before {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: block;
+    width: 5px;
+    height: 10px;
+  }
+}
+
+.pagination__arrow--not-active {
+  color: #bdbdbd;
+  cursor: default;
+}
+
+.pagination__arrow--prev {
+  padding-left: 15px;
+
+  &:before {
+    @include font-icon-style("\e91a", 10px);
+    left: 0;
+    font-weight: bold;
+  }
+}
+
+.pagination__arrow--next {
+  padding-right: 15px;
+
+  &:before {
+    @include font-icon-style("\e91b", 10px);
+    right: 0;
+    font-weight: bold;
+  }
+}
+
+.pagination__list {
+  display: flex;
+  padding: 0 40px;
+}
+
+.pagination__item {
+  overflow: hidden;
+  &:first-child {
+    border-radius: 2px 0 0 2px;
+  }
+
+  &:last-child {
+    border-radius: 0 2px 2px 0;
+  }
+}
+
+.pagination__link {
+  display: block;
+  width: 40px;
+  padding: 12px 0;
+  background: $pearl;
+  transition: 0.2s ease-in-out;
+
+  text-align: center;
+  color: $blackMain;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+
+  &:hover {
+    background: $yellowMain;
+  }
+}
+
+.pagination__link--fake {
+  &:hover {
+    background: $pearl;
+  }
+}
