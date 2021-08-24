@@ -1,9 +1,21 @@
 .header__main {
   position: absolute;
   width: 100%;
-  top: 20%;
+  top: 30%;
   left: 0;
   z-index: 100;
+}
+
+.header__date {
+  display: block;
+  margin-bottom: 30px;
+
+  color: $white;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+
+  text-shadow: $textShadow;
 }
 
 .header__title {
@@ -13,14 +25,16 @@
   font-size: 48px;
   line-height: 66px;
   color: $white;
+  text-shadow: $textShadow;
 }
 
 .header__desc {
   margin-bottom: 40px;
 
+  color: $white;
   font-size: 14px;
   line-height: 160%;
-  color: $white;
+  text-shadow: $textShadow;
 }
 
 .header__buttons {
@@ -45,6 +59,7 @@
   font-weight: bold;
   font-size: 20px;
   line-height: 27px;
+  text-shadow: $textShadow;
   &::before {
     @include font-icon-style("\e91c", 19px);
     position: absolute;

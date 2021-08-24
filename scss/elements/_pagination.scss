@@ -81,6 +81,10 @@
   }
 }
 
+.pagination__link--active {
+  background: $yellowMain;
+}
+
 .pagination__link--fake {
   &:hover {
     background: $pearl;

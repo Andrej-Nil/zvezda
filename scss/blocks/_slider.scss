@@ -2,6 +2,14 @@
   overflow: hidden;
 }
 
+.slide {
+  margin-right: 20px;
+}
+
+.slide--big {
+  min-width: 414px;
+}
+
 .slider__track {
   display: flex;
 }
