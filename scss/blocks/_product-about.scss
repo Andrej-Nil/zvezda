@@ -1,0 +1,125 @@
+.product-about__icons {
+  display: flex;
+  margin-bottom: 22px;
+}
+
+.product-about__item {
+  position: relative;
+  display: block;
+  padding-left: 32px;
+  margin-right: 40px;
+
+  font-size: 14px;
+  line-height: 19px;
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.product-about__item--in-stock {
+  color: #0c9b45;
+  &::before {
+    @include font-icon-style("\e923", 22px);
+    color: #0c9b45;
+  }
+}
+
+.product-about__item--out-stock {
+  color: #ea2d2d;
+  &::before {
+    @include font-icon-style("\e924", 22px);
+    color: #ea2d2d;
+  }
+}
+
+.product-about__item--print {
+  cursor: pointer;
+  &::before {
+    @include font-icon-style("\e90d", 20px);
+  }
+}
+
+.product-about__title {
+  color: $blackMain;
+  font-size: 48px;
+  line-height: 66px;
+
+  margin-bottom: 12px;
+}
+
+.product-about__price {
+  display: flex;
+  align-items: center;
+  height: 93px;
+  margin-bottom: 30px;
+
+  border-top: 1px solid $line;
+  border-bottom: 1px solid $line;
+}
+
+.product-about__new {
+  display: block;
+  color: $blackMain;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  margin-right: 20px;
+}
+
+.product-about__old {
+  color: $text;
+  font-size: 16px;
+  line-height: 22px;
+  text-decoration: line-through;
+}
+
+.product__btn {
+  position: relative;
+  display: block;
+  padding: 11px 0 11px 24px;
+  width: 133px;
+  margin-bottom: 50px;
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translate(50%, -50%);
+
+    display: block;
+    width: 18px;
+    height: 18px;
+
+    @include font-icon-style("\e915", 19px);
+    color: #000;
+  }
+}
+
+.product-about__info {
+  margin-bottom: 60px;
+}
+
+.product-about__info,
+.product-desc__text {
+  color: $text;
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.product-desc__title {
+  color: $blackMain;
+  font-size: 36px;
+  line-height: 49px;
+
+  margin-bottom: 12px;
+}

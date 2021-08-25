@@ -1,0 +1,34 @@
+.product-property {
+  border: 1px solid $line;
+}
+
+.product-property__title {
+  font-size: 20px;
+  line-height: 27px;
+  padding: 18px 20px;
+}
+
+.product-property__item {
+  display: flex;
+  height: 63px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid $line;
+  padding: 0 20px;
+  color: $text;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    background: #f9f9f9;
+  }
+}
+
+.product-property__name {
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.product-property__value {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
+}

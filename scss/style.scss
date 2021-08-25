@@ -48,6 +48,8 @@
 
 @import "./elements/pagination";
 
+@import "./elements/product-slider";
+
 @import "./blocks/header";
 @import "./blocks/header-top";
 @import "./blocks/header-nav";
@@ -92,6 +94,10 @@
 @import "./blocks/application-form";
 @import "./blocks/form";
 @import "./blocks/production-block";
+
+@import "./blocks/product";
+@import "./blocks/product-property";
+@import "./blocks/product-about";
 
 @import "./blocks/news-block";
 @import "./blocks/news";

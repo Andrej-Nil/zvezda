@@ -1,11 +1,11 @@
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/icomoon/icomoon.eot?jajtqx");
-  src: url("../fonts/icomoon/icomoon.eot?jajtqx#iefix")
+  src: url("../fonts/icomoon/icomoon.eot?2zekdm");
+  src: url("../fonts/icomoon/icomoon.eot?2zekdm#iefix")
       format("embedded-opentype"),
-    url("../fonts/icomoon/icomoon.ttf?jajtqx") format("truetype"),
-    url("../fonts/icomoon/icomoon.woff?jajtqx") format("woff"),
-    url("../fonts/icomoon/icomoon.svg?jajtqx#icomoon") format("svg");
+    url("../fonts/icomoon/icomoon.ttf?2zekdm") format("truetype"),
+    url("../fonts/icomoon/icomoon.woff?2zekdm") format("woff"),
+    url("../fonts/icomoon/icomoon.svg?2zekdm#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,6 +27,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-in-stock:before {
+  content: "\e923";
+  color: #0c9b45;
+}
+.icon-out-stock:before {
+  content: "\e924";
+  color: #ea2d2d;
+}
 .icon-Vector-182-Stroke-1:before {
   content: "\e922";
   color: #444a52;
