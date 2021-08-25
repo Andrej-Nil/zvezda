@@ -1,0 +1,28 @@
+.header-card {
+  display: flex;
+  justify-content: space-between;
+  height: 430px;
+}
+
+.header-card__path {
+  margin-bottom: 50px;
+}
+
+.header-card__text {
+  padding-top: 50px;
+  width: 632px;
+}
+
+.header-card__title {
+  margin-bottom: 30px;
+
+  color: $blackMain;
+  font-size: 48px;
+  line-height: 66px;
+}
+
+.header-card__desc {
+  color: $bgBlack;
+  font-size: 15px;
+  line-height: 28px;
+}

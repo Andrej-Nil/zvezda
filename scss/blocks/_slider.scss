@@ -2,14 +2,29 @@
   overflow: hidden;
 }
 
+.slider--with-padding {
+  padding: 5px;
+}
+
 .slide {
   margin-right: 20px;
 }
 
+.slide-scale {
+  margin-right: 17px;
+}
 .slide--big {
   min-width: 414px;
 }
 
 .slider__track {
   display: flex;
+}
+
+.product-slider {
+  margin-bottom: 120px;
+}
+
+.products-arrow {
+  margin-top: 50px;
 }

@@ -5,8 +5,9 @@ $manrope: Manrope, sans-serif;
 $blackMain: #444a52;
 $yellowMain: #fba50d;
 $yellowHover: #ffc201;
-$bgBlack: #2d3035;
 
+$bgBlack: #2d3035;
+$lightBg: #f8f8f8;
 $bgDark: #35383e;
 
 $text: #757575;
@@ -98,6 +99,13 @@ body {
 .main__wrap {
   //padding-top: 80px;
   width: 955px;
+}
+
+.main__search {
+  margin: 50px 0 20px;
+}
+.light-bg {
+  background: $lightBg;
 }
 
 .tile {
