@@ -1,0 +1,30 @@
+.basket-empty {
+  display: none;
+  width: 500px;
+  margin: 200px auto 180px;
+  text-align: center;
+  color: $blackMain;
+}
+
+.basket-empty__title {
+  margin-bottom: 30px;
+
+  font-size: 48px;
+  line-height: 66px;
+}
+
+.basket-empty__text {
+  margin-bottom: 50px;
+
+  color: $text;
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.basket-empty__link {
+  display: inline-block;
+  width: 166px;
+  border: 2px solid $blackMain;
+
+  color: $blackMain;
+}

@@ -1,0 +1,28 @@
+.counter {
+  display: flex;
+}
+
+.counter__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #f4f4f4;
+  cursor: pointer;
+
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.counter__input {
+  display: block;
+  width: 50px;
+  background: #ededed;
+
+  color: $blackMain;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+}
