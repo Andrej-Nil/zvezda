@@ -1,0 +1,36 @@
+.error404 {
+  width: 520px;
+  margin: 100px auto 127px;
+
+  color: $blackMain;
+  text-align: center;
+}
+
+.error404__img {
+  display: inline-block;
+  width: 330px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.error404__text {
+  margin-bottom: 30px;
+
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 66px;
+}
+
+.error404__desc {
+  margin-bottom: 60px;
+
+  font-size: 15px;
+  line-height: 180%;
+}
+
+.error404__btn {
+  display: inline-block;
+  width: 226px;
+
+  color: $blackMain;
+}
