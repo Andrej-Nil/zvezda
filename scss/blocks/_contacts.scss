@@ -1,0 +1,31 @@
+.contacts {
+  margin-top: 70px;
+}
+
+.contacts__list {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.contacts__item {
+  margin-right: 70px;
+}
+
+.contacts-card__title {
+  color: $yellowMain;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.contacts-card__body {
+  color: $white;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.map__stopper {
+  margin: 0 auto;
+  max-height: 600px;
+  width: auto;
+}
