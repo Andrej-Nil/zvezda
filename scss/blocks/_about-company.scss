@@ -1,0 +1,38 @@
+.about-company {
+  background: $lightBg;
+}
+
+.about-company__text {
+  padding: 30px 40px;
+}
+
+.about-company {
+  margin-bottom: 60px;
+
+  color: $blackMain;
+  font-size: 15px;
+  line-height: 28px;
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.about-company__blink {
+  background: $lightBg;
+  display: block;
+  padding: 20px 40px;
+  cursor: pointer;
+
+  color: $yellowMain;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  &::after {
+    content: "-";
+    font-weight: normal;
+    font-size: 25px;
+    display: inline-block;
+    margin-left: 10px;
+    position: absolute;
+  }
+}

@@ -2,19 +2,19 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/style.min.css" />
-  <meta name="csrf-token" content="p5q8mFhMdAS9z3KSayI05bO34EEXjhMl9ysZOAS3">
-  <title>Товар</title>
+  <meta name="csrf-token" content="p5q8mFhMdAS9z3KSayI05bO34EEXjhMl9ysZOAS3" />
+  <title>Промежуточная категория</title>
 </head>
 
 <body>
   <div class="app">
-    <header class="header">
+    <header class="header light-bg">
       <!-- header__top -->
-      <div class="header__top header__top--white">
+      <div class="header__top header__top--white light-bg">
         <div class="header__top-inner container">
           <a href="index.html" class="header__logo"> </a>
 
@@ -90,194 +90,447 @@
       </div>
       <!--header__top-->
 
-      <div class="path mt25 container">
+      <div class="path mt125 container">
         <a href="index.html" class="path__link">Главная</a>
         <span class="path__dash"></span>
-        <a href="index.html" class="path__link">Каталог</a>
+        <a href="catalog.html" class="path__link">Каталог</a>
         <span class="path__dash"></span>
-        <a href="index.html" class="path__link">Лист никелевый</a>
-        <span class="path__dash"></span>
-        <a href="catalog.html" class="path__link path__link--active">Лист никелевый 5мм H-0 ГОСТ 6235-1</a>
+        <a href="catalog.html" class="path__link path__link--active">Аллюминевый металлопрокат</a>
       </div>
 
+      <!--header__content-->
+      <div class="header__content container">
+        <div class="header-card">
+          <div class="header-card__text">
+            <h1 class="header-card__title">Каталог продукции</h1>
+
+            <p class="header-card__desc">
+              Компания «Звезда» – это один из крупнейших поставщиков стального
+              металлопроката. Cклад компании наполнен широким ассортиментом
+              продукции металлопроката, что позволяет оперативно исполнять
+              любой индивидуальный заказ.
+            </p>
+          </div>
+
+          <img src="./img/image/header-card/img1.jpg" alt="" class="header-card__img">
+        </div>
+      </div>
+      <!--header__content-->
     </header>
 
-
     <main class="main container">
-      <div class="product">
-        <!-- product__left" -->
-        <div class="product__left">
-          <!-- slider -->
-          <div class="product-slider slider">
-            <!-- track -->
-            <div class="product-slider__track track">
-              <div class="product-slider__item">
-                <img src="./img/image/product/big.jpg" alt="" class="product-slider__img">
-              </div>
-            </div>
-            <!-- track -->
 
-            <div class="product-dots slider">
-              <!--product-dots__track-->
-              <div class="product-dots__track slider__track">
-
-                <div class="product-dots__item product-dots__item--active">
-                  <img src="./img/image/dots/dot1.png" alt="" class="product-dots__img">
-                </div>
-
-                <div class="product-dots__item">
-                  <img src="./img/image/dots/dot2.png" alt="" class="product-dots__img">
-                </div>
-
-                <div class="product-dots__item">
-                  <img src="./img/image/dots/dot3.png" alt="" class="product-dots__img">
-                </div>
-
-                <div class="product-dots__item">
-                  <img src="./img/image/dots/dot4.png" alt="" class="product-dots__img">
-                </div>
-
-                <div class="product-dots__item">
-                  <img src="./img/image/dots/dot5.png" alt="" class="product-dots__img">
-                </div>
-
-                <div class="product-dots__item">
-                  <img src="./img/image/dots/dot1.png" alt="" class="product-dots__img">
-                </div>
-
-                <div class="product-dots__item">
-                  <img src="./img/image/dots/dot2.png" alt="" class="product-dots__img">
-                </div>
-
-                <div class="product-dots__item">
-                  <img src="./img/image/dots/dot3.png" alt="" class="product-dots__img">
-                </div>
-              </div>
-              <!-- product-dots__track -->
-            </div>
-
-
-          </div>
-          <!-- slider -->
-          <!-- Характеристики -->
-          <div class="product-property">
-            <h3 class="product-property__title">
-              Характеристики
-            </h3>
-            <ul class="product-property__list">
-              <li class="product-property__item">
-                <span class="product-property__name">Толщина: </span>
-                <span class="product-property__value">5 мм</span>
-              </li>
-
-              <li class="product-property__item">
-                <span class="product-property__name">Ширина: </span>
-                <span class="product-property__value">1000 мм</span>
-              </li>
-
-              <li class="product-property__item">
-                <span class="product-property__name">Длина: </span>
-                <span class="product-property__value">2000 мм</span>
-              </li>
-
-              <li class="product-property__item">
-                <span class="product-property__name">Марка: </span>
-                <span class="product-property__value">H-0</span>
-              </li>
-
-              <li class="product-property__item">
-                <span class="product-property__name">Гост: </span>
-                <span class="product-property__value">ГОСТ 6235-1</span>
-              </li>
-
-              <li class="product-property__item">
-                <span class="product-property__name">Материал: </span>
-                <span class="product-property__value">Никель</span>
-              </li>
-
-              <li class="product-property__item">
-                <span class="product-property__name">Вид проката: </span>
-                <span class="product-property__value">Лист</span>
-              </li>
-
-              <li class="product-property__item">
-                <span class="product-property__name">Доставка: </span>
-                <span class="product-property__value">По России и СНГ</span>
-              </li>
-            </ul>
-
-
-          </div>
-          <!--Характеристики-->
-        </div>
-        <!-- product__left" -->
-
-        <!-- product__right -->
-        <div class="product__right">
-          <!-- product-about -->
-          <div class="product-about">
-            <div class="product-about__icons">
-
-              <span class="product-about__item product-about__item--in-stock">
-                Есть в наличии
-              </span>
-
-              <span class="product-about__item product-about__item--out-stock">
-                Нет в наличии
-              </span>
-
-              <span class="product-about__item product-about__item--print">
-                Версия для печати
-              </span>
-
-            </div>
-            <h1 class="product-about__title">
-              Лист никелевый 5мм H-0 ГОСТ 6235-1
-            </h1>
-
-            <div class="product-about__price">
-              <span class="product-about__new">1200 ₽/м2</span>
-              <span class="product-about__old">2400 ₽/м2 </span>
-            </div>
-
-            <span class="product__btn btn yellow-btn hover-yellow-light">В корзину</span>
-
-            <p class="product-about__info">
-              Одним из самых востребованных продуктов никелевого проката является лист никелевый 5 мм Н-0 ГОСТ 6235-91,
-              который благодаря своим качественным показателям используется при изготовлении спецоборудования,
-              высокоточных приборов, котлов требующих повышенной устойчивости к коррозии. Кроме того. из листа
-              никелевого 5 мм Н-0 изготавливается специализированная посуда для химического производства, а так же
-              емкости для хранения эфирных масел, химических препаратов и пищевых продуктов.
-            </p>
-
-            <div class="product-desc">
-              <h2 class="product-desc__title">
-                Листы никелевые
-              </h2>
-
-              <p class="product-desc__text">
-                Никелевый прокат, за счет своих уникальных эксплуатационных и физико-механических свойств пользуется
-                широкой популярностью и активно используется во многих отраслях промышленности.
-
-                Наша компания занимается производством и реализацией никелевых листов марок Н-0, Н-1у, Н-1, Н-2, НП0,
-                НП1, НП3, НП4 самого лучшего качества, подтвержденного соответствующими сертификатами.
-
-                Они производятся на новейшем высокотехнологичном оборудовании методом холодной или горячей прокатки с
-                контролем технологического процесса на всех этапах производства.
-
-                Для них характерна пластичность, стойкость к воздействию концентрированных кислот и расплавов щелочей,
-                биологическая инертность, жаропрочность. Они хорошо обрабатываются полировкой и резанием, имеют долгий
-                срок службы.
-
-
-              </p>
-            </div>
-          </div>
-          <!-- product-about -->
-        </div>
-        <!-- product__right -->
+      <div class="main__search search">
+        <input data-search-input type="text" class=" search__input search__input--light-bd input"
+          placeholder="Введите запрос и нажмите Enter" />
+        <span class="search-form__btn search__btn"></span>
       </div>
 
+      <!-- card-list -->
+      <div class="product-type-tile tile">
+        <div class="product-type-card">
+          <a href="category.html" class="product-type-card__link">
+            <div class="product-type-card__top">
+              <h4 class="product-type-card__title">Лист металлический</h4>
+              <p class="product-type-card__count">120 товаров</p>
+            </div>
+            <div class="product-type-card__preview">
+              <img src="./img/image/product/product1.png" alt="" class="product-type-card__img">
+            </div>
+          </a>
+        </div>
+
+        <div class="product-type-card">
+          <a href="category.html" class="product-type-card__link">
+            <div class="product-type-card__top">
+              <h4 class="product-type-card__title">Лист металлический</h4>
+              <p class="product-type-card__count">120 товаров</p>
+            </div>
+            <div class="product-type-card__preview">
+              <img src="./img/image/product/product2.png" alt="" class="product-type-card__img">
+            </div>
+          </a>
+        </div>
+
+        <div class="product-type-card">
+          <a href="category.html" class="product-type-card__link">
+            <div class="product-type-card__top">
+              <h4 class="product-type-card__title">Лист металлический</h4>
+              <p class="product-type-card__count">120 товаров</p>
+            </div>
+            <div class="product-type-card__preview">
+              <img src="./img/image/product/product3.png" alt="" class="product-type-card__img">
+            </div>
+          </a>
+        </div>
+
+        <div class="product-type-card">
+          <a href="category.html" class="product-type-card__link">
+            <div class="product-type-card__top">
+              <h4 class="product-type-card__title">Лист металлический</h4>
+              <p class="product-type-card__count">120 товаров</p>
+            </div>
+            <div class="product-type-card__preview">
+              <img src="./img/image/product/product4.png" alt="" class="product-type-card__img">
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- card-list -->
+
+      <!-- Продукция в категории-->
+      <section class="section">
+        <div class="section__inner">
+
+          <h2 class="section__title">
+            Продукция в категории
+          </h2>
+
+          <!-- section__content -->
+          <div class="section__content">
+            <!-- card-list -->
+            <div class="product-card-tile tile">
+
+              <div class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current">1200 ₽/м2</p>
+                    <p class="product-card__old">2400 ₽/м2</p>
+                  </div>
+
+                  <span class="product-card__btn btn yellow-btn">В корзину</span>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current">1200 ₽/м2</p>
+                    <p class="product-card__old">2400 ₽/м2</p>
+                  </div>
+
+                  <span class="product-card__btn btn yellow-btn">В корзину</span>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current">1200 ₽/м2</p>
+                  </div>
+
+                  <span class="product-card__btn btn yellow-btn">В корзину</span>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product4.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current">1200 ₽/м2</p>
+                    <p class="product-card__old">2400 ₽/м2</p>
+                  </div>
+
+                  <span class="product-card__btn btn yellow-btn">В корзину</span>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current">12 000 678 ₽/м2</p>
+                    <p class="product-card__old">24 006 570 ₽/м2</p>
+                  </div>
+
+                  <span class="product-card__btn btn yellow-btn">В корзину</span>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current product-card__current--text">Цена по запросу</p>
+                  </div>
+
+                  <span class="product-card__btn btn yellow-btn">В корзину</span>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current">1200 ₽/м2</p>
+                    <p class="product-card__old">2400 ₽/м2</p>
+                  </div>
+
+                  <span class="product-card__btn btn yellow-btn">В корзину</span>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current">1200 ₽/м2</p>
+                  </div>
+
+                  <span class="product-card__btn btn yellow-btn">В корзину</span>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product4.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current">1200 ₽/м2</p>
+                    <p class="product-card__old">2400 ₽/м2</p>
+                  </div>
+
+                  <span class="product-card__btn btn yellow-btn">В корзину</span>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current">12 000 678 ₽/м2</p>
+                    <p class="product-card__old">24 006 570 ₽/м2</p>
+                  </div>
+
+                  <span class="product-card__btn btn yellow-btn">В корзину</span>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current product-card__current--text">Цена по запросу</p>
+                  </div>
+
+                  <span class="product-card__btn btn yellow-btn">В корзину</span>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current">1200 ₽/м2</p>
+                    <p class="product-card__old">2400 ₽/м2</p>
+                  </div>
+
+                  <span class="product-card__btn btn yellow-btn">В корзину</span>
+                </div>
+              </div>
+
+            </div>
+            <!-- card-list -->
+          </div>
+          <!-- section__content -->
+        </div>
+      </section>
+      <!-- Продукция в категории -->
+
+      <!--pagination-->
+      <div class="pagination">
+        <a href="#!" class="pagination__arrow pagination__arrow--not-active pagination__arrow--prev">
+          Назад
+        </a>
+
+        <ul class="pagination__list">
+          <li class="pagination__item">
+            <a href="#!" class="pagination__link pagination__link--active">1</a>
+          </li>
+          <li class="pagination__item">
+            <a href="#!" class="pagination__link">2</a>
+          </li>
+          <li class="pagination__item">
+            <a href="#!" class="pagination__link">3</a>
+          </li>
+          <li class="pagination__item">
+            <a href="#!" class="pagination__link">4</a>
+          </li>
+          <li class="pagination__item">
+            <a href="#!" class="pagination__link">5</a>
+          </li>
+          <li class="pagination__item">
+            <span class="pagination__link pagination__link--fake ">...</span>
+          </li>
+          <li class="pagination__item">
+            <a href="#!" class="pagination__link">32</a>
+          </li>
+
+        </ul>
+
+        <a href="#!" class="pagination__arrow  pagination__arrow--next">
+          Дальше
+        </a>
+      </div>
+      <!--pagination-->
 
       <!-- Рекомендуем товары -->
       <section class="section product-card-slider">
@@ -479,7 +732,7 @@
       </section>
       <!-- Рекомендуем товары -->
 
-      <!-- Не нашли подходящего? -->
+      <!-- Не нашли подходящего -->
       <div class="application container">
         <h4 class="application__title">Не нашли подходящего изделия?</h4>
         <p class="application__text">Оставьте заявку на изготовление изделия по персональным чертежам, и наши
@@ -522,13 +775,84 @@
 
         </form>
       </div>
-      <!-- Не нашли подходящего? -->
+      <!-- Не нашли подходящего -->
+
+      <!-- Компания «Звезда» -->
+      <div class="about-company">
+        <div class="about-company__text">
+          <p class="about-company__para">
+            Компания «Звезда» – это один из крупнейших поставщиков стального металлопроката. Cклад компании наполнен
+            широким
+            ассортиментом продукции металлопроката, что позволяет оперативно исполнять любой индивидуальный заказ.
+            Компания «Звезда» – это один из крупнейших поставщиков стального металлопроката. Cклад компании наполнен
+            широким
+            ассортиментом продукции металлопроката, что позволяет оперативно исполнять любой индивидуальный.
+
+          </p>
+
+          <p class="about-company__para">
+            Доставка металлопроката и изделий из него осуществляется своим транспортом или
+            транспортными компаниями,
+            партнёрами предприятия. Автопарк ПАО «Звезда» состоит из 243 единиц автотранспортных средств.
+            Автопарк ПАО «Звезда» состоит из 243 единиц автотранспортных средств. В их числе: 114 седельных тягача
+            грузоподъёмностью 20 тонн и длиной кузова 13.5 метров марки «Mersedes», 43 автомобиля марки «Камаз»
+            грузоподъемностью 10 тонн и длиной кузова 6 метров, 32 манипулятора грузоподъемностью от 3 до 25 тонн и
+            длиной
+            кузова от 4 до 10 метров, а так-же 54 единицы транспорта грузоподъёмностью менее 3 тонн марок «Газель»,
+            «Porter»
+            и «Hyundai».
+          </p>
+
+          <p class="about-company__para">
+            Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов
+            авто-доставки грузов по Российской
+            Федерации и в страны СНГ.
+            На всех складах нашей компании оборудованы Ж/Д тупики для погрузки железнодорожных вагонов. Что позволяет
+            клиентам ставить на погрузку свои вагоны, а так-же позволяет менеджерам нашей компании организовывать свои
+            доставки железнодорожным транспортом.
+          </p>
 
 
+          <p class="about-company__para">
+            С грузом будут выданы следующие сопроводительные документы: Товарно-транспортная
+            накладная (ТТН), Счет-фактура,
+            Акт выполненных работ, или универсальный передаточный документ (УПД).
+          </p>
 
+          <p class="about-company__para">
+            Какой бы способ оплаты вы не выбрали, мы представим все необходимые документы и
+            сертификаты. В условиях
+            долгосрочных партнёрских отношений, предложим Вам хорошие скидки и отсрочку платежей.
+          </p>
+
+          <p class="about-company__para">
+            Реализуя один из основных принципов нашей работы - сократить до минимума ваши
+            временные затраты, мы предлагаем
+            именно ту схему оплаты, по которой вам удобнее работать. Наша компания принимает оплату следующими
+            способами:
+          </p>
+
+          <ul class="about-company__list">
+            <li class="about-company__item">
+              Безналичный расчет банковской картой;
+            </li>
+            <li class="about-company__item">
+              Наличными в офисе;
+            </li>
+            <li class="about-company__item">
+              Оплата на расчетнй счет.
+            </li>
+          </ul>
+        </div>
+
+
+        <span class="about-company__blink">
+          Свернуть
+        </span>
+
+      </div>
+      <!-- Компания «Звезда» -->
     </main>
-
-
 
     <footer class="footer">
       <!-- footer-top -->
@@ -1041,7 +1365,6 @@
     <!-- searchModal -->
 
     <!--modal-->
-
   </div>
   <script src="js/main.js"></script>
 </body>

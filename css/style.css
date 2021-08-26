@@ -2820,7 +2820,6 @@ body {
 .section {
   position: relative;
   background: #fff;
-  overflow: hidden;
 }
 
 .black-bg {
@@ -3441,6 +3440,45 @@ body {
 
 .production-block--hide {
   display: none;
+}
+
+.about-company {
+  background: #f8f8f8;
+}
+
+.about-company__text {
+  padding: 30px 40px;
+}
+
+.about-company {
+  margin-bottom: 60px;
+  color: #444a52;
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.about-company p {
+  margin-bottom: 20px;
+}
+
+.about-company__blink {
+  background: #f8f8f8;
+  display: block;
+  padding: 20px 40px;
+  cursor: pointer;
+  color: #fba50d;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.about-company__blink::after {
+  content: "-";
+  font-weight: normal;
+  font-size: 25px;
+  display: inline-block;
+  margin-left: 10px;
+  position: absolute;
 }
 
 .product {
