@@ -49,10 +49,13 @@
 
 @import "./elements/basket-card";
 
+@import "./elements/management-card";
+
 @import "./elements/pagination";
 
 @import "./elements/product-slider";
 
+//header
 @import "./blocks/header";
 @import "./blocks/header-top";
 @import "./blocks/header-nav";
@@ -114,6 +117,17 @@
 
 @import "./blocks/contacts";
 
+// about
+@import "./blocks/about";
+@import "./blocks/about-gallery";
+@import "./blocks/today";
+@import "./blocks/today";
+@import "./blocks/purpose";
+@import "./blocks/presentation";
+@import "./blocks/branches";
+@import "./blocks/management";
+
+// footer
 @import "./blocks/footer";
 @import "./blocks/footer-socials";
 @import "./blocks/footer-nav";

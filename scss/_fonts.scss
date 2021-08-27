@@ -1,5 +1,18 @@
 @font-face {
   font-family: Manrope;
+  src: local("Manrope"), local("Manrope-Light");
+  src: url("../fonts/manrope/Manrope-Light.eot");
+  src: url("../fonts/manrope/Manrope-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/manrope/Manrope-Light.woff2") format("woff2"),
+    url("../fonts/manrope/Manrope-Light.woff") format("woff"),
+    url("../fonts/manrope/Manrope-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Manrope;
   src: local("Manrope"), local("Manrope-Bold");
   src: url("../fonts/manrope/Manrope-Bold.eot");
   src: url("../fonts/manrope/Manrope-Bold.eot?#iefix")

@@ -1,6 +1,15 @@
 @charset "UTF-8";
 @font-face {
   font-family: Manrope;
+  src: local("Manrope"), local("Manrope-Light");
+  src: url("../fonts/manrope/Manrope-Light.eot");
+  src: url("../fonts/manrope/Manrope-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/manrope/Manrope-Light.woff2") format("woff2"), url("../fonts/manrope/Manrope-Light.woff") format("woff"), url("../fonts/manrope/Manrope-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Manrope;
   src: local("Manrope"), local("Manrope-Bold");
   src: url("../fonts/manrope/Manrope-Bold.eot");
   src: url("../fonts/manrope/Manrope-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/manrope/Manrope-Bold.woff2") format("woff2"), url("../fonts/manrope/Manrope-Bold.woff") format("woff"), url("../fonts/manrope/Manrope-Bold.ttf") format("truetype");
@@ -296,6 +305,10 @@ body {
 
 .white-color {
   color: #fff;
+}
+
+.color-yellow {
+  color: #fba50d;
 }
 
 .btn {
@@ -1940,6 +1953,42 @@ body {
   font-size: 15px;
 }
 
+.management-card {
+  width: 305px;
+  margin-bottom: 20px;
+}
+
+.management__preview {
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.management__img {
+  max-width: 100%;
+  width: auto;
+  max-height: 100%;
+  height: auto;
+}
+
+.management__post {
+  display: block;
+  margin-bottom: 20px;
+  color: #fba50d;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.management__name {
+  color: #fff;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25px;
+}
+
 .pagination {
   display: flex;
   align-items: center;
@@ -2094,6 +2143,14 @@ body {
 
 .header {
   position: relative;
+}
+
+.header--fixed {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 200;
 }
 
 .header__bg {
@@ -4019,6 +4076,277 @@ body {
   margin: 0 auto;
   max-height: 600px;
   width: auto;
+}
+
+.about {
+  padding-top: 160px;
+}
+
+.about__shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 253px;
+  width: 100%;
+  background: linear-gradient(180deg, #2d3035 26.88%, rgba(45, 48, 53, 0) 100%);
+}
+
+.about__item {
+  width: 440px;
+  padding: 70px 0;
+}
+
+.about__item--start {
+  margin-bottom: 130px;
+}
+
+.about__title {
+  color: #fff;
+  font-size: 30px;
+  line-height: 41px;
+}
+
+.about__text {
+  margin-top: 30px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.about__desc {
+  width: 370px;
+  margin-top: 30px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.about__time-work {
+  margin-bottom: 25px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.about__list {
+  margin-bottom: 230px;
+}
+
+.about-gallery {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 780px;
+  height: 1000px;
+  z-index: 100;
+}
+
+.about-gallery__img {
+  width: 100%;
+  height: 100%;
+}
+
+.today {
+  margin-bottom: 30px;
+}
+
+.today__title {
+  color: #fff;
+  font-size: 48px;
+  line-height: 66px;
+  margin-bottom: 130px;
+}
+
+.today__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.today__list::after {
+  content: "";
+  display: block;
+  min-width: 414px;
+}
+
+.today-card {
+  min-width: 414px;
+  margin-bottom: 130px;
+}
+
+.today-card__title {
+  margin-bottom: 30px;
+  color: #fba50d;
+  font-size: 48px;
+  line-height: 66px;
+}
+
+.today-card__text {
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 160%;
+}
+
+.today {
+  margin-bottom: 30px;
+}
+
+.today__title {
+  color: #fff;
+  font-size: 48px;
+  line-height: 66px;
+  margin-bottom: 130px;
+}
+
+.today__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.today__list::after {
+  content: "";
+  display: block;
+  min-width: 414px;
+}
+
+.today-card {
+  min-width: 414px;
+  margin-bottom: 130px;
+}
+
+.today-card__title {
+  margin-bottom: 30px;
+  color: #fba50d;
+  font-size: 48px;
+  line-height: 66px;
+}
+
+.today-card__text {
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 160%;
+}
+
+.purpose {
+  background: #393939;
+  height: 577px;
+}
+
+.purpose__inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.purpose__text {
+  width: 402px;
+  margin-left: 70px;
+}
+
+.purpose__title {
+  color: #fff;
+  font-size: 30px;
+  line-height: 41px;
+  margin-bottom: 30px;
+}
+
+.purpose__author {
+  font-weight: 300;
+  color: #fff;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.purpose__img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.presentation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  height: 676px;
+  background-image: url("../../img/image/other/video-bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 0;
+}
+
+.presentation__title {
+  margin-bottom: 60px;
+  font-size: 30px;
+  line-height: 41px;
+}
+
+.presentation__play {
+  position: relative;
+  display: inline-block;
+  padding-right: 40px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 32px;
+}
+
+.presentation__play::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 28px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+}
+
+.branches-map {
+  padding: 100px 0;
+  height: 727px;
+  background-image: url("../../img/image/other/map2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 0;
+}
+
+.branches-map__title {
+  width: 311px;
+  color: #fff;
+  font-size: 36px;
+  line-height: 49px;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.8);
+}
+
+.management {
+  padding-top: 80px;
+  margin-bottom: 100px;
+}
+
+.management__list::after {
+  content: "";
+  width: 305px;
+  display: block;
+}
+
+.management__list::before {
+  content: "";
+  width: 305px;
+  display: block;
+  order: 1;
 }
 
 .footer {

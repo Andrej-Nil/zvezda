@@ -1,0 +1,56 @@
+.about {
+  padding-top: 160px;
+}
+
+.about__shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 253px;
+  width: 100%;
+  background: linear-gradient(180deg, #2d3035 26.88%, rgba(45, 48, 53, 0) 100%);
+}
+
+.about__item {
+  width: 440px;
+  padding: 70px 0;
+}
+
+.about__item--start {
+  margin-bottom: 130px;
+}
+
+.about__title {
+  color: $white;
+  font-size: 30px;
+  line-height: 41px;
+}
+
+.about__text {
+  margin-top: 30px;
+
+  color: $white;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.about__desc {
+  width: 370px;
+  margin-top: 30px;
+  color: $white;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.about__time-work {
+  margin-bottom: 25px;
+  color: $white;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.about__list {
+  margin-bottom: 230px;
+}

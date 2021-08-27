@@ -1,0 +1,37 @@
+.presentation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: $white;
+
+  height: 676px;
+  background-image: url("../../img/image/other/video-bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 0;
+}
+
+.presentation__title {
+  margin-bottom: 60px;
+  font-size: 30px;
+  line-height: 41px;
+}
+
+.presentation__play {
+  position: relative;
+  display: inline-block;
+  padding-right: 40px;
+  cursor: pointer;
+
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 32px;
+  &::before {
+    @include font-icon-style("\e90e", 28px);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+  }
+}

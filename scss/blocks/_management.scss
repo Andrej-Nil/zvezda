@@ -1,0 +1,19 @@
+.management {
+  padding-top: 80px;
+  margin-bottom: 100px;
+}
+
+.management__list {
+  &::after {
+    content: "";
+    width: 305px;
+    display: block;
+  }
+
+  &::before {
+    content: "";
+    width: 305px;
+    display: block;
+    order: 1;
+  }
+}
