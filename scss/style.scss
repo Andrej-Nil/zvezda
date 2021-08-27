@@ -20,6 +20,7 @@
 @import "./elements/category-more";
 
 @import "./elements/product-card";
+@import "./elements/product-line";
 @import "./elements/product-more";
 
 @import "./elements/service-card";
@@ -86,7 +87,7 @@
 
 @import "./blocks/section";
 @import "./blocks/category-card-tile";
-@import "./blocks/product-card-tile";
+@import "./blocks/product-tile";
 @import "./blocks/services";
 @import "./blocks/about-block";
 @import "./blocks/advantages";
@@ -102,6 +103,8 @@
 @import "./blocks/production-block";
 
 @import "./blocks/about-company";
+
+@import "./blocks/settings-display";
 
 @import "./blocks/product";
 @import "./blocks/product-property";

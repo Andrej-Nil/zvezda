@@ -1,0 +1,49 @@
+.product-line {
+  display: flex;
+  align-items: center;
+  border: 1px solid $line;
+  height: 124px;
+  padding: 0 48px 0 20px;
+}
+
+.product-line__info {
+  width: 400px;
+  margin-right: 130px;
+}
+
+.product-line__title {
+  margin-bottom: 10px;
+
+  color: $yellowMain;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.product-line__desc {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.product-line__btn {
+  position: relative;
+  margin-left: auto;
+  width: 180px;
+  padding: 10px 15px;
+  &:hover {
+    background: $yellowHover;
+    border: 2px solid $yellowHover;
+  }
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translate(50%, -50%);
+
+    display: block;
+    width: 18px;
+    height: 18px;
+
+    @include font-icon-style("\e915", 19px);
+    color: #000;
+  }
+}
