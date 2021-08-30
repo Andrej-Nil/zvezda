@@ -52,25 +52,17 @@
 }
 
 .product-card__btn {
-  position: relative;
   width: 133px;
-  padding: 9px 0 9px 20px;
+  padding: 9px 0 9px;
   &:hover {
     background: $yellowHover;
     border: 2px solid $yellowHover;
   }
+}
+
+.product-card__value {
   &::before {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(50%, -50%);
-
-    display: block;
-    width: 18px;
-    height: 18px;
-
     @include font-icon-style("\e915", 19px);
-    color: #000;
   }
 }
 

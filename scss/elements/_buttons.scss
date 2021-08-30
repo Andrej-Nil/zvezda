@@ -9,11 +9,28 @@
   cursor: pointer;
 }
 
+.btn__value {
+  position: relative;
+  padding-left: 28px;
+  display: inline-block;
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    display: block;
+    width: 18px;
+    height: 18px;
+
+    color: $blackMain;
+  }
+}
+
 .yellow-btn {
   background: $yellowMain;
   border: 2px solid $yellowMain;
   transition: 0.2s ease-in-out;
-  color: $black;
+  color: $blackMain;
 }
 
 .clear-btn {

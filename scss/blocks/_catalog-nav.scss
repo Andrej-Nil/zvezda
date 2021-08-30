@@ -1,0 +1,35 @@
+.catalog-nav__list {
+  border: 1px solid $line;
+  border-bottom: none;
+}
+
+.nav-item__subitem {
+  position: relative;
+  border-bottom: 1px solid $line;
+  transition: 0.2s ease-in-out;
+}
+.nav-item__sublink {
+  display: block;
+  padding: 22px 10px 22px 20px;
+  cursor: pointer;
+  font-weight: bold;
+
+  font-size: 14px;
+  line-height: 19px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 6px;
+    transition: 0.2s ease-in-out;
+  }
+  &:hover {
+    background: #f5f5f5;
+    &::before {
+      background: $yellowMain;
+    }
+  }
+}

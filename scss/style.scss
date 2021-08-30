@@ -56,6 +56,8 @@
 
 @import "./elements/product-slider";
 
+@import "./elements/dropdown";
+
 //header
 @import "./blocks/header";
 @import "./blocks/header-top";
@@ -108,6 +110,11 @@
 
 @import "./blocks/product";
 @import "./blocks/product-property";
+@import "./blocks/catalog-nav";
+
+@import "./blocks/price-filter";
+@import "./blocks/filters";
+
 @import "./blocks/product-about";
 
 @import "./blocks/news-block";

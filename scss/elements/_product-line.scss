@@ -4,6 +4,10 @@
   border: 1px solid $line;
   height: 124px;
   padding: 0 48px 0 20px;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    border: 1px solid $yellowMain;
+  }
 }
 
 .product-line__info {
@@ -13,10 +17,16 @@
 
 .product-line__title {
   margin-bottom: 10px;
+}
 
-  color: $yellowMain;
+.product-line__link {
+  color: $blackMain;
   font-size: 16px;
   line-height: 22px;
+  transition: 0.2 ease-in-out;
+  &:hover {
+    color: $yellowMain;
+  }
 }
 
 .product-line__desc {
@@ -32,18 +42,5 @@
   &:hover {
     background: $yellowHover;
     border: 2px solid $yellowHover;
-  }
-  &::before {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translate(50%, -50%);
-
-    display: block;
-    width: 18px;
-    height: 18px;
-
-    @include font-icon-style("\e915", 19px);
-    color: #000;
   }
 }
