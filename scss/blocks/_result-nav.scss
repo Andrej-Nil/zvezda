@@ -1,0 +1,42 @@
+.result__item {
+  border-bottom: 1px solid $line;
+  transition: 0.2s ease-in-out;
+  &:last-child {
+    border-bottom: none;
+  }
+  &:hover {
+    background: $pearl;
+  }
+}
+.result__link {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 21px 20px;
+}
+.result__category {
+  position: relative;
+  display: block;
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.result__count {
+  position: absolute;
+
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  background: #eaeaea;
+  border-radius: 50%;
+
+  color: $blackMain;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+}

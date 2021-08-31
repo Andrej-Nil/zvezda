@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.min.css" />
   <meta name="csrf-token" content="p5q8mFhMdAS9z3KSayI05bO34EEXjhMl9ysZOAS3">
-  <title>Товар</title>
+  <title>Поиск по товарам</title>
 </head>
 
 <body>
@@ -90,34 +90,36 @@
       </div>
       <!--header__top-->
 
-      <div class="path mt125 container">
-        <a href="index.html" class="path__link">Главная</a>
-        <span class="path__dash"></span>
-        <a href="catalog.html" class="path__link">Каталог</a>
-        <span class="path__dash"></span>
-        <a href="catalog.html" class="path__link path__link--active">Лист металлический</a>
-      </div>
 
-      <!--header__content-->
-      <div class="header__content container">
-        <div class="header-card">
-          <div class="header-card__text">
-            <h1 class="header-card__title">Лист металлический</h1>
-
-            <p class="header-card__desc">
-              Наша компания предлагает широкий выбор стального листа: холодной и горячей прокатки, с чечевичным и
-              ромбическим рифление оцинкованного и нержавеющего.
-            </p>
-          </div>
-
-          <img src="./img/image/header-card/img1.jpg" alt="" class="header-card__img">
-        </div>
-      </div>
-      <!--header__content-->
 
     </header>
 
+    <form action="" class="search-form mt50 container">
+      <!-- selecting-area -->
+      <div class="selecting-area">
+        <label class="selecting-area__item">
+          <input class="selecting-area__radio" type="radio" name="area" value="0" checked />
+          <span class="selecting-area__area-name">Поиск по сайту</span>
+        </label>
 
+        <label class="selecting-area__area">
+          <input class="selecting-area__radio" type="radio" name="area" value="1" />
+          <span class="selecting-area__area-name">Поиск по каталогу</span>
+        </label>
+      </div>
+      <!-- selecting-area -->
+
+      <div class="search-form__string  search">
+        <input data-search-input type="text" class="search-form__input search__input search__input--light-bd input"
+          placeholder="Введите запрос и нажмите Enter" />
+        <span class="search-form__btn search__btn"></span>
+      </div>
+    </form>
+
+    <p class="search-info container">
+      Найдено <span class="search-info__total">145</span> результатов в <span class="search-info__total">6</span>
+      категориях.
+    </p>
 
     <div class="settings-display container">
 
@@ -185,277 +187,51 @@
         <!-- sidebar__inner -->
         <div class="sidebar__inner">
           <!-- catalog__nav -->
-          <ul class="catalog__nav">
-            <li class="dropdown">
-              <div class="dropdown__top">
-                <h3 class="dropdown__title">
-                  <span class="dropdown__arrow">
-                    <span class="dropdown__arrow-icon"></span>
-                  </span>
-                  <a href="#!" class="dropdown__link">Лист</a>
-                </h3>
-
-              </div>
-              <div class="dropdown__body">
-                <ul class="dropdown__list">
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-                </ul>
-              </div>
+          <ul class="result__nav">
+            <li class="result__item">
+              <a href="#!" class="result__link">
+                <span class="result__category">Лист металлический</span>
+                <span class="result__count">22</span>
+              </a>
             </li>
 
-            <li class="dropdown">
-              <div class="dropdown__top">
-                <h3 class="dropdown__title">
-                  <span class="dropdown__arrow">
-                    <span class="dropdown__arrow-icon"></span>
-                  </span>
-                  <a href="#!" class="dropdown__link">Лист</a>
-                </h3>
-
-              </div>
-              <div class="dropdown__body">
-                <ul class="dropdown__list">
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-                </ul>
-              </div>
+            <li class="result__item">
+              <a href="#!" class="result__link">
+                <span class="result__category">Лист металлический</span>
+                <span class="result__count">22</span>
+              </a>
             </li>
 
-            <li class="dropdown">
-              <div class="dropdown__top">
-                <h3 class="dropdown__title">
-                  <span class="dropdown__arrow">
-                    <span class="dropdown__arrow-icon"></span>
-                  </span>
-                  <a href="#!" class="dropdown__link">Лист</a>
-                </h3>
-
-              </div>
-              <div class="dropdown__body">
-                <ul class="dropdown__list">
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-
-                </ul>
-              </div>
+            <li class="result__item">
+              <a href="#!" class="result__link">
+                <span class="result__category">Лист металлический</span>
+                <span class="result__count">22</span>
+              </a>
             </li>
 
-            <li class="dropdown">
-              <div class="dropdown__top">
-                <h3 class="dropdown__title">
-                  <span class="dropdown__arrow">
-                    <span class="dropdown__arrow-icon"></span>
-                  </span>
-                  <a href="#!" class="dropdown__link">Лист</a>
-                </h3>
-
-              </div>
-              <div class="dropdown__body">
-                <ul class="dropdown__list">
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-
-                  <li class="dropdown__item">
-                    <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                  </li>
-                </ul>
-              </div>
+            <li class="result__item">
+              <a href="#!" class="result__link">
+                <span class="result__category">Лист металлический</span>
+                <span class="result__count">22</span>
+              </a>
             </li>
 
+            <li class="result__item">
+              <a href="#!" class="result__link">
+                <span class="result__category">Лист металлический</span>
+                <span class="result__count">22</span>
+              </a>
+            </li>
+
+            <li class="result__item">
+              <a href="#!" class="result__link">
+                <span class="result__category">Лист металлический</span>
+                <span class="result__count">22</span>
+              </a>
+            </li>
           </ul>
           <!-- catalog__nav -->
 
-          <form action="" class="filters">
-            <ul class="filter__list">
-              <li class="filter dropdown">
-                <div class="filter__top dropdown__top">
-                  <h3 class="dropdown__title">
-                    <span class="dropdown__arrow">
-                      <span class="dropdown__arrow-icon"></span>
-                    </span>
-                    <a href="#!" class="dropdown__link">Цена, ₽</a>
-                  </h3>
-
-                </div>
-                <div class="dropdown__body">
-                  <div class="filter__price">
-                    <div class="filter__inputs">
-                      <input type="text" class="filter__input" placeholder="от 0">
-                      <input type="text" class="filter__input" placeholder="до 281 000">
-                    </div>
-
-                    <div class="range">
-                      <span class="range__slide range__slide--left"></span>
-                      <span class="range__line"></span>
-                      <span class="range__slide range__slide--right"></span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="filter dropdown">
-                <div class="filter__top dropdown__top">
-                  <h3 class="dropdown__title">
-                    <span class="dropdown__arrow">
-                      <span class="dropdown__arrow-icon"></span>
-                    </span>
-                    <a href="#!" class="dropdown__link">ГОСТ</a>
-                  </h3>
-
-                </div>
-                <div class="dropdown__body">
-                  <ul class="dropdown__list">
-
-                    <li class="filter__search dropdown__item">
-                      <div class="">
-                        <input type="text" class="filter__input" placeholder="Поиск по филтру">
-                      </div>
-                    </li>
-
-
-                    <li class="dropdown__item">
-                      <label class="filter__label">
-                        <input type="checkbox" class="filter__checkbox">
-                        <span class="dropdown__link dropdown__item-link">764-98</span>
-                      </label>
-                    </li>
-
-                    <li class="dropdown__item">
-                      <label class="filter__label">
-                        <input type="checkbox" class="filter__checkbox">
-                        <span class="dropdown__link dropdown__item-link">764-98</span>
-                      </label>
-                    </li>
-
-                    <li class="dropdown__item">
-                      <label class="filter__label">
-                        <input type="checkbox" class="filter__checkbox">
-                        <span class="dropdown__link dropdown__item-link">764-98</span>
-                      </label>
-                    </li>
-
-                    <li class="dropdown__item">
-                      <label class="filter__label">
-                        <input type="checkbox" class="filter__checkbox">
-                        <span class="dropdown__link dropdown__item-link">764-98</span>
-                      </label>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              <li class="filter dropdown">
-                <div class="filter__top dropdown__top">
-                  <h3 class="dropdown__title">
-                    <span class="dropdown__arrow">
-                      <span class="dropdown__arrow-icon"></span>
-                    </span>
-                    <a href="#!" class="dropdown__link">Матерьял</a>
-                  </h3>
-
-                </div>
-                <div class="dropdown__body">
-                  <ul class="dropdown__list">
-
-                    <li class="filter__search dropdown__item">
-                      <div class="">
-                        <input type="text" class="filter__input" placeholder="Поиск по филтру">
-                      </div>
-                    </li>
-
-
-                    <li class="dropdown__item">
-                      <label class="filter__label">
-                        <input type="checkbox" class="filter__checkbox">
-                        <span class="dropdown__link dropdown__item-link">764-98</span>
-                      </label>
-                    </li>
-
-                    <li class="dropdown__item">
-                      <label class="filter__label">
-                        <input type="checkbox" class="filter__checkbox">
-                        <span class="dropdown__link dropdown__item-link">764-98</span>
-                      </label>
-                    </li>
-
-                    <li class="dropdown__item">
-                      <label class="filter__label">
-                        <input type="checkbox" class="filter__checkbox">
-                        <span class="dropdown__link dropdown__item-link">764-98</span>
-                      </label>
-                    </li>
-
-                    <li class="dropdown__item">
-                      <label class="filter__label">
-                        <input type="checkbox" class="filter__checkbox">
-                        <span class="dropdown__link dropdown__item-link">764-98</span>
-                      </label>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-
-            <div class="filter__bottom">
-              <p class="filter__result">Найдено товаров: <span class="filter__find">486</span></p>
-
-              <div class="filter__buttons">
-                <input class="filter__btn btn yellow-btn hover-yellow-light" type="text" value="Показать">
-
-                <span class="filter__btn filter__btn--clear btn" type="text">Сбросить фильтр</span>
-              </div>
-            </div>
-          </form>
         </div>
         <!--sidebar__inner-->
 
@@ -737,340 +513,7 @@
     </div>
 
 
-    <!-- Рекомендуем товары -->
-    <section class="section product-card-slider">
-      <div class="section__inner container">
-        <h2 class="section__title">
-          Рекомендуем товары
-        </h2>
-        <!-- section__content -->
-        <div class="section__content">
-          <!-- slider -->
-          <div class="slider slider--with-padding">
-            <!-- track -->
-            <div class="slider__track">
 
-              <div class="product-card slide-scale">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card slide-scale">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card slide-scale">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card slide-scale">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product4.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card slide-scale">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">12 000 678 ₽/м2</p>
-                    <p class="product-card__old">24 006 570 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card slide-scale">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current product-card__current--text">Цена по запросу</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card slide-scale">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-            </div>
-            <!-- track -->
-            <div class="products-arrow section-controls">
-              <span class="section-controls__btn section-controls__prev"></span>
-              <span class="section-controls__btn section-controls__next"></span>
-            </div>
-          </div>
-          <!-- slider -->
-        </div>
-      </div>
-      <!-- section__content -->
-    </section>
-    <!-- Рекомендуем товары -->
-
-    <!-- Не нашли подходящего -->
-    <div class="application container">
-      <h4 class="application__title">Не нашли подходящего изделия?</h4>
-      <p class="application__text">Оставьте заявку на изготовление изделия по персональным чертежам, и наши
-        специалисты свяжутся с вами для обсуждения деталей проекта.</p>
-
-      <form action="" class="application__form form">
-        <div class="form__body">
-          <div class="form__side">
-            <input type="text" name="name" class="form__input input" placeholder="Акакий Акакиевич Башмачкин">
-            <div class="form__input-block">
-              <input type="text" name="mail" class="form__input mr20  input" placeholder="E-mail">
-
-              <input type="text" name="phone" class="form__input input" placeholder="+7 (999)-999-99-99">
-            </div>
-            <label class="form__file">
-              <span class="form__file-text">Добавить реквизиты</span>
-              <input data-file type="file" name="file" class="file__input">
-              <span class="form__file-format">Файл до 10 МБ в формате doc, docx, pdf</span>
-            </label>
-
-          </div>
-
-          <div class="form__side">
-            <textarea data-textarea name="message" class="form__textarea textarea"
-              placeholder="Комменатрий к заказу"></textarea>
-          </div>
-        </div>
-
-        <div class="form__bottom">
-          <input type="text" class="form__submit btn yellow-btn hover-yellow-light" value="Отправить запрос">
-          <label class="checkbox" data-label>
-            <input data-checkbox type="checkbox" checked class="checkbox__input" />
-            <span class="checkbox__fake"></span>
-            <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
-
-          </label>
-        </div>
-
-
-
-      </form>
-    </div>
-    <!-- Не нашли подходящего -->
-
-    <!-- Компания «Звезда» -->
-    <div class="about-company">
-      <div class="about-company__text">
-        <p class="about-company__para">
-          Компания «Звезда» – это один из крупнейших поставщиков стального металлопроката. Cклад компании наполнен
-          широким
-          ассортиментом продукции металлопроката, что позволяет оперативно исполнять любой индивидуальный заказ.
-          Компания «Звезда» – это один из крупнейших поставщиков стального металлопроката. Cклад компании наполнен
-          широким
-          ассортиментом продукции металлопроката, что позволяет оперативно исполнять любой индивидуальный.
-
-        </p>
-
-        <p class="about-company__para">
-          Доставка металлопроката и изделий из него осуществляется своим транспортом или
-          транспортными компаниями,
-          партнёрами предприятия. Автопарк ПАО «Звезда» состоит из 243 единиц автотранспортных средств.
-          Автопарк ПАО «Звезда» состоит из 243 единиц автотранспортных средств. В их числе: 114 седельных тягача
-          грузоподъёмностью 20 тонн и длиной кузова 13.5 метров марки «Mersedes», 43 автомобиля марки «Камаз»
-          грузоподъемностью 10 тонн и длиной кузова 6 метров, 32 манипулятора грузоподъемностью от 3 до 25 тонн и
-          длиной
-          кузова от 4 до 10 метров, а так-же 54 единицы транспорта грузоподъёмностью менее 3 тонн марок «Газель»,
-          «Porter»
-          и «Hyundai».
-        </p>
-
-        <p class="about-company__para">
-          Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов
-          авто-доставки грузов по Российской
-          Федерации и в страны СНГ.
-          На всех складах нашей компании оборудованы Ж/Д тупики для погрузки железнодорожных вагонов. Что позволяет
-          клиентам ставить на погрузку свои вагоны, а так-же позволяет менеджерам нашей компании организовывать свои
-          доставки железнодорожным транспортом.
-        </p>
-
-
-        <p class="about-company__para">
-          С грузом будут выданы следующие сопроводительные документы: Товарно-транспортная
-          накладная (ТТН), Счет-фактура,
-          Акт выполненных работ, или универсальный передаточный документ (УПД).
-        </p>
-
-        <p class="about-company__para">
-          Какой бы способ оплаты вы не выбрали, мы представим все необходимые документы и
-          сертификаты. В условиях
-          долгосрочных партнёрских отношений, предложим Вам хорошие скидки и отсрочку платежей.
-        </p>
-
-        <p class="about-company__para">
-          Реализуя один из основных принципов нашей работы - сократить до минимума ваши
-          временные затраты, мы предлагаем
-          именно ту схему оплаты, по которой вам удобнее работать. Наша компания принимает оплату следующими
-          способами:
-        </p>
-
-        <ul class="about-company__list">
-          <li class="about-company__item">
-            Безналичный расчет банковской картой;
-          </li>
-          <li class="about-company__item">
-            Наличными в офисе;
-          </li>
-          <li class="about-company__item">
-            Оплата на расчетнй счет.
-          </li>
-        </ul>
-      </div>
-
-
-      <span class="about-company__blink">
-        Свернуть
-      </span>
-
-    </div>
-    <!-- Компания «Звезда» -->
     <footer class="footer">
       <!-- footer-top -->
       <div class="footer-top">
