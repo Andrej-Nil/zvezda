@@ -1,46 +1,97 @@
-.filter__checkbox {
-  display: none;
+.filters {
+  border-top: 1px solid $line;
 }
-.filter__checkbox:checked + .nav-item__sublink {
-  background: #f5f5f5;
-  &::before {
-    background: $yellowMain;
+
+.filter__top {
+  cursor: pointer;
+}
+
+.filter__price {
+  padding: 20px;
+}
+
+.filter__inputs {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.filter__search {
+  padding: 14px 20px 15px;
+  border-top: none;
+}
+
+.filter__input {
+  width: 100%;
+  margin-right: 10px;
+  padding: 8px 12px;
+  border: 1px solid $line;
+
+  color: $blackMain;
+  font-size: 14px;
+  line-height: 19px;
+  &:last-child {
+    margin-right: 0;
   }
 }
 
-.filters__bottom {
-  border: 1px solid $line;
-  border-top: none;
+.filter__input::-webkit-input-placeholder {
+  font-family: $manrope;
+  color: #a7a7a7;
+  font-size: 14px;
+  line-height: 19px;
+}
+.filter__input:-ms-input-placeholder {
+  font-family: $manrope;
+  color: #a7a7a7;
+  font-size: 14px;
+  line-height: 19px;
+}
+.filter__input::-ms-input-placeholder {
+  font-family: $manrope;
+  color: #a7a7a7;
+  font-size: 14px;
+  line-height: 19px;
+}
+.filter__input::placeholder {
+  font-family: $manrope;
+  color: #a7a7a7;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.filter__bottom {
+  border-top: 1px solid $line;
   padding: 30px 20px;
 }
 
-.filters__result {
-  margin-bottom: 19px;
+.filter__result {
+  margin-bottom: 20px;
+
   color: $text;
-  font-weight: normal;
+  text-align: center;
   font-size: 14px;
   line-height: 19px;
-  text-align: center;
 }
 
-.filters__btn {
+.filter__btn {
   display: block;
   width: 100%;
-  margin-bottom: 10px;
-  padding: 11px 10px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
 
+  font-weight: bold;
   font-size: 12px;
   line-height: 16px;
+
   &:last-child {
-    margin-bottom: none;
+    margin-bottom: 0;
   }
 }
 
-.filters__btn--reset {
-  border: 1px solid $line;
+.filter__btn--clear {
   transition: 0.2s ease-in-out;
-  color: $blackMain;
+  border: 1px solid $line;
   &:hover {
-    background: #f5f5f5;
+    background: $pearl;
   }
 }
