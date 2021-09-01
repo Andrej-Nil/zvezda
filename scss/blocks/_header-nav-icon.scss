@@ -1,25 +1,27 @@
-.icon-nav {
+.nav-icon {
   margin-left: auto;
 }
 
-.icon-nav__list {
+.nav-icon__list {
   display: flex;
 }
 
-.icon-nav__item {
+.nav-icon__item {
+  position: relative;
   margin-right: 45px;
-  cursor: pointer;
+
   &:last-child {
     margin-right: 0;
   }
 }
 
-.icon-nav__link {
+.nav-icon__link {
   position: relative;
   display: block;
   width: 23px;
   height: 23px;
   color: $white;
+  cursor: pointer;
   &::before {
     position: absolute;
     top: 0;
@@ -34,14 +36,33 @@
   }
 }
 
-.icon-nav__link--basket {
+.nav-icon__link--basket {
   &::before {
     @include font-icon-style("\e915", 23px);
   }
 }
 
-.icon-nav__link--search {
+.nav-icon__link--search {
   &::before {
     @include font-icon-style("\e90b", 23px);
   }
+}
+
+.nav-icon__count {
+  position: absolute;
+  top: 0;
+  right: -27px;
+  display: flex;
+  width: 22px;
+  height: 22px;
+  background: $yellowMain;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+
+  font-family: $manrope;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
 }

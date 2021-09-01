@@ -1,6 +1,37 @@
 .header__top--white {
   background: $white;
-  & * {
+  .header-nav__arrow {
+    color: $blackMain;
+    &:hover {
+      color: $yellowMain;
+    }
+  }
+  .header-city__name {
+    color: $blackMain;
+    &:hover {
+      color: $yellowMain;
+    }
+  }
+  .header-city__arrow {
+    color: $blackMain;
+  }
+  .header-nav__link {
+    color: $blackMain;
+    &:hover {
+      color: $yellowMain;
+    }
+  }
+
+  .header__contact {
+    color: $blackMain;
+  }
+  .nav-icon__link {
+    color: $blackMain;
+    &:hover {
+      color: $yellowMain;
+    }
+  }
+  .nav-icon__list {
     color: $blackMain;
   }
   & .header__logo {

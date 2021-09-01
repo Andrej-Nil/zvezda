@@ -81,10 +81,18 @@ body {
   color: $text;
 }
 
+.app {
+  overflow: hidden;
+}
+
 .container {
+  padding: 0 15px;
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
+  @media (min-width: 1310px) {
+    padding: 0px;
+  }
 }
 
 .content {

@@ -1,3 +1,13 @@
 .header__video-item {
-  width: 100%;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -40%);
+  min-height: 606px;
+  @media (min-width: 1050px) {
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+    width: 100%;
+  }
 }

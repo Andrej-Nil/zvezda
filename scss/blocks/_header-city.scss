@@ -1,4 +1,5 @@
 .header-city {
+  display: none;
   position: relative;
   cursor: pointer;
   &:hover .header-city__name {
@@ -7,6 +8,10 @@
 
   &:hover .header-city__arrow {
     color: $yellowMain;
+  }
+  @media (min-width: 1050px) {
+    display: block;
+    //margin-right: 30px;
   }
 }
 

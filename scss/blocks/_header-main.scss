@@ -1,9 +1,12 @@
 .header__main {
   position: absolute;
   width: 100%;
-  top: 30%;
+  top: 32%;
   left: 0;
   z-index: 100;
+  @media (min-width: 1050px) {
+    top: 30%;
+  }
 }
 
 .header__date {
@@ -19,22 +22,30 @@
 }
 
 .header__title {
-  margin-bottom: 30px;
-  max-width: 560px;
-
-  font-size: 48px;
-  line-height: 66px;
+  margin-bottom: 20px;
+  //max-width: 290px;
+  width: 100%;
+  font-size: 30px;
+  line-height: 41px;
   color: $white;
   text-shadow: $textShadow;
+  @media (min-width: 1050px) {
+    margin-bottom: 30px;
+    max-width: 560px;
+    font-size: 48px;
+    line-height: 66px;
+  }
 }
 
 .header__desc {
   margin-bottom: 40px;
-
   color: $white;
+  font-weight: 300;
   font-size: 14px;
   line-height: 160%;
   text-shadow: $textShadow;
+  @media (min-width: 1050px) {
+  }
 }
 
 .header__buttons {
@@ -47,6 +58,13 @@
   margin-right: 20px;
   &:last-child {
     margin-right: 0;
+  }
+}
+
+.header__btn--catalog {
+  display: none;
+  @media (min-width: 1050px) {
+    display: block;
   }
 }
 

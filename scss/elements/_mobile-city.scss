@@ -1,0 +1,34 @@
+.mobile-city {
+  padding: 25px 15px 0;
+  width: 100%;
+  @media (min-width: 1050px) {
+    display: none;
+  }
+}
+.mobile-city__inner {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+
+  //background: $white;
+  background: #f6f6f6;
+}
+
+.mobile-city__name {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.mobile-city__arrow {
+  position: relative;
+  display: block;
+  width: 13px;
+  height: 7px;
+  &::before {
+    @include font-icon-style("\e919", 7px);
+    display: block;
+  }
+}

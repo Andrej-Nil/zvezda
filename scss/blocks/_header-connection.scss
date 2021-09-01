@@ -1,5 +1,9 @@
 .header__connection {
+  display: none;
   margin-right: 30px;
+  @media (min-width: 600px) {
+    display: flex;
+  }
 }
 
 .header__contact {

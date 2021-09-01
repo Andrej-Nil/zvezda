@@ -19,15 +19,25 @@
   width: 100%;
 }
 
-.section__title {
-  font-size: 36px;
-  line-height: 49px;
-  margin-bottom: 60px;
-  color: $textBlack;
+.section__inner {
+  padding-top: 60px;
+  @media (min-width: 1050px) {
+    padding-top: 80px;
+  }
 }
 
-.section__inner {
-  padding-top: 80px;
+.section__title {
+  margin-bottom: 30px;
+
+  color: $textBlack;
+  font-size: 24px;
+  line-height: 33px;
+
+  @media (min-width: 1050px) {
+    margin-bottom: 60px;
+    font-size: 36px;
+    line-height: 49px;
+  }
 }
 
 .section__title--white {
