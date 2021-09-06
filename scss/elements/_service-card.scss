@@ -1,25 +1,57 @@
 .service-card {
   position: relative;
   border: 1px solid #494b4f;
-  height: 305px;
+  height: 288px;
   width: 305px;
-  margin: 0 0 20px 0;
+  width: 100%;
   overflow: hidden;
-  &:hover .service-card__title {
-    top: 50px;
-  }
+  //z-index: 100;
 
-  &:hover {
-    .service-card__curtain {
-      transform: translate(0, 0%);
+  @media (min-width: 1310px) {
+    height: 305px;
+    width: 305px;
+    &:hover .service-card__title {
+      top: 50px;
+    }
+
+    &:hover {
+      .service-card__curtain {
+        transform: translate(0, 0%);
+      }
     }
   }
 }
 
 .service-card--big {
-  width: 630px;
+  width: 100%;
+
+  @media (min-width: 1310px) {
+    grid-column: span 2;
+    width: 630px;
+  }
 }
 
+.service-card__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  @media (min-width: 1310px) {
+    display: none;
+  }
+}
+
+.service-card__img {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+}
 .service-card__link {
   position: relative;
   display: flex;

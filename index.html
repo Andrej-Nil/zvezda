@@ -213,7 +213,7 @@
           <!-- section__content -->
           <div class="section__content">
             <!-- category-card-list -->
-            <div class="category-card-tile tile">
+            <div class="category-card-tile">
 
               <div class="category-card">
                 <a href="category.html" class="category-card__link">
@@ -354,7 +354,7 @@
           <!-- section__content -->
           <div class="section__content">
             <!-- card-list -->
-            <div class="product-tile tile">
+            <div class="product-tile">
 
               <div class="product-card">
                 <h3 class="product-card__title">
@@ -584,14 +584,15 @@
 
                 <input type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
                   value="Отправить запрос">
-              </div>
-              <label class="feedback__label checkbox" data-label>
-                <input data-checkbox type="checkbox" checked class="feedback__checkbox checkbox__input" />
-                <span class="feedback__fake checkbox__fake"></span>
-                <span class="feedback__label-text checkbox__text">я принимаю условия политики
-                  конфиденциальности</span>
 
-              </label>
+                <label class="feedback__label checkbox" data-label>
+                  <input data-checkbox type="checkbox" checked class="feedback__checkbox checkbox__input" />
+                  <span class="feedback__fake checkbox__fake"></span>
+                  <span class="feedback__label-text checkbox__text">я принимаю условия политики
+                    конфиденциальности</span>
+
+                </label>
+              </div>
             </form>
           </div>
 
@@ -619,9 +620,25 @@
           <!-- section__content -->
           <div class="section__content">
             <!-- services -->
-            <div class="services tile">
+            <div class="services">
 
+
+              <div class="services__bg">
+                <picture>
+                  <source media="(min-width: 1310px)" srcset="./img/image/servises/servise-big-1.jpg">
+                  <img srcset="./img/image/other/1.svg" class="services__img">
+                </picture>
+              </div>
               <div class="service-card service-card--big">
+
+
+                <div class="service-card__bg">
+                  <picture>
+                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
+                    <img srcset="./img/image/servises/servise400-1.jpg" class="service-card__img">
+                  </picture>
+                </div>
+
 
                 <a href="service-one.html" class="service-card__link">
                   <h4 class="service-card__title">Анализ металла</h4>
@@ -642,7 +659,16 @@
 
               <div class="service-card">
 
+
+                <div class="service-card__bg">
+                  <picture>
+                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
+                    <img srcset="./img/image/servises/servise400-2.jpg" class="service-card__img">
+                  </picture>
+                </div>
+
                 <a href="service-one.html" class="service-card__link">
+
                   <h4 class="service-card__title">Гибка листа</h4>
 
                   <div class="service-card__curtain">
@@ -658,10 +684,16 @@
                   </div>
                 </a>
 
-
-
               </div>
+
               <div class="service-card">
+
+                <div class="service-card__bg">
+                  <picture>
+                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
+                    <img srcset="./img/image/servises/servise400-3.jpg" class="service-card__img">
+                  </picture>
+                </div>
 
                 <a href="service-one.html" class="service-card__link">
                   <h4 class="service-card__title">Гибка арматуры</h4>
@@ -679,11 +711,16 @@
                   </div>
                 </a>
 
-
-
               </div>
 
               <div class="service-card ">
+
+                <div class="service-card__bg">
+                  <picture>
+                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
+                    <img srcset="./img/image/servises/servise400-4.jpg" class="service-card__img">
+                  </picture>
+                </div>
 
                 <a href="service-one.html" class="service-card__link">
                   <h4 class="service-card__title">Резка металла</h4>
@@ -701,12 +738,16 @@
                   </div>
                 </a>
 
-
-
               </div>
 
               <div class="service-card service-card--big">
 
+                <div class="service-card__bg">
+                  <picture>
+                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
+                    <img srcset="./img/image/servises/servise400-5.jpg" class="service-card__img">
+                  </picture>
+                </div>
                 <a href="service-one.html" class="service-card__link">
                   <h4 class="service-card__title">Доставка</h4>
 
@@ -723,8 +764,6 @@
                   </div>
                 </a>
 
-
-
               </div>
 
               <a href="" class="service-more more-card">
@@ -733,9 +772,6 @@
                   <p class="more-card__count">14 услуг компании</p>
                   <p class="service-more_all more-card__all">Все услуги</p>
                 </div>
-
-
-
 
               </a>
 
@@ -748,7 +784,7 @@
       <!-- Услуги компании -->
 
       <!-- Звезда - крупнейший... -->
-      <section class="about-block block-whith-bg">
+      <section class="about-block block-whith-bg black-bg">
         <img src="./img/image/bg/bg1.jpg" alt="" class="block-whith-bg__img">
         <div class="about-block__inner block-whith-bg__inner container">
           <div class="about-block__content">
@@ -758,7 +794,7 @@
               </h3>
 
               <div class="about-block__buttons">
-                <span class="about-block__btn btn clear-btn hover-yellow">О компании</span>
+                <span class="about-block__btn btn yellow-btn hover-yellow-light">О компании</span>
 
                 <span class="about-block__play">Смотреть ролик</span>
               </div>
@@ -791,6 +827,13 @@
                   <h3 class="advantage-card__title">
                     Быстрая отгрузка продукции
                   </h3>
+
+
+                  <span class="advantage-card__open">
+                    Подробнее
+                  </span>
+
+
                   <p class="advantage-card__desc">
                     Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
                     Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
@@ -817,6 +860,10 @@
                 </div>
 
                 <!--advantage__list-->
+
+                <span class="advantage-card__roll-up">
+                  Свертуть
+                </span>
               </div>
 
               <div class="advantage-card">
@@ -829,6 +876,11 @@
                   <h3 class="advantage-card__title">
                     Удобные способы оплаты
                   </h3>
+
+                  <span class="advantage-card__open">
+                    Подробнее
+                  </span>
+
                   <p class="advantage-card__desc">
                     Мы представим все необходимые документы и сертификаты. В условиях долгосрочных партнёрских
                     отношений, предложим Вам хорошие скидки и отсрочку платежей.Наша компания принимает оплату
@@ -863,6 +915,10 @@
                 </div>
 
                 <!--advantage__list-->
+
+                <span class="advantage-card__roll-up">
+                  Свертуть
+                </span>
               </div>
 
               <div class="advantage-card">
@@ -875,6 +931,10 @@
                   <h3 class="advantage-card__title">
                     Персональный менеджер круглосуточно
                   </h3>
+
+                  <span class="advantage-card__open">
+                    Подробнее
+                  </span>
                   <p class="advantage-card__desc">
                     Для удобной работы каждому клиенту предоставляется персональный менеджер, который ответим на ваши
                     вопросыо производстве и переработке металлопроката, его свойствах и особенностях применения, а
@@ -910,6 +970,10 @@
                 </div>
 
                 <!--advantage__list-->
+
+                <span class="advantage-card__roll-up">
+                  Свертуть
+                </span>
               </div>
 
               <div class="advantage-card">
@@ -922,6 +986,10 @@
                   <h3 class="advantage-card__title">
                     Собственный рабочий автопарк
                   </h3>
+
+                  <span class="advantage-card__open">
+                    Подробнее
+                  </span>
                   <p class="advantage-card__desc">
                     Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
                     Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
@@ -956,6 +1024,10 @@
                 </div>
 
                 <!--advantage__list-->
+
+                <span class="advantage-card__roll-up">
+                  Свертуть
+                </span>
               </div>
 
             </div>

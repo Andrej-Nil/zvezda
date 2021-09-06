@@ -1,3 +1,18 @@
 .category-card-tile {
   padding-bottom: 60px;
+  display: grid;
+  gap: 20px 0;
+  grid-template-columns: repeat(1, 100%);
+  @media (min-width: 600px) {
+    gap: 20px 2%;
+    grid-template-columns: repeat(2, 49%);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 32%);
+  }
+  @media (min-width: 1310px) {
+    gap: 20px;
+    grid-template-columns: repeat(3, 414px);
+  }
 }

@@ -1,23 +1,15 @@
 .category-more {
   border: 1px solid $yellowMain;
   width: 100%;
+  height: 320px;
+  padding: 40px;
   color: $yellowMain;
-  margin-bottom: 20px;
+  &:hover {
+    background: $yellowMain;
+    color: $white;
 
-  @media (min-width: 445px) {
-    width: 49%;
-  }
-
-  @media (min-width: 850px) {
-    width: 32%;
-  }
-
-  @media (min-width: 1310px) {
-    width: 414px;
-    height: 320px;
-    &:hover {
-      background: $yellowMain;
-      color: $white;
+    @media (min-width: 1310px) {
+      width: 414px;
     }
   }
 }

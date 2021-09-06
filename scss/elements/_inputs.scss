@@ -86,9 +86,9 @@
 
 .checkbox__fake {
   position: relative;
-  display: inline-block;
+  display: block;
   margin-right: 10px;
-  width: 16px;
+  min-width: 16px;
   height: 16px;
   background: #e0e0e0;
   transition: 0.2s ease-in-out;

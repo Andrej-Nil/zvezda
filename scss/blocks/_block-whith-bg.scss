@@ -7,8 +7,15 @@
 }
 
 .block-whith-bg__img {
-  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0.7;
+
   height: 100%;
+  @media (min-width: 1310px) {
+    width: 100%;
+  }
 }
 
 .block-whith-bg__inner {
