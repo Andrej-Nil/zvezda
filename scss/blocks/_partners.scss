@@ -3,5 +3,8 @@
 }
 
 .partner__list {
-  margin-bottom: 90px;
+  margin-bottom: 60px;
+  @media (min-width: 1310px) {
+    margin-bottom: 90px;
+  }
 }

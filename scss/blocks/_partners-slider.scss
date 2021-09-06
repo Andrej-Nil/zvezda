@@ -1,23 +1,48 @@
 .partners-slider {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .partners-slider__body {
-  width: 1170px;
+  max-width: 1170px;
 }
 .partners-slider__track {
-  height: 95px;
+  height: 50px;
+  //min-width: 234px;
+  width: 160px;
+  @media (min-width: 480px) {
+    width: 320px;
+  }
+  @media (min-width: 640px) {
+    width: 480px;
+  }
+
+  @media (min-width: 800px) {
+    width: 640px;
+  }
+  @media (min-width: 960px) {
+    width: 800px;
+  }
+  @media (min-width: 1310px) {
+    width: 100%;
+    height: 95px;
+  }
 }
 
 .partners-slider__item {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  min-width: 234px;
-  height: 95px;
+  min-width: 160px;
+
+  //height: 95px;
   cursor: pointer;
   &:hover .partners-slider__icon {
     color: $yellowMain;
+  }
+  @media (min-width: 1310px) {
+    min-width: 234px;
+    height: 95px;
   }
 }
 
@@ -31,57 +56,96 @@
 
 .partners-slider__icon {
   position: relative;
-  height: 55px;
-  padding: 20px 30px;
+  height: 100%;
+
   color: #898989;
   transition: 0.3s ease-in-out;
   &::before {
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
+  }
+  @media (min-width: 1310px) {
+    min-width: 234px;
+    &::before {
+      position: absolute;
+      bottom: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }
 
 .icon-gasprom {
   &::before {
-    @include font-icon-style("\e906", 60px);
+    @include font-icon-style("\e906", 48px);
+  }
+  @media (min-width: 1310px) {
+    &::before {
+      @include font-icon-style("\e906", 60px);
+    }
   }
 }
 
 .icon-sibur {
   &::before {
-    @include font-icon-style("\e901", 30px);
+    @include font-icon-style("\e901", 20px);
+  }
+  @media (min-width: 1310px) {
+    &::before {
+      @include font-icon-style("\e901", 30px);
+    }
   }
 }
 
 .icon-luk {
   &::before {
-    @include font-icon-style("\e905", 55px);
+    @include font-icon-style("\e905", 40px);
   }
-}
-
-.icon-rosatom {
-  &::before {
-    @include font-icon-style("\e902", 60px);
-  }
-}
-
-.icon-rd {
-  &::before {
-    @include font-icon-style("\e903", 45px);
-  }
-}
-
-.icon-nlmk {
-  &::before {
-    @include font-icon-style("\e904", 65px);
+  @media (min-width: 1310px) {
+    &::before {
+      @include font-icon-style("\e905", 55px);
+    }
   }
 }
 
 .icon-sng {
   &::before {
+    @include font-icon-style("\e900", 45px);
+  }
+  @media (min-width: 1310px) {
     @include font-icon-style("\e900", 65px);
+  }
+}
+
+.icon-nlmk {
+  &::before {
+    @include font-icon-style("\e904", 50px);
+  }
+
+  @media (min-width: 1310px) {
+    &::before {
+      @include font-icon-style("\e904", 65px);
+    }
+  }
+}
+
+.icon-rosatom {
+  &::before {
+    @include font-icon-style("\e902", 30px);
+  }
+}
+
+.icon-rd {
+  &::before {
+    @include font-icon-style("\e903", 30px);
+  }
+  @media (min-width: 1310px) {
+    &::before {
+      @include font-icon-style("\e903", 45px);
+    }
   }
 }
 

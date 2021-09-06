@@ -1,6 +1,14 @@
 .partner-card {
   display: flex;
-  justify-content: space-between;
+  //justify-content: space-between;
+  flex-direction: column;
+  @media (min-width: 800px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @media (min-width: 1310px) {
+    justify-content: space-between;
+  }
 }
 
 .partner-card__logo {
@@ -9,46 +17,115 @@
   height: 95px;
   color: $white;
   margin-bottom: 45px;
+}
+
+.partner-card__logo--gasprom {
   &::before {
-    @include font-icon-style("\e906", 95px);
+    @include font-icon-style("\e906", 80px);
+  }
+  @media (min-width: 1310px) {
+    &::before {
+      @include font-icon-style("\e906", 95px);
+    }
   }
 }
 
 .partner-card__info {
-  width: 475px;
-  font-size: 18px;
-  line-height: 160%;
+  max-width: 475px;
+  //width: 100%;
   color: $white;
+  @media (min-width: 800px) {
+    width: 45%;
+    display: block;
+  }
+  @media (min-width: 1310px) {
+    display: block;
+  }
 }
 
-.partner-card__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 305px;
-  height: 180px;
+.partner-card__desc {
+  display: none;
 
-  color: $white;
+  font-size: 14px;
+  line-height: 160%;
+  @media (min-width: 800px) {
+    display: block;
+  }
+  @media (min-width: 1310px) {
+    font-size: 18px;
+    line-height: 160%;
+    display: block;
+  }
 }
 
 .partner-card__details {
   display: flex;
   flex-wrap: wrap;
-  width: 610px;
+  width: 100%;
+  @media (min-width: 800px) {
+    width: 49%;
+  }
+  @media (min-width: 1310px) {
+    max-width: 610px;
+  }
+}
+
+.partner-card__item {
+  display: flex;
+  flex-direction: column;
+
+  width: 50%;
+  color: $white;
+
+  @media (min-width: 800px) {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  @media (min-width: 1310px) {
+    width: 305px;
+    height: 180px;
+  }
 }
 
 .partner-card__number {
   margin-bottom: 5px;
 
   font-weight: bold;
-  font-size: 48px;
-  line-height: 66px;
+  font-size: 24.381px;
+  line-height: 33px;
+
+  @media (min-width: 1310px) {
+    font-size: 48px;
+    line-height: 66px;
+  }
 }
 
 .partner-card__text {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 160%;
+  @media (min-width: 1310px) {
+    font-size: 16px;
+    line-height: 160%;
+  }
+}
+
+.partner-card__item--one {
+  padding: 0 20px 20px 0;
+}
+
+.partner-card__item--two {
+  padding: 0 0 20px 20px;
+}
+
+.partner-card__item--three {
+  padding: 20px 20px 0 0;
+}
+
+.partner-card__item--four {
+  padding: 20px 0 0 20px;
 }
 
 .br {

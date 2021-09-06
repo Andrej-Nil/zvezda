@@ -1799,7 +1799,20 @@ body {
 
 .partner-card {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media (min-width: 800px) {
+  .partner-card {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1310px) {
+  .partner-card {
+    justify-content: space-between;
+  }
 }
 
 .partner-card__logo {
@@ -1810,49 +1823,147 @@ body {
   margin-bottom: 45px;
 }
 
-.partner-card__logo::before {
+.partner-card__logo--gasprom::before {
   font-family: "icomoon";
   font-weight: normal;
   font-style: normal;
   font-display: block;
   line-height: 1;
   content: "";
-  font-size: 95px;
+  font-size: 80px;
+}
+
+@media (min-width: 1310px) {
+  .partner-card__logo--gasprom::before {
+    font-family: "icomoon";
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+    line-height: 1;
+    content: "";
+    font-size: 95px;
+  }
 }
 
 .partner-card__info {
-  width: 475px;
-  font-size: 18px;
-  line-height: 160%;
+  max-width: 475px;
   color: #fff;
 }
 
-.partner-card__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 305px;
-  height: 180px;
-  color: #fff;
+@media (min-width: 800px) {
+  .partner-card__info {
+    width: 45%;
+    display: block;
+  }
+}
+
+@media (min-width: 1310px) {
+  .partner-card__info {
+    display: block;
+  }
+}
+
+.partner-card__desc {
+  display: none;
+  font-size: 14px;
+  line-height: 160%;
+}
+
+@media (min-width: 800px) {
+  .partner-card__desc {
+    display: block;
+  }
+}
+
+@media (min-width: 1310px) {
+  .partner-card__desc {
+    font-size: 18px;
+    line-height: 160%;
+    display: block;
+  }
 }
 
 .partner-card__details {
   display: flex;
   flex-wrap: wrap;
-  width: 610px;
+  width: 100%;
+}
+
+@media (min-width: 800px) {
+  .partner-card__details {
+    width: 49%;
+  }
+}
+
+@media (min-width: 1310px) {
+  .partner-card__details {
+    max-width: 610px;
+  }
+}
+
+.partner-card__item {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  color: #fff;
+}
+
+@media (min-width: 800px) {
+  .partner-card__item {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1310px) {
+  .partner-card__item {
+    width: 305px;
+    height: 180px;
+  }
 }
 
 .partner-card__number {
   margin-bottom: 5px;
   font-weight: bold;
-  font-size: 48px;
-  line-height: 66px;
+  font-size: 24.381px;
+  line-height: 33px;
+}
+
+@media (min-width: 1310px) {
+  .partner-card__number {
+    font-size: 48px;
+    line-height: 66px;
+  }
 }
 
 .partner-card__text {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 160%;
+}
+
+@media (min-width: 1310px) {
+  .partner-card__text {
+    font-size: 16px;
+    line-height: 160%;
+  }
+}
+
+.partner-card__item--one {
+  padding: 0 20px 20px 0;
+}
+
+.partner-card__item--two {
+  padding: 0 0 20px 20px;
+}
+
+.partner-card__item--three {
+  padding: 20px 20px 0 0;
+}
+
+.partner-card__item--four {
+  padding: 20px 0 0 20px;
 }
 
 .br {
@@ -4150,33 +4261,78 @@ body {
 }
 
 .partner__list {
-  margin-bottom: 90px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 1310px) {
+  .partner__list {
+    margin-bottom: 90px;
+  }
 }
 
 .partners-slider {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .partners-slider__body {
-  width: 1170px;
+  max-width: 1170px;
 }
 
 .partners-slider__track {
-  height: 95px;
+  height: 50px;
+  width: 160px;
+}
+
+@media (min-width: 480px) {
+  .partners-slider__track {
+    width: 320px;
+  }
+}
+
+@media (min-width: 640px) {
+  .partners-slider__track {
+    width: 480px;
+  }
+}
+
+@media (min-width: 800px) {
+  .partners-slider__track {
+    width: 640px;
+  }
+}
+
+@media (min-width: 960px) {
+  .partners-slider__track {
+    width: 800px;
+  }
+}
+
+@media (min-width: 1310px) {
+  .partners-slider__track {
+    width: 100%;
+    height: 95px;
+  }
 }
 
 .partners-slider__item {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  min-width: 234px;
-  height: 95px;
+  min-width: 160px;
   cursor: pointer;
 }
 
 .partners-slider__item:hover .partners-slider__icon {
   color: #fba50d;
+}
+
+@media (min-width: 1310px) {
+  .partners-slider__item {
+    min-width: 234px;
+    height: 95px;
+  }
 }
 
 .partners-slider__item--active .partners-slider__icon {
@@ -4190,17 +4346,29 @@ body {
 
 .partners-slider__icon {
   position: relative;
-  height: 55px;
-  padding: 20px 30px;
+  height: 100%;
   color: #898989;
   transition: 0.3s ease-in-out;
 }
 
 .partners-slider__icon::before {
   position: absolute;
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
+}
+
+@media (min-width: 1310px) {
+  .partners-slider__icon {
+    min-width: 234px;
+  }
+  .partners-slider__icon::before {
+    position: absolute;
+    bottom: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .icon-gasprom::before {
@@ -4210,7 +4378,19 @@ body {
   font-display: block;
   line-height: 1;
   content: "";
-  font-size: 60px;
+  font-size: 48px;
+}
+
+@media (min-width: 1310px) {
+  .icon-gasprom::before {
+    font-family: "icomoon";
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+    line-height: 1;
+    content: "";
+    font-size: 60px;
+  }
 }
 
 .icon-sibur::before {
@@ -4220,7 +4400,19 @@ body {
   font-display: block;
   line-height: 1;
   content: "";
-  font-size: 30px;
+  font-size: 20px;
+}
+
+@media (min-width: 1310px) {
+  .icon-sibur::before {
+    font-family: "icomoon";
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+    line-height: 1;
+    content: "";
+    font-size: 30px;
+  }
 }
 
 .icon-luk::before {
@@ -4230,37 +4422,19 @@ body {
   font-display: block;
   line-height: 1;
   content: "";
-  font-size: 55px;
+  font-size: 40px;
 }
 
-.icon-rosatom::before {
-  font-family: "icomoon";
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-  line-height: 1;
-  content: "";
-  font-size: 60px;
-}
-
-.icon-rd::before {
-  font-family: "icomoon";
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-  line-height: 1;
-  content: "";
-  font-size: 45px;
-}
-
-.icon-nlmk::before {
-  font-family: "icomoon";
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-  line-height: 1;
-  content: "";
-  font-size: 65px;
+@media (min-width: 1310px) {
+  .icon-luk::before {
+    font-family: "icomoon";
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+    line-height: 1;
+    content: "";
+    font-size: 55px;
+  }
 }
 
 .icon-sng::before {
@@ -4270,7 +4444,73 @@ body {
   font-display: block;
   line-height: 1;
   content: "";
-  font-size: 65px;
+  font-size: 45px;
+}
+
+@media (min-width: 1310px) {
+  .icon-sng {
+    font-family: "icomoon";
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+    line-height: 1;
+    content: "";
+    font-size: 65px;
+  }
+}
+
+.icon-nlmk::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 50px;
+}
+
+@media (min-width: 1310px) {
+  .icon-nlmk::before {
+    font-family: "icomoon";
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+    line-height: 1;
+    content: "";
+    font-size: 65px;
+  }
+}
+
+.icon-rosatom::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 30px;
+}
+
+.icon-rd::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 30px;
+}
+
+@media (min-width: 1310px) {
+  .icon-rd::before {
+    font-family: "icomoon";
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+    line-height: 1;
+    content: "";
+    font-size: 45px;
+  }
 }
 
 .partners-slider__control {
