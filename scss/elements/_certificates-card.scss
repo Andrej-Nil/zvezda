@@ -1,10 +1,32 @@
 .certificates-card {
-  width: 305px;
-  height: 386px;
+  min-width: 100%;
+
   margin-right: 20px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   &:hover {
     transform: scale(1.05) translate(0, 3%);
   }
+
+  @media (min-width: 450px) {
+    min-width: 49%;
+  }
+
+  @media (min-width: 768px) {
+    min-width: 32%;
+  }
+
+  @media (min-width: 1050px) {
+    min-width: 24%;
+    height: 386px;
+  }
+
+  @media (min-width: 1310px) {
+    min-width: 305px;
+    height: 386px;
+  }
+}
+
+.certificates-card__img {
+  width: 100%;
 }
