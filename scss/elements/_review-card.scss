@@ -1,9 +1,18 @@
 .review-card {
-  min-width: 630px;
-  height: 380px;
-  padding: 50px;
+  min-width: 100%;
   background: $pearl;
+  min-height: 387px;
+  padding: 30px 20px;
   margin-right: 20px;
+  @media (min-width: 800px) {
+    min-width: 49%;
+  }
+  @media (min-width: 1310px) {
+    min-width: 630px;
+
+    padding: 50px;
+    margin-right: 20px;
+  }
 }
 
 .review-card__img {
