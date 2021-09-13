@@ -1,6 +1,15 @@
-.footer-socials {
-  display: flex;
+.footer-top__socials {
+  //display: none;
   align-items: center;
+  display: flex;
+
+  @media (min-width: 650px) {
+    //justify-content: flex-end;
+  }
+
+  @media (min-width: 1310px) {
+    justify-content: flex-start;
+  }
 }
 
 .footer-socials__item {

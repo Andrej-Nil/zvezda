@@ -1,19 +1,30 @@
 .footer__logo {
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
+
+  @media (min-width: 650px) {
+    margin-bottom: 0;
+  }
 }
 
 .footer__logo-img {
-  width: 146px;
+  min-width: 122px;
   height: auto;
-  margin-right: 25px;
+  margin-right: 50px;
+  @media (min-width: 650px) {
+    width: 146px;
+    margin-right: 25px;
+  }
 }
 
 .footer__title {
-  width: 110px;
-
+  max-width: 110px;
   color: $white;
   font-weight: normal;
   font-size: 9px;
   line-height: 140%;
+  @media (min-width: 650px) {
+    width: 110px;
+  }
 }

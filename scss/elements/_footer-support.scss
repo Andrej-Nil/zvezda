@@ -1,20 +1,26 @@
 .footer__support {
   position: relative;
   display: inline-block;
-  padding-right: 27px;
   cursor: pointer;
+  padding: 15px 18px;
+  border: 1px solid $yellowMain;
 
   color: $yellowMain;
   font-weight: bold;
   font-size: 14px;
   line-height: 19px;
-
-  &::before {
-    @include font-icon-style("\e920", 16px);
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(0, -50%);
-    display: block;
+  margin-bottom: 50px;
+  @media (min-width: 1050px) {
+    padding: 0 27px 0 0;
+    border: 0;
+    margin-bottom: 0;
+    &::before {
+      @include font-icon-style("\e920", 16px);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+      display: block;
+    }
   }
 }
