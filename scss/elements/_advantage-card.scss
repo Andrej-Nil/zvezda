@@ -1,30 +1,30 @@
 @keyframes open-advantage-mobile {
   from {
-    height: 478px;
+    //max-height: 478px;
   }
   20% {
-    heheight: 450px;
+    max-height: 450px;
   }
   80% {
-    height: 1350px;
+    max-height: 1350px;
   }
   100% {
-    height: 1336px;
+    max-height: 1336px;
   }
 }
 
 @keyframes open-advantage {
   from {
-    height: 270px;
+    //max-height: 270px;
   }
   20% {
-    height: 240px;
+    max-height: 240px;
   }
   80% {
-    height: 600px;
+    max-height: 600px;
   }
   100% {
-    height: 570px;
+    max-height: 700px;
   }
 }
 
@@ -78,20 +78,21 @@
 .advantage-card {
   position: relative;
   width: 100%;
-  height: 478px;
+  max-height: 478px;
+  //height: 100%;
   padding: 50px 20px;
   background: $pearl;
   cursor: pointer;
   margin-bottom: 20px;
   overflow: hidden;
   &:hover {
-    animation: open-advantage-mobile 1s ease;
+    animation: open-advantage-mobile 1.5s ease;
     animation-fill-mode: forwards;
   }
 
   &:hover .advantage-card__desc {
     animation: advantage-up 0.6s ease;
-    animation-delay: 0.2s;
+    animation-delay: 0.4s;
     animation-fill-mode: forwards;
   }
 
@@ -101,18 +102,24 @@
 
   &:hover .advantage__list {
     animation: advantage-up 0.6s ease;
-    animation-delay: 0.4s;
+    animation-delay: 0.6s;
     animation-fill-mode: forwards;
   }
 
-  @media (min-width: 1050px) {
+  @media (min-width: 768px) {
+    padding: 75px 60px;
+    max-height: 270px;
+  }
+
+  @media (min-width: 1280px) {
     padding: 75px 80px;
-    height: 270px;
+    max-height: 270px;
 
     &:hover {
       animation: open-advantage-mobiley none;
       animation: open-advantage 0.8s ease;
       animation-fill-mode: forwards;
+      //animation-direction: reverse;
     }
     &:hover .advantage-card__close {
       animation: advantage-close-btn 0.5s ease;
@@ -145,7 +152,7 @@
   //width: 100%;
   max-width: 100%;
   max-height: 350px;
-  @media (min-width: 1050px) {
+  @media (min-width: 850px) {
     height: 270px;
   }
 }
@@ -185,7 +192,7 @@
   font-size: 24px;
   line-height: 33px;
 
-  @media (min-width: 1050px) {
+  @media (min-width: 1310px) {
     font-size: 30px;
     line-height: 41px;
   }
@@ -253,12 +260,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-
   transform: translate(0, 50px);
   opacity: 0;
   visibility: hidden;
 
-  @media (min-width: 1050px) {
+  @media (min-width: 1160px) {
     flex-direction: row;
   }
 }

@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(all-full, 100%);
   gap: 20px;
-  @media (min-width: 600px) {
+  @media (min-width: 630px) {
     gap: 2%;
     grid-template-columns: repeat(2, 49%);
   }

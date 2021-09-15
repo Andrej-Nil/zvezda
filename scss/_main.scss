@@ -96,6 +96,7 @@ body {
 }
 
 .content {
+  //max-width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -106,7 +107,9 @@ body {
 
 .main__wrap {
   //padding-top: 80px;
-  width: 955px;
+  //width: 100%;
+  flex-grow: 1;
+  max-width: 955px;
 }
 
 .main__search {

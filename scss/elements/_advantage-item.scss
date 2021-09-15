@@ -1,23 +1,23 @@
 .advantage-item {
   position: relative;
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  width: 100%;
+
   margin: 0 0 20px 0;
+  padding: 0 30px 0;
   height: 180px;
   border-radius: 10px;
-  padding: 20px 30px 30px;
   background-color: rgba(238, 238, 238, 0.9);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-
   &:last-child {
     margin: 0;
   }
-
-  @media (min-width: 1050px) {
-    width: 305px;
+  @media (min-width: 1160px) {
     margin: 0 20px 0 0;
+    min-width: 30%;
+    max-width: 30%;
   }
 }
 
@@ -26,9 +26,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 30px;
   width: 82px;
   height: 82px;
-  margin-bottom: auto;
+  margin-bottom: 10px;
 }
 
 .advantage-item__quarter {

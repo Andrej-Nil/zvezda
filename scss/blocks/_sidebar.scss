@@ -1,7 +1,11 @@
 .sidebar {
   position: relative;
+  display: none;
   min-width: 305px;
   margin-right: 20px;
+  @media (min-width: 1050px) {
+    display: block;
+  }
 }
 
 .sidebar__inner {

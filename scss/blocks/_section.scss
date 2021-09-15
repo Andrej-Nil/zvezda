@@ -48,7 +48,7 @@
 
 .section__text {
   position: relative;
-  width: 500px;
+  max-width: 500px;
   margin-bottom: 60px;
 
   color: $white;

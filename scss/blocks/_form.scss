@@ -1,11 +1,22 @@
 .form__body {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    //justify-content: space-between;
+    margin-bottom: 40px;
+  }
 }
 
 .form__side {
-  width: 49%;
+  //width: 49%;
+  //margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    width: 49%;
+  }
 }
 
 .form__input {
@@ -14,7 +25,9 @@
 }
 
 .form__input-block {
-  display: flex;
+  @media (min-width: 1310px) {
+    display: flex;
+  }
 }
 
 .mr20 {
@@ -23,16 +36,21 @@
 
 .form__textarea {
   width: 100%;
-  height: 100%;
+  height: 50px;
+  padding: 11px 10px 5px;
   background: rgba(0, 0, 0, 0);
+  @media (min-width: 768px) {
+    height: 100%;
+    padding: 13px 10px 13px;
+  }
 }
 
 .form__file {
   position: relative;
-  display: flex;
+  display: none;
   height: 50px;
 
-  padding-left: 40px;
+  padding-left: 30px;
   align-items: center;
   border: 1px dashed #a7a7a7;
   color: #a7a7a7;
@@ -41,7 +59,10 @@
     @include font-icon-style("\e922", 18px);
     position: absolute;
     transform: rotate(45deg);
-    left: 20px;
+    left: 10px;
+  }
+  @media (min-width: 768px) {
+    display: flex;
   }
 }
 
@@ -52,15 +73,53 @@
   line-height: 180%;
 }
 .form__file-format {
+  display: none;
   font-size: 10px;
   line-height: 180%;
+  @media (min-width: 1280px) {
+    display: block;
+  }
 }
 
 .form__bottom {
   display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.form__file-wrap {
+  margin-bottom: 40px;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.form__file--mobile {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.form__file-desc {
+  font-size: 10px;
+  line-height: 160%;
+}
+
+.form__checkbox {
+  margin-bottom: 40px;
+  @media (min-width: 768px) {
+    margin-bottom: 0px;
+  }
 }
 
 .form__submit {
-  width: 200px;
-  margin-right: 20px;
+  order: 1;
+  width: 100%;
+  @media (min-width: 768px) {
+    order: 0;
+    width: 200px;
+    margin: 0 20px 0 0;
+  }
 }

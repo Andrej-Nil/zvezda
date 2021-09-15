@@ -3,6 +3,13 @@
   width: 100%;
 }
 
+.page-nav--mobile {
+  padding: 0;
+  @media (min-width: 1050px) {
+    display: none;
+  }
+}
+
 .page-nav__item {
   margin-bottom: 20px;
 }
