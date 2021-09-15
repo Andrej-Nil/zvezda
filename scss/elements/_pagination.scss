@@ -1,8 +1,14 @@
 .pagination {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  width: 470px;
+  //
   margin: 30px auto 60px;
+  @media (min-width: 600px) {
+    flex-wrap: nowrap;
+    max-width: 470px;
+  }
 }
 
 .pagination__arrow {
@@ -28,16 +34,22 @@
 }
 
 .pagination__arrow--prev {
-  padding-left: 15px;
+  order: 1;
+  padding: 0 30px 0 15px;
 
   &:before {
     @include font-icon-style("\e91a", 10px);
     left: 0;
     font-weight: bold;
   }
+  @media (min-width: 600px) {
+    order: 0;
+    padding: 0 0 0 15px;
+  }
 }
 
 .pagination__arrow--next {
+  order: 2;
   padding-right: 15px;
 
   &:before {
@@ -45,11 +57,22 @@
     right: 0;
     font-weight: bold;
   }
+  @media (min-width: 600px) {
+    order: 0;
+  }
 }
 
 .pagination__list {
+  order: 0;
   display: flex;
-  padding: 0 40px;
+  justify-content: center;
+  padding: 0 15px;
+  width: 100%;
+  margin-bottom: 40px;
+  @media (min-width: 600px) {
+    padding: 0 40px;
+    margin-bottom: 0px;
+  }
 }
 
 .pagination__item {

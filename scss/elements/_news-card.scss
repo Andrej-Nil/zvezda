@@ -1,15 +1,20 @@
 .news-card {
-  width: 414px;
-  min-height: 440px;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  @media (min-width: 1310px) {
+    max-width: 414px;
+    min-height: 440px;
+  }
 }
 
 .news-card_link-img {
   display: block;
-  height: 255px;
+
   margin-bottom: 30px;
+  @media (min-width: 1310px) {
+    height: 255px;
+  }
 }
 
 .news-card__img {
