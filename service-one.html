@@ -129,10 +129,13 @@
 
         <!-- header__bg -->
         <div class="header__bg">
-          <picture>
-            <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
-            <img class="header__img" src="./img/image/other/img-bg2.jpg" alt="">
-          </picture>
+          <div class="header__img-wrap">
+            <picture>
+              <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
+              <img class="header__img" src="./img/image/other/img-bg2.jpg" alt="">
+            </picture>
+          </div>
+
         </div>
 
         <!-- header__bg -->
@@ -180,6 +183,40 @@
       </div>
       <main class="main">
         <div class="main__wrap">
+
+          <nav class="page-nav page-nav--mobile">
+            <ul class="page-nav__list">
+              <li class="page-nav__item">
+                <span class="page-nav__link">
+                  Для чего это нужно?
+                </span>
+              </li>
+
+              <li class="page-nav__item">
+                <span class="page-nav__link">
+                  Способы цинкования металла
+                </span>
+              </li>
+
+              <li class="page-nav__item">
+                <span class="page-nav__link">
+                  Как заказать оцинковку металла
+                </span>
+              </li>
+
+              <li class="page-nav__item">
+                <span class="page-nav__link">
+                  Наши преимущества
+                </span>
+              </li>
+
+              <li class="page-nav__item">
+                <span class="page-nav__link">
+                  Хотите заказать оцинковку?
+                </span>
+              </li>
+            </ul>
+          </nav>
           <!-- about-service -->
           <div class="about-service">
             <h3 class="about-service__title">
@@ -239,7 +276,7 @@
 
           <!-- Наши преимущества -->
           <section class="section">
-            <div class="section__inner container">
+            <div class="section__inner">
 
               <h2 class="section__title">
                 Наши преимущества
@@ -260,6 +297,13 @@
                       <h3 class="advantage-card__title">
                         Быстрая отгрузка продукции
                       </h3>
+
+
+                      <span class="advantage-card__open">
+                        Подробнее
+                      </span>
+
+
                       <p class="advantage-card__desc">
                         Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
                         Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
@@ -286,6 +330,10 @@
                     </div>
 
                     <!--advantage__list-->
+
+                    <span class="advantage-card__roll-up">
+                      Свертуть
+                    </span>
                   </div>
 
                   <div class="advantage-card">
@@ -298,6 +346,11 @@
                       <h3 class="advantage-card__title">
                         Удобные способы оплаты
                       </h3>
+
+                      <span class="advantage-card__open">
+                        Подробнее
+                      </span>
+
                       <p class="advantage-card__desc">
                         Мы представим все необходимые документы и сертификаты. В условиях долгосрочных партнёрских
                         отношений, предложим Вам хорошие скидки и отсрочку платежей.Наша компания принимает оплату
@@ -332,6 +385,10 @@
                     </div>
 
                     <!--advantage__list-->
+
+                    <span class="advantage-card__roll-up">
+                      Свертуть
+                    </span>
                   </div>
 
                   <div class="advantage-card">
@@ -344,6 +401,10 @@
                       <h3 class="advantage-card__title">
                         Персональный менеджер круглосуточно
                       </h3>
+
+                      <span class="advantage-card__open">
+                        Подробнее
+                      </span>
                       <p class="advantage-card__desc">
                         Для удобной работы каждому клиенту предоставляется персональный менеджер, который ответим на
                         ваши
@@ -380,6 +441,10 @@
                     </div>
 
                     <!--advantage__list-->
+
+                    <span class="advantage-card__roll-up">
+                      Свертуть
+                    </span>
                   </div>
 
                   <div class="advantage-card">
@@ -392,6 +457,10 @@
                       <h3 class="advantage-card__title">
                         Собственный рабочий автопарк
                       </h3>
+
+                      <span class="advantage-card__open">
+                        Подробнее
+                      </span>
                       <p class="advantage-card__desc">
                         Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
                         Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
@@ -426,6 +495,10 @@
                     </div>
 
                     <!--advantage__list-->
+
+                    <span class="advantage-card__roll-up">
+                      Свертуть
+                    </span>
                   </div>
 
                 </div>
@@ -466,8 +539,17 @@
               </div>
 
               <div class="form__bottom">
+                <div class="form__file-wrap">
+
+
+                  <label class="form__file form__file--mobile">
+                    <span class="form__file-text">Добавить реквизиты</span>
+                    <input data-file type="file" name="file" class="file__input">
+                  </label>
+                  <p class="form__file-desc">Файл до 10 МБ в формате doc, docx, pdf</p>
+                </div>
                 <input type="text" class="form__submit btn yellow-btn hover-yellow-light" value="Отправить запрос">
-                <label class="checkbox" data-label>
+                <label class="form__checkbox checkbox" data-label>
                   <input data-checkbox type="checkbox" checked class="checkbox__input" />
                   <span class="checkbox__fake"></span>
                   <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
@@ -480,6 +562,7 @@
             </form>
           </div>
           <!-- Хотите заказать услугу? -->
+
         </div>
       </main>
     </div>
