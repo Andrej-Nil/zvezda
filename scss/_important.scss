@@ -19,5 +19,8 @@
 }
 
 .mt125 {
-  margin-top: 125px;
+  margin-top: 40px;
+  @media (min-width: 1050px) {
+    margin-top: 125px;
+  }
 }

@@ -1,7 +1,12 @@
 .header-card {
   display: flex;
   justify-content: space-between;
-  height: 430px;
+  padding-bottom: 60px;
+  //
+  @media (min-width: 1050px) {
+    padding-bottom: 0;
+    height: 430px;
+  }
 }
 
 .header-card__path {
@@ -17,12 +22,29 @@
   margin-bottom: 30px;
 
   color: $blackMain;
-  font-size: 48px;
-  line-height: 66px;
+  font-size: 30px;
+  line-height: 41px;
+  @media (min-width: 1050px) {
+    font-size: 48px;
+    line-height: 66px;
+  }
 }
 
 .header-card__desc {
   color: $bgBlack;
   font-size: 15px;
   line-height: 28px;
+}
+
+.header-card__img {
+  display: none;
+  //height: 430px;
+  @media (min-width: 768px) {
+    height: 300px;
+    display: block;
+  }
+  @media (min-width: 1050px) {
+    height: 430px;
+    display: block;
+  }
 }
