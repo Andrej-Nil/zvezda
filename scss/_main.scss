@@ -96,9 +96,12 @@ body {
 }
 
 .content {
-  //max-width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  @media (min-width: 1050px) {
+    flex-direction: row;
+  }
 }
 
 .main {
@@ -109,7 +112,10 @@ body {
   //padding-top: 80px;
   //width: 100%;
   flex-grow: 1;
-  max-width: 955px;
+
+  @media (min-width: 1050px) {
+    max-width: 955px;
+  }
 }
 
 .main__search {
@@ -138,4 +144,5 @@ body {
   font-weight: bold;
   font-size: 18px;
   line-height: 25px;
+  margin-bottom: 30px;
 }

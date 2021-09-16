@@ -1,13 +1,12 @@
 .sidebar {
   position: relative;
-  display: none;
-  min-width: 305px;
-  margin-right: 20px;
+
   @media (min-width: 1050px) {
+    min-width: 305px;
     display: block;
+    margin-right: 20px;
   }
 }
 
-.sidebar__inner {
-  border: 1px solid $line;
-}
+//.sidebar__inner {
+//}

@@ -1,3 +1,10 @@
+.result__nav {
+  margin-bottom: 60px;
+  border: 1px solid $line;
+  @media (min-width: 1050px) {
+    margin-bottom: 0;
+  }
+}
 .result__item {
   border-bottom: 1px solid $line;
   transition: 0.2s ease-in-out;

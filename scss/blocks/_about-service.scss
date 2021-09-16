@@ -7,8 +7,12 @@
 
   color: $blackMain;
   font-weight: bold;
-  font-size: 36px;
-  line-height: 49px;
+  font-size: 24px;
+  line-height: 33px;
+  @media (min-width: 1050px) {
+    font-size: 36px;
+    line-height: 49px;
+  }
 }
 
 .about-service__desc {

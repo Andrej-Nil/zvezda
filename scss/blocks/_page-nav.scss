@@ -1,12 +1,8 @@
 .page-nav {
-  padding: 100px 0 80px;
+  padding: 60px 0 0;
   width: 100%;
-}
-
-.page-nav--mobile {
-  padding: 0;
   @media (min-width: 1050px) {
-    display: none;
+    padding: 100px 0 80px;
   }
 }
 

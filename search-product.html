@@ -118,12 +118,18 @@
       <div class="selecting-area">
         <label class="selecting-area__item">
           <input class="selecting-area__radio" type="radio" name="area" value="0" checked />
-          <span class="selecting-area__area-name">Поиск по сайту</span>
+          <span class="selecting-area__place">
+            <span class="selecting-area__place-name">Поиск по сайту</span>
+            <span class="selecting-area__place-name selecting-area__place-name--m">По сайту</span>
+          </span>
         </label>
 
-        <label class="selecting-area__area">
+        <label class="selecting-area__item">
           <input class="selecting-area__radio" type="radio" name="area" value="1" />
-          <span class="selecting-area__area-name">Поиск по каталогу</span>
+          <span class="selecting-area__place">
+            <span class="selecting-area__place-name">Поиск по каталогу</span>
+            <span class="selecting-area__place-name selecting-area__place-name--m">По каталогу</span>
+          </span>
         </label>
       </div>
       <!-- selecting-area -->
@@ -139,66 +145,6 @@
       Найдено <span class="search-info__total">145</span> результатов в <span class="search-info__total">6</span>
       категориях.
     </p>
-
-    <div class="settings-display container">
-
-      <div class="settings-display__selects">
-
-        <div class="settings-display__select select">
-          <span class="settings-display__select-title select__title">
-            24 товарова на странице
-          </span>
-          <div class="select__body">
-            <ul class="select__list">
-              <li class="select__item">
-                <label class="select__label">
-                  <span class="select__text"> Кит </span>
-                  <input class="radio" type="radio" name="delivery" value="" />
-                </label>
-              </li>
-              <li class="select__item">
-                <label class="select__label">
-                  <span class="select__text"> сдек </span>
-                  <input class="radio" type="radio" name="delivery" value="" />
-                </label>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="settings-display__select select">
-          <span class="settings-display__select-title select__title">
-            Популярные
-          </span>
-          <div class="select__body">
-            <ul class="select__list">
-              <li class="select__item">
-                <label class="select__label">
-                  <span class="select__text"> Кит </span>
-                  <input class="radio" type="radio" name="delivery" value="" />
-                </label>
-              </li>
-              <li class="select__item">
-                <label class="select__label">
-                  <span class="select__text"> сдек </span>
-                  <input class="radio" type="radio" name="delivery" value="" />
-                </label>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="settings-display__search search">
-        <input data-search-input type="text" class="settings-display__input search__input search__input--light-bd input"
-          placeholder="Введите запрос и нажмите Enter" />
-        <span class="search-form__btn search__btn"></span>
-      </div>
-      <div class="display__toggle">
-        <span class="display__btn display__btn--list"></span>
-        <span class="display__btn display__btn--tile-active"></span>
-      </div>
-    </div>
 
     <div class="content container">
 
@@ -266,7 +212,7 @@
           <!-- section__content -->
           <div class="section__content">
             <!-- card-list -->
-            <div class="product-tile tile">
+            <div class="product-tile product-tile--three-coll">
 
               <div class="product-card">
                 <h3 class="product-card__title">
@@ -461,7 +407,7 @@
             <!--product-line-->
             <div class="product-list">
               <div class="product-line">
-                <div class="product-line__info">
+                <div class="product-line__left">
                   <h2 class="product-line__title">
                     <a href="product-page.html" class="product-line__link"> Лист вольфрамовый 0,1 мм ВЧ</a>
 
@@ -473,14 +419,18 @@
 
                 </div>
 
-                <div class="product-card__price">
-                  <p class="product-card__current">1200 ₽/м2</p>
-                  <p class="product-card__old">2400 ₽/м2</p>
+                <div class="product-line__right">
+                  <div class="product-card__price">
+                    <p class="product-card__current">1200 ₽/м2</p>
+                    <p class="product-card__old">2400 ₽/м2</p>
+                  </div>
+
+                  <span class="product-line__btn btn yellow-btn">
+                    <span class="product-card__value btn__value basket-icon">В корзину</span>
+                  </span>
                 </div>
 
-                <span class="product-line__btn btn yellow-btn">
-                  <span class="product-card__value btn__value basket-icon">В корзину</span>
-                </span>
+
               </div>
 
             </div>

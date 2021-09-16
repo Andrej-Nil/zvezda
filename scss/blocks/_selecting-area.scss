@@ -1,24 +1,59 @@
 .selecting-area {
   display: flex;
   margin-bottom: 30px;
+  justify-content: space-between;
+
+  @media (min-width: 600px) {
+    justify-content: flex-start;
+  }
 }
 
 .selecting-area__item {
-  margin-right: 60px;
+  @media (min-width: 600px) {
+    margin-right: 60px;
+  }
 }
 
-.selecting-area__area-name {
+.selecting-area__place {
+  display: block;
   color: $blackMain;
   font-weight: bold;
   font-size: 24px;
   line-height: 33px;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+  @media (min-width: 600px) {
+    font-size: 24px;
+    line-height: 33px;
+  }
+  @media (min-width: 600px) {
+    display: block;
+  }
+}
+
+.selecting-area__place-name {
+  display: none;
+  font-size: 20px;
+  line-height: 33px;
+  @media (min-width: 600px) {
+    font-size: 24px;
+    line-height: 33px;
+  }
+  @media (min-width: 600px) {
+    display: block;
+  }
+}
+
+.selecting-area__place-name--m {
+  display: block;
+  @media (min-width: 600px) {
+    display: none;
+  }
 }
 
 .selecting-area__radio {
   display: none;
-  &:checked + .selecting-area__area-name {
+  &:checked + .selecting-area__place {
     color: $yellowMain;
   }
 }

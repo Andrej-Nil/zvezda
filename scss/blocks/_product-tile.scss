@@ -3,16 +3,37 @@
   display: grid;
   gap: 20px 0;
   grid-template-columns: repeat(1, 100%);
-  @media (min-width: 600px) {
+}
+
+.product-tile--four-coll {
+  @media (min-width: 650px) {
     gap: 20px 2%;
     grid-template-columns: repeat(2, 49%);
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 950px) {
     grid-template-columns: repeat(3, 32%);
   }
   @media (min-width: 1310px) {
     gap: 20px;
     grid-template-columns: repeat(4, 305px);
+  }
+}
+
+.product-tile--three-coll {
+  @media (min-width: 650px) {
+    gap: 20px 2%;
+    grid-template-columns: repeat(2, 49%);
+  }
+
+  @media (min-width: 950px) {
+    grid-template-columns: repeat(3, 32%);
+  }
+  @media (min-width: 1050px) {
+    grid-template-columns: repeat(2, 49%);
+  }
+
+  @media (min-width: 1310px) {
+    grid-template-columns: repeat(3, 32%);
   }
 }
