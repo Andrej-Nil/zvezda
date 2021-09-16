@@ -5847,30 +5847,57 @@ body {
 }
 
 .error404 {
-  width: 520px;
-  margin: 100px auto 127px;
+  max-width: 520px;
+  margin: 60px auto 80px;
+  padding: 15px;
   color: #444a52;
   text-align: center;
 }
 
+@media (min-width: 800px) {
+  .error404 {
+    margin: 100px auto 127px;
+  }
+}
+
 .error404__img {
   display: inline-block;
-  width: 330px;
+  max-width: 200px;
+  width: 100%;
   height: auto;
   margin-bottom: 30px;
+}
+
+@media (min-width: 800px) {
+  .error404__img {
+    max-width: 330px;
+  }
 }
 
 .error404__text {
   margin-bottom: 30px;
   font-weight: bold;
-  font-size: 48px;
-  line-height: 66px;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+@media (min-width: 800px) {
+  .error404__text {
+    font-size: 48px;
+    line-height: 66px;
+  }
 }
 
 .error404__desc {
   margin-bottom: 60px;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 180%;
+}
+
+@media (min-width: 800px) {
+  .error404__desc {
+    font-size: 15px;
+  }
 }
 
 .error404__btn {
