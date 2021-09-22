@@ -1,7 +1,9 @@
 .path {
-  display: flex;
+  display: none;
   align-items: center;
   margin-bottom: 10px;
+  @media (min-width: 1050px) {
+  }
 }
 
 .path__link {

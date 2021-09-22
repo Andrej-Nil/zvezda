@@ -59,6 +59,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-settings:before {
+  content: "\e925";
+}
+
 .icon-in-stock:before {
   content: "\e923";
   color: #0c9b45;
@@ -1096,14 +1100,14 @@ body {
   min-width: 100%;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
   .product-card--slider {
     min-width: 49%;
     margin: 0 4px;
   }
 }
 
-@media (min-width: 930px) {
+@media (min-width: 950px) {
   .product-card--slider {
     min-width: 32%;
     margin: 0 7px;
@@ -3069,6 +3073,62 @@ body {
   background: #fba50d;
 }
 
+.search-product {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+  left: 0;
+  padding: 0 20px;
+  background: #fff;
+  height: 80px;
+  width: 100%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 1050px) {
+  .search-product {
+    display: none;
+  }
+}
+
+.search-product__string {
+  width: 100%;
+  margin-right: 20px;
+}
+
+.search-product__input {
+  border: 1px solid rgba(139, 139, 139, 0.3);
+  display: block;
+}
+
+.search-product__btn {
+  position: relative;
+  min-width: 50px;
+  height: 50px;
+  border: 1px solid rgba(139, 139, 139, 0.3);
+  cursor: pointer;
+}
+
+.search-product__btn::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 25px;
+  height: 25px;
+  transform: translate(-50%, -50%);
+  color: #444a52;
+}
+
 .header {
   position: relative;
 }
@@ -3801,7 +3861,7 @@ body {
 }
 
 .path {
-  display: flex;
+  display: none;
   align-items: center;
   margin-bottom: 10px;
 }
@@ -5290,8 +5350,28 @@ body {
 }
 
 .settings-display__search {
-  margin: 0 30px 0 auto;
-  width: 508px;
+  margin: 0 30px 0 30px;
+  display: none;
+  max-width: 508px;
+  width: 100%;
+}
+
+@media (min-width: 1050px) {
+  .settings-display__search {
+    display: block;
+  }
+}
+
+@media (min-width: 1230px) {
+  .settings-display__search {
+    margin: 0 30px 0 auto;
+  }
+}
+
+@media (min-width: 1230px) {
+  .settings-display__search {
+    margin: 0 30px 0 auto;
+  }
 }
 
 .settings-display__input {
@@ -5300,15 +5380,50 @@ body {
 
 .settings-display__selects {
   display: flex;
+  margin-right: auto;
+}
+
+@media (min-width: 400px) {
+  .settings-display__selects {
+    margin-right: auto;
+  }
 }
 
 .settings-display__select {
-  width: 259px;
-  margin-right: 66px;
+  width: 170px;
+  margin-right: 30px;
 }
 
 .settings-display__select:last-child {
   margin-right: 0;
+}
+
+.settings-display__select:first-child {
+  display: none;
+}
+
+@media (min-width: 400px) {
+  .settings-display__select {
+    width: 259px;
+  }
+}
+
+@media (min-width: 700px) {
+  .settings-display__select:first-child {
+    display: block;
+  }
+}
+
+@media (min-width: 1310px) {
+  .settings-display__select {
+    margin-right: 66px;
+  }
+}
+
+@media (min-width: 1310px) {
+  .settings-display__select {
+    margin-right: 66px;
+  }
 }
 
 .settings-display__select-title {
@@ -5439,6 +5554,65 @@ body {
 
 .range__slide--right {
   right: 0;
+}
+
+.filters-bg {
+  position: fixed;
+  display: none;
+  width: 100%;
+  overflow: auto;
+  justify-content: flex-end;
+  align-items: flex-start;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: rgba(228, 228, 228, 0.6);
+  backdrop-filter: blur(20px);
+}
+
+@media (min-width: 1050px) {
+  .filters-bg {
+    display: flex;
+    position: sticky;
+  }
+}
+
+.filters-wrap__inner {
+  position: relative;
+  border: 1px solid rgba(139, 139, 139, 0.3);
+  background: #fff;
+}
+
+@media (min-width: 1050px) {
+  .filters__top {
+    display: none;
+  }
+}
+
+.filters__close {
+  display: block;
+  max-width: 116px;
+  margin: 0 0 60px auto;
+}
+
+.filters__title {
+  font-size: 24px;
+  line-height: 33px;
+  color: #444a52;
+  margin-bottom: 40px;
+}
+
+.filters-wrap {
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+}
+
+@media (min-width: 1050px) {
+  .filters-wrap {
+    padding: 0;
+  }
 }
 
 .filters {

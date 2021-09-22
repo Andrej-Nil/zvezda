@@ -14,17 +14,13 @@
   }
 }
 
-.product-card__slider {
-}
-
 .product-card--slider {
   min-width: 100%;
-  //margin: 0 17px;
-  @media (min-width: 600px) {
+  @media (min-width: 650px) {
     min-width: 49%;
     margin: 0 4px;
   }
-  @media (min-width: 930px) {
+  @media (min-width: 950px) {
     min-width: 32%;
     margin: 0 7px;
   }

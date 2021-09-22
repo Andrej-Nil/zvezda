@@ -27,6 +27,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-settings:before {
+  content: "\e925";
+}
 .icon-in-stock:before {
   content: "\e923";
   color: #0c9b45;
