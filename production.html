@@ -445,59 +445,62 @@
 
               <!-- areas-application -->
               <div class="areas-application">
+                <div class="application__inner">
+                  <div class="application-card">
+                    <div class="application-card__desc">
+                      <h3 class="application-card__title">В ядерной энергетике</h3>
+                      <p class="application-card__text">
+                        В качестве конструкционных материалов в ядерной технике используют редкоземельные металлы и
+                        сплавы
+                      </p>
+                    </div>
 
-                <div class="application-card">
-                  <div class="application-card__desc">
-                    <h3 class="application-card__title">В ядерной энергетике</h3>
-                    <p class="application-card__text">
-                      В качестве конструкционных материалов в ядерной технике используют редкоземельные металлы и сплавы
-                    </p>
+                    <img src="./img/image/application/application1.png" alt="" class="">
+
                   </div>
 
-                  <img src="./img/image/application/application1.png" alt="" class="">
+                  <div class="application-card">
+                    <div class="application-card__desc">
+                      <h3 class="application-card__title">Нефтехимической области</h3>
+                      <p class="application-card__text">
+                        Используются в условиях низких температур цветные металлы и их сплавы, не подверженные
+                        хладноломкости.
+                      </p>
+                    </div>
 
-                </div>
+                    <img src="./img/image/application/application2.png" alt="" class="">
 
-                <div class="application-card">
-                  <div class="application-card__desc">
-                    <h3 class="application-card__title">Нефтехимической области</h3>
-                    <p class="application-card__text">
-                      Используются в условиях низких температур цветные металлы и их сплавы, не подверженные
-                      хладноломкости.
-                    </p>
                   </div>
 
-                  <img src="./img/image/application/application2.png" alt="" class="">
+                  <div class="application-card">
+                    <div class="application-card__desc">
+                      <h3 class="application-card__title">В ракетостроении</h3>
+                      <p class="application-card__text">
+                        Из титана делают детали жидко- и твердотопливных двигателей, обшивку космических аппаратов,
+                        стыковые конструкции жилых отсеков и баллоны
+                      </p>
+                    </div>
 
-                </div>
+                    <img src="./img/image/application/application3.png" alt="" class="">
 
-                <div class="application-card">
-                  <div class="application-card__desc">
-                    <h3 class="application-card__title">В ракетостроении</h3>
-                    <p class="application-card__text">
-                      Из титана делают детали жидко- и твердотопливных двигателей, обшивку космических аппаратов,
-                      стыковые конструкции жилых отсеков и баллоны
-                    </p>
                   </div>
 
-                  <img src="./img/image/application/application3.png" alt="" class="">
+                  <div class="application-card">
+                    <div class="application-card__desc">
+                      <h3 class="application-card__title">Электронной промышленности</h3>
+                      <p class="application-card__text">
+                        Сплавы служат незаменимым материалом при изготовлении особо чувствительных и высокоточных
+                        приборов
+                      </p>
+                    </div>
 
-                </div>
+                    <img src="./img/image/application/application4.png" alt="" class="">
 
-                <div class="application-card">
-                  <div class="application-card__desc">
-                    <h3 class="application-card__title">Электронной промышленности</h3>
-                    <p class="application-card__text">
-                      Сплавы служат незаменимым материалом при изготовлении особо чувствительных и высокоточных приборов
-                    </p>
                   </div>
-
-                  <img src="./img/image/application/application4.png" alt="" class="">
-
                 </div>
+                <!-- areas-application -->
+
               </div>
-              <!-- areas-application -->
-
             </div>
             <!-- section__content -->
           </div>
@@ -906,45 +909,48 @@
       <!-- Наши преимущества -->
 
       <!-- Есть вопросы -->
-      <section id="serialForm" class="section light-bg">
-        <div class="feedback mb60 feedback--light-bg container">
-          <div class="feedback__left">
-            <div class="feedback__text">
-              <h2 class="feedback__title">
-                Есть вопросы по нашей продукции?
-              </h2>
+      <section id="serialForm" class="section ">
+        <div class="feedback mb60 container">
+          <div class="feedback__inner light-bg feedback--light-bg">
 
-              <p class="feedback__desc">
-                Оставьте заявку и наши менеджеры свяжуться с Вами, чтобы обсудить все вопросы
-              </p>
+
+            <div class="feedback__left">
+              <div class="feedback__text">
+                <h2 class="feedback__title">
+                  Есть вопросы по нашей продукции?
+                </h2>
+
+                <p class="feedback__desc">
+                  Оставьте заявку и наши менеджеры свяжуться с Вами, чтобы обсудить все вопросы
+                </p>
+              </div>
+
+
+              <form id="feedbackForm" action="./json/send-form.json" class="feedback-form ">
+                <div class="feedback__body">
+                  <input type="text" data-input name="phone" class="feedback__input input"
+                    placeholder="+7 (999)-999-99-99" />
+
+                  <input type="text" data-input name="name" class="feedback__input input" placeholder="Иванов Иван" />
+
+                  <input type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
+                    value="Отправить запрос">
+                </div>
+                <label class="feedback__label checkbox" data-label>
+                  <input data-checkbox type="checkbox" checked class="feedback__checkbox checkbox__input" />
+                  <span class="feedback__fake checkbox__fake"></span>
+                  <span class="feedback__label-text checkbox__text">я принимаю условия политики
+                    конфиденциальности</span>
+
+                </label>
+              </form>
             </div>
 
+            <div class="feedback__right">
+              <img src="./img/image/other/manager.png" alt="" class="feedback__img">
+            </div>
 
-            <form id="feedbackForm" action="./json/send-form.json" class="feedback-form ">
-              <div class="feedback__body">
-                <input type="text" data-input name="phone" class="feedback__input input"
-                  placeholder="+7 (999)-999-99-99" />
-
-                <input type="text" data-input name="name" class="feedback__input input" placeholder="Иванов Иван" />
-
-                <input type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
-                  value="Отправить запрос">
-              </div>
-              <label class="feedback__label checkbox" data-label>
-                <input data-checkbox type="checkbox" checked class="feedback__checkbox checkbox__input" />
-                <span class="feedback__fake checkbox__fake"></span>
-                <span class="feedback__label-text checkbox__text">я принимаю условия политики
-                  конфиденциальности</span>
-
-              </label>
-            </form>
           </div>
-
-          <div class="feedback__right">
-            <img src="./img/image/other/manager.png" alt="" class="feedback__img">
-          </div>
-
-
 
         </div>
       </section>

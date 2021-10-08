@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.min.css" />
   <meta name="csrf-token" content="p5q8mFhMdAS9z3KSayI05bO34EEXjhMl9ysZOAS3">
-  <title>Карзина</title>
+  <title>Корзина</title>
 </head>
 
 <body>
   <div class="app">
-    <header class="header">
+    <header class="header light-bg">
       <!-- header__top -->
-      <div class="header__top header__top--absolute">
+      <div class="header__top header__top--white">
         <div class="header__top-inner container">
           <a href="index.html" class="header__logo"> </a>
 
@@ -108,7 +108,6 @@
         </div>
       </div>
       <!--header__top-->
-
     </header>
 
     <main class="main">
@@ -123,148 +122,54 @@
         <div class="basket__list">
 
           <div class="basket-card">
-            <div class="basket-card__preview">
-              <a href="product-page.html" class="basket-card__preview-link">
-                <picture>
+            <div class="basket-card__top">
+              <div class="basket-card__preview">
+                <a href="product-page.html" class="basket-card__preview-link">
+                  <picture>
 
-                  <img src="./img/image/product-card/product1.jpg" alt="" class="basket-card__img">
-                </picture>
-              </a>
-            </div>
-
-            <div class="basket-card__name">
-              <a href="#!" class="basket-card__category">
-                Лист металлический
-              </a>
-              <h2 class="basket-card__title">
-                <a href="product-page.html" class="basket-card__link">
-                  Лист вольфрамовый 0,1 мм ВЧ
+                    <img src="./img/image/product-card/product1.jpg" alt="" class="basket-card__img">
+                  </picture>
                 </a>
+              </div>
 
-              </h2>
+              <div class="basket-card__name">
+                <a href="#!" class="basket-card__category">
+                  Лист металлический
+                </a>
+                <h2 class="basket-card__title">
+                  <a href="product-page.html" class="basket-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+
+                </h2>
+              </div>
             </div>
 
-            <div class="basket-card__counter counter">
-              <span class="counter__btn">-</span>
-              <input class="counter__input" type="text" value="1">
-              <span class="counter__btn">+</span>
-            </div>
 
-            <div class="basket-card__price">
-              <span class="basket-card__old">2 400 ₽/м2</span>
-              <span class="basket-card__new">1 200 ₽/м2</span>
-            </div>
+            <div class="basket-card__main">
+              <div class="basket-card__center">
+                <div class="basket-card__counter counter">
+                  <span class="basket-card__btn counter__btn">-</span>
+                  <input class="basket-card__input counter__input" type="text" value="1">
+                  <span class="basket-card__btn counter__btn">+</span>
+                </div>
 
-            <span class="basket-card__remove"></span>
+                <div class="basket-card__price">
+                  <span class="basket-card__old">2 400 ₽/м2</span>
+                  <span class="basket-card__new">10 200 000 ₽/м2</span>
+                </div>
+              </div>
+
+
+
+
+              <span class="basket-card__remove">
+                <span class="basket-card__remove-text">Убрать из корзины</span>
+                <i class="basket-card__remove-icon"></i>
+              </span>
+            </div>
           </div>
 
-          <div class="basket-card">
-            <div class="basket-card__preview">
-              <a href="product-page.html" class="basket-card__preview-link">
-                <picture>
-
-                  <img src="./img/image/product-card/product1.jpg" alt="" class="basket-card__img">
-                </picture>
-              </a>
-            </div>
-
-            <div class="basket-card__name">
-              <a href="#!" class="basket-card__category">
-                Лист металлический
-              </a>
-              <h2 class="basket-card__title">
-                <a href="product-page.html" class="basket-card__link">
-                  Лист вольфрамовый 0,1 мм ВЧ
-                </a>
-
-              </h2>
-            </div>
-
-            <div class="basket-card__counter counter">
-              <span class="counter__btn">-</span>
-              <input class="counter__input" type="text" value="1">
-              <span class="counter__btn">+</span>
-            </div>
-
-            <div class="basket-card__price">
-              <span class="basket-card__old">2 400 ₽/м2</span>
-              <span class="basket-card__new">1 200 ₽/м2</span>
-            </div>
-
-            <span class="basket-card__remove"></span>
-          </div>
-
-          <div class="basket-card">
-            <div class="basket-card__preview">
-              <a href="product-page.html" class="basket-card__preview-link">
-                <picture>
-
-                  <img src="./img/image/product-card/product1.jpg" alt="" class="basket-card__img">
-                </picture>
-              </a>
-            </div>
-
-            <div class="basket-card__name">
-              <a href="#!" class="basket-card__category">
-                Лист металлический
-              </a>
-              <h2 class="basket-card__title">
-                <a href="product-page.html" class="basket-card__link">
-                  Лист вольфрамовый 0,1 мм ВЧ
-                </a>
-
-              </h2>
-            </div>
-
-            <div class="basket-card__counter counter">
-              <span class="counter__btn">-</span>
-              <input class="counter__input" type="text" value="1">
-              <span class="counter__btn">+</span>
-            </div>
-
-            <div class="basket-card__price">
-              <span class="basket-card__old">2 400 ₽/м2</span>
-              <span class="basket-card__new">1 200 ₽/м2</span>
-            </div>
-
-            <span class="basket-card__remove"></span>
-          </div>
-
-          <div class="basket-card">
-            <div class="basket-card__preview">
-              <a href="product-page.html" class="basket-card__preview-link">
-                <picture>
-
-                  <img src="./img/image/product-card/product1.jpg" alt="" class="basket-card__img">
-                </picture>
-              </a>
-            </div>
-
-            <div class="basket-card__name">
-              <a href="#!" class="basket-card__category">
-                Лист металлический
-              </a>
-              <h2 class="basket-card__title">
-                <a href="product-page.html" class="basket-card__link">
-                  Лист вольфрамовый 0,1 мм ВЧ
-                </a>
-
-              </h2>
-            </div>
-
-            <div class="basket-card__counter counter">
-              <span class="counter__btn">-</span>
-              <input class="counter__input" type="text" value="1">
-              <span class="counter__btn">+</span>
-            </div>
-
-            <div class="basket-card__price">
-              <span class="basket-card__old">2 400 ₽/м2</span>
-              <span class="basket-card__new">1 200 ₽/м2</span>
-            </div>
-
-            <span class="basket-card__remove"></span>
-          </div>
 
         </div>
         <!-- basket__list -->
@@ -304,7 +209,7 @@
               <!-- track -->
               <div class="slider__track">
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -331,7 +236,7 @@
                   </div>
                 </div>
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -358,7 +263,7 @@
                   </div>
                 </div>
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -384,7 +289,7 @@
                   </div>
                 </div>
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -411,7 +316,7 @@
                   </div>
                 </div>
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -438,7 +343,7 @@
                   </div>
                 </div>
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -464,7 +369,7 @@
                   </div>
                 </div>
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ

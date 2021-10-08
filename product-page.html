@@ -514,46 +514,48 @@
 
       <!-- Не нашли подходящего? -->
       <div class="application container">
-        <h4 class="application__title">Не нашли подходящего изделия?</h4>
-        <p class="application__text">Оставьте заявку на изготовление изделия по персональным чертежам, и наши
-          специалисты свяжутся с вами для обсуждения деталей проекта.</p>
+        <div class="application__inner">
+          <h4 class="application__title">Не нашли подходящего изделия?</h4>
+          <p class="application__text">Оставьте заявку на изготовление изделия по персональным чертежам, и наши
+            специалисты свяжутся с вами для обсуждения деталей проекта.</p>
 
-        <form action="" class="application__form form">
-          <div class="form__body">
-            <div class="form__side">
-              <input type="text" name="name" class="form__input input" placeholder="Акакий Акакиевич Башмачкин">
-              <div class="form__input-block">
-                <input type="text" name="mail" class="form__input mr20  input" placeholder="E-mail">
+          <form action="" class="application__form form">
+            <div class="form__body">
+              <div class="form__side">
+                <input type="text" name="name" class="form__input input" placeholder="Акакий Акакиевич Башмачкин">
+                <div class="form__input-block">
+                  <input type="text" name="mail" class="form__input mr20  input" placeholder="E-mail">
 
-                <input type="text" name="phone" class="form__input input" placeholder="+7 (999)-999-99-99">
+                  <input type="text" name="phone" class="form__input input" placeholder="+7 (999)-999-99-99">
+                </div>
+                <label class="form__file">
+                  <span class="form__file-text">Добавить реквизиты</span>
+                  <input data-file type="file" name="file" class="file__input">
+                  <span class="form__file-format">Файл до 10 МБ в формате doc, docx, pdf</span>
+                </label>
+
               </div>
-              <label class="form__file">
-                <span class="form__file-text">Добавить реквизиты</span>
-                <input data-file type="file" name="file" class="file__input">
-                <span class="form__file-format">Файл до 10 МБ в формате doc, docx, pdf</span>
+
+              <div class="form__side">
+                <textarea data-textarea name="message" class="form__textarea textarea"
+                  placeholder="Комменатрий к заказу"></textarea>
+              </div>
+            </div>
+
+            <div class="form__bottom">
+              <input type="text" class="form__submit btn yellow-btn hover-yellow-light" value="Отправить запрос">
+              <label class="checkbox" data-label>
+                <input data-checkbox type="checkbox" checked class="checkbox__input" />
+                <span class="checkbox__fake"></span>
+                <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
               </label>
-
             </div>
 
-            <div class="form__side">
-              <textarea data-textarea name="message" class="form__textarea textarea"
-                placeholder="Комменатрий к заказу"></textarea>
-            </div>
-          </div>
-
-          <div class="form__bottom">
-            <input type="text" class="form__submit btn yellow-btn hover-yellow-light" value="Отправить запрос">
-            <label class="checkbox" data-label>
-              <input data-checkbox type="checkbox" checked class="checkbox__input" />
-              <span class="checkbox__fake"></span>
-              <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
-
-            </label>
-          </div>
 
 
-
-        </form>
+          </form>
+        </div>
       </div>
       <!-- Не нашли подходящего? -->
 

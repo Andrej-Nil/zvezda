@@ -1,9 +1,10 @@
 .about-company {
-  background: $lightBg;
+  padding: 0 15px;
 }
 
 .about-company__text {
-  padding: 30px 40px;
+  padding: 30px 20px;
+  background: $lightBg;
 }
 
 .about-company {
@@ -20,7 +21,7 @@
 .about-company__blink {
   background: $lightBg;
   display: block;
-  padding: 20px 40px;
+  padding: 20px;
   cursor: pointer;
 
   color: $yellowMain;

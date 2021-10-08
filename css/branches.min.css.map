@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,SAAS,AAAC,CACR,MAAM,CAAE,KAAK,CACb,gBAAgB,CAAE,qCAAqC,CACvD,iBAAiB,CAAE,SAAS,CAC5B,eAAe,CAAE,KAAK,CACtB,mBAAmB,CAAE,QAAQ,CAC9B",
-    "sources": [
-        "../scss/blocks/branches.scss"
-    ],
-    "names": [],
-    "file": "branches.min.css"
-}

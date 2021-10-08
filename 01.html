@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.min.css" />
   <meta name="csrf-token" content="p5q8mFhMdAS9z3KSayI05bO34EEXjhMl9ysZOAS3">
-  <title>Товар</title>
+  <title>Корзина</title>
 </head>
 
 <body>
@@ -108,1020 +108,326 @@
         </div>
       </div>
       <!--header__top-->
-
-      <div class="path mt125 container">
-        <a href="index.html" class="path__link">Главная</a>
-        <span class="path__dash"></span>
-        <a href="catalog.html" class="path__link">Каталог</a>
-        <span class="path__dash"></span>
-        <a href="catalog.html" class="path__link path__link--active">Лист металлический</a>
-      </div>
-
-      <!--header__content-->
-      <div class="header__content container">
-        <div class="header-card">
-          <div class="header-card__text">
-            <h1 class="header-card__title">Лист металлический</h1>
-
-            <p class="header-card__desc">
-              Наша компания предлагает широкий выбор стального листа: холодной и горячей прокатки, с чечевичным и
-              ромбическим рифление оцинкованного и нержавеющего.
-            </p>
-          </div>
-
-          <img src="./img/image/header-card/img1.jpg" alt="" class="header-card__img">
-        </div>
-      </div>
-      <!--header__content-->
-
     </header>
 
+    <main class="main">
+      <!-- basket -->
+      <div class="basket container">
+        <div class="basket__header">
+          <h1 class="basket__title">Корзина</h1>
+          <span class="basket__clear">Очистить корзину</span>
 
-
-    <div class="settings-display container">
-
-      <div class="settings-display__selects">
-
-        <div class="settings-display__select select">
-          <span class="settings-display__select-title select__title">
-            24 товарова на странице
-          </span>
-          <div class="select__body">
-            <ul class="select__list">
-              <li class="select__item">
-                <label class="select__label">
-                  <span class="select__text"> Кит </span>
-                  <input class="radio" type="radio" name="delivery" value="" />
-                </label>
-              </li>
-              <li class="select__item">
-                <label class="select__label">
-                  <span class="select__text"> сдек </span>
-                  <input class="radio" type="radio" name="delivery" value="" />
-                </label>
-              </li>
-            </ul>
-          </div>
         </div>
+        <!-- basket__list -->
+        <div class="basket__list">
 
-        <div class="settings-display__select select">
-          <span class="settings-display__select-title select__title">
-            Популярные
-          </span>
-          <div class="select__body">
-            <ul class="select__list">
-              <li class="select__item">
-                <label class="select__label">
-                  <span class="select__text"> Кит </span>
-                  <input class="radio" type="radio" name="delivery" value="" />
-                </label>
-              </li>
-              <li class="select__item">
-                <label class="select__label">
-                  <span class="select__text"> сдек </span>
-                  <input class="radio" type="radio" name="delivery" value="" />
-                </label>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+          <div class="basket-card">
+            <div class="basket-card__top">
+              <div class="basket-card__preview">
+                <a href="product-page.html" class="basket-card__preview-link">
+                  <picture>
 
-      <div class="settings-display__search search">
-        <input data-search-input type="text" class="settings-display__input search__input search__input--light-bd input"
-          placeholder="Введите запрос и нажмите Enter" />
-        <span class="search-form__btn search__btn"></span>
-      </div>
-      <div class="display__toggle">
-        <span class="display__btn display__btn--list"></span>
-        <span class="display__btn display__btn--tile-active"></span>
-      </div>
-    </div>
-
-    <div class="content container">
-
-      <div class="sidebar hide-for-mobile">
-        <!-- sidebar__inner -->
-        <div class="sidebar__inner">
-          <!-- catalog__nav -->
-          <div class="filters-bg">
-
-            <div class="filters-wrap">
-              <div class="filters__top">
-                <span data-close class="filters__close close-btn">Закрыть</span>
-                <h3 class="filters__title">
-                  Фильтр продукции
-                </h3>
+                    <img src="./img/image/product-card/product1.jpg" alt="" class="basket-card__img">
+                  </picture>
+                </a>
               </div>
 
-              <div class="filters-wrap__inner">
+              <div class="basket-card__name">
+                <a href="#!" class="basket-card__category">
+                  Лист металлический
+                </a>
+                <h2 class="basket-card__title">
+                  <a href="product-page.html" class="basket-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ Лист вольфрамовый 0,1 мм ВЧ Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
 
-                <ul class="catalog__nav">
-                  <li class="dropdown">
-                    <div class="dropdown__top">
-                      <h3 class="dropdown__title">
-                        <span class="dropdown__arrow">
-                          <span class="dropdown__arrow-icon"></span>
-                        </span>
-                        <a href="#!" class="dropdown__link">Лист</a>
-                      </h3>
-
-                    </div>
-                    <div class="dropdown__body">
-                      <ul class="dropdown__list">
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li class="dropdown">
-                    <div class="dropdown__top">
-                      <h3 class="dropdown__title">
-                        <span class="dropdown__arrow">
-                          <span class="dropdown__arrow-icon"></span>
-                        </span>
-                        <a href="#!" class="dropdown__link">Лист</a>
-                      </h3>
-
-                    </div>
-                    <div class="dropdown__body">
-                      <ul class="dropdown__list">
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li class="dropdown">
-                    <div class="dropdown__top">
-                      <h3 class="dropdown__title">
-                        <span class="dropdown__arrow">
-                          <span class="dropdown__arrow-icon"></span>
-                        </span>
-                        <a href="#!" class="dropdown__link">Лист</a>
-                      </h3>
-
-                    </div>
-                    <div class="dropdown__body">
-                      <ul class="dropdown__list">
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li class="dropdown">
-                    <div class="dropdown__top">
-                      <h3 class="dropdown__title">
-                        <span class="dropdown__arrow">
-                          <span class="dropdown__arrow-icon"></span>
-                        </span>
-                        <a href="#!" class="dropdown__link">Лист</a>
-                      </h3>
-
-                    </div>
-                    <div class="dropdown__body">
-                      <ul class="dropdown__list">
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-
-                        <li class="dropdown__item">
-                          <a href="#!" class="dropdown__link dropdown__item-link">Лист</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-
-                </ul>
-                <!-- catalog__nav -->
-
-                <form action="" class="filters">
-                  <ul class="filter__list">
-                    <li class="filter dropdown">
-                      <div class="filter__top dropdown__top">
-                        <h3 class="dropdown__title">
-                          <span class="dropdown__arrow">
-                            <span class="dropdown__arrow-icon"></span>
-                          </span>
-                          <a href="#!" class="dropdown__link">Цена, ₽</a>
-                        </h3>
-
-                      </div>
-                      <div class="dropdown__body">
-                        <div class="filter__price">
-                          <div class="filter__inputs">
-                            <input type="text" class="filter__input" placeholder="от 0">
-                            <input type="text" class="filter__input" placeholder="до 281 000">
-                          </div>
-
-                          <div class="range">
-                            <span class="range__slide range__slide--left"></span>
-                            <span class="range__line"></span>
-                            <span class="range__slide range__slide--right"></span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li class="filter dropdown">
-                      <div class="filter__top dropdown__top">
-                        <h3 class="dropdown__title">
-                          <span class="dropdown__arrow">
-                            <span class="dropdown__arrow-icon"></span>
-                          </span>
-                          <a href="#!" class="dropdown__link">ГОСТ</a>
-                        </h3>
-
-                      </div>
-                      <div class="dropdown__body">
-                        <ul class="dropdown__list">
-
-                          <li class="filter__search dropdown__item">
-                            <div class="">
-                              <input type="text" class="filter__input" placeholder="Поиск по филтру">
-                            </div>
-                          </li>
-
-
-                          <li class="dropdown__item">
-                            <label class="filter__label">
-                              <input type="checkbox" class="filter__checkbox">
-                              <span class="dropdown__link dropdown__item-link">764-98</span>
-                            </label>
-                          </li>
-
-                          <li class="dropdown__item">
-                            <label class="filter__label">
-                              <input type="checkbox" class="filter__checkbox">
-                              <span class="dropdown__link dropdown__item-link">764-98</span>
-                            </label>
-                          </li>
-
-                          <li class="dropdown__item">
-                            <label class="filter__label">
-                              <input type="checkbox" class="filter__checkbox">
-                              <span class="dropdown__link dropdown__item-link">764-98</span>
-                            </label>
-                          </li>
-
-                          <li class="dropdown__item">
-                            <label class="filter__label">
-                              <input type="checkbox" class="filter__checkbox">
-                              <span class="dropdown__link dropdown__item-link">764-98</span>
-                            </label>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-
-                    <li class="filter dropdown">
-                      <div class="filter__top dropdown__top">
-                        <h3 class="dropdown__title">
-                          <span class="dropdown__arrow">
-                            <span class="dropdown__arrow-icon"></span>
-                          </span>
-                          <a href="#!" class="dropdown__link">Матерьял</a>
-                        </h3>
-
-                      </div>
-                      <div class="dropdown__body">
-                        <ul class="dropdown__list">
-
-                          <li class="filter__search dropdown__item">
-                            <div class="">
-                              <input type="text" class="filter__input" placeholder="Поиск по филтру">
-                            </div>
-                          </li>
-
-
-                          <li class="dropdown__item">
-                            <label class="filter__label">
-                              <input type="checkbox" class="filter__checkbox">
-                              <span class="dropdown__link dropdown__item-link">764-98</span>
-                            </label>
-                          </li>
-
-                          <li class="dropdown__item">
-                            <label class="filter__label">
-                              <input type="checkbox" class="filter__checkbox">
-                              <span class="dropdown__link dropdown__item-link">764-98</span>
-                            </label>
-                          </li>
-
-                          <li class="dropdown__item">
-                            <label class="filter__label">
-                              <input type="checkbox" class="filter__checkbox">
-                              <span class="dropdown__link dropdown__item-link">764-98</span>
-                            </label>
-                          </li>
-
-                          <li class="dropdown__item">
-                            <label class="filter__label">
-                              <input type="checkbox" class="filter__checkbox">
-                              <span class="dropdown__link dropdown__item-link">764-98</span>
-                            </label>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-
-                  <div class="filter__bottom">
-                    <p class="filter__result">Найдено товаров: <span class="filter__find">486</span></p>
-
-                    <div class="filter__buttons">
-                      <input class="filter__btn btn yellow-btn hover-yellow-light" type="text" value="Показать">
-
-                      <span class="filter__btn filter__btn--clear btn" type="text">Сбросить фильтр</span>
-                    </div>
-                  </div>
-                </form>
+                </h2>
               </div>
-
-
             </div>
 
+
+            <div class="basket-card__main">
+              <div class="basket-card__center">
+                <div class="basket-card__counter counter">
+                  <span class="basket-card__btn counter__btn">-</span>
+                  <input class="basket-card__input counter__input" type="text" value="1">
+                  <span class="basket-card__btn counter__btn">+</span>
+                </div>
+
+                <div class="basket-card__price">
+                  <span class="basket-card__old">2 400 ₽/м2</span>
+                  <span class="basket-card__new">10 200 000 ₽/м2</span>
+                </div>
+              </div>
+
+
+
+
+              <span class="basket-card__remove">
+                <span class="basket-card__remove-text">Убрать из корзины</span>
+                <i class="basket-card__remove-icon"></i>
+              </span>
+            </div>
           </div>
 
+
         </div>
-        <!--sidebar__inner-->
+        <!-- basket__list -->
+
+        <!--basket__footer-->
+        <div class="basket__footer">
+          <div class="basket-clear__btn">
+            <span class="basket-clear__text basket__clear">Очистить корзину</span>
+          </div>
 
 
+          <a href="#!" class="basket__back">Вернуться к покупкам</a>
+          <div class="basket__price">
+            <span class="basket__discount">
+              Ваша скидка 44 999 ₽
+            </span>
+            <div class="basket-total">
+              <span class="basket-total__text">Итого: </span>
+              <span class="basket-total__price">100 214 000 ₽</span>
+            </div>
+          </div>
+        </div>
+        <!-- basket__footer -->
+
+        <div class="basket__arrange-btn btn yellow-btn hover-yellow-light">
+          Перейти к оформлению
+        </div>
       </div>
+      <!-- basket -->
 
 
-
-      <main class="main">
-        <!--main__wrap-->
-        <div class="main__wrap">
-
+      <!-- Рекомендуем товары -->
+      <section class="section product-card-slider">
+        <div class="section__inner container">
+          <h2 class="section__title">
+            Рекомендуем товары
+          </h2>
           <!-- section__content -->
           <div class="section__content">
-            <!-- card-list -->
-            <div class="product-tile product-tile--three-coll">
+            <!-- slider -->
+            <div class="slider slider--with-padding">
+              <!-- track -->
+              <div class="slider__track">
 
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
+                <div class="product-card product-card--slider">
+                  <h3 class="product-card__title">
+                    <a href="product-page.html" class="product-card__link">
+                      Лист вольфрамовый 0,1 мм ВЧ
+                    </a>
+                  </h3>
+                  <div class="product-card__preview">
+                    <a href="product-page.html" class="product-card__link-img">
+                      <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
+                    </a>
                   </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product4.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">12 000 678 ₽/м2</p>
-                    <p class="product-card__old">24 006 570 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current product-card__current--text">Цена по запросу</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-            </div>
-            <!-- card-list -->
-
-            <!--product-line-->
-            <div class="product-list">
-              <div class="product-line">
-                <div class="product-line__left">
-                  <h2 class="product-line__title">
-                    <a href="product-page.html" class="product-line__link"> Лист вольфрамовый 0,1 мм ВЧ</a>
-
-                  </h2>
-
-                  <p class="product-line__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное поперечное сечение.
+                  <p class="product-card__desc">
+                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                    поперечное сечение.
                   </p>
+                  <div class="product-card__bottom">
+                    <div class="product-card__price">
+                      <p class="product-card__current">1200 ₽/м2</p>
+                      <p class="product-card__old">2400 ₽/м2</p>
+                    </div>
 
-                </div>
-
-                <div class="product-line__right">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
+                    <span class="product-card__btn btn yellow-btn">
+                      <span class="product-card__value btn__value basket-icon">В корзину</span>
+                    </span>
                   </div>
-
-                  <span class="product-line__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
                 </div>
 
+                <div class="product-card product-card--slider">
+                  <h3 class="product-card__title">
+                    <a href="product-page.html" class="product-card__link">
+                      Лист вольфрамовый 0,1 мм ВЧ
+                    </a>
+                  </h3>
+                  <div class="product-card__preview">
+                    <a href="product-page.html" class="product-card__link-img">
+                      <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
+                    </a>
+                  </div>
+                  <p class="product-card__desc">
+                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                    поперечное сечение.
+                  </p>
+                  <div class="product-card__bottom">
+                    <div class="product-card__price">
+                      <p class="product-card__current">1200 ₽/м2</p>
+                      <p class="product-card__old">2400 ₽/м2</p>
+                    </div>
+
+                    <span class="product-card__btn btn yellow-btn">
+                      <span class="product-card__value btn__value basket-icon">В корзину</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="product-card product-card--slider">
+                  <h3 class="product-card__title">
+                    <a href="product-page.html" class="product-card__link">
+                      Лист вольфрамовый 0,1 мм ВЧ
+                    </a>
+                  </h3>
+                  <div class="product-card__preview">
+                    <a href="product-page.html" class="product-card__link-img">
+                      <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
+                    </a>
+                  </div>
+                  <p class="product-card__desc">
+                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                    поперечное сечение.
+                  </p>
+                  <div class="product-card__bottom">
+                    <div class="product-card__price">
+                      <p class="product-card__current">1200 ₽/м2</p>
+                    </div>
+
+                    <span class="product-card__btn btn yellow-btn">
+                      <span class="product-card__value btn__value basket-icon">В корзину</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="product-card product-card--slider">
+                  <h3 class="product-card__title">
+                    <a href="product-page.html" class="product-card__link">
+                      Лист вольфрамовый 0,1 мм ВЧ
+                    </a>
+                  </h3>
+                  <div class="product-card__preview">
+                    <a href="product-page.html" class="product-card__link-img">
+                      <img src="./img/image/product-card/product4.jpg" alt="" class="product-card__img">
+                    </a>
+                  </div>
+                  <p class="product-card__desc">
+                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                    поперечное сечение.
+                  </p>
+                  <div class="product-card__bottom">
+                    <div class="product-card__price">
+                      <p class="product-card__current">1200 ₽/м2</p>
+                      <p class="product-card__old">2400 ₽/м2</p>
+                    </div>
+
+                    <span class="product-card__btn btn yellow-btn">
+                      <span class="product-card__value btn__value basket-icon">В корзину</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="product-card product-card--slider">
+                  <h3 class="product-card__title">
+                    <a href="product-page.html" class="product-card__link">
+                      Лист вольфрамовый 0,1 мм ВЧ
+                    </a>
+                  </h3>
+                  <div class="product-card__preview">
+                    <a href="product-page.html" class="product-card__link-img">
+                      <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
+                    </a>
+                  </div>
+                  <p class="product-card__desc">
+                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                    поперечное сечение.
+                  </p>
+                  <div class="product-card__bottom">
+                    <div class="product-card__price">
+                      <p class="product-card__current">12 000 678 ₽/м2</p>
+                      <p class="product-card__old">24 006 570 ₽/м2</p>
+                    </div>
+
+                    <span class="product-card__btn btn yellow-btn">
+                      <span class="product-card__value btn__value basket-icon">В корзину</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="product-card product-card--slider">
+                  <h3 class="product-card__title">
+                    <a href="product-page.html" class="product-card__link">
+                      Лист вольфрамовый 0,1 мм ВЧ
+                    </a>
+                  </h3>
+                  <div class="product-card__preview">
+                    <a href="product-page.html" class="product-card__link-img">
+                      <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
+                    </a>
+                  </div>
+                  <p class="product-card__desc">
+                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                    поперечное сечение.
+                  </p>
+                  <div class="product-card__bottom">
+                    <div class="product-card__price">
+                      <p class="product-card__current product-card__current--text">Цена по запросу</p>
+                    </div>
+
+                    <span class="product-card__btn btn yellow-btn">
+                      <span class="product-card__value btn__value basket-icon">В корзину</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="product-card product-card--slider">
+                  <h3 class="product-card__title">
+                    <a href="product-page.html" class="product-card__link">
+                      Лист вольфрамовый 0,1 мм ВЧ
+                    </a>
+                  </h3>
+                  <div class="product-card__preview">
+                    <a href="product-page.html" class="product-card__link-img">
+                      <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
+                    </a>
+                  </div>
+                  <p class="product-card__desc">
+                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                    поперечное сечение.
+                  </p>
+                  <div class="product-card__bottom">
+                    <div class="product-card__price">
+                      <p class="product-card__current">1200 ₽/м2</p>
+                      <p class="product-card__old">2400 ₽/м2</p>
+                    </div>
+
+                    <span class="product-card__btn btn yellow-btn">
+                      <span class="product-card__value btn__value basket-icon">В корзину</span>
+                    </span>
+                  </div>
+                </div>
 
               </div>
-
+              <!-- track -->
+              <div class="products-arrow section-controls">
+                <span class="section-controls__btn section-controls__prev"></span>
+                <span class="section-controls__btn section-controls__next"></span>
+              </div>
             </div>
-            <!--product-line-->
+            <!-- slider -->
           </div>
-          <!-- section__content -->
-          <!--pagination-->
-          <div class="pagination">
-            <a href="#!" class="pagination__arrow pagination__arrow--not-active pagination__arrow--prev">
-              Назад
-            </a>
-
-            <ul class="pagination__list">
-              <li class="pagination__item">
-                <a href="#!" class="pagination__link pagination__link--active">1</a>
-              </li>
-              <li class="pagination__item">
-                <a href="#!" class="pagination__link">2</a>
-              </li>
-              <li class="pagination__item">
-                <a href="#!" class="pagination__link">3</a>
-              </li>
-              <li class="pagination__item">
-                <a href="#!" class="pagination__link">4</a>
-              </li>
-              <li class="pagination__item">
-                <a href="#!" class="pagination__link">5</a>
-              </li>
-              <li class="pagination__item">
-                <span class="pagination__link pagination__link--fake ">...</span>
-              </li>
-              <li class="pagination__item">
-                <a href="#!" class="pagination__link">32</a>
-              </li>
-
-            </ul>
-
-            <a href="#!" class="pagination__arrow  pagination__arrow--next">
-              Дальше
-            </a>
-          </div>
-          <!--pagination-->
-
         </div>
-        <!-- main__wrap -->
-
-
-      </main>
-    </div>
-
-
-    <!-- Рекомендуем товары -->
-    <section class="section product-card-slider">
-      <div class="section__inner container">
-        <h2 class="section__title">
-          Рекомендуем товары
-        </h2>
         <!-- section__content -->
-        <div class="section__content">
-          <!-- slider -->
-          <div class="slider slider--with-padding">
-            <!-- track -->
-            <div class="slider__track">
+      </section>
+      <!-- Рекомендуем товары -->
 
-              <div class="product-card product-card--slider">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
+      <!-- basket-empty -->
+      <div id="basketEmpty" class="basket-empty">
+        <h2 class="basket-empty__title">В корзине пусто</h2>
+        <p class="basket-empty__text">
+          Добавьте интересующую Вас продукцию и она появиться здесь.
+          Затем Вы можете её приобрести, сделав онлайн заказ.
+        </p>
 
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card product-card--slider">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card product-card--slider">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card product-card--slider">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product4.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card product-card--slider">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">12 000 678 ₽/м2</p>
-                    <p class="product-card__old">24 006 570 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card product-card--slider">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current product-card__current--text">Цена по запросу</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card product-card--slider">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-            </div>
-            <!-- track -->
-            <div class="products-arrow section-controls">
-              <span class="section-controls__btn section-controls__prev"></span>
-              <span class="section-controls__btn section-controls__next"></span>
-            </div>
-          </div>
-          <!-- slider -->
-        </div>
+        <a href="catalog.html" class="basket-empty__link btn clear-btn">Каталог продукции</a>
       </div>
-      <!-- section__content -->
-    </section>
-    <!-- Рекомендуем товары -->
+      <!-- basket-empty -->
 
-    <!-- Не нашли подходящего -->
-    <div class="application container">
-      <h4 class="application__title">Не нашли подходящего изделия?</h4>
-      <p class="application__text">Оставьте заявку на изготовление изделия по персональным чертежам, и наши
-        специалисты свяжутся с вами для обсуждения деталей проекта.</p>
-
-      <form action="" class="application__form form">
-        <div class="form__body">
-          <div class="form__side">
-            <input type="text" name="name" class="form__input input" placeholder="Акакий Акакиевич Башмачкин">
-            <div class="form__input-block">
-              <input type="text" name="mail" class="form__input mr20  input" placeholder="E-mail">
-
-              <input type="text" name="phone" class="form__input input" placeholder="+7 (999)-999-99-99">
-            </div>
-            <label class="form__file">
-              <span class="form__file-text">Добавить реквизиты</span>
-              <input data-file type="file" name="file" class="file__input">
-              <span class="form__file-format">Файл до 10 МБ в формате doc, docx, pdf</span>
-            </label>
-
-          </div>
-
-          <div class="form__side">
-            <textarea data-textarea name="message" class="form__textarea textarea"
-              placeholder="Комменатрий к заказу"></textarea>
-          </div>
-        </div>
-
-        <div class="form__bottom">
-          <div class="form__file-wrap">
-
-
-            <label class="form__file form__file--mobile">
-              <span class="form__file-text">Добавить реквизиты</span>
-              <input data-file type="file" name="file" class="file__input">
-            </label>
-            <p class="form__file-desc">Файл до 10 МБ в формате doc, docx, pdf</p>
-          </div>
-          <input type="text" class="form__submit btn yellow-btn hover-yellow-light" value="Отправить запрос">
-          <label class="form__checkbox checkbox" data-label>
-            <input data-checkbox type="checkbox" checked class="checkbox__input" />
-            <span class="checkbox__fake"></span>
-            <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
-
-          </label>
-        </div>
-
-
-
-      </form>
-    </div>
-    <!-- Не нашли подходящего -->
-
-    <!-- Компания «Звезда» -->
-    <div class="about-company">
-      <div class="about-company__text">
-        <p class="about-company__para">
-          Компания «Звезда» – это один из крупнейших поставщиков стального металлопроката. Cклад компании наполнен
-          широким
-          ассортиментом продукции металлопроката, что позволяет оперативно исполнять любой индивидуальный заказ.
-          Компания «Звезда» – это один из крупнейших поставщиков стального металлопроката. Cклад компании наполнен
-          широким
-          ассортиментом продукции металлопроката, что позволяет оперативно исполнять любой индивидуальный.
-
-        </p>
-
-        <p class="about-company__para">
-          Доставка металлопроката и изделий из него осуществляется своим транспортом или
-          транспортными компаниями,
-          партнёрами предприятия. Автопарк ПАО «Звезда» состоит из 243 единиц автотранспортных средств.
-          Автопарк ПАО «Звезда» состоит из 243 единиц автотранспортных средств. В их числе: 114 седельных тягача
-          грузоподъёмностью 20 тонн и длиной кузова 13.5 метров марки «Mersedes», 43 автомобиля марки «Камаз»
-          грузоподъемностью 10 тонн и длиной кузова 6 метров, 32 манипулятора грузоподъемностью от 3 до 25 тонн и
-          длиной
-          кузова от 4 до 10 метров, а так-же 54 единицы транспорта грузоподъёмностью менее 3 тонн марок «Газель»,
-          «Porter»
-          и «Hyundai».
-        </p>
-
-        <p class="about-company__para">
-          Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов
-          авто-доставки грузов по Российской
-          Федерации и в страны СНГ.
-          На всех складах нашей компании оборудованы Ж/Д тупики для погрузки железнодорожных вагонов. Что позволяет
-          клиентам ставить на погрузку свои вагоны, а так-же позволяет менеджерам нашей компании организовывать свои
-          доставки железнодорожным транспортом.
-        </p>
-
-
-        <p class="about-company__para">
-          С грузом будут выданы следующие сопроводительные документы: Товарно-транспортная
-          накладная (ТТН), Счет-фактура,
-          Акт выполненных работ, или универсальный передаточный документ (УПД).
-        </p>
-
-        <p class="about-company__para">
-          Какой бы способ оплаты вы не выбрали, мы представим все необходимые документы и
-          сертификаты. В условиях
-          долгосрочных партнёрских отношений, предложим Вам хорошие скидки и отсрочку платежей.
-        </p>
-
-        <p class="about-company__para">
-          Реализуя один из основных принципов нашей работы - сократить до минимума ваши
-          временные затраты, мы предлагаем
-          именно ту схему оплаты, по которой вам удобнее работать. Наша компания принимает оплату следующими
-          способами:
-        </p>
-
-        <ul class="about-company__list">
-          <li class="about-company__item">
-            Безналичный расчет банковской картой;
-          </li>
-          <li class="about-company__item">
-            Наличными в офисе;
-          </li>
-          <li class="about-company__item">
-            Оплата на расчетнй счет.
-          </li>
-        </ul>
-      </div>
-
-
-      <span class="about-company__blink">
-        Свернуть
-      </span>
-
-    </div>
-    <!-- Компания «Звезда» -->
+    </main>
     <footer class="footer">
       <!-- footer-top -->
       <div class="footer-top">
@@ -1268,18 +574,6 @@
       </div>
 
     </footer>
-
-    <div class="search-product">
-      <div class="search search-product__string">
-        <input data-search-input type="text" class="search-product__input search__input input"
-          placeholder="Введите запрос" />
-        <span class="search-form__btn search__btn"></span>
-      </div>
-
-      <div class="search-product__btn">
-
-      </div>
-    </div>
 
     <!--header-modals-->
 
@@ -1491,8 +785,6 @@
 
     <!--modal-->
 
-
-
     <!-- supportModal -->
     <div data-close id="supportModal" class="modal">
       <!--modal__inner-->
@@ -1678,7 +970,6 @@
     <!-- searchModal -->
 
     <!--modal-->
-
   </div>
   <script src="js/main.js"></script>
 </body>
