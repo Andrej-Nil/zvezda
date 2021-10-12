@@ -36,6 +36,7 @@
 }
 
 .product-about__item--out-stock {
+  display: none;
   color: #ea2d2d;
   &::before {
     @include font-icon-style("\e924", 22px);
@@ -44,18 +45,26 @@
 }
 
 .product-about__item--print {
+  display: none;
   cursor: pointer;
   &::before {
     @include font-icon-style("\e90d", 20px);
+  }
+  @media (min-width: 1280px) {
+    display: block;
   }
 }
 
 .product-about__title {
   color: $blackMain;
-  font-size: 48px;
-  line-height: 66px;
 
+  font-size: 30px;
+  line-height: 41px;
   margin-bottom: 12px;
+  @media (min-width: 1280px) {
+    font-size: 48px;
+    line-height: 66px;
+  }
 }
 
 .product-about__price {
@@ -101,7 +110,7 @@
     height: 18px;
 
     @include font-icon-style("\e915", 19px);
-    color: #000;
+    color: $blackMain;
   }
 }
 
@@ -118,8 +127,12 @@
 
 .product-desc__title {
   color: $blackMain;
-  font-size: 36px;
-  line-height: 49px;
-
-  margin-bottom: 12px;
+  font-size: 24px;
+  line-height: 33px;
+  margin-bottom: 30px;
+  @media (min-width: 1280px) {
+    font-size: 36px;
+    line-height: 49px;
+    margin-bottom: 12px;
+  }
 }

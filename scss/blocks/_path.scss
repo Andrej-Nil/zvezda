@@ -1,17 +1,23 @@
 .path {
-  display: none;
+  //display: none;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   @media (min-width: 1050px) {
+    margin-bottom: 10px;
   }
 }
 
 .path__link {
-  display: block;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
   color: $blackMain;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
+  margin: 0 10px 20px 0;
 }
 
 .path__link--active {
@@ -22,6 +28,6 @@
   display: block;
   width: 17px;
   height: 1px;
-  margin: 0 10px;
+  margin: 0 10px 0 0;
   background: #c6c6c6;
 }

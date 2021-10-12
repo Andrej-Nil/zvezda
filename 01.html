@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.min.css" />
   <meta name="csrf-token" content="p5q8mFhMdAS9z3KSayI05bO34EEXjhMl9ysZOAS3">
-  <title>Корзина</title>
+  <title>Товар</title>
 </head>
 
 <body>
   <div class="app">
-    <header class="header light-bg">
+    <header class="header">
       <!-- header__top -->
       <div class="header__top header__top--white">
         <div class="header__top-inner container">
@@ -108,102 +108,226 @@
         </div>
       </div>
       <!--header__top-->
+
+      <div class="path mt25 container">
+        <a href="index.html" class="path__link">Главная</a>
+
+        <a href="index.html" class="path__link"><span class="path__dash"></span>Каталог</a>
+
+        <a href="index.html" class="path__link"><span class="path__dash"></span>Лист никелевый</a>
+
+        <a href="catalog.html" class="path__link path__link--active"><span class="path__dash"></span>Лист никелевый 5мм
+          H-0 ГОСТ 6235-1</a>
+      </div>
+
     </header>
 
-    <main class="main">
-      <!-- basket -->
-      <div class="basket container">
-        <div class="basket__header">
-          <h1 class="basket__title">Корзина</h1>
-          <span class="basket__clear">Очистить корзину</span>
 
-        </div>
-        <!-- basket__list -->
-        <div class="basket__list">
+    <main class="main container">
+      <div class="product">
+        <!-- product__left" -->
+        <!--<div class="product__left">-->
 
-          <div class="basket-card">
-            <div class="basket-card__top">
-              <div class="basket-card__preview">
-                <a href="product-page.html" class="basket-card__preview-link">
-                  <picture>
+        <!--product__buy-->
+        <div class="product__buy">
+          <div class="product-about__icons">
 
-                    <img src="./img/image/product-card/product1.jpg" alt="" class="basket-card__img">
-                  </picture>
-                </a>
-              </div>
-
-              <div class="basket-card__name">
-                <a href="#!" class="basket-card__category">
-                  Лист металлический
-                </a>
-                <h2 class="basket-card__title">
-                  <a href="product-page.html" class="basket-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ Лист вольфрамовый 0,1 мм ВЧ Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-
-                </h2>
-              </div>
-            </div>
-
-
-            <div class="basket-card__main">
-              <div class="basket-card__center">
-                <div class="basket-card__counter counter">
-                  <span class="basket-card__btn counter__btn">-</span>
-                  <input class="basket-card__input counter__input" type="text" value="1">
-                  <span class="basket-card__btn counter__btn">+</span>
-                </div>
-
-                <div class="basket-card__price">
-                  <span class="basket-card__old">2 400 ₽/м2</span>
-                  <span class="basket-card__new">10 200 000 ₽/м2</span>
-                </div>
-              </div>
-
-
-
-
-              <span class="basket-card__remove">
-                <span class="basket-card__remove-text">Убрать из корзины</span>
-                <i class="basket-card__remove-icon"></i>
-              </span>
-            </div>
-          </div>
-
-
-        </div>
-        <!-- basket__list -->
-
-        <!--basket__footer-->
-        <div class="basket__footer">
-          <div class="basket-clear__btn">
-            <span class="basket-clear__text basket__clear">Очистить корзину</span>
-          </div>
-
-
-          <a href="#!" class="basket__back">Вернуться к покупкам</a>
-          <div class="basket__price">
-            <span class="basket__discount">
-              Ваша скидка 44 999 ₽
+            <span class="product-about__item product-about__item--in-stock">
+              Есть в наличии
             </span>
-            <div class="basket-total">
-              <span class="basket-total__text">Итого: </span>
-              <span class="basket-total__price">100 214 000 ₽</span>
+
+            <span class="product-about__item product-about__item--out-stock">
+              Нет в наличии
+            </span>
+
+            <span class="product-about__item product-about__item--print">
+              Версия для печати
+            </span>
+
+          </div>
+          <h1 class="product-about__title">
+            Лист никелевый 5мм H-0 ГОСТ 6235-1
+          </h1>
+
+          <div class="product-about__price">
+            <span class="product-about__new">1200 ₽/м2</span>
+            <span class="product-about__old">2400 ₽/м2 </span>
+          </div>
+
+          <span class="product__btn btn yellow-btn hover-yellow-light">В корзину</span>
+        </div>
+        <!-- product__buy -->
+
+        <!-- slider -->
+        <div class="product-slider slider">
+          <!-- track -->
+          <div class="product-slider__track track">
+            <div class="product-slider__item">
+              <img src="./img/image/product/big.jpg" alt="" class="product-slider__img">
+            </div>
+            <div class="product-slider__item">
+              <img src="./img/image/product/big.jpg" alt="" class="product-slider__img">
+            </div>
+            <div class="product-slider__item">
+              <img src="./img/image/product/big.jpg" alt="" class="product-slider__img">
             </div>
           </div>
-        </div>
-        <!-- basket__footer -->
+          <!-- track -->
 
-        <div class="basket__arrange-btn btn yellow-btn hover-yellow-light">
-          Перейти к оформлению
+          <div class="product-dots slider">
+            <!--product-dots__track-->
+            <div class="product-dots__track slider__track">
+
+              <div class="product-dots__item product-dots__item--active">
+                <img src="./img/image/dots/dot1.png" alt="" class="product-dots__img">
+              </div>
+
+              <div class="product-dots__item">
+                <img src="./img/image/dots/dot2.png" alt="" class="product-dots__img">
+              </div>
+
+              <div class="product-dots__item">
+                <img src="./img/image/dots/dot3.png" alt="" class="product-dots__img">
+              </div>
+
+              <div class="product-dots__item">
+                <img src="./img/image/dots/dot4.png" alt="" class="product-dots__img">
+              </div>
+
+              <div class="product-dots__item">
+                <img src="./img/image/dots/dot5.png" alt="" class="product-dots__img">
+              </div>
+
+              <div class="product-dots__item">
+                <img src="./img/image/dots/dot1.png" alt="" class="product-dots__img">
+              </div>
+
+              <div class="product-dots__item">
+                <img src="./img/image/dots/dot2.png" alt="" class="product-dots__img">
+              </div>
+
+              <div class="product-dots__item">
+                <img src="./img/image/dots/dot3.png" alt="" class="product-dots__img">
+              </div>
+            </div>
+            <!-- product-dots__track -->
+          </div>
+
+          <div class="products-arrow section-controls">
+            <span class="section-controls__btn section-controls__prev"></span>
+            <span class="section-controls__btn section-controls__next"></span>
+          </div>
+
+
         </div>
+
+        <!-- slider -->
+
+        <!--product-about__info-->
+        <p class="product-about__info">
+          Одним из самых востребованных продуктов никелевого проката является лист никелевый 5 мм Н-0 ГОСТ 6235-91,
+          который благодаря своим качественным показателям используется при изготовлении спецоборудования,
+          высокоточных приборов, котлов требующих повышенной устойчивости к коррозии. Кроме того. из листа
+          никелевого 5 мм Н-0 изготавливается специализированная посуда для химического производства, а так же
+          емкости для хранения эфирных масел, химических препаратов и пищевых продуктов.
+        </p>
+        <!-- product-about__info -->
+        <!-- Характеристики -->
+        <div class="product-property">
+          <h3 class="product-property__title">
+            Характеристики
+          </h3>
+          <ul class="product-property__list">
+            <li class="product-property__item">
+              <span class="product-property__name">Толщина: </span>
+              <span class="product-property__value">5 мм</span>
+            </li>
+
+            <li class="product-property__item">
+              <span class="product-property__name">Ширина: </span>
+              <span class="product-property__value">1000 мм</span>
+            </li>
+
+            <li class="product-property__item">
+              <span class="product-property__name">Длина: </span>
+              <span class="product-property__value">2000 мм</span>
+            </li>
+
+            <li class="product-property__item">
+              <span class="product-property__name">Марка: </span>
+              <span class="product-property__value">H-0</span>
+            </li>
+
+            <li class="product-property__item">
+              <span class="product-property__name">Гост: </span>
+              <span class="product-property__value">ГОСТ 6235-1</span>
+            </li>
+
+            <li class="product-property__item">
+              <span class="product-property__name">Материал: </span>
+              <span class="product-property__value">Никель</span>
+            </li>
+
+            <li class="product-property__item">
+              <span class="product-property__name">Вид проката: </span>
+              <span class="product-property__value">Лист</span>
+            </li>
+
+            <li class="product-property__item">
+              <span class="product-property__name">Доставка: </span>
+              <span class="product-property__value">По России и СНГ</span>
+            </li>
+          </ul>
+
+
+        </div>
+        <!--Характеристики-->
+
+
+        <!--</div>-->
+        <!-- product__left" -->
+
+        <!-- product__right -->
+        <!--<div class="product__right">-->
+        <!-- product-about -->
+
+
+
+        <div class="product-about">
+
+
+          <div class="product-desc">
+            <h2 class="product-desc__title">
+              Листы никелевые
+            </h2>
+
+            <p class="product-desc__text">
+              Никелевый прокат, за счет своих уникальных эксплуатационных и физико-механических свойств пользуется
+              широкой популярностью и активно используется во многих отраслях промышленности.
+
+              Наша компания занимается производством и реализацией никелевых листов марок Н-0, Н-1у, Н-1, Н-2, НП0,
+              НП1, НП3, НП4 самого лучшего качества, подтвержденного соответствующими сертификатами.
+
+              Они производятся на новейшем высокотехнологичном оборудовании методом холодной или горячей прокатки с
+              контролем технологического процесса на всех этапах производства.
+
+              Для них характерна пластичность, стойкость к воздействию концентрированных кислот и расплавов щелочей,
+              биологическая инертность, жаропрочность. Они хорошо обрабатываются полировкой и резанием, имеют долгий
+              срок службы.
+
+
+            </p>
+          </div>
+        </div>
+        <!-- product-about -->
+        <!--</div>-->
+        <!-- product__right -->
       </div>
-      <!-- basket -->
 
 
       <!-- Рекомендуем товары -->
       <section class="section product-card-slider">
-        <div class="section__inner container">
+        <div class="section__inner">
           <h2 class="section__title">
             Рекомендуем товары
           </h2>
@@ -415,19 +539,59 @@
       </section>
       <!-- Рекомендуем товары -->
 
-      <!-- basket-empty -->
-      <div id="basketEmpty" class="basket-empty">
-        <h2 class="basket-empty__title">В корзине пусто</h2>
-        <p class="basket-empty__text">
-          Добавьте интересующую Вас продукцию и она появиться здесь.
-          Затем Вы можете её приобрести, сделав онлайн заказ.
-        </p>
+      <!-- Не нашли подходящего? -->
+      <div class="application">
+        <div class="application__inner">
+          <h4 class="application__title">Не нашли подходящего изделия?</h4>
+          <p class="application__text">Оставьте заявку на изготовление изделия по персональным чертежам, и наши
+            специалисты свяжутся с вами для обсуждения деталей проекта.</p>
 
-        <a href="catalog.html" class="basket-empty__link btn clear-btn">Каталог продукции</a>
+          <form action="" class="application__form form">
+            <div class="form__body">
+              <div class="form__side">
+                <input type="text" name="name" class="form__input input" placeholder="Акакий Акакиевич Башмачкин">
+                <div class="form__input-block">
+                  <input type="text" name="mail" class="form__input mr20  input" placeholder="E-mail">
+
+                  <input type="text" name="phone" class="form__input input" placeholder="+7 (999)-999-99-99">
+                </div>
+                <label class="form__file">
+                  <span class="form__file-text">Добавить реквизиты</span>
+                  <input data-file type="file" name="file" class="file__input">
+                  <span class="form__file-format">Файл до 10 МБ в формате doc, docx, pdf</span>
+                </label>
+
+              </div>
+
+              <div class="form__side">
+                <textarea data-textarea name="message" class="form__textarea textarea"
+                  placeholder="Комменатрий к заказу"></textarea>
+              </div>
+            </div>
+
+            <div class="form__bottom">
+              <input type="text" class="form__submit btn yellow-btn hover-yellow-light" value="Отправить запрос">
+              <label class="checkbox" data-label>
+                <input data-checkbox type="checkbox" checked class="checkbox__input" />
+                <span class="checkbox__fake"></span>
+                <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
+              </label>
+            </div>
+
+
+
+          </form>
+        </div>
       </div>
-      <!-- basket-empty -->
+      <!-- Не нашли подходящего? -->
+
+
 
     </main>
+
+
+
     <footer class="footer">
       <!-- footer-top -->
       <div class="footer-top">
@@ -970,6 +1134,7 @@
     <!-- searchModal -->
 
     <!--modal-->
+
   </div>
   <script src="js/main.js"></script>
 </body>
