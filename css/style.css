@@ -5282,6 +5282,7 @@ body {
 }
 
 .application {
+  padding: 50px 15px;
   margin-bottom: 30px;
 }
 
@@ -5325,6 +5326,16 @@ body {
   .application__text {
     font-size: 16px;
     margin-bottom: 90px;
+  }
+}
+
+.application__checkbox {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .application__checkbox {
+    margin-bottom: 0px;
   }
 }
 
@@ -5481,10 +5492,6 @@ body {
 
 .production-block--hide {
   display: none;
-}
-
-.about-company {
-  padding: 0 15px;
 }
 
 .about-company__text {

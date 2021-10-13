@@ -1,5 +1,5 @@
 .application {
-  //padding: 0 15px;
+  padding: 50px 15px;
 
   margin-bottom: 30px;
   @media (min-width: 1310px) {
@@ -36,5 +36,12 @@
   @media (min-width: 1310px) {
     font-size: 16px;
     margin-bottom: 90px;
+  }
+}
+
+.application__checkbox {
+  margin-bottom: 40px;
+  @media (min-width: 768px) {
+    margin-bottom: 0px;
   }
 }

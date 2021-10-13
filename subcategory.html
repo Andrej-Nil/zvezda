@@ -111,10 +111,11 @@
 
       <div class="path mt125 container">
         <a href="index.html" class="path__link">Главная</a>
-        <span class="path__dash"></span>
-        <a href="catalog.html" class="path__link">Каталог</a>
-        <span class="path__dash"></span>
-        <a href="catalog.html" class="path__link path__link--active">Аллюминевый металлопрокат</a>
+
+        <a href="catalog.html" class="path__link"><span class="path__dash"></span>Каталог</a>
+
+        <a href="catalog.html" class="path__link path__link--active"><span class="path__dash"></span>Аллюминевый
+          металлопрокат</a>
       </div>
 
       <!--header__content-->
@@ -146,7 +147,7 @@
       </div>
 
       <!-- card-list -->
-      <div class="product-type-tile tile">
+      <div class="product-type product-tile product-tile--four-coll">
         <div class="product-type-card">
           <a href="category.html" class="product-type-card__link">
             <div class="product-type-card__top">
@@ -208,7 +209,7 @@
           <!-- section__content -->
           <div class="section__content">
             <!-- card-list -->
-            <div class="product-tile tile">
+            <div class="product-tile product-tile--four-coll">
 
               <div class="product-card">
                 <h3 class="product-card__title">
@@ -538,6 +539,7 @@
       </section>
       <!-- Продукция в категории -->
 
+
       <!--pagination-->
       <div class="pagination">
         <a href="#!" class="pagination__arrow pagination__arrow--not-active pagination__arrow--prev">
@@ -577,7 +579,7 @@
 
       <!-- Рекомендуем товары -->
       <section class="section product-card-slider">
-        <div class="section__inner container">
+        <div class="section__inner">
           <h2 class="section__title">
             Рекомендуем товары
           </h2>
@@ -588,7 +590,7 @@
               <!-- track -->
               <div class="slider__track">
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -615,7 +617,7 @@
                   </div>
                 </div>
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -642,7 +644,7 @@
                   </div>
                 </div>
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -668,7 +670,7 @@
                   </div>
                 </div>
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -695,7 +697,7 @@
                   </div>
                 </div>
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -722,7 +724,7 @@
                   </div>
                 </div>
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -748,7 +750,7 @@
                   </div>
                 </div>
 
-                <div class="product-card slide-scale">
+                <div class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -790,7 +792,7 @@
       <!-- Рекомендуем товары -->
 
       <!-- Не нашли подходящего -->
-      <div class="application container">
+      <div class="application light-bg">
         <h4 class="application__title">Не нашли подходящего изделия?</h4>
         <p class="application__text">Оставьте заявку на изготовление изделия по персональным чертежам, и наши
           специалисты свяжутся с вами для обсуждения деталей проекта.</p>
@@ -820,7 +822,7 @@
 
           <div class="form__bottom">
             <input type="text" class="form__submit btn yellow-btn hover-yellow-light" value="Отправить запрос">
-            <label class="checkbox" data-label>
+            <label class="application__checkbox checkbox" data-label>
               <input data-checkbox type="checkbox" checked class="checkbox__input" />
               <span class="checkbox__fake"></span>
               <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
