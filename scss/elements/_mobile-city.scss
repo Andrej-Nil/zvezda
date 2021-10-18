@@ -20,6 +20,12 @@
   background: $white;
 }
 
+.mobile-city__inner--clear {
+  color: $white;
+  border: 1px solid $white;
+  background: rgba(0, 0, 0, 0);
+}
+
 .mobile-city__name {
   font-weight: bold;
   font-size: 14px;

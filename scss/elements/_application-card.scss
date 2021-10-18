@@ -3,32 +3,65 @@
 }
 
 .application-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 356px;
-  padding: 0 50px;
+  position: relative;
   background: $pearl;
   margin-bottom: 20px;
+  padding: 50px 15px 0;
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  @media (min-width: 1050px) {
+    height: 356px;
+    padding: 0 50px;
   }
 }
 
 .application-card__desc {
-  width: 580px;
+  margin: 0 0 10px 0;
+  @media (min-width: 768px) {
+    max-width: 580px;
+    margin: 0 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .application-card__title {
   margin-bottom: 20px;
 
   color: $black;
-  font-size: 30px;
+  font-size: 18px;
   line-height: 160%;
+  @media (min-width: 1050px) {
+    font-size: 30px;
+    line-height: 160%;
+  }
 }
 
 .application-card__text {
   color: $blackMain;
   font-size: 14px;
   line-height: 180%;
+}
+
+.application-card__img {
+  width: 100%;
+
+  bottom: 0;
+  max-width: 300px;
+  margin: 0 auto;
+  @media (min-width: 1050px) {
+    max-width: 400px;
+    position: absolute;
+    right: 50px;
+  }
 }

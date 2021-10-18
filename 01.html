@@ -7,14 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.min.css" />
   <meta name="csrf-token" content="p5q8mFhMdAS9z3KSayI05bO34EEXjhMl9ysZOAS3">
-  <title>Товар</title>
+  <title>стр Продукция</title>
 </head>
 
 <body>
   <div class="app">
     <header class="header">
+
       <!-- header__top -->
-      <div class="header__top header__top--white">
+      <div class="header__top header__top--absolute">
         <div class="header__top-inner container">
           <a href="index.html" class="header__logo"> </a>
 
@@ -109,487 +110,930 @@
       </div>
       <!--header__top-->
 
-      <div class="path mt25 container">
-        <a href="index.html" class="path__link">Главная</a>
+      <!--header-content-->
+      <div class="header-content">
 
-        <a href="index.html" class="path__link"><span class="path__dash"></span>Каталог</a>
+        <!-- header__bg -->
+        <div class="header__bg">
+          <div class="production-select">
+            <div class="production-select__tab production-select__tab--serial">
+              <picture>
+                <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
+                <img class="production-select__img production-select__img--left" src="./img/image/bg/serial.jpg" alt="">
+              </picture>
+              <div class="production-select__wrap ">
 
-        <a href="index.html" class="path__link"><span class="path__dash"></span>Лист никелевый</a>
+                <div class="production-select__desc container">
+                  <h2 class="header__title">
+                    Серийное производство
+                  </h2>
 
-        <a href="catalog.html" class="path__link path__link--active"><span class="path__dash"></span>Лист никелевый 5мм
-          H-0 ГОСТ 6235-1</a>
+                  <p class="production-select__text ">
+                    Безпрерывное конвейреное производство изделий на нашем заводе. Самая популярная продукция из стали и
+                    металлопрокат с гарантией качества
+                  </p>
+                  <a href="services.html" class="production-select__btn btn clear-btn hover-yellow">
+                    Каталог продукции
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="production-select__tab production-select__tab--individual">
+              <picture>
+                <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
+                <img class="production-select__img" src="./img/image/bg/individual.jpg" alt="">
+              </picture>
+              <!--<div class="production-select__wrap">
+
+                <div class="production-select__desc container">
+                  <h2 class="header__title">
+                    Индивидуальное производство
+                  </h2>
+
+                  <p class="production-select__text ">
+                    Изучим чертежи и произведём конструкцию под Ваши нужды. Металлопрокат и металлоконструкции любой
+                    сложности и из любого металла.
+                  </p>
+                  <a href="services.html" class="production-select__btn btn clear-btn hover-yellow">
+                    Каталог продукции
+                  </a>
+                </div>
+
+              </div>-->
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+        <!-- header__bg -->
+
       </div>
-
+      <!--header-content-->
     </header>
+    <main class="main">
 
+      <div id="serial" class="production-block">
+        <!-- about-production -->
+        <div class="section">
+          <div class="section__inner container">
+            <!-- section__content -->
+            <div class="section__content">
+              <!-- about-production -->
+              <div class="about-production">
+                <div class="about-production__desc">
+                  <h3 class="about-production__title">
+                    Отлаженное производство продукции точно в срок
+                  </h3>
+                  <p class="about-production__text">Мы используем автоматизированные системы производства. Конвейер
+                    работает без остановки, что позволяет производить металлопрокат в промышленных масштабах. </p>
+                </div>
 
-    <main class="main container">
-      <div class="product">
-        <!-- product__left" -->
-        <!--<div class="product__left">-->
+                <picture>
+                  <img class="about-production__img" src="./img/image/production/production2.png" alt="">
+                </picture>
+              </div>
 
-        <!--product__buy-->
-        <div class="product__buy">
-          <div class="product-about__icons">
+              <div class="about-production about-production--reverse">
+                <div class="about-production__desc">
+                  <h3 class="about-production__title">
+                    Предоставляем сертификаты качества и соблюдаем ГОСТы
+                  </h3>
+                  <p class="about-production__text">Весь металл для производства проходит через процедуру анализа
+                    металла.
+                    Закупаемая продукция приобретается только у проверенных поставщиков с соблюдением всех
+                    нормативно-правовых норм. На каждое изделие у нас есть сертификат качества и мы даём гарантию на все
+                    виды продукции. </p>
+                </div>
 
-            <span class="product-about__item product-about__item--in-stock">
-              Есть в наличии
-            </span>
+                <picture>
+                  <img class="about-production__img" src="./img/image/production/production3.png" alt="">
+                </picture>
+              </div>
 
-            <span class="product-about__item product-about__item--out-stock">
-              Нет в наличии
-            </span>
+              <div class="about-production">
+                <div class="about-production__desc">
+                  <h3 class="about-production__title">
+                    Отлаженное производство продукции точно в срок
+                  </h3>
+                  <p class="about-production__text">Мы используем автоматизированные системы производства. Конвейер
+                    работает без остановки, что позволяет производить металлопрокат в промышленных масштабах. </p>
+                </div>
 
-            <span class="product-about__item product-about__item--print">
-              Версия для печати
-            </span>
-
+                <picture>
+                  <img class="about-production__img" src="./img/image/production/production1.png" alt="">
+                </picture>
+              </div>
+              <!-- about-production -->
+            </div>
+            <!-- section__content -->
           </div>
-          <h1 class="product-about__title">
-            Лист никелевый 5мм H-0 ГОСТ 6235-1
-          </h1>
-
-          <div class="product-about__price">
-            <span class="product-about__new">1200 ₽/м2</span>
-            <span class="product-about__old">2400 ₽/м2 </span>
-          </div>
-
-          <span class="product__btn btn yellow-btn hover-yellow-light">В корзину</span>
         </div>
-        <!-- product__buy -->
+        <!-- about-production -->
 
-        <!-- slider -->
-        <div class="product-slider slider">
-          <!-- track -->
-          <div class="product-slider__track track">
-            <div class="product-slider__item">
-              <img src="./img/image/product/big.jpg" alt="" class="product-slider__img">
-            </div>
-            <div class="product-slider__item">
-              <img src="./img/image/product/big.jpg" alt="" class="product-slider__img">
-            </div>
-            <div class="product-slider__item">
-              <img src="./img/image/product/big.jpg" alt="" class="product-slider__img">
-            </div>
-          </div>
-          <!-- track -->
+        <!-- Мы производим -->
+        <section class="section">
+          <div class="section__inner container">
 
-          <div class="product-dots slider">
-            <!--product-dots__track-->
-            <div class="product-dots__track slider__track">
-
-              <div class="product-dots__item product-dots__item--active">
-                <img src="./img/image/dots/dot1.png" alt="" class="product-dots__img">
-              </div>
-
-              <div class="product-dots__item">
-                <img src="./img/image/dots/dot2.png" alt="" class="product-dots__img">
-              </div>
-
-              <div class="product-dots__item">
-                <img src="./img/image/dots/dot3.png" alt="" class="product-dots__img">
-              </div>
-
-              <div class="product-dots__item">
-                <img src="./img/image/dots/dot4.png" alt="" class="product-dots__img">
-              </div>
-
-              <div class="product-dots__item">
-                <img src="./img/image/dots/dot5.png" alt="" class="product-dots__img">
-              </div>
-
-              <div class="product-dots__item">
-                <img src="./img/image/dots/dot1.png" alt="" class="product-dots__img">
-              </div>
-
-              <div class="product-dots__item">
-                <img src="./img/image/dots/dot2.png" alt="" class="product-dots__img">
-              </div>
-
-              <div class="product-dots__item">
-                <img src="./img/image/dots/dot3.png" alt="" class="product-dots__img">
-              </div>
-            </div>
-            <!-- product-dots__track -->
-          </div>
-
-          <div class="products-arrow section-controls">
-            <span class="section-controls__btn section-controls__prev"></span>
-            <span class="section-controls__btn section-controls__next"></span>
-          </div>
-
-
-        </div>
-
-        <!-- slider -->
-
-        <!--product-about__info-->
-        <p class="product-about__info">
-          Одним из самых востребованных продуктов никелевого проката является лист никелевый 5 мм Н-0 ГОСТ 6235-91,
-          который благодаря своим качественным показателям используется при изготовлении спецоборудования,
-          высокоточных приборов, котлов требующих повышенной устойчивости к коррозии. Кроме того. из листа
-          никелевого 5 мм Н-0 изготавливается специализированная посуда для химического производства, а так же
-          емкости для хранения эфирных масел, химических препаратов и пищевых продуктов.
-        </p>
-        <!-- product-about__info -->
-        <!-- Характеристики -->
-        <div class="product-property">
-          <h3 class="product-property__title">
-            Характеристики
-          </h3>
-          <ul class="product-property__list">
-            <li class="product-property__item">
-              <span class="product-property__name">Толщина: </span>
-              <span class="product-property__value">5 мм</span>
-            </li>
-
-            <li class="product-property__item">
-              <span class="product-property__name">Ширина: </span>
-              <span class="product-property__value">1000 мм</span>
-            </li>
-
-            <li class="product-property__item">
-              <span class="product-property__name">Длина: </span>
-              <span class="product-property__value">2000 мм</span>
-            </li>
-
-            <li class="product-property__item">
-              <span class="product-property__name">Марка: </span>
-              <span class="product-property__value">H-0</span>
-            </li>
-
-            <li class="product-property__item">
-              <span class="product-property__name">Гост: </span>
-              <span class="product-property__value">ГОСТ 6235-1</span>
-            </li>
-
-            <li class="product-property__item">
-              <span class="product-property__name">Материал: </span>
-              <span class="product-property__value">Никель</span>
-            </li>
-
-            <li class="product-property__item">
-              <span class="product-property__name">Вид проката: </span>
-              <span class="product-property__value">Лист</span>
-            </li>
-
-            <li class="product-property__item">
-              <span class="product-property__name">Доставка: </span>
-              <span class="product-property__value">По России и СНГ</span>
-            </li>
-          </ul>
-
-
-        </div>
-        <!--Характеристики-->
-
-
-        <!--</div>-->
-        <!-- product__left" -->
-
-        <!-- product__right -->
-        <!--<div class="product__right">-->
-        <!-- product-about -->
-
-
-
-        <div class="product-about">
-
-
-          <div class="product-desc">
-            <h2 class="product-desc__title">
-              Листы никелевые
+            <h2 class="section__title">
+              Мы производим
             </h2>
 
-            <p class="product-desc__text">
-              Никелевый прокат, за счет своих уникальных эксплуатационных и физико-механических свойств пользуется
-              широкой популярностью и активно используется во многих отраслях промышленности.
+            <!-- section__content -->
+            <div class="section__content">
+              <!-- card-list -->
+              <div class="product-tile product-tile--four-coll">
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product1.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
 
-              Наша компания занимается производством и реализацией никелевых листов марок Н-0, Н-1у, Н-1, Н-2, НП0,
-              НП1, НП3, НП4 самого лучшего качества, подтвержденного соответствующими сертификатами.
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product2.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
 
-              Они производятся на новейшем высокотехнологичном оборудовании методом холодной или горячей прокатки с
-              контролем технологического процесса на всех этапах производства.
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product3.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
 
-              Для них характерна пластичность, стойкость к воздействию концентрированных кислот и расплавов щелочей,
-              биологическая инертность, жаропрочность. Они хорошо обрабатываются полировкой и резанием, имеют долгий
-              срок службы.
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product4.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product5.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product6.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product7.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product8.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product9.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product10.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product11.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product12.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product13.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-type-card">
+                  <a href="category.html" class="product-type-card__link">
+                    <div class="product-type-card__top">
+                      <h4 class="product-type-card__title">Лист металлический</h4>
+                      <p class="product-type-card__count">120 товаров</p>
+                    </div>
+                    <div class="product-type-card__preview">
+                      <img src="./img/image/product/product14.png" alt="" class="product-type-card__img">
+                    </div>
+                  </a>
+                </div>
 
 
-            </p>
+
+                <a href="" class="product-type-more more-card more-card--big">
+                  <div class="more-card__content">
+                    <p class="more-card__count">30 акционных товаров</p>
+                    <p class="product-more__all more-card__all">Смотреть все</p>
+                  </div>
+                </a>
+
+              </div>
+              <!-- card-list -->
+            </div>
+            <!-- section__content -->
           </div>
+        </section>
+        <!-- Мы производим -->
+
+        <!-- Сфера применения металлов -->
+        <section class="section">
+          <div class="section__inner container">
+
+            <h2 class="section__title">
+              Сфера применения металлов
+            </h2>
+
+            <!-- section__content -->
+            <div class="section__content">
+
+              <!-- areas-application -->
+              <div class="areas-application">
+                <div class="application-card">
+                  <div class="application-card__desc">
+                    <h3 class="application-card__title">В ядерной энергетике</h3>
+                    <p class="application-card__text">
+                      В качестве конструкционных материалов в ядерной технике используют редкоземельные металлы и
+                      сплавы
+                    </p>
+                  </div>
+
+                  <img src="./img/image/application/application1.png" alt="" class="application-card__img">
+
+                </div>
+
+                <div class="application-card">
+                  <div class="application-card__desc">
+                    <h3 class="application-card__title">Нефтехимической области</h3>
+                    <p class="application-card__text">
+                      Используются в условиях низких температур цветные металлы и их сплавы, не подверженные
+                      хладноломкости.
+                    </p>
+                  </div>
+
+                  <img src="./img/image/application/application2.png" alt="" class="application-card__img">
+
+                </div>
+
+                <div class="application-card">
+                  <div class="application-card__desc">
+                    <h3 class="application-card__title">В ракетостроении</h3>
+                    <p class="application-card__text">
+                      Из титана делают детали жидко- и твердотопливных двигателей, обшивку космических аппаратов,
+                      стыковые конструкции жилых отсеков и баллоны
+                    </p>
+                  </div>
+
+                  <img src="./img/image/application/application3.png" alt="" class="application-card__img">
+
+                </div>
+
+                <div class="application-card">
+                  <div class="application-card__desc">
+                    <h3 class="application-card__title">Электронной промышленности</h3>
+                    <p class="application-card__text">
+                      Сплавы служат незаменимым материалом при изготовлении особо чувствительных и высокоточных
+                      приборов
+                    </p>
+                  </div>
+
+                  <img src="./img/image/application/application4.png" alt="" class="application-card__img">
+
+                </div>
+                <!-- areas-application -->
+
+              </div>
+            </div>
+            <!-- section__content -->
+          </div>
+        </section>
+        <!-- Сфера применения металлов -->
+      </div>
+
+      <div id="individual" class="production-block production-block--hide">
+        <div class="section ">
+          <div class="section__inner container">
+            <!-- section__content -->
+            <div class="section__content">
+              <!-- about-production -->
+              <div class="about-production">
+                <div class="about-production__desc">
+                  <h3 class="about-production__title">
+                    Любое изделие по Вашему макету или чертежам
+                  </h3>
+                  <p class="about-production__text">Изучим Вашу задачу и произведём нужную продукцию. Сроки производства
+                    изделия под заказ не отличаются от сроков серийного производства. Мы используем станки с ЧПУ и самое
+                    современное оборудование производства </p>
+                </div>
+
+                <picture>
+                  <img class="about-production__img" src="./img/image/production/production5.png" alt="">
+                </picture>
+              </div>
+
+              <div class="about-production about-production--reverse">
+                <div class="about-production__desc">
+                  <h3 class="about-production__title">
+                    Изготовление из металла высокого качества по ГОСТу
+                  </h3>
+                  <p class="about-production__text">Мы используем только качественный и сертифицированный металл,
+                    соблюдаем все ГОСТы производства и обработки </p>
+                </div>
+
+                <picture>
+                  <img class="about-production__img" src="./img/image/production/production4.png" alt="">
+                </picture>
+              </div>
+
+              <div class="about-production">
+                <div class="about-production__desc">
+                  <h3 class="about-production__title">
+                    Гарантия качества изготавливаемой продукции
+                  </h3>
+                  <p class="about-production__text">Строго и внимательно относимся к качеству материалов и изготовления.
+                    На все виды продукции мы даём гарантию качества, а в случае брака изделия, мы оперативно его заменим
+                    или исправим допущенные ошибки </p>
+                </div>
+
+                <picture>
+                  <img class="about-production__img" src="./img/image/production/production6.png" alt="">
+                </picture>
+              </div>
+              <!-- about-production -->
+            </div>
+
+          </div>
+          <!-- section__content -->
         </div>
-        <!-- product-about -->
-        <!--</div>-->
-        <!-- product__right -->
       </div>
 
 
-      <!-- Рекомендуем товары -->
-      <section class="section product-card-slider">
-        <div class="section__inner">
-          <h2 class="section__title">
-            Рекомендуем товары
+      <!-- Услуги компании -->
+      <section class="section dark-bg">
+        <div class="section__inner container">
+          <h2 class="section__title section__title--white mb30">
+            Услуги компании
           </h2>
+
+          <p class="section__text">
+            В широком ассортименте освоено производство закладных деталей, фундаментных блоков и фундаментных болтов
+            различной конфигурации, из черных и нержавеющих сталей.
+          </p>
           <!-- section__content -->
           <div class="section__content">
-            <!-- slider -->
-            <div class="slider slider--with-padding">
-              <!-- track -->
-              <div class="slider__track">
+            <!-- services -->
+            <div class="services">
 
-                <div class="product-card product-card--slider">
-                  <h3 class="product-card__title">
-                    <a href="product-page.html" class="product-card__link">
-                      Лист вольфрамовый 0,1 мм ВЧ
-                    </a>
-                  </h3>
-                  <div class="product-card__preview">
-                    <a href="product-page.html" class="product-card__link-img">
-                      <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                    </a>
-                  </div>
-                  <p class="product-card__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                    поперечное сечение.
-                  </p>
-                  <div class="product-card__bottom">
-                    <div class="product-card__price">
-                      <p class="product-card__current">1200 ₽/м2</p>
-                      <p class="product-card__old">2400 ₽/м2</p>
-                    </div>
 
-                    <span class="product-card__btn btn yellow-btn">
-                      <span class="product-card__value btn__value basket-icon">В корзину</span>
-                    </span>
-                  </div>
+              <div class="services__bg">
+                <picture>
+                  <source media="(min-width: 1310px)" srcset="./img/image/servises/servise-big-1.jpg">
+                  <img srcset="./img/image/other/1.svg" class="services__img">
+                </picture>
+              </div>
+              <div class="service-card service-card--big">
+
+
+                <div class="service-card__bg">
+                  <picture>
+                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
+                    <img srcset="./img/image/servises/servise400-1.jpg" class="service-card__img">
+                  </picture>
                 </div>
 
-                <div class="product-card product-card--slider">
-                  <h3 class="product-card__title">
-                    <a href="product-page.html" class="product-card__link">
-                      Лист вольфрамовый 0,1 мм ВЧ
-                    </a>
-                  </h3>
-                  <div class="product-card__preview">
-                    <a href="product-page.html" class="product-card__link-img">
-                      <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                    </a>
-                  </div>
-                  <p class="product-card__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                    поперечное сечение.
-                  </p>
-                  <div class="product-card__bottom">
-                    <div class="product-card__price">
-                      <p class="product-card__current">1200 ₽/м2</p>
-                      <p class="product-card__old">2400 ₽/м2</p>
-                    </div>
 
-                    <span class="product-card__btn btn yellow-btn">
-                      <span class="product-card__value btn__value basket-icon">В корзину</span>
-                    </span>
+                <a href="service-one.html" class="service-card__link">
+                  <h4 class="service-card__title">Анализ металла</h4>
+
+                  <div class="service-card__curtain">
+                    <p class="service-card__desc">
+                      Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                      металлопродукции
+                    </p>
+                    <div class="servise-card__bottom">
+                      <span class="service-card__detail">
+                        Подробнее
+                      </span>
+                    </div>
                   </div>
+                </a>
+              </div>
+
+              <div class="service-card">
+
+
+                <div class="service-card__bg">
+                  <picture>
+                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
+                    <img srcset="./img/image/servises/servise400-2.jpg" class="service-card__img">
+                  </picture>
                 </div>
 
-                <div class="product-card product-card--slider">
-                  <h3 class="product-card__title">
-                    <a href="product-page.html" class="product-card__link">
-                      Лист вольфрамовый 0,1 мм ВЧ
-                    </a>
-                  </h3>
-                  <div class="product-card__preview">
-                    <a href="product-page.html" class="product-card__link-img">
-                      <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
-                    </a>
-                  </div>
-                  <p class="product-card__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                    поперечное сечение.
-                  </p>
-                  <div class="product-card__bottom">
-                    <div class="product-card__price">
-                      <p class="product-card__current">1200 ₽/м2</p>
+                <a href="service-one.html" class="service-card__link">
+
+                  <h4 class="service-card__title">Гибка листа</h4>
+
+                  <div class="service-card__curtain">
+                    <p class="service-card__desc">
+                      Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                      металлопродукции
+                    </p>
+                    <div class="servise-card__bottom">
+                      <span class="service-card__detail">
+                        Подробнее
+                      </span>
                     </div>
-
-                    <span class="product-card__btn btn yellow-btn">
-                      <span class="product-card__value btn__value basket-icon">В корзину</span>
-                    </span>
                   </div>
-                </div>
-
-                <div class="product-card product-card--slider">
-                  <h3 class="product-card__title">
-                    <a href="product-page.html" class="product-card__link">
-                      Лист вольфрамовый 0,1 мм ВЧ
-                    </a>
-                  </h3>
-                  <div class="product-card__preview">
-                    <a href="product-page.html" class="product-card__link-img">
-                      <img src="./img/image/product-card/product4.jpg" alt="" class="product-card__img">
-                    </a>
-                  </div>
-                  <p class="product-card__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                    поперечное сечение.
-                  </p>
-                  <div class="product-card__bottom">
-                    <div class="product-card__price">
-                      <p class="product-card__current">1200 ₽/м2</p>
-                      <p class="product-card__old">2400 ₽/м2</p>
-                    </div>
-
-                    <span class="product-card__btn btn yellow-btn">
-                      <span class="product-card__value btn__value basket-icon">В корзину</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="product-card product-card--slider">
-                  <h3 class="product-card__title">
-                    <a href="product-page.html" class="product-card__link">
-                      Лист вольфрамовый 0,1 мм ВЧ
-                    </a>
-                  </h3>
-                  <div class="product-card__preview">
-                    <a href="product-page.html" class="product-card__link-img">
-                      <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                    </a>
-                  </div>
-                  <p class="product-card__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                    поперечное сечение.
-                  </p>
-                  <div class="product-card__bottom">
-                    <div class="product-card__price">
-                      <p class="product-card__current">12 000 678 ₽/м2</p>
-                      <p class="product-card__old">24 006 570 ₽/м2</p>
-                    </div>
-
-                    <span class="product-card__btn btn yellow-btn">
-                      <span class="product-card__value btn__value basket-icon">В корзину</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="product-card product-card--slider">
-                  <h3 class="product-card__title">
-                    <a href="product-page.html" class="product-card__link">
-                      Лист вольфрамовый 0,1 мм ВЧ
-                    </a>
-                  </h3>
-                  <div class="product-card__preview">
-                    <a href="product-page.html" class="product-card__link-img">
-                      <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                    </a>
-                  </div>
-                  <p class="product-card__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                    поперечное сечение.
-                  </p>
-                  <div class="product-card__bottom">
-                    <div class="product-card__price">
-                      <p class="product-card__current product-card__current--text">Цена по запросу</p>
-                    </div>
-
-                    <span class="product-card__btn btn yellow-btn">
-                      <span class="product-card__value btn__value basket-icon">В корзину</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="product-card product-card--slider">
-                  <h3 class="product-card__title">
-                    <a href="product-page.html" class="product-card__link">
-                      Лист вольфрамовый 0,1 мм ВЧ
-                    </a>
-                  </h3>
-                  <div class="product-card__preview">
-                    <a href="product-page.html" class="product-card__link-img">
-                      <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
-                    </a>
-                  </div>
-                  <p class="product-card__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                    поперечное сечение.
-                  </p>
-                  <div class="product-card__bottom">
-                    <div class="product-card__price">
-                      <p class="product-card__current">1200 ₽/м2</p>
-                      <p class="product-card__old">2400 ₽/м2</p>
-                    </div>
-
-                    <span class="product-card__btn btn yellow-btn">
-                      <span class="product-card__value btn__value basket-icon">В корзину</span>
-                    </span>
-                  </div>
-                </div>
+                </a>
 
               </div>
-              <!-- track -->
-              <div class="products-arrow section-controls">
-                <span class="section-controls__btn section-controls__prev"></span>
-                <span class="section-controls__btn section-controls__next"></span>
+
+              <div class="service-card">
+
+                <div class="service-card__bg">
+                  <picture>
+                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
+                    <img srcset="./img/image/servises/servise400-3.jpg" class="service-card__img">
+                  </picture>
+                </div>
+
+                <a href="service-one.html" class="service-card__link">
+                  <h4 class="service-card__title">Гибка арматуры</h4>
+
+                  <div class="service-card__curtain">
+                    <p class="service-card__desc">
+                      Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                      металлопродукции
+                    </p>
+                    <div class="servise-card__bottom">
+                      <span class="service-card__detail">
+                        Подробнее
+                      </span>
+                    </div>
+                  </div>
+                </a>
+
               </div>
+
+              <div class="service-card ">
+
+                <div class="service-card__bg">
+                  <picture>
+                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
+                    <img srcset="./img/image/servises/servise400-4.jpg" class="service-card__img">
+                  </picture>
+                </div>
+
+                <a href="service-one.html" class="service-card__link">
+                  <h4 class="service-card__title">Резка металла</h4>
+
+                  <div class="service-card__curtain">
+                    <p class="service-card__desc">
+                      Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                      металлопродукции
+                    </p>
+                    <div class="servise-card__bottom">
+                      <span class="service-card__detail">
+                        Подробнее
+                      </span>
+                    </div>
+                  </div>
+                </a>
+
+              </div>
+
+              <div class="service-card service-card--big">
+
+                <div class="service-card__bg">
+                  <picture>
+                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
+                    <img srcset="./img/image/servises/servise400-5.jpg" class="service-card__img">
+                  </picture>
+                </div>
+                <a href="service-one.html" class="service-card__link">
+                  <h4 class="service-card__title">Доставка</h4>
+
+                  <div class="service-card__curtain">
+                    <p class="service-card__desc">
+                      Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                      металлопродукции
+                    </p>
+                    <div class="servise-card__bottom">
+                      <span class="service-card__detail">
+                        Подробнее
+                      </span>
+                    </div>
+                  </div>
+                </a>
+
+              </div>
+
+              <a href="" class="service-more more-card">
+                <div class="service-more__bg"></div>
+                <div class="more-card__content">
+                  <p class="more-card__count">14 услуг компании</p>
+                  <p class="service-more_all more-card__all">Все услуги</p>
+                </div>
+
+              </a>
+
             </div>
-            <!-- slider -->
+            <!-- services -->
           </div>
         </div>
         <!-- section__content -->
       </section>
-      <!-- Рекомендуем товары -->
+      <!-- Услуги компании -->
 
-      <!-- Не нашли подходящего? -->
-      <div class="application">
-        <div class="application__inner">
-          <h4 class="application__title">Не нашли подходящего изделия?</h4>
-          <p class="application__text">Оставьте заявку на изготовление изделия по персональным чертежам, и наши
-            специалисты свяжутся с вами для обсуждения деталей проекта.</p>
+      <!-- Наши преимущества -->
+      <section class="section">
+        <div class="section__inner container">
 
-          <form action="" class="application__form form">
-            <div class="form__body">
-              <div class="form__side">
-                <input type="text" name="name" class="form__input input" placeholder="Акакий Акакиевич Башмачкин">
-                <div class="form__input-block">
-                  <input type="text" name="mail" class="form__input mr20  input" placeholder="E-mail">
+          <h2 class="section__title">
+            Наши преимущества
+          </h2>
 
-                  <input type="text" name="phone" class="form__input input" placeholder="+7 (999)-999-99-99">
+          <!-- section__content -->
+          <div class="section__content">
+            <!-- advantages -->
+            <div class="advantages">
+
+              <div class="advantage-card">
+
+                <img src="./img/image/advantages/advantage1.png" alt="" class="advantage-card__img">
+
+                <span class="advantage-card__close close-btn">Закрыть</span>
+                <div class="advantage-card__header">
+                  <span class="advantage-card__num">01</span>
+                  <h3 class="advantage-card__title">
+                    Быстрая отгрузка продукции
+                  </h3>
+                  <p class="advantage-card__desc">
+                    Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
+                    Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
+                    погрузки железнодорожных вагонов.
+                  </p>
                 </div>
-                <label class="form__file">
-                  <span class="form__file-text">Добавить реквизиты</span>
-                  <input data-file type="file" name="file" class="file__input">
-                  <span class="form__file-format">Файл до 10 МБ в формате doc, docx, pdf</span>
-                </label>
+                <!-- advantage__list -->
+                <div class="advantage__list">
+                  <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                      <span class="advantage-item__quarter lt"></span>
+                      <i class="advantage-item__img advantage-item__img--clock"></i>
+                    </div>
+                    <h4 class="advantage-item__title">Соблюдаем сроки</h4>
+                  </div>
 
+                  <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                      <span class="advantage-item__quarter lb"></span>
+                      <i class="advantage-item__img advantage-item__img--box"></i>
+                    </div>
+                    <h4 class="advantage-item__title">Соблюдаем сроки</h4>
+                  </div>
+                </div>
+
+                <!--advantage__list-->
               </div>
 
-              <div class="form__side">
-                <textarea data-textarea name="message" class="form__textarea textarea"
-                  placeholder="Комменатрий к заказу"></textarea>
+              <div class="advantage-card">
+
+                <img src="./img/image/advantages/advantage2.png" alt="" class="advantage-card__img">
+
+                <span class="advantage-card__close close-btn">Закрыть</span>
+                <div class="advantage-card__header">
+                  <span class="advantage-card__num">02</span>
+                  <h3 class="advantage-card__title">
+                    Удобные способы оплаты
+                  </h3>
+                  <p class="advantage-card__desc">
+                    Мы представим все необходимые документы и сертификаты. В условиях долгосрочных партнёрских
+                    отношений, предложим Вам хорошие скидки и отсрочку платежей.Наша компания принимает оплату
+                    следующими способами:
+                  </p>
+                </div>
+                <!-- advantage__list -->
+                <div class="advantage__list">
+                  <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                      <span class="advantage-item__quarter lt"></span>
+                      <i class="advantage-item__img advantage-item__img--pay-card"></i>
+                    </div>
+                    <h4 class="advantage-item__title">Безналичный расчет</h4>
+                  </div>
+
+                  <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                      <span class="advantage-item__quarter rb"></span>
+                      <i class="advantage-item__img advantage-item__img--cash"></i>
+                    </div>
+                    <h4 class="advantage-item__title">Наличными в офисе</h4>
+                  </div>
+
+                  <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                      <span class="advantage-item__quarter rt"></span>
+                      <i class="advantage-item__img advantage-item__img--doc"></i>
+                    </div>
+                    <h4 class="advantage-item__title">Оплата на расчетнй счет</h4>
+                  </div>
+                </div>
+
+                <!--advantage__list-->
               </div>
+
+              <div class="advantage-card">
+
+                <img src="./img/image/advantages/advantage3.png" alt="" class="advantage-card__img">
+
+                <span class="advantage-card__close close-btn">Закрыть</span>
+                <div class="advantage-card__header">
+                  <span class="advantage-card__num">03</span>
+                  <h3 class="advantage-card__title">
+                    Персональный менеджер круглосуточно
+                  </h3>
+                  <p class="advantage-card__desc">
+                    Для удобной работы каждому клиенту предоставляется персональный менеджер, который ответим на
+                    ваши
+                    вопросыо производстве и переработке металлопроката, его свойствах и особенностях применения, а
+                    также
+                    будет сопровождать сделку с вами от и до.
+                  </p>
+                </div>
+                <!-- advantage__list -->
+                <div class="advantage__list">
+                  <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                      <span class="advantage-item__quarter lt"></span>
+                      <i class="advantage-item__img advantage-item__img--time"></i>
+                    </div>
+                    <h4 class="advantage-item__title">Всегда на связи</h4>
+                  </div>
+
+                  <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                      <span class="advantage-item__quarter rb"></span>
+                      <i class="advantage-item__img advantage-item__img--clock"></i>
+                    </div>
+                    <h4 class="advantage-item__title">Оперативное решение</h4>
+                  </div>
+
+                  <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                      <span class="advantage-item__quarter rt"></span>
+                      <i class="advantage-item__img advantage-item__img--question"></i>
+                    </div>
+                    <h4 class="advantage-item__title">Любые вопросы</h4>
+                  </div>
+                </div>
+
+                <!--advantage__list-->
+              </div>
+
+              <div class="advantage-card">
+
+                <img src="./img/image/advantages/advantage4.png" alt="" class="advantage-card__img">
+
+                <span class="advantage-card__close close-btn">Закрыть</span>
+                <div class="advantage-card__header">
+                  <span class="advantage-card__num">04</span>
+                  <h3 class="advantage-card__title">
+                    Собственный рабочий автопарк
+                  </h3>
+                  <p class="advantage-card__desc">
+                    Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
+                    Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
+                    погрузки железнодорожных вагонов.
+                  </p>
+                </div>
+                <!-- advantage__list -->
+                <div class="advantage__list">
+                  <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                      <span class="advantage-item__quarter rt"></span>
+                      <span class="advantage-item__count">114</span>
+                    </div>
+                    <h4 class="advantage-item__title">Седельных тягача</h4>
+                  </div>
+
+                  <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                      <span class="advantage-item__quarter rt"></span>
+                      <span class="advantage-item__count">32</span>
+                    </div>
+                    <h4 class="advantage-item__title">Манипулятора</h4>
+                  </div>
+
+                  <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                      <span class="advantage-item__quarter rt"></span>
+                      <span class="advantage-item__count">20</span>
+                    </div>
+                    <h4 class="advantage-item__title">Тонн грузоподъёмность</h4>
+                  </div>
+                </div>
+
+                <!--advantage__list-->
+              </div>
+
             </div>
 
-            <div class="form__bottom">
-              <input type="text" class="form__submit btn yellow-btn hover-yellow-light" value="Отправить запрос">
-              <label class="checkbox" data-label>
-                <input data-checkbox type="checkbox" checked class="checkbox__input" />
-                <span class="checkbox__fake"></span>
-                <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
-
-              </label>
-            </div>
-
-
-
-          </form>
+            <!-- advantages -->
+          </div>
+          <!-- section__content -->
         </div>
+      </section>
+      <!-- Наши преимущества -->
+
+      <!-- Есть вопросы -->
+      <section id="serialForm" class="section ">
+        <div class="feedback mb60 container">
+          <div class="feedback__inner light-bg feedback--light-bg">
+
+
+            <div class="feedback__left">
+              <div class="feedback__text">
+                <h2 class="feedback__title">
+                  Есть вопросы по нашей продукции?
+                </h2>
+
+                <p class="feedback__desc">
+                  Оставьте заявку и наши менеджеры свяжуться с Вами, чтобы обсудить все вопросы
+                </p>
+              </div>
+
+
+              <form id="feedbackForm" action="./json/send-form.json" class="feedback-form ">
+                <div class="feedback__body">
+                  <input type="text" data-input name="phone" class="feedback__input input"
+                    placeholder="+7 (999)-999-99-99" />
+
+                  <input type="text" data-input name="name" class="feedback__input input" placeholder="Иванов Иван" />
+
+                  <input type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
+                    value="Отправить запрос">
+                </div>
+                <label class="feedback__label checkbox" data-label>
+                  <input data-checkbox type="checkbox" checked class="feedback__checkbox checkbox__input" />
+                  <span class="feedback__fake checkbox__fake"></span>
+                  <span class="feedback__label-text checkbox__text">я принимаю условия политики
+                    конфиденциальности</span>
+
+                </label>
+              </form>
+            </div>
+
+            <div class="feedback__right">
+              <img src="./img/image/other/manager.png" alt="" class="feedback__img">
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+      <!-- Есть вопросы -->
+
+      <!-- Хотите заказать услугу? -->
+      <div id="individualForm" class="application production-block--hide container">
+        <div class="application__title">Оставить заявку на производство</div>
+        <p class="application__text">Вы можете прикрепить документ чертежа или другую техническую документацию изделия.
+          Также можно оставить заявку и наши специалист свяжуться с Вами для уточнения деталей.</p>
+
+        <form action="" class="application__form form">
+          <div class="form__body">
+            <div class="form__side">
+              <input type="text" name="name" class="form__input input" placeholder="Акакий Акакиевич Башмачкин">
+              <div class="form__input-block">
+                <input type="text" name="mail" class="form__input mr20  input" placeholder="E-mail">
+
+                <input type="text" name="phone" class="form__input input" placeholder="+7 (999)-999-99-99">
+              </div>
+              <label class="form__file">
+                <span class="form__file-text">Добавить реквизиты</span>
+                <input data-file type="file" name="file" class="file__input">
+                <span class="form__file-format">Файл до 10 МБ в формате doc, docx, pdf</span>
+              </label>
+
+            </div>
+
+            <div class="form__side">
+              <textarea data-textarea name="message" class="form__textarea textarea"
+                placeholder="Комменатрий к заказу"></textarea>
+            </div>
+          </div>
+
+          <div class="form__bottom">
+            <input type="text" class="form__submit btn yellow-btn hover-yellow-light" value="Отправить запрос">
+            <label class="checkbox" data-label>
+              <input data-checkbox type="checkbox" checked class="checkbox__input" />
+              <span class="checkbox__fake"></span>
+              <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
+            </label>
+          </div>
+
+
+
+        </form>
       </div>
-      <!-- Не нашли подходящего? -->
-
-
-
+      <!-- Хотите заказать услугу? -->
     </main>
-
 
 
     <footer class="footer">
@@ -739,36 +1183,35 @@
 
     </footer>
 
+
+
     <!--header-modals-->
 
     <!-- headerCatalogModal -->
     <div id="headerCatalogModal" class="header-modal header-modal--hide">
       <!-- header-modal__inner -->
       <div class="header-modal__inner container">
+
         <div class="header-modal__search search">
-          <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу" />
+          <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу">
           <span class="search__btn"></span>
         </div>
         <!-- header-modal__main -->
         <div class="header-modal__main">
+
           <nav class="header-catalog">
             <!-- header-catalog__list -->
             <ul class="header-catalog__list">
               <!-- header-catalog__item -->
               <li class="header-catalog__item">
-                <a href="#!" class="
-                      header-catalog__link header-catalog__link--with-sublist
-                    ">
+                <a href="#!" class="header-catalog__link header-catalog__link--with-sublist">
                   Полоса металлическая
                 </a>
                 <!-- header-catalog__sublist -->
                 <ul class="header-catalog__sublist">
                   <!-- header-catalog__item -->
                   <li class="header-catalog__item">
-                    <a href="#!" class="
-                          header-catalog__link
-                          header-catalog__link--with-sublist
-                        ">
+                    <a href="#!" class="header-catalog__link header-catalog__link--with-sublist">
                       Полоса металлическая
                     </a>
                     <!-- header-catalog__sublist -->
@@ -786,8 +1229,12 @@
                   <!-- header-catalog__item -->
                 </ul>
                 <!-- header-catalog__sublist -->
+
+
               </li>
               <!-- header-catalog__item -->
+
+
             </ul>
             <!-- header-catalog__list -->
           </nav>
@@ -802,8 +1249,9 @@
     <div id="selectCityModal" class="header-modal header-modal--hide">
       <!-- header-modal__inner -->
       <div class="header-modal__inner container">
+
         <div class="header-modal__search search">
-          <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу" />
+          <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу">
           <span class="search__btn"></span>
         </div>
         <!-- header-modal__main -->
@@ -818,12 +1266,12 @@
               <div class="city-card__contacts">
                 <div class="city-card__contact contact">
                   <span class="contact__title">Звонок по России бесплатный:</span>
-                  <a href="tel:+73433180170" class="contact__link">+7 (343) 3-180-170</a>
+                  <a href="tel:+73433180170" class=" contact__link">+7 (343) 3-180-170</a>
                 </div>
 
                 <div class="city-card__contact contact">
-                  <span class="contact__title">Напишите нам:</span>
-                  <a href="mailto:info@ntmk.ru" class="contact__link">info@ntmk.ru</a>
+                  <span class=" contact__title">Напишите нам:</span>
+                  <a href="mailto:info@ntmk.ru" class=" contact__link">info@ntmk.ru</a>
                 </div>
               </div>
 
@@ -832,21 +1280,26 @@
                   <span class="address__title">Наш адрес:</span>
 
                   <p class="address__info">
-                    Россия, Свердловская область, Екатеринбург, улица
-                    Малышева, 51, оф 16/05
+                    Россия, Свердловская область, Екатеринбург,
+                    улица Малышева, 51, оф 16/05
                   </p>
                 </div>
                 <div class="address">
                   <span class="address__title">Режим работы:</span>
 
-                  <p class="address__info">ПН-ПТ: с 9.00 до 18.00</p>
-                  <p class="address__info">СБ-ВС: Выходной</p>
+                  <p class="address__info">
+                    ПН-ПТ: с 9.00 до 18.00
+                  </p>
+                  <p class="address__info">
+                    СБ-ВС: Выходной
+                  </p>
                 </div>
               </div>
 
               <span class="city-card__btn btn clear-btn">
                 Оставить заявку
               </span>
+
             </div>
             <!-- city-card -->
 
@@ -854,27 +1307,42 @@
             <div class="cities__regions">
               <!-- region -->
               <div class="region">
-                <h4 class="region__title">Центральный федеральный округ</h4>
+                <h4 class="region__title">
+                  Центральный федеральный округ
+                </h4>
                 <!-- region__list -->
                 <ul class="region__list">
                   <li class="region__item">
                     <!-- region__area -->
                     <div class="area">
-                      <h5 class="area__title">Белгородская область</h5>
+                      <h5 class="area__title ">
+                        Белгородская область
+                      </h5>
                       <!-- area__list -->
                       <ul class="area__list">
+
                         <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
+                          <a href="" class="area__city">
+                            Екатеринбург
+
+                          </a>
                         </li>
 
                         <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
+                          <a href="" class="area__city">
+                            Екатеринбург
+
+                          </a>
                         </li>
+
                       </ul>
                       <!-- area__list -->
                     </div>
                     <!-- region__area -->
                   </li>
+
+
+
                 </ul>
                 <!-- region__list -->
               </div>
@@ -882,27 +1350,42 @@
 
               <!-- region -->
               <div class="region">
-                <h4 class="region__title">Центральный федеральный округ</h4>
+                <h4 class="region__title">
+                  Центральный федеральный округ
+                </h4>
                 <!-- region__list -->
                 <ul class="region__list">
                   <li class="region__item">
                     <!-- region__area -->
                     <div class="area">
-                      <h5 class="area__title">Белгородская область</h5>
+                      <h5 class="area__title ">
+                        Белгородская область
+                      </h5>
                       <!-- area__list -->
                       <ul class="area__list">
+
                         <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
+                          <a href="" class="area__city">
+                            Екатеринбург
+
+                          </a>
                         </li>
 
                         <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
+                          <a href="" class="area__city">
+                            Екатеринбург
+
+                          </a>
                         </li>
+
                       </ul>
                       <!-- area__list -->
                     </div>
                     <!-- region__area -->
                   </li>
+
+
+
                 </ul>
                 <!-- region__list -->
               </div>
@@ -910,27 +1393,42 @@
 
               <!-- region -->
               <div class="region">
-                <h4 class="region__title">Центральный федеральный округ</h4>
+                <h4 class="region__title">
+                  Центральный федеральный округ
+                </h4>
                 <!-- region__list -->
                 <ul class="region__list">
                   <li class="region__item">
                     <!-- region__area -->
                     <div class="area">
-                      <h5 class="area__title">Белгородская область</h5>
+                      <h5 class="area__title ">
+                        Белгородская область
+                      </h5>
                       <!-- area__list -->
                       <ul class="area__list">
+
                         <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
+                          <a href="" class="area__city">
+                            Екатеринбург
+
+                          </a>
                         </li>
 
                         <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
+                          <a href="" class="area__city">
+                            Екатеринбург
+
+                          </a>
                         </li>
+
                       </ul>
                       <!-- area__list -->
                     </div>
                     <!-- region__area -->
                   </li>
+
+
+
                 </ul>
                 <!-- region__list -->
               </div>
@@ -939,6 +1437,7 @@
             <!-- cities__regions -->
           </div>
           <!-- cities -->
+
         </div>
         <!-- header-modal__main -->
       </div>
@@ -955,13 +1454,15 @@
       <div class="modal__inner">
         <span data-close class="modal__close close-btn">Закрыть</span>
 
-        <h3 class="modal__title">Обращение в техподдержку</h3>
+        <h3 class="modal__title">
+          Обращение в техподдержку
+        </h3>
 
         <form class="modal__form">
           <div class="modal__inputs-block">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*" />
-            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail" />
-            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*" />
+            <input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*">
+            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail">
+            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*">
 
             <textarea data-textarea name="message" class="modal__input modal__textarea textarea"
               placeholder="Опишите проблему"></textarea>
@@ -969,26 +1470,28 @@
           <div class="modal__file file">
             <label class="file__label">
               <span class="file__text">Прикрепить файл</span>
-              <input data-file type="file" name="file" class="file__input" />
+              <input data-file type="file" name="file" class="file__input">
             </label>
             <p class="file__desc">
-              Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png,
-              xls, xlsx или zip.
+              Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
           </div>
 
-          <input type="text" class="modal__submit btn yellow-btn hover-yellow-light" value="Отправить заявку" />
+          <input type="text" class="modal__submit btn yellow-btn hover-yellow-light" value="Отправить заявку">
 
           <label class="checkbox" data-label>
             <input data-checkbox type="checkbox" checked class="checkbox__input" />
             <span class="checkbox__fake"></span>
             <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
           </label>
         </form>
+
       </div>
       <!--modal__inner-->
     </div>
     <!-- supportModal -->
+
 
     <!-- orderModal -->
     <div id="orderModal" class="modal">
@@ -996,20 +1499,21 @@
       <div class="modal__inner">
         <span data-close class="modal__close close-btn">Закрыть</span>
 
-        <h3 class="modal__title">Обращение в техподдержку</h3>
+        <h3 class="modal__title">
+          Обращение в техподдержку
+        </h3>
 
         <form class="modal__form">
           <div class="modal__inputs-block">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*" />
+            <input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*">
 
-            <input data-input type="text" name="company" class="modal__input input"
-              placeholder="Название организации" />
+            <input data-input type="text" name="company" class="modal__input input" placeholder="Название организации">
 
-            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail" />
+            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail">
 
-            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*" />
+            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*">
 
-            <input data-input type="text" name="address" class="modal__input input" placeholder="Адрес доставки*" />
+            <input data-input type="text" name="address" class="modal__input input" placeholder="Адрес доставки*">
 
             <div class="modal__select select">
               <span class="select__title">
@@ -1019,18 +1523,24 @@
                 <ul class="select__list">
                   <li class="select__item">
                     <label class="select__label">
-                      <span class="select__text"> Кит </span>
-                      <input class="radio" type="radio" name="delivery" value="" />
+                      <span class="select__text">
+                        Кит
+                      </span>
+                      <input class="radio" type="radio" name="delivery" value="">
                     </label>
                   </li>
                   <li class="select__item">
                     <label class="select__label">
-                      <span class="select__text"> сдек </span>
-                      <input class="radio" type="radio" name="delivery" value="" />
+                      <span class="select__text">
+                        сдек
+                      </span>
+                      <input class="radio" type="radio" name="delivery" value="">
                     </label>
                   </li>
                 </ul>
               </div>
+
+
             </div>
 
             <textarea data-textarea name="message" class="modal__input modal__textarea textarea"
@@ -1039,22 +1549,23 @@
           <div class="modal__file file">
             <label class="file__label">
               <span class="file__text">Добавить реквизиты</span>
-              <input data-file type="file" name="file" class="file__input" />
+              <input data-file type="file" name="file" class="file__input">
             </label>
             <p class="file__desc">
-              Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png,
-              xls, xlsx или zip.
+              Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
           </div>
 
-          <input type="text" class="modal__submit btn yellow-btn hover-yellow-light" value="Оформить заявку" />
+          <input type="text" class="modal__submit btn yellow-btn hover-yellow-light" value="Оформить заявку">
 
           <label class="checkbox" data-label>
             <input data-checkbox type="checkbox" checked class="checkbox__input" />
             <span class="checkbox__fake"></span>
             <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
           </label>
         </form>
+
       </div>
       <!--modal__inner-->
     </div>
@@ -1069,12 +1580,12 @@
           <!-- selecting-area -->
           <div class="selecting-area">
             <label class="selecting-area__item">
-              <input class="selecting-area__radio" type="radio" name="area" value="0" />
+              <input class="selecting-area__radio" type="radio" name="area" value="0">
               <span class="selecting-area__area-name">Поиск по сайту</span>
             </label>
 
             <label class="selecting-area__area">
-              <input class="selecting-area__radio" type="radio" name="area" value="1" />
+              <input class="selecting-area__radio" type="radio" name="area" value="1">
               <span class="selecting-area__area-name">Поиск по каталогу</span>
             </label>
           </div>
@@ -1082,7 +1593,7 @@
 
           <div class="search-form__string search">
             <input data-search-input type="text" class="search-form__input search__input input"
-              placeholder="Введите запрос и нажмите Enter" />
+              placeholder="Введите запрос и нажмите Enter">
             <span class="search-form__btn search__btn"></span>
           </div>
         </form>
@@ -1093,6 +1604,7 @@
 
         <!-- search-result__list -->
         <div class="search-result__list">
+
           <div class="result-card">
             <div class="result-card__header">
               <a href="news.html" class="result-card__area">Новости</a>
@@ -1101,14 +1613,11 @@
               </h3>
             </div>
 
-            <p class="result-card__desc">
-              Одним из самых востребованных продуктов
-              <span class="result-card__light">никелевог</span>о
-              металлопроката является лист никелевый 5 мм Н-0 ГОСТ 6235-91,
-              который благодаря своим качественным показателям используется
-              при изготовлении спецоборудования, высокоточных приборов, котлов
-              требующих повышенной устойчивости к коррозии.
-            </p>
+            <p class="result-card__desc">Одним из самых востребованных продуктов <span
+                class="result-card__light">никелевог</span>о
+              металлопроката является лист никелевый 5 мм Н-0 ГОСТ 6235-91, который благодаря своим качественным
+              показателям используется при изготовлении спецоборудования, высокоточных приборов, котлов требующих
+              повышенной устойчивости к коррозии. </p>
           </div>
           <div class="result-card">
             <div class="result-card__header">
@@ -1118,17 +1627,16 @@
               </h3>
             </div>
 
-            <p class="result-card__desc">
-              Одним из самых востребованных продуктов
-              <span class="result-card__light">никелевог</span>о
-              металлопроката является лист никелевый 5 мм Н-0 ГОСТ 6235-91,
-              который благодаря своим качественным показателям используется
-              при изготовлении спецоборудования, высокоточных приборов, котлов
-              требующих повышенной устойчивости к коррозии.
-            </p>
+            <p class="result-card__desc">Одним из самых востребованных продуктов <span
+                class="result-card__light">никелевог</span>о
+              металлопроката является лист никелевый 5 мм Н-0 ГОСТ 6235-91, который благодаря своим качественным
+              показателям используется при изготовлении спецоборудования, высокоточных приборов, котлов требующих
+              повышенной устойчивости к коррозии. </p>
           </div>
+
         </div>
         <!-- search-result__list -->
+
       </div>
     </div>
     <!-- searchModal -->

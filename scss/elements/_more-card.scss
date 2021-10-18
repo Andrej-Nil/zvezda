@@ -14,7 +14,11 @@
 }
 
 .more-card--big {
-  width: 630px;
+  width: 100%;
+  max-width: 630px;
+  @media (min-width: 1310px) {
+    width: 630px;
+  }
 }
 
 .more-card__content {

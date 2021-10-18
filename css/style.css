@@ -839,6 +839,12 @@ body {
   background: #fff;
 }
 
+.mobile-city__inner--clear {
+  color: #fff;
+  border: 1px solid #fff;
+  background: rgba(0, 0, 0, 0);
+}
+
 .mobile-city__name {
   font-weight: bold;
   font-size: 14px;
@@ -954,7 +960,14 @@ body {
 }
 
 .more-card--big {
-  width: 630px;
+  width: 100%;
+  max-width: 630px;
+}
+
+@media (min-width: 1310px) {
+  .more-card--big {
+    width: 630px;
+  }
 }
 
 .more-card__content {
@@ -2425,30 +2438,70 @@ body {
 }
 
 .about-production {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 40px;
-  height: 500px;
-  padding: 0 0 0 100px;
+  padding: 50px 20px 30px;
   background: #f5f5f5;
 }
 
-.about-production--reverse {
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  padding: 0 100px 0 0;
+@media (min-width: 768px) {
+  .about-production {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .about-production {
+    height: 500px;
+    padding: 0 0 0 100px;
+    background: #f5f5f5;
+  }
 }
 
 .about-production__desc {
-  width: 520px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .about-production__desc {
+    max-width: 520px;
+    margin: 0 20px 0 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-production--reverse {
+    flex-direction: row-reverse;
+  }
+  .about-production--reverse .about-production__desc {
+    margin: 0 0 0 20px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .about-production--reverse {
+    height: 500px;
+    padding: 0 100px 0 0;
+    background: #f5f5f5;
+  }
 }
 
 .about-production__title {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: #232323;
-  font-size: 30px;
-  line-height: 41px;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+@media (min-width: 1050px) {
+  .about-production__title {
+    margin-bottom: 30px;
+    font-size: 30px;
+    line-height: 41px;
+  }
 }
 
 .about-production__text {
@@ -2457,39 +2510,96 @@ body {
   line-height: 24px;
 }
 
+.about-production__img {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+@media (min-width: 768px) {
+  .about-production__img {
+    max-width: 600px;
+  }
+}
+
 .areas-application {
   margin-bottom: 80px;
 }
 
 .application-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 356px;
-  padding: 0 50px;
+  position: relative;
   background: #f5f5f5;
   margin-bottom: 20px;
+  padding: 50px 15px 0;
 }
 
 .application-card:last-child {
   margin-bottom: 0;
 }
 
+@media (min-width: 768px) {
+  .application-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .application-card {
+    height: 356px;
+    padding: 0 50px;
+  }
+}
+
 .application-card__desc {
-  width: 580px;
+  margin: 0 0 10px 0;
+}
+
+@media (min-width: 768px) {
+  .application-card__desc {
+    max-width: 580px;
+    margin: 0 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .application-card__title {
   margin-bottom: 20px;
   color: #000;
-  font-size: 30px;
+  font-size: 18px;
   line-height: 160%;
+}
+
+@media (min-width: 1050px) {
+  .application-card__title {
+    font-size: 30px;
+    line-height: 160%;
+  }
 }
 
 .application-card__text {
   color: #444a52;
   font-size: 14px;
   line-height: 180%;
+}
+
+.application-card__img {
+  width: 100%;
+  bottom: 0;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1050px) {
+  .application-card__img {
+    max-width: 400px;
+    position: absolute;
+    right: 50px;
+  }
 }
 
 .news-card {
@@ -4027,12 +4137,19 @@ body {
 }
 
 .production-select__text {
+  display: none;
   margin-bottom: 60px;
   color: #fff;
   font-weight: bold;
   font-size: 16px;
   line-height: 160%;
   width: 424px;
+}
+
+@media (min-width: 1050px) {
+  .production-select__text {
+    display: block;
+  }
 }
 
 .production-select__btn {
@@ -4731,6 +4848,8 @@ body {
 }
 
 .feedback__inner {
+  width: 100%;
+  display: flex;
   padding: 0 15px;
 }
 
@@ -5282,7 +5401,6 @@ body {
 }
 
 .application {
-  padding: 50px 15px;
   margin-bottom: 30px;
 }
 
