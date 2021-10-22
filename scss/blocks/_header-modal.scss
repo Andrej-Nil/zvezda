@@ -1,13 +1,17 @@
 .header-modal {
   position: absolute;
   left: 0;
-  top: 110px;
+  top: 0;
+  //padding-top: 110px;
   width: 100%;
   background: $blackMain;
-  min-height: 800px;
-  z-index: 1000;
+  min-height: 100vh;
+  z-index: 100;
 }
 
+.header-modal__bd {
+  border-top: 110px solid $bgBlack;
+}
 .header-modal--hide {
   display: none;
 }
