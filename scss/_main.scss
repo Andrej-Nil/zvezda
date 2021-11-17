@@ -9,6 +9,7 @@ $yellowHover: #ffc201;
 $bgBlack: #2d3035;
 $lightBg: #f8f8f8;
 $bgDark: #35383e;
+$errorColor: #ea2d2d;
 
 $text: #757575;
 $textBlack: #232323;
@@ -81,6 +82,10 @@ body {
   color: $text;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .app {
   overflow: hidden;
 }
@@ -145,4 +150,9 @@ body {
   font-size: 18px;
   line-height: 25px;
   margin-bottom: 30px;
+}
+
+.error-message {
+  font-size: 16px;
+  text-align: center;
 }

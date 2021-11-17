@@ -63,21 +63,31 @@
 .close-btn {
   position: relative;
   display: inline-block;
-  padding: 10px 30px 10px 10px;
+  padding: 10px 20px 10px 10px;
   cursor: pointer;
   color: $black;
   font-weight: bold;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: 14px;
+  line-height: 19px;
   &::before {
-    @include font-icon-style("\e91e", 14px);
+    @include font-icon-style("\e91e", 10px);
     position: absolute;
     top: 50%;
     right: 0;
     transform: translate(0, -50%);
     display: block;
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
+  }
+  @media (min-width: 1050px) {
+    padding: 10px 30px 10px 10px;
+    font-size: 18px;
+    line-height: 25px;
+    &::before {
+      @include font-icon-style("\e91e", 14px);
+      width: 14px;
+      height: 14px;
+    }
   }
 }
 

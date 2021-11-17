@@ -14,13 +14,13 @@
   <div class="app">
     <header class="header light-bg">
       <!-- header__top -->
-      <div class="header__top header__top--absolute ">
+      <div id="headerTop" class="header__top header__top--absolute">
         <div class="header__top-inner container">
           <a href="index.html" class="header__logo"> </a>
 
           <nav class="header-nav">
             <ul class="header-nav__list">
-              <li class="header-nav__item" data-header-nav data-header-modal-id="headerCatalogModal">
+              <li class="header-nav__item" data-header-modal-id="headerCatalogModal">
 
                 <a href="catalog.html" class="header-nav__link">
                   <span class="header-nav__link-text">Каталог</span>
@@ -28,6 +28,7 @@
                     <span class="header-nav__modal-arrow"></span>
                   </span>
                 </a>
+
               </li>
 
               <li class="header-nav__item">
@@ -43,7 +44,7 @@
                 </a>
               </li>
 
-              <li class="header-nav__item">
+              <li class="header-nav__item header-nav__item--about">
                 <a href="about.html" class="header-nav__link">
                   <span class="header-nav__link-text">О компании</span>
                   <span class="header-nav__arrow">
@@ -52,7 +53,7 @@
                 </a>
 
                 <!--about-nav-->
-                <div class="about-nav header-modal--hide">
+                <div class="about-nav">
                   <ul class="about-nav__list">
                     <li class="about-nav__item">
                       <a href="about.html" class="about-nav__link">О компании</a>
@@ -79,10 +80,10 @@
           </div>
           <!-- header__connection -->
 
-          <div class="header-city">
-            <span class="header-city__name">Екатеринбург</span>
+          <div class="header-city" data-header-modal-id="selectCityModal">
+            <span class="header-nav__link-text header-city__name">Екатеринбург</span>
             <span class="header-city__arrow header-nav__arrow">
-              <!--<span class="header-nav__modal-arrow"></span>-->
+              <span class="header-nav__modal-arrow"></span>
             </span>
           </div>
 
@@ -94,7 +95,7 @@
               </li>
 
               <li class="nav-icon__item">
-                <span class="nav-icon__link nav-icon__link--search"></span>
+                <span id="searchOpenBtn" class="nav-icon__link nav-icon__link--search"></span>
               </li>
 
             </ul>
@@ -1365,7 +1366,7 @@
         <div class="footer-main__inner container">
           <div class="footer-main__left">
             <div class="footer-main__support footer__col">
-              <span class="footer__support">
+              <span id="supportModalBtn" class="footer__support">
                 Написать в техподдержку
               </span>
             </div>
@@ -1470,10 +1471,10 @@
     <!--header-modals-->
 
     <!-- headerCatalogModal -->
-    <div id="headerCatalogModal" class="header-modal header-modal--hide">
+    <div id="headerCatalogModal" data-status="close" class="header-modal">
       <!-- header-modal__inner -->
-      <div class="header-modal__bd "></div>
-      <div class="header-modal__inner container">
+      <div class="header-modal__bd"></div>
+      <div class="header-modal__inner container" data-modal-inner>
 
         <div class="header-modal__search search">
           <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу">
@@ -1529,8 +1530,9 @@
     <!-- headerCatalogModal -->
 
     <!--search-city-->
-    <div id="selectCityModal" class="header-modal header-modal--hide">
+    <div id="selectCityModal" data-status="close" class="header-modal">
       <!-- header-modal__inner -->
+      <div class="header-modal__bd"></div>
       <div class="header-modal__inner container">
 
         <div class="header-modal__search search">
@@ -1732,38 +1734,62 @@
     <!--modal-->
 
     <!-- supportModal -->
-    <div data-close id="supportModal" class="modal">
+    <div id="supportModal" class="modal modal--is-hide">
       <!--modal__inner-->
-      <div class="modal__inner">
+      <div data-modal-body class="modal__body">
         <span data-close class="modal__close close-btn">Закрыть</span>
 
         <h3 class="modal__title">
           Обращение в техподдержку
         </h3>
 
-        <form class="modal__form">
+        <form action="./json/send-form.json" enctype="multipart/form-data" metod="POST" id="supportModalForm"
+          class="modal__form">
           <div class="modal__inputs-block">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*">
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="name" type="text" />
 
-            <textarea data-textarea name="message" class="modal__input modal__textarea textarea"
+              <span class="place-entry__placeholder">ФИО<span class="place-entry__star">*</span></span>
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="mail" type="text" />
+
+              <span class="place-entry__placeholder">E-mail</span>
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="phone" type="text" />
+
+              <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
+
+            </label>
+            <!--<input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*">
+            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail">
+            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*">-->
+
+            <textarea data-input name="message" class="modal__input modal__textarea textarea"
               placeholder="Опишите проблему"></textarea>
           </div>
-          <div class="modal__file file">
+          <div data-file class="modal__file file">
             <label class="file__label">
-              <span class="file__text">Прикрепить файл</span>
-              <input data-file type="file" name="file" class="file__input">
+              <span data-file-text="Прикрепить файл" class="file__text">Прикрепить файл</span>
+              <input data-input type="file" name="file" class="file__input">
             </label>
-            <p class="file__desc">
+            <span class="file__clear-btn" clear-file-btn>очистить файл</span>
+            <p data-info="Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip."
+              class="file__desc">
               Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
           </div>
 
-          <input type="text" class="modal__submit btn yellow-btn hover-yellow-light" value="Отправить заявку">
+          <input data-submit type="submit" class="modal__submit btn yellow-btn hover-yellow-light"
+            value="Отправить заявку">
 
-          <label class="checkbox" data-label>
-            <input data-checkbox type="checkbox" checked class="checkbox__input" />
+          <label data-checkbox class="checkbox" data-label>
+            <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
             <span class="checkbox__fake"></span>
             <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
 
@@ -1777,7 +1803,7 @@
 
 
     <!-- orderModal -->
-    <div id="orderModal" class="modal">
+    <div id="orderModal" class="modal modal--is-hide">
       <!--modal__inner-->
       <div class="modal__inner">
         <span data-close class="modal__close close-btn">Закрыть</span>
@@ -1855,71 +1881,54 @@
     <!-- orderModal -->
 
     <!-- searchModal -->
-    <div id="searchModal" class="modal">
-      <div class="modal__inner search-modal container">
-        <span data-close class="modal__close close-btn">Закрыть</span>
+    <div id="searchModal" class="modal search-modal modal--is-hide">
+      <div class="search-modal__inner container">
+        <span data-close class="search-modal__close close-btn">Закрыть</span>
+        <div id="SearchContent" class="search-modal__content">
+          <form action="" class="search-form mt50">
+            <!-- selecting-area -->
+            <div id="searchArea" class="selecting-area">
+              <label class="selecting-area__item">
+                <input data-area class="selecting-area__radio" type="radio" name="type" value="all" checked />
+                <span class="selecting-area__place">
+                  <span class="selecting-area__place-name">Поиск по сайту</span>
+                  <span class="selecting-area__place-name selecting-area__place-name--m">По сайту</span>
+                </span>
+              </label>
 
-        <form action="" class="search-form">
-          <!-- selecting-area -->
-          <div class="selecting-area">
-            <label class="selecting-area__item">
-              <input class="selecting-area__radio" type="radio" name="area" value="0">
-              <span class="selecting-area__area-name">Поиск по сайту</span>
-            </label>
-
-            <label class="selecting-area__area">
-              <input class="selecting-area__radio" type="radio" name="area" value="1">
-              <span class="selecting-area__area-name">Поиск по каталогу</span>
-            </label>
-          </div>
-          <!-- selecting-area -->
-
-          <div class="search-form__string search">
-            <input data-search-input type="text" class="search-form__input search__input input"
-              placeholder="Введите запрос и нажмите Enter">
-            <span class="search-form__btn search__btn"></span>
-          </div>
-        </form>
-
-        <div class="search-result">
-          <span class="search-result__count">Найдено 45 результатов:</span>
-        </div>
-
-        <!-- search-result__list -->
-        <div class="search-result__list">
-
-          <div class="result-card">
-            <div class="result-card__header">
-              <a href="news.html" class="result-card__area">Новости</a>
-              <h3 class="result-card__title">
-                <a href="news-one.html" class="result-card__link">Поступление на склады оцинкованной продукции</a>
-              </h3>
+              <label class="selecting-area__item">
+                <input data-area class="selecting-area__radio" type="radio" name="type" value="production" />
+                <span class="selecting-area__place">
+                  <span class="selecting-area__place-name">Поиск по каталогу</span>
+                  <span class="selecting-area__place-name selecting-area__place-name--m">По каталогу</span>
+                </span>
+              </label>
             </div>
+            <!-- selecting-area -->
 
-            <p class="result-card__desc">Одним из самых востребованных продуктов <span
-                class="result-card__light">никелевог</span>о
-              металлопроката является лист никелевый 5 мм Н-0 ГОСТ 6235-91, который благодаря своим качественным
-              показателям используется при изготовлении спецоборудования, высокоточных приборов, котлов требующих
-              повышенной устойчивости к коррозии. </p>
-          </div>
-          <div class="result-card">
-            <div class="result-card__header">
-              <a href="services.html" class="result-card__area">Услуги</a>
-              <h3 class="result-card__title">
-                <a href="service-one.html" class="result-card__link">Анализ металла</a>
-              </h3>
+            <div class="search-form__string  search">
+              <input id="searchInput" type="text" class="search-form__input search__input search__input--light-bd input"
+                placeholder="Введите запрос и нажмите Enter" />
+              <span class="search-form__btn search__btn"></span>
             </div>
+          </form>
+          <!-- search-result__list -->
+          <div id="searchResult" class="search__result">
 
-            <p class="result-card__desc">Одним из самых востребованных продуктов <span
-                class="result-card__light">никелевог</span>о
-              металлопроката является лист никелевый 5 мм Н-0 ГОСТ 6235-91, который благодаря своим качественным
-              показателям используется при изготовлении спецоборудования, высокоточных приборов, котлов требующих
-              повышенной устойчивости к коррозии. </p>
           </div>
-
+          <!-- search-result__list -->
         </div>
-        <!-- search-result__list -->
+      </div>
 
+
+
+
+
+
+
+      <div id="blinds" class="blinds">
+        <div class="blind blind--up"></div>
+        <div class="blind blind--down"></div>
       </div>
     </div>
     <!-- searchModal -->

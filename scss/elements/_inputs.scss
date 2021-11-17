@@ -47,29 +47,30 @@
 .textarea::-webkit-input-placeholder {
   font-family: $manrope;
   color: #a7a7a7;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
 }
 .textarea:-ms-input-placeholder {
   font-family: $manrope;
   color: #a7a7a7;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
 }
 .textarea::-ms-input-placeholder {
   font-family: $manrope;
   color: #a7a7a7;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
 }
 .textarea::placeholder {
   font-family: $manrope;
   color: #a7a7a7;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
 }
 
 .checkbox {
+  //position: relative;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -145,3 +146,59 @@
   font-size: 14px;
   line-height: 180%;
 }
+
+.place-entry {
+  position: relative;
+  display: block;
+  //width: 100%;
+  overflow: hidden;
+  color: $blackMain;
+}
+
+.place-entry__input {
+  position: relative;
+  padding: 10px 20px 10px;
+  width: 100%;
+  border: 1px solid #a7a7a7;
+  font-size: 16px;
+  line-height: 180%;
+  outline: none;
+  transition: 0.2s ease-in-out;
+  z-index: 100;
+}
+
+.input-error {
+  border: 1px solid $errorColor;
+}
+
+.place-entry__placeholder {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  padding-left: 22px;
+  height: 100%;
+  width: 100%;
+  white-space: nowrap;
+  //transform: translate(0, -50%);
+  //background: #ccc;
+  color: $greyLight;
+  font-size: 14px;
+  line-height: 180%;
+
+  //z-index: 100;
+  cursor: text;
+  user-select: none;
+}
+
+.place-entry__star {
+  color: $yellowMain;
+}
+
+.hide-placeholder + .place-entry__placeholder {
+  display: none;
+}
+
+//.place-entry__input:invalid + .place-entry__placeholder {
+//  display: block;
+//}

@@ -2,6 +2,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  display: none;
   //padding-top: 110px;
   width: 100%;
   background: $blackMain;
@@ -12,8 +13,11 @@
 .header-modal__bd {
   border-top: 110px solid $bgBlack;
 }
-.header-modal--hide {
-  display: none;
+.header-modal__bd--white {
+  border-color: $white;
+}
+.header-modal--show {
+  display: block;
 }
 
 .header-modal__inner {

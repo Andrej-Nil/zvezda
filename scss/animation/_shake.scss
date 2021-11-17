@@ -1,0 +1,31 @@
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  15% {
+    transform: translate(7px, 0);
+  }
+  30% {
+    transform: translate(-7px, 0);
+  }
+  45% {
+    transform: translate(7px, 0);
+  }
+  60% {
+    transform: translate(-7px, 0);
+  }
+  75% {
+    transform: translate(7px, 0);
+  }
+  90% {
+    transform: translate(-7px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.animation-shake {
+  animation-duration: 800ms;
+  animation-name: shake;
+}

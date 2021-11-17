@@ -8,6 +8,17 @@
   width: 100%;
   height: 440px;
   transition: 0.2s ease-in-out;
+  @media (min-width: 1050px) {
+    &:hover {
+      border: 1px solid $yellowMain;
+    }
+  }
+  @media (min-width: 1310px) {
+    min-width: 305px;
+    &:hover .product-card__preview {
+      transform: scale(1.1);
+    }
+  }
 }
 
 .product-card--slider {
@@ -23,15 +34,9 @@
   @media (min-width: 1050px) {
     min-width: 32%;
     margin: 0 8px;
-    &:hover {
-      border: 1px solid $yellowMain;
-    }
   }
   @media (min-width: 1310px) {
     min-width: 305px;
-    &:hover {
-      transform: scale(1.02);
-    }
   }
 }
 
@@ -52,6 +57,7 @@
 
 .product-card__preview {
   margin: auto 0 20px 0;
+  transition: 0.2s ease-in-out;
   height: 177px;
 }
 

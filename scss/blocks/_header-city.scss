@@ -9,8 +9,10 @@
   &:hover .header-city__arrow {
     color: $yellowMain;
   }
-  @media (min-width: 1050px) {
+  @media (min-width: 768px) {
     display: block;
+    display: flex;
+    align-items: center;
     //margin-right: 30px;
   }
 }
@@ -20,11 +22,13 @@
   font-size: 12px;
   line-height: 16px;
   color: $white;
-  padding-right: 15px;
+  //padding-right: 15px;
   transition: 0.2s ease-in-out;
 }
 
 .header-city__arrow {
-  position: absolute;
-  right: 0;
+  //position: absolute;
+  //right: 0;
+  //top: 50%;
+  //transform: translate(0, -50%);
 }

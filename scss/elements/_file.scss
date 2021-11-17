@@ -39,3 +39,17 @@
   display: inline-block;
   width: 100%;
 }
+
+.file__clear-btn {
+  display: none;
+  margin-top: 10px;
+  cursor: pointer;
+  &:hover {
+    color: $blackMain;
+    text-decoration: underline;
+  }
+}
+
+.file__clear-btn--is-show {
+  display: inline-block;
+}

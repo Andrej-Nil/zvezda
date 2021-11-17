@@ -37,10 +37,10 @@
 
 .product-about__item--out-stock {
   display: none;
-  color: #ea2d2d;
+  color: $errorColor;
   &::before {
     @include font-icon-style("\e924", 22px);
-    color: #ea2d2d;
+    color: $errorColor;
   }
 }
 

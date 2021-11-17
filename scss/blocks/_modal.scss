@@ -1,30 +1,33 @@
 .modal {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  overflow: auto;
+  background: rgba(228, 228, 228, 0);
+  backdrop-filter: blur(0px);
+  z-index: 2000;
+  transition: background 0.3s ease-in-out;
   overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.modal--is-hide {
+  z-index: -1000;
+}
+
+.modal--is-open {
   background: rgba(228, 228, 228, 0.6);
   backdrop-filter: blur(20px);
   z-index: 1000;
-  transition: 0.5s ease-in-out;
-  &:hover {
-    background: rgba(228, 228, 228, 0.6);
-    backdrop-filter: blur(20px);
-    z-index: 1000;
-  }
-  &:hover .modal__inner {
+  .modal__body {
     transform: translate(0, 0);
   }
 }
 
-.modal--is-show {
-  display: block;
-}
-
-.modal__inner {
+.modal__body {
+  //display: none;
   position: relative;
   transform: translate(100%, 0);
   width: 473px;
@@ -35,6 +38,11 @@
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
   transition: transform 0.5s ease-in-out;
 }
+
+//.modal__content {
+//  margin: auto;
+//  background: $white;
+//}
 
 .modal__close {
   position: absolute;
@@ -57,7 +65,7 @@
 .modal__input {
   width: 100%;
   margin-bottom: 30px;
-  outline: none;
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -76,4 +84,35 @@
 
 .modal__select {
   margin-bottom: 30px;
+}
+
+//.blinds {
+//  position: fixed;
+//  top: 0;
+//}
+
+.blinds--is-close {
+  .blind {
+    height: 50vh;
+  }
+}
+
+.blinds--is-hide {
+  display: none;
+}
+
+.blind {
+  position: absolute;
+  height: 0vh;
+  background: $white;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+.blind--up {
+  top: 0;
+}
+
+.blind--down {
+  bottom: 0;
 }
