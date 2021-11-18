@@ -1773,14 +1773,13 @@
             <textarea data-input name="message" class="modal__input modal__textarea textarea"
               placeholder="Опишите проблему"></textarea>
           </div>
-          <div data-file class="modal__file file">
-            <label class="file__label">
-              <span data-file-text="Прикрепить файл" class="file__text">Прикрепить файл</span>
+          <div data-file-block class="modal__file file">
+            <label data-file-label class="file__label">
+              <span data-file-text class="file__text">Прикрепить файл</span>
               <input data-input type="file" name="file" class="file__input">
             </label>
             <span class="file__clear-btn" clear-file-btn>очистить файл</span>
-            <p data-info="Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip."
-              class="file__desc">
+            <p data-info="" class="file__desc">
               Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
           </div>
@@ -1933,7 +1932,13 @@
     </div>
     <!-- searchModal -->
 
-
+    <div id="infoModal" class="info-modal info-modal--close">
+      <span data-close-info class="info-modal__close close-btn">Закрыть</span>
+      <div data-modal-inner class="info-modal__inner container">
+        <p class="info-modal__text">Спасибо. Заказ успешно оформлен!</p>
+        <p class="info-modal__subtext">Мы выслали электронный чек и трек номер заказа на почту и номер телефона.</p>
+      </div>
+    </div>
     <!--modal-->
 
 

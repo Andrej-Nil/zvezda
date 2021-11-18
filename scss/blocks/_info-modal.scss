@@ -1,0 +1,52 @@
+.info-modal {
+  position: fixed;
+  bottom: 0;
+  transform: translate(0, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+  background: $lightBg;
+
+  transition: transform 0.3s ease-in-out;
+}
+
+.info-modal--close {
+  z-index: -2000;
+}
+
+.info-modal--open {
+  z-index: 2000;
+  transform: translate(0, 0);
+}
+
+.info-modal--yellow {
+  background: $yellowMain;
+}
+
+.info-modal--error {
+  background: $errorColor;
+}
+
+.info-modal__close {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+}
+
+.info-modal__text {
+  margin-bottom: 20px;
+
+  color: $black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.info-modal__subtext {
+  text-align: center;
+  font-size: 18px;
+  line-height: 28px;
+}

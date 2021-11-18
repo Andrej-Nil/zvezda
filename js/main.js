@@ -103,40 +103,60 @@ class Server {
 }
 
 class InputFile {
-  changeFileInfo = ($inputFileWrap) => {
-    const $inputFileBtnText = $inputFileWrap.querySelector('[data-file-text]');
-    const $inputFileInfo = $inputFileWrap.querySelector('[data-info]');
-    const $inputFile = $inputFileWrap.querySelector('[data-input]');
-    const $clearBtn = $inputFileWrap.querySelector('[clear-file-btn]');
-    const infoFile = this.getInfoFile($inputFile);
-
-
-
-    this.setNameFile($inputFileBtnText, infoFile);
-    this.showClearBtn($clearBtn);
-
-    if ($inputFileInfo) {
-      //this.showClearBtn($inputFileInfo);
-    }
+  constructor($inputFileBlock) {
+    this.$inputFileBlock = $inputFileBlock;
+    this.init();
   }
 
-  setNameFile = ($inputFileBtnText, infoFile) => {
-    if (!(infoFile.name && $inputFileBtnText)) {
-      return;
-    }
-    const size = this.getConvSize(infoFile.size)
-    $inputFileBtnText.innerHTML = `${infoFile.name}. ${size}`
-  }
-
-  showClearBtn = ($clearBtn) => {
-    if (!$clearBtn) {
+  init = () => {
+    if (!this.$inputFileBlock) {
       return;
     }
 
-    $clearBtn.classList.add('file__clear-btn--is-show');
+    this.setElements()
+
+  }
+  setElements = () => {
+    this.$label = this.$inputFileBlock.querySelector('[data-file-label]');
+    this.$cloneLabel = this.createCloneLabel();
+    this.$fileText = this.$inputFileBlock.querySelector('[data-file-text]');
+    this.$input = this.$inputFileBlock.querySelector('[data-input]');
+    this.$clearBtn = this.$inputFileBlock.querySelector('[clear-file-btn]');
+    this.infoFile = null;
+  }
+  createCloneLabel = () => {
+    return this.$label.cloneNode(true);;
+  }
+  changeFileName = () => {
+    this.infoFile = this.getInfoFile();
+    this.setNameFile();
+    this.showClearBtn();
+  }
+
+  setNameFile = () => {
+    if (!this.infoFile.name) {
+      return;
+    }
+    const size = this.getConvSize()
+    this.$fileText.innerHTML = `${this.infoFile.name}. ${size}`
+  }
+
+  showClearBtn = () => {
+    if (!this.$clearBtn) {
+      return;
+    }
+    this.$clearBtn.classList.add('file__clear-btn--is-show');
   };
 
-  getConvSize = (size) => {
+  hideClearBtn = () => {
+    if (!this.$clearBtn) {
+      return;
+    }
+    this.$clearBtn.classList.remove('file__clear-btn--is-show');
+  }
+
+  getConvSize = () => {
+    const size = this.infoFile.size
     const fsizekb = size / 1024;
     const fsizemb = fsizekb / 1024;
     const fsizegb = fsizemb / 1024;
@@ -157,14 +177,18 @@ class InputFile {
   }
 
 
-  getInfoFile = ($inputFile) => {
-    if (!$inputFile.files[0]) {
+  getInfoFile = () => {
+    if (!this.$input.files[0]) {
       return false;
     }
-    return $inputFile.files[0];
+    return this.$input.files[0];
   }
 
-  claerInputFile = ($inputFileWrap) => {
+  clear = () => {
+    this.$label.remove();
+    this.$inputFileBlock.insertAdjacentElement('afterbegin', this.$cloneLabel);
+    this.hideClearBtn();
+    this.setElements();
 
   }
 }
@@ -360,6 +384,78 @@ class Render {
 
 }
 
+class InfoModal {
+  constructor() {
+    this.$modal = document.querySelector('#infoModal');
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$modal) {
+      return;
+    }
+    this.classBgColor = ''
+    this.$inner = this.$modal.querySelector('[data-modal-inner]');
+    this.timeout = null;
+    this.time = 10000;
+    this.listeners()
+  }
+
+  open = (classBgColor = '') => {
+    this.classBgColor = classBgColor;
+    if (this.classBgColor !== '') {
+      this.$modal.classList.add(this.classBgColor);
+    }
+    this.$modal.classList.remove('info-modal--hide');
+    this.$modal.classList.add('info-modal--open');
+    this.createTimeout(this.close, this.time);
+  }
+
+
+
+  close = () => {
+    clearTimeout(this.timeout);
+    this.$modal.classList.remove('info-modal--open');
+    if (this.classBgColor === '') {
+      return;
+    }
+    setTimeout(() => {
+      this.$modal.classList.remove(this.classBgColor);
+      this.$modal.classList.add('info-modal--hide');
+    }, 300)
+  }
+
+  createTimeout = (fn, time) => {
+    this.timeout = setTimeout(() => {
+      fn();
+    }, time)
+  }
+
+  clickHandler = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-close-info]')) {
+      this.close();
+    }
+    if (!$target.closest('#infoModal')) {
+      this.close();
+    }
+  }
+
+  mouseenterHandler = () => {
+    clearTimeout(this.timeout);
+  }
+
+  mouseleaveHandler = () => {
+    this.createTimeout(this.close, this.time);
+  }
+
+  listeners = () => {
+    document.addEventListener('click', this.clickHandler);
+    this.$modal.addEventListener('mouseenter', this.mouseenterHandler);
+    this.$modal.addEventListener('mouseleave', this.mouseleaveHandler);
+  }
+}
+
 class Form {
   constructor(selectorForm,) {
     this.$form = document.querySelector(selectorForm);
@@ -375,25 +471,23 @@ class Form {
     this.$inputs = this.$form.querySelectorAll('[data-input]');
     this.$submitBtn = this.$form.querySelector('[data-submit]');
     this.server = new Server();
-    this.inputFile = new InputFile();
+    this.$inputFileBlock = this.$form.querySelector('[data-file-block]');
+    this.defineInputFileClass();
     this.formListener();
   }
   formHandler = (e) => {
     e.preventDefault();
   }
 
-  formSubmit = (e) => {
-    const target = e.target;
-    if (!target.closest('[data-submit]')) {
-      return;
-    }
+  formSubmit = () => {
+
     const result = this.formCheck();
 
     if (!result) {
       return;
     }
 
-    this.sendForm(this.form);
+    return this.sendForm(this.form);
 
   }
 
@@ -403,7 +497,7 @@ class Form {
     switch (name) {
       case 'phone':
         result = this.checkValue($input.value, this.regTel);
-        this.visualizationInputStatus($input, result); ($input, result);
+        this.visualizationInputStatus($input, result);
         break;
       case 'name':
         result = this.checkForEmpty($input.value);
@@ -432,14 +526,6 @@ class Form {
       default: result = true;
     }
     return result;
-  }
-
-  inputHandler = (e) => {
-    const $target = e.target
-    if (!e.target.closest('[data-input]')) {
-      return;
-    }
-    this.checkInput($target);
   }
 
   checkValue(value, reg) {
@@ -483,7 +569,6 @@ class Form {
     return checkbox.checked
   }
 
-
   formCheck = () => {
     let res = true;
     this.$inputs.forEach(($item) => {
@@ -500,22 +585,18 @@ class Form {
   }
 
   sendForm = async () => {
-    this.response = await this.server.postForm(this.$form);
-    console.log(this.response);
-    if (!this.response.rez) {
-      //this.resultBlockHide();
-      //this.showErrorMessage(this.response.error);
-    }
-
-    if (this.response.rez) {
-      this.clearForm();
-      //this.resultBlockShow()
-    }
+    return await this.server.postForm(this.$form);
   }
 
   clearForm = () => {
     this.$inputs.forEach(($item) => {
+      if ($item.name === 'file') {
+        this.inputFile.clear();
+        return;
+      }
+
       $item.value = '';
+      this.showPlaceholder($item);
     })
     //if (this.$textarea) {
     //  this.$textarea.value = '';
@@ -526,25 +607,76 @@ class Form {
 
   }
 
-  changeHandler = (e) => {
-    const $target = e.target.closest('[data-file]');
-    if ($target) {
-      this.inputFile.changeFileInfo($target);
+  defineInputFileClass = () => {
+    if (!this.$inputFileBlock) {
+      return;
+    }
+    this.inputFile = new InputFile(this.$inputFileBlock);
+  };
+
+  hidePlaceholder($input) {
+    $input.classList.add('hide-placeholder');
+  }
+
+  showPlaceholder($input) {
+    $input.classList.remove('hide-placeholder');
+  }
+
+  tooglePlaceholder($input) {
+    if (!$input) {
+      return;
+    }
+    if ($input.value.length > 0) {
+      this.hidePlaceholder($input);
+    }
+    if ($input.value.length == 0) {
+      this.showPlaceholder($input);
     }
   }
 
-  defineInputFileElements = () => {
-    if (!this.$inputFile) {
-      return
+
+  changeHandler = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-file-block]')) {
+      this.inputFile.changeFileName($target);
     }
 
-  };
+    if ($target.closest('[data-input]')) {
+      this.tooglePlaceholder($target);
+    }
+  }
+
+  focusoutHandler = (e) => {
+    const $target = e.target
+    if (!e.target.closest('[data-input]')) {
+      return;
+    }
+    this.checkInput($target);
+  }
+
+  inputHandler = (e) => {
+    const $target = e.target;
+
+    if ($target.closest('[data-input]')) {
+      this.tooglePlaceholder($target);
+    }
+  }
+
+
+  clickHandler = (e) => {
+    const target = e.target;
+    if (target.closest('[clear-file-btn]')) {
+      this.inputFile.clear();
+    }
+  }
   formListener = () => {
     this.$form.addEventListener('submit', this.formHandler);
-    this.$form.addEventListener('click', this.formSubmit);
-    this.$form.addEventListener('focusout', this.inputHandler);
+    this.$form.addEventListener('click', this.clickHandler);
+    this.$form.addEventListener('focusout', this.focusoutHandler);
+    this.$form.addEventListener('input', this.inputHandler);
     this.$form.addEventListener('change', this.changeHandler);
   }
+
 }
 
 class ModalForm extends Form {
@@ -739,26 +871,37 @@ class CommunicationModal extends Modal {
     }
     this.$modalBody = this.$modal.querySelector('[data-modal-body]');
     this.$modal.addEventListener('click', this.listeners);
-    this.$form = new ModalForm('#supportModalForm');
+    this.form = new ModalForm('#supportModalForm');
 
   }
 
-  //openModal = () => {
-  //  this.open();
-  //}
+  sendForm = async () => {
+    const response = await this.form.formSubmit();
+    if (response.rez)
+      infoModal.open();
 
-  listeners = (e) => {
-    const target = e.target;
-    if (target.hasAttribute('data-close')) {
+  }
+
+  clickHandler = (e) => {
+    const $target = e.target
+    if ($target.closest('[data-submit]')) {
+      this.sendForm()
+    }
+    if ($target.hasAttribute('data-close')) {
       this.close();
     }
   }
+
+  listeners = () => {
+    this.$modal, addEventListener('click', this.clickHandler)
+  }
 }
 
-
+const infoModal = new InfoModal()
 const render = new Render();
 const searchModal = new SearchModal('#searchModal');
 const supportModal = new CommunicationModal('#supportModal');
+
 if ($searchOpenBtn && $searchModal) {
   $searchOpenBtn.addEventListener('click', openSearchModal)
 }
@@ -776,28 +919,7 @@ function openSearchModal() {
 function openOrderModal() {
   supportModal.open()
 }
-document.addEventListener('input', tooglePlaceholder);
-document.addEventListener('change', tooglePlaceholder);
-function tooglePlaceholder(e) {
-  const target = e.target.closest('[data-input]')
-  if (!target) {
-    return;
-  }
-  if (target.value.length > 0) {
-    hidePlaceholder(target);
-  }
-  if (target.value.length == 0) {
-    showPlaceholder(target);
-  }
-}
 
-function hidePlaceholder(input) {
-  input.classList.add('hide-placeholder');
-}
-
-function showPlaceholder(input) {
-  input.classList.remove('hide-placeholder');
-}
 
 
 
