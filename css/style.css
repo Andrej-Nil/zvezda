@@ -335,10 +335,6 @@ body {
   justify-content: space-between;
 }
 
-.white-color {
-  color: #fff;
-}
-
 .color-yellow {
   color: #fba50d;
 }
@@ -7721,11 +7717,14 @@ body {
   height: 300px;
   width: 100%;
   background: #f8f8f8;
-  z-index: -2000;
   transition: transform 0.3s ease-in-out;
 }
 
-.info-modal--close {
+.info-modal--hide {
+  z-index: -2000;
+}
+
+.info-modal--show {
   z-index: 2000;
 }
 
@@ -7760,6 +7759,10 @@ body {
   text-align: center;
   font-size: 18px;
   line-height: 28px;
+}
+
+.info-modal__link:hover {
+  text-decoration: underline;
 }
 
 .search-modal {
@@ -7962,6 +7965,10 @@ body {
   .mt125 {
     margin-top: 125px;
   }
+}
+
+.white-color {
+  color: #fff;
 }
 
 @keyframes shake {

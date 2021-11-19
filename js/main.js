@@ -198,7 +198,8 @@ class Render {
     this.$parent = $parent;
     this.declForTotalFindedItem = ['', 'а', 'ов'];
     //this.spinnerText = '';
-    //this.errorMsg = '';
+
+
   }
 
 
@@ -211,7 +212,6 @@ class Render {
   renderErrorMessage = ($parent = this.$parent, messageText = '') => {
     this._render($parent, this.getErrorMessageHtml, messageText);
   }
-
 
   renderTotalFindedItem = (count, $parent = this.$parent) => {
     this._render($parent, this.getTotalFindedItemHtml, count);
@@ -237,6 +237,16 @@ class Render {
     this._render($parent, this.getProductCardHtml, false, cards);
   }
 
+  renderInfoModalError = (errorMessage) => {
+    this.clearParent(this.$parent)
+    this._render(this.$parent, this.getInfoModalErrorHtml, errorMessage, false);
+  }
+
+  renderInfoModalSuccses = () => {
+    this.clearParent(this.$parent)
+    this._render(this.$parent, this.getInfoModalSuccsesHtml);
+  }
+  //разметка
   getSearchResultAllWrapHtml = () => {
     return (/*html*/`
     <div data-result-all class="result__all">
@@ -280,7 +290,7 @@ class Render {
   </div>
     `)
   }
-  //разметка
+
   getSearchResultCardHtml = (card) => {
     const descWithIllumination = this.getTextWithIllumination(card.str, card.desc);
     return (/*html*/`
@@ -338,8 +348,26 @@ class Render {
     `)
   }
 
+  getInfoModalErrorHtml(errorMessage) {
+    const errorMsg = 'Произошла ошибка, попробуйте позже.';
+    const message = errorMessage ? errorMessage : errorMsg
+    return ( /*html*/`
+      <p class="info-modal__text white-color">${message}</p>
+      <p class="info-modal__subtext white-color">Вы можете с вязаться с нами по телефону <a href="tel:+78987775544" class="info-modal__link white-color">+7 898 777 55 44</a> или написат нам на почту <a href="mailto:info@ntmk.ru" class="info-modal__link white-color">info@ntmk.ru</a></p>
+    `)
+  }
+
+  getInfoModalSuccsesHtml() {
+    return ( /*html*/`
+      <p class="info-modal__text">Спасибо. Заказ успешно оформлен!</p>
+      <p class="info-modal__subtext">Если у вас появились вопросы вы можете связаться с  нами по телефону <a href="tel:+78987775544" class="info-modal__link">+7 898 777 55 44</a> или написат нам на почту <a href="mailto:info@ntmk.ru" class="info-modal__link">info@ntmk.ru</a></p>
+    `)
+  }
+
+
+
   //Общая функция отрисовки
-  _render = ($parent = this.$parent, getHtmlMarkup, argument = false, array = false) => {
+  _render = ($parent, getHtmlMarkup, argument = false, array = false) => {
     let markupAsStr = '';
     if (!$parent) {
       return;
@@ -384,77 +412,6 @@ class Render {
 
 }
 
-class InfoModal {
-  constructor() {
-    this.$modal = document.querySelector('#infoModal');
-    this.init();
-  }
-
-  init = () => {
-    if (!this.$modal) {
-      return;
-    }
-    this.classBgColor = ''
-    this.$inner = this.$modal.querySelector('[data-modal-inner]');
-    this.timeout = null;
-    this.time = 10000;
-    this.listeners()
-  }
-
-  open = (classBgColor = '') => {
-    this.classBgColor = classBgColor;
-    if (this.classBgColor !== '') {
-      this.$modal.classList.add(this.classBgColor);
-    }
-    this.$modal.classList.remove('info-modal--hide');
-    this.$modal.classList.add('info-modal--open');
-    this.createTimeout(this.close, this.time);
-  }
-
-
-
-  close = () => {
-    clearTimeout(this.timeout);
-    this.$modal.classList.remove('info-modal--open');
-    if (this.classBgColor === '') {
-      return;
-    }
-    setTimeout(() => {
-      this.$modal.classList.remove(this.classBgColor);
-      this.$modal.classList.add('info-modal--hide');
-    }, 300)
-  }
-
-  createTimeout = (fn, time) => {
-    this.timeout = setTimeout(() => {
-      fn();
-    }, time)
-  }
-
-  clickHandler = (e) => {
-    const $target = e.target;
-    if ($target.closest('[data-close-info]')) {
-      this.close();
-    }
-    if (!$target.closest('#infoModal')) {
-      this.close();
-    }
-  }
-
-  mouseenterHandler = () => {
-    clearTimeout(this.timeout);
-  }
-
-  mouseleaveHandler = () => {
-    this.createTimeout(this.close, this.time);
-  }
-
-  listeners = () => {
-    document.addEventListener('click', this.clickHandler);
-    this.$modal.addEventListener('mouseenter', this.mouseenterHandler);
-    this.$modal.addEventListener('mouseleave', this.mouseleaveHandler);
-  }
-}
 
 class Form {
   constructor(selectorForm,) {
@@ -484,7 +441,7 @@ class Form {
     const result = this.formCheck();
 
     if (!result) {
-      return;
+      return null;
     }
 
     return this.sendForm(this.form);
@@ -679,14 +636,7 @@ class Form {
 
 }
 
-class ModalForm extends Form {
-  constructor(selectorForm) {
-    super(selectorForm);
-  }
 
-
-
-}
 class Modal {
   constructor(id) {
     this.$modal = document.querySelector(id);
@@ -698,7 +648,6 @@ class Modal {
     this.$modal.classList.remove('modal--is-hide');
     this.$modal.classList.add('modal--is-open');
     $body.classList.add('no-scroll');
-
   }
 
   close = () => {
@@ -719,6 +668,107 @@ class Modal {
   //}
 }
 
+class ModalForm extends Form {
+  constructor(selectorForm) {
+    super(selectorForm);
+  }
+
+
+
+}
+
+
+class InfoModal {
+  constructor(modalId) {
+    this.$modal = document.querySelector(modalId);
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$modal) {
+      return;
+    }
+    this.$inner = this.$modal.querySelector('[data-modal-inner]');
+    this.timeout = null;
+    this.time = 10000;
+    this.render = new Render(this.$inner);
+    this.listeners()
+  }
+
+  open = (timeout = false) => {
+
+    this.$modal.classList.remove('info-modal--hide');
+    this.$modal.classList.add('info-modal--show');
+    this.$modal.classList.add('info-modal--open');
+
+    if (timeout) {
+      this.createTimeout(this.close, this.time);
+    }
+
+  }
+
+
+
+
+
+  close = () => {
+    clearTimeout(this.timeout);
+    this.$modal.classList.remove('info-modal--open');
+    setTimeout(() => {
+      this.$modal.classList.add('info-modal--close');
+      this.$modal.classList.add('info-modal--hide');
+    }, 300)
+  }
+
+  createTimeout = (fn, time) => {
+    this.timeout = setTimeout(() => {
+      fn();
+    }, time)
+  }
+
+  clickHandler = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-close-info]')) {
+      this.close();
+    }
+  }
+
+  //mouseenterHandler = () => {
+  //  clearTimeout(this.timeout);
+  //}
+
+  //mouseleaveHandler = () => {
+  //  this.createTimeout(this.close, this.time);
+  //}
+
+  listeners = () => {
+    this.$modal.addEventListener('click', this.clickHandler);
+    this.$modal.addEventListener('mouseenter', this.mouseenterHandler);
+    this.$modal.addEventListener('mouseleave', this.mouseleaveHandler);
+  }
+}
+
+class ErrorModal extends InfoModal {
+  constructor(modalId) {
+    super(modalId);
+  }
+
+  showError = (errorMessage = false) => {
+    this.render.renderInfoModalError(errorMessage);
+    this.open(true)
+  }
+}
+
+class SuccsesModal extends InfoModal {
+  constructor(modalId) {
+    super(modalId);
+  }
+
+  showSuccses = () => {
+    this.render.renderInfoModalSuccses();
+    this.open(true)
+  }
+}
 
 
 class SearchModal extends Modal {
@@ -877,18 +927,37 @@ class CommunicationModal extends Modal {
 
   sendForm = async () => {
     const response = await this.form.formSubmit();
-    if (response.rez)
-      infoModal.open();
+    if (response === null) {
+      return;
+    }
+
+    if (response.rez == 1) {
+
+      this.form.clearForm();
+      this.close();
+      setTimeout(() => {
+        succsesModal.showSuccses();
+      }, 300)
+
+    }
+
+    if (response.rez == 0) {
+      console.log(`Ошибка: ${response.error.id}`);
+      errorModal.showError(response.error.desc);
+    }
+
 
   }
 
   clickHandler = (e) => {
     const $target = e.target
     if ($target.closest('[data-submit]')) {
-      this.sendForm()
+      this.sendForm();
+      errorModal.close();
     }
     if ($target.hasAttribute('data-close')) {
       this.close();
+      errorModal.close();
     }
   }
 
@@ -897,10 +966,14 @@ class CommunicationModal extends Modal {
   }
 }
 
-const infoModal = new InfoModal()
 const render = new Render();
 const searchModal = new SearchModal('#searchModal');
 const supportModal = new CommunicationModal('#supportModal');
+const succsesModal = new SuccsesModal('#succsesModal');
+const errorModal = new ErrorModal('#errorModal');
+
+
+
 
 if ($searchOpenBtn && $searchModal) {
   $searchOpenBtn.addEventListener('click', openSearchModal)
