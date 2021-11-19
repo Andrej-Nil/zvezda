@@ -198,8 +198,6 @@ class Render {
     this.$parent = $parent;
     this.declForTotalFindedItem = ['', 'а', 'ов'];
     //this.spinnerText = '';
-
-
   }
 
 
@@ -239,12 +237,12 @@ class Render {
 
   renderInfoModalError = (errorMessage) => {
     this.clearParent(this.$parent)
-    this._render(this.$parent, this.getInfoModalErrorHtml, errorMessage, false);
+    this._render(this.$parent, this.getInfoModalErrorHtml, errorMessage);
   }
 
-  renderInfoModalSuccses = () => {
+  renderInfoModalSuccses = (message) => {
     this.clearParent(this.$parent)
-    this._render(this.$parent, this.getInfoModalSuccsesHtml);
+    this._render(this.$parent, this.getInfoModalSuccsesHtml, message);
   }
   //разметка
   getSearchResultAllWrapHtml = () => {
@@ -357,9 +355,11 @@ class Render {
     `)
   }
 
-  getInfoModalSuccsesHtml() {
+  getInfoModalSuccsesHtml(message) {
+    const text = 'Успешная отправка!'
+    const desc = message ? message : text
     return ( /*html*/`
-      <p class="info-modal__text">Спасибо. Заказ успешно оформлен!</p>
+      <p class="info-modal__text">${desc}</p>
       <p class="info-modal__subtext">Если у вас появились вопросы вы можете связаться с  нами по телефону <a href="tel:+78987775544" class="info-modal__link">+7 898 777 55 44</a> или написат нам на почту <a href="mailto:info@ntmk.ru" class="info-modal__link">info@ntmk.ru</a></p>
     `)
   }
@@ -564,13 +564,6 @@ class Form {
 
   }
 
-  defineInputFileClass = () => {
-    if (!this.$inputFileBlock) {
-      return;
-    }
-    this.inputFile = new InputFile(this.$inputFileBlock);
-  };
-
   hidePlaceholder($input) {
     $input.classList.add('hide-placeholder');
   }
@@ -619,11 +612,17 @@ class Form {
     }
   }
 
-
+  defineInputFileClass = () => {
+    if (!this.$inputFileBlock) {
+      return;
+    }
+    this.inputFile = new InputFile(this.$inputFileBlock);
+  };
   clickHandler = (e) => {
     const target = e.target;
     if (target.closest('[clear-file-btn]')) {
       this.inputFile.clear();
+
     }
   }
   formListener = () => {
@@ -635,7 +634,6 @@ class Form {
   }
 
 }
-
 
 class Modal {
   constructor(id) {
@@ -668,12 +666,43 @@ class Modal {
   //}
 }
 
-class ModalForm extends Form {
+class FormInPage extends Form {
   constructor(selectorForm) {
     super(selectorForm);
+    this.initFeedbackForm();
+  }
+  initFeedbackForm = () => {
+    if (!this.$form) {
+      return;
+    }
+    this.$form.addEventListener('click', this.listeners);
   }
 
+  sendFormInPage = async () => {
+    const response = await this.formSubmit();
+    if (response === null) {
+      return;
+    }
 
+    if (response.rez == 1) {
+      succsesModal.showSuccses(response.desc);
+      errorModal.close();
+    }
+
+    if (response.rez == 0) {
+      console.log(`Ошибка: ${response.error.id}`);
+      succsesModal.close()
+      errorModal.showError(response.error.desc);
+    }
+  }
+
+  listeners = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-submit]')) {
+      this.sendFormInPage()
+    }
+
+  }
 
 }
 
@@ -706,10 +735,6 @@ class InfoModal {
     }
 
   }
-
-
-
-
 
   close = () => {
     clearTimeout(this.timeout);
@@ -764,8 +789,8 @@ class SuccsesModal extends InfoModal {
     super(modalId);
   }
 
-  showSuccses = () => {
-    this.render.renderInfoModalSuccses();
+  showSuccses = (message = false) => {
+    this.render.renderInfoModalSuccses(message);
     this.open(true)
   }
 }
@@ -921,7 +946,7 @@ class CommunicationModal extends Modal {
     }
     this.$modalBody = this.$modal.querySelector('[data-modal-body]');
     this.$modal.addEventListener('click', this.listeners);
-    this.form = new ModalForm('#supportModalForm');
+    this.form = new Form('#supportModalForm');
 
   }
 
@@ -932,11 +957,10 @@ class CommunicationModal extends Modal {
     }
 
     if (response.rez == 1) {
-
       this.form.clearForm();
       this.close();
       setTimeout(() => {
-        succsesModal.showSuccses();
+        succsesModal.showSuccses(response.desc);
       }, 300)
 
     }
@@ -971,6 +995,7 @@ const searchModal = new SearchModal('#searchModal');
 const supportModal = new CommunicationModal('#supportModal');
 const succsesModal = new SuccsesModal('#succsesModal');
 const errorModal = new ErrorModal('#errorModal');
+const feedBackForm = new FormInPage('#feedbackForm');
 
 
 

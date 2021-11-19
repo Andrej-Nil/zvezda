@@ -589,16 +589,24 @@
 
             <form id="feedbackForm" action="./json/send-form.json" class="feedback-form">
               <div class="feedback__body">
-                <input type="text" data-input name="phone" class="feedback__input input"
-                  placeholder="+7 (999)-999-99-99" />
+                <label class="place-entry">
+                  <input data-input class="feedback__input place-entry__input" name="name" type="text" />
 
-                <input type="text" data-input name="name" class="feedback__input input" placeholder="Иванов Иван" />
+                  <span class="place-entry__placeholder">+7 (999)-999-99-99<span
+                      class="place-entry__star">*</span></span>
+                </label>
 
-                <input type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
+                <label class="place-entry">
+                  <input data-input class="feedback__input place-entry__input" name="name" type="text" />
+
+                  <span class="place-entry__placeholder">Иванов Иван<span class="place-entry__star">*</span></span>
+                </label>
+
+                <input data-submit type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
                   value="Отправить запрос">
 
-                <label class="feedback__label checkbox" data-label>
-                  <input data-checkbox type="checkbox" checked class="feedback__checkbox checkbox__input" />
+                <label data-checkbox class="feedback__label  checkbox">
+                  <input data-input type="checkbox" name="consent" checked class="feedback__checkbox checkbox__input" />
                   <span class="feedback__fake checkbox__fake"></span>
                   <span class="feedback__label-text checkbox__text">я принимаю условия политики
                     конфиденциальности</span>
@@ -1766,9 +1774,6 @@
               <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
 
             </label>
-            <!--<input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*">-->
 
             <textarea data-input name="message" class="modal__input modal__textarea textarea"
               placeholder="Опишите проблему"></textarea>
@@ -1787,7 +1792,7 @@
           <input data-submit type="submit" class="modal__submit btn yellow-btn hover-yellow-light"
             value="Отправить заявку">
 
-          <label data-checkbox class="checkbox" data-label>
+          <label data-checkbox class="checkbox">
             <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
             <span class="checkbox__fake"></span>
             <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>

@@ -117,36 +117,6 @@
   line-height: 180%;
 }
 
-.feedback__input {
-  padding: 11px 20px 12px;
-  border: 1px solid $white;
-  background: rgba(0, 0, 0, 0);
-  font-size: 14px;
-  line-height: 180%;
-  color: $white;
-}
-
-.feedback__input::-webkit-input-placeholder {
-  color: $greyLight;
-  font-size: 14px;
-  line-height: 180%;
-}
-.feedback__input:-ms-input-placeholder {
-  color: $greyLight;
-  font-size: 14px;
-  line-height: 180%;
-}
-.feedback__input::-ms-input-placeholder {
-  color: $greyLight;
-  font-size: 14px;
-  line-height: 180%;
-}
-.feedback__input::placeholder {
-  color: $greyLight;
-  font-size: 14px;
-  line-height: 180%;
-}
-
 .place-entry {
   position: relative;
   display: block;
@@ -199,6 +169,40 @@
   display: none;
 }
 
+.feedback__input {
+  padding: 11px 20px 12px;
+  border: 2px solid $white;
+  background: rgba(0, 0, 0, 0);
+  font-size: 14px;
+  line-height: 180%;
+  color: $white;
+}
+
+.feedback__input::-webkit-input-placeholder {
+  color: $greyLight;
+  font-size: 14px;
+  line-height: 180%;
+}
+.feedback__input:-ms-input-placeholder {
+  color: $greyLight;
+  font-size: 14px;
+  line-height: 180%;
+}
+.feedback__input::-ms-input-placeholder {
+  color: $greyLight;
+  font-size: 14px;
+  line-height: 180%;
+}
+.feedback__input::placeholder {
+  color: $greyLight;
+  font-size: 14px;
+  line-height: 180%;
+}
+
 //.place-entry__input:invalid + .place-entry__placeholder {
 //  display: block;
 //}
+
+.input-error {
+  border-color: $errorColor;
+}
