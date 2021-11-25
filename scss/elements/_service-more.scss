@@ -2,9 +2,8 @@
   position: relative;
   border: 1px solid #494b4f;
   color: $white;
+  overflow: visible;
   width: 100%;
-
-  height: 288px;
   &:hover {
     color: $white;
   }
@@ -13,11 +12,6 @@
     opacity: 1;
     visibility: visible;
     transition-delay: 0s;
-  }
-
-  @media (min-width: 1310px) {
-    width: 305px;
-    height: 305px;
   }
 }
 

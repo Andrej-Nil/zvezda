@@ -412,7 +412,6 @@ class Render {
 
 }
 
-
 class Form {
   constructor(selectorForm,) {
     this.$form = document.querySelector(selectorForm);
@@ -617,7 +616,7 @@ class Form {
       return;
     }
     this.inputFile = new InputFile(this.$inputFileBlock);
-  };
+  }
   clickHandler = (e) => {
     const target = e.target;
     if (target.closest('[clear-file-btn]')) {
@@ -631,6 +630,46 @@ class Form {
     this.$form.addEventListener('focusout', this.focusoutHandler);
     this.$form.addEventListener('input', this.inputHandler);
     this.$form.addEventListener('change', this.changeHandler);
+  }
+
+}
+
+class FormPage extends Form {
+  constructor(selectorForm) {
+    super(selectorForm);
+    this.initFeedbackForm();
+  }
+  initFeedbackForm = () => {
+    if (!this.$form) {
+      return;
+    }
+    this.$form.addEventListener('click', this.listeners);
+  }
+
+  sendFormPage = async () => {
+    const response = await this.formSubmit();
+    if (response === null) {
+      return;
+    }
+
+    if (response.rez == 1) {
+      succsesModal.showSuccses(response.desc);
+      errorModal.close();
+    }
+
+    if (response.rez == 0) {
+      console.log(`Ошибка: ${response.error.id}`);
+      succsesModal.close()
+      errorModal.showError(response.error.desc);
+    }
+  }
+
+  listeners = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-submit]')) {
+      this.sendFormPage()
+    }
+
   }
 
 }
@@ -666,47 +705,6 @@ class Modal {
   //}
 }
 
-class FormInPage extends Form {
-  constructor(selectorForm) {
-    super(selectorForm);
-    this.initFeedbackForm();
-  }
-  initFeedbackForm = () => {
-    if (!this.$form) {
-      return;
-    }
-    this.$form.addEventListener('click', this.listeners);
-  }
-
-  sendFormInPage = async () => {
-    const response = await this.formSubmit();
-    if (response === null) {
-      return;
-    }
-
-    if (response.rez == 1) {
-      succsesModal.showSuccses(response.desc);
-      errorModal.close();
-    }
-
-    if (response.rez == 0) {
-      console.log(`Ошибка: ${response.error.id}`);
-      succsesModal.close()
-      errorModal.showError(response.error.desc);
-    }
-  }
-
-  listeners = (e) => {
-    const $target = e.target;
-    if ($target.closest('[data-submit]')) {
-      this.sendFormInPage()
-    }
-
-  }
-
-}
-
-
 class InfoModal {
   constructor(modalId) {
     this.$modal = document.querySelector(modalId);
@@ -725,7 +723,6 @@ class InfoModal {
   }
 
   open = (timeout = false) => {
-
     this.$modal.classList.remove('info-modal--hide');
     this.$modal.classList.add('info-modal--show');
     this.$modal.classList.add('info-modal--open');
@@ -768,8 +765,6 @@ class InfoModal {
 
   listeners = () => {
     this.$modal.addEventListener('click', this.clickHandler);
-    this.$modal.addEventListener('mouseenter', this.mouseenterHandler);
-    this.$modal.addEventListener('mouseleave', this.mouseleaveHandler);
   }
 }
 
@@ -795,7 +790,6 @@ class SuccsesModal extends InfoModal {
   }
 }
 
-
 class SearchModal extends Modal {
   constructor(modalId) {
     super(modalId);
@@ -816,7 +810,6 @@ class SearchModal extends Modal {
     this.type = this.$area.querySelector('[checked]').value;
     this.$modal.addEventListener('click', this.listener);
     this.render = new Render(this.$searchResultBlock);
-    this.debaunce = new Debaunce();
     this.response = null;
     this.areaListener()
     this.inputListener();
@@ -921,7 +914,7 @@ class SearchModal extends Modal {
     if (!this.$searchInput) {
       return;
     }
-    const createSearchResult = this.debaunce.debaunce(this.createSearchResult, 200);
+    const createSearchResult = debaunce.debaunce(this.createSearchResult, 200);
     this.$searchInput.addEventListener('input', createSearchResult);
     this.$searchInput.addEventListener('paste', createSearchResult);
   }
@@ -932,7 +925,6 @@ class SearchModal extends Modal {
     this.$area.addEventListener('input', this.setActiveArea)
   }
 }
-
 
 class CommunicationModal extends Modal {
   constructor(modalId) {
@@ -990,12 +982,341 @@ class CommunicationModal extends Modal {
   }
 }
 
+class BigBgImg {
+  constructor(blockId) {
+    this.$block = document.querySelector(blockId);
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$block) {
+      return;
+    }
+
+    this.$bg = this.$block.querySelector('[data-bg-img]');
+    this.$bgSrc = this.$block.querySelector('[data-bg-src]');
+    this.$defaultBgImg = this.$bgSrc.srcset;
+    this.curentBigImgSrc = null;
+    this.$currentCardUnderCursor = null;
+    this.listeners()
+  }
+
+  changeBigImg = ($card) => {
+    if (!$card || $card === this.$currentCardUnderCursor) {
+      return;
+    }
+    this.$currentCardUnderCursor = $card;
+    this.curentBigImgSrc = $card.dataset.bigImgSrc
+
+    //if ()
+
+
+    this.setBgImg(this.curentBigImgSrc);
+    this.showBg();
+
+  }
+
+  showBigImg = () => {
+
+  }
+
+  setBgImg = (srcImg) => {
+    this.$bgSrc.srcset = srcImg;
+  }
+  showBg = () => {
+    this.$bg.classList.add('services__bg--show');
+
+  }
+
+  removeBigImg = ($target) => {
+    if (!$target.closest('[data-big-img-src]') === this.$currentCardUnderCursor && !$target.closest('[data-big-img-src]')) {
+      return
+    }
+
+    this.$bg.classList.remove('services__bg--show');
+    this.$currentCardUnderCursor = null;
+  }
+
+
+
+  mouseoverHandler = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-big-img-src]')) {
+      const $card = $target.closest('[data-big-img-src]');
+      this.changeBigImg($card);
+    }
+
+  }
+
+  mouseoutHandler = (e) => {
+    const $target = e.target;
+    //const $card = $target.closest('[data-card-big-img]');
+    this.removeBigImg($target);
+
+  }
+
+  listeners = () => {
+    this.$block.addEventListener('mouseover', this.mouseoverHandler)
+    this.$block.addEventListener('mouseout', this.mouseoutHandler)
+  }
+}
+
+class Advantages {
+  constructor(id) {
+    this.advantages = document.querySelector(id);
+    this.init();
+  }
+
+  init = () => {
+    if (!this.advantages) {
+      return;
+    }
+    this.contentHeight = null;
+    this.duration = 1000;
+    this.listener()
+  }
+
+  openCard = ($card) => {
+    $card.classList.remove('advantage-card--change-color');
+    this.contentHeight = this.getContentHeight($card);
+
+
+    this.animate({
+      duration: 500,
+      timing(timeFraction) {
+        return Math.pow(timeFraction, 2) * ((1.3 + 1) * timeFraction - 1.3)
+      },
+      draw(progress) {
+        $card.style.height = progress * 522 + 'px';
+      }
+    })
+    $card.classList.add('advantage-card--open-animaite');
+  }
+
+  getContentHeight = ($card) => {
+    return $card.querySelector('[data-content]').offsetHeight;
+  }
+
+  clickHandler = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-card]')) {
+      const $card = $target.closest('[data-card]');
+      this.openCard($card);
+    }
+  }
+
+  //const block = document.querySelector('#block');
+
+
+  animate = ({ timing, draw, duration }) => {
+
+    let start = performance.now();
+
+    requestAnimationFrame(function animate(time) {
+      // timeFraction изменяется от 0 до 1
+      let timeFraction = (time - start) / duration;
+      if (timeFraction > 1) timeFraction = 1;
+
+      // вычисление текущего состояния анимации
+      let progress = timing(timeFraction);
+
+      draw(progress); // отрисовать её
+
+      if (timeFraction < 1) {
+        requestAnimationFrame(animate);
+      }
+
+    })
+  }
+
+  //function quad(timeFraction) {
+  //  return Math.pow(timeFraction, 2)
+  //}
+
+  //  animate({
+  //    duration: 700,
+  //    timing(timeFraction) {
+  //      return Math.pow(timeFraction, 2) * ((1.5 + 1) * timeFraction - 1.5)
+  //    },
+  //      draw(progress) {
+  //  this.$card.style.top = progress * 522 + 'px';
+  //}
+  //  })
+
+
+
+  listener = () => {
+    this.advantages.addEventListener('click', this.clickHandler)
+  }
+}
+
+class Slider {
+  constructor(id) {
+    this.$slider = document.querySelector(id);
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$slider) {
+      return;
+    }
+    this.$track = this.$slider.querySelector('[data-track]');
+    this.$slides = this.$slider.querySelectorAll('[data-slide]');
+    this.$controls = this.$slider.querySelector('[data-controls]');
+    this.$prevArrow = this.$slider.querySelector('[data-prev]');
+    this.$nextArrow = this.$slider.querySelector('[data-next]');
+    this.displaySlides = this.setDisplaySlides();
+    this.i = 0;
+    this.touchStart = 0;
+    this.touchPosition = 0;
+    this.sensitivity = 50;
+    this.listeners();
+    this.toggleControls();
+  }
+
+
+
+  prev = () => {
+    if (this.i == 0) {
+      return;
+    }
+    this.i--;
+    this.toggleArrow();
+    this.trackShift();
+  }
+
+  next = () => {
+    if (this.i >= this.$slides.length - this.displaySlides) {
+      return;
+    }
+    this.i++;
+    this.toggleArrow();
+    this.trackShift();
+  }
+
+  toggleControls = () => {
+    if (this.$controls)
+      if (this.displaySlides >= this.$slides.length) {
+        this.$controls.classList.add('section-controls__btn--hide');
+      } else {
+        this.$controls.classList.remove('section-controls__btn--hide');
+      }
+  }
+
+  toggleArrow = () => {
+    if (this.i == 0) {
+      this.hideArrow(this.$prevArrow)
+    } else {
+      this.showArrow(this.$prevArrow)
+    }
+
+    if (this.i == this.$slides.length - this.displaySlides) {
+      this.hideArrow(this.$nextArrow)
+    } else {
+      this.showArrow(this.$nextArrow)
+    }
+  }
+
+  hideArrow = ($arrow) => {
+    if (!$arrow) {
+      return;
+    }
+    $arrow.classList.add('section-controls__btn--hide')
+  }
+
+  showArrow = ($arrow) => {
+    if (!$arrow) {
+      return;
+    }
+    $arrow.classList.remove('section-controls__btn--hide')
+  }
+
+  trackShift = () => {
+    const trackShift = this.getShift();
+    this.$track.style.transform = `translate(-${trackShift}px, 0)`;
+  }
+
+  getShift = () => {
+    const step = this.getSlideWidth();
+    return this.i * step;
+  }
+
+  getSlideWidth = () => {
+    const slideWidth = this.$slides[0].offsetWidth;
+    const slideMarginRight = parseInt(getComputedStyle(this.$slides[0], true).marginRight);
+    return slideWidth + slideMarginRight;
+  }
+  setDisplaySlides = () => {
+    const sliderWidth = this.$slider.offsetWidth;
+    const slideWidth = this.getSlideWidth()
+    return Math.ceil(sliderWidth / slideWidth);
+  }
+
+  clickHandler = (e) => {
+    const $target = e.target;
+    if ($target.hasAttribute('data-prev')) {
+      this.prev()
+    }
+
+    if ($target.hasAttribute('data-next')) {
+      this.next()
+    }
+  }
+
+  resizeHandler = () => {
+    this.displaySlides = this.setDisplaySlides();
+    this.i = 0;
+    this.trackShift();
+    this.toggleControls();
+  }
+
+  startTouchMove = (e) => {
+    this.touchStart = e.changedTouches[0].clientX;
+    this.touchPosition = this.touchStart;
+  }
+
+  touchMove = (e) => {
+    this.touchPosition = e.changedTouches[0].clientX;
+  }
+
+  touchEnd = () => {
+    let distance = this.touchStart - this.touchPosition;
+    if (distance > 0 && distance >= this.sensitivity) {
+      this.next();
+    }
+    if (distance < 0 && distance * -1 >= this.sensitivity) {
+      this.prev();
+    }
+  }
+
+
+  listeners = () => {
+    const resizeHandler = debaunce.debaunce(this.resizeHandler, 200);
+    this.$slider.addEventListener('click', this.clickHandler);
+    this.$slider.addEventListener('touchstart', (e) => { this.startTouchMove(e) });
+    this.$slider.addEventListener('touchmove', (e) => { this.touchMove(e) });
+    this.$slider.addEventListener('touchend', () => { this.touchEnd() });
+    window.addEventListener('resize', resizeHandler);
+  }
+}
+
+
+
+
 const render = new Render();
+const debaunce = new Debaunce()
 const searchModal = new SearchModal('#searchModal');
 const supportModal = new CommunicationModal('#supportModal');
 const succsesModal = new SuccsesModal('#succsesModal');
 const errorModal = new ErrorModal('#errorModal');
-const feedBackForm = new FormInPage('#feedbackForm');
+const feedBackForm = new FormPage('#feedbackForm');
+
+const bigBgImg = new BigBgImg('#servise');
+const advantages = new Advantages('#advantages');
+
+
+
+const certificatesSlider = new Slider('#certificates');
 
 
 

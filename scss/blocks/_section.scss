@@ -88,6 +88,15 @@
   justify-content: center;
 }
 
+.section-controls--hide {
+  visibility: hidden;
+}
+
+.section-controls__inner {
+  display: flex;
+  width: 100px;
+}
+
 .section-controls__btn {
   position: relative;
   display: block;
@@ -95,7 +104,6 @@
   height: 32px;
   cursor: pointer;
   color: $blackMain;
-  margin-right: 20px;
   transition: 0.3s ease-in-out;
   &::before {
     position: absolute;
@@ -103,12 +111,13 @@
     left: 0;
     transform: translate(0, -50%);
   }
-  &:last-child {
-    margin-right: 0;
-  }
   &:hover {
     color: $yellowMain;
   }
+}
+
+.section-controls__btn--hide {
+  display: none;
 }
 
 .section-controls__prev {
@@ -118,6 +127,7 @@
 }
 
 .section-controls__next {
+  margin-left: auto;
   &::before {
     @include font-icon-style("\e917", 40px);
   }

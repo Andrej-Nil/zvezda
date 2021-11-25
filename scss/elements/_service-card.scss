@@ -2,14 +2,15 @@
   position: relative;
   border: 1px solid #494b4f;
   height: 288px;
-  width: 305px;
+  //width: 305px;
   width: 100%;
   overflow: hidden;
   //z-index: 100;
 
-  @media (min-width: 1310px) {
-    height: 305px;
-    width: 305px;
+  @media (min-width: 1280px) {
+    position: static;
+    min-height: 305px;
+    //max-width: 305px;
     &:hover .service-card__title {
       top: 50px;
     }
@@ -25,9 +26,9 @@
 .service-card--big {
   width: 100%;
 
-  @media (min-width: 1310px) {
+  @media (min-width: 1280px) {
     grid-column: span 2;
-    width: 630px;
+    //max-width: 630px;
   }
 }
 
@@ -38,7 +39,7 @@
   top: 0;
   left: 0;
   background: #000;
-  @media (min-width: 1310px) {
+  @media (min-width: 1280px) {
     display: none;
   }
 }
@@ -48,9 +49,13 @@
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   opacity: 0.5;
+  @media (min-width: 320px) {
+    width: 100%;
+    height: auto;
+  }
 }
 .service-card__link {
   position: relative;

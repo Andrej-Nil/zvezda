@@ -152,3 +152,18 @@ body {
   font-size: 16px;
   text-align: center;
 }
+
+#block {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 40px;
+  height: 40px;
+  background: #000;
+}
+
+#block-wrap {
+  position: relative;
+  padding: 50px;
+  height: 700px;
+}

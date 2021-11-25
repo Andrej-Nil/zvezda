@@ -5,3 +5,8 @@
 .certificates-block__slider {
   width: 100%;
 }
+
+.certificates-block__track {
+  position: relative;
+  transition: 0.2s ease-in-out;
+}
