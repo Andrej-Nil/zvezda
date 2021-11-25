@@ -5517,6 +5517,7 @@ body {
 
 .reviews-block__track {
   margin-bottom: 80px;
+  transition: 0.2s ease-in-out;
 }
 
 .certificates-block {
@@ -7719,6 +7720,39 @@ body {
 
 .blind--down {
   bottom: 0;
+}
+
+.galeria-modal {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.galeria-modal__close {
+  position: absolute;
+  right: 60px;
+  top: 60px;
+}
+
+.galeria-modal__inner {
+  padding: 30px;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.galeria-modal__inner--show {
+  opacity: 1;
+}
+
+.galeria-modal__img {
+  height: 80vh;
 }
 
 .info-modal {

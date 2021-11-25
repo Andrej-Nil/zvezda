@@ -1204,11 +1204,11 @@
             <!-- reviews-block -->
             <div class="reviews-block">
               <!-- reviews-block__slider -->
-              <div class="reviews-block__slider slider">
+              <div id="reviewsSlider" class="reviews-block__slider slider">
                 <!-- reviews-block__track -->
-                <div class="reviews-block__track slider__track">
+                <div data-track class="reviews-block__track slider__track">
 
-                  <div class="review-card">
+                  <div data-slide class="review-card">
                     <div class="review-card__logo">
                       <i class="review-card__img review-card__img--severstal"></i>
                     </div>
@@ -1220,7 +1220,7 @@
                     </p>
                   </div>
 
-                  <div class="review-card">
+                  <div data-slide class="review-card">
                     <div class="review-card__logo">
                       <i class="review-card__img review-card__img--nlmk"></i>
                     </div>
@@ -1232,7 +1232,7 @@
                     </p>
                   </div>
 
-                  <div class="review-card">
+                  <div data-slide class="review-card">
                     <div class="review-card__logo">
                       <i class="review-card__img review-card__img--severstal"></i>
                     </div>
@@ -1246,9 +1246,12 @@
 
                 </div>
                 <!-- reviews-block__track -->
-                <div class="section-controls">
-                  <span class="section-controls__btn section-controls__prev"></span>
-                  <span class="section-controls__btn section-controls__next"></span>
+                <div data-controls class="section-controls">
+                  <div class="section-controls__inner">
+                    <span data-prev
+                      class="section-controls__btn section-controls__btn--hide section-controls__prev"></span>
+                    <span data-next class="section-controls__btn section-controls__next"></span>
+                  </div>
                 </div>
               </div>
               <!-- reviews-block__slider -->
@@ -1275,7 +1278,7 @@
                 <!-- reviews-block__track -->
                 <div data-track class="certificates-block__track slider__track">
 
-                  <div data-slide class="certificates-card">
+                  <div data-slide data-certificate="./img/image/other/certificateBig" class="certificates-card">
                     <picture>
                       <source srcset="./img/image/other/certificate.jpg" type="image/webp">
                       <img src="./img/image/other/certificate.webp" alt="" class="certificates-card__img">
@@ -1283,30 +1286,34 @@
 
                   </div>
 
-                  <div data-slide class="certificates-card">
+                  <div data-slide data-certificate="./img/image/other/certificateBig" class="certificates-card">
+                    <picture>
+                      <source srcset="./img/image/other/certificate.jpg" type="image/webp">
+                      <img src="./img/image/other/certificate.webp" alt="" class="certificates-card__img">
+                    </picture>
+
+                  </div>
+
+                  <div data-slide data-certificate="./img/image/other/certificateBig" class="certificates-card">
                     <picture>
                       <source srcset="./img/image/other/certificate.jpg" type="image/webp">
                       <img src="./img/image/other/certificate.webp" alt="" class="certificates-card__img">
                     </picture>
                   </div>
 
-                  <div data-slide class="certificates-card">
+                  <div data-slide data-certificate="./img/image/other/certificateBig" class="certificates-card">
                     <picture>
                       <source srcset="./img/image/other/certificate.jpg" type="image/webp">
                       <img src="./img/image/other/certificate.webp" alt="" class="certificates-card__img">
                     </picture>
                   </div>
 
-                  <div data-slide class="certificates-card">
+                  <div data-slide data-certificate="./img/image/other/certificateBig" class="certificates-card">
                     <picture>
                       <source srcset="./img/image/other/certificate.jpg" type="image/webp">
                       <img src="./img/image/other/certificate.webp" alt="" class="certificates-card__img">
                     </picture>
                   </div>
-
-
-
-
 
                 </div>
                 <!-- reviews-block__track -->
@@ -1953,6 +1960,16 @@
       </div>
     </div>
     <!-- searchModal -->
+
+    <div id="galeriaModal" class="galeria-modal modal modal--is-hide">
+      <div data-modal-inner class="galeria-modal__inner">
+        <span data-close class="galeria-modal__close close-btn white-color">Закрыть</span>
+        <picture>
+          <source srcset="./img/image/other/1.svg" type="image/webp">
+          <img src="./img/image/other/1.svg" alt="" class="galeria-modal__img">
+        </picture>
+      </div>
+    </div>
 
     <div id="succsesModal" data-info-modal class="info-modal info-modal--close">
       <span data-close-info class="info-modal__close close-btn">Закрыть</span>

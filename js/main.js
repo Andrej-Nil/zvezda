@@ -695,14 +695,6 @@ class Modal {
     }, 500)
   }
 
-
-
-  //listeners = (e) => {
-  //  const target = e.target;
-  //  if (target.hasAttribute('data-close')) {
-  //    this.close()
-  //  }
-  //}
 }
 
 class InfoModal {
@@ -923,6 +915,45 @@ class SearchModal extends Modal {
       return;
     }
     this.$area.addEventListener('input', this.setActiveArea)
+  }
+}
+
+class GaliriaModal extends Modal {
+  constructor(modalId) {
+    super(modalId);
+    this.init()
+  }
+
+  init = () => {
+    if (!this.$modal) {
+      return;
+    }
+
+    this.$modalInner = this.$modal.querySelector('[data-modal-inner]')
+
+    this.listners()
+  }
+
+  openGaleriaModal = () => {
+    console.log(this.$modalInner)
+    this.$modalInner.classList.add('galeria-modal__inner--show');
+    this.open();
+  }
+
+  closeGaleriaModal = () => {
+    this.$modalInner.classList.remove('galeria-modal__inner--show');
+    this.close();
+  }
+
+  clickHandler = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-close]')) {
+      this.closeGaleriaModal();
+    }
+  }
+
+  listners = () => {
+    this.$modal.addEventListener('click', this.clickHandler)
   }
 }
 
@@ -1174,8 +1205,6 @@ class Slider {
     this.toggleControls();
   }
 
-
-
   prev = () => {
     if (this.i == 0) {
       return;
@@ -1300,9 +1329,38 @@ class Slider {
   }
 }
 
+class Galeria {
+  constructor(id) {
+    this.$galeria = document.querySelector(id);
+    this.init();
+  }
 
+  init = () => {
 
+    if (!this.$galeria) {
+      return;
+    }
+    this.modal = new GaliriaModal('#galeriaModal');
+    //this.modal.openGaleriaModal(srcImg);
+    this.listeners();
+    //./img/image/other/certificateBig
+  }
 
+  openModal = ($card) => {
+    const srcBigImg = $card.dataset.certificate;
+    this.modal.openGaleriaModal(srcBigImg);
+  }
+  clickHandler = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-certificate]')) {
+      const $card = $target.closest('[data-certificate]')
+      this.openModal($card)
+    }
+  }
+  listeners = () => {
+    this.$galeria.addEventListener('click', this.clickHandler)
+  }
+}
 const render = new Render();
 const debaunce = new Debaunce()
 const searchModal = new SearchModal('#searchModal');
@@ -1317,6 +1375,10 @@ const advantages = new Advantages('#advantages');
 
 
 const certificatesSlider = new Slider('#certificates');
+const reviewsSlider = new Slider('#reviewsSlider');
+
+
+const certificatesGaleria = new Galeria('#certificates');
 
 
 
