@@ -930,12 +930,13 @@ class GaliriaModal extends Modal {
     }
 
     this.$modalInner = this.$modal.querySelector('[data-modal-inner]')
-
+    this.$source = this.$modal.querySelector('[srcset]');
+    this.$img = this.$modal.querySelector('[src]');
     this.listners()
   }
 
-  openGaleriaModal = () => {
-    console.log(this.$modalInner)
+  openGaleriaModal = (bigImgSrc) => {
+    this.setSrcImg(bigImgSrc)
     this.$modalInner.classList.add('galeria-modal__inner--show');
     this.open();
   }
@@ -943,6 +944,16 @@ class GaliriaModal extends Modal {
   closeGaleriaModal = () => {
     this.$modalInner.classList.remove('galeria-modal__inner--show');
     this.close();
+  }
+
+  setSrcImg = (bigImgSrc) => {
+    console.log(`${bigImgSrc}.jpg`)
+    if (this.$source) {
+      this.$source.srcset = `${bigImgSrc}.jpg`
+    }
+    if (this.$img) {
+      this.$img.src = `${bigImgSrc}.webp`
+    }
   }
 
   clickHandler = (e) => {
@@ -1347,13 +1358,13 @@ class Galeria {
   }
 
   openModal = ($card) => {
-    const srcBigImg = $card.dataset.certificate;
+    const srcBigImg = $card.dataset.imgBigSrc;
     this.modal.openGaleriaModal(srcBigImg);
   }
   clickHandler = (e) => {
     const $target = e.target;
-    if ($target.closest('[data-certificate]')) {
-      const $card = $target.closest('[data-certificate]')
+    if ($target.closest('[data-img-big-src]')) {
+      const $card = $target.closest('[data-img-big-src]')
       this.openModal($card)
     }
   }
