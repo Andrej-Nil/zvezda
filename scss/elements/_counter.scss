@@ -13,6 +13,9 @@
 
   font-size: 32px;
   line-height: 44px;
+  &:active {
+    background: #ededed;
+  }
 }
 
 .counter__input {

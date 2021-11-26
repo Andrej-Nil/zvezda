@@ -876,6 +876,10 @@ body {
   line-height: 44px;
 }
 
+.counter__btn:active {
+  background: #ededed;
+}
+
 .counter__input {
   display: block;
   width: 50px;
@@ -1381,6 +1385,10 @@ body {
   border: 2px solid #ffc201;
 }
 
+.product-card__btn--hide {
+  display: none;
+}
+
 .product-card__value::before {
   font-family: "icomoon";
   font-weight: normal;
@@ -1399,6 +1407,10 @@ body {
   margin-bottom: 2px;
 }
 
+.product-countee--hide {
+  display: none;
+}
+
 .product-card__current--text {
   font-size: 12px;
   line-height: 16px;
@@ -1408,6 +1420,11 @@ body {
   font-size: 12px;
   line-height: 16px;
   text-decoration-line: line-through;
+}
+
+.product-card__counter-btn {
+  height: 41px;
+  width: 41px;
 }
 
 .product-line {
@@ -3830,6 +3847,7 @@ body {
 
 .nav-icon__count {
   position: absolute;
+  border: 1px solid #000;
   top: 0;
   right: -27px;
   display: flex;
@@ -3844,6 +3862,10 @@ body {
   font-weight: bold;
   font-size: 12px;
   line-height: 16px;
+}
+
+.nav-icon__count--empty {
+  display: none;
 }
 
 .header-content {

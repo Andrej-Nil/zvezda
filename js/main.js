@@ -38,6 +38,12 @@ class Server {
     this.filterCheckboxApi = '../json/checkbox.json';
   }
 
+  addBsasket = async (data) => {
+    data._token = this._token;
+    const formData = this.createFormData(data);
+    return await this.getResponse(this.POST, formData, this.addBasketApi)
+  }
+
 
   getSearchResult = async (data) => {
     data._token = this._token;
@@ -426,7 +432,6 @@ class Form {
     this.regMail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
     this.$inputs = this.$form.querySelectorAll('[data-input]');
     this.$submitBtn = this.$form.querySelector('[data-submit]');
-    this.server = new Server();
     this.$inputFileBlock = this.$form.querySelector('[data-file-block]');
     this.defineInputFileClass();
     this.formListener();
@@ -442,9 +447,7 @@ class Form {
     if (!result) {
       return null;
     }
-
     return this.sendForm(this.form);
-
   }
 
   checkInput = ($input) => {
@@ -541,7 +544,7 @@ class Form {
   }
 
   sendForm = async () => {
-    return await this.server.postForm(this.$form);
+    return await server.postForm(this.$form);
   }
 
   clearForm = () => {
@@ -677,7 +680,6 @@ class FormPage extends Form {
 class Modal {
   constructor(id) {
     this.$modal = document.querySelector(id);
-    this.server = new Server();
   }
 
 
@@ -838,7 +840,7 @@ class SearchModal extends Modal {
     }
 
     const data = this.getData();
-    this.response = await this.server.getSearchResult(data);
+    this.response = await server.getSearchResult(data);
 
     if (this.response.rez == 0) {
       console.log(`Ошибка: ${this.response.error.id}`);
@@ -1372,6 +1374,52 @@ class Galeria {
     this.$galeria.addEventListener('click', this.clickHandler)
   }
 }
+
+class Product {
+  constructor() {
+    this.init();
+  }
+  init = () => {
+    this.totalItemInBasket = document.querySelector('#totalItemInBasket');
+    this.listeners();
+  }
+
+  addBasket = async ($product) => {
+    const data = this.getData($product);
+    const response = await server.addBsasket(data);
+
+    if (response.rez == 0) {
+      console.log(`Ошибка: ${response.error.id}`);
+      errorModal.showError(response.error.desc);
+
+
+    }
+    if (response.rez == 1) {
+      console.log(1)
+    }
+
+  }
+
+  getData = ($product) => {
+    return {
+      id: $product.dataset.product,
+      count: $product.querySelector('[data-input]').value
+    }
+  }
+
+  clickHandler = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-in-basket-btn]')) {
+      const $product = $target.closest('[data-product]');
+      this.addBasket($product);
+    }
+  }
+
+  listeners = () => {
+    document.addEventListener('click', this.clickHandler)
+  }
+}
+const server = new Server();
 const render = new Render();
 const debaunce = new Debaunce()
 const searchModal = new SearchModal('#searchModal');
@@ -1390,6 +1438,8 @@ const reviewsSlider = new Slider('#reviewsSlider');
 
 
 const certificatesGaleria = new Galeria('#certificates');
+
+const product = new Product();
 
 
 

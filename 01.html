@@ -91,7 +91,7 @@
             <ul class="nav-icon__list">
               <li class="nav-icon__item">
                 <a href="basket.html" class="nav-icon__link nav-icon__link--basket"></a>
-                <span class="nav-icon__count">22</span>
+                <span id="totalItemInBasket" class="nav-icon__count nav-icon__count--empty">0</span>
               </li>
 
               <li class="nav-icon__item">
@@ -368,61 +368,7 @@
             <!-- card-list -->
             <div class="product-tile product-tile--four-coll">
 
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/test.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/bg/bg1.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
+              <div data-product="23454" class="product-card">
                 <h3 class="product-card__title">
                   <a href="product-page.html" class="product-card__link">
                     Лист вольфрамовый 0,1 мм ВЧ
@@ -442,119 +388,17 @@
                     <p class="product-card__current">1200 ₽/м2</p>
                   </div>
 
-                  <span class="product-card__btn btn yellow-btn">
+                  <span data-in-basket-btn class="product-card__btn btn yellow-btn">
                     <span class="product-card__value btn__value basket-icon">В корзину</span>
                   </span>
-                </div>
-              </div>
 
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product4.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
+                  <div data-counter class="product-counter product-countee--hide counter">
+                    <span data-dec class="product-card__counter-btn counter__btn">-</span>
+                    <input data-input class="counter__input" type="text" value="1">
+                    <span data-inc class="product-card__counter-btn counter__btn">+</span>
                   </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
                 </div>
               </div>
-
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">12 000 678 ₽/м2</p>
-                    <p class="product-card__old">24 006 570 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current product-card__current--text">Цена по запросу</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
 
 
               <a href="" class="product-more more-card">

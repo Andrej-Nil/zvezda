@@ -91,6 +91,10 @@
   }
 }
 
+.product-card__btn--hide {
+  display: none;
+}
+
 .product-card__value {
   &::before {
     @include font-icon-style("\e915", 19px);
@@ -105,6 +109,10 @@
   margin-bottom: 2px;
 }
 
+.product-countee--hide {
+  display: none;
+}
+
 .product-card__current--text {
   font-size: 12px;
   line-height: 16px;
@@ -114,4 +122,9 @@
   font-size: 12px;
   line-height: 16px;
   text-decoration-line: line-through;
+}
+
+.product-card__counter-btn {
+  height: 41px;
+  width: 41px;
 }
