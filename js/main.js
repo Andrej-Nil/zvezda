@@ -13,7 +13,7 @@ class Debaunce {
     let timeout;
     return function () {
       const fnCall = () => {
-        fn(arguments)
+        fn(arguments[0])
       }
       clearTimeout(timeout);
       timeout = setTimeout(fnCall, ms)
@@ -1381,30 +1381,147 @@ class Product {
   }
   init = () => {
     this.totalItemInBasket = document.querySelector('#totalItemInBasket');
+    this.response = null;
+    this.$products = null;
     this.listeners();
   }
 
   addBasket = async ($product) => {
     const data = this.getData($product);
-    const response = await server.addBsasket(data);
+    this.response = await server.addBsasket(data);
+    this.$products = document.querySelectorAll('[data-product="34545"]')
 
-    if (response.rez == 0) {
-      console.log(`Ошибка: ${response.error.id}`);
-      errorModal.showError(response.error.desc);
-
-
+    if (this.response.rez == 0) {
+      console.log(`Ошибка: ${this.response.error.id}`);
+      errorModal.showError(this.response.error.desc);
     }
-    if (response.rez == 1) {
-      console.log(1)
+    if (this.response.rez == 1) {
+      this.setTotalItemInBasket();
+      this.setProductsQuantity(this.response.content[0].count);
+      if ($product.dataset.inBasket == 0) {
+        this.changeProductsBtnToCounter();
+      }
     }
 
   }
 
+  postQuantity = debaunce.debaunce(async (data) => {
+    this.response = await server.addBsasket(data);
+    if (this.response.rez == 0) {
+      console.log(`Ошибка: ${this.response.error.id}`);
+      return;
+    }
+    this.setProductsQuantity(this.response.content[0].count);
+  }, 300)
+
+  //dec = debaunce.debaunce(($product) => {
+  //  const data = this.getData($product);
+  //  console.log(data)
+  //  if (data.count == 1) {
+  //    return;
+  //  }
+  //}, 200)
+
+  dec = ($product) => {
+    const data = this.getData($product);
+    this.$products = document.querySelectorAll('[data-product="34545"]');
+    if (data.count == 1) {
+      return;
+    }
+    data.count -= 1;
+    this.setProductsQuantity(data.count);
+    this.postQuantity(data);
+  }
+
+  inc = ($product) => {
+    const data = this.getData($product);
+    this.$products = document.querySelectorAll('[data-product="34545"]');
+    data.count += 1;
+    this.setProductsQuantity(data.count);
+    this.postQuantity(data);
+  }
+
+  changeValue = ($product) => {
+    const data = this.getData($product);
+    this.$products = document.querySelectorAll('[data-product="34545"]');
+    this.setProductsQuantity(data.count);
+    this.postQuantity(data);
+  }
+
+  setProductsQuantity = (quantity) => {
+    this.$products.forEach(($item) => {
+      $item.querySelector('[data-product-input]').value = quantity;
+    })
+  }
+
+  changeProductsBtnToCounter = () => {
+    this.$products.forEach(($item) => {
+      this.hideProductBtn($item);
+      this.showProductCounter($item);
+      this.setInBasket($item)
+    })
+  }
+
+  setInBasket = ($product) => {
+    $product.dataset.inBasket = 1;
+  }
+  showProductBtn = ($product) => {
+    $product.querySelector('[data-in-basket-btn]').classList.remove('product-card__btn--hide');
+  }
+  hideProductBtn = ($product) => {
+    $product.querySelector('[data-in-basket-btn]').classList.add('product-card__btn--hide');
+  }
+
+  showProductCounter = ($product) => {
+    $product.querySelector('[data-counter]').classList.remove('product-counter--hide');
+  }
+
+  hideProductCounter = ($product) => {
+    $product.querySelector('[data-counter]').classList.add('product-counter--hide');
+  }
+
+  setTotalItemInBasket = () => {
+    if (!this.totalItemInBasket) {
+      console.log(!this.totalItemInBasket);
+      return;
+    }
+    this.totalItemInBasket.innerHTML = this.response.card.count;
+    this.toggleBasketIndicator()
+  }
+
+  toggleBasketIndicator = () => {
+    if (this.response.card.count) {
+      this.showBasketIndicator();
+    } else {
+      this.hideBasketIndicator();
+    }
+  }
+
+  hideBasketIndicator = () => {
+    this.totalItemInBasket.classList.add('nav-icon__count--empty');
+  }
+
+  showBasketIndicator = () => {
+    this.totalItemInBasket.classList.remove('nav-icon__count--empty');
+  }
+
   getData = ($product) => {
+    const value = $product.querySelector('[data-product-input]').value;
     return {
       id: $product.dataset.product,
-      count: $product.querySelector('[data-input]').value
+      count: this.checkValue(value),
     }
+  }
+
+  checkValue = (value) => {
+    value = parseInt(value)
+    if (isNaN(value)) {
+      value = 1;
+    }
+    if (value <= 1) {
+      value = 1;
+    }
+    return value;
   }
 
   clickHandler = (e) => {
@@ -1413,10 +1530,38 @@ class Product {
       const $product = $target.closest('[data-product]');
       this.addBasket($product);
     }
+
+    if ($target.closest('[data-dec]')) {
+      const $product = $target.closest('[data-product]');
+      this.dec($product);
+    }
+
+    if ($target.closest('[data-inc]')) {
+      const $product = $target.closest('[data-product]');
+      this.inc($product);
+    }
+  }
+
+  inputHandler = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-product-input]')) {
+      const $product = $target.closest('[data-product]');
+      this.changeValue($product);
+    }
+  }
+
+  changeHandler = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-product-input]')) {
+      const $product = $target.closest('[data-product]');
+      this.changeValue($product);
+    }
   }
 
   listeners = () => {
-    document.addEventListener('click', this.clickHandler)
+    document.addEventListener('click', this.clickHandler);
+    document.addEventListener('input', this.inputHandler);
+    document.addEventListener('change', this.inputHandler);
   }
 }
 const server = new Server();
