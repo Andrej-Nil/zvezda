@@ -1,7 +1,7 @@
 .info-modal {
   position: fixed;
   bottom: 0;
-  padding: 20px 0;
+  padding: 80px 0 30px;
   transform: translate(0, 100%);
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@
   transform: translate(0, 0);
 }
 
-.info-modal--yellow {
+.info-modal--confirmation {
   background: $yellowMain;
 }
 
@@ -59,4 +59,18 @@
 
 .info-modal--show {
   z-index: 2000;
+}
+
+.info-modal__btns {
+  display: flex;
+  justify-content: center;
+}
+
+.info-modal__btn {
+  display: block;
+  width: 250px;
+  margin-right: 60px;
+  &:last-child {
+    margin-right: 0;
+  }
 }

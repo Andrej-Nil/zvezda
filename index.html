@@ -14,34 +14,46 @@
   <div class="app">
     <header class="header light-bg">
       <!-- header__top -->
-      <div class="header__top header__top--absolute ">
+      <div id="headerTop" class="header__top header__top--absolute">
         <div class="header__top-inner container">
           <a href="index.html" class="header__logo"> </a>
 
           <nav class="header-nav">
             <ul class="header-nav__list">
-              <li class="header-nav__item">
-                <a href="catalog.html" class="header-nav__link">Каталог</a>
-                <span class="header-nav__arrow">
-                  <!--<span class="header-nav__modal-arrow"></span>-->
-                </span>
+              <li class="header-nav__item" data-header-modal-id="headerCatalogModal">
+
+                <a href="catalog.html" class="header-nav__link">
+                  <span class="header-nav__link-text">Каталог</span>
+                  <span class="header-nav__arrow">
+                    <span class="header-nav__modal-arrow"></span>
+                  </span>
+                </a>
+
               </li>
 
               <li class="header-nav__item">
-                <a href="services.html" class="header-nav__link">Услуги</a>
+                <a href="" class="header-nav__link"></a>
+                <a href="services.html" class="header-nav__link">
+                  <span class="header-nav__link-text">Услуги</span>
+                </a>
               </li>
 
               <li class="header-nav__item">
-                <a href="production.html" class="header-nav__link">Производство</a>
+                <a href="production.html" class="header-nav__link">
+                  <span class="header-nav__link-text">Производство</span>
+                </a>
               </li>
 
-              <li class="header-nav__item">
-                <a href="about.html" class="header-nav__link">О компании</a>
-                <span class="header-nav__arrow">
-                  <!--<span class="header-nav__modal-arrow"></span>-->
-                </span>
+              <li class="header-nav__item header-nav__item--about">
+                <a href="about.html" class="header-nav__link">
+                  <span class="header-nav__link-text">О компании</span>
+                  <span class="header-nav__arrow">
+                    <span class="header-nav__modal-arrow"></span>
+                  </span>
+                </a>
+
                 <!--about-nav-->
-                <div class="about-nav header-modal--hide">
+                <div class="about-nav">
                   <ul class="about-nav__list">
                     <li class="about-nav__item">
                       <a href="about.html" class="about-nav__link">О компании</a>
@@ -68,10 +80,10 @@
           </div>
           <!-- header__connection -->
 
-          <div class="header-city">
-            <span class="header-city__name">Екатеринбург</span>
+          <div class="header-city" data-header-modal-id="selectCityModal">
+            <span class="header-nav__link-text header-city__name">Екатеринбург</span>
             <span class="header-city__arrow header-nav__arrow">
-              <!--<span class="header-nav__modal-arrow"></span>-->
+              <span class="header-nav__modal-arrow"></span>
             </span>
           </div>
 
@@ -79,11 +91,11 @@
             <ul class="nav-icon__list">
               <li class="nav-icon__item">
                 <a href="basket.html" class="nav-icon__link nav-icon__link--basket"></a>
-                <span class="nav-icon__count">22</span>
+                <span id="totalItemInBasket" class="nav-icon__count nav-icon__count--empty">0</span>
               </li>
 
               <li class="nav-icon__item">
-                <span class="nav-icon__link nav-icon__link--search"></span>
+                <span id="searchOpenBtn" class="nav-icon__link nav-icon__link--search"></span>
               </li>
 
             </ul>
@@ -356,61 +368,7 @@
             <!-- card-list -->
             <div class="product-tile product-tile--four-coll">
 
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
+              <div data-product="34545" data-in-basket="0" class="product-card">
                 <h3 class="product-card__title">
                   <a href="product-page.html" class="product-card__link">
                     Лист вольфрамовый 0,1 мм ВЧ
@@ -430,93 +388,19 @@
                     <p class="product-card__current">1200 ₽/м2</p>
                   </div>
 
-                  <span class="product-card__btn btn yellow-btn">
+                  <span data-in-basket-btn class="product-card__btn btn yellow-btn">
                     <span class="product-card__value btn__value basket-icon">В корзину</span>
                   </span>
-                </div>
-              </div>
 
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product4.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
+                  <div data-counter class="product-counter product-counter--hide counter">
+                    <span data-dec class="product-card__counter-btn counter__btn">-</span>
+                    <input data-product-input class="counter__input" type="text" value="1">
+                    <span data-inc class="product-card__counter-btn counter__btn">+</span>
                   </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
                 </div>
               </div>
 
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current">12 000 678 ₽/м2</p>
-                    <p class="product-card__old">24 006 570 ₽/м2</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <h3 class="product-card__title">
-                  <a href="product-page.html" class="product-card__link">
-                    Лист вольфрамовый 0,1 мм ВЧ
-                  </a>
-                </h3>
-                <div class="product-card__preview">
-                  <a href="product-page.html" class="product-card__link-img">
-                    <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                  </a>
-                </div>
-                <p class="product-card__desc">
-                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                  поперечное сечение.
-                </p>
-                <div class="product-card__bottom">
-                  <div class="product-card__price">
-                    <p class="product-card__current product-card__current--text">Цена по запросу</p>
-                  </div>
-
-                  <span class="product-card__btn btn yellow-btn">
-                    <span class="product-card__value btn__value basket-icon">В корзину</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="product-card">
+              <div data-product="34545" data-in-basket="0" class="product-card">
                 <h3 class="product-card__title">
                   <a href="product-page.html" class="product-card__link">
                     Лист вольфрамовый 0,1 мм ВЧ
@@ -534,15 +418,55 @@
                 <div class="product-card__bottom">
                   <div class="product-card__price">
                     <p class="product-card__current">1200 ₽/м2</p>
-                    <p class="product-card__old">2400 ₽/м2</p>
+
+
+
+                    <p class="product-card__old">1200 ₽/м2</p>
                   </div>
 
-                  <span class="product-card__btn btn yellow-btn">
+                  <span data-in-basket-btn class="product-card__btn btn yellow-btn">
                     <span class="product-card__value btn__value basket-icon">В корзину</span>
                   </span>
+
+                  <div data-counter class="product-counter product-counter--hide counter">
+                    <span data-dec class="product-card__counter-btn counter__btn">-</span>
+                    <input data-product-input class="counter__input" type="text" value="1">
+                    <span data-inc class="product-card__counter-btn counter__btn">+</span>
+                  </div>
                 </div>
               </div>
 
+              <div data-product="345" data-in-basket="0" class="product-card">
+                <h3 class="product-card__title">
+                  <a href="product-page.html" class="product-card__link">
+                    Лист вольфрамовый 0,1 мм ВЧ
+                  </a>
+                </h3>
+                <div class="product-card__preview">
+                  <a href="product-page.html" class="product-card__link-img">
+                    <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
+                  </a>
+                </div>
+                <p class="product-card__desc">
+                  Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                  поперечное сечение.
+                </p>
+                <div class="product-card__bottom">
+                  <div class="product-card__price">
+                    <p class="product-card__current">1200 ₽/м2</p>
+                  </div>
+
+                  <span data-in-basket-btn class="product-card__btn btn yellow-btn">
+                    <span class="product-card__value btn__value basket-icon">В корзину</span>
+                  </span>
+
+                  <div data-counter class="product-counter product-counter--hide counter">
+                    <span data-dec class="product-card__counter-btn counter__btn">-</span>
+                    <input data-product-input class="counter__input" type="text" value="1">
+                    <span data-inc class="product-card__counter-btn counter__btn">+</span>
+                  </div>
+                </div>
+              </div>
 
 
               <a href="" class="product-more more-card">
@@ -575,18 +499,26 @@
             </div>
 
 
-            <form id="feedbackForm" action="./json/send-form.json" class="feedback-form">
+            <form id="feedbackForm" action="./json/send-form-error.json" class="feedback-form">
               <div class="feedback__body">
-                <input type="text" data-input name="phone" class="feedback__input input"
-                  placeholder="+7 (999)-999-99-99" />
+                <label class="place-entry">
+                  <input data-input class="feedback__input place-entry__input" name="name" type="text" />
 
-                <input type="text" data-input name="name" class="feedback__input input" placeholder="Иванов Иван" />
+                  <span class="place-entry__placeholder">+7 (999)-999-99-99<span
+                      class="place-entry__star">*</span></span>
+                </label>
 
-                <input type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
+                <label class="place-entry">
+                  <input data-input class="feedback__input place-entry__input" name="name" type="text" />
+
+                  <span class="place-entry__placeholder">Иванов Иван<span class="place-entry__star">*</span></span>
+                </label>
+
+                <input data-submit type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
                   value="Отправить запрос">
 
-                <label class="feedback__label checkbox" data-label>
-                  <input data-checkbox type="checkbox" checked class="feedback__checkbox checkbox__input" />
+                <label data-checkbox class="feedback__label  checkbox">
+                  <input data-input type="checkbox" name="consent" checked class="feedback__checkbox checkbox__input" />
                   <span class="feedback__fake checkbox__fake"></span>
                   <span class="feedback__label-text checkbox__text">я принимаю условия политики
                     конфиденциальности</span>
@@ -606,7 +538,7 @@
       <!-- Есть вопросы -->
 
       <!-- Услуги компании -->
-      <section class="section dark-bg">
+      <section id="servise" class="section dark-bg">
         <div class="section__inner container">
           <h2 class="section__title section__title--white mb30">
             Услуги компании
@@ -619,161 +551,164 @@
           <!-- section__content -->
           <div class="section__content">
             <!-- services -->
-            <div class="services">
 
-
-              <div class="services__bg">
+            <div class="service">
+              <div data-bg-img class="services__bg">
                 <picture>
-                  <source media="(min-width: 1310px)" srcset="./img/image/servises/servise-big-1.jpg">
+                  <source data-bg-src media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
                   <img srcset="./img/image/other/1.svg" class="services__img">
                 </picture>
               </div>
-              <div class="service-card service-card--big">
+              <div class="services__list">
 
 
-                <div class="service-card__bg">
-                  <picture>
-                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
-                    <img srcset="./img/image/servises/servise400-1.jpg" class="service-card__img">
-                  </picture>
-                </div>
 
 
-                <a href="service-one.html" class="service-card__link">
-                  <h4 class="service-card__title">Анализ металла</h4>
-
-                  <div class="service-card__curtain">
-                    <p class="service-card__desc">
-                      Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
-                      металлопродукции
-                    </p>
-                    <div class="servise-card__bottom">
-                      <span class="service-card__detail">
-                        Подробнее
-                      </span>
-                    </div>
+                <div class="service-card service-card--big" data-big-img-src="./img/image/servises/servise-big-1.jpg">
+                  <div class="service-card__bg">
+                    <picture>
+                      <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
+                      <img srcset="./img/image/servises/servise400-1.jpg" class="service-card__img">
+                    </picture>
                   </div>
-                </a>
-              </div>
-
-              <div class="service-card">
 
 
-                <div class="service-card__bg">
-                  <picture>
-                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
-                    <img srcset="./img/image/servises/servise400-2.jpg" class="service-card__img">
-                  </picture>
-                </div>
+                  <a href="service-one.html" class="service-card__link">
+                    <h4 class="service-card__title">Анализ металла</h4>
 
-                <a href="service-one.html" class="service-card__link">
-
-                  <h4 class="service-card__title">Гибка листа</h4>
-
-                  <div class="service-card__curtain">
-                    <p class="service-card__desc">
-                      Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
-                      металлопродукции
-                    </p>
-                    <div class="servise-card__bottom">
-                      <span class="service-card__detail">
-                        Подробнее
-                      </span>
+                    <div class="service-card__curtain">
+                      <p class="service-card__desc">
+                        Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                        металлопродукции
+                      </p>
+                      <div class="servise-card__bottom">
+                        <span class="service-card__detail">
+                          Подробнее
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </a>
-
-              </div>
-
-              <div class="service-card">
-
-                <div class="service-card__bg">
-                  <picture>
-                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
-                    <img srcset="./img/image/servises/servise400-3.jpg" class="service-card__img">
-                  </picture>
+                  </a>
                 </div>
 
-                <a href="service-one.html" class="service-card__link">
-                  <h4 class="service-card__title">Гибка арматуры</h4>
+                <div class="service-card" data-big-img-src="./img/image/servises/servise-big-2.jpg">
 
-                  <div class="service-card__curtain">
-                    <p class="service-card__desc">
-                      Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
-                      металлопродукции
-                    </p>
-                    <div class="servise-card__bottom">
-                      <span class="service-card__detail">
-                        Подробнее
-                      </span>
+
+                  <div class="service-card__bg">
+                    <picture>
+                      <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
+                      <img srcset="./img/image/servises/servise400-2.jpg" class="service-card__img">
+                    </picture>
+                  </div>
+
+                  <a href="service-one.html" class="service-card__link">
+
+                    <h4 class="service-card__title">Гибка листа</h4>
+
+                    <div class="service-card__curtain">
+                      <p class="service-card__desc">
+                        Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                        металлопродукции
+                      </p>
+                      <div class="servise-card__bottom">
+                        <span class="service-card__detail">
+                          Подробнее
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
 
-              </div>
-
-              <div class="service-card ">
-
-                <div class="service-card__bg">
-                  <picture>
-                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
-                    <img srcset="./img/image/servises/servise400-4.jpg" class="service-card__img">
-                  </picture>
                 </div>
 
-                <a href="service-one.html" class="service-card__link">
-                  <h4 class="service-card__title">Резка металла</h4>
+                <div class="service-card" data-big-img-src="./img/image/servises/servise-big-3.jpg">
 
-                  <div class="service-card__curtain">
-                    <p class="service-card__desc">
-                      Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
-                      металлопродукции
-                    </p>
-                    <div class="servise-card__bottom">
-                      <span class="service-card__detail">
-                        Подробнее
-                      </span>
+                  <div class="service-card__bg">
+                    <picture>
+                      <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
+                      <img srcset="./img/image/servises/servise400-3.jpg" class="service-card__img">
+                    </picture>
+                  </div>
+
+                  <a href="service-one.html" class="service-card__link">
+                    <h4 class="service-card__title">Гибка арматуры</h4>
+
+                    <div class="service-card__curtain">
+                      <p class="service-card__desc">
+                        Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                        металлопродукции
+                      </p>
+                      <div class="servise-card__bottom">
+                        <span class="service-card__detail">
+                          Подробнее
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
 
-              </div>
-
-              <div class="service-card service-card--big">
-
-                <div class="service-card__bg">
-                  <picture>
-                    <source media="(min-width: 1310px)" srcset="./img/image/other/1.svg">
-                    <img srcset="./img/image/servises/servise400-5.jpg" class="service-card__img">
-                  </picture>
                 </div>
-                <a href="service-one.html" class="service-card__link">
-                  <h4 class="service-card__title">Доставка</h4>
 
-                  <div class="service-card__curtain">
-                    <p class="service-card__desc">
-                      Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
-                      металлопродукции
-                    </p>
-                    <div class="servise-card__bottom">
-                      <span class="service-card__detail">
-                        Подробнее
-                      </span>
+                <div class="service-card" data-big-img-src="./img/image/servises/servise-big-4.jpg">
+
+                  <div class="service-card__bg">
+                    <picture>
+                      <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
+                      <img srcset="./img/image/servises/servise400-4.jpg" class="service-card__img">
+                    </picture>
+                  </div>
+
+                  <a href="service-one.html" class="service-card__link">
+                    <h4 class="service-card__title">Резка металла</h4>
+
+                    <div class="service-card__curtain">
+                      <p class="service-card__desc">
+                        Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                        металлопродукции
+                      </p>
+                      <div class="servise-card__bottom">
+                        <span class="service-card__detail">
+                          Подробнее
+                        </span>
+                      </div>
                     </div>
+                  </a>
+
+                </div>
+
+                <div class="service-card service-card--big" data-big-img-src="./img/image/servises/servise-big-5.jpg">
+
+                  <div class="service-card__bg">
+                    <picture>
+                      <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
+                      <img srcset="./img/image/servises/servise400-5.jpg" class="service-card__img">
+                    </picture>
                   </div>
+                  <a href="service-one.html" class="service-card__link">
+                    <h4 class="service-card__title">Доставка</h4>
+
+                    <div class="service-card__curtain">
+                      <p class="service-card__desc">
+                        Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                        металлопродукции
+                      </p>
+                      <div class="servise-card__bottom">
+                        <span class="service-card__detail">
+                          Подробнее
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+
+                </div>
+
+                <a href="" class="service-card service-more more-card">
+                  <div class="service-more__bg"></div>
+                  <div class="more-card__content">
+                    <p class="more-card__count">14 услуг компании</p>
+                    <p class="service-more_all more-card__all">Все услуги</p>
+                  </div>
+
                 </a>
 
               </div>
-
-              <a href="" class="service-more more-card">
-                <div class="service-more__bg"></div>
-                <div class="more-card__content">
-                  <p class="more-card__count">14 услуг компании</p>
-                  <p class="service-more_all more-card__all">Все услуги</p>
-                </div>
-
-              </a>
-
             </div>
             <!-- services -->
           </div>
@@ -814,219 +749,225 @@
           <!-- section__content -->
           <div class="section__content">
             <!-- advantages -->
-            <div class="advantages">
+            <div id="advantages" class="advantages">
 
-              <div class="advantage-card">
+              <div data-card class="advantage-card advantage-card--change-color">
+                <div data-content class="advantage-card__contect">
+                  <img src="./img/image/advantages/advantage1.png" alt="" class="advantage-card__img">
 
-                <img src="./img/image/advantages/advantage1.png" alt="" class="advantage-card__img">
-
-                <span class="advantage-card__close close-btn">Закрыть</span>
-                <div class="advantage-card__header">
-                  <span class="advantage-card__num">01</span>
-                  <h3 class="advantage-card__title">
-                    Быстрая отгрузка продукции
-                  </h3>
+                  <span class="advantage-card__close close-btn">Закрыть</span>
+                  <div class="advantage-card__header">
+                    <span class="advantage-card__num">01</span>
+                    <h3 class="advantage-card__title">
+                      Быстрая отгрузка продукции
+                    </h3>
 
 
-                  <span class="advantage-card__open">
-                    Подробнее
+                    <span class="advantage-card__open">
+                      Подробнее
+                    </span>
+
+
+                    <p class="advantage-card__desc">
+                      Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
+                      Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
+                      погрузки железнодорожных вагонов.
+                    </p>
+                  </div>
+                  <!-- advantage__list -->
+                  <div class="advantage__list">
+                    <div class="advantage-item">
+                      <div class="advantage-item__icon">
+                        <span class="advantage-item__quarter lt"></span>
+                        <i class="advantage-item__img advantage-item__img--clock"></i>
+                      </div>
+                      <h4 class="advantage-item__title">Соблюдаем сроки</h4>
+                    </div>
+
+                    <div class="advantage-item">
+                      <div class="advantage-item__icon">
+                        <span class="advantage-item__quarter lb"></span>
+                        <i class="advantage-item__img advantage-item__img--box"></i>
+                      </div>
+                      <h4 class="advantage-item__title">Соблюдаем сроки</h4>
+                    </div>
+                  </div>
+
+                  <!--advantage__list-->
+
+                  <span class="advantage-card__roll-up">
+                    Свертуть
                   </span>
-
-
-                  <p class="advantage-card__desc">
-                    Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
-                    Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
-                    погрузки железнодорожных вагонов.
-                  </p>
                 </div>
-                <!-- advantage__list -->
-                <div class="advantage__list">
-                  <div class="advantage-item">
-                    <div class="advantage-item__icon">
-                      <span class="advantage-item__quarter lt"></span>
-                      <i class="advantage-item__img advantage-item__img--clock"></i>
-                    </div>
-                    <h4 class="advantage-item__title">Соблюдаем сроки</h4>
-                  </div>
-
-                  <div class="advantage-item">
-                    <div class="advantage-item__icon">
-                      <span class="advantage-item__quarter lb"></span>
-                      <i class="advantage-item__img advantage-item__img--box"></i>
-                    </div>
-                    <h4 class="advantage-item__title">Соблюдаем сроки</h4>
-                  </div>
-                </div>
-
-                <!--advantage__list-->
-
-                <span class="advantage-card__roll-up">
-                  Свертуть
-                </span>
               </div>
 
-              <div class="advantage-card">
+              <div data-card class="advantage-card advantage-card--change-color">
+                <div data-content class="advantage-card__contect">
+                  <img src="./img/image/advantages/advantage2.png" alt="" class="advantage-card__img">
 
-                <img src="./img/image/advantages/advantage2.png" alt="" class="advantage-card__img">
+                  <span class="advantage-card__close close-btn">Закрыть</span>
+                  <div class="advantage-card__header">
+                    <span class="advantage-card__num">02</span>
+                    <h3 class="advantage-card__title">
+                      Удобные способы оплаты
+                    </h3>
 
-                <span class="advantage-card__close close-btn">Закрыть</span>
-                <div class="advantage-card__header">
-                  <span class="advantage-card__num">02</span>
-                  <h3 class="advantage-card__title">
-                    Удобные способы оплаты
-                  </h3>
+                    <span class="advantage-card__open">
+                      Подробнее
+                    </span>
 
-                  <span class="advantage-card__open">
-                    Подробнее
+                    <p class="advantage-card__desc">
+                      Мы представим все необходимые документы и сертификаты. В условиях долгосрочных партнёрских
+                      отношений, предложим Вам хорошие скидки и отсрочку платежей.Наша компания принимает оплату
+                      следующими способами:
+                    </p>
+                  </div>
+                  <!-- advantage__list -->
+                  <div class="advantage__list">
+                    <div class="advantage-item">
+                      <div class="advantage-item__icon">
+                        <span class="advantage-item__quarter lt"></span>
+                        <i class="advantage-item__img advantage-item__img--pay-card"></i>
+                      </div>
+                      <h4 class="advantage-item__title">Безналичный расчет</h4>
+                    </div>
+
+                    <div class="advantage-item">
+                      <div class="advantage-item__icon">
+                        <span class="advantage-item__quarter rb"></span>
+                        <i class="advantage-item__img advantage-item__img--cash"></i>
+                      </div>
+                      <h4 class="advantage-item__title">Наличными в офисе</h4>
+                    </div>
+
+                    <div class="advantage-item">
+                      <div class="advantage-item__icon">
+                        <span class="advantage-item__quarter rt"></span>
+                        <i class="advantage-item__img advantage-item__img--doc"></i>
+                      </div>
+                      <h4 class="advantage-item__title">Оплата на расчетнй счет</h4>
+                    </div>
+                  </div>
+
+                  <!--advantage__list-->
+
+                  <span class="advantage-card__roll-up">
+                    Свертуть
                   </span>
-
-                  <p class="advantage-card__desc">
-                    Мы представим все необходимые документы и сертификаты. В условиях долгосрочных партнёрских
-                    отношений, предложим Вам хорошие скидки и отсрочку платежей.Наша компания принимает оплату
-                    следующими способами:
-                  </p>
                 </div>
-                <!-- advantage__list -->
-                <div class="advantage__list">
-                  <div class="advantage-item">
-                    <div class="advantage-item__icon">
-                      <span class="advantage-item__quarter lt"></span>
-                      <i class="advantage-item__img advantage-item__img--pay-card"></i>
-                    </div>
-                    <h4 class="advantage-item__title">Безналичный расчет</h4>
-                  </div>
-
-                  <div class="advantage-item">
-                    <div class="advantage-item__icon">
-                      <span class="advantage-item__quarter rb"></span>
-                      <i class="advantage-item__img advantage-item__img--cash"></i>
-                    </div>
-                    <h4 class="advantage-item__title">Наличными в офисе</h4>
-                  </div>
-
-                  <div class="advantage-item">
-                    <div class="advantage-item__icon">
-                      <span class="advantage-item__quarter rt"></span>
-                      <i class="advantage-item__img advantage-item__img--doc"></i>
-                    </div>
-                    <h4 class="advantage-item__title">Оплата на расчетнй счет</h4>
-                  </div>
-                </div>
-
-                <!--advantage__list-->
-
-                <span class="advantage-card__roll-up">
-                  Свертуть
-                </span>
               </div>
 
-              <div class="advantage-card">
+              <div data-card class="advantage-card advantage-card--change-color">
+                <div data-content class="advantage-card__contect">
 
-                <img src="./img/image/advantages/advantage3.png" alt="" class="advantage-card__img">
+                  <img src="./img/image/advantages/advantage3.png" alt="" class="advantage-card__img">
 
-                <span class="advantage-card__close close-btn">Закрыть</span>
-                <div class="advantage-card__header">
-                  <span class="advantage-card__num">03</span>
-                  <h3 class="advantage-card__title">
-                    Персональный менеджер круглосуточно
-                  </h3>
+                  <span class="advantage-card__close close-btn">Закрыть</span>
+                  <div class="advantage-card__header">
+                    <span class="advantage-card__num">03</span>
+                    <h3 class="advantage-card__title">
+                      Персональный менеджер круглосуточно
+                    </h3>
 
-                  <span class="advantage-card__open">
-                    Подробнее
+                    <span class="advantage-card__open">
+                      Подробнее
+                    </span>
+                    <p class="advantage-card__desc">
+                      Для удобной работы каждому клиенту предоставляется персональный менеджер, который ответим на ваши
+                      вопросыо производстве и переработке металлопроката, его свойствах и особенностях применения, а
+                      также
+                      будет сопровождать сделку с вами от и до.
+                    </p>
+                  </div>
+                  <!-- advantage__list -->
+                  <div class="advantage__list">
+                    <div class="advantage-item">
+                      <div class="advantage-item__icon">
+                        <span class="advantage-item__quarter lt"></span>
+                        <i class="advantage-item__img advantage-item__img--time"></i>
+                      </div>
+                      <h4 class="advantage-item__title">Всегда на связи</h4>
+                    </div>
+
+                    <div class="advantage-item">
+                      <div class="advantage-item__icon">
+                        <span class="advantage-item__quarter rb"></span>
+                        <i class="advantage-item__img advantage-item__img--clock"></i>
+                      </div>
+                      <h4 class="advantage-item__title">Оперативное решение</h4>
+                    </div>
+
+                    <div class="advantage-item">
+                      <div class="advantage-item__icon">
+                        <span class="advantage-item__quarter rt"></span>
+                        <i class="advantage-item__img advantage-item__img--question"></i>
+                      </div>
+                      <h4 class="advantage-item__title">Любые вопросы</h4>
+                    </div>
+                  </div>
+
+                  <!--advantage__list-->
+
+                  <span class="advantage-card__roll-up">
+                    Свертуть
                   </span>
-                  <p class="advantage-card__desc">
-                    Для удобной работы каждому клиенту предоставляется персональный менеджер, который ответим на ваши
-                    вопросыо производстве и переработке металлопроката, его свойствах и особенностях применения, а
-                    также
-                    будет сопровождать сделку с вами от и до.
-                  </p>
                 </div>
-                <!-- advantage__list -->
-                <div class="advantage__list">
-                  <div class="advantage-item">
-                    <div class="advantage-item__icon">
-                      <span class="advantage-item__quarter lt"></span>
-                      <i class="advantage-item__img advantage-item__img--time"></i>
-                    </div>
-                    <h4 class="advantage-item__title">Всегда на связи</h4>
-                  </div>
-
-                  <div class="advantage-item">
-                    <div class="advantage-item__icon">
-                      <span class="advantage-item__quarter rb"></span>
-                      <i class="advantage-item__img advantage-item__img--clock"></i>
-                    </div>
-                    <h4 class="advantage-item__title">Оперативное решение</h4>
-                  </div>
-
-                  <div class="advantage-item">
-                    <div class="advantage-item__icon">
-                      <span class="advantage-item__quarter rt"></span>
-                      <i class="advantage-item__img advantage-item__img--question"></i>
-                    </div>
-                    <h4 class="advantage-item__title">Любые вопросы</h4>
-                  </div>
-                </div>
-
-                <!--advantage__list-->
-
-                <span class="advantage-card__roll-up">
-                  Свертуть
-                </span>
               </div>
 
-              <div class="advantage-card">
+              <div data-card class="advantage-card advantage-card--change-color">
+                <div data-content class="advantage-card__contect">
 
-                <img src="./img/image/advantages/advantage4.png" alt="" class="advantage-card__img">
+                  <img src="./img/image/advantages/advantage4.png" alt="" class="advantage-card__img">
 
-                <span class="advantage-card__close close-btn">Закрыть</span>
-                <div class="advantage-card__header">
-                  <span class="advantage-card__num">04</span>
-                  <h3 class="advantage-card__title">
-                    Собственный рабочий автопарк
-                  </h3>
+                  <span class="advantage-card__close close-btn">Закрыть</span>
+                  <div class="advantage-card__header">
+                    <span class="advantage-card__num">04</span>
+                    <h3 class="advantage-card__title">
+                      Собственный рабочий автопарк
+                    </h3>
 
-                  <span class="advantage-card__open">
-                    Подробнее
+                    <span class="advantage-card__open">
+                      Подробнее
+                    </span>
+                    <p class="advantage-card__desc">
+                      Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
+                      Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
+                      погрузки железнодорожных вагонов.
+                    </p>
+                  </div>
+                  <!-- advantage__list -->
+                  <div class="advantage__list">
+                    <div class="advantage-item">
+                      <div class="advantage-item__icon">
+                        <span class="advantage-item__quarter rt"></span>
+                        <span class="advantage-item__count">114</span>
+                      </div>
+                      <h4 class="advantage-item__title">Седельных тягача</h4>
+                    </div>
+
+                    <div class="advantage-item">
+                      <div class="advantage-item__icon">
+                        <span class="advantage-item__quarter rt"></span>
+                        <span class="advantage-item__count">32</span>
+                      </div>
+                      <h4 class="advantage-item__title">Манипулятора</h4>
+                    </div>
+
+                    <div class="advantage-item">
+                      <div class="advantage-item__icon">
+                        <span class="advantage-item__quarter rt"></span>
+                        <span class="advantage-item__count">20</span>
+                      </div>
+                      <h4 class="advantage-item__title">Тонн грузоподъёмность</h4>
+                    </div>
+                  </div>
+
+                  <!--advantage__list-->
+
+                  <span class="advantage-card__roll-up">
+                    Свертуть
                   </span>
-                  <p class="advantage-card__desc">
-                    Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
-                    Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
-                    погрузки железнодорожных вагонов.
-                  </p>
                 </div>
-                <!-- advantage__list -->
-                <div class="advantage__list">
-                  <div class="advantage-item">
-                    <div class="advantage-item__icon">
-                      <span class="advantage-item__quarter rt"></span>
-                      <span class="advantage-item__count">114</span>
-                    </div>
-                    <h4 class="advantage-item__title">Седельных тягача</h4>
-                  </div>
-
-                  <div class="advantage-item">
-                    <div class="advantage-item__icon">
-                      <span class="advantage-item__quarter rt"></span>
-                      <span class="advantage-item__count">32</span>
-                    </div>
-                    <h4 class="advantage-item__title">Манипулятора</h4>
-                  </div>
-
-                  <div class="advantage-item">
-                    <div class="advantage-item__icon">
-                      <span class="advantage-item__quarter rt"></span>
-                      <span class="advantage-item__count">20</span>
-                    </div>
-                    <h4 class="advantage-item__title">Тонн грузоподъёмность</h4>
-                  </div>
-                </div>
-
-                <!--advantage__list-->
-
-                <span class="advantage-card__roll-up">
-                  Свертуть
-                </span>
               </div>
 
             </div>
@@ -1175,11 +1116,11 @@
             <!-- reviews-block -->
             <div class="reviews-block">
               <!-- reviews-block__slider -->
-              <div class="reviews-block__slider slider">
+              <div id="reviewsSlider" class="reviews-block__slider slider">
                 <!-- reviews-block__track -->
-                <div class="reviews-block__track slider__track">
+                <div data-track class="reviews-block__track slider__track">
 
-                  <div class="review-card">
+                  <div data-slide class="review-card">
                     <div class="review-card__logo">
                       <i class="review-card__img review-card__img--severstal"></i>
                     </div>
@@ -1191,7 +1132,7 @@
                     </p>
                   </div>
 
-                  <div class="review-card">
+                  <div data-slide class="review-card">
                     <div class="review-card__logo">
                       <i class="review-card__img review-card__img--nlmk"></i>
                     </div>
@@ -1203,7 +1144,7 @@
                     </p>
                   </div>
 
-                  <div class="review-card">
+                  <div data-slide class="review-card">
                     <div class="review-card__logo">
                       <i class="review-card__img review-card__img--severstal"></i>
                     </div>
@@ -1217,9 +1158,12 @@
 
                 </div>
                 <!-- reviews-block__track -->
-                <div class="section-controls">
-                  <span class="section-controls__btn section-controls__prev"></span>
-                  <span class="section-controls__btn section-controls__next"></span>
+                <div data-controls class="section-controls">
+                  <div class="section-controls__inner">
+                    <span data-prev
+                      class="section-controls__btn section-controls__btn--hide section-controls__prev"></span>
+                    <span data-next class="section-controls__btn section-controls__next"></span>
+                  </div>
                 </div>
               </div>
               <!-- reviews-block__slider -->
@@ -1242,43 +1186,55 @@
             <!-- reviews-block -->
             <div class="certificates-block">
               <!-- reviews-block__slider -->
-              <div class="certificates-block__slider slider">
+              <div id="certificates" class="certificates-block__slider slider">
                 <!-- reviews-block__track -->
-                <div class="certificates-block__track slider__track">
+                <div data-track class="certificates-block__track slider__track">
 
-                  <div class="certificates-card">
-                    <img src="./img/image/other/certificate.jpg" alt="" class="certificates-card__img">
+                  <div data-slide data-img-big-src="./img/image/other/certificateBig" class="certificates-card">
+                    <picture>
+                      <source srcset="./img/image/other/certificate.jpg" type="image/webp">
+                      <img src="./img/image/other/certificate.webp" alt="" class="certificates-card__img">
+                    </picture>
+
                   </div>
 
-                  <div class="certificates-card">
-                    <img src="./img/image/other/certificate.jpg" alt="" class="certificates-card__img">
+                  <div data-slide data-img-big-src="./img/image/other/certificateBig" class="certificates-card">
+                    <picture>
+                      <source srcset="./img/image/other/certificate.jpg" type="image/webp">
+                      <img src="./img/image/other/certificate.webp" alt="" class="certificates-card__img">
+                    </picture>
+
                   </div>
 
-                  <div class="certificates-card">
-                    <img src="./img/image/other/certificate.jpg" alt="" class="certificates-card__img">
+                  <div data-slide data-img-big-src="./img/image/other/certificateBig" class="certificates-card">
+                    <picture>
+                      <source srcset="./img/image/other/certificate.jpg" type="image/webp">
+                      <img src="./img/image/other/certificate.webp" alt="" class="certificates-card__img">
+                    </picture>
                   </div>
 
-                  <div class="certificates-card">
-                    <img src="./img/image/other/certificate.jpg" alt="" class="certificates-card__img">
+                  <div data-slide data-img-big-src="./img/image/other/certificateBig" class="certificates-card">
+                    <picture>
+                      <source srcset="./img/image/other/certificate.jpg" type="image/webp">
+                      <img src="./img/image/other/certificate.webp" alt="" class="certificates-card__img">
+                    </picture>
                   </div>
 
-                  <div class="certificates-card">
-                    <img src="./img/image/other/certificate.jpg" alt="" class="certificates-card__img">
-                  </div>
-
-                  <div class="certificates-card">
-                    <img src="./img/image/other/certificate.jpg" alt="" class="certificates-card__img">
-                  </div>
-
-                  <div class="certificates-card">
-                    <img src="./img/image/other/certificate.jpg" alt="" class="certificates-card__img">
+                  <div data-slide data-img-big-src="./img/image/other/certificateBig" class="certificates-card">
+                    <picture>
+                      <source srcset="./img/image/other/certificate.jpg" type="image/webp">
+                      <img src="./img/image/other/certificate.webp" alt="" class="certificates-card__img">
+                    </picture>
                   </div>
 
                 </div>
                 <!-- reviews-block__track -->
-                <div class="section-controls">
-                  <span class="section-controls__btn section-controls__prev"></span>
-                  <span class="section-controls__btn section-controls__next"></span>
+                <div data-controls class="section-controls">
+                  <div class="section-controls__inner">
+                    <span data-prev
+                      class="section-controls__btn section-controls__btn--hide section-controls__prev"></span>
+                    <span data-next class="section-controls__btn section-controls__next"></span>
+                  </div>
                 </div>
               </div>
               <!-- reviews-block__slider -->
@@ -1354,7 +1310,7 @@
         <div class="footer-main__inner container">
           <div class="footer-main__left">
             <div class="footer-main__support footer__col">
-              <span class="footer__support">
+              <span id="supportModalBtn" class="footer__support">
                 Написать в техподдержку
               </span>
             </div>
@@ -1459,9 +1415,10 @@
     <!--header-modals-->
 
     <!-- headerCatalogModal -->
-    <div id="headerCatalogModal" class="header-modal">
+    <div id="headerCatalogModal" data-status="close" class="header-modal">
       <!-- header-modal__inner -->
-      <div class="header-modal__inner container">
+      <div class="header-modal__bd"></div>
+      <div class="header-modal__inner container" data-modal-inner>
 
         <div class="header-modal__search search">
           <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу">
@@ -1517,8 +1474,9 @@
     <!-- headerCatalogModal -->
 
     <!--search-city-->
-    <div id="selectCityModal" class="header-modal header-modal--hide">
+    <div id="selectCityModal" data-status="close" class="header-modal">
       <!-- header-modal__inner -->
+      <div class="header-modal__bd"></div>
       <div class="header-modal__inner container">
 
         <div class="header-modal__search search">
@@ -1720,38 +1678,58 @@
     <!--modal-->
 
     <!-- supportModal -->
-    <div data-close id="supportModal" class="modal">
+    <div id="supportModal" class="modal modal--is-hide">
       <!--modal__inner-->
-      <div class="modal__inner">
+      <div data-modal-body class="modal__body">
         <span data-close class="modal__close close-btn">Закрыть</span>
 
         <h3 class="modal__title">
           Обращение в техподдержку
         </h3>
 
-        <form class="modal__form">
+        <form action="./json/send-form.json" enctype="multipart/form-data" metod="POST" id="supportModalForm"
+          class="modal__form">
           <div class="modal__inputs-block">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*">
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="name" type="text" />
 
-            <textarea data-textarea name="message" class="modal__input modal__textarea textarea"
+              <span class="place-entry__placeholder">ФИО<span class="place-entry__star">*</span></span>
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="mail" type="text" />
+
+              <span class="place-entry__placeholder">E-mail</span>
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="phone" type="text" />
+
+              <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
+
+            </label>
+
+            <textarea data-input name="message" class="modal__input modal__textarea textarea"
               placeholder="Опишите проблему"></textarea>
           </div>
-          <div class="modal__file file">
-            <label class="file__label">
-              <span class="file__text">Прикрепить файл</span>
-              <input data-file type="file" name="file" class="file__input">
+          <div data-file-block class="modal__file file">
+            <label data-file-label class="file__label">
+              <span data-file-text class="file__text">Прикрепить файл</span>
+              <input data-input type="file" name="file" class="file__input">
             </label>
-            <p class="file__desc">
+            <span class="file__clear-btn" clear-file-btn>очистить файл</span>
+            <p data-info="" class="file__desc">
               Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
           </div>
 
-          <input type="text" class="modal__submit btn yellow-btn hover-yellow-light" value="Отправить заявку">
+          <input data-submit type="submit" class="modal__submit btn yellow-btn hover-yellow-light"
+            value="Отправить заявку">
 
-          <label class="checkbox" data-label>
-            <input data-checkbox type="checkbox" checked class="checkbox__input" />
+          <label data-checkbox class="checkbox">
+            <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
             <span class="checkbox__fake"></span>
             <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
 
@@ -1765,7 +1743,7 @@
 
 
     <!-- orderModal -->
-    <div id="orderModal" class="modal">
+    <div id="orderModal" class="modal modal--is-hide">
       <!--modal__inner-->
       <div class="modal__inner">
         <span data-close class="modal__close close-btn">Закрыть</span>
@@ -1843,81 +1821,92 @@
     <!-- orderModal -->
 
     <!-- searchModal -->
-    <div id="searchModal" class="modal">
-      <div class="modal__inner search-modal container">
-        <span data-close class="modal__close close-btn">Закрыть</span>
+    <div id="searchModal" class="modal search-modal modal--is-hide">
+      <div class="search-modal__inner container">
+        <span data-close class="search-modal__close close-btn">Закрыть</span>
+        <div id="SearchContent" class="search-modal__content">
+          <form action="" class="search-form mt50">
+            <!-- selecting-area -->
+            <div id="searchArea" class="selecting-area">
+              <label class="selecting-area__item">
+                <input data-area class="selecting-area__radio" type="radio" name="type" value="all" checked />
+                <span class="selecting-area__place">
+                  <span class="selecting-area__place-name">Поиск по сайту</span>
+                  <span class="selecting-area__place-name selecting-area__place-name--m">По сайту</span>
+                </span>
+              </label>
 
-        <form action="" class="search-form">
-          <!-- selecting-area -->
-          <div class="selecting-area">
-            <label class="selecting-area__item">
-              <input class="selecting-area__radio" type="radio" name="area" value="0">
-              <span class="selecting-area__area-name">Поиск по сайту</span>
-            </label>
-
-            <label class="selecting-area__area">
-              <input class="selecting-area__radio" type="radio" name="area" value="1">
-              <span class="selecting-area__area-name">Поиск по каталогу</span>
-            </label>
-          </div>
-          <!-- selecting-area -->
-
-          <div class="search-form__string search">
-            <input data-search-input type="text" class="search-form__input search__input input"
-              placeholder="Введите запрос и нажмите Enter">
-            <span class="search-form__btn search__btn"></span>
-          </div>
-        </form>
-
-        <div class="search-result">
-          <span class="search-result__count">Найдено 45 результатов:</span>
-        </div>
-
-        <!-- search-result__list -->
-        <div class="search-result__list">
-
-          <div class="result-card">
-            <div class="result-card__header">
-              <a href="news.html" class="result-card__area">Новости</a>
-              <h3 class="result-card__title">
-                <a href="news-one.html" class="result-card__link">Поступление на склады оцинкованной продукции</a>
-              </h3>
+              <label class="selecting-area__item">
+                <input data-area class="selecting-area__radio" type="radio" name="type" value="production" />
+                <span class="selecting-area__place">
+                  <span class="selecting-area__place-name">Поиск по каталогу</span>
+                  <span class="selecting-area__place-name selecting-area__place-name--m">По каталогу</span>
+                </span>
+              </label>
             </div>
+            <!-- selecting-area -->
 
-            <p class="result-card__desc">Одним из самых востребованных продуктов <span
-                class="result-card__light">никелевог</span>о
-              металлопроката является лист никелевый 5 мм Н-0 ГОСТ 6235-91, который благодаря своим качественным
-              показателям используется при изготовлении спецоборудования, высокоточных приборов, котлов требующих
-              повышенной устойчивости к коррозии. </p>
-          </div>
-          <div class="result-card">
-            <div class="result-card__header">
-              <a href="services.html" class="result-card__area">Услуги</a>
-              <h3 class="result-card__title">
-                <a href="service-one.html" class="result-card__link">Анализ металла</a>
-              </h3>
+            <div class="search-form__string  search">
+              <input id="searchInput" type="text" class="search-form__input search__input search__input--light-bd input"
+                placeholder="Введите запрос и нажмите Enter" />
+              <span class="search-form__btn search__btn"></span>
             </div>
+          </form>
+          <!-- search-result__list -->
+          <div id="searchResult" class="search__result">
 
-            <p class="result-card__desc">Одним из самых востребованных продуктов <span
-                class="result-card__light">никелевог</span>о
-              металлопроката является лист никелевый 5 мм Н-0 ГОСТ 6235-91, который благодаря своим качественным
-              показателям используется при изготовлении спецоборудования, высокоточных приборов, котлов требующих
-              повышенной устойчивости к коррозии. </p>
           </div>
-
+          <!-- search-result__list -->
         </div>
-        <!-- search-result__list -->
+      </div>
 
+
+
+
+
+
+
+      <div id="blinds" class="blinds">
+        <div class="blind blind--up"></div>
+        <div class="blind blind--down"></div>
       </div>
     </div>
     <!-- searchModal -->
 
+    <div id="galeriaModal" class="galeria-modal modal modal--is-hide">
+      <div data-modal-inner class="galeria-modal__inner">
+        <span data-close class="galeria-modal__close close-btn">Закрыть</span>
+        <picture>
+          <source srcset="./img/image/other/1.svg" type="image/webp">
+          <img src="./img/image/other/1.svg" alt="" class="galeria-modal__img">
+        </picture>
+      </div>
+    </div>
 
+    <div id="succsesModal" data-info-modal class="info-modal info-modal--close">
+      <span data-close-info class="info-modal__close close-btn">Закрыть</span>
+      <div data-modal-inner class="info-modal__inner container">
+        <!--<p class="info-modal__text">Спасибо. Заказ успешно оформлен!</p>
+        <p class="info-modal__subtext">Мы выслали электронный чек и трек номер заказа на почту и номер телефона.</p>-->
+      </div>
+    </div>
+
+    <div id="errorModal" data-info-modal class="info-modal info-modal--error info-modal--close">
+      <span data-close-info class="info-modal__close close-btn white-color">Закрыть</span>
+      <div data-modal-inner class="info-modal__inner container">
+      </div>
+    </div>
     <!--modal-->
 
 
 
   </div>
+
+  <!--<div id="block-wrap">
+    <div id="block">
+
+    </div>
+  </div>-->
   <script src="js/main.js"></script>
 </body>
 

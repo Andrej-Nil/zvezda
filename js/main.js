@@ -30,8 +30,9 @@ class Server {
     this.fastOrderApi = '../json/getProd.json';
     this.addFavoriteApi = '../json/addFavorite.json';
     this.addBasketApi = '../json/addBasket.json';
+    this.clearBasketApi = '../json/clearBasket.json';
     this.searchApi = '../json/search.json';
-    this.removeBaskethApi = '../json/removeBasket.json';
+    this.removeProductApi = '../json/removeBasket.json';
     this.menuApi = '../json/sidebar.json';
     this.sidebarApi = '/json/sidebar.json';
     this.filterApi = '../json/filter.json';
@@ -41,40 +42,27 @@ class Server {
   addBsasket = async (data) => {
     data._token = this._token;
     const formData = this.createFormData(data);
-    return await this.getResponse(this.POST, formData, this.addBasketApi)
+    return await this.getResponse(this.POST, formData, this.addBasketApi);
   }
 
+  removeProduct = async (id) => {
+    const data = {
+      id: id,
+      _token: this._token
+    }
+    const formData = this.createFormData(data);
+    return await this.getResponse(this.POST, formData, this.removeProductApi);
+  }
 
+  clearBasket = async () => {
+    const data = this.createFormData({ _token: this._token });
+    return await this.getResponse(this.POST, data, this.clearBasketApi);
+
+  }
   getSearchResult = async (data) => {
     data._token = this._token;
     const formData = this.createFormData(data)
     return await this.getResponse(this.POST, formData, this.searchApi);
-  }
-
-  getResponse = async (method, data, api) => {
-    return await new Promise(function (resolve, reject) {
-      const xhr = new XMLHttpRequest();
-      let response = null
-      xhr.open(method, api, true);
-      xhr.send(data);
-      xhr.onload = function () {
-        if (xhr.status != 200) {
-          console.log('Ошибка: ' + xhr.status);
-          return;
-        } else {
-          response = JSON.parse(xhr.response);
-          resolve(response);
-          if (response) {
-            console.log("Запрос отправлен");
-          } else {
-            console.log("Неудачная отправка");
-          }
-        }
-      };
-      xhr.onerror = function () {
-        reject(new Error("Network Error"))
-      };
-    })
   }
 
   postForm = async ($form) => {
@@ -101,10 +89,34 @@ class Server {
     }
     return formData;
   }
-
   getToken = () => {
     const meta = document.querySelector('meta[name="csrf-token"]');
     return meta.getAttribute('content');
+  }
+  getResponse = async (method, data, api) => {
+    return await new Promise(function (resolve, reject) {
+      const xhr = new XMLHttpRequest();
+      let response = null
+      xhr.open(method, api, true);
+      xhr.send(data);
+      xhr.onload = function () {
+        if (xhr.status != 200) {
+          console.log('Ошибка: ' + xhr.status);
+          return;
+        } else {
+          response = JSON.parse(xhr.response);
+          resolve(response);
+          if (response) {
+            console.log("Запрос отправлен");
+          } else {
+            console.log("Неудачная отправка");
+          }
+        }
+      };
+      xhr.onerror = function () {
+        reject(new Error("Network Error"))
+      };
+    })
   }
 }
 
@@ -200,7 +212,7 @@ class InputFile {
 }
 
 class Render {
-  constructor($parent) {
+  constructor($parent = null) {
     this.$parent = $parent;
     this.declForTotalFindedItem = ['', 'а', 'ов'];
     //this.spinnerText = '';
@@ -241,6 +253,11 @@ class Render {
     this._render($parent, this.getProductCardHtml, false, cards);
   }
 
+  renderBasketCard = ($parent, cardData) => {
+
+    this._render($parent, this.getBasketCardHtml, cardData, false, 'afterbegin')
+  }
+
   renderInfoModalError = (errorMessage) => {
     this.clearParent(this.$parent)
     this._render(this.$parent, this.getInfoModalErrorHtml, errorMessage);
@@ -250,6 +267,11 @@ class Render {
     this.clearParent(this.$parent)
     this._render(this.$parent, this.getInfoModalSuccsesHtml, message);
   }
+
+  renderInfoModalConfirmation = (message) => {
+    this.clearParent(this.$parent);
+    this._render(this.$parent, this.getInfoModalConfirmationHtml, message);
+  };
   //разметка
   getSearchResultAllWrapHtml = () => {
     return (/*html*/`
@@ -292,6 +314,59 @@ class Render {
       </span>
     </div>
   </div>
+    `)
+  }
+
+  getBasketCardHtml = (cardData) => {
+    const discontPrice = (+cardData.price_old).toLocaleString();
+    const currentPrice = (+cardData.price).toLocaleString();
+    const unit = cardData.unit ? `/${cardData.unit}` : '';
+    return (/*html*/`
+      <div data-product="${cardData.id}" data-in-basket="1"  class="basket-card">
+        <div class="basket-card__top">
+          <div class="basket-card__preview">
+            <a href="product-page.html" class="basket-card__preview-link">
+              <picture>
+                <img src="./img/image/product-card/product1.jpg" alt="" class="basket-card__img">
+              </picture>
+            </a>
+          </div>
+
+          <div class="basket-card__name">
+            <a href="${cardData.category_slug}" class="basket-card__category">
+            ${cardData.category}
+            </a>
+            <h2 class="basket-card__title">
+              <a href="${cardData.slug}" class="basket-card__link">
+              ${cardData.title}
+              </a>
+
+            </h2>
+          </div>
+        </div>
+
+
+        <div data-counter class="basket-card__main">
+          <div class="basket-card__center">
+            <div class="basket-card__counter counter">
+              <span data-dec class="basket-card__btn counter__btn">-</span>
+              <input data-product-input class="basket-card__input counter__input" type="text" value="${cardData.count}">
+              <span data-inc class="basket-card__btn counter__btn">+</span>
+            </div>
+
+            <div class="basket-card__price">
+              <span class="basket-card__old">${discontPrice} ₽${unit}</span>
+              <span class="basket-card__new">${currentPrice} ₽${unit}
+              </span>
+            </div>
+          </div>
+
+          <span data-delete-product class="basket-card__remove">
+            <span class="basket-card__remove-text">Убрать из корзины</span>
+            <i class="basket-card__remove-icon"></i>
+          </span>
+        </div>
+      </div>
     `)
   }
 
@@ -370,10 +445,18 @@ class Render {
     `)
   }
 
-
+  getInfoModalConfirmationHtml = (message) => {
+    return ( /*html*/`
+    <p class="info-modal__text white-color">${message}</p>
+    <div class="info-modal__btns">
+      <span data-answer="0" class="info-modal__btn btn clear-btn">Отмена</span>
+      <span data-answer="1" class="info-modal__btn btn clear-btn">Очистить корзину</span>
+    </div>
+    `)
+  }
 
   //Общая функция отрисовки
-  _render = ($parent, getHtmlMarkup, argument = false, array = false) => {
+  _render = ($parent, getHtmlMarkup, argument = false, array = false, where = 'beforeend') => {
     let markupAsStr = '';
     if (!$parent) {
       return;
@@ -387,7 +470,7 @@ class Render {
       markupAsStr = getHtmlMarkup(argument);
     }
 
-    $parent.insertAdjacentHTML('beforeend', markupAsStr);
+    $parent.insertAdjacentHTML(where, markupAsStr);
   }
 
   //Методы удаление элементов
@@ -399,8 +482,7 @@ class Render {
     $parent.innerHTML = '';
   }
 
-  delete = ($parent = this.$parent, selector) => {
-    const $el = $parent.querySelector(selector);
+  delete = ($el) => {
     $el.remove()
   }
 
@@ -781,6 +863,18 @@ class SuccsesModal extends InfoModal {
   showSuccses = (message = false) => {
     this.render.renderInfoModalSuccses(message);
     this.open(true)
+  }
+}
+
+class ConfirmationModal extends InfoModal {
+  constructor(modalId) {
+    super(modalId);
+    this.init();
+  }
+  showConfirmation = async (message = false) => {
+    this.render.renderInfoModalConfirmation(message);
+    this.open();
+
   }
 }
 
@@ -1380,7 +1474,7 @@ class Product {
     this.init();
   }
   init = () => {
-    this.totalItemInBasket = document.querySelector('#totalItemInBasket');
+    this.$totalItemInBasket = document.querySelector('#totalItemInBasket');
     this.response = null;
     this.$products = null;
     this.listeners();
@@ -1389,17 +1483,19 @@ class Product {
   addBasket = async ($product) => {
     const data = this.getData($product);
     this.response = await server.addBsasket(data);
-    this.$products = document.querySelectorAll('[data-product="34545"]')
+    this.$products = document.querySelectorAll(`[data-product="${data.id}"]`)
 
     if (this.response.rez == 0) {
       console.log(`Ошибка: ${this.response.error.id}`);
       errorModal.showError(this.response.error.desc);
     }
     if (this.response.rez == 1) {
-      this.setTotalItemInBasket();
+      this.setTotalItemInBasket(this.response.card.count);
       this.setProductsQuantity(this.response.content[0].count);
+      basket.setTotalBasketPrice(this.response.card);
       if ($product.dataset.inBasket == 0) {
         this.changeProductsBtnToCounter();
+        basket.addProdutCardInBasket(this.response.content[0]);
       }
     }
 
@@ -1412,19 +1508,13 @@ class Product {
       return;
     }
     this.setProductsQuantity(this.response.content[0].count);
+    basket.setTotalBasketPrice(this.response.card);
   }, 300)
 
-  //dec = debaunce.debaunce(($product) => {
-  //  const data = this.getData($product);
-  //  console.log(data)
-  //  if (data.count == 1) {
-  //    return;
-  //  }
-  //}, 200)
 
   dec = ($product) => {
     const data = this.getData($product);
-    this.$products = document.querySelectorAll('[data-product="34545"]');
+    this.$products = document.querySelectorAll(`[data-product="${data.id}"]`);
     if (data.count == 1) {
       return;
     }
@@ -1435,7 +1525,7 @@ class Product {
 
   inc = ($product) => {
     const data = this.getData($product);
-    this.$products = document.querySelectorAll('[data-product="34545"]');
+    this.$products = document.querySelectorAll(`[data-product="${data.id}"]`);
     data.count += 1;
     this.setProductsQuantity(data.count);
     this.postQuantity(data);
@@ -1443,7 +1533,7 @@ class Product {
 
   changeValue = ($product) => {
     const data = this.getData($product);
-    this.$products = document.querySelectorAll('[data-product="34545"]');
+    this.$products = document.querySelectorAll(`[data-product="${data.id}"]`);
     this.setProductsQuantity(data.count);
     this.postQuantity(data);
   }
@@ -1458,12 +1548,25 @@ class Product {
     this.$products.forEach(($item) => {
       this.hideProductBtn($item);
       this.showProductCounter($item);
-      this.setInBasket($item)
+      this.changeInBasket($item);
+    })
+  }
+  changeProductsCounterToBtn = () => {
+    this.$products.forEach(($item) => {
+      this.hideProductCounter($item);
+      this.showProductBtn($item);
+      this.changeInBasket($item);
     })
   }
 
-  setInBasket = ($product) => {
-    $product.dataset.inBasket = 1;
+  changeInBasket = ($product,) => {
+    if ($product.dataset.inBasket == 0) {
+      $product.dataset.inBasket = 1;
+    }
+    if ($product.dataset.inBasket == 1) {
+      $product.dataset.inBasket = 0;
+    }
+
   }
   showProductBtn = ($product) => {
     $product.querySelector('[data-in-basket-btn]').classList.remove('product-card__btn--hide');
@@ -1480,17 +1583,16 @@ class Product {
     $product.querySelector('[data-counter]').classList.add('product-counter--hide');
   }
 
-  setTotalItemInBasket = () => {
-    if (!this.totalItemInBasket) {
-      console.log(!this.totalItemInBasket);
+  setTotalItemInBasket = (count) => {
+    if (!this.$totalItemInBasket) {
       return;
     }
-    this.totalItemInBasket.innerHTML = this.response.card.count;
-    this.toggleBasketIndicator()
+    this.$totalItemInBasket.innerHTML = count;
+    this.toggleBasketIndicator(count);
   }
 
-  toggleBasketIndicator = () => {
-    if (this.response.card.count) {
+  toggleBasketIndicator = (count) => {
+    if (count) {
       this.showBasketIndicator();
     } else {
       this.hideBasketIndicator();
@@ -1498,11 +1600,11 @@ class Product {
   }
 
   hideBasketIndicator = () => {
-    this.totalItemInBasket.classList.add('nav-icon__count--empty');
+    this.$totalItemInBasket.classList.add('nav-icon__count--empty');
   }
 
   showBasketIndicator = () => {
-    this.totalItemInBasket.classList.remove('nav-icon__count--empty');
+    this.$totalItemInBasket.classList.remove('nav-icon__count--empty');
   }
 
   getData = ($product) => {
@@ -1511,6 +1613,12 @@ class Product {
       id: $product.dataset.product,
       count: this.checkValue(value),
     }
+  }
+
+  removeProduct = (id) => {
+    this.$products = document.querySelectorAll(`[data-product="${id}"]`);
+    this.changeProductsCounterToBtn();
+
   }
 
   checkValue = (value) => {
@@ -1540,6 +1648,11 @@ class Product {
       const $product = $target.closest('[data-product]');
       this.inc($product);
     }
+
+    //if ($target.closest('[data-delete-product]')) {
+    //  const $product = $target.closest('[data-product]');
+    //  this.removeProduct($product);
+    //}
   }
 
   inputHandler = (e) => {
@@ -1564,12 +1677,123 @@ class Product {
     document.addEventListener('change', this.inputHandler);
   }
 }
+
+class Basket {
+  constructor(basketId) {
+    this.$basket = document.querySelector(basketId);
+    this.init()
+  }
+
+  init = () => {
+    if (!this.$basket) {
+      return;
+    }
+
+    this.$basketList = document.querySelector('#basketList');
+    this.$totalBasketPrice = document.querySelector('[data-total-basket-price]');
+    this.$totalBasketDiscont = document.querySelector('[data-total-basket-discont]');
+    this.confirmationModal = new ConfirmationModal('#confirmationModal');
+    this.$confirmationModal = document.querySelector('#confirmationModal');
+    this.blockEmptyBasket = document.querySelector('#emptyBasket');
+    this.confirmationQuestion = 'Это дествия очистить Вашу карзину. Удалить все товары?';
+    if (this.$basketList) {
+
+    }
+    this.listeners();
+  }
+
+  addProdutCardInBasket = (cardData) => {
+    if (!this.$basketList) {
+      return;
+    }
+    render.renderBasketCard(this.$basketList, cardData);
+  };
+
+  clearBasket = async () => {
+    const response = await server.clearBasket();
+    if (response.rez == 0) {
+      console.log(`Ошибка: ${response.error.id}`);
+      errorModal.showError(response.error.desc);
+
+    }
+    if (response.rez == 1) {
+      this.confirmationModal.showConfirmation(this.confirmationQuestion);
+
+    }
+  }
+  showBlockEmptyBasket = () => {
+    this.blockEmptyBasket.classList.remove('basket-empty--hide');
+  }
+
+  deleteProduct = async ($product) => {
+    const id = $product.dataset.product;
+    this.response = await server.removeProduct(id);
+    if (this.response.rez == 0) {
+      console.log(`Ошибка: ${this.response.error.id}`);
+      errorModal.showError(this.response.error.desc);
+    }
+
+    if (this.response.rez == 1) {
+      render.delete($product);
+      product.removeProduct(id);
+      product.setTotalItemInBasket(this.response.card.count);
+      this.setTotalBasketPrice(this.response.card);
+    }
+  }
+  deleteBasketContent = () => {
+    render.clearParent(this.$basket);
+  }
+
+  setTotalBasketPrice = (cardData) => {
+    const totalPrice = (+cardData.total_price).toLocaleString();
+    const discont = (+cardData.price_old - +cardData.total_price).toLocaleString();
+    if (this.$totalBasketPrice) {
+      this.$totalBasketPrice.innerHTML = `${totalPrice} ₽`
+    }
+    if (this.$totalBasketDiscont) {
+      this.$totalBasketDiscont.innerHTML = `Ваша скидка ${discont} ₽`
+    }
+  }
+  answerHandler = (btn) => {
+    const answer = +btn.dataset.answer;
+    if (answer) {
+      this.confirmationModal.close();
+      this.deleteBasketContent();
+      product.setTotalItemInBasket(0)
+      this.showBlockEmptyBasket();
+    } else {
+      this.confirmationModal.close();
+    }
+  }
+
+
+  clickHandler = (e) => {
+    if (e.target.closest('[data-clear-basket]')) {
+      this.clearBasket();
+    }
+    if (e.target.closest('[data-delete-product]')) {
+      const $product = e.target.closest('[data-product]');
+      this.deleteProduct($product);
+    }
+    if (e.target.closest('[data-answer]')) {
+      const answerBtn = e.target.closest('[data-answer]');
+      this.answerHandler(answerBtn)
+    }
+  }
+
+  listeners = () => {
+    this.$basket.addEventListener('click', this.clickHandler);
+    this.$confirmationModal.addEventListener('click', this.clickHandler)
+  }
+
+}
 const server = new Server();
 const render = new Render();
 const debaunce = new Debaunce()
 const searchModal = new SearchModal('#searchModal');
 const supportModal = new CommunicationModal('#supportModal');
 const succsesModal = new SuccsesModal('#succsesModal');
+//const confirmationModal = new ConfirmationModal('#confirmationModal');
 const errorModal = new ErrorModal('#errorModal');
 const feedBackForm = new FormPage('#feedbackForm');
 
@@ -1585,6 +1809,7 @@ const reviewsSlider = new Slider('#reviewsSlider');
 const certificatesGaleria = new Galeria('#certificates');
 
 const product = new Product();
+const basket = new Basket('#basket');
 
 
 

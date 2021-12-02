@@ -1,16 +1,30 @@
 .basket-empty {
-  display: none;
-  width: 500px;
-  margin: 200px auto 180px;
+  display: block;
+  max-width: 500px;
+  width: 100%;
+  margin: 120px auto 100px;
   text-align: center;
   color: $blackMain;
+  padding: 0 15px;
+  @media (min-width: 1280px) {
+    padding: 0 0;
+    margin: 200px auto 180px;
+  }
+}
+
+.basket-empty--hide {
+  display: none;
 }
 
 .basket-empty__title {
   margin-bottom: 30px;
 
-  font-size: 48px;
-  line-height: 66px;
+  font-size: 30px;
+  line-height: 41px;
+  @media (min-width: 1280px) {
+    font-size: 48px;
+    line-height: 66px;
+  }
 }
 
 .basket-empty__text {

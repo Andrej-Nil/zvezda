@@ -280,6 +280,7 @@ body {
 
 .app {
   overflow: hidden;
+  background: #fff;
 }
 
 .container {
@@ -873,7 +874,8 @@ body {
   background: #f4f4f4;
   cursor: pointer;
   font-size: 32px;
-  line-height: 44px;
+  line-height: 1;
+  user-select: none;
 }
 
 .counter__btn:active {
@@ -1330,6 +1332,7 @@ body {
 @media (min-width: 1310px) {
   .product-card--slider {
     min-width: 305px;
+    max-width: 305px;
   }
 }
 
@@ -2923,10 +2926,16 @@ body {
   margin: 0 0 30px 0;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
   .basket-card__top {
     display: flex;
     align-items: center;
+    margin: 0 auto 30px 0;
+  }
+}
+
+@media (min-width: 1050px) {
+  .basket-card__top {
     margin: 0 auto 0 0;
   }
 }
@@ -2976,7 +2985,7 @@ body {
 
 @media (min-width: 1050px) {
   .basket-card__name {
-    max-width: 415px;
+    max-width: 400px;
     min-width: 350px;
   }
 }
@@ -3018,7 +3027,7 @@ body {
   margin: 0 0 32px 0;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
   .basket-card__center {
     margin: 0;
   }
@@ -3026,7 +3035,7 @@ body {
 
 @media (min-width: 1050px) {
   .basket-card__center {
-    margin-right: 40px;
+    margin-right: 10px;
   }
 }
 
@@ -3042,7 +3051,7 @@ body {
 
 @media (min-width: 1050px) {
   .basket-card__counter {
-    margin-right: 50px;
+    margin-right: 60px;
     order: 0;
   }
 }
@@ -3056,22 +3065,31 @@ body {
 .basket-card__btn,
 .basket-card__input {
   max-width: 35px;
-  max-height: 35px;
+  max-height: 50px;
+}
+
+@media (min-width: 480px) {
+  .basket-card__btn,
+  .basket-card__input {
+    max-width: 50px;
+    max-height: 50px;
+  }
 }
 
 @media (min-width: 600px) {
   .basket-card__price {
-    margin-right: 50px;
+    margin: 0 50px 0 0;
   }
 }
 
 @media (min-width: 1050px) {
   .basket-card__price {
     margin: 0;
+    width: 128px;
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
   .basket-card__main {
     display: flex;
     justify-content: space-between;
@@ -3098,11 +3116,13 @@ body {
   justify-content: center;
   align-items: center;
   height: 60px;
+  cursor: pointer;
   background: #f5f5f5;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
   .basket-card__remove {
+    height: 50px;
     width: 250px;
   }
 }
@@ -3131,7 +3151,6 @@ body {
 .basket-card__remove-icon {
   position: relative;
   display: block;
-  cursor: pointer;
 }
 
 .basket-card__remove-icon::before {
@@ -3848,7 +3867,6 @@ body {
 
 .nav-icon__count {
   position: absolute;
-  border: 1px solid #000;
   top: 0;
   right: -27px;
   display: flex;
@@ -4461,6 +4479,7 @@ body {
 .slider__track {
   padding: 5px 0;
   display: flex;
+  margin-bottom: 40px;
 }
 
 .product-card-slider {
@@ -6818,17 +6837,37 @@ body {
 }
 
 .basket-empty {
-  display: none;
-  width: 500px;
-  margin: 200px auto 180px;
+  display: block;
+  max-width: 500px;
+  width: 100%;
+  margin: 120px auto 100px;
   text-align: center;
   color: #444a52;
+  padding: 0 15px;
+}
+
+@media (min-width: 1280px) {
+  .basket-empty {
+    padding: 0 0;
+    margin: 200px auto 180px;
+  }
+}
+
+.basket-empty--hide {
+  display: none;
 }
 
 .basket-empty__title {
   margin-bottom: 30px;
-  font-size: 48px;
-  line-height: 66px;
+  font-size: 30px;
+  line-height: 41px;
+}
+
+@media (min-width: 1280px) {
+  .basket-empty__title {
+    font-size: 48px;
+    line-height: 66px;
+  }
 }
 
 .basket-empty__text {
@@ -7782,7 +7821,7 @@ body {
 .info-modal {
   position: fixed;
   bottom: 0;
-  padding: 20px 0;
+  padding: 80px 0 30px;
   transform: translate(0, 100%);
   display: flex;
   align-items: center;
@@ -7798,7 +7837,7 @@ body {
   transform: translate(0, 0);
 }
 
-.info-modal--yellow {
+.info-modal--confirmation {
   background: #fba50d;
 }
 
@@ -7837,6 +7876,21 @@ body {
 
 .info-modal--show {
   z-index: 2000;
+}
+
+.info-modal__btns {
+  display: flex;
+  justify-content: center;
+}
+
+.info-modal__btn {
+  display: block;
+  width: 250px;
+  margin-right: 60px;
+}
+
+.info-modal__btn:last-child {
+  margin-right: 0;
 }
 
 .search-modal {

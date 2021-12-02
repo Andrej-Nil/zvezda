@@ -18,9 +18,12 @@
 }
 .basket-card__top {
   margin: 0 0 30px 0;
-  @media (min-width: 600px) {
+  @media (min-width: 650px) {
     display: flex;
     align-items: center;
+    margin: 0 auto 30px 0;
+  }
+  @media (min-width: 1050px) {
     margin: 0 auto 0 0;
   }
 }
@@ -60,7 +63,7 @@
 .basket-card__name {
   width: 100%;
   @media (min-width: 1050px) {
-    max-width: 415px;
+    max-width: 400px;
     min-width: 350px;
   }
   @media (min-width: 1280px) {
@@ -97,11 +100,11 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 0 32px 0;
-  @media (min-width: 600px) {
+  @media (min-width: 650px) {
     margin: 0;
   }
   @media (min-width: 1050px) {
-    margin-right: 40px;
+    margin-right: 10px;
   }
   @media (min-width: 1280px) {
     margin-right: 125px;
@@ -110,9 +113,8 @@
 
 .basket-card__counter {
   order: 1;
-
   @media (min-width: 1050px) {
-    margin-right: 50px;
+    margin-right: 60px;
     order: 0;
   }
   @media (min-width: 1280px) {
@@ -123,20 +125,25 @@
 .basket-card__btn,
 .basket-card__input {
   max-width: 35px;
-  max-height: 35px;
+  max-height: 50px;
+  @media (min-width: 480px) {
+    max-width: 50px;
+    max-height: 50px;
+  }
 }
 
 .basket-card__price {
   @media (min-width: 600px) {
-    margin-right: 50px;
+    margin: 0 50px 0 0;
   }
   @media (min-width: 1050px) {
     margin: 0;
+    width: 128px;
   }
 }
 
 .basket-card__main {
-  @media (min-width: 600px) {
+  @media (min-width: 650px) {
     display: flex;
     justify-content: space-between;
   }
@@ -167,10 +174,12 @@
   justify-content: center;
   align-items: center;
   height: 60px;
+  cursor: pointer;
   //width: 100%;
   background: $pearl;
-  @media (min-width: 600px) {
+  @media (min-width: 650px) {
     //display: flex;
+    height: 50px;
     width: 250px;
   }
   @media (min-width: 1050px) {
@@ -193,13 +202,8 @@
 .basket-card__remove-icon {
   position: relative;
   display: block;
-  //margin-left: auto;
-  //width: 16px;
-  //height: 16px;
-  cursor: pointer;
 
   &::before {
     @include font-icon-style("\e91e", 12px);
-    //@include font-icon-style("\e91e", 15px);
   }
 }

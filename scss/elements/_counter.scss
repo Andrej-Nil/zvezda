@@ -10,9 +10,9 @@
   height: 50px;
   background: #f4f4f4;
   cursor: pointer;
-
   font-size: 32px;
-  line-height: 44px;
+  line-height: 1;
+  user-select: none;
   &:active {
     background: #ededed;
   }
