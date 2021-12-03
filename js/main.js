@@ -4,6 +4,8 @@ const $searchOpenBtn = document.querySelector('#searchOpenBtn');
 const $searchModal = document.querySelector('#searchModal');
 const $supportModalBtn = document.querySelector('#supportModalBtn');
 const $supportModal = document.querySelector('#supportModal');
+const $orderModalBtn = document.querySelector('#orderModalBtn');
+const $orderModal = document.querySelector('#orderModal');
 
 
 
@@ -544,6 +546,10 @@ class Form {
         result = this.checkForEmpty($input.value);
         this.visualizationInputStatus($input, result);
         break;
+      case 'address':
+        result = this.checkForEmpty($input.value);
+        this.visualizationInputStatus($input, result);
+        break;
       case 'consent':
         result = this.checkCheckbox($input);
         this.visualizationChekcboxStatus($input, result);
@@ -1065,8 +1071,9 @@ class GaliriaModal extends Modal {
 }
 
 class CommunicationModal extends Modal {
-  constructor(modalId) {
+  constructor(modalId, formId) {
     super(modalId);
+    this.formId = formId
     this.init()
   }
 
@@ -1076,7 +1083,7 @@ class CommunicationModal extends Modal {
     }
     this.$modalBody = this.$modal.querySelector('[data-modal-body]');
     this.$modal.addEventListener('click', this.listeners);
-    this.form = new Form('#supportModalForm');
+    this.form = new Form(this.formId);
 
   }
 
@@ -1116,7 +1123,38 @@ class CommunicationModal extends Modal {
   }
 
   listeners = () => {
-    this.$modal, addEventListener('click', this.clickHandler)
+    this.$modal.addEventListener('click', this.clickHandler)
+  }
+}
+
+class OrderModal extends CommunicationModal {
+  constructor(modalId, formId) {
+    super(modalId);
+    this.formId = formId
+    this.init()
+  }
+
+  sendForm = async () => {
+    const response = await this.form.formSubmit();
+    if (response === null) {
+      return;
+    }
+
+    if (response.rez == 1) {
+      this.form.clearForm();
+      this.close();
+      console.log('test')
+      basket.deleteBasketContent();
+      setTimeout(() => {
+        succsesModal.showSuccses(response.desc);
+      }, 300)
+    }
+
+    if (response.rez == 0) {
+      console.log(`Ошибка: ${response.error.id}`);
+      errorModal.showError(response.error.desc);
+    }
+
   }
 }
 
@@ -1380,7 +1418,8 @@ class Slider {
   getSlideWidth = () => {
     const slideWidth = this.$slides[0].offsetWidth;
     const slideMarginRight = parseInt(getComputedStyle(this.$slides[0], true).marginRight);
-    return slideWidth + slideMarginRight;
+    const slideMarginLeft = parseInt(getComputedStyle(this.$slides[0], true).marginLeft);
+    return slideWidth + slideMarginRight + slideMarginLeft;
   }
   setDisplaySlides = () => {
     const sliderWidth = this.$slider.offsetWidth;
@@ -1696,9 +1735,6 @@ class Basket {
     this.$confirmationModal = document.querySelector('#confirmationModal');
     this.blockEmptyBasket = document.querySelector('#emptyBasket');
     this.confirmationQuestion = 'Это дествия очистить Вашу карзину. Удалить все товары?';
-    if (this.$basketList) {
-
-    }
     this.listeners();
   }
 
@@ -1787,13 +1823,95 @@ class Basket {
   }
 
 }
+
+class Dropdown {
+  constructor() {
+    this.$openedDropdown = null;
+    this.init();
+  }
+
+  init = () => {
+    this.listeners();
+  }
+
+  open = ($dropdown) => {
+    if ($dropdown != this.$openedDropdown) {
+      this.close();
+    }
+    const $btn = $dropdown.querySelector('[data-dropdown-btn]');
+    const $body = $dropdown.querySelector('[data-dropdown-body]');
+    const $content = $dropdown.querySelector('[data-dropdown-content]');
+    const widthContent = $content.offsetHeight;
+    $btn.classList.add('select-arrow-up');
+    $body.style.height = widthContent + 'px';
+    $dropdown.dataset.dropdown = 'open';
+    this.$openedDropdown = $dropdown;
+  }
+
+  close = () => {
+    if (!this.$openedDropdown) {
+      return;
+    }
+    const $btn = this.$openedDropdown.querySelector('[data-dropdown-btn]');
+    const $body = this.$openedDropdown.querySelector('[data-dropdown-body]');
+    $body.style.height = '0px';
+    $btn.classList.remove('select-arrow-up');
+    this.$openedDropdown.dataset.dropdown = 'close';
+    this.$openedDropdown = null;
+  }
+
+  toggleDropdown = ($dropdown) => {
+    if (!$dropdown) {
+      this.close();
+      return;
+    }
+    if ($dropdown.dataset.dropdown === 'close') {
+      this.open($dropdown);
+      return;
+    }
+    if ($dropdown.dataset.dropdown === 'open') {
+      this.close();
+      return;
+    }
+  }
+
+  setDeliveryCompany = ($radio) => {
+    const $dropdown = $radio.closest('[data-dropdown]');
+    const $selectTitle = $dropdown.querySelector('[data-select-title]');
+    const value = $radio.value;
+    $selectTitle.innerHTML = value;
+    this.close()
+  }
+
+  clickHandler = (e) => {
+    if (e.target.closest('[data-dropdown-btn]')) {
+      const $dropdown = e.target.closest('[data-dropdown]');
+      this.toggleDropdown($dropdown)
+    }
+    if (!e.target.closest('[data-dropdown]')) {
+      const $dropdown = e.target.closest('[data-dropdown]');
+      this.toggleDropdown($dropdown)
+    }
+  }
+
+  changeHandler = (e) => {
+    if (e.target.closest('[data-radio ]'))
+      this.setDeliveryCompany(e.target.closest('[data-radio ]'));
+  }
+
+  listeners = () => {
+    document.addEventListener('click', this.clickHandler);
+    document.addEventListener('change', this.changeHandler);
+  }
+}
 const server = new Server();
 const render = new Render();
 const debaunce = new Debaunce()
 const searchModal = new SearchModal('#searchModal');
-const supportModal = new CommunicationModal('#supportModal');
+const supportModal = new OrderModal('#supportModal', '#supportModalForm');
+const ordenModal = new CommunicationModal('#orderModal', '#orderModalForm')
 const succsesModal = new SuccsesModal('#succsesModal');
-//const confirmationModal = new ConfirmationModal('#confirmationModal');
+const confirmationModal = new ConfirmationModal('#confirmationModal');
 const errorModal = new ErrorModal('#errorModal');
 const feedBackForm = new FormPage('#feedbackForm');
 
@@ -1804,6 +1922,7 @@ const advantages = new Advantages('#advantages');
 
 const certificatesSlider = new Slider('#certificates');
 const reviewsSlider = new Slider('#reviewsSlider');
+const productSlider = new Slider('#productSlider');
 
 
 const certificatesGaleria = new Galeria('#certificates');
@@ -1811,25 +1930,34 @@ const certificatesGaleria = new Galeria('#certificates');
 const product = new Product();
 const basket = new Basket('#basket');
 
+const dropdown = new Dropdown();
+
 
 
 
 if ($searchOpenBtn && $searchModal) {
-  $searchOpenBtn.addEventListener('click', openSearchModal)
+  $searchOpenBtn.addEventListener('click', openSearchModal);
 }
 
 if ($supportModalBtn && $supportModalBtn) {
-  $supportModalBtn.addEventListener('click', openOrderModal)
+  $supportModalBtn.addEventListener('click', openSupportModal);
 }
 
+
+if ($orderModalBtn && $orderModal) {
+  $orderModalBtn.addEventListener('click', openOrderModal);
+}
 
 
 function openSearchModal() {
   searchModal.openSearchModal()
 }
 
-function openOrderModal() {
+function openSupportModal() {
   supportModal.open()
+}
+function openOrderModal() {
+  ordenModal.open();
 }
 
 

@@ -815,7 +815,7 @@ body {
   transition: 0.2s ease-in-out;
 }
 
-.select__title:hover::before {
+.select-arrow-up::before {
   transform: rotateX(-180deg);
 }
 
@@ -824,6 +824,8 @@ body {
   width: 100%;
   overflow: hidden;
   height: 0;
+  z-index: 100;
+  transition: 0.3s ease-in-out;
 }
 
 .select__list {
@@ -859,6 +861,10 @@ body {
   font-weight: 500;
   font-size: 14px;
   line-height: 19px;
+}
+
+.select__radio {
+  display: none;
 }
 
 .counter {
@@ -4480,6 +4486,7 @@ body {
   padding: 5px 0;
   display: flex;
   margin-bottom: 40px;
+  transition: 0.3s ease-in-out;
 }
 
 .product-card-slider {

@@ -298,7 +298,7 @@
           </div>
           <!-- basket__footer -->
 
-          <div class="basket__arrange-btn btn yellow-btn hover-yellow-light">
+          <div id="orderModalBtn" class="basket__arrange-btn btn yellow-btn hover-yellow-light">
             Перейти к оформлению
           </div>
 
@@ -316,8 +316,7 @@
                   <!-- track -->
                   <div data-track class="slider__track">
 
-                    <div data-product="34545" data-price="2300" data-in-basket="0"
-                      class="product-card product-card--slider">
+                    <div data-product="34545" data-slide data-in-basket="0" class="product-card product-card--slider">
                       <h3 class="product-card__title">
                         <a href="product-page.html" class="product-card__link">
                           Лист вольфрамовый 0,1 мм ВЧ
@@ -349,8 +348,7 @@
                       </div>
                     </div>
 
-                    <div data-product="34545" data-price="2300" data-in-basket="0"
-                      class="product-card product-card--slider">
+                    <div data-product="34545" data-slide data-in-basket="0" class="product-card product-card--slider">
                       <h3 class="product-card__title">
                         <a href="product-page.html" class="product-card__link">
                           Лист вольфрамовый 0,1 мм ВЧ
@@ -386,8 +384,7 @@
                       </div>
                     </div>
 
-                    <div data-product="345" data-price="2300" data-in-basket="0"
-                      class="product-card product-card--slider">
+                    <div data-product="345" data-in-basket="0" data-slide class="product-card product-card--slider">
                       <h3 class="product-card__title">
                         <a href="product-page.html" class="product-card__link">
                           Лист вольфрамовый 0,1 мм ВЧ
@@ -419,8 +416,7 @@
                       </div>
                     </div>
 
-                    <div data-product="45427" data-price="2300" data-in-basket="0"
-                      class="product-card product-card--slider">
+                    <div data-product="45427" data-in-basket="0" data-slide class="product-card product-card--slider">
                       <h3 class="product-card__title">
                         <a href="product-page.html" class="product-card__link">
                           Лист вольфрамовый 0,1 мм ВЧ
@@ -452,7 +448,7 @@
                       </div>
                     </div>
 
-                    <div data-product="856756" data-in-basket="0" class="product-card product-card--slider">
+                    <div data-product="856756" data-in-basket="0" data-slide class="product-card product-card--slider">
                       <h3 class="product-card__title">
                         <a href="product-page.html" class="product-card__link">
                           Лист вольфрамовый 0,1 мм ВЧ
@@ -484,7 +480,7 @@
                       </div>
                     </div>
 
-                    <div data-product="467" data-in-basket="0" class="product-card product-card--slider">
+                    <div data-product="467" data-in-basket="0" data-slide class="product-card product-card--slider">
                       <h3 class="product-card__title">
                         <a href="product-page.html" class="product-card__link">
                           Лист вольфрамовый 0,1 мм ВЧ
@@ -516,7 +512,7 @@
                       </div>
                     </div>
 
-                    <div data-product="9890" data-in-basket="0" class="product-card product-card--slider">
+                    <div data-product="9890" data-in-basket="0" data-slide class="product-card product-card--slider">
                       <h3 class="product-card__title">
                         <a href="product-page.html" class="product-card__link">
                           Лист вольфрамовый 0,1 мм ВЧ
@@ -1008,37 +1004,64 @@
     <!-- orderModal -->
     <div id="orderModal" class="modal modal--is-hide">
       <!--modal__inner-->
-      <div class="modal__inner">
+      <div data-modal-body class="modal__body">
         <span data-close class="modal__close close-btn">Закрыть</span>
 
         <h3 class="modal__title">
-          Обращение в техподдержку
+          Оформление заказа
         </h3>
 
-        <form class="modal__form">
+        <form id="orderModalForm" action="./json/send-form.json" enctype="multipart/form-data" metod="POST"
+          class="modal__form">
           <div class="modal__inputs-block">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*">
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="name" type="text" />
 
-            <input data-input type="text" name="company" class="modal__input input" placeholder="Название организации">
+              <span class="place-entry__placeholder">ФИО<span class="place-entry__star">*</span></span>
 
-            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail">
+            </label>
 
-            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*">
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="company" type="text" />
 
-            <input data-input type="text" name="address" class="modal__input input" placeholder="Адрес доставки*">
+              <span class="place-entry__placeholder">Название организации</span>
 
-            <div class="modal__select select">
-              <span class="select__title">
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="mail" type="text" />
+
+              <span class="place-entry__placeholder">E-mail</span>
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="phone" type="text" />
+
+              <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
+
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="address" type="text" />
+
+              <span class="place-entry__placeholder">Адрес доставки<span class="place-entry__star">*</span></span>
+
+            </label>
+
+            <div data-dropdown="close" class="modal__select select">
+              <span data-dropdown-btn data-select-title class="select__title ">
                 Доставка транспортной компанией
               </span>
-              <div class="select__body">
-                <ul class="select__list">
+              <div data-dropdown-body class="select__body">
+                <ul data-dropdown-content class="select__list">
                   <li class="select__item">
                     <label class="select__label">
                       <span class="select__text">
-                        Кит
+                        кит
                       </span>
-                      <input class="radio" type="radio" name="delivery" value="">
+                      <input data-radio class="select__radio radio" type="radio" name="delivery" value="кит">
                     </label>
                   </li>
                   <li class="select__item">
@@ -1046,7 +1069,7 @@
                       <span class="select__text">
                         сдек
                       </span>
-                      <input class="radio" type="radio" name="delivery" value="">
+                      <input data-radio class="select__radio radio" type="radio" name="delivery" value="сдек">
                     </label>
                   </li>
                 </ul>
@@ -1055,23 +1078,25 @@
 
             </div>
 
-            <textarea data-textarea name="message" class="modal__input modal__textarea textarea"
-              placeholder="Комменатрий к заказу"></textarea>
+            <textarea data-input name="message" class="modal__input modal__textarea textarea"
+              placeholder="Коментарий к заказу"></textarea>
           </div>
-          <div class="modal__file file">
-            <label class="file__label">
-              <span class="file__text">Добавить реквизиты</span>
-              <input data-file type="file" name="file" class="file__input">
+          <div data-file-block class="modal__file file">
+            <label data-file-label class="file__label">
+              <span data-file-text class="file__text">Добавить реквизиты</span>
+              <input data-input type="file" name="file" class="file__input">
             </label>
+            <span class="file__clear-btn" clear-file-btn>очистить файл</span>
             <p class="file__desc">
               Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
           </div>
 
-          <input type="text" class="modal__submit btn yellow-btn hover-yellow-light" value="Оформить заявку">
+          <input data-submit type="submit" class="modal__submit btn yellow-btn hover-yellow-light"
+            value="Отправить заявку">
 
-          <label class="checkbox" data-label>
-            <input data-checkbox type="checkbox" checked class="checkbox__input" />
+          <label data-checkbox class="checkbox">
+            <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
             <span class="checkbox__fake"></span>
             <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
 

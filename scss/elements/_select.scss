@@ -26,10 +26,16 @@
     transition: 0.2s ease-in-out;
     //transform: translate(0, -50%);
   }
-  &:hover {
-    &::before {
-      transform: rotateX(-180deg);
-    }
+  //&:hover {
+  //  &::before {
+  //    transform: rotateX(-180deg);
+  //  }
+  //}
+}
+
+.select-arrow-up {
+  &::before {
+    transform: rotateX(-180deg);
   }
 }
 
@@ -38,6 +44,8 @@
   width: 100%;
   overflow: hidden;
   height: 0;
+  z-index: 100;
+  transition: 0.3s ease-in-out;
 }
 
 .select__list {
@@ -73,4 +81,8 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 19px;
+}
+
+.select__radio {
+  display: none;
 }
