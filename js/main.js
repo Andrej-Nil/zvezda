@@ -1073,7 +1073,7 @@ class GaliriaModal extends Modal {
 class CommunicationModal extends Modal {
   constructor(modalId, formId) {
     super(modalId);
-    this.formId = formId
+    this.formId = formId;
     this.init()
   }
 
@@ -1096,6 +1096,7 @@ class CommunicationModal extends Modal {
     if (response.rez == 1) {
       this.form.clearForm();
       this.close();
+      basket.deleteBasketContent();
       setTimeout(() => {
         succsesModal.showSuccses(response.desc);
       }, 300)
@@ -1127,36 +1128,6 @@ class CommunicationModal extends Modal {
   }
 }
 
-class OrderModal extends CommunicationModal {
-  constructor(modalId, formId) {
-    super(modalId);
-    this.formId = formId
-    this.init()
-  }
-
-  sendForm = async () => {
-    const response = await this.form.formSubmit();
-    if (response === null) {
-      return;
-    }
-
-    if (response.rez == 1) {
-      this.form.clearForm();
-      this.close();
-      console.log('test')
-      basket.deleteBasketContent();
-      setTimeout(() => {
-        succsesModal.showSuccses(response.desc);
-      }, 300)
-    }
-
-    if (response.rez == 0) {
-      console.log(`Ошибка: ${response.error.id}`);
-      errorModal.showError(response.error.desc);
-    }
-
-  }
-}
 
 class BigBgImg {
   constructor(blockId) {
@@ -1720,7 +1691,7 @@ class Product {
 class Basket {
   constructor(basketId) {
     this.$basket = document.querySelector(basketId);
-    this.init()
+    this.init();
   }
 
   init = () => {
@@ -1777,7 +1748,13 @@ class Basket {
     }
   }
   deleteBasketContent = () => {
+    if (!this.$basket) {
+      return;
+    }
     render.clearParent(this.$basket);
+    this.showBlockEmptyBasket();
+    window.scrollTo(0, 0);
+
   }
 
   setTotalBasketPrice = (cardData) => {
@@ -1801,7 +1778,6 @@ class Basket {
       this.confirmationModal.close();
     }
   }
-
 
   clickHandler = (e) => {
     if (e.target.closest('[data-clear-basket]')) {
@@ -1908,10 +1884,10 @@ const server = new Server();
 const render = new Render();
 const debaunce = new Debaunce()
 const searchModal = new SearchModal('#searchModal');
-const supportModal = new OrderModal('#supportModal', '#supportModalForm');
-const ordenModal = new CommunicationModal('#orderModal', '#orderModalForm')
+const supportModal = new CommunicationModal('#supportModal', '#supportModalForm');
 const succsesModal = new SuccsesModal('#succsesModal');
 const confirmationModal = new ConfirmationModal('#confirmationModal');
+const ordenModal = new CommunicationModal('#orderModal', '#orderModalForm');
 const errorModal = new ErrorModal('#errorModal');
 const feedBackForm = new FormPage('#feedbackForm');
 

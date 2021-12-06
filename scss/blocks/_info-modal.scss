@@ -1,12 +1,12 @@
 .info-modal {
   position: fixed;
   bottom: 0;
-  padding: 80px 0 30px;
+  padding: 80px 0;
   transform: translate(0, 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 180px;
+  //min-height: 180px;
   width: 100%;
   z-index: -2000;
   background: $lightBg;
