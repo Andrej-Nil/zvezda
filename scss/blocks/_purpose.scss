@@ -1,25 +1,47 @@
 .purpose {
   background: #393939;
-  height: 577px;
+  @media (min-width: 768px) {
+    height: 400px;
+  }
+  @media (min-width: 1280px) {
+    height: 577px;
+  }
 }
 
 .purpose__inner {
   position: relative;
   height: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column-reverse;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .purpose__text {
-  width: 402px;
-  margin-left: 70px;
+  position: relative;
+  width: 100%;
+  max-width: 402px;
+  padding: 111px 0 63px 0;
+
+  @media (min-width: 1050px) {
+    padding: 0;
+    width: 100%;
+    margin-left: 70px;
+  }
 }
 
 .purpose__title {
   color: $white;
-  font-size: 30px;
-  line-height: 41px;
+  font-size: 24px;
+  line-height: 33px;
+
   margin-bottom: 30px;
+  @media (min-width: 1050px) {
+    font-size: 30px;
+    line-height: 41px;
+  }
 }
 
 .purpose__author {
@@ -29,9 +51,18 @@
   line-height: 25px;
 }
 
+.purpose__preview {
+  display: flex;
+  justify-content: center;
+}
+
 .purpose__img {
-  position: absolute;
+  //position: absolute;
+  height: 100%;
   top: 0;
   bottom: 0;
   right: 0;
+  @media (min-width: 768px) {
+    position: absolute;
+  }
 }

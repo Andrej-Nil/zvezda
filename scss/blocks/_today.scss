@@ -1,39 +1,58 @@
 .today {
+  width: 100%;
   margin-bottom: 30px;
 }
 
 .today__title {
   color: $white;
-  font-size: 48px;
-  line-height: 66px;
-  margin-bottom: 130px;
+  font-size: 24px;
+  line-height: 33px;
+  margin-bottom: 60px;
+  @media (min-width: 1050px) {
+    font-size: 48px;
+    line-height: 66px;
+    margin-bottom: 130px;
+  }
 }
 
 .today__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  &::after {
-    content: "";
-    display: block;
-    min-width: 414px;
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 60px;
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 110px 130px;
+    margin-bottom: 130px;
   }
 }
 
 .today-card {
-  min-width: 414px;
-  margin-bottom: 130px;
+  max-width: 414px;
 }
 .today-card__title {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 
   color: $yellowMain;
   font-size: 48px;
   line-height: 66px;
+  @media (min-width: 1050px) {
+    margin-bottom: 30px;
+  }
 }
 .today-card__text {
   color: $white;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 18px;
+
   line-height: 160%;
+  @media (min-width: 1050px) {
+    font-size: 24px;
+  }
 }

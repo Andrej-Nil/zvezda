@@ -1128,7 +1128,6 @@ class CommunicationModal extends Modal {
   }
 }
 
-
 class BigBgImg {
   constructor(blockId) {
     this.$block = document.querySelector(blockId);
@@ -1894,8 +1893,6 @@ const feedBackForm = new FormPage('#feedbackForm');
 const bigBgImg = new BigBgImg('#servise');
 const advantages = new Advantages('#advantages');
 
-
-
 const certificatesSlider = new Slider('#certificates');
 const reviewsSlider = new Slider('#reviewsSlider');
 const productSlider = new Slider('#productSlider');
@@ -1919,11 +1916,9 @@ if ($supportModalBtn && $supportModalBtn) {
   $supportModalBtn.addEventListener('click', openSupportModal);
 }
 
-
 if ($orderModalBtn && $orderModal) {
   $orderModalBtn.addEventListener('click', openOrderModal);
 }
-
 
 function openSearchModal() {
   searchModal.openSearchModal()

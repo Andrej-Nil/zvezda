@@ -3,9 +3,13 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 780px;
-  height: 1000px;
+  width: 50%;
+  max-width: 780px;
+  //height: 1000px;
   z-index: 100;
+  @media (min-width: 1050px) {
+    display: block;
+  }
 }
 
 .about-gallery__img {

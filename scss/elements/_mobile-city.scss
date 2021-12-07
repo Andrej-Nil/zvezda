@@ -5,6 +5,7 @@
     display: none;
   }
 }
+
 .mobile-city__inner {
   padding: 0 20px;
   display: flex;
@@ -14,6 +15,11 @@
 
   //background: $white;
   background: #f6f6f6;
+}
+
+.mobile-city--grey {
+  background: $blackMain;
+  color: $white;
 }
 
 .mobile-city__inner--white {

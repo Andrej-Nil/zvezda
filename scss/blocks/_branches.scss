@@ -1,17 +1,40 @@
 .branches-map {
-  padding: 100px 0;
+  position: relative;
+  padding: 60px 15px 0;
 
   height: 727px;
+  @media (min-width: 1280px) {
+    padding: 100px 0;
+  }
+}
+
+.branches-map__title {
+  max-width: 311px;
+  width: 100%;
+  color: $white;
+  font-size: 24px;
+  line-height: 33px;
+
+  margin-bottom: 60px;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.8);
+  @media (min-width: 1050px) {
+    font-size: 36px;
+    line-height: 49px;
+    padding: 100px 0;
+  }
+}
+
+.branches-map__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("../../img/image/other/map2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 0;
-}
-
-.branches-map__title {
-  width: 311px;
-  color: $white;
-  font-size: 36px;
-  line-height: 49px;
-  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  //height: 727px;
 }

@@ -1,19 +1,22 @@
 .management {
-  padding-top: 80px;
-  margin-bottom: 100px;
+  padding-top: 60px;
+  margin-bottom: 60px;
+  //background: #222222;
+  @media (min-width: 1280px) {
+    padding-top: 80px;
+    margin-bottom: 100px;
+  }
 }
 
 .management__list {
-  &::after {
-    content: "";
-    width: 305px;
-    display: block;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 60px 20px;
+  @media (min-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  &::before {
-    content: "";
-    width: 305px;
-    display: block;
-    order: 1;
+  @media (min-width: 1050px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
