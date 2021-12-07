@@ -5,11 +5,17 @@
   right: 0;
   width: 50%;
   max-width: 780px;
-  //height: 1000px;
+  width: 100%;
   z-index: 100;
   @media (min-width: 1050px) {
     display: block;
   }
+}
+
+.about-gallery--stop {
+  position: absolute;
+  top: auto;
+  bottom: 0;
 }
 
 .about-gallery__img {

@@ -1879,6 +1879,39 @@ class Dropdown {
     document.addEventListener('change', this.changeHandler);
   }
 }
+
+class About {
+  constructor(aboutListId) {
+    this.about = document.querySelector(aboutListId);
+    this.init()
+  }
+  init = () => {
+    if (!this.about) {
+      return;
+    }
+    this.lastScroll = window.scrollY;
+    this.todayBlock = document.querySelector('#today');
+    this.aboutItemList = this.about.querySelectorAll('[data-about-item]');
+    this.aboutGallery = this.about.querySelector('#aboutGallery');
+    this.listeners();
+
+    console.log(this.lastScroll);
+
+  }
+
+  changeMainImg = () => {
+    if (window.scrollY > this.lastScroll) {
+      console.log('down');
+    } else {
+      console.log('up');
+    }
+    this.lastScroll = window.scrollY;
+  }
+  listeners = () => {
+    document.addEventListener('scroll', this.changeMainImg);
+    document.addEventListener('scroll', this.controls);
+  }
+}
 const server = new Server();
 const render = new Render();
 const debaunce = new Debaunce()
@@ -1904,6 +1937,7 @@ const product = new Product();
 const basket = new Basket('#basket');
 
 const dropdown = new Dropdown();
+const about = new About('#about')
 
 
 

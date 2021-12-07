@@ -7036,18 +7036,23 @@ body {
 }
 
 .about {
-  padding-top: 280px;
+  position: relative;
+}
+
+.about__inner {
   max-width: 1280px;
   width: 100%;
-  margin: 0 auto;
+  margin: 280px auto 0;
 }
 
 .about__shadow {
   position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
   height: 253px;
   width: 100%;
+  z-index: 1;
   background: linear-gradient(180deg, #2d3035 26.88%, rgba(45, 48, 53, 0) 100%);
 }
 
@@ -7080,6 +7085,7 @@ body {
 
 @media (min-width: 1050px) {
   .about__item {
+    margin-bottom: 80px;
     max-width: 440px;
   }
 }
@@ -7174,6 +7180,7 @@ body {
   right: 0;
   width: 50%;
   max-width: 780px;
+  width: 100%;
   z-index: 100;
 }
 
@@ -7181,6 +7188,12 @@ body {
   .about-gallery {
     display: block;
   }
+}
+
+.about-gallery--stop {
+  position: absolute;
+  top: auto;
+  bottom: 0;
 }
 
 .about-gallery__img {
