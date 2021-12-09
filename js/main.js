@@ -39,6 +39,15 @@ class Server {
     this.sidebarApi = '/json/sidebar.json';
     this.filterApi = '../json/filter.json';
     this.filterCheckboxApi = '../json/checkbox.json';
+    this.catalogApi = '../json/catalog.json';
+  }
+
+  getMenu = async () => {
+    const data = {
+      _token: this._token
+    }
+    const formData = this.createFormData(data);
+    return await this.getResponse(this.POST, formData, this.catalogApi);
   }
 
   addBsasket = async (data) => {
@@ -223,12 +232,16 @@ class Render {
 
 
   //Методы отресовки элементов
-  renderSpiner = ($parent = this.$parent, spinnerText = '') => {
+  renderSpiner = (spinnerText = '', $parent = this.$parent) => {
     this._render($parent, this.getSpinnerHtml, spinnerText);
   }
 
-  renderErrorMessage = ($parent = this.$parent, messageText = '') => {
+  renderErrorMessage = (messageText = '', $parent = this.$parent) => {
     this._render($parent, this.getErrorMessageHtml, messageText);
+  }
+
+  renderCatalogList = (catalogList) => {
+    this._render(this.$parent, this.getModalCatalogHtml, catalogList);
   }
 
   renderTotalFindedItem = (count, $parent = this.$parent) => {
@@ -275,6 +288,128 @@ class Render {
     this._render(this.$parent, this.getInfoModalConfirmationHtml, message);
   };
   //разметка
+
+  getModalCatalogHtml = (catalogList) => {
+    let list = '';
+    console.log(catalogList);
+    catalogList.forEach((item) => {
+      list += this.getCatalogListHtml(item);
+    })
+
+
+    return (/*html*/`
+      <ul class="header-catalog__list">
+        ${list}
+      </ul>
+    `)
+
+
+  }
+
+  getCatalogListHtml = (list) => {
+    let ul = '';
+    if (list.isSubmenu) {
+      ul = this.getSubcatalogUlHtml(list.isSubmenu);
+    }
+
+    return (/*html*/`
+      <li class="header-catalog__item">
+        <a href="${list.slug}" class="header-catalog__link header-catalog__link--with-sublist">
+          ${list.title}
+        </a>
+        ${ul}
+      </li>
+    `)
+    //let subcatalog = '';
+
+    //submenu.forEach((item) => {
+    //let ul = '';
+    //if (item.isSubmenu) {
+    //  ul = (/*html*/`
+    //  <ul class="header-catalog__sublist">
+    //    ${this.getSubcatalogHtml(item.isSubmenu)}
+    //  </ul>
+    //`)
+    //}
+
+
+    //console.log(item.isSubmenu);
+    //getSubcatalogHtml = (submenu)
+    //  subcatalog += (/*html*/`
+    //    <li class="header-catalog__item">
+    //      <a href="${item.slug}" class="header-catalog__link header-catalog__link--with-sublist">
+    //        ${item.title}
+    //      </a>
+    //      ${ul}
+    //    </li>
+    //  `)
+    //})
+
+    //return subcatalog;
+    //  return (`
+    //  <a href="#!" class="header-catalog__link header-catalog__link--with-sublist">
+    //  Полоса металлическая
+    //</a>
+    //  `)
+    //return 
+
+  }
+
+  getSubcatalogUlHtml = (subcatalogList) => {
+    let list = ''
+    subcatalogList.forEach((item) => {
+      list += this.getSubcatalogListHtml(item)
+    })
+
+
+    return (/*html*/`
+     <ul class="header-catalog__sublist">
+      ${list}
+    </ul>
+   `)
+
+
+    //  <li class="header-catalog__item">
+    //  <a href="#!" class="header-catalog__link header-catalog__link--with-sublist">
+    //    Полоса металлическая
+    //  </a>
+    //  <ul class="header-catalog__sublist">
+    //    <li class="header-catalog__item">
+    //      <a href="#!" class="header-catalog__link">
+    //        Полоса металлическая
+    //      </a>
+    //    </li>
+    //  </ul>
+    //</li>
+  }
+
+  getSubcatalogListHtml = (li) => {
+    let ul = ''
+    if (li.isSubmenu) {
+      ul = this.getSubcatalogUlHtml(li.isSubmenu);
+    }
+    console.log(li);
+    {/*<ul class="header-catalog__sublist">
+            <li class="header-catalog__item">
+              <a href="#!" class="header-catalog__link">
+                Полоса металлическая
+              </a>
+            </li>
+          </ul>*/}
+
+    return (/*html */`
+      <li class="header-catalog__item">
+          <a href="${li.slug}" class="header-catalog__link header-catalog__link--with-sublist">
+          ${li.title}
+          </a>
+          ${ul}
+      </li>
+    `)
+  }
+
+  //getSubCatalog = (submenu) => {
+
+  //}
   getSearchResultAllWrapHtml = () => {
     return (/*html*/`
     <div data-result-all class="result__all">
@@ -290,8 +425,8 @@ class Render {
   getProductCardHtml = (card) => {
     const img = this.getImgHtml(card);
     const unit = card.unit ? `/${card.unit}` : '';
-    return (/*html*/`
-    <div data-id="${card.id}" class="product-card">
+    return (/*html*/
+      `<div data-id="${card.id}" class="product-card">
     <h3 class="product-card__title">
       <a href="product-page.html" class="product-card__link">
         ${card.title}
@@ -315,8 +450,8 @@ class Render {
         <span class="product-card__value btn__value basket-icon">В корзину</span>
       </span>
     </div>
-  </div>
-    `)
+  </div>`
+    )
   }
 
   getBasketCardHtml = (cardData) => {
@@ -761,6 +896,104 @@ class FormPage extends Form {
       this.sendFormPage()
     }
 
+  }
+
+}
+
+class HeaderModal {
+  constructor(modalId) {
+    this.$modal = document.querySelector(`#${modalId}`);
+    this.$target = document.querySelector(`[data-header-modal-id="${modalId}"]`);
+
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$modal && !this.$target) {
+      return;
+    }
+    this.$modalInner = this.$modal.querySelector('[data-modal-inner]')
+    this.$targetParent = this.$target.closest('[data-nav-item]');
+    this.listener();
+  }
+
+
+  open = () => {
+    this.$modal.classList.add('header-modal--show');
+    this.$target.classList.add('header-nav__item--action');
+  }
+  close = () => {
+    this.$modal.classList.remove('header-modal--show');
+    this.$target.classList.remove('header-nav__item--action');
+  }
+
+  targetParentLeaveHandler = (e) => {
+
+    const relatedTarget = e.relatedTarget ? e.relatedTarget.closest('[data-modal-inner]') : null
+    if (!(e.target === this.$targetParent && relatedTarget)) {
+      this.close()
+    }
+  }
+
+  modalLeaveHandler = (e) => {
+    const relatedTarget = e.relatedTarget ? e.relatedTarget.closest('[data-nav-item]') : null
+    if (!(e.target === this.$modalInner && relatedTarget === this.$targetParent)) {
+      this.close();
+    }
+  }
+  listener = () => {
+    this.$target.addEventListener('mouseover', this.open);
+    this.$modalInner.addEventListener('mouseleave', this.modalLeaveHandler);
+    this.$targetParent.addEventListener('mouseleave', this.targetParentLeaveHandler);
+  }
+
+}
+
+class CatalogModal extends HeaderModal {
+  constructor(modalId) {
+    super(modalId)
+    this.init()
+  }
+
+  init = () => {
+    if (!this.$modal && !this.$target) {
+      return;
+    }
+    this.response = null;
+    this.$catalogList = this.$modal.querySelector('[data-catalog-list]');
+    this.render = new Render(this.$catalogList);
+    this.listener();
+  }
+
+  createCatalog = async () => {
+    if (this.$catalogList.children.length) {
+      return;
+    }
+    this.render.renderSpiner('Загружаю...');
+    this.response = await server.getMenu();
+    if (this.response.rez == 0) {
+      this.render.clearParent();
+      console.log(`Ошибка: ${this.response.error.id}`)
+      this.render.renderErrorMessage(this.response.error.desc)
+    }
+    if (this.response.rez == 1) {
+      this.render.clearParent();
+      this.render.renderCatalogList(this.response.content)
+    }
+  }
+
+  hoverHandler = (e) => {
+    this.createCatalog()
+  }
+
+  listener = () => {
+    this.$target.addEventListener('mouseover', this.hoverHandler);
+  }
+}
+
+class CityModal extends HeaderModal {
+  constructor(modalId) {
+    super(modalId)
   }
 
 }
@@ -1921,6 +2154,10 @@ const succsesModal = new SuccsesModal('#succsesModal');
 const confirmationModal = new ConfirmationModal('#confirmationModal');
 const ordenModal = new CommunicationModal('#orderModal', '#orderModalForm');
 const errorModal = new ErrorModal('#errorModal');
+
+const catalogModal = new CatalogModal('headerCatalogModal');
+const cityModal = new CityModal('selectCityModal');
+
 const feedBackForm = new FormPage('#feedbackForm');
 
 const bigBgImg = new BigBgImg('#servise');
@@ -1937,7 +2174,7 @@ const product = new Product();
 const basket = new Basket('#basket');
 
 const dropdown = new Dropdown();
-const about = new About('#about')
+const about = new About('#about');
 
 
 
@@ -1964,143 +2201,3 @@ function openSupportModal() {
 function openOrderModal() {
   ordenModal.open();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//const $headerNavItem = document.querySelector('[data-header-modal-id]');
-//const $headerCatalogModal = document.querySelector('#headerCatalogModal');
-
-//class HeaderModals {
-//  constructor() {
-//    this.$headerTop = document.querySelector('#headerTop');
-//    this.init();
-//  }
-
-//  init = () => {
-//    if (!this.$headerTop) {
-//      return;
-//    }
-//    this.$modal = null;
-//    this.$headerItem = null;
-//    this.listener();
-//  }
-
-//  overHeaderItem = (e) => {
-//    const $headerItem = e.target.closest('[data-header-modal-id]');
-//    if (!$headerItem) {
-//      return;
-//    };
-//    console.log($headerItem)
-//    this.$headerItem = $headerItem;
-//    this.$modal = this.setModal();
-//    this.open()
-
-//  }
-
-//  outHeaderItem = (e) => {
-
-//  }
-
-//  setModal = () => {
-//    const modalId = this.$headerItem.dataset.headerModalId;
-//    return document.querySelector(`#${modalId}`);
-//  }
-
-//  open = ($modal = this.$modal) => {
-//    if ($modal.dataset.status === 'close') {
-//      $modal.classList.add('header-modal--show');
-//      this.$headerItem.classList.add('header-nav__item--action');
-//      $modal.dataset.status = 'open';
-//    } else if ($modal.dataset.status === 'open') {
-//      return 'open';
-//    } else {
-//      return false;
-//    }
-//  }
-
-//  listener = () => {
-//    this.$headerTop.addEventListener('mouseover', this.overHeaderItem);
-//    this.$headerTop.addEventListener('mouseout', this.outHeaderItem);
-//  }
-//}
-
-
-//const headerModals = new HeaderModals();
-
-//$headerTop.addEventListener('mouseover', toggleHeaderModal);
-
-//function toggleHeaderModal(e) {
-//  const $headerItem = e.target.closest('[data-header-modal-id]');
-//  if (!$headerItem) {
-//    return;
-//  };
-//  const modalId = $headerItem.dataset.headerModalId;
-//  const $modal = document.querySelector(`#${modalId}`);
-
-//  if ($modal.dataset.status === 'close') {
-//    openHeaderModal($modal, $headerItem);
-//  } else if ($modal.dataset.status === 'open') {
-//    return 'open';
-//  } else {
-//    return false;
-//  }
-//}
-
-//function openHeaderModal($modal, $headerItem) {
-//  $modal.classList.add('header-modal--show');
-//  $headerItem.classList.add('header-nav__item--action');
-//  $modal.dataset.status = 'open';
-//}
-
-
-
-//$headerNavItem.addEventListener('mouseover', () => {
-//$headerCatalogModal.classList.add('header-modal--show');
-//$headerNavItem.classList.add('header-nav__item--action');
-//})
-
-//$headerNavItem.addEventListener('mouseout', (e) => {
-//  if (e.relatedTarget === null) {
-//    return;
-//  }
-//  if (e.relatedTarget.closest('[data-modal-inner]') || e.relatedTarget.closest('.header-nav__modal-arrow')) {
-//    return
-//  } else {
-//    $headerCatalogModal.classList.remove('header-modal--show');
-//    $headerNavItem.classList.remove('header-nav__item--action');
-//  }
-//})
-
-//$headerCatalogModal.addEventListener('mouseout', (e) => {
-//  if (e.relatedTarget === null) {
-//    return;
-//  }
-//  if (e.relatedTarget.closest('[data-modal-inner]') || e.relatedTarget.closest('.header-nav__modal-arrow')) {
-//    return
-//  } else {
-//    $headerCatalogModal.classList.remove('header-modal--show');
-//    $headerNavItem.classList.remove('header-nav__item--action');
-//  }
-//})
-
-
-
-//$headerCatalogModal.addEventListener('mouseleave', () => {
-//  $headerCatalogModal.classList.add('header-modal--hide');
-//});

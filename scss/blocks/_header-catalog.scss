@@ -6,6 +6,7 @@
 }
 
 .header-catalog__item {
+  background: $blackMain;
   &:hover > .header-catalog__sublist {
     opacity: 1;
     visibility: visible;
@@ -61,7 +62,8 @@
   width: 100%;
   top: 0;
   right: 0;
-
+  height: 100%;
+  background: $blackMain;
   transform: translate(100%, 0);
   opacity: 0;
   visibility: hidden;

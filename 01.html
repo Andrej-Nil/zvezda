@@ -20,9 +20,9 @@
 
           <nav class="header-nav">
             <ul class="header-nav__list">
-              <li class="header-nav__item" data-header-modal-id="headerCatalogModal">
+              <li data-nav-item class="header-nav__item">
 
-                <a href="catalog.html" class="header-nav__link">
+                <a href="catalog.html" class="header-nav__link" data-header-modal-id="headerCatalogModal">
                   <span class="header-nav__link-text">Каталог</span>
                   <span class="header-nav__arrow">
                     <span class="header-nav__modal-arrow"></span>
@@ -31,20 +31,20 @@
 
               </li>
 
-              <li class="header-nav__item">
+              <li data-nav-item class="header-nav__item">
                 <a href="" class="header-nav__link"></a>
                 <a href="services.html" class="header-nav__link">
                   <span class="header-nav__link-text">Услуги</span>
                 </a>
               </li>
 
-              <li class="header-nav__item">
+              <li data-nav-item class="header-nav__item">
                 <a href="production.html" class="header-nav__link">
                   <span class="header-nav__link-text">Производство</span>
                 </a>
               </li>
 
-              <li class="header-nav__item header-nav__item--about">
+              <li data-nav-item class="header-nav__item header-nav__item--about">
                 <a href="about.html" class="header-nav__link">
                   <span class="header-nav__link-text">О компании</span>
                   <span class="header-nav__arrow">
@@ -79,12 +79,15 @@
             <a href="mailto:" class="header__contact header__contact--mail">info@zvezda.ru</a>
           </div>
           <!-- header__connection -->
+          <div data-nav-item class="header-nav__item header-city">
 
-          <div class="header-city" data-header-modal-id="selectCityModal">
-            <span class="header-nav__link-text header-city__name">Екатеринбург</span>
-            <span class="header-city__arrow header-nav__arrow">
-              <span class="header-nav__modal-arrow"></span>
-            </span>
+            <a href="catalog.html" class="header-nav__link" data-header-modal-id="selectCityModal">
+              <span class="header-nav__link-text header-city__name">Екатеринбург</span>
+              <span class="header-nav__arrow header-city__arrow">
+                <span class="header-nav__modal-arrow"></span>
+              </span>
+            </a>
+
           </div>
 
           <nav class="nav-icon">
@@ -1415,69 +1418,37 @@
     <!--header-modals-->
 
     <!-- headerCatalogModal -->
-    <div id="headerCatalogModal" data-status="close" class="header-modal">
+    <div id="headerCatalogModal" class="header-modal">
       <!-- header-modal__inner -->
       <div class="header-modal__bd"></div>
-      <div class="header-modal__inner container" data-modal-inner>
+      <div class="header-modal__inner" data-modal-inner>
+        <div class="header-modal__content container">
 
+
+          <!--
         <div class="header-modal__search search">
           <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу">
           <span class="search__btn"></span>
+        </div>-->
+          <!-- header-modal__main -->
+          <div class="header-modal__main">
+
+            <nav data-catalog-list class="header-catalog">
+
+            </nav>
+          </div>
+          <!-- header-modal__main -->
         </div>
-        <!-- header-modal__main -->
-        <div class="header-modal__main">
-
-          <nav class="header-catalog">
-            <!-- header-catalog__list -->
-            <ul class="header-catalog__list">
-              <!-- header-catalog__item -->
-              <li class="header-catalog__item">
-                <a href="#!" class="header-catalog__link header-catalog__link--with-sublist">
-                  Полоса металлическая
-                </a>
-                <!-- header-catalog__sublist -->
-                <ul class="header-catalog__sublist">
-                  <!-- header-catalog__item -->
-                  <li class="header-catalog__item">
-                    <a href="#!" class="header-catalog__link header-catalog__link--with-sublist">
-                      Полоса металлическая
-                    </a>
-                    <!-- header-catalog__sublist -->
-                    <ul class="header-catalog__sublist">
-                      <!-- header-catalog__item -->
-                      <li class="header-catalog__item">
-                        <a href="#!" class="header-catalog__link">
-                          Полоса металлическая
-                        </a>
-                      </li>
-                      <!-- header-catalog__item -->
-                    </ul>
-                    <!--header-catalog__sublist-->
-                  </li>
-                  <!-- header-catalog__item -->
-                </ul>
-                <!-- header-catalog__sublist -->
-
-
-              </li>
-              <!-- header-catalog__item -->
-
-
-            </ul>
-            <!-- header-catalog__list -->
-          </nav>
-        </div>
-        <!-- header-modal__main -->
       </div>
       <!-- header-modal__inner -->
     </div>
     <!-- headerCatalogModal -->
 
     <!--search-city-->
-    <div id="selectCityModal" data-status="close" class="header-modal">
+    <div id="selectCityModal" class="header-modal">
       <!-- header-modal__inner -->
       <div class="header-modal__bd"></div>
-      <div class="header-modal__inner container">
+      <div data-modal-inner class="header-modal__inner container">
 
         <div class="header-modal__search search">
           <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу">
@@ -1655,9 +1626,6 @@
                     </div>
                     <!-- region__area -->
                   </li>
-
-
-
                 </ul>
                 <!-- region__list -->
               </div>

@@ -5,9 +5,11 @@
   display: none;
   //padding-top: 110px;
   width: 100%;
-  background: $blackMain;
+  //background: $blackMain;
+  background: rgba(228, 228, 228, 0.4);
+  backdrop-filter: blur(20px);
   min-height: 100vh;
-  z-index: 100;
+  z-index: 500;
 }
 
 .header-modal__bd {
@@ -21,6 +23,7 @@
 }
 
 .header-modal__inner {
+  background: $blackMain;
   padding: 40px 0;
 }
 

@@ -2,33 +2,20 @@
   display: none;
   position: relative;
   cursor: pointer;
-  &:hover .header-city__name {
-    color: $yellowMain;
-  }
+  height: 100%;
 
-  &:hover .header-city__arrow {
-    color: $yellowMain;
-  }
   @media (min-width: 768px) {
     display: block;
     display: flex;
     align-items: center;
-    //margin-right: 30px;
   }
 }
 
 .header-city__name {
-  font-weight: bold;
   font-size: 12px;
   line-height: 16px;
-  color: $white;
-  //padding-right: 15px;
-  transition: 0.2s ease-in-out;
 }
 
 .header-city__arrow {
-  //position: absolute;
-  //right: 0;
-  //top: 50%;
-  //transform: translate(0, -50%);
+  height: 16px;
 }
