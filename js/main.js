@@ -28,6 +28,7 @@ class Server {
     this._token = this.getToken();
     this.POST = 'GET';
     this.GET = 'GET';
+    this.regionsApi = '../json/regions.json';
     this.cityApi = '../json/city.json';
     this.fastOrderApi = '../json/getProd.json';
     this.addFavoriteApi = '../json/addFavorite.json';
@@ -36,7 +37,7 @@ class Server {
     this.searchApi = '../json/search.json';
     this.removeProductApi = '../json/removeBasket.json';
     this.menuApi = '../json/sidebar.json';
-    this.sidebarApi = '/json/sidebar.json';
+    //this.sidebarApi = '/json/sidebar.json';
     this.filterApi = '../json/filter.json';
     this.filterCheckboxApi = '../json/checkbox.json';
     this.catalogApi = '../json/catalog.json';
@@ -48,6 +49,23 @@ class Server {
     }
     const formData = this.createFormData(data);
     return await this.getResponse(this.POST, formData, this.catalogApi);
+  }
+
+  getRegions = async () => {
+    const data = {
+      _token: this._token
+    }
+    const formData = this.createFormData(data);
+    return await this.getResponse(this.POST, formData, this.regionsApi);
+  }
+
+  getCities = async (value) => {
+    const data = {
+      value: value,
+      _token: this._token
+    }
+    const formData = this.createFormData(data);
+    return await this.getResponse(this.POST, formData, this.cityApi);
   }
 
   addBsasket = async (data) => {
@@ -254,6 +272,14 @@ class Render {
     this.renderSearchResultCards($resultAllWrap, cards);
   }
 
+  renderRegions = (regionsList) => {
+    this._render(this.$parent, this.getRegionsHtml, regionsList);
+  }
+
+  renderCityList = (cityList) => {
+    this._render(this.$parent, this.getCityListHtml, cityList);
+  }
+
   renderSearchResultCards = ($parent, cards) => {
     this._render($parent, this.getSearchResultCardHtml, false, cards);
   }
@@ -291,7 +317,6 @@ class Render {
 
   getModalCatalogHtml = (catalogList) => {
     let list = '';
-    console.log(catalogList);
     catalogList.forEach((item) => {
       list += this.getCatalogListHtml(item);
     })
@@ -320,38 +345,7 @@ class Render {
         ${ul}
       </li>
     `)
-    //let subcatalog = '';
 
-    //submenu.forEach((item) => {
-    //let ul = '';
-    //if (item.isSubmenu) {
-    //  ul = (/*html*/`
-    //  <ul class="header-catalog__sublist">
-    //    ${this.getSubcatalogHtml(item.isSubmenu)}
-    //  </ul>
-    //`)
-    //}
-
-
-    //console.log(item.isSubmenu);
-    //getSubcatalogHtml = (submenu)
-    //  subcatalog += (/*html*/`
-    //    <li class="header-catalog__item">
-    //      <a href="${item.slug}" class="header-catalog__link header-catalog__link--with-sublist">
-    //        ${item.title}
-    //      </a>
-    //      ${ul}
-    //    </li>
-    //  `)
-    //})
-
-    //return subcatalog;
-    //  return (`
-    //  <a href="#!" class="header-catalog__link header-catalog__link--with-sublist">
-    //  Полоса металлическая
-    //</a>
-    //  `)
-    //return 
 
   }
 
@@ -367,20 +361,6 @@ class Render {
       ${list}
     </ul>
    `)
-
-
-    //  <li class="header-catalog__item">
-    //  <a href="#!" class="header-catalog__link header-catalog__link--with-sublist">
-    //    Полоса металлическая
-    //  </a>
-    //  <ul class="header-catalog__sublist">
-    //    <li class="header-catalog__item">
-    //      <a href="#!" class="header-catalog__link">
-    //        Полоса металлическая
-    //      </a>
-    //    </li>
-    //  </ul>
-    //</li>
   }
 
   getSubcatalogListHtml = (li) => {
@@ -388,14 +368,6 @@ class Render {
     if (li.isSubmenu) {
       ul = this.getSubcatalogUlHtml(li.isSubmenu);
     }
-    console.log(li);
-    {/*<ul class="header-catalog__sublist">
-            <li class="header-catalog__item">
-              <a href="#!" class="header-catalog__link">
-                Полоса металлическая
-              </a>
-            </li>
-          </ul>*/}
 
     return (/*html */`
       <li class="header-catalog__item">
@@ -406,10 +378,6 @@ class Render {
       </li>
     `)
   }
-
-  //getSubCatalog = (submenu) => {
-
-  //}
   getSearchResultAllWrapHtml = () => {
     return (/*html*/`
     <div data-result-all class="result__all">
@@ -564,6 +532,63 @@ class Render {
     `)
   }
 
+  getRegionsHtml = (regionList) => {
+    const regeonListHtml = this.getListHtml(this.getRegionHtml, regionList)
+    return (/*html*/`
+    <div class="region-list">
+      ${regeonListHtml}
+    </div>`)
+  }
+  getCityListHtml = (cityList) => {
+    console.log(cityList);
+    const cityListHtml = this.getListHtml(this.getAreaItemHtml, cityList)
+    return (/*html*/`
+    <ul class="region-list">
+      ${cityListHtml}
+    </ul>`)
+  }
+
+  getRegionHtml = (region) => {
+    const areaList = this.getListHtml(this.getAreaHtml, region.area);
+    return (/*html*/`
+    <div class="region">
+      <h4 class="region__title">
+      ${region.title}
+      </h4>
+      <ul  class="region__list">
+        ${areaList}
+      </ul>
+    </div>`)
+  }
+
+  getAreaHtml = (area) => {
+    const cityList = this.getListHtml(this.getAreaItemHtml, area.parent);
+    return (/*html*/`
+    <li class="region__item">
+      <div data-area="close" class="area">
+        <h5 data-area-btn class="area__title">
+          ${area.title}
+        </h5>
+        <div data-area-body class="area__body">
+          <ul data-area-list class="area__list">
+            ${cityList}
+          </ul>
+        </div>
+      </div>
+    </li>
+    `)
+  }
+
+  getAreaItemHtml = (city) => {
+    return (/*html*/`
+    <li class="area__item">
+        <a href="${city.slug}" class="area__city">
+        ${city.title}
+        </a>
+      </li>
+    `)
+  }
+
   getInfoModalErrorHtml(errorMessage) {
     const errorMsg = 'Произошла ошибка, попробуйте позже.';
     const message = errorMessage ? errorMessage : errorMsg
@@ -590,6 +615,16 @@ class Render {
       <span data-answer="1" class="info-modal__btn btn clear-btn">Очистить корзину</span>
     </div>
     `)
+  }
+
+  getListHtml(getHtmlFn, arr) {
+    let list = '';
+    arr.forEach((item) => {
+
+      list += getHtmlFn(item);
+    })
+
+    return list;
   }
 
   //Общая функция отрисовки
@@ -982,7 +1017,7 @@ class CatalogModal extends HeaderModal {
     }
   }
 
-  hoverHandler = (e) => {
+  hoverHandler = () => {
     this.createCatalog()
   }
 
@@ -993,9 +1028,132 @@ class CatalogModal extends HeaderModal {
 
 class CityModal extends HeaderModal {
   constructor(modalId) {
-    super(modalId)
+    super(modalId);
+    this.init()
   }
 
+  init = () => {
+    if (!this.$modal && !this.$target) {
+      return;
+    }
+    this.regionsData = null;
+    this.cityData = null;
+    this.$input = this.$modal.querySelector('#searchCityInput');
+    this.$regionList = this.$modal.querySelector('[data-region-list]');
+    this.$cityList = this.$modal.querySelector('[data-city-list]');
+    this.regionRender = new Render(this.$regionList);
+    this.cityRender = new Render(this.$cityList);
+    this.$area = null;
+    this.$areaBtn = null;
+    this.$areaBody = null;
+    this.$areaList = null;
+    this.listener();
+  }
+
+  createRegions = async () => {
+    if (this.$regionList.children.length) {
+      return;
+    }
+    this.regionRender.renderSpiner('Загружаю...');
+    this.regionsData = await server.getRegions();
+    if (this.regionsData.rez == 0) {
+      this.regionRender.clearParent();
+      console.log(`Ошибка: ${this.regionsData.error.id}`)
+      this.regionRender.renderErrorMessage(this.regionsData.error.desc)
+    }
+    if (this.regionsData.rez == 1) {
+      this.regionRender.clearParent();
+      this.regionRender.renderRegions(this.regionsData.content);
+    }
+  }
+
+  createCityList = async () => {
+    const value = this.getValue();
+
+    if (value === '') {
+      this.switchRegionToCity()
+      return;
+    }
+
+    this.cityRender.clearParent();
+    this.cityRender.renderSpiner('Идет поиск...');
+    this.switchCityToRegion();
+    this.cityData = await server.getCities(value);
+    console.log(this.cityData.rez == 0);
+    if (this.cityData.rez == 0) {
+      this.cityRender.clearParent();
+      console.log(`Ошибка: ${this.cityData.error.id}`);
+      this.cityRender.renderErrorMessage(this.cityData.error.desc);
+    }
+    if (this.cityData.rez == 1) {
+      this.cityRender.clearParent();
+      this.cityRender.renderCityList(this.cityData.content)
+
+    }
+  }
+
+  switchRegionToCity = () => {
+    this.$regionList.style.display = 'block';
+    this.$cityList.style.display = 'none';
+  }
+
+  switchCityToRegion = () => {
+    this.$regionList.style.display = 'none';
+    this.$cityList.style.display = 'block';
+  }
+
+  toggleAreaList = () => {
+    this.$area = this.$btn.closest('[data-area]');
+    this.$areaBody = this.$area.querySelector('[data-area-body]');
+    this.$areaList = this.$area.querySelector('[data-area-list]');
+    if (this.$area.dataset.area === 'close') {
+      this.openAreaList();
+      return;
+    }
+    if (this.$area.dataset.area === 'open') {
+      this.closeAreaList();
+      return;
+    }
+  }
+  getValue = () => {
+    return this.$input.value.trim().toLowerCase();
+  }
+  openAreaList = () => {
+    const heightList = this.$areaList.offsetHeight;
+    this.$area.dataset.area = 'open';
+    this.$areaBody.style.height = heightList + 'px';
+
+    this.$btn.classList.add('area__title--open');
+  }
+  closeAreaList = () => {
+    this.$area.dataset.area = 'close';
+    this.$areaBody.style.height = 0 + 'px';
+    this.$btn.classList.remove('area__title--open');
+  }
+
+  clickHandler = (e) => {
+    if (e.target.closest('[data-area-btn]')) {
+      this.$btn = e.target.closest('[data-area-btn]');
+      this.toggleAreaList();
+    }
+  }
+
+  hoverHandler = () => {
+    this.createRegions()
+  }
+
+  inputHandler = () => {
+    this.createCityList();
+  }
+
+
+  listener = () => {
+    const inputHandler = debaunce.debaunce(this.inputHandler, 1000)
+    this.$modal.addEventListener('click', this.clickHandler);
+    this.$target.addEventListener('mouseover', this.hoverHandler);
+    this.$modal.addEventListener('input', inputHandler);
+    this.$modal.addEventListener('change', inputHandler);
+  }
 }
 
 class Modal {

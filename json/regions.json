@@ -1,0 +1,180 @@
+{
+	"rez": 1,
+	"desc": "",
+	"error": {
+		"id": 456454,
+		"desc": "Произошла ошибка, попробуйте позже"
+	},
+	"content": [
+    {
+      "title": "Центральный федеральный округ",
+      "area": [
+        {
+        "id": "515461",
+        "title": "Московская обл",
+        "isActive": false,
+        "parent": [
+          {
+            "id": "515461",
+            "slug":"#!", 
+            "title": "Москва",
+            "isActive": false
+          },
+          {
+            "id": "515461",
+            "slug":"#!", 
+            "title": "Подольск",
+            "isActive": false
+          },
+          {
+            "id": "515461",
+            "slug":"#!", 
+            "title": "Можайск",
+            "isActive": false
+          }
+		  	]
+      }
+      ]
+    },
+    {
+      "title": "Уральский федеральный округ",
+      "area": [
+        {
+        "id": "515461",
+        "title": "Московская обл",
+        "isActive": false,
+        "parent": [
+          {
+            "id": "515461",
+            "slug":"#!", 
+            "title": "Москва",
+            "isActive": false
+          },
+          {
+            "id": "515461",
+            "slug":"#!", 
+            "title": "Подольск",
+            "isActive": false
+          },
+          {
+            "id": "515461",
+            "slug":"#!", 
+            "title": "Можайск",
+            "isActive": false
+          }
+		  	]
+         },
+         {
+          "id": "515461",
+          "title": "Облостная обл",
+          "isActive": false,
+          "parent": [
+            {
+              "id": "515461",
+              "slug":"#!", 
+              "title": "Москва",
+              "isActive": false
+            },
+            {
+              "id": "515461",
+              "slug":"#!", 
+              "title": "Подольск",
+              "isActive": false
+            },
+            {
+              "id": "515461",
+              "slug":"#!", 
+              "title": "Можайск",
+              "isActive": false
+            }
+          ]
+           }
+      ]
+    },
+    {
+      "title": "Центральный федеральный округ",
+      "area": [
+        {
+        "id": "515461",
+        "title": "Московская обл",
+        "isActive": false,
+        "parent": [
+          {
+            "id": "515461",
+            "slug":"#!", 
+            "title": "Москва",
+            "isActive": false
+          },
+          {
+            "id": "515461",
+            "slug":"#!", 
+            "title": "Подольск",
+            "isActive": false
+          },
+          {
+            "id": "515461",
+            "slug":"#!", 
+            "title": "Можайск",
+            "isActive": false
+          }
+		  	]
+      }
+      ]
+    },
+    {
+      "title": "Уральский федеральный округ",
+      "area": [
+        {
+        "id": "515461",
+        "title": "Московская обл",
+        "isActive": false,
+        "parent": [
+          {
+            "id": "515461",
+            "slug":"#!", 
+            "title": "Москва",
+            "isActive": false
+          },
+          {
+            "id": "515461",
+            "slug":"#!", 
+            "title": "Подольск",
+            "isActive": false
+          },
+          {
+            "id": "515461",
+            "slug":"#!", 
+            "title": "Можайск",
+            "isActive": false
+          }
+		  	]
+         },
+         {
+          "id": "515461",
+          "title": "Облостная обл",
+          "isActive": false,
+          "parent": [
+            {
+              "id": "515461",
+              "slug":"#!", 
+              "title": "Москва",
+              "isActive": false
+            },
+            {
+              "id": "515461",
+              "slug":"#!", 
+              "title": "Подольск",
+              "isActive": false
+            },
+            {
+              "id": "515461",
+              "slug":"#!", 
+              "title": "Можайск",
+              "isActive": false
+            }
+          ]
+        }
+      ]
+    }
+	]
+}

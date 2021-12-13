@@ -1,7 +1,15 @@
-.cities__regions {
-  display: flex;
-  justify-content: space-between;
-  flex-grow: 1;
+.regions {
+  width: 100%;
+
+  //flex-grow: 1;
+}
+
+.region-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  //display: flex;
+  //justify-content: space-between;
 }
 
 .region {
@@ -9,14 +17,14 @@
 }
 
 .region__title {
-  width: 305px;
+  //max-width: 305px;
+  width: 100%;
   margin-bottom: 30px;
 
   color: $white;
   font-size: 18px;
   line-height: 120%;
 }
-
 .area__title {
   position: relative;
   padding-left: 20px;
@@ -38,6 +46,18 @@
   }
 }
 
+.area__title--open {
+  color: $white;
+  &::before {
+    content: "-";
+  }
+}
+.area__body {
+  height: 0;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+}
+
 .area__city {
   padding-left: 20px;
   transition: 0.2s ease-in-out;
@@ -48,4 +68,9 @@
   &:hover {
     color: $yellowMain;
   }
+}
+
+.regions__cities {
+  display: none;
+  width: 100%;
 }

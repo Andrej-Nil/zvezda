@@ -350,6 +350,7 @@ body {
 
 .error-message {
   font-size: 16px;
+  width: 100%;
   text-align: center;
 }
 
@@ -4382,10 +4383,14 @@ body {
   opacity: 0;
 }
 
-.cities__regions {
-  display: flex;
-  justify-content: space-between;
-  flex-grow: 1;
+.regions {
+  width: 100%;
+}
+
+.region-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .region {
@@ -4393,7 +4398,7 @@ body {
 }
 
 .region__title {
-  width: 305px;
+  width: 100%;
   margin-bottom: 30px;
   color: #fff;
   font-size: 18px;
@@ -4422,6 +4427,20 @@ body {
   color: #fff;
 }
 
+.area__title--open {
+  color: #fff;
+}
+
+.area__title--open::before {
+  content: "-";
+}
+
+.area__body {
+  height: 0;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+}
+
 .area__city {
   padding-left: 20px;
   transition: 0.2s ease-in-out;
@@ -4432,6 +4451,11 @@ body {
 
 .area__city:hover {
   color: #fba50d;
+}
+
+.regions__cities {
+  display: none;
+  width: 100%;
 }
 
 .about-nav {
