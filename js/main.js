@@ -240,6 +240,88 @@ class InputFile {
   }
 }
 
+class MainVideo {
+  constructor(id) {
+    this.$mainVideo = document.querySelector(id);
+    this.init()
+  }
+
+  init = () => {
+    if (!this.$mainVideo) {
+      return;
+    }
+
+    this.$mainVideoNav = document.querySelector('#mainVideoNav');
+    this.$src = this.$mainVideo.querySelector('source');
+    this.$activeTab = this.$mainVideoNav.querySelector('.header-tab--active');
+    this.$activeLine = this.$activeTab.querySelector('[data-progress]');
+    this.$tab = null;
+    this.idx = 1;
+    this.listener();
+  }
+
+  changeVideo = () => {
+    this.$tab = this.$mainVideoNav.querySelector(`[data-idx="${this.idx}"]`);
+    if (this.$tab.classList.contains('header-tab--active')) {
+      return;
+    }
+    const src = this.$tab.dataset.videoTab;
+
+    this.$src.src = src;
+    this.$mainVideo.load();
+    this.clearProgressLine()
+    this.setActiveTab();
+
+  }
+
+  timeLine = () => {
+    if (isNaN(this.$mainVideo.duration)) {
+      return;
+    }
+    const progress = this.$mainVideo.currentTime / this.$mainVideo.duration * 100;
+    this.$activeLine.style.width = Math.round(progress) + '%';
+  }
+
+  clearProgressLine = () => {
+    this.$activeLine.style.width = '0%';
+  }
+
+  autoChangeVideo = () => {
+    this.idx++;
+    if (this.idx > this.$mainVideoNav.children.length) {
+      this.idx = 1;
+    }
+    this.changeVideo();
+  }
+
+  hoverChangeVideo = (e) => {
+    this.idx = this.$tab.dataset.idx;
+
+    this.changeVideo();
+  }
+
+  setActiveTab = () => {
+    this.$activeTab.classList.remove('header-tab--active');
+    this.$tab.classList.add('header-tab--active');
+    this.$activeTab = this.$tab;
+    this.$activeLine = this.$activeTab.querySelector('[data-progress]');
+  }
+
+  hoverHandler = (e) => {
+    const $target = e.target
+    if ($target.closest('[data-video-tab]')) {
+      this.$tab = $target.closest('[data-video-tab]');
+      this.hoverChangeVideo()
+    }
+  }
+
+  listener = () => {
+    this.$mainVideoNav.addEventListener('mouseover', this.hoverHandler);
+    this.$mainVideo.addEventListener('timeupdate', this.timeLine);
+    this.$mainVideo.addEventListener('ended', this.autoChangeVideo);
+  }
+}
+
 class Render {
   constructor($parent = null) {
     this.$parent = $parent;
@@ -540,7 +622,6 @@ class Render {
     </div>`)
   }
   getCityListHtml = (cityList) => {
-    console.log(cityList);
     const cityListHtml = this.getListHtml(this.getAreaItemHtml, cityList)
     return (/*html*/`
     <ul class="region-list">
@@ -1079,7 +1160,6 @@ class CityModal extends HeaderModal {
     this.cityRender.renderSpiner('Идет поиск...');
     this.switchCityToRegion();
     this.cityData = await server.getCities(value);
-    console.log(this.cityData.rez == 0);
     if (this.cityData.rez == 0) {
       this.cityRender.clearParent();
       console.log(`Ошибка: ${this.cityData.error.id}`);
@@ -2305,7 +2385,8 @@ class About {
 }
 const server = new Server();
 const render = new Render();
-const debaunce = new Debaunce()
+const debaunce = new Debaunce();
+const mainVideo = new MainVideo('#mainVideo');
 const searchModal = new SearchModal('#searchModal');
 const supportModal = new CommunicationModal('#supportModal', '#supportModalForm');
 const succsesModal = new SuccsesModal('#succsesModal');

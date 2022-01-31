@@ -14,6 +14,23 @@
 .header-tab {
   position: relative;
   width: 33.5%;
+  &:hover .header-tab__link {
+    color: $yellowMain;
+  }
+
+  &:hover .header-tab__line-bg {
+    width: 100%;
+  }
+}
+
+.header-tab--active {
+  & .header-tab__link {
+    color: $yellowMain;
+  }
+
+  & .header-tab__line-bg {
+    width: 100%;
+  }
 }
 
 .header-tab__link {
@@ -25,13 +42,6 @@
   line-height: 25px;
   color: $white;
   transition: 0.5s ease-in-out;
-  &:hover {
-    color: $yellowMain;
-  }
-
-  &:hover .header-tab__line-bg {
-    width: 100%;
-  }
 }
 
 .video-dots {
@@ -60,14 +70,6 @@
   }
 }
 
-.video-dots__item--active {
-  background: $yellowMain;
-}
-
-.header-tab__link--active {
-  color: $yellowMain;
-}
-
 .header-tab__line {
   position: absolute;
   left: 0;
@@ -82,15 +84,18 @@
   transition: 0.5s ease-in-out;
 }
 
-.header-tab__line-bg--aciove {
-  width: 100%;
+.header-tab--leave {
+  & .header-tab__line-bg {
+    margin-left: auto;
+  }
 }
 
 .header-tab__progress {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 50%;
+  width: 0;
   height: 5px;
   background: $yellowMain;
+  transition: 0.25s linear;
 }

@@ -157,37 +157,37 @@
         <!-- header__video -->
         <div class="headre__bg">
           <div class="header__video">
-            <video class="header__video-item" autoplay>
+            <video id="mainVideo" class="header__video-item" autoplay muted>
               <source src="./video/video1.webm" type="video/webm">
             </video>
-            <nav class="header-video-nav">
+            <nav id="mainVideoNav" class="header-video-nav">
 
-              <div class="header-tab">
-                <a href="#!" class="header-tab__link header-tab__link--active">
-                  <p class="header-tab__title ">Поставка продукции</p>
+              <div data-idx="1" data-video-tab="./video/video1.webm" class="header-tab header-tab--active">
+                <a href="#!" class="header-tab__link">
+                  <p class="header-tab__title">Поставка продукции</p>
                   <div class="header-tab__line">
-                    <div class="header-tab__line-bg header-tab__line-bg--aciove"></div>
-                    <div class="header-tab__progress"></div>
+                    <div class="header-tab__line-bg"></div>
+                    <div data-progress class="header-tab__progress"></div>
                   </div>
                 </a>
               </div>
 
-              <div class="header-tab">
+              <div data-idx="2" data-video-tab="./video/video2.webm" class="header-tab">
                 <a href="#!" class="header-tab__link">
                   <p class="header-tab__title">Услуги компании</p>
                   <div class="header-tab__line">
                     <div class="header-tab__line-bg"></div>
-                    <!--<div class="header-tab__progress"></div>-->
+                    <div data-progress class="header-tab__progress"></div>
                   </div>
                 </a>
               </div>
 
-              <div class="header-tab">
+              <div data-idx="3" data-video-tab="./video/video3.webm" class="header-tab">
                 <a href="#!" class="header-tab__link">
                   <p class="header-tab__title">Производство</p>
                   <div class="header-tab__line">
                     <div class="header-tab__line-bg"></div>
-                    <!--<div class="header-tab__progress"></div>-->
+                    <div data-progress class="header-tab__progress"></div>
                   </div>
                 </a>
               </div>

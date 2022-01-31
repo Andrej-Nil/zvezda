@@ -1,9 +1,11 @@
 .header__video-item {
   position: relative;
+  display: block;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -40%);
   min-height: 606px;
+  background: #222;
   @media (min-width: 1050px) {
     left: 0;
     top: 0;
