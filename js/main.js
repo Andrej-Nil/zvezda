@@ -7,8 +7,6 @@ const $supportModal = document.querySelector('#supportModal');
 const $orderModalBtn = document.querySelector('#orderModalBtn');
 const $orderModal = document.querySelector('#orderModal');
 
-
-
 class Debaunce {
   constructor() { }
   debaunce = (fn, ms) => {
@@ -240,7 +238,7 @@ class InputFile {
   }
 }
 
-class MainVideo {
+class MainScreen {
   constructor(id) {
     this.$mainVideo = document.querySelector(id);
     this.init()
@@ -251,6 +249,9 @@ class MainVideo {
       return;
     }
 
+    this.$headerSlider = document.querySelector('#headerSlider');
+    this.$activeSlide = this.$headerSlider.querySelector('.header__slide--show');
+
     this.$mainVideoNav = document.querySelector('#mainVideoNav');
     this.$src = this.$mainVideo.querySelector('source');
     this.$activeTab = this.$mainVideoNav.querySelector('.header-tab--active');
@@ -258,6 +259,13 @@ class MainVideo {
     this.$tab = null;
     this.idx = 1;
     this.listener();
+  }
+
+  changeSlide = () => {
+    this.$activeSlide.classList.remove('header__slide--show');
+    const $slide = this.$headerSlider.querySelector(`[data-slide="${this.idx}"]`);
+    $slide.classList.add('header__slide--show');
+    this.$activeSlide = $slide;
   }
 
   changeVideo = () => {
@@ -274,7 +282,7 @@ class MainVideo {
 
   }
 
-  timeLine = () => {
+  animationProgressLine = () => {
     if (isNaN(this.$mainVideo.duration)) {
       return;
     }
@@ -292,12 +300,14 @@ class MainVideo {
       this.idx = 1;
     }
     this.changeVideo();
+    this.changeSlide();
   }
 
-  hoverChangeVideo = (e) => {
+  clickChangeVideo = () => {
     this.idx = this.$tab.dataset.idx;
 
     this.changeVideo();
+    this.changeSlide();
   }
 
   setActiveTab = () => {
@@ -307,17 +317,17 @@ class MainVideo {
     this.$activeLine = this.$activeTab.querySelector('[data-progress]');
   }
 
-  hoverHandler = (e) => {
+  clickHandler = (e) => {
     const $target = e.target
     if ($target.closest('[data-video-tab]')) {
       this.$tab = $target.closest('[data-video-tab]');
-      this.hoverChangeVideo()
+      this.clickChangeVideo()
     }
   }
 
   listener = () => {
-    this.$mainVideoNav.addEventListener('mouseover', this.hoverHandler);
-    this.$mainVideo.addEventListener('timeupdate', this.timeLine);
+    this.$mainVideoNav.addEventListener('click', this.clickHandler);
+    this.$mainVideo.addEventListener('timeupdate', this.animationProgressLine);
     this.$mainVideo.addEventListener('ended', this.autoChangeVideo);
   }
 }
@@ -1520,7 +1530,6 @@ class GaliriaModal extends Modal {
   }
 
   setSrcImg = (bigImgSrc) => {
-    console.log(`${bigImgSrc}.jpg`)
     if (this.$source) {
       this.$source.srcset = `${bigImgSrc}.jpg`
     }
@@ -1623,9 +1632,7 @@ class BigBgImg {
       return;
     }
     this.$currentCardUnderCursor = $card;
-    this.curentBigImgSrc = $card.dataset.bigImgSrc
-
-    //if ()
+    this.curentBigImgSrc = $card.dataset.bigImgSrc;
 
 
     this.setBgImg(this.curentBigImgSrc);
@@ -1688,82 +1695,259 @@ class Advantages {
     if (!this.advantages) {
       return;
     }
-    this.contentHeight = null;
-    this.duration = 1000;
+    this.$card = null
     this.listener()
   }
 
-  openCard = ($card) => {
-    $card.classList.remove('advantage-card--change-color');
-    this.contentHeight = this.getContentHeight($card);
+  openCard = () => {
+    this.$card.classList.remove('advantage-card--hover');
+    if (this.$card.dataset.card === 'open') {
+      return;
+    }
+    this.openingCardAnimations();
+    this.$card.dataset.card = 'open';
 
 
-    this.animate({
-      duration: 500,
-      timing(timeFraction) {
-        return Math.pow(timeFraction, 2) * ((1.3 + 1) * timeFraction - 1.3)
-      },
-      draw(progress) {
-        $card.style.height = progress * 522 + 'px';
-      }
-    })
-    $card.classList.add('advantage-card--open-animaite');
   }
 
-  getContentHeight = ($card) => {
-    return $card.querySelector('[data-content]').offsetHeight;
+  closeCard = () => {
+    this.$card.classList.remove('advantage-card--hover');
+    if (this.$card.dataset.card === 'close') {
+      return;
+    }
+    this.closingCardAnimations();
+    this.$card.dataset.card = 'close';
+    setTimeout(() => {
+      this.$card.classList.add('advantage-card--hover');
+    }, 900)
   }
+
+
+
+
+
+  // анимации элементов для открытия
+  openingCardAnimations = () => {
+    this.disclosureCard();
+    this.showCloseBtn();
+    this.hideStiker()
+    this.imgWithOpenAnimation();
+    this.showContentBlock('text');
+    setTimeout(() => {
+      this.showContentBlock('cards');
+    }, 100);
+    setTimeout(() => {
+      this.showContentBlock('roll-up');
+    }, 200)
+
+  }
+
+  disclosureCard = () => {
+
+    const cardHeight = this.$card.offsetHeight;
+
+    const cardContentHeight = this.$card.querySelector('[data-content]').offsetHeight;
+    const sizeFluctuation = cardContentHeight * 10 / 100;
+    this.$card.style.transition = 'height 0.2s ease-in-out';
+    this.$card.style.height = (cardHeight - sizeFluctuation) + 'px';
+    setTimeout(() => {
+      this.$card.style.transition = '0.5s ease';
+      this.$card.style.height = (cardContentHeight + sizeFluctuation) + 'px';
+    }, 200);
+    setTimeout(() => {
+      this.$card.style.transition = ' 0.2s ease-out';
+      this.$card.style.height = cardContentHeight + 'px';
+    }, 700);
+    setTimeout(() => {
+      this.$card.style.transition = '';
+    }, 900);
+  }
+
+  showCloseBtn = () => {
+    const $closeBtn = this.$card.querySelector('[data-close-btn]');
+    $closeBtn.style.transition = 'opacity 0.7s ease-in 0.3s, right ease-in-out 0.5s 0.3s';
+    $closeBtn.style.opacity = '1';
+    $closeBtn.style.right = '60px';
+    setTimeout(() => {
+      $closeBtn.style.transition = 'right ease-in-out 0.2s';
+      $closeBtn.style.right = '40px';
+    }, 800);
+    setTimeout(() => {
+      $closeBtn.style.transition = '';
+    }, 900);
+  }
+
+  hideStiker = () => {
+    const $stiker = this.$card.querySelector('[data-stiker]');
+    $stiker.style.transition = 'transform 0.2s ease-in';
+    $stiker.style.transform = 'translate(20px, 0)';
+    setTimeout(() => {
+      $stiker.style.transition = 'opacity 0.3s ease-in, transform 0.3s ease-in';
+      $stiker.style.transform = 'translate(-150px, 0)';
+      $stiker.style.opacity = '0';
+    }, 200);
+
+    setTimeout(() => {
+      $stiker.style.transition = '';
+    }, 600);
+
+  }
+
+  showContentBlock = (dataSelector) => {
+    const $block = this.$card.querySelector(`[data-${dataSelector}]`);
+    $block.style.transition = 'opacity 0.6s ease-in 0.2s, transform ease-in-out 0.5s 0.2s';
+    $block.style.opacity = '1';
+    $block.style.transform = ' translate(0, -20px)';
+    setTimeout(() => {
+      $block.style.transition = 'transform ease-in 0.2s';
+      $block.style.transform = 'translate(0, 0px)';
+    }, 700);
+    setTimeout(() => {
+      $block.style.transition = '';
+    }, 900);
+
+  }
+
+  imgWithOpenAnimation = () => {
+    const $img = this.$card.querySelector('[data-img]');
+    const imgHeight = $img.offsetHeight;
+    const maxHeight = 450;
+    const sizeFluctuation = imgHeight * 10 / 100;
+
+    $img.style.transition = 'height 0.2s ease-in-out';
+    $img.style.height = imgHeight - sizeFluctuation + 'px'
+    setTimeout(() => {
+      $img.style.transition = 'height 0.5s ease';
+      $img.style.height = maxHeight + sizeFluctuation + 'px'
+    }, 200);
+    setTimeout(() => {
+      $img.style.transition = 'height 0.2s ease-out';
+      $img.style.height = maxHeight + 'px'
+    }, 700);
+    setTimeout(() => {
+      $img.style.transition = '';
+    }, 900);
+
+  }
+
+  // анимации элементов для закрытия
+  closingCardAnimations = () => {
+
+    this.hideContentBlock('roll-up');
+    setTimeout(() => {
+      this.hideContentBlock('cards');
+    }, 100);
+    setTimeout(() => {
+      this.hideContentBlock('text');
+    }, 200);
+
+    setTimeout(() => {
+      this.collapsingCard();
+      this.hideCloseBtn();
+      this.showStiker();
+      this.imgWithCloseAnimation();
+    }, 300)
+  }
+
+  collapsingCard = () => {
+    const cardHeight = this.$card.offsetHeight;
+    const sizeFluctuation = cardHeight * 5 / 100;
+    this.$card.style.transition = 'height 0.2s ease-in-out';
+    this.$card.style.height = (cardHeight + sizeFluctuation) + 'px';
+    setTimeout(() => {
+      this.$card.style.transition = 'height 0.5s ease-in-out';
+      this.$card.style.height = '';
+    }, 200);
+    setTimeout(() => {
+      this.$card.style.transition = '';
+    }, 900);
+  }
+
+  hideCloseBtn = () => {
+    const $closeBtn = this.$card.querySelector('[data-close-btn]');
+    $closeBtn.style.transition = 'right ease-in-out 0.2s';
+    $closeBtn.style.right = '60px';
+    setTimeout(() => {
+      $closeBtn.style.transition = 'opacity 0.7s ease-in, right ease-in-out 0.7s';
+      $closeBtn.style.opacity = '';
+      $closeBtn.style.right = '';
+    }, 200);
+    setTimeout(() => {
+      $closeBtn.style.transition = '';
+    }, 900);
+  }
+
+  showStiker = () => {
+    const $stiker = this.$card.querySelector('[data-stiker]');
+    $stiker.style.transition = 'opacity 0.3s ease-in 0.2s, transform 0.3s ease-in 0.2s';
+    $stiker.style.transform = '';
+    $stiker.style.opacity = '';
+    setTimeout(() => {
+      $stiker.style.transition = '';
+    }, 600);
+
+  }
+
+  imgWithCloseAnimation = () => {
+    const $img = this.$card.querySelector('[data-img]');
+    const imgHeight = $img.offsetHeight;
+    const sizeFluctuation = imgHeight * 6 / 100;
+
+    $img.style.transition = 'height 0.2s ease-in-out';
+    $img.style.height = (imgHeight + sizeFluctuation) + 'px';
+    setTimeout(() => {
+      $img.style.transition = 'height 0.5s ease-in-out';
+      $img.style.height = ''
+    }, 200);
+    setTimeout(() => {
+      $img.style.transition = '';
+    }, 900);
+  }
+
+  hideContentBlock = (dataSelector) => {
+    const $block = this.$card.querySelector(`[data-${dataSelector}]`);
+    $block.style.transition = 'transform ease-in 0.2s';
+
+    $block.style.transform = 'translate(0, -20px)';
+    setTimeout(() => {
+      $block.style.transition = 'opacity 0.7s ease-in-out, transform ease-in 0.5s';
+      $block.style.opacity = '';
+      $block.style.transform = 'translate(0, 50px)';
+    }, 200);
+    setTimeout(() => {
+      $block.style.transition = '';
+    }, 900);
+
+  }
+
 
   clickHandler = (e) => {
     const $target = e.target;
     if ($target.closest('[data-card]')) {
-      const $card = $target.closest('[data-card]');
-      this.openCard($card);
+      this.$card = $target.closest('[data-card]');
+      this.openCard();
+    }
+    if ($target.closest('[data-close-btn]') || $target.closest('[data-roll-up]')) {
+      this.$card = $target.closest('[data-card]');
+      this.closeCard();
     }
   }
 
-  //const block = document.querySelector('#block');
+  setCardHeight = () => {
+    if (this.$card && this.$card.dataset.card === 'open') {
+      const cardContentHeight = this.$card.querySelector('[data-content]').offsetHeight;
+      this.$card.style.height = cardContentHeight + 'px';
+    }
 
-
-  animate = ({ timing, draw, duration }) => {
-
-    let start = performance.now();
-
-    requestAnimationFrame(function animate(time) {
-      // timeFraction изменяется от 0 до 1
-      let timeFraction = (time - start) / duration;
-      if (timeFraction > 1) timeFraction = 1;
-
-      // вычисление текущего состояния анимации
-      let progress = timing(timeFraction);
-
-      draw(progress); // отрисовать её
-
-      if (timeFraction < 1) {
-        requestAnimationFrame(animate);
-      }
-
-    })
   }
-
-  //function quad(timeFraction) {
-  //  return Math.pow(timeFraction, 2)
-  //}
-
-  //  animate({
-  //    duration: 700,
-  //    timing(timeFraction) {
-  //      return Math.pow(timeFraction, 2) * ((1.5 + 1) * timeFraction - 1.5)
-  //    },
-  //      draw(progress) {
-  //  this.$card.style.top = progress * 522 + 'px';
-  //}
-  //  })
-
 
 
   listener = () => {
-    this.advantages.addEventListener('click', this.clickHandler)
+    const setCardHeight = debaunce.debaunce(this.setCardHeight, 200);
+    this.advantages.addEventListener('click', this.clickHandler);
+    window.addEventListener('resize', () => {
+      setCardHeight();
+    })
   }
 }
 
@@ -1812,9 +1996,9 @@ class Slider {
   toggleControls = () => {
     if (this.$controls)
       if (this.displaySlides >= this.$slides.length) {
-        this.$controls.classList.add('section-controls__btn--hide');
+        this.$controls.classList.add('hide-arrow');
       } else {
-        this.$controls.classList.remove('section-controls__btn--hide');
+        this.$controls.classList.remove('hide-arrow');
       }
   }
 
@@ -1836,14 +2020,14 @@ class Slider {
     if (!$arrow) {
       return;
     }
-    $arrow.classList.add('section-controls__btn--hide')
+    $arrow.classList.add('hide-arrow');
   }
 
   showArrow = ($arrow) => {
     if (!$arrow) {
       return;
     }
-    $arrow.classList.remove('section-controls__btn--hide')
+    $arrow.classList.remove('hide-arrow');
   }
 
   trackShift = () => {
@@ -2386,7 +2570,7 @@ class About {
 const server = new Server();
 const render = new Render();
 const debaunce = new Debaunce();
-const mainVideo = new MainVideo('#mainVideo');
+const mainScreen = new MainScreen('#mainVideo');
 const searchModal = new SearchModal('#searchModal');
 const supportModal = new CommunicationModal('#supportModal', '#supportModalForm');
 const succsesModal = new SuccsesModal('#succsesModal');
@@ -2402,6 +2586,7 @@ const feedBackForm = new FormPage('#feedbackForm');
 const bigBgImg = new BigBgImg('#servise');
 const advantages = new Advantages('#advantages');
 
+const partnersSlider = new Slider('#partnersSlider');
 const certificatesSlider = new Slider('#certificates');
 const reviewsSlider = new Slider('#reviewsSlider');
 const productSlider = new Slider('#productSlider');
@@ -2422,7 +2607,7 @@ if ($searchOpenBtn && $searchModal) {
   $searchOpenBtn.addEventListener('click', openSearchModal);
 }
 
-if ($supportModalBtn && $supportModalBtn) {
+if ($supportModalBtn && $supportModal) {
   $supportModalBtn.addEventListener('click', openSupportModal);
 }
 

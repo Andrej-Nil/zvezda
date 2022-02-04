@@ -131,8 +131,8 @@
         <!--header__main-->
         <div class="header__main">
           <!-- header__slider -->
-          <div class="header__slider container">
-            <div class="header__slide">
+          <div id="headerSlider" class="header__slider container">
+            <div data-slide="1" class="header__slide header__slide--show">
               <h2 class="header__title">
                 Металлопрокат
                 высокого качества
@@ -145,6 +145,39 @@
               <div class="header__buttons">
                 <a href="catalog.html"
                   class="header__btn header__btn--catalog btn yellow-btn hover-yellow-light">Каталог продукции</a>
+                <span class="header__btn btn clear-btn">Оставить заявку</span>
+              </div>
+            </div>
+
+            <div data-slide="2" class="header__slide">
+              <h2 class="header__title">
+                Услуги по обработке
+                металлопроката
+              </h2>
+
+              <p class="header__desc">
+                Мы предоставляем обширный список услуг по поставке и обработке металлопроката. Осуществляем резку
+                металла газом, ленто-пилом, фрезой, гильотиной, лазером и гидро-резкой.
+              </p>
+              <div class="header__buttons">
+                <a href="catalog.html" class="header__btn header__btn--catalog btn yellow-btn hover-yellow-light">Услуги
+                  Компании</a>
+                <span class="header__btn btn clear-btn">Оставить заявку</span>
+              </div>
+            </div>
+
+            <div data-slide="3" class="header__slide">
+              <h2 class="header__title">
+                Собственное производство
+              </h2>
+
+              <p class="header__desc">
+                Безпрерывное конвейреное производство изделий на нашем заводе. Самая популярная продукция из стали и
+                металлопрокат с гарантией качества
+              </p>
+              <div class="header__buttons">
+                <a href="catalog.html"
+                  class="header__btn header__btn--catalog btn yellow-btn hover-yellow-light">Производство</a>
                 <span class="header__btn btn clear-btn">Оставить заявку</span>
               </div>
             </div>
@@ -163,33 +196,27 @@
             <nav id="mainVideoNav" class="header-video-nav">
 
               <div data-idx="1" data-video-tab="./video/video1.webm" class="header-tab header-tab--active">
-                <a href="#!" class="header-tab__link">
-                  <p class="header-tab__title">Поставка продукции</p>
-                  <div class="header-tab__line">
-                    <div class="header-tab__line-bg"></div>
-                    <div data-progress class="header-tab__progress"></div>
-                  </div>
-                </a>
+                <p class="header-tab__title">Поставка продукции</p>
+                <div class="header-tab__line">
+                  <div class="header-tab__line-bg"></div>
+                  <div data-progress class="header-tab__progress"></div>
+                </div>
               </div>
 
               <div data-idx="2" data-video-tab="./video/video2.webm" class="header-tab">
-                <a href="#!" class="header-tab__link">
-                  <p class="header-tab__title">Услуги компании</p>
-                  <div class="header-tab__line">
-                    <div class="header-tab__line-bg"></div>
-                    <div data-progress class="header-tab__progress"></div>
-                  </div>
-                </a>
+                <p class="header-tab__title">Услуги компании</p>
+                <div class="header-tab__line">
+                  <div class="header-tab__line-bg"></div>
+                  <div data-progress class="header-tab__progress"></div>
+                </div>
               </div>
 
               <div data-idx="3" data-video-tab="./video/video3.webm" class="header-tab">
-                <a href="#!" class="header-tab__link">
-                  <p class="header-tab__title">Производство</p>
-                  <div class="header-tab__line">
-                    <div class="header-tab__line-bg"></div>
-                    <div data-progress class="header-tab__progress"></div>
-                  </div>
-                </a>
+                <p class="header-tab__title">Производство</p>
+                <div class="header-tab__line">
+                  <div class="header-tab__line-bg"></div>
+                  <div data-progress class="header-tab__progress"></div>
+                </div>
               </div>
             </nav>
 
@@ -754,11 +781,11 @@
             <!-- advantages -->
             <div id="advantages" class="advantages">
 
-              <div data-card class="advantage-card advantage-card--change-color">
+              <div data-card="close" class="advantage-card advantage-card--hover">
                 <div data-content class="advantage-card__contect">
-                  <img src="./img/image/advantages/advantage1.png" alt="" class="advantage-card__img">
+                  <img data-img src="./img/image/advantages/advantage1.png" alt="" class="advantage-card__img">
 
-                  <span class="advantage-card__close close-btn">Закрыть</span>
+                  <span data-close-btn class="advantage-card__close close-btn">Закрыть</span>
                   <div class="advantage-card__header">
                     <span class="advantage-card__num">01</span>
                     <h3 class="advantage-card__title">
@@ -766,19 +793,18 @@
                     </h3>
 
 
-                    <span class="advantage-card__open">
+                    <span data-stiker class="advantage-card__open">
                       Подробнее
                     </span>
-
-
-                    <p class="advantage-card__desc">
-                      Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
-                      Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
-                      погрузки железнодорожных вагонов.
-                    </p>
                   </div>
+
+                  <p data-text class="advantage-card__desc">
+                    Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
+                    Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
+                    погрузки железнодорожных вагонов.
+                  </p>
                   <!-- advantage__list -->
-                  <div class="advantage__list">
+                  <div data-cards class="advantage__list">
                     <div class="advantage-item">
                       <div class="advantage-item__icon">
                         <span class="advantage-item__quarter lt"></span>
@@ -798,35 +824,36 @@
 
                   <!--advantage__list-->
 
-                  <span class="advantage-card__roll-up">
+                  <span data-roll-up class="advantage-card__roll-up">
                     Свертуть
                   </span>
                 </div>
               </div>
 
-              <div data-card class="advantage-card advantage-card--change-color">
+              <div data-card="close" class="advantage-card advantage-card--hover">
                 <div data-content class="advantage-card__contect">
-                  <img src="./img/image/advantages/advantage2.png" alt="" class="advantage-card__img">
+                  <img data-img src="./img/image/advantages/advantage2.png" alt="" class="advantage-card__img">
 
-                  <span class="advantage-card__close close-btn">Закрыть</span>
+                  <span data-close-btn class="advantage-card__close close-btn">Закрыть</span>
                   <div class="advantage-card__header">
                     <span class="advantage-card__num">02</span>
                     <h3 class="advantage-card__title">
                       Удобные способы оплаты
                     </h3>
 
-                    <span class="advantage-card__open">
+                    <span data-stiker class="advantage-card__open">
                       Подробнее
                     </span>
 
-                    <p class="advantage-card__desc">
-                      Мы представим все необходимые документы и сертификаты. В условиях долгосрочных партнёрских
-                      отношений, предложим Вам хорошие скидки и отсрочку платежей.Наша компания принимает оплату
-                      следующими способами:
-                    </p>
+
                   </div>
+                  <p data-text class="advantage-card__desc">
+                    Мы представим все необходимые документы и сертификаты. В условиях долгосрочных партнёрских
+                    отношений, предложим Вам хорошие скидки и отсрочку платежей.Наша компания принимает оплату
+                    следующими способами:
+                  </p>
                   <!-- advantage__list -->
-                  <div class="advantage__list">
+                  <div data-cards class="advantage__list">
                     <div class="advantage-item">
                       <div class="advantage-item__icon">
                         <span class="advantage-item__quarter lt"></span>
@@ -854,36 +881,37 @@
 
                   <!--advantage__list-->
 
-                  <span class="advantage-card__roll-up">
+                  <span data-roll-up class="advantage-card__roll-up">
                     Свертуть
                   </span>
                 </div>
               </div>
 
-              <div data-card class="advantage-card advantage-card--change-color">
+              <div data-card="close" class="advantage-card advantage-card--hover">
                 <div data-content class="advantage-card__contect">
 
-                  <img src="./img/image/advantages/advantage3.png" alt="" class="advantage-card__img">
+                  <img data-img src="./img/image/advantages/advantage3.png" alt="" class="advantage-card__img">
 
-                  <span class="advantage-card__close close-btn">Закрыть</span>
+                  <span data-close-btn class="advantage-card__close close-btn">Закрыть</span>
                   <div class="advantage-card__header">
                     <span class="advantage-card__num">03</span>
                     <h3 class="advantage-card__title">
                       Персональный менеджер круглосуточно
                     </h3>
 
-                    <span class="advantage-card__open">
+                    <span data-stiker class="advantage-card__open">
                       Подробнее
                     </span>
-                    <p class="advantage-card__desc">
-                      Для удобной работы каждому клиенту предоставляется персональный менеджер, который ответим на ваши
-                      вопросыо производстве и переработке металлопроката, его свойствах и особенностях применения, а
-                      также
-                      будет сопровождать сделку с вами от и до.
-                    </p>
+
                   </div>
+                  <p data-text class="advantage-card__desc">
+                    Для удобной работы каждому клиенту предоставляется персональный менеджер, который ответим на ваши
+                    вопросыо производстве и переработке металлопроката, его свойствах и особенностях применения, а
+                    также
+                    будет сопровождать сделку с вами от и до.
+                  </p>
                   <!-- advantage__list -->
-                  <div class="advantage__list">
+                  <div data-cards class="advantage__list">
                     <div class="advantage-item">
                       <div class="advantage-item__icon">
                         <span class="advantage-item__quarter lt"></span>
@@ -911,35 +939,36 @@
 
                   <!--advantage__list-->
 
-                  <span class="advantage-card__roll-up">
+                  <span data-roll-up class="advantage-card__roll-up">
                     Свертуть
                   </span>
                 </div>
               </div>
 
-              <div data-card class="advantage-card advantage-card--change-color">
+              <div data-card="close" class="advantage-card advantage-card--hover">
                 <div data-content class="advantage-card__contect">
 
-                  <img src="./img/image/advantages/advantage4.png" alt="" class="advantage-card__img">
+                  <img data-img src="./img/image/advantages/advantage4.png" alt="" class="advantage-card__img">
 
-                  <span class="advantage-card__close close-btn">Закрыть</span>
+                  <span data-close-btn class="advantage-card__close close-btn">Закрыть</span>
                   <div class="advantage-card__header">
                     <span class="advantage-card__num">04</span>
                     <h3 class="advantage-card__title">
                       Собственный рабочий автопарк
                     </h3>
 
-                    <span class="advantage-card__open">
+                    <span data-stiker class="advantage-card__open">
                       Подробнее
                     </span>
-                    <p class="advantage-card__desc">
-                      Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
-                      Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
-                      погрузки железнодорожных вагонов.
-                    </p>
+
                   </div>
+                  <p data-text class="advantage-card__desc">
+                    Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
+                    Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
+                    погрузки железнодорожных вагонов.
+                  </p>
                   <!-- advantage__list -->
-                  <div class="advantage__list">
+                  <div data-cards class="advantage__list">
                     <div class="advantage-item">
                       <div class="advantage-item__icon">
                         <span class="advantage-item__quarter rt"></span>
@@ -967,7 +996,7 @@
 
                   <!--advantage__list-->
 
-                  <span class="advantage-card__roll-up">
+                  <span data-roll-up class="advantage-card__roll-up">
                     Свертуть
                   </span>
                 </div>
@@ -991,12 +1020,13 @@
           </h2>
 
           <!-- section__content -->
-          <div class="section__content">
+          <div id="partnersSlider" class="section__content">
             <!-- partners -->
-            <div class="partners">
+            <div class="partners slider">
               <!-- partner__list -->
-              <div class="partner__list">
-                <div class="partner-card">
+              <div data-track class="partner__list slider__track">
+
+                <div data-slide class="partner-card slide">
                   <!--partner-card__info-->
                   <div class="partner-card__info">
                     <div class="partner-card__logo partner-card__logo--gasprom"></div>
@@ -1015,7 +1045,7 @@
 
                     <div class="partner-card__item partner-card__item--one br">
                       <div class="partner-card__number">
-                        21
+                        1
                       </div>
                       <p class="partner-card__text">
                         город поставки в России
@@ -1050,37 +1080,314 @@
                     </div>
                   </div>
                 </div>
+
+                <div data-slide class="partner-card slide">
+                  <!--partner-card__info-->
+                  <div class="partner-card__info">
+                    <div class="partner-card__logo partner-card__logo--gasprom"></div>
+                    <p class="partner-card__desc">ПАО «Газпром» — глобальная энергетическая компания. Основные
+                      направления
+                      деятельности —
+                      геологоразведка, добыча, транспортировка, хранение, переработка и реализация газа, газового
+                      конденсата и нефти, реализация газа в качестве моторного топлива, а также производство и сбыт
+                      тепло-
+                      и электроэнергии.
+                    </p>
+                  </div>
+                  <!-- partner-card__info -->
+
+                  <div class="partner-card__details">
+
+                    <div class="partner-card__item partner-card__item--one br">
+                      <div class="partner-card__number">
+                        2
+                      </div>
+                      <p class="partner-card__text">
+                        город поставки в России
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--two">
+                      <div class="partner-card__number">
+                        3
+                      </div>
+                      <p class="partner-card__text">
+                        года сотрудничества
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--three br bt">
+                      <div class="partner-card__number">
+                        3 400
+                      </div>
+                      <p class="partner-card__text">
+                        оборот единиц продукции
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--four bt">
+                      <div class="partner-card__number">
+                        157
+                      </div>
+                      <p class="partner-card__text">
+                        тонн отгруженной продукции
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-slide class="partner-card slide">
+                  <!--partner-card__info-->
+                  <div class="partner-card__info">
+                    <div class="partner-card__logo partner-card__logo--gasprom"></div>
+                    <p class="partner-card__desc">ПАО «Газпром» — глобальная энергетическая компания. Основные
+                      направления
+                      деятельности —
+                      геологоразведка, добыча, транспортировка, хранение, переработка и реализация газа, газового
+                      конденсата и нефти, реализация газа в качестве моторного топлива, а также производство и сбыт
+                      тепло-
+                      и электроэнергии.
+                    </p>
+                  </div>
+                  <!-- partner-card__info -->
+
+                  <div class="partner-card__details">
+
+                    <div class="partner-card__item partner-card__item--one br">
+                      <div class="partner-card__number">
+                        3
+                      </div>
+                      <p class="partner-card__text">
+                        город поставки в России
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--two">
+                      <div class="partner-card__number">
+                        3
+                      </div>
+                      <p class="partner-card__text">
+                        года сотрудничества
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--three br bt">
+                      <div class="partner-card__number">
+                        3 400
+                      </div>
+                      <p class="partner-card__text">
+                        оборот единиц продукции
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--four bt">
+                      <div class="partner-card__number">
+                        157
+                      </div>
+                      <p class="partner-card__text">
+                        тонн отгруженной продукции
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-slide class="partner-card slide">
+                  <!--partner-card__info-->
+                  <div class="partner-card__info">
+                    <div class="partner-card__logo partner-card__logo--gasprom"></div>
+                    <p class="partner-card__desc">ПАО «Газпром» — глобальная энергетическая компания. Основные
+                      направления
+                      деятельности —
+                      геологоразведка, добыча, транспортировка, хранение, переработка и реализация газа, газового
+                      конденсата и нефти, реализация газа в качестве моторного топлива, а также производство и сбыт
+                      тепло-
+                      и электроэнергии.
+                    </p>
+                  </div>
+                  <!-- partner-card__info -->
+
+                  <div class="partner-card__details">
+
+                    <div class="partner-card__item partner-card__item--one br">
+                      <div class="partner-card__number">
+                        1
+                      </div>
+                      <p class="partner-card__text">
+                        город поставки в России
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--two">
+                      <div class="partner-card__number">
+                        3
+                      </div>
+                      <p class="partner-card__text">
+                        года сотрудничества
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--three br bt">
+                      <div class="partner-card__number">
+                        3 400
+                      </div>
+                      <p class="partner-card__text">
+                        оборот единиц продукции
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--four bt">
+                      <div class="partner-card__number">
+                        157
+                      </div>
+                      <p class="partner-card__text">
+                        тонн отгруженной продукции
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-slide class="partner-card slide">
+                  <!--partner-card__info-->
+                  <div class="partner-card__info">
+                    <div class="partner-card__logo partner-card__logo--gasprom"></div>
+                    <p class="partner-card__desc">ПАО «Газпром» — глобальная энергетическая компания. Основные
+                      направления
+                      деятельности —
+                      геологоразведка, добыча, транспортировка, хранение, переработка и реализация газа, газового
+                      конденсата и нефти, реализация газа в качестве моторного топлива, а также производство и сбыт
+                      тепло-
+                      и электроэнергии.
+                    </p>
+                  </div>
+                  <!-- partner-card__info -->
+
+                  <div class="partner-card__details">
+
+                    <div class="partner-card__item partner-card__item--one br">
+                      <div class="partner-card__number">
+                        2
+                      </div>
+                      <p class="partner-card__text">
+                        город поставки в России
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--two">
+                      <div class="partner-card__number">
+                        3
+                      </div>
+                      <p class="partner-card__text">
+                        года сотрудничества
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--three br bt">
+                      <div class="partner-card__number">
+                        3 400
+                      </div>
+                      <p class="partner-card__text">
+                        оборот единиц продукции
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--four bt">
+                      <div class="partner-card__number">
+                        157
+                      </div>
+                      <p class="partner-card__text">
+                        тонн отгруженной продукции
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-slide class="partner-card slide">
+                  <!--partner-card__info-->
+                  <div class="partner-card__info">
+                    <div class="partner-card__logo partner-card__logo--gasprom"></div>
+                    <p class="partner-card__desc">ПАО «Газпром» — глобальная энергетическая компания. Основные
+                      направления
+                      деятельности —
+                      геологоразведка, добыча, транспортировка, хранение, переработка и реализация газа, газового
+                      конденсата и нефти, реализация газа в качестве моторного топлива, а также производство и сбыт
+                      тепло-
+                      и электроэнергии.
+                    </p>
+                  </div>
+                  <!-- partner-card__info -->
+
+                  <div class="partner-card__details">
+
+                    <div class="partner-card__item partner-card__item--one br">
+                      <div class="partner-card__number">
+                        3
+                      </div>
+                      <p class="partner-card__text">
+                        город поставки в России
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--two">
+                      <div class="partner-card__number">
+                        3
+                      </div>
+                      <p class="partner-card__text">
+                        года сотрудничества
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--three br bt">
+                      <div class="partner-card__number">
+                        3 400
+                      </div>
+                      <p class="partner-card__text">
+                        оборот единиц продукции
+                      </p>
+                    </div>
+
+                    <div class="partner-card__item partner-card__item--four bt">
+                      <div class="partner-card__number">
+                        157
+                      </div>
+                      <p class="partner-card__text">
+                        тонн отгруженной продукции
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+
+
               </div>
               <!-- partner__list -->
-
 
               <!-- partners__slider -->
               <div class="partners-slider">
                 <!--partners-slider__track-->
-                <div class="partners-slider__body slider">
-                  <div class="partners-slider__track slider__track">
+                <div data-dots class="partners-slider__body slider">
+                  <div data-dots-track class="partners-slider__track slider__track">
 
-                    <div class="partners-slider__item partners-slider__item--active">
-                      <i class="partners-slider__icon  icon-gasprom"></i>
+                    <div data-dot class="partners-slider__item partners-slider__item--active">
+                      <i class="partners-slider__icon icon-gasprom"></i>
                     </div>
 
-                    <div class="partners-slider__item">
+                    <div data-dot class="partners-slider__item">
                       <i class="partners-slider__icon icon-sibur"></i>
                     </div>
 
-                    <div class="partners-slider__item">
+                    <div data-dot class="partners-slider__item">
                       <i class="partners-slider__icon icon-luk"></i>
                     </div>
 
-                    <div class="partners-slider__item">
+                    <div data-dot class="partners-slider__item">
                       <i class="partners-slider__icon icon-sng"></i>
                     </div>
 
-                    <div class="partners-slider__item">
+                    <div data-dot class="partners-slider__item">
                       <i class="partners-slider__icon icon-nlmk"></i>
                     </div>
 
-                    <div class="partners-slider__item">
+                    <div data-dot class="partners-slider__item">
                       <i class="partners-slider__icon icon-rd"></i>
                     </div>
 
@@ -1090,9 +1397,9 @@
                 </div>
                 <!--partners-slider__track-->
 
-                <div class="partners-slider__control">
-                  <span class="partners-slider__btn partners-slider__prev"></span>
-                  <span class="partners-slider__btn partners-slider__next"></span>
+                <div data-controls class="partners-slider__control">
+                  <span data-prev class="partners-slider__btn hide-arrow partners-slider__prev"></span>
+                  <span data-next class="partners-slider__btn partners-slider__next"></span>
                 </div>
               </div>
               <!-- partners__slider -->
@@ -1163,8 +1470,7 @@
                 <!-- reviews-block__track -->
                 <div data-controls class="section-controls">
                   <div class="section-controls__inner">
-                    <span data-prev
-                      class="section-controls__btn section-controls__btn--hide section-controls__prev"></span>
+                    <span data-prev class="section-controls__btn hide-arrow section-controls__prev"></span>
                     <span data-next class="section-controls__btn section-controls__next"></span>
                   </div>
                 </div>
@@ -1234,8 +1540,7 @@
                 <!-- reviews-block__track -->
                 <div data-controls class="section-controls">
                   <div class="section-controls__inner">
-                    <span data-prev
-                      class="section-controls__btn section-controls__btn--hide section-controls__prev"></span>
+                    <span data-prev class="section-controls__btn hide-arrow section-controls__prev"></span>
                     <span data-next class="section-controls__btn section-controls__next"></span>
                   </div>
                 </div>

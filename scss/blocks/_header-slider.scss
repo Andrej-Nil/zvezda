@@ -1,3 +1,8 @@
 .header__slide {
   max-width: 460px;
+  display: none;
+}
+
+.header__slide--show {
+  display: block;
 }

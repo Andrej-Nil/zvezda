@@ -24,7 +24,7 @@
   }
 }
 .partners-slider__track {
-  height: 50px;
+  height: 60px;
   //min-width: 234px;
   width: 160px;
   @media (min-width: 1310px) {
@@ -193,6 +193,7 @@
   }
 }
 .partners-slider__next {
+  margin-left: auto;
   &::before {
     @include font-icon-style("\e91b", 18px);
   }

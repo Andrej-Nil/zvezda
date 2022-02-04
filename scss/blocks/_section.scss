@@ -116,10 +116,6 @@
   }
 }
 
-.section-controls__btn--hide {
-  display: none;
-}
-
 .section-controls__prev {
   &::before {
     @include font-icon-style("\e916", 40px);
