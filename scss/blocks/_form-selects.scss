@@ -1,0 +1,34 @@
+.form-selects {
+  background: $pearl;
+  padding: 25px 10px;
+  margin-bottom: 20px;
+  @media (min-width: 1050px) {
+    padding: 40px 30px;
+  }
+}
+
+.form-selects__title {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+
+  color: $blackMain;
+}
+
+.form-selects__list {
+  display: grid;
+
+  gap: 20px;
+  margin-bottom: 40px;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1050px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.form-selects__item {
+  background: $white;
+}

@@ -141,3 +141,21 @@
     background-image: url("../../img/icon/tile-active.svg");
   }
 }
+.form-block__add {
+  display: inline-block;
+
+  background: $pearl;
+  padding: 13px 28px;
+
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 180%;
+  color: $blackMain;
+
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background: #dfdfdf;
+  }
+}

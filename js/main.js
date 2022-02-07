@@ -7,6 +7,8 @@ const $supportModal = document.querySelector('#supportModal');
 const $orderModalBtn = document.querySelector('#orderModalBtn');
 const $orderModal = document.querySelector('#orderModal');
 
+const $queryModal = document.querySelector('#orderModal');
+
 class Debaunce {
   constructor() { }
   debaunce = (fn, ms) => {
@@ -1561,10 +1563,10 @@ class CommunicationModal extends Modal {
     if (!this.$modal) {
       return;
     }
-    this.$modalBody = this.$modal.querySelector('[data-modal-body]');
-    this.$modal.addEventListener('click', this.listeners);
-    this.form = new Form(this.formId);
 
+    this.$modalBody = this.$modal.querySelector('[data-modal-body]');
+    this.form = new Form(this.formId);
+    this.listeners();
   }
 
   sendForm = async () => {
@@ -1592,12 +1594,48 @@ class CommunicationModal extends Modal {
   }
 
   clickHandler = (e) => {
+
     const $target = e.target
     if ($target.closest('[data-submit]')) {
       this.sendForm();
       errorModal.close();
     }
     if ($target.hasAttribute('data-close')) {
+
+      this.close();
+      errorModal.close();
+    }
+  }
+
+  listeners = () => {
+    this.$modal.addEventListener('click', this.clickHandler)
+  }
+}
+
+class QueryModal extends Modal {
+  constructor(modalId, formId) {
+    super(modalId);
+    this.formId = formId;
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$modal) {
+      return;
+    }
+    this.$modalBody = this.$modal.querySelector('[data-modal-body]');
+    this.form = new Form(this.formId);
+    this.listeners()
+  }
+
+  clickHandler = (e) => {
+    const $target = e.target
+    //if ($target.closest('[data-submit]')) {
+    //  this.sendForm();
+    //  errorModal.close();
+    //}
+    if ($target.hasAttribute('data-close')) {
+
       this.close();
       errorModal.close();
     }
@@ -1723,9 +1761,6 @@ class Advantages {
   }
 
 
-
-
-
   // анимации элементов для открытия
   openingCardAnimations = () => {
     this.disclosureCard();
@@ -1804,6 +1839,7 @@ class Advantages {
     }, 700);
     setTimeout(() => {
       $block.style.transition = '';
+      $block.style.transform = 'translate(0, 0px)';
     }, 900);
 
   }
@@ -1912,7 +1948,7 @@ class Advantages {
     setTimeout(() => {
       $block.style.transition = 'opacity 0.7s ease-in-out, transform ease-in 0.5s';
       $block.style.opacity = '';
-      $block.style.transform = 'translate(0, 50px)';
+      $block.style.transform = '';
     }, 200);
     setTimeout(() => {
       $block.style.transition = '';
@@ -2576,6 +2612,8 @@ const supportModal = new CommunicationModal('#supportModal', '#supportModalForm'
 const succsesModal = new SuccsesModal('#succsesModal');
 const confirmationModal = new ConfirmationModal('#confirmationModal');
 const ordenModal = new CommunicationModal('#orderModal', '#orderModalForm');
+
+const queryModal = new QueryModal('#queryModal', '#queryModalForm');
 const errorModal = new ErrorModal('#errorModal');
 
 const catalogModal = new CatalogModal('headerCatalogModal');
@@ -2615,13 +2653,28 @@ if ($orderModalBtn && $orderModal) {
   $orderModalBtn.addEventListener('click', openOrderModal);
 }
 
+if ($queryModal) {
+  document.addEventListener('click', openQueryModal);
+}
+
 function openSearchModal() {
-  searchModal.openSearchModal()
+  searchModal.openSearchModal();
 }
 
 function openSupportModal() {
-  supportModal.open()
+  supportModal.open();
 }
 function openOrderModal() {
   ordenModal.open();
 }
+
+
+
+function openQueryModal(e) {
+  if (e.target.closest(`[data-query-btn]`)) {
+    queryModal.open();
+  }
+
+}
+
+

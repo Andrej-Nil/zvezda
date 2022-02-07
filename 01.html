@@ -145,7 +145,7 @@
               <div class="header__buttons">
                 <a href="catalog.html"
                   class="header__btn header__btn--catalog btn yellow-btn hover-yellow-light">Каталог продукции</a>
-                <span class="header__btn btn clear-btn">Оставить заявку</span>
+                <span data-query-btn class="header__btn btn clear-btn">Оставить заявку</span>
               </div>
             </div>
 
@@ -162,7 +162,7 @@
               <div class="header__buttons">
                 <a href="catalog.html" class="header__btn header__btn--catalog btn yellow-btn hover-yellow-light">Услуги
                   Компании</a>
-                <span class="header__btn btn clear-btn">Оставить заявку</span>
+                <span data-query-btn class="header__btn btn clear-btn">Оставить заявку</span>
               </div>
             </div>
 
@@ -178,7 +178,7 @@
               <div class="header__buttons">
                 <a href="catalog.html"
                   class="header__btn header__btn--catalog btn yellow-btn hover-yellow-light">Производство</a>
-                <span class="header__btn btn clear-btn">Оставить заявку</span>
+                <span data-query-btn class="header__btn btn clear-btn">Оставить заявку</span>
               </div>
             </div>
           </div>
@@ -1563,7 +1563,7 @@
               на поставку металлопроката
               или изготовление продукции</h3>
             <div class="callback-block__buttons">
-              <span class="callback-block__btn btn clear-btn">Оставить заявку</span>
+              <span data-query-btn class="callback-block__btn btn clear-btn">Оставить заявку</span>
             </div>
           </div>
         </div>
@@ -1795,7 +1795,7 @@
                   </div>
                 </div>
 
-                <span class="city-card__btn btn clear-btn">
+                <span data-query-btn class="city-card__btn btn clear-btn">
                   Оставить заявку
                 </span>
 
@@ -1823,6 +1823,360 @@
     <!--header-modals-->
 
     <!--modal-->
+
+
+    <!-- queryModal -->
+    <div id="queryModal" class="modal modal--is-hide">
+      <!--modal__inner-->
+      <div data-modal-body class="modal__body modal__body--big">
+        <span data-close class="modal__close close-btn">Закрыть</span>
+
+        <h3 class="modal__title">
+          Оформление заявки
+        </h3>
+
+        <form action="./json/send-form.json" enctype="multipart/form-data" metod="POST" id="queryModalForm"
+          class="modal__form">
+
+          <div class="form-block">
+            <p class="form-block__title">Общая информация</p>
+            <div class="form-block__inputs">
+
+              <div data-dropdown="close" class="modal__select select mb0">
+                <span data-dropdown-btn data-select-title class="select__title ">
+                  Выбрать форму заявки
+                </span>
+                <div data-dropdown-body class="select__body">
+                  <ul data-dropdown-content class="select__list">
+                    <li class="select__item">
+                      <label class="select__label">
+                        <span class="select__text">
+                          Поставка продукции
+                        </span>
+                        <input data-radio class="select__radio radio" type="radio" name="delivery"
+                          value="Поставка продукции">
+                      </label>
+                    </li>
+                    <li class="select__item">
+                      <label class="select__label">
+                        <span class="select__text">
+                          Производство продукции
+                        </span>
+                        <input data-radio class="select__radio radio" type="radio" name="delivery"
+                          value="Производство продукции">
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="name" type="text" />
+
+                <span class="place-entry__placeholder">ФИО<span class="place-entry__star">*</span></span>
+
+              </label>
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="phone" type="text" />
+
+                <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
+              </label>
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="mail" type="text" />
+
+                <span class="place-entry__placeholder">E-mail</span>
+              </label>
+
+              <label class="modal__input place-entry span2 mb0">
+                <input data-input class="place-entry__input" name="message" type="text" />
+
+                <span class="place-entry__placeholder">Комментарий к заказу</span>
+
+              </label>
+
+            </div>
+          </div>
+          <div class="form-block__info">
+            <div class="form-block">
+              <p class="form-block__title">Информация о продукции</p>
+              <div class="form-selects">
+
+                <div class="form-selects__group">
+                  <p class="form-selects__title">Выбор продукции:</p>
+
+                  <div class="form-selects__list">
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Черный металлопрокат
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Цветной металлопрокат
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Медный металлопрокат
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Выберите категорию
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Лист стальной
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Труба стальная
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Выберите продукцию
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Лист рифленый стальной
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Лист обычный стальной
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-selects__group">
+                  <p class="form-selects__title">Характеристики:</p>
+
+                  <div class="form-selects__list">
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Тип рефления
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Ромб
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Волна
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Ширина
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                30
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                40
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Длина
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                70
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                80
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+            <span data-add class="form-block__add">Добавить позицию +</span>
+          </div>
+
+          <div class="form-block">
+            <p class="form-block__title">Информация о производстве</p>
+            <div class="form-block__inputs">
+
+              <label class="modal__input place-entry span3 mb0">
+                <input data-input class="place-entry__input" name="message" type="text" />
+
+                <span class="place-entry__placeholder">Комментарий к производству</span>
+
+              </label>
+
+
+              <div data-file-block class="modal__file span2 file mb0">
+                <label data-file-label class="file__label form-block__file-label">
+                  <div class="form-block__file-side">
+                    <span data-file-text class="file__text">Прикрепить файл</span>
+                    <input data-input type="file" name="file" class="file__input">
+                  </div>
+                  <div class="form-block__file-side">
+                    <span class="file__clear-btn mt0" clear-file-btn>очистить файл</span>
+                  </div>
+                </label>
+              </div>
+
+
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="mail" type="number" />
+
+                <span class="place-entry__placeholder">Количество</span>
+              </label>
+
+
+
+            </div>
+          </div>
+
+          <div class="form-block">
+            <p class="form-block__title">Информация об организации</p>
+            <div class="form-block__inputs">
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="mail" type="number" />
+
+                <span class="place-entry__placeholder">Наименование организации</span>
+              </label>
+
+              <div data-file-block class="modal__file span2 file mb0">
+                <label data-file-label class="file__label form-block__file-label">
+                  <div class="form-block__file-side">
+                    <span data-file-text class="file__text">Добавить реквизиты</span>
+                    <input data-input type="file" name="file" class="file__input">
+                  </div>
+                  <div class="form-block__file-side">
+                    <span class="file__clear-btn mt0" clear-file-btn>очистить файл</span>
+                  </div>
+                </label>
+              </div>
+
+
+
+
+
+
+
+            </div>
+          </div>
+
+
+
+          <div class="form-block__footer">
+            <input data-submit type="submit" class="form-block__submit btn yellow-btn hover-yellow-light"
+              value="Отправить заявку">
+
+            <label data-checkbox class="checkbox">
+              <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
+              <span class="checkbox__fake"></span>
+              <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
+            </label>
+          </div>
+
+        </form>
+
+      </div>
+      <!--modal__inner-->
+    </div>
+    <!-- queryModal -->
 
     <!-- supportModal -->
     <div id="supportModal" class="modal modal--is-hide">
@@ -1892,45 +2246,72 @@
     <!-- orderModal -->
     <div id="orderModal" class="modal modal--is-hide">
       <!--modal__inner-->
-      <div class="modal__inner">
+      <div data-modal-body class="modal__body">
         <span data-close class="modal__close close-btn">Закрыть</span>
 
         <h3 class="modal__title">
-          Обращение в техподдержку
+          Оформление заказа
         </h3>
 
-        <form class="modal__form">
+        <form id="orderModalForm" action="./json/send-form.json" enctype="multipart/form-data" metod="POST"
+          class="modal__form">
           <div class="modal__inputs-block">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*">
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="name" type="text" />
 
-            <input data-input type="text" name="company" class="modal__input input" placeholder="Название организации">
+              <span class="place-entry__placeholder">ФИО<span class="place-entry__star">*</span></span>
 
-            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail">
+            </label>
 
-            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*">
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="company" type="text" />
 
-            <input data-input type="text" name="address" class="modal__input input" placeholder="Адрес доставки*">
+              <span class="place-entry__placeholder">Название организации</span>
 
-            <div class="modal__select select">
-              <span class="select__title">
-                Доставка транспортной компанией
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="mail" type="text" />
+
+              <span class="place-entry__placeholder">E-mail</span>
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="phone" type="text" />
+
+              <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
+
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="address" type="text" />
+
+              <span class="place-entry__placeholder">Адрес доставки<span class="place-entry__star">*</span></span>
+
+            </label>
+
+            <div data-dropdown="close" class="modal__select select">
+              <span data-dropdown-btn data-select-title class="select__title ">
+                Выбрать форму заявки
               </span>
-              <div class="select__body">
-                <ul class="select__list">
+              <div data-dropdown-body class="select__body">
+                <ul data-dropdown-content class="select__list">
                   <li class="select__item">
                     <label class="select__label">
                       <span class="select__text">
-                        Кит
+                        Поставка продукции
                       </span>
-                      <input class="radio" type="radio" name="delivery" value="">
+                      <input data-radio class="select__radio radio" type="radio" name="delivery" value="кит">
                     </label>
                   </li>
                   <li class="select__item">
                     <label class="select__label">
                       <span class="select__text">
-                        сдек
+                        Производство продукции
                       </span>
-                      <input class="radio" type="radio" name="delivery" value="">
+                      <input data-radio class="select__radio radio" type="radio" name="delivery" value="сдек">
                     </label>
                   </li>
                 </ul>
@@ -1939,23 +2320,25 @@
 
             </div>
 
-            <textarea data-textarea name="message" class="modal__input modal__textarea textarea"
-              placeholder="Комменатрий к заказу"></textarea>
+            <textarea data-input name="message" class="modal__input modal__textarea textarea"
+              placeholder="Коментарий к заказу"></textarea>
           </div>
-          <div class="modal__file file">
-            <label class="file__label">
-              <span class="file__text">Добавить реквизиты</span>
-              <input data-file type="file" name="file" class="file__input">
+          <div data-file-block class="modal__file file">
+            <label data-file-label class="file__label">
+              <span data-file-text class="file__text">Добавить реквизиты</span>
+              <input data-input type="file" name="file" class="file__input">
             </label>
+            <span class="file__clear-btn" clear-file-btn>очистить файл</span>
             <p class="file__desc">
               Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
           </div>
 
-          <input type="text" class="modal__submit btn yellow-btn hover-yellow-light" value="Оформить заявку">
+          <input data-submit type="submit" class="modal__submit btn yellow-btn hover-yellow-light"
+            value="Отправить заявку">
 
-          <label class="checkbox" data-label>
-            <input data-checkbox type="checkbox" checked class="checkbox__input" />
+          <label data-checkbox class="checkbox">
+            <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
             <span class="checkbox__fake"></span>
             <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
 

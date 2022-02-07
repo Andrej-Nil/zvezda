@@ -160,10 +160,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  //width: 100%;
-  //display: flex;
-  //flex-direction: column;
-  //transform: translate(0, 50px);
+  transform: translate(0, 50px);
   opacity: 0;
 
   @media (min-width: 850px) {

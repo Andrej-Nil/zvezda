@@ -2,6 +2,9 @@
   margin-bottom: 0px;
 }
 
+.mt0 {
+  margin-top: 0;
+}
 .mb30 {
   margin-bottom: 30px;
 }
@@ -27,4 +30,16 @@
 
 .white-color {
   color: $white;
+}
+
+.span2 {
+  @media (min-width: 768px) {
+    grid-column: span 2;
+  }
+}
+
+.span3 {
+  @media (min-width: 768px) {
+    grid-column: span 3;
+  }
 }

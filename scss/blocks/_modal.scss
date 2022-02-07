@@ -30,13 +30,21 @@
   //display: none;
   position: relative;
   transform: translate(100%, 0);
-  width: 473px;
+  width: 100%;
+  max-width: 473px;
   min-height: 100vh;
   background: $white;
   margin-left: auto;
-  padding: 95px 50px 50px;
+  padding: 95px 15px 30px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
   transition: transform 0.5s ease-in-out;
+  @media (min-width: 1050px) {
+    padding: 95px 50px 50px;
+  }
+}
+
+.modal__body--big {
+  max-width: 1075px;
 }
 
 //.modal__content {
@@ -51,11 +59,14 @@
 }
 
 .modal__title {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 
   color: $blackMain;
   font-size: 24px;
   line-height: 33px;
+  @media (min-width: 1050px) {
+    margin-bottom: 50px;
+  }
 }
 
 .modal__inputs-block {
@@ -84,6 +95,7 @@
 
 .modal__select {
   margin-bottom: 30px;
+  z-index: 150;
 }
 
 //.blinds {
