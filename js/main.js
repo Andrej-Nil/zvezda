@@ -2002,13 +2002,19 @@ class Slider {
     this.$controls = this.$slider.querySelector('[data-controls]');
     this.$prevArrow = this.$slider.querySelector('[data-prev]');
     this.$nextArrow = this.$slider.querySelector('[data-next]');
-    this.displaySlides = this.setDisplaySlides();
+
+    this.$dotsWrap = this.$slider.querySelector('[data-dots-track]');
+    this.$activeDot = this.$slider.querySelector('.partners-slider__item--active');
+    this.displaySlides = this.setDisplaySlides(this.$slider, this.$slides[0]);
+    this.displayDotSlides = this.setDisplaySlides(this.$dotsWrap, this.$activeDot);
     this.i = 0;
     this.touchStart = 0;
     this.touchPosition = 0;
     this.sensitivity = 50;
+
     this.listeners();
     this.toggleControls();
+
   }
 
   prev = () => {
@@ -2017,7 +2023,10 @@ class Slider {
     }
     this.i--;
     this.toggleArrow();
-    this.trackShift();
+    this.trackShift(this.$slides[0]);
+    if (this.$activeDot) {
+      this.moveDotTrack();
+    }
   }
 
   next = () => {
@@ -2026,7 +2035,11 @@ class Slider {
     }
     this.i++;
     this.toggleArrow();
-    this.trackShift();
+    this.trackShift(this.$slides[0]);
+    if (this.$activeDot) {
+      this.moveDotTrack();
+    }
+
   }
 
   toggleControls = () => {
@@ -2065,45 +2078,90 @@ class Slider {
     }
     $arrow.classList.remove('hide-arrow');
   }
+  moveDotTrack = () => {
+    this.changeActiveDot();
+    if (this.i - 1 >= this.$slides.length - this.displayDotSlides) {
+      return;
+    }
+    this.dotsTrackShift(this.$activeDot);
+  }
 
-  trackShift = () => {
-    const trackShift = this.getShift();
+  trackShift = ($slide) => {
+    const trackShift = this.getShift($slide);
     this.$track.style.transform = `translate(-${trackShift}px, 0)`;
   }
 
-  getShift = () => {
-    const step = this.getSlideWidth();
+  dotsTrackShift = ($slide) => {
+    const trackShift = this.getShift($slide);
+    this.$dotsWrap.style.transform = `translate(-${trackShift}px, 0)`;
+  }
+
+  getShift = ($slide) => {
+    const step = this.getSlideWidth($slide);
     return this.i * step;
   }
 
-  getSlideWidth = () => {
-    const slideWidth = this.$slides[0].offsetWidth;
-    const slideMarginRight = parseInt(getComputedStyle(this.$slides[0], true).marginRight);
-    const slideMarginLeft = parseInt(getComputedStyle(this.$slides[0], true).marginLeft);
+  getSlideWidth = ($slide) => {
+    const slideWidth = $slide.offsetWidth;
+    const slideMarginRight = parseInt(getComputedStyle($slide, true).marginRight);
+    const slideMarginLeft = parseInt(getComputedStyle($slide, true).marginLeft);
     return slideWidth + slideMarginRight + slideMarginLeft;
   }
-  setDisplaySlides = () => {
-    const sliderWidth = this.$slider.offsetWidth;
-    const slideWidth = this.getSlideWidth()
+
+  setDisplaySlides = ($slider, $slide) => {
+    if (!$slider) {
+      return;
+    }
+    const sliderWidth = $slider.offsetWidth;
+    const slideWidth = this.getSlideWidth($slide)
     return Math.ceil(sliderWidth / slideWidth);
+  }
+
+  dotsControl = ($dot) => {
+    this.i = $dot.dataset.dot;
+    this.trackShift(this.$slides[0]);
+    this.changeActiveDot();
+
+  }
+
+  changeActiveDot = () => {
+    const $dot = this.$slider.querySelector(`[data-dot="${this.i}"]`)
+    this.$activeDot.classList.remove('partners-slider__item--active');
+
+    this.$activeDot = $dot;
+
+    this.$activeDot.classList.add('partners-slider__item--active');
   }
 
   clickHandler = (e) => {
     const $target = e.target;
     if ($target.hasAttribute('data-prev')) {
-      this.prev()
+      this.prev();
     }
 
     if ($target.hasAttribute('data-next')) {
-      this.next()
+      this.next();
+    }
+
+    if ($target.closest('[data-dot]')) {
+      const $dot = $target.closest('[data-dot]');
+      this.dotsControl($dot);
     }
   }
 
   resizeHandler = () => {
-    this.displaySlides = this.setDisplaySlides();
+    this.displaySlides = this.setDisplaySlides(this.$slider, this.$slides[0]);
+    this.displayDotSlides = this.setDisplaySlides(this.$dotsWrap, this.$activeDot);
     this.i = 0;
-    this.trackShift();
+    this.trackShift(this.$slides[0]);
     this.toggleControls();
+    this.toggleArrow();
+    if (this.$dotsWrap) {
+      this.changeActiveDot();
+      this.dotsTrackShift(this.$activeDot);
+    }
+
+
   }
 
   startTouchMove = (e) => {

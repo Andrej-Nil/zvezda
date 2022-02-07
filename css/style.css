@@ -5242,7 +5242,7 @@ body {
   }
 }
 
-@media (min-width: 1310px) {
+@media (min-width: 1100px) {
   .partners-slider__body {
     width: 100%;
   }
@@ -5250,12 +5250,14 @@ body {
 
 .partners-slider__track {
   height: 60px;
-  width: 160px;
+  width: 100%;
+  margin-bottom: 0;
 }
 
 @media (min-width: 1310px) {
   .partners-slider__track {
     height: 95px;
+    margin-bottom: 0;
   }
 }
 
@@ -8422,7 +8424,6 @@ body {
 .slider__track {
   padding: 5px 0;
   display: flex;
-  margin-bottom: 40px;
   transition: 0.3s ease-in-out;
 }
 
