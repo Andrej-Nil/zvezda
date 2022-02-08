@@ -168,7 +168,7 @@ class InputFile {
     this.$cloneLabel = this.createCloneLabel();
     this.$fileText = this.$inputFileBlock.querySelector('[data-file-text]');
     this.$input = this.$inputFileBlock.querySelector('[data-input]');
-    this.$clearBtn = this.$inputFileBlock.querySelector('[clear-file-btn]');
+    this.$clearBtn = this.$inputFileBlock.querySelector('[data-clear-file]');
     this.infoFile = null;
   }
   createCloneLabel = () => {
@@ -973,7 +973,7 @@ class Form {
   }
   clickHandler = (e) => {
     const target = e.target;
-    if (target.closest('[clear-file-btn]')) {
+    if (target.closest('[data-clear-file]')) {
       this.inputFile.clear();
 
     }
@@ -2631,34 +2631,115 @@ class Dropdown {
 
 class About {
   constructor(aboutListId) {
-    this.about = document.querySelector(aboutListId);
-    this.init()
+    this.$about = document.querySelector(aboutListId);
+    this.init();
   }
   init = () => {
-    if (!this.about) {
+    if (!this.$about) {
       return;
     }
     this.lastScroll = window.scrollY;
-    this.todayBlock = document.querySelector('#today');
-    this.aboutItemList = this.about.querySelectorAll('[data-about-item]');
-    this.aboutGallery = this.about.querySelector('#aboutGallery');
+    this.$currentPic = this.$about.querySelector('#currentPic');
+    this.$newPic = this.$about.querySelector('#newPic');
+    this.$stages = this.$about.querySelectorAll('[data-stage]');
+    this.currentStageNum = this.getCurrentStageNum();
+    this.$currentStage = this.$stages[this.currentStageNum];
+    this.$aboutMainImg = this.$about.querySelector('#aboutMainImg');
+    this.changeImg();
     this.listeners();
-
-    console.log(this.lastScroll);
+  }
+  changeMainImgPosition = () => {
+    const aboutCoord = this.$about.getBoundingClientRect();
+    const pointChangePos = aboutCoord.bottom - document.documentElement.clientHeight;
+    if (pointChangePos <= 0) {
+      this.$aboutMainImg.classList.add('about-main-img--stop');
+    } else {
+      this.$aboutMainImg.classList.remove('about-main-img--stop');
+    }
 
   }
-
-  changeMainImg = () => {
+  toggleImg = () => {
     if (window.scrollY > this.lastScroll) {
-      console.log('down');
+      this.changePicWhenScrollDown();
     } else {
-      console.log('up');
+      this.changePicWhenScrollUp();
     }
     this.lastScroll = window.scrollY;
   }
+
+  changePicWhenScrollDown = () => {
+    if (this.currentStageNum >= this.$stages.length - 1) {
+      return;
+    }
+    const coord = this.$currentStage.getBoundingClientRect();
+    if (coord.y < 50) {
+      this.currentStageNum = this.currentStageNum + 1;
+      this.$currentStage = this.$stages[this.currentStageNum];
+      this.changeImg()
+    }
+  }
+
+  changePicWhenScrollUp = () => {
+    if (this.currentStageNum <= 0) {
+      return;
+    }
+    const coord = this.$stages[this.currentStageNum - 1].getBoundingClientRect();
+    if (coord.y > 0) {
+      this.currentStageNum = this.currentStageNum - 1;
+      this.$currentStage = this.$stages[this.currentStageNum];
+      this.changeImg()
+    }
+  }
+
+  changeAndShowNewPic = (src) => {
+    this.$newPic.src = src;
+    this.$newPic.style.transition = 'opacity 0.3s';
+    this.$newPic.style.opacity = '1';
+  }
+
+  changeCurrentPic = (src) => {
+    this.$currentPic.src = src;
+  }
+
+  hideNewPic = () => {
+    this.$newPic.style.transition = '';
+    this.$newPic.style.opacity = '0';
+  }
+
+  changeImg = () => {
+    const src = this.$currentStage.dataset.src;
+    this.changeAndShowNewPic(src);
+    setTimeout(() => {
+      this.changeCurrentPic(src);
+      this.hideNewPic()
+    }, 300);
+
+  }
+
+  getCurrentStageNum = () => {
+    let currentStageNum = null;
+    for (let i = 0; i <= this.$stages.length - 1; i++) {
+      const coord = this.$stages[i].getBoundingClientRect();
+      if (coord.y > 0) {
+        currentStageNum = +this.$stages[i].dataset.stage;
+        break;
+      }
+    }
+
+    if (currentStageNum === undefined || currentStageNum === null) {
+      currentStageNum = this.$stages.length - 1;
+    }
+
+    return currentStageNum;
+  };
+
+  scrollHandler = () => {
+    changeMainImgPosition();
+    changeImg();
+  }
   listeners = () => {
-    document.addEventListener('scroll', this.changeMainImg);
-    document.addEventListener('scroll', this.controls);
+    document.addEventListener('scroll', this.changeMainImgPosition);
+    document.addEventListener('scroll', this.toggleImg);
   }
 }
 const server = new Server();

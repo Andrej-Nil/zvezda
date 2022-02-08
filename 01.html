@@ -586,7 +586,7 @@
               <div data-bg-img class="services__bg">
                 <picture>
                   <source data-bg-src media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
-                  <img srcset="./img/image/other/1.svg" class="services__img">
+                  <img src="./img/image/other/1.svg" alt="" class="services__img">
                 </picture>
               </div>
               <div class="services__list">
@@ -598,7 +598,7 @@
                   <div class="service-card__bg">
                     <picture>
                       <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
-                      <img srcset="./img/image/servises/servise400-1.jpg" class="service-card__img">
+                      <img src="./img/image/servises/servise400-1.jpg" alt="" class="service-card__img">
                     </picture>
                   </div>
 
@@ -626,7 +626,7 @@
                   <div class="service-card__bg">
                     <picture>
                       <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
-                      <img srcset="./img/image/servises/servise400-2.jpg" class="service-card__img">
+                      <img src="./img/image/servises/servise400-2.jpg" alt="" class="service-card__img">
                     </picture>
                   </div>
 
@@ -654,7 +654,7 @@
                   <div class="service-card__bg">
                     <picture>
                       <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
-                      <img srcset="./img/image/servises/servise400-3.jpg" class="service-card__img">
+                      <img src="./img/image/servises/servise400-3.jpg" alt="" class="service-card__img">
                     </picture>
                   </div>
 
@@ -681,7 +681,7 @@
                   <div class="service-card__bg">
                     <picture>
                       <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
-                      <img srcset="./img/image/servises/servise400-4.jpg" class="service-card__img">
+                      <img src="./img/image/servises/servise400-4.jpg" alt="" class="service-card__img">
                     </picture>
                   </div>
 
@@ -708,7 +708,7 @@
                   <div class="service-card__bg">
                     <picture>
                       <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
-                      <img srcset="./img/image/servises/servise400-5.jpg" class="service-card__img">
+                      <img src="./img/image/servises/servise400-5.jpg" alt="" class="service-card__img">
                     </picture>
                   </div>
                   <a href="service-one.html" class="service-card__link">
@@ -1750,7 +1750,8 @@
         <div class="header-modal__content container">
 
           <div class="header-modal__search search">
-            <input id="searchCityInput" type="text" class="search__input input" placeholder="Поиск по каталогу">
+            <input id="searchCityInput" type="text" class="search__input input" placeholder="Поиск по каталогу"
+              autocomplete="off">
             <span class="search__btn"></span>
           </div>
           <!-- header-modal__main -->
@@ -1835,7 +1836,7 @@
           Оформление заявки
         </h3>
 
-        <form action="./json/send-form.json" enctype="multipart/form-data" metod="POST" id="queryModalForm"
+        <form action="./json/send-form.json" enctype="multipart/form-data" method="POST" id="queryModalForm"
           class="modal__form">
 
           <div class="form-block">
@@ -2103,13 +2104,13 @@
 
               <div data-file-block class="modal__file span2 file mb0">
                 <label data-file-label class="file__label form-block__file-label">
-                  <div class="form-block__file-side">
+                  <span class="form-block__file-side">
                     <span data-file-text class="file__text">Прикрепить файл</span>
                     <input data-input type="file" name="file" class="file__input">
-                  </div>
-                  <div class="form-block__file-side">
-                    <span class="file__clear-btn mt0" clear-file-btn>очистить файл</span>
-                  </div>
+                  </span>
+                  <span class="form-block__file-side">
+                    <span class="file__clear-btn mt0" data-clear-file>очистить файл</span>
+                  </span>
                 </label>
               </div>
 
@@ -2138,26 +2139,17 @@
 
               <div data-file-block class="modal__file span2 file mb0">
                 <label data-file-label class="file__label form-block__file-label">
-                  <div class="form-block__file-side">
+                  <span class="form-block__file-side">
                     <span data-file-text class="file__text">Добавить реквизиты</span>
                     <input data-input type="file" name="file" class="file__input">
-                  </div>
-                  <div class="form-block__file-side">
-                    <span class="file__clear-btn mt0" clear-file-btn>очистить файл</span>
-                  </div>
+                  </span>
+                  <span class="form-block__file-side">
+                    <span class="file__clear-btn mt0" data-clear-file>очистить файл</span>
+                  </span>
                 </label>
               </div>
-
-
-
-
-
-
-
             </div>
           </div>
-
-
 
           <div class="form-block__footer">
             <input data-submit type="submit" class="form-block__submit btn yellow-btn hover-yellow-light"
@@ -2188,7 +2180,7 @@
           Обращение в техподдержку
         </h3>
 
-        <form action="./json/send-form.json" enctype="multipart/form-data" metod="POST" id="supportModalForm"
+        <form action="./json/send-form.json" enctype="multipart/form-data" method="POST" id="supportModalForm"
           class="modal__form">
           <div class="modal__inputs-block">
             <label class="modal__input place-entry">
@@ -2220,7 +2212,7 @@
               <span data-file-text class="file__text">Прикрепить файл</span>
               <input data-input type="file" name="file" class="file__input">
             </label>
-            <span class="file__clear-btn" clear-file-btn>очистить файл</span>
+            <span class="file__clear-btn" data-clear-file>очистить файл</span>
             <p data-info="" class="file__desc">
               Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
@@ -2253,7 +2245,7 @@
           Оформление заказа
         </h3>
 
-        <form id="orderModalForm" action="./json/send-form.json" enctype="multipart/form-data" metod="POST"
+        <form id="orderModalForm" action="./json/send-form.json" enctype="multipart/form-data" method="POST"
           class="modal__form">
           <div class="modal__inputs-block">
             <label class="modal__input place-entry">
@@ -2328,7 +2320,7 @@
               <span data-file-text class="file__text">Добавить реквизиты</span>
               <input data-input type="file" name="file" class="file__input">
             </label>
-            <span class="file__clear-btn" clear-file-btn>очистить файл</span>
+            <span class="file__clear-btn" data-clear-file>очистить файл</span>
             <p class="file__desc">
               Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
@@ -2355,7 +2347,7 @@
       <div class="search-modal__inner container">
         <span data-close class="search-modal__close close-btn">Закрыть</span>
         <div id="SearchContent" class="search-modal__content">
-          <form action="" class="search-form mt50">
+          <form action="./json/search.json" method="GET" class="search-form mt50">
             <!-- selecting-area -->
             <div id="searchArea" class="selecting-area">
               <label class="selecting-area__item">
@@ -2389,12 +2381,6 @@
           <!-- search-result__list -->
         </div>
       </div>
-
-
-
-
-
-
 
       <div id="blinds" class="blinds">
         <div class="blind blind--up"></div>

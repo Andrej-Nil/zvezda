@@ -10,19 +10,19 @@
   <title>О Компании</title>
 </head>
 
-<body class="black-bg">
-  <div class="app">
-    <header class="header container header--fixed">
+<body>
+  <div class="app black-bg">
+    <header class="header header--fixed">
       <!-- header__top -->
-      <div class="header__top">
+      <div id="headerTop" class="header__top">
         <div class="header__top-inner container">
           <a href="index.html" class="header__logo"> </a>
 
           <nav class="header-nav">
             <ul class="header-nav__list">
-              <li class="header-nav__item" data-header-modal-id="headerCatalogModal">
+              <li data-nav-item class="header-nav__item">
 
-                <a href="catalog.html" class="header-nav__link">
+                <a href="catalog.html" class="header-nav__link" data-header-modal-id="headerCatalogModal">
                   <span class="header-nav__link-text">Каталог</span>
                   <span class="header-nav__arrow">
                     <span class="header-nav__modal-arrow"></span>
@@ -31,20 +31,20 @@
 
               </li>
 
-              <li class="header-nav__item">
+              <li data-nav-item class="header-nav__item">
                 <a href="" class="header-nav__link"></a>
                 <a href="services.html" class="header-nav__link">
                   <span class="header-nav__link-text">Услуги</span>
                 </a>
               </li>
 
-              <li class="header-nav__item">
+              <li data-nav-item class="header-nav__item">
                 <a href="production.html" class="header-nav__link">
                   <span class="header-nav__link-text">Производство</span>
                 </a>
               </li>
 
-              <li class="header-nav__item header-nav__item--about">
+              <li data-nav-item class="header-nav__item header-nav__item--about">
                 <a href="about.html" class="header-nav__link">
                   <span class="header-nav__link-text">О компании</span>
                   <span class="header-nav__arrow">
@@ -79,12 +79,15 @@
             <a href="mailto:" class="header__contact header__contact--mail">info@zvezda.ru</a>
           </div>
           <!-- header__connection -->
+          <div data-nav-item class="header-nav__item header-city">
 
-          <div class="header-city" data-header-modal-id="selectCityModal">
-            <span class="header-nav__link-text header-city__name">Екатеринбург</span>
-            <span class="header-city__arrow header-nav__arrow">
-              <span class="header-nav__modal-arrow"></span>
-            </span>
+            <div class="header-nav__link" data-header-modal-id="selectCityModal">
+              <span class="header-nav__link-text header-city__name">Екатеринбург</span>
+              <span class="header-nav__arrow header-city__arrow">
+                <span class="header-nav__modal-arrow"></span>
+              </span>
+            </div>
+
           </div>
 
           <nav class="nav-icon">
@@ -113,7 +116,7 @@
 
         </div>
         <div class="mobile-city">
-          <div class="mobile-city__inner ">
+          <div class="mobile-city__inner">
             <span class="mobile-city__name">Екатеринбург</span>
             <span class="mobile-city__arrow"></span>
           </div>
@@ -124,178 +127,294 @@
 
     </header>
 
-    <main class="main black-bg">
+    <main class="main">
       <div class="about__shadow"></div>
 
-      <!-- about-gallery -->
-      <div class="about-gallery">
-        <picture>
-          <!--<source srcset="" type="image/webp">-->
-          <img src="./img/image/about/about1.jpg" alt="" class="about-gallery__img">
-        </picture>
-        <div class="about-gallery__item">
 
-        </div>
-      </div>
-      <!-- about-gallery -->
 
       <!--about-->
-      <div class="about container">
-        <!-- about__list -->
-        <ul class="about__list">
-          <li class=" about__item about__item--start">
-            <h1 class="about__title">
-              <span class="color-yellow">Звезда</span> – это крупнейших производитель металлопроката в России
-            </h1>
-            <p class="about__text">
-              Cклад компании наполнен широким ассортиментом продукции металлопроката, что позволяет оперативно исполнять
-              любой индивидуальный заказ.
-            </p>
-          </li>
+      <div id="about" class="about">
 
-          <li class=" about__item">
-            <h1 class="about__title">
-              Начали покорят рынок металопроката <br /> <span class="color-yellow">в марте 2003 года</span>
-            </h1>
-          </li>
+        <!-- about-gallery -->
+        <div id="aboutMainImg" class="about-main-img">
+          <picture>
+            <!--<source srcset="./img/image/about/about0.jpg" type="image/webp">-->
+            <img id="currentPic" src="./img/image/about/about0.jpg" alt="" class="about-main-img__pic">
+          </picture>
 
-          <li class=" about__item">
-            <h1 class="about__title"><span class="color-yellow">2003 год</span>
-            </h1>
-
-            <p class="about__desc">
-              Cклад компании наполнен широким ассортиментом продукции металлопроката, что позволяет оперативно исполнять
-              любой индивидуальный заказ.
-            </p>
-          </li>
-
-          <li class=" about__item">
-            <h1 class="about__title"><span class="color-yellow">2004 год</span>
-            </h1>
-
-            <p class="about__desc">
-              Cклад компании наполнен широким ассортиментом продукции металлопроката, что позволяет оперативно исполнять
-              любой индивидуальный заказ.
-            </p>
-          </li>
-
-          <li class=" about__item">
-            <h1 class="about__title"><span class="color-yellow">2007 год</span>
-            </h1>
-
-            <p class="about__desc">
-              Cклад компании наполнен широким ассортиментом продукции металлопроката, что позволяет оперативно исполнять
-              любой индивидуальный заказ.
-            </p>
-          </li>
-
-          <li class=" about__item">
-            <h1 class="about__title"><span class="color-yellow">2011 год</span>
-            </h1>
-
-            <p class="about__desc">
-              Cклад компании наполнен широким ассортиментом продукции металлопроката, что позволяет оперативно исполнять
-              любой индивидуальный заказ.
-            </p>
-          </li>
-
-          <li class=" about__item">
-            <h1 class="about__title"><span class="color-yellow">2014 год</span>
-            </h1>
-
-            <p class="about__desc">
-              Cклад компании наполнен широким ассортиментом продукции металлопроката, что позволяет оперативно исполнять
-              любой индивидуальный заказ.
-            </p>
-          </li>
-
-          <li class=" about__item">
-            <h1 class="about__title"><span class="color-yellow">2017 год</span>
-            </h1>
-
-            <p class="about__desc">
-              Cклад компании наполнен широким ассортиментом продукции металлопроката, что позволяет оперативно исполнять
-              любой индивидуальный заказ.
-            </p>
-          </li>
-
-          <li class="about__item">
-            <p class="about__time-work">За время работы:</p>
-            <h1 class="about__title"><span class="color-yellow">Наладили взоимоотношения</span>
-              с крупнейшими заводами производителями металлопроката
-            </h1>
-          </li>
-
-          <li class="about__item">
-            <h1 class="about__title"><span class="color-yellow">Установили сотрудничество</span>
-              с лилирующими представителями металлургии
-            </h1>
-          </li>
-
-          <li class="about__item">
-            <h1 class="about__title">Создали <span class="color-yellow">конкуретные цены</span>
-              на рынке поставки метталлопродукции и услуг по обработку металла
-            </h1>
-          </li>
-        </ul>
-
-        <!--about__list-->
-
-        <div class="today">
-          <h3 class="today__title">
-            <span class="color-yellow">Звезда</span> сегодня - это высокотехнологичная компания в сфере металлургии
-          </h3>
-          <!--today__list-->
-          <div class="today__list">
-
-            <div class="today-card">
-              <h4 class="today-card__title">10 000+</h4>
-              <p class="today-card__text">клиентов за 2020 год</p>
-            </div>
-
-            <div class="today-card">
-              <h4 class="today-card__title">243</h4>
-              <p class="today-card__text">единиц техники в автопарке</p>
-            </div>
-
-            <div class="today-card">
-              <h4 class="today-card__title">5 000+</h4>
-              <p class="today-card__text">сотрудников в компании</p>
-            </div>
-
-            <div class="today-card">
-              <h4 class="today-card__title">80</h4>
-              <p class="today-card__text">городов с филлиалами</p>
-            </div>
-
-            <div class="today-card">
-              <h4 class="today-card__title">2 000+</h4>
-              <p class="today-card__text">тонн продукции в наличии</p>
-            </div>
-
-            <div class="today-card">
-              <h4 class="today-card__title">98</h4>
-              <p class="today-card__text">складов по всей России</p>
-            </div>
-
+          <picture>
+            <!--<source srcset="./img/image/about/about0.jpg" type="image/webp">-->
+            <img id="newPic" src="./img/image/about/about0.jpg" alt=""
+              class="about-main-img__pic about-main-img__pic--new">
+          </picture>
+          <div class="about-gallery__item">
 
           </div>
-          <!-- today__list -->
         </div>
+        <!-- about-gallery -->
+        <div class="about__inner">
+          <!-- about__list -->
+          <div class="about__list">
+            <div data-stage="0" data-src="./img/image/about/about0.jpg" class="about__item">
+
+              <div class="about__content">
+                <h1 class="about__title">
+                  <span class="color-yellow">0. Звезда</span> – это крупнейший производитель металлопроката в России
+                </h1>
+                <p class="about__text">
+                  Cклад компании наполнен широким ассортиментом продукции металлопроката, что позволяет оперативно
+                  исполнять
+                  любой индивидуальный заказ.
+                </p>
+              </div>
+
+
+              <div class="about__preveiw">
+                <img src="./img/image/about/about0.jpg" alt="" class="about__img">
+              </div>
+            </div>
+
+            <div class="about__item">
+              <div class="about__content ">
+                <h1 class="about__title">
+                  Начали покорят рынок металопроката <br /> <span class="color-yellow">в марте 2003 года</span>
+                </h1>
+
+              </div>
+
+
+            </div>
+
+            <div data-stage="1" data-src="./img/image/about/about1.jpg" class="about__item">
+              <div class="about__content">
+                <h1 class="about__title"><span class="color-yellow">1. 2003 год</span>
+                </h1>
+
+                <p class="about__desc">
+                  «Звезда» была основана молодыми, активными и амбициозными людьми. Она насчитывала всего 15
+                  сотрудников.
+                  Но, благодаря упортству и трудолюбию, очень быстро заняла лидирующие позиции в отрасли в Уральском
+                  регионе.
+                </p>
+              </div>
+
+              <div class="about__preveiw">
+                <picture>
+                  <!--<source srcset="./img/image/about/about0.jpg" type="image/webp">-->
+                  <img src="./img/image/about/about1.jpg" alt="" class="about__img">
+                </picture>
+
+              </div>
+            </div>
+
+            <div data-stage="2" data-src="./img/image/about/about2.jpg" class="about__item">
+              <div class="about__content">
+                <h1 class="about__title"><span class="color-yellow">2. 2004 год</span>
+                </h1>
+
+                <p class="about__desc">
+                  Масштабы компании стремительно увеличиваются: открываются филиалы в Красноярске и Новосибирске.
+                </p>
+              </div>
+
+              <div class="about__preveiw">
+                <picture>
+                  <!--<source srcset="./img/image/about/about0.jpg" type="image/webp">-->
+                  <img src="./img/image/about/about2.jpg" alt="" class="about__img">
+                </picture>
+
+              </div>
+            </div>
+
+            <div data-stage="3" data-src="./img/image/about/about3.jpg" class="about__item">
+              <div class="about__content">
+                <h1 class="about__title"><span class="color-yellow">3. 2007 год</span>
+                </h1>
+
+                <p class="about__desc">
+                  Успешный опыт открытия филиалов в городах Сибири подталкивает к открытию филиалов в Москве,
+                  Санкт-Петербурге и других крупнейших городах России. Формируется автопарк, налаживается логистика.
+                </p>
+              </div>
+
+              <div class="about__preveiw">
+                <picture>
+                  <!--<source srcset="./img/image/about/about0.jpg" type="image/webp">-->
+                  <img src="./img/image/about/about3.jpg" alt="" class="about__img">
+                </picture>
+
+              </div>
+            </div>
+
+            <div data-stage="4" data-src="./img/image/about/about4.jpg" class="about__item">
+              <div class="about__content">
+                <h1 class="about__title"><span class="color-yellow">4. 2011 год</span>
+                </h1>
+
+                <p class="about__desc">
+                  Объемы сбыта стремительно растут. Открывается металлообрабатывающий завод и завод по производству
+                  резервуаров и металлоконструкций. И в еще 8 городах открываются филиалы.
+                </p>
+              </div>
+
+              <div class="about__preveiw">
+                <picture>
+                  <!--<source srcset="./img/image/about/about0.jpg" type="image/webp">-->
+                  <img src="./img/image/about/about4.jpg" alt="" class="about__img">
+                </picture>
+
+              </div>
+            </div>
+
+            <div data-stage="5" data-src="./img/image/about/about5.jpg" class="about__item">
+              <div class="about__content">
+                <h1 class="about__title"><span class="color-yellow">5. 2014 год</span>
+                </h1>
+
+                <p class="about__desc">
+                  Разрастаются производственные мощности. Появляется новое направление: "Услуги по обработке металлов".
+                  К
+                  филиальной сети прибавляются еще 11 городов России, открывается филиал в Казахстане. Налаживается
+                  доставка
+                  продукции заграницу.
+                </p>
+              </div>
+              <div class="about__preveiw">
+                <picture>
+                  <!--<source srcset="./img/image/about/about0.jpg" type="image/webp">-->
+                  <img src="./img/image/about/about5.jpg" alt="" class="about__img">
+                </picture>
+
+              </div>
+            </div>
+
+            <div data-stage="6" data-src="./img/image/about/about6.jpg" class="about__item">
+              <div class="about__content">
+                <h1 class="about__title"><span class="color-yellow">6. 2017 год</span>
+                </h1>
+
+                <p class="about__desc">
+                  Компания крепко удерживает за собой позиции лидера по продаже и производству металлопроката на Урале и
+                  в
+                  Сибири. Штат насчитывает уже более 1000 сотрудников, а филиальная сеть - более 70 городов.
+                </p>
+              </div>
+              <div class="about__preveiw">
+                <picture>
+                  <!--<source srcset="./img/image/about/about0.jpg" type="image/webp">-->
+                  <img src="./img/image/about/about6.jpg" alt="" class="about__img">
+                </picture>
+
+              </div>
+
+            </div>
+
+            <div data-stage="7" data-src="./img/image/about/about7.jpg" class="about__item">
+              <div class="about__content">
+                <p class="about__time-work">7. За время работы:</p>
+                <h1 class="about__title"><span class="color-yellow">Наладили взоимоотношения</span>
+                  с крупнейшими заводами производителями металлопроката
+                </h1>
+              </div>
+              <div class="about__preveiw">
+                <picture>
+                  <!--<source srcset="./img/image/about/about0.jpg" type="image/webp">-->
+                  <img src="./img/image/about/about7.jpg" alt="" class="about__img">
+                </picture>
+
+              </div>
+            </div>
+
+            <div class="about__item">
+              <div class="about__content">
+                <h1 class="about__title"><span class="color-yellow">Установили сотрудничество</span>
+                  с лилирующими представителями металлургии
+                </h1>
+              </div>
+            </div>
+
+            <div data-stage="8" data-src="./img/image/about/about8.jpg" class="about__item">
+              <div class="about__content">
+                <h1 class="about__title">8. Создали <span class="color-yellow">конкуретные цены</span>
+                  на рынке поставки метталлопродукции и услуг по обработку металла
+                </h1>
+              </div>
+
+              <div class="about__preveiw">
+                <picture>
+                  <!--<source srcset="./img/image/about/about0.jpg" type="image/webp">-->
+                  <img src="./img/image/about/about8.jpg" alt="" class="about__img">
+                </picture>
+
+              </div>
+            </div>
+          </div>
+
+          <!--about__list-->
+        </div>
+
       </div>
       <!--about-->
+
+      <div class="today container">
+        <h3 class="today__title">
+          <span class="color-yellow">Звезда</span> сегодня - это высокотехнологичная компания в сфере металлургии
+        </h3>
+        <!--today__list-->
+        <div class="today__list">
+
+          <div class="today-card">
+            <h4 class="today-card__title">10 000+</h4>
+            <p class="today-card__text">клиентов за 2020 год</p>
+          </div>
+
+          <div class="today-card">
+            <h4 class="today-card__title">243</h4>
+            <p class="today-card__text">единиц техники в автопарке</p>
+          </div>
+
+          <div class="today-card">
+            <h4 class="today-card__title">5 000+</h4>
+            <p class="today-card__text">сотрудников в компании</p>
+          </div>
+
+          <div class="today-card">
+            <h4 class="today-card__title">80</h4>
+            <p class="today-card__text">городов с филлиалами</p>
+          </div>
+
+          <div class="today-card">
+            <h4 class="today-card__title">2 000+</h4>
+            <p class="today-card__text">тонн продукции в наличии</p>
+          </div>
+
+          <div class="today-card">
+            <h4 class="today-card__title">98</h4>
+            <p class="today-card__text">складов по всей России</p>
+          </div>
+
+
+        </div>
+        <!-- today__list -->
+      </div>
 
       <!--purpose-->
       <div class="purpose">
+
         <div class="purpose__inner container">
+          <div class="purpose__preview">
+            <picture>
+              <img src="./img/image/other/director.png" alt="" class="purpose__img">
+            </picture>
+          </div>
+
           <div class="purpose__text">
             <h3 class="purpose__title">Слово директора про цели
               и миссию компании</h3>
             <span class="purpose__author">Директор компании Звезда</span>
           </div>
-          <picture>
-            <img src="./img/image/other/director.png" alt="" class="purpose__img">
-          </picture>
+
+
         </div>
       </div>
       <!-- purpose -->
@@ -310,15 +429,20 @@
       <!-- presentation -->
 
       <!-- branches-map -->
-      <div class="branches-map ">
+      <div class="branches-map">
 
         <h3 class="branches-map__title">
           Наши филиалы
           в городах России
         </h3>
 
+        <div class="branches-map__img">
+
+        </div>
+
       </div>
       <!-- branches-map -->
+
 
       <!-- management -->
       <div class="management container">
@@ -329,7 +453,7 @@
           <div class="management-card">
 
             <div class="management__preview">
-              <picture>
+              <picture class="management__pic">
                 <!--<source srcset="" type="image/webp">-->
                 <img src="./img/image/other/management1.jpg" alt="" class="management__img">
               </picture>
@@ -343,7 +467,7 @@
           <div class="management-card">
 
             <div class="management__preview">
-              <picture>
+              <picture class="management__pic">
                 <!--<source srcset="" type="image/webp">-->
                 <img src="./img/image/other/management2.jpg" alt="" class="management__img">
               </picture>
@@ -357,7 +481,7 @@
           <div class="management-card">
 
             <div class="management__preview">
-              <picture>
+              <picture class="management__pic">
                 <!--<source srcset="" type="image/webp">-->
                 <img src="./img/image/other/management3.jpg" alt="" class="management__img">
               </picture>
@@ -371,7 +495,7 @@
           <div class="management-card">
 
             <div class="management__preview">
-              <picture>
+              <picture class="management__pic">
                 <!--<source srcset="" type="image/webp">-->
                 <img src="./img/image/other/management1.jpg" alt="" class="management__img">
               </picture>
@@ -386,7 +510,6 @@
         <!-- management__list -->
       </div>
       <!-- management -->
-
 
     </main>
 
@@ -537,214 +660,456 @@
 
     </footer>
 
+
     <!--header-modals-->
+
     <!-- headerCatalogModal -->
-    <div id="headerCatalogModal" class="header-modal header-modal--hide">
+    <div id="headerCatalogModal" class="header-modal">
       <!-- header-modal__inner -->
-      <div class="header-modal__inner container">
-        <div class="header-modal__search search">
-          <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу" />
-          <span class="search__btn"></span>
+      <div class="header-modal__bd"></div>
+      <div class="header-modal__inner" data-modal-inner>
+        <div class="header-modal__content container">
+
+          <div class="header-modal__main">
+
+            <nav data-catalog-list class="header-catalog">
+
+            </nav>
+          </div>
+          <!-- header-modal__main -->
         </div>
-        <!-- header-modal__main -->
-        <div class="header-modal__main">
-          <nav class="header-catalog">
-            <!-- header-catalog__list -->
-            <ul class="header-catalog__list">
-              <!-- header-catalog__item -->
-              <li class="header-catalog__item">
-                <a href="#!" class="
-                      header-catalog__link header-catalog__link--with-sublist
-                    ">
-                  Полоса металлическая
-                </a>
-                <!-- header-catalog__sublist -->
-                <ul class="header-catalog__sublist">
-                  <!-- header-catalog__item -->
-                  <li class="header-catalog__item">
-                    <a href="#!" class="
-                          header-catalog__link
-                          header-catalog__link--with-sublist
-                        ">
-                      Полоса металлическая
-                    </a>
-                    <!-- header-catalog__sublist -->
-                    <ul class="header-catalog__sublist">
-                      <!-- header-catalog__item -->
-                      <li class="header-catalog__item">
-                        <a href="#!" class="header-catalog__link">
-                          Полоса металлическая
-                        </a>
-                      </li>
-                      <!-- header-catalog__item -->
-                    </ul>
-                    <!--header-catalog__sublist-->
-                  </li>
-                  <!-- header-catalog__item -->
-                </ul>
-                <!-- header-catalog__sublist -->
-              </li>
-              <!-- header-catalog__item -->
-            </ul>
-            <!-- header-catalog__list -->
-          </nav>
-        </div>
-        <!-- header-modal__main -->
       </div>
       <!-- header-modal__inner -->
     </div>
     <!-- headerCatalogModal -->
 
     <!--search-city-->
-    <div id="selectCityModal" class="header-modal header-modal--hide">
+    <div id="selectCityModal" class="header-modal">
       <!-- header-modal__inner -->
-      <div class="header-modal__inner container">
-        <div class="header-modal__search search">
-          <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу" />
-          <span class="search__btn"></span>
-        </div>
-        <!-- header-modal__main -->
+      <div class="header-modal__bd"></div>
+      <div class="header-modal__inner" data-modal-inner>
+        <div class="header-modal__content container">
 
-        <div class="header-modal__main">
-          <!-- cities -->
-
-          <div class="cities">
-            <!-- city-card -->
-            <div class="city-card">
-              <h4 class="city-card__title">Екатеринбург</h4>
-              <div class="city-card__contacts">
-                <div class="city-card__contact contact">
-                  <span class="contact__title">Звонок по России бесплатный:</span>
-                  <a href="tel:+73433180170" class="contact__link">+7 (343) 3-180-170</a>
-                </div>
-
-                <div class="city-card__contact contact">
-                  <span class="contact__title">Напишите нам:</span>
-                  <a href="mailto:info@ntmk.ru" class="contact__link">info@ntmk.ru</a>
-                </div>
-              </div>
-
-              <div class="city-card__addresses">
-                <div class="address">
-                  <span class="address__title">Наш адрес:</span>
-
-                  <p class="address__info">
-                    Россия, Свердловская область, Екатеринбург, улица
-                    Малышева, 51, оф 16/05
-                  </p>
-                </div>
-                <div class="address">
-                  <span class="address__title">Режим работы:</span>
-
-                  <p class="address__info">ПН-ПТ: с 9.00 до 18.00</p>
-                  <p class="address__info">СБ-ВС: Выходной</p>
-                </div>
-              </div>
-
-              <span class="city-card__btn btn clear-btn">
-                Оставить заявку
-              </span>
-            </div>
-            <!-- city-card -->
-
-            <!-- cities__regions -->
-            <div class="cities__regions">
-              <!-- region -->
-              <div class="region">
-                <h4 class="region__title">Центральный федеральный округ</h4>
-                <!-- region__list -->
-                <ul class="region__list">
-                  <li class="region__item">
-                    <!-- region__area -->
-                    <div class="area">
-                      <h5 class="area__title">Белгородская область</h5>
-                      <!-- area__list -->
-                      <ul class="area__list">
-                        <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
-                        </li>
-
-                        <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
-                        </li>
-                      </ul>
-                      <!-- area__list -->
-                    </div>
-                    <!-- region__area -->
-                  </li>
-                </ul>
-                <!-- region__list -->
-              </div>
-              <!-- region -->
-
-              <!-- region -->
-              <div class="region">
-                <h4 class="region__title">Центральный федеральный округ</h4>
-                <!-- region__list -->
-                <ul class="region__list">
-                  <li class="region__item">
-                    <!-- region__area -->
-                    <div class="area">
-                      <h5 class="area__title">Белгородская область</h5>
-                      <!-- area__list -->
-                      <ul class="area__list">
-                        <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
-                        </li>
-
-                        <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
-                        </li>
-                      </ul>
-                      <!-- area__list -->
-                    </div>
-                    <!-- region__area -->
-                  </li>
-                </ul>
-                <!-- region__list -->
-              </div>
-              <!-- region -->
-
-              <!-- region -->
-              <div class="region">
-                <h4 class="region__title">Центральный федеральный округ</h4>
-                <!-- region__list -->
-                <ul class="region__list">
-                  <li class="region__item">
-                    <!-- region__area -->
-                    <div class="area">
-                      <h5 class="area__title">Белгородская область</h5>
-                      <!-- area__list -->
-                      <ul class="area__list">
-                        <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
-                        </li>
-
-                        <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
-                        </li>
-                      </ul>
-                      <!-- area__list -->
-                    </div>
-                    <!-- region__area -->
-                  </li>
-                </ul>
-                <!-- region__list -->
-              </div>
-              <!-- region -->
-            </div>
-            <!-- cities__regions -->
+          <div class="header-modal__search search">
+            <input id="searchCityInput" type="text" class="search__input input" placeholder="Поиск по каталогу"
+              autocomplete="off">
+            <span class="search__btn"></span>
           </div>
-          <!-- cities -->
+          <!-- header-modal__main -->
+
+          <div class="header-modal__main">
+            <!-- cities -->
+
+            <div class="cities">
+              <!-- city-card -->
+              <div class="city-card">
+                <h4 class="city-card__title">Екатеринбург</h4>
+                <div class="city-card__contacts">
+                  <div class="city-card__contact contact">
+                    <span class="contact__title">Звонок по России бесплатный:</span>
+                    <a href="tel:+73433180170" class=" contact__link">+7 (343) 3-180-170</a>
+                  </div>
+
+                  <div class="city-card__contact contact">
+                    <span class=" contact__title">Напишите нам:</span>
+                    <a href="mailto:info@ntmk.ru" class=" contact__link">info@ntmk.ru</a>
+                  </div>
+                </div>
+
+                <div class="city-card__addresses">
+                  <div class="address">
+                    <span class="address__title">Наш адрес:</span>
+
+                    <p class="address__info">
+                      Россия, Свердловская область, Екатеринбург,
+                      улица Малышева, 51, оф 16/05
+                    </p>
+                  </div>
+                  <div class="address">
+                    <span class="address__title">Режим работы:</span>
+
+                    <p class="address__info">
+                      ПН-ПТ: с 9.00 до 18.00
+                    </p>
+                    <p class="address__info">
+                      СБ-ВС: Выходной
+                    </p>
+                  </div>
+                </div>
+
+                <span data-query-btn class="city-card__btn btn clear-btn">
+                  Оставить заявку
+                </span>
+
+              </div>
+              <!-- city-card -->
+
+              <!-- cities__regions -->
+              <div data-region-list class="regions">
+
+              </div>
+              <div data-city-list class="regions__cities">
+
+              </div>
+              <!-- cities__regions -->
+            </div>
+            <!-- cities -->
+
+          </div>
+          <!-- header-modal__main -->
         </div>
-        <!-- header-modal__main -->
+        <!-- header-modal__inner -->
       </div>
-      <!-- header-modal__inner -->
     </div>
     <!--search-city-->
     <!--header-modals-->
 
     <!--modal-->
+
+
+    <!-- queryModal -->
+    <div id="queryModal" class="modal modal--is-hide">
+      <!--modal__inner-->
+      <div data-modal-body class="modal__body modal__body--big">
+        <span data-close class="modal__close close-btn">Закрыть</span>
+
+        <h3 class="modal__title">
+          Оформление заявки
+        </h3>
+
+        <form action="./json/send-form.json" enctype="multipart/form-data" method="POST" id="queryModalForm"
+          class="modal__form">
+
+          <div class="form-block">
+            <p class="form-block__title">Общая информация</p>
+            <div class="form-block__inputs">
+
+              <div data-dropdown="close" class="modal__select select mb0">
+                <span data-dropdown-btn data-select-title class="select__title ">
+                  Выбрать форму заявки
+                </span>
+                <div data-dropdown-body class="select__body">
+                  <ul data-dropdown-content class="select__list">
+                    <li class="select__item">
+                      <label class="select__label">
+                        <span class="select__text">
+                          Поставка продукции
+                        </span>
+                        <input data-radio class="select__radio radio" type="radio" name="delivery"
+                          value="Поставка продукции">
+                      </label>
+                    </li>
+                    <li class="select__item">
+                      <label class="select__label">
+                        <span class="select__text">
+                          Производство продукции
+                        </span>
+                        <input data-radio class="select__radio radio" type="radio" name="delivery"
+                          value="Производство продукции">
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="name" type="text" />
+
+                <span class="place-entry__placeholder">ФИО<span class="place-entry__star">*</span></span>
+
+              </label>
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="phone" type="text" />
+
+                <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
+              </label>
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="mail" type="text" />
+
+                <span class="place-entry__placeholder">E-mail</span>
+              </label>
+
+              <label class="modal__input place-entry span2 mb0">
+                <input data-input class="place-entry__input" name="message" type="text" />
+
+                <span class="place-entry__placeholder">Комментарий к заказу</span>
+
+              </label>
+
+            </div>
+          </div>
+          <div class="form-block__info">
+            <div class="form-block">
+              <p class="form-block__title">Информация о продукции</p>
+              <div class="form-selects">
+
+                <div class="form-selects__group">
+                  <p class="form-selects__title">Выбор продукции:</p>
+
+                  <div class="form-selects__list">
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Черный металлопрокат
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Цветной металлопрокат
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Медный металлопрокат
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Выберите категорию
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Лист стальной
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Труба стальная
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Выберите продукцию
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Лист рифленый стальной
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Лист обычный стальной
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-selects__group">
+                  <p class="form-selects__title">Характеристики:</p>
+
+                  <div class="form-selects__list">
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Тип рефления
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Ромб
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Волна
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Ширина
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                30
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                40
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Длина
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                70
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                80
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+            <span data-add class="form-block__add">Добавить позицию +</span>
+          </div>
+
+          <div class="form-block">
+            <p class="form-block__title">Информация о производстве</p>
+            <div class="form-block__inputs">
+
+              <label class="modal__input place-entry span3 mb0">
+                <input data-input class="place-entry__input" name="message" type="text" />
+
+                <span class="place-entry__placeholder">Комментарий к производству</span>
+
+              </label>
+
+
+              <div data-file-block class="modal__file span2 file mb0">
+                <label data-file-label class="file__label form-block__file-label">
+                  <span class="form-block__file-side">
+                    <span data-file-text class="file__text">Прикрепить файл</span>
+                    <input data-input type="file" name="file" class="file__input">
+                  </span>
+                  <span class="form-block__file-side">
+                    <span class="file__clear-btn mt0" data-clear-file>очистить файл</span>
+                  </span>
+                </label>
+              </div>
+
+
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="mail" type="number" />
+
+                <span class="place-entry__placeholder">Количество</span>
+              </label>
+
+
+
+            </div>
+          </div>
+
+          <div class="form-block">
+            <p class="form-block__title">Информация об организации</p>
+            <div class="form-block__inputs">
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="mail" type="number" />
+
+                <span class="place-entry__placeholder">Наименование организации</span>
+              </label>
+
+              <div data-file-block class="modal__file span2 file mb0">
+                <label data-file-label class="file__label form-block__file-label">
+                  <span class="form-block__file-side">
+                    <span data-file-text class="file__text">Добавить реквизиты</span>
+                    <input data-input type="file" name="file" class="file__input">
+                  </span>
+                  <span class="form-block__file-side">
+                    <span class="file__clear-btn mt0" data-clear-file>очистить файл</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-block__footer">
+            <input data-submit type="submit" class="form-block__submit btn yellow-btn hover-yellow-light"
+              value="Отправить заявку">
+
+            <label data-checkbox class="checkbox">
+              <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
+              <span class="checkbox__fake"></span>
+              <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
+            </label>
+          </div>
+
+        </form>
+
+      </div>
+      <!--modal__inner-->
+    </div>
+    <!-- queryModal -->
 
     <!-- supportModal -->
     <div id="supportModal" class="modal modal--is-hide">
@@ -756,7 +1121,7 @@
           Обращение в техподдержку
         </h3>
 
-        <form action="./json/send-form.json" enctype="multipart/form-data" metod="POST" id="supportModalForm"
+        <form action="./json/send-form.json" enctype="multipart/form-data" method="POST" id="supportModalForm"
           class="modal__form">
           <div class="modal__inputs-block">
             <label class="modal__input place-entry">
@@ -788,7 +1153,7 @@
               <span data-file-text class="file__text">Прикрепить файл</span>
               <input data-input type="file" name="file" class="file__input">
             </label>
-            <span class="file__clear-btn" clear-file-btn>очистить файл</span>
+            <span class="file__clear-btn" data-clear-file>очистить файл</span>
             <p data-info="" class="file__desc">
               Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
@@ -810,6 +1175,7 @@
     </div>
     <!-- supportModal -->
 
+
     <!-- orderModal -->
     <div id="orderModal" class="modal modal--is-hide">
       <!--modal__inner-->
@@ -820,7 +1186,7 @@
           Оформление заказа
         </h3>
 
-        <form id="orderModalForm" action="./json/send-form.json" enctype="multipart/form-data" metod="POST"
+        <form id="orderModalForm" action="./json/send-form.json" enctype="multipart/form-data" method="POST"
           class="modal__form">
           <div class="modal__inputs-block">
             <label class="modal__input place-entry">
@@ -861,14 +1227,14 @@
 
             <div data-dropdown="close" class="modal__select select">
               <span data-dropdown-btn data-select-title class="select__title ">
-                Доставка транспортной компанией
+                Выбрать форму заявки
               </span>
               <div data-dropdown-body class="select__body">
                 <ul data-dropdown-content class="select__list">
                   <li class="select__item">
                     <label class="select__label">
                       <span class="select__text">
-                        кит
+                        Поставка продукции
                       </span>
                       <input data-radio class="select__radio radio" type="radio" name="delivery" value="кит">
                     </label>
@@ -876,7 +1242,7 @@
                   <li class="select__item">
                     <label class="select__label">
                       <span class="select__text">
-                        сдек
+                        Производство продукции
                       </span>
                       <input data-radio class="select__radio radio" type="radio" name="delivery" value="сдек">
                     </label>
@@ -895,7 +1261,7 @@
               <span data-file-text class="file__text">Добавить реквизиты</span>
               <input data-input type="file" name="file" class="file__input">
             </label>
-            <span class="file__clear-btn" clear-file-btn>очистить файл</span>
+            <span class="file__clear-btn" data-clear-file>очистить файл</span>
             <p class="file__desc">
               Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
@@ -922,7 +1288,7 @@
       <div class="search-modal__inner container">
         <span data-close class="search-modal__close close-btn">Закрыть</span>
         <div id="SearchContent" class="search-modal__content">
-          <form action="" class="search-form mt50">
+          <form action="./json/search.json" method="GET" class="search-form mt50">
             <!-- selecting-area -->
             <div id="searchArea" class="selecting-area">
               <label class="selecting-area__item">
@@ -957,7 +1323,6 @@
         </div>
       </div>
 
-
       <div id="blinds" class="blinds">
         <div class="blind blind--up"></div>
         <div class="blind blind--down"></div>
@@ -986,13 +1351,6 @@
     <div id="errorModal" data-info-modal class="info-modal info-modal--error info-modal--close">
       <span data-close-info class="info-modal__close close-btn white-color">Закрыть</span>
       <div data-modal-inner class="info-modal__inner container">
-      </div>
-    </div>
-
-    <div id="confirmationModal" data-info-modal class="info-modal info-modal--confirmation info-modal--hide">
-      <span data-close-info class="info-modal__close close-btn white-color">Закрыть</span>
-      <div data-modal-inner class="info-modal__inner container">
-
       </div>
     </div>
     <!--modal-->

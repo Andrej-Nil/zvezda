@@ -1,0 +1,34 @@
+.about-main-img {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  max-width: 780px;
+  width: auto;
+  height: 100vh;
+  z-index: 100;
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.about-main-img--stop {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
+
+.about-main-img__pic {
+  width: auto;
+  height: 100%;
+}
+
+.about-main-img__pic--new {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
