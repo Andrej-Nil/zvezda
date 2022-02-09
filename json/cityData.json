@@ -1,0 +1,464 @@
+{
+	"rez": 1,
+	"desc": "",
+	"error": {
+		"id": 456454,
+		"desc": "Произошла ошибка!"
+	},
+  "center": [55.7522, 37.6156],
+	"content": [
+    {
+      "current": false,
+      "coord": [43.429, 39.9239],
+      "propertis": {
+        "iconContent": "Адлер"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [44.9892, 41.1234],
+      "propertis": {
+        "iconContent": "Армавир"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [64.5401, 40.5433],
+      "propertis": {
+        "iconContent": "Архангельск"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [46.3497, 48.0408],
+      "propertis": {
+        "iconContent": "Астрахань"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [53.3606, 83.7636],
+      "propertis": {
+        "iconContent": "Барнаул"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [50.6107, 36.5802],
+      "propertis": {
+        "iconContent": "Белгород"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [52.5364, 85.2072],
+      "propertis": {
+        "iconContent": "Бийск"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [48.7928, 132.924],
+      "propertis": {
+        "iconContent": "Биробиджан"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [50.2796, 127.54],
+      "propertis": {
+        "iconContent": "Благовещенск"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [56.1325, 101.614],
+      "propertis": {
+        "iconContent": "Братск"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [53.2521, 34.3717],
+      "propertis": {
+        "iconContent": "Брянск"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [43.1056, 131.874],
+      "propertis": {
+        "iconContent": "Владивосток"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [56.1366, 40.3966],
+      "propertis": {
+        "iconContent": "Владимир"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [48.7194, 44.5018],
+      "propertis": {
+        "iconContent": "Волгоград"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [55.8664, 48.3594],
+      "propertis": {
+        "iconContent": "Волжск"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [59.2239, 39.884],
+      "propertis": {
+        "iconContent": "Вологда"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [51.672, 39.1843],
+      "propertis": {
+        "iconContent": "Воронеж"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": true,
+      "coord": [55.7522, 37.6156],
+      "propertis": {
+        "iconContent": "Москва"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [56.8519, 60.6122],
+      "propertis": {
+        "iconContent": "Екатеринбург"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+   
+    {
+      "current": false,
+      "coord": [56.8498, 53.2045],
+      "propertis": {
+        "iconContent": "Ижевск"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [52.2978, 104.296],
+      "propertis": {
+        "iconContent": "Иркутск"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [45.0448, 38.976],
+      "propertis": {
+        "iconContent": "Краснодар"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [55.0415, 82.9346],
+      "propertis": {
+        "iconContent": "Новосибирск"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [54.9924, 73.3686],
+      "propertis": {
+        "iconContent": "Омск"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [59.9386, 30.3141],
+      "propertis": {
+        "iconContent": "Санкт-Петербург"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [53.2001, 50.15],
+      "propertis": {
+        "iconContent": "Самара"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [51.5406, 46.0086],
+      "propertis": {
+        "iconContent": "Саратов"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [51.7727, 55.0988],
+      "propertis": {
+        "iconContent": "Оренбург"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [58.0105, 56.2502],
+      "propertis": {
+        "iconContent": "Пермь"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    },
+    {
+      "current": false,
+      "coord": [54.6269, 39.6916],
+      "propertis": {
+        "iconContent": "Рязань"
+      },
+      "options": {
+        "href": "http://google.ru/",
+        "iconLayout": "default#imageWithContent",
+        "iconImageHref": "",
+        "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+        "iconContentOffset": [0, 0]
+      }
+    }
+  ]
+}
+  
+

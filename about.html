@@ -128,7 +128,7 @@
     </header>
 
     <main class="main">
-      <div class="about__shadow"></div>
+      <div id="aboutShadow" class="about__shadow"></div>
 
 
 
@@ -436,9 +436,11 @@
           в городах России
         </h3>
 
-        <div class="branches-map__img">
-
+        <div class="branches-map-wrap ">
+          <div id="aboutMap" data-coord="48.406,135.161" data-city="Хабаровск" class="branches-map__img">
+          </div>
         </div>
+
 
       </div>
       <!-- branches-map -->
@@ -1355,6 +1357,7 @@
     </div>
     <!--modal-->
   </div>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=040926e4-8ef2-4519-8d88-8f685a93838d"></script>
   <script src="js/main.js"></script>
 </body>
 

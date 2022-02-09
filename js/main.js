@@ -30,6 +30,7 @@ class Server {
     this.GET = 'GET';
     this.regionsApi = '../json/regions.json';
     this.cityApi = '../json/city.json';
+    this.citiesDataApi = '../json/cityData.json';
     this.fastOrderApi = '../json/getProd.json';
     this.addFavoriteApi = '../json/addFavorite.json';
     this.addBasketApi = '../json/addBasket.json';
@@ -66,6 +67,14 @@ class Server {
     }
     const formData = this.createFormData(data);
     return await this.getResponse(this.POST, formData, this.cityApi);
+  }
+
+  getCitiesData = async () => {
+    const data = {
+      _token: this._token
+    }
+    const formData = this.createFormData(data);
+    return await this.getResponse(this.POST, formData, this.citiesDataApi);
   }
 
   addBsasket = async (data) => {
@@ -2645,6 +2654,8 @@ class About {
     this.currentStageNum = this.getCurrentStageNum();
     this.$currentStage = this.$stages[this.currentStageNum];
     this.$aboutMainImg = this.$about.querySelector('#aboutMainImg');
+    this.$aboutShadow = document.querySelector('#aboutShadow');
+    this.changeMainImgPosition();
     this.changeImg();
     this.listeners();
   }
@@ -2653,8 +2664,10 @@ class About {
     const pointChangePos = aboutCoord.bottom - document.documentElement.clientHeight;
     if (pointChangePos <= 0) {
       this.$aboutMainImg.classList.add('about-main-img--stop');
+      this.$aboutShadow.classList.add('about__shadow--hide');
     } else {
       this.$aboutMainImg.classList.remove('about-main-img--stop');
+      this.$aboutShadow.classList.remove('about__shadow--hide');
     }
 
   }
@@ -2733,15 +2746,183 @@ class About {
     return currentStageNum;
   };
 
-  scrollHandler = () => {
-    changeMainImgPosition();
-    changeImg();
-  }
+
   listeners = () => {
     document.addEventListener('scroll', this.changeMainImgPosition);
     document.addEventListener('scroll', this.toggleImg);
   }
 }
+
+class AboutMap {
+  constructor(mapId) {
+    this.$map = document.querySelector('#' + mapId);
+    this.mapId = mapId;
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$map) {
+      return;
+    }
+    this.currentCityCoords = this.$map.dataset.coord.split(',');
+    this.map = null;
+    this.response = null;
+    this.baseSettingsMap = {
+      center: [63, 104],
+      zoom: 3,
+      controls: ['zoomControl'],
+    }
+    this.zoneMap = {
+      restrictMapArea: [
+        [80, 0],
+        [20, 220]
+      ],
+    }
+
+    this.createMap();
+
+  }
+
+  createMap = async () => {
+    this.response = await server.getCitiesData();
+    if (this.response.rez === 0) {
+      console.log('Ошибка: id ' + this.response.error.id);
+      ymaps.ready(this.initMapWithOneCity);
+    }
+    if (this.response.rez === 1) {
+      ymaps.ready(this.initMapWithAllCities);
+    }
+  }
+
+  initMapWithAllCities = async () => {
+    this.map = new ymaps.Map(
+      this.mapId,
+      this.baseSettingsMap,
+      this.zoneMap
+    );
+    this.map.behaviors.disable('scrollZoom');
+    this.map.panes.append('greyBackground', this.getBgColor());
+    this.map.geoObjects.add(await this.getCountryArea('RU', '#3b3f45', '#212f41'));
+    this.map.geoObjects.add(await this.getCountryArea('KZ', '#33363a', '#212f41'));
+
+    const geoObjectList = this.getMarkList()
+    const clusterer = this.getClusterer();
+    this.map.geoObjects.add(clusterer);
+    clusterer.add(geoObjectList);
+  }
+
+  initMapWithOneCity = async () => {
+    this.map = new ymaps.Map(
+      this.mapId,
+      this.baseSettingsMap,
+      this.zoneMap
+    );
+
+    this.map.behaviors.disable('scrollZoom');
+    this.map.panes.append('greyBackground', this.getBgColor());
+    this.map.geoObjects.add(await this.getCountryArea('RU', '#3b3f45', '#212f41'));
+    this.map.geoObjects.add(await this.getCountryArea('KZ', '#33363a', '#212f41'));
+    this.map.geoObjects.add(this.getCurrentCityMark());
+  }
+
+  getBgColor = () => {
+    return new ymaps.pane.StaticPane(this.map, {
+      zIndex: 100, css: {
+        width: '100%', height: '100%', backgroundColor: '#212f41'
+      }
+    });
+  }
+
+  getCountryArea = async (iso, bgColor, bdColor) => {
+    const country = await ymaps.borders.load(iso, {
+      lang: 'ru'
+    });
+
+    const regions = new ymaps.GeoObjectCollection(null, {
+      fillColor: bgColor,
+      strokeColor: bdColor,
+      hasHint: false,
+      cursor: 'arrow'
+    });
+
+    for (let i = 0; i < country.features.length; i++) {
+      regions.add(new ymaps.GeoObject(country.features[i]));
+    }
+    return regions
+  }
+
+  getCurrentCityMark = () => {
+
+    const coord = this.$map.dataset.coord.split(',');
+    const nameCity = this.$map.dataset.city;
+    const markHtml = ymaps.templateLayoutFactory.createClass(
+      `<div class="map-mark map-mark--active">
+        <span class="map-mark__content">$[properties.iconContent]</span>
+      </div>
+      `
+    );
+
+    const options = {
+      "iconLayout": "default#imageWithContent",
+      "iconImageHref": "../img/icon/star.svg",
+      "iconImageSize": [50, 50],
+      "iconImageOffset": [-17, -26],
+      "iconContentOffset": [0, 0]
+    }
+    options.iconContentLayout = markHtml
+
+    const mark = new ymaps.Placemark(
+      coord,
+      {
+        "iconContent": nameCity
+      },
+      options
+    );
+    //mark.events.add('click', function (e) {
+    //  location = e.get('target').options.get('href');
+    //});
+    return mark;
+  }
+
+  getClusterer = () => {
+    return new ymaps.Clusterer({
+      clusterOpenBalloonOnClick: false,
+      clusterDisableClickZoom: true,
+      minClusterSize: 200,
+    });
+  }
+
+  getMarkList = () => {
+    return this.response.content.map((item) => {
+      const cls = item.current ? 'map-mark map-mark--active' : 'map-mark';
+      let markHtml = ymaps.templateLayoutFactory.createClass(
+        `
+  			  <div class="${cls}">
+  					<span class="map-mark__content">$[properties.iconContent]</span>
+
+  				</div>
+  				`
+      );
+      const options = item.options
+      options.iconContentLayout = markHtml
+
+      const mark = new ymaps.Placemark(
+        item.coord,
+        item.propertis,
+        options
+      );
+      mark.events.add('click', function (e) {
+        location = e.get('target').options.get('href');
+      });
+      return mark;
+    });
+  }
+
+}
+
+
+
+
 const server = new Server();
 const render = new Render();
 const debaunce = new Debaunce();
@@ -2776,8 +2957,7 @@ const basket = new Basket('#basket');
 
 const dropdown = new Dropdown();
 const about = new About('#about');
-
-
+const aboutMap = new AboutMap('aboutMap');
 
 
 if ($searchOpenBtn && $searchModal) {
@@ -2815,5 +2995,4 @@ function openQueryModal(e) {
   }
 
 }
-
 

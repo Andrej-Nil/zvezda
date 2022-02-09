@@ -1,27 +1,35 @@
 .branches-map {
   position: relative;
-  padding: 60px 15px 0;
-
-  height: 727px;
+  padding: 0 15px 0;
+  min-height: 727px;
+  height: 100vh;
   @media (min-width: 1280px) {
-    padding: 100px 0;
+    padding: 0 0;
   }
 }
 
 .branches-map__title {
-  max-width: 311px;
+  position: relative;
+  max-width: 200px;
   width: 100%;
   color: $white;
   font-size: 24px;
   line-height: 33px;
-
-  margin-bottom: 60px;
+  margin: 0 auto;
+  //margin-bottom: 60px;
   text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.8);
+  z-index: 100;
   @media (min-width: 1050px) {
+    margin: 0 0 0 100px;
+    max-width: 311px;
     font-size: 36px;
     line-height: 49px;
-    padding: 100px 0;
+    padding: 60px 0;
   }
+}
+
+.branches-map-wrap {
+  z-index: 100;
 }
 
 .branches-map__img {
@@ -34,7 +42,60 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 0;
-  width: 100%;
-  height: 100%;
   //height: 727px;
+}
+
+@keyframes currenteCity {
+  from {
+    width: 50px;
+    height: 50px;
+  }
+
+  to {
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.map-mark {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 27px;
+    left: 15px;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e29814;
+  }
+}
+
+.map-mark__content {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  color: $white;
+}
+
+.map-mark--active {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 27px;
+    left: 15px;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    animation: currenteCity 1s infinite alternate linear;
+    background: radial-gradient(
+      circle,
+      rgba(226, 152, 20, 0) 40%,
+      rgba(226, 152, 20, 1) 90%
+    );
+  }
 }
