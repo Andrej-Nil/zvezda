@@ -77,6 +77,12 @@ class Server {
     return await this.getResponse(this.POST, formData, this.citiesDataApi);
   }
 
+  getPropertyData = async (data) => {
+    data._token = this._token;
+    const formData = this.createFormData(data);
+    return await this.getResponse(this.POST, formData, this.filterApi);
+  }
+
   addBsasket = async (data) => {
     data._token = this._token;
     const formData = this.createFormData(data);
@@ -393,6 +399,10 @@ class Render {
     this.renderProductCards($resultProductsWrap, cards);
   }
 
+  renderProperty = (propertyList, $list) => {
+    this._render($list, this.getPropertyListHtml, false, propertyList);
+  }
+
   renderProductCards = ($parent, cards) => {
     this._render($parent, this.getProductCardHtml, false, cards);
   }
@@ -650,6 +660,19 @@ class Render {
     </ul>`)
   }
 
+  getPropertyListHtml = (property) => {
+    const isCheck = property.checked ? 'checked' : ''
+    return (/*html*/`
+      <li data-filter-item="Лист" class="dropdown__item">
+        <label class="filter__label">
+          <input type="checkbox" class="filter__checkbox" name="Матерьял" ${isCheck} value="Лист">
+          <span data-name class="dropdown__link dropdown__item-link">${property.field_value_name}</span>
+        </label>
+      </li>
+    `)
+
+  }
+
   getRegionHtml = (region) => {
     const areaList = this.getListHtml(this.getAreaHtml, region.area);
     return (/*html*/`
@@ -691,7 +714,7 @@ class Render {
     `)
   }
 
-  getInfoModalErrorHtml(errorMessage) {
+  getInfoModalErrorHtml = (errorMessage) => {
     const errorMsg = 'Произошла ошибка, попробуйте позже.';
     const message = errorMessage ? errorMessage : errorMsg
     return ( /*html*/`
@@ -700,7 +723,7 @@ class Render {
     `)
   }
 
-  getInfoModalSuccsesHtml(message) {
+  getInfoModalSuccsesHtml = (message) => {
     const text = 'Успешная отправка!'
     const desc = message ? message : text
     return ( /*html*/`
@@ -719,7 +742,7 @@ class Render {
     `)
   }
 
-  getListHtml(getHtmlFn, arr) {
+  getListHtml = (getHtmlFn, arr) => {
     let list = '';
     arr.forEach((item) => {
 
@@ -743,7 +766,6 @@ class Render {
     if (!array) {
       markupAsStr = getHtmlMarkup(argument);
     }
-
     $parent.insertAdjacentHTML(where, markupAsStr);
   }
 
@@ -2628,13 +2650,142 @@ class Dropdown {
   }
 
   changeHandler = (e) => {
-    if (e.target.closest('[data-radio ]'))
-      this.setDeliveryCompany(e.target.closest('[data-radio ]'));
+    if (e.target.closest('[data-radio]'))
+      this.setDeliveryCompany(e.target.closest('[data-radio]'));
   }
 
   listeners = () => {
     document.addEventListener('click', this.clickHandler);
     document.addEventListener('change', this.changeHandler);
+  }
+}
+
+
+class Filters {
+  constructor(filtersWrapId) {
+    this.$filtersWrap = document.querySelector(filtersWrapId);
+    this.categoryId = this.$filtersWrap.dataset.categoryId;
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$filtersWrap) {
+      return;
+    }
+    this.listeners();
+  }
+
+  open = async ($filter) => {
+    if (!$filter.dataset.loading) {
+      await this.createPropsList($filter);
+    }
+    this.openList($filter);
+  }
+
+  openList = ($filter) => {
+    const $btn = $filter.querySelector('[data-filter-btn]');
+    const $body = $filter.querySelector('[data-filter-body]');
+    const $content = $filter.querySelector('[data-filter-content]');
+    const widthContent = $content.offsetHeight;
+    $btn.classList.add('dropdown__top--active');
+    $body.style.height = widthContent + 'px';
+    $filter.dataset.filter = 'open';
+  }
+
+  close = ($filter) => {
+    const $btn = $filter.querySelector('[data-filter-btn]');
+    const $body = $filter.querySelector('[data-filter-body]');
+    $body.style.height = '0px';
+    $btn.classList.remove('dropdown__top--active');
+    $filter.dataset.filter = 'close';
+  }
+
+  toggleFilter = ($filter) => {
+    if ($filter.dataset.filter === 'close') {
+      this.open($filter);
+      return;
+    }
+    if ($filter.dataset.filter === 'open') {
+      this.close($filter);
+      return;
+    }
+  }
+
+  createPropsList = async ($filter) => {
+    const $list = $filter.querySelector('[data-filter-list]');
+    render.clearParent($list);
+    render.renderSpiner('Идет загрузка...', $list);
+    const data = {
+      categotyId: this.categoryId,
+      filterId: $filter.dataset.filterId,
+    }
+
+    const response = await server.getPropertyData(data);
+    if (response.rez === 0) {
+      console.log(`Ошибка: id ${response.error.id}`);
+      render.clearParent($list);
+      render.renderErrorMessage(response.error.desc, $list)
+    }
+    if (response.rez === 1) {
+      render.clearParent($list);
+      render.renderProperty(response.content, $list);
+      $filter.dataset.loading = 1;
+    }
+  }
+
+
+  searchProperty = ($input) => {
+    const $filter = $input.closest('[data-filter]');
+    const $propsList = $filter.querySelectorAll('[data-filter-item]')
+    const value = $input.value.trim().toLowerCase();
+    this.findProps($propsList, value);
+  }
+
+  findProps = ($propsList, value) => {
+    $propsList.forEach(($item) => {
+      const propsValue = $item.dataset.filterItem.trim().toLowerCase();
+
+      if (propsValue.includes(value)) {
+        this.showProperty($item);
+
+
+      } else {
+        this.hideProperty($item);
+      }
+    })
+  }
+
+  showProperty = ($property) => {
+    $property.classList.remove('dropdown__item--hide');
+  }
+
+  hideProperty = ($property) => {
+    $property.classList.add('dropdown__item--hide');
+  }
+  clickHandler = (e) => {
+    if (e.target.closest('[data-filter-btn]')) {
+      const $filter = e.target.closest('[data-filter]');
+      this.toggleFilter($filter);
+
+    }
+  }
+
+  inputHandler = (e) => {
+    if (e.target.closest('[data-filter-search]')) {
+      this.searchProperty(e.target);
+    }
+  }
+
+  changeHandler = (e) => {
+    if (e.target.closest('[data-filter-search]')) {
+      this.searchProperty(e.target);
+    }
+  }
+
+  listeners = () => {
+    this.$filtersWrap.addEventListener('click', this.clickHandler);
+    this.$filtersWrap.addEventListener('input', this.inputHandler);
+    this.$filtersWrap.addEventListener('change', this.inputHandler);
   }
 }
 
@@ -2920,9 +3071,6 @@ class AboutMap {
 
 }
 
-
-
-
 const server = new Server();
 const render = new Render();
 const debaunce = new Debaunce();
@@ -2956,6 +3104,7 @@ const product = new Product();
 const basket = new Basket('#basket');
 
 const dropdown = new Dropdown();
+const filters = new Filters('#filtersWrap');
 const about = new About('#about');
 const aboutMap = new AboutMap('aboutMap');
 

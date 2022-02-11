@@ -76,6 +76,10 @@
   }
 }
 
+.select__label--active {
+  background: $pearl;
+}
+
 .select__text {
   color: $blackMain;
   font-weight: 500;

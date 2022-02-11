@@ -141,6 +141,11 @@
     background-image: url("../../img/icon/tile-active.svg");
   }
 }
+
+.display__radio {
+  display: none;
+}
+
 .form-block__add {
   display: inline-block;
 

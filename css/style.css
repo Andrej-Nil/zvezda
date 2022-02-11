@@ -518,6 +518,10 @@ body {
   background-image: url("../../img/icon/tile-active.svg");
 }
 
+.display__radio {
+  display: none;
+}
+
 .form-block__add {
   display: inline-block;
   background: #f5f5f5;
@@ -870,6 +874,10 @@ body {
 }
 
 .select__label:hover {
+  background: #f5f5f5;
+}
+
+.select__label--active {
   background: #f5f5f5;
 }
 
@@ -3350,6 +3358,25 @@ body {
 }
 
 .dropdown__top {
+  position: relative;
+  transition: 0.2s ease-in-out;
+  padding: 0;
+}
+
+.dropdown__top::before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 8px;
+  position: absolute;
+  top: 29px;
+  left: 20px;
+  display: block;
+  height: 8px;
+  width: auto;
   transition: 0.2s ease-in-out;
 }
 
@@ -3357,10 +3384,23 @@ body {
   background: #f5f5f5;
 }
 
+.dropdown__top--active {
+  background: #f5f5f5;
+}
+
+.dropdown__top--active::before {
+  transform: rotateX(-180deg);
+}
+
 .dropdown__title {
-  display: flex;
-  padding-left: 20px;
-  align-items: center;
+  cursor: pointer;
+  display: block;
+  padding: 21px 0 21px 50px;
+  color: #444a52;
+  font-weight: bold;
+  width: 100%;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .dropdown__arrow {
@@ -3403,6 +3443,7 @@ body {
 .dropdown__body {
   overflow: hidden;
   height: 0;
+  transition: 0.2s ease-in-out;
 }
 
 .dropdown__link {
@@ -3419,11 +3460,16 @@ body {
   border-top: 1px solid rgba(139, 139, 139, 0.3);
 }
 
+.dropdown__item--hide {
+  display: none;
+}
+
 .dropdown__item-link {
   position: relative;
   display: block;
   padding: 22px 20px;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .dropdown__item-link:hover {
@@ -3555,6 +3601,7 @@ body {
 }
 
 .header__top {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5985,6 +6032,7 @@ body {
 }
 
 .settings-display__input {
+  color: #444a52;
   padding: 10px 15px;
 }
 
@@ -6000,6 +6048,7 @@ body {
 }
 
 .settings-display__select {
+  position: relative;
   width: 170px;
   margin-right: 30px;
 }
@@ -6038,6 +6087,22 @@ body {
 
 .settings-display__select-title {
   padding: 12px 20px 13px;
+}
+
+.settings-display__link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 12px 20px 13px;
+  transition: 0.2s ease-in-out;
+}
+
+.settings-display__link:hover {
+  background: #f5f5f5;
+}
+
+.settings-display__link--active {
+  background: #f5f5f5;
 }
 
 .display__toggle {
@@ -6213,6 +6278,7 @@ body {
 
 @media (min-width: 1050px) {
   .filters-bg {
+    z-index: 0;
     display: flex;
     position: sticky;
   }

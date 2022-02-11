@@ -532,7 +532,7 @@
             <form id="feedbackForm" action="./json/send-form-error.json" class="feedback-form">
               <div class="feedback__body">
                 <label class="place-entry">
-                  <input data-input class="feedback__input place-entry__input" name="name" type="text" />
+                  <input data-input class="feedback__input place-entry__input" name="phone" type="text" />
 
                   <span class="place-entry__placeholder">+7 (999)-999-99-99<span
                       class="place-entry__star">*</span></span>
@@ -2410,6 +2410,13 @@
     <div id="errorModal" data-info-modal class="info-modal info-modal--error info-modal--close">
       <span data-close-info class="info-modal__close close-btn white-color">Закрыть</span>
       <div data-modal-inner class="info-modal__inner container">
+      </div>
+    </div>
+
+    <div id="confirmationModal" data-info-modal class="info-modal info-modal--confirmation info-modal--hide">
+      <span data-close-info class="info-modal__close close-btn white-color">Закрыть</span>
+      <div data-modal-inner class="info-modal__inner container">
+
       </div>
     </div>
     <!--modal-->
