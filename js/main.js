@@ -663,9 +663,9 @@ class Render {
   getPropertyListHtml = (property) => {
     const isCheck = property.checked ? 'checked' : ''
     return (/*html*/`
-      <li data-filter-item="Лист" class="dropdown__item">
+      <li data-filter-item="${property.field_value_name}" class="dropdown__item">
         <label class="filter__label">
-          <input type="checkbox" class="filter__checkbox" name="Матерьял" ${isCheck} value="Лист">
+          <input data-checkbox-input type="checkbox" class="filter__checkbox" name="Матерьял" ${isCheck} value="Лист">
           <span data-name class="dropdown__link dropdown__item-link">${property.field_value_name}</span>
         </label>
       </li>
@@ -2664,7 +2664,6 @@ class Dropdown {
 class Filters {
   constructor(filtersWrapId) {
     this.$filtersWrap = document.querySelector(filtersWrapId);
-    this.categoryId = this.$filtersWrap.dataset.categoryId;
     this.init();
   }
 
@@ -2672,7 +2671,9 @@ class Filters {
     if (!this.$filtersWrap) {
       return;
     }
-    this.listeners();
+    this.categoryId = this.$filtersWrap.dataset.categoryId;
+    this.searchProductsInput =
+      this.listeners();
   }
 
   open = async ($filter) => {
@@ -2711,6 +2712,8 @@ class Filters {
     }
   }
 
+
+
   createPropsList = async ($filter) => {
     const $list = $filter.querySelector('[data-filter-list]');
     render.clearParent($list);
@@ -2733,7 +2736,6 @@ class Filters {
     }
   }
 
-
   searchProperty = ($input) => {
     const $filter = $input.closest('[data-filter]');
     const $propsList = $filter.querySelectorAll('[data-filter-item]')
@@ -2744,7 +2746,7 @@ class Filters {
   findProps = ($propsList, value) => {
     $propsList.forEach(($item) => {
       const propsValue = $item.dataset.filterItem.trim().toLowerCase();
-
+      console.log(value, propsValue)
       if (propsValue.includes(value)) {
         this.showProperty($item);
 
@@ -2766,7 +2768,6 @@ class Filters {
     if (e.target.closest('[data-filter-btn]')) {
       const $filter = e.target.closest('[data-filter]');
       this.toggleFilter($filter);
-
     }
   }
 
@@ -2776,9 +2777,17 @@ class Filters {
     }
   }
 
-  changeHandler = (e) => {
+  canselSubmit = (e) => {
+    if (e.key == 'Enter') {
+      e.preventDefault();
+    }
+  }
+
+  keypressHandler = (e) => {
     if (e.target.closest('[data-filter-search]')) {
-      this.searchProperty(e.target);
+
+      this.canselSubmit(e);
+
     }
   }
 
@@ -2786,6 +2795,59 @@ class Filters {
     this.$filtersWrap.addEventListener('click', this.clickHandler);
     this.$filtersWrap.addEventListener('input', this.inputHandler);
     this.$filtersWrap.addEventListener('change', this.inputHandler);
+    this.$filtersWrap.addEventListener('keypress', this.keypressHandler);
+
+  }
+}
+
+class FilterForm {
+  constructor(id) {
+    this.$form = document.querySelector(id);
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$form) {
+      return;
+    }
+    this.$searchInput = this.$form.querySelector('[data-search-input]')
+    this.listeners();
+  }
+
+
+  resetForm = () => {
+    this.resetFilters();
+    this.clearSearchInput();
+  }
+
+  resetFilters = () => {
+    const allFilters = this.$form.querySelectorAll('[data-checkbox-input]');
+    allFilters.forEach((chechbox) => {
+      if (chechbox.checked) {
+        chechbox.checked = false;
+      }
+    })
+  }
+
+  clearSearchInput = () => {
+    this.$searchInput.value = '';
+  }
+
+  clickHandler = (e) => {
+    if (e.target.closest('[data-reset]')) {
+      this.resetForm()
+    }
+  }
+
+  changeHandler = (e) => {
+    if (e.target.closest('[data-radio]')) {
+      this.$form.submit();
+    }
+  }
+
+  listeners = () => {
+    this.$form.addEventListener('click', this.clickHandler);
+    this.$form.addEventListener('change', this.changeHandler);
   }
 }
 
@@ -3105,6 +3167,7 @@ const basket = new Basket('#basket');
 
 const dropdown = new Dropdown();
 const filters = new Filters('#filtersWrap');
+const filterForm = new FilterForm('#filterForm');
 const about = new About('#about');
 const aboutMap = new AboutMap('aboutMap');
 

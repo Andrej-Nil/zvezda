@@ -151,7 +151,7 @@
       <!--header__content-->
 
     </header>
-    <form action="./catalog-two.html" method="GET" class="catalog-form">
+    <form id="filterForm" action="./catalog-two.html" method="GET" class="catalog-form">
       <div class="settings-display container">
 
         <div class="settings-display__selects">
@@ -233,10 +233,10 @@
         </div>
         <div class="display__toggle">
           <label class="display__btn display__btn--list">
-            <input class="display__radio" type="radio" name="display" value="list">
+            <input data-radio class="display__radio" type="radio" name="display" value="list">
           </label>
           <label class="display__btn display__btn--tile-active">
-            <input class="display__radio" type="radio" name="display" value="tile" checked>
+            <input data-radio class="display__radio" type="radio" name="display" value="tile" checked>
           </label>
         </div>
       </div>
@@ -272,28 +272,7 @@
                           <ul data-filter-list class="dropdown__list">
                             <li class="dropdown__item">
                               <label class="filter__label">
-                                <input type="checkbox" class="filter__checkbox">
-                                <span class="dropdown__link dropdown__item-link">Лист</span>
-                              </label>
-                            </li>
-
-                            <li class="dropdown__item">
-                              <label class="filter__label">
-                                <input type="checkbox" class="filter__checkbox">
-                                <span class="dropdown__link dropdown__item-link">Лист</span>
-                              </label>
-                            </li>
-
-                            <li class="dropdown__item">
-                              <label class="filter__label">
-                                <input type="checkbox" class="filter__checkbox">
-                                <span class="dropdown__link dropdown__item-link">Лист</span>
-                              </label>
-                            </li>
-
-                            <li class="dropdown__item">
-                              <label class="filter__label">
-                                <input type="checkbox" class="filter__checkbox">
+                                <input data-checkbox-input type="checkbox" class="filter__checkbox">
                                 <span class="dropdown__link dropdown__item-link">Лист</span>
                               </label>
                             </li>
@@ -344,31 +323,12 @@
                           <ul data-filter-list class="filter__list">
                             <li data-filter-item="764-98" class="dropdown__item">
                               <label class="filter__label">
-                                <input type="checkbox" class="filter__checkbox" name="ГОСТ" value="764-98">
+                                <input data-checkbox-input type="checkbox" class="filter__checkbox" name="ГОСТ"
+                                  value="764-98">
                                 <span data-name class="dropdown__link dropdown__item-link">764-98</span>
                               </label>
                             </li>
 
-                            <li data-filter-item="764-98" class="dropdown__item">
-                              <label class="filter__label">
-                                <input type="checkbox" class="filter__checkbox" name="ГОСТ" value="764-98">
-                                <span data-name class="dropdown__link dropdown__item-link">764-98</span>
-                              </label>
-                            </li>
-
-                            <li data-filter-item="764-98" class="dropdown__item">
-                              <label class="filter__label">
-                                <input type="checkbox" class="filter__checkbox" name="ГОСТ" value="764-98">
-                                <span data-name class="dropdown__link dropdown__item-link">764-98</span>
-                              </label>
-                            </li>
-
-                            <li data-filter-item="764-98" class="dropdown__item">
-                              <label class="filter__label">
-                                <input type="checkbox" class="filter__checkbox" name="ГОСТ" value="764-98">
-                                <span data-name class="dropdown__link dropdown__item-link">764-98</span>
-                              </label>
-                            </li>
                           </ul>
                         </div>
                       </div>
@@ -394,7 +354,8 @@
                           <ul data-filter-list="Лист" class="filter__list">
                             <li data-filter-item="Лист" class="dropdown__item">
                               <label class="filter__label">
-                                <input type="checkbox" class="filter__checkbox" name="Матерьял" value="Лист">
+                                <input data-checkbox-input type="checkbox" class="filter__checkbox" name="Матерьял"
+                                  value="Лист">
                                 <span data-name class="dropdown__link dropdown__item-link">Лист</span>
                               </label>
                             </li>
@@ -411,7 +372,7 @@
                     <div class="filter__buttons">
                       <input class="filter__btn btn yellow-btn hover-yellow-light" type="submit" value="Показать">
 
-                      <span class="filter__btn filter__btn--clear btn" type="text">Сбросить фильтр</span>
+                      <span data-reset class="filter__btn filter__btn--clear btn" type="text">Сбросить фильтр</span>
                     </div>
                   </div>
                 </div>

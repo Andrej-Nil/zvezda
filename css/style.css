@@ -3444,6 +3444,23 @@ body {
   overflow: hidden;
   height: 0;
   transition: 0.2s ease-in-out;
+  overflow-y: auto;
+  max-height: 300px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0);
+}
+
+.dropdown__body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dropdown__body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+.dropdown__body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 
 .dropdown__link {
