@@ -2659,8 +2659,6 @@ class Dropdown {
     document.addEventListener('change', this.changeHandler);
   }
 }
-
-
 class Filters {
   constructor(filtersWrapId) {
     this.$filtersWrap = document.querySelector(filtersWrapId);
@@ -2966,6 +2964,58 @@ class About {
   }
 }
 
+class Description {
+  constructor(id) {
+    this.$desc = document.querySelector(id);
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$desc) {
+      return;
+    }
+    this.$descWrap = this.$desc.querySelector('#descTextWrap');
+    this.$descText = this.$desc.querySelector('#descText');
+    this.$btn = this.$desc.querySelector('#descBtn');
+    this.listeners();
+  }
+  open = () => {
+    const descTextHeight = this.$descText.offsetHeight;
+    this.$descWrap.style.height = descTextHeight + 'px';
+    this.$btn.innerHTML = 'Свернуть'
+    this.$btn.classList.add('about-company__blink--open')
+    this.$descWrap.dataset.status = 'open';
+  }
+  close = () => {
+    this.$descWrap.style.height = '';
+    this.$btn.innerHTML = 'Развернуть';
+    this.$btn.classList.remove('about-company__blink--open');
+    this.$descWrap.dataset.status = 'close';
+  }
+
+  toggleDesc = () => {
+    if (!this.$descWrap) {
+      return;
+    }
+
+    if (this.$descWrap.dataset.status === 'close') {
+      this.open();
+    } else if (this.$descWrap.dataset.status === 'open') {
+      this.close();
+    }
+
+  }
+  clickHandler = (e) => {
+    if (e.target.closest('#descBtn')) {
+      this.toggleDesc()
+    }
+  }
+
+  listeners = () => {
+    this.$desc.addEventListener('click', this.clickHandler);
+  }
+}
+
 class AboutMap {
   constructor(mapId) {
     this.$map = document.querySelector('#' + mapId);
@@ -3150,6 +3200,7 @@ const catalogModal = new CatalogModal('headerCatalogModal');
 const cityModal = new CityModal('selectCityModal');
 
 const feedBackForm = new FormPage('#feedbackForm');
+const productionOrderForm = new FormPage('#productionOrderForm');
 
 const bigBgImg = new BigBgImg('#servise');
 const advantages = new Advantages('#advantages');
@@ -3170,7 +3221,7 @@ const filters = new Filters('#filtersWrap');
 const filterForm = new FilterForm('#filterForm');
 const about = new About('#about');
 const aboutMap = new AboutMap('aboutMap');
-
+const description = new Description('#description');
 
 if ($searchOpenBtn && $searchModal) {
   $searchOpenBtn.addEventListener('click', openSearchModal);
@@ -3198,8 +3249,6 @@ function openSupportModal() {
 function openOrderModal() {
   ordenModal.open();
 }
-
-
 
 function openQueryModal(e) {
   if (e.target.closest(`[data-query-btn]`)) {

@@ -1,27 +1,47 @@
 .about-company {
-  //padding: 0 15px;
-}
-
-.about-company__text {
-  padding: 30px 20px;
-  background: $lightBg;
-}
-
-.about-company {
   margin-bottom: 60px;
-
+  background: $lightBg;
   color: $blackMain;
   font-size: 15px;
   line-height: 28px;
-  p {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-bottom: 20px;
   }
+  p,
+  div {
+    margin-bottom: 15px;
+  }
+  ul {
+    margin-bottom: 15px;
+    list-style-type: disc;
+  }
+
+  li {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    list-style-type: disc;
+  }
+}
+
+.about-company__text-wrap {
+  height: 110px;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+.about-company__text {
+  padding: 30px 40px;
 }
 
 .about-company__blink {
   background: $lightBg;
   display: block;
-  padding: 20px;
+  padding: 20px 40px;
   cursor: pointer;
 
   color: $yellowMain;
@@ -29,11 +49,17 @@
   font-size: 14px;
   line-height: 19px;
   &::after {
-    content: "-";
+    content: "+";
     font-weight: normal;
     font-size: 25px;
     display: inline-block;
     margin-left: 10px;
     position: absolute;
+  }
+}
+
+.about-company__blink--open {
+  &::after {
+    content: "-";
   }
 }

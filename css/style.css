@@ -5696,15 +5696,15 @@ body {
   margin-bottom: 30px;
 }
 
-@media (min-width: 1310px) {
-  .application {
-    padding: 60px;
-  }
-}
-
 .application__inner {
   background: #f5f5f5;
   padding: 50px 15px;
+}
+
+@media (min-width: 1310px) {
+  .application__inner {
+    padding: 67px 110px;
+  }
 }
 
 .application__title {
@@ -5982,26 +5982,53 @@ body {
   display: none;
 }
 
-.about-company__text {
-  padding: 30px 20px;
-  background: #f8f8f8;
-}
-
 .about-company {
   margin-bottom: 60px;
+  background: #f8f8f8;
   color: #444a52;
   font-size: 15px;
   line-height: 28px;
 }
 
-.about-company p {
+.about-company h1,
+.about-company h2,
+.about-company h3,
+.about-company h4,
+.about-company h5,
+.about-company h6 {
   margin-bottom: 20px;
+}
+
+.about-company p,
+.about-company div {
+  margin-bottom: 15px;
+}
+
+.about-company ul {
+  margin-bottom: 15px;
+  list-style-type: disc;
+}
+
+.about-company li {
+  margin-bottom: 10px;
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+.about-company__text-wrap {
+  height: 110px;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+.about-company__text {
+  padding: 30px 40px;
 }
 
 .about-company__blink {
   background: #f8f8f8;
   display: block;
-  padding: 20px;
+  padding: 20px 40px;
   cursor: pointer;
   color: #fba50d;
   font-weight: bold;
@@ -6010,12 +6037,16 @@ body {
 }
 
 .about-company__blink::after {
-  content: "-";
+  content: "+";
   font-weight: normal;
   font-size: 25px;
   display: inline-block;
   margin-left: 10px;
   position: absolute;
+}
+
+.about-company__blink--open::after {
+  content: "-";
 }
 
 .settings-display {
