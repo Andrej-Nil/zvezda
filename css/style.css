@@ -6055,6 +6055,7 @@ body {
 }
 
 .settings-display__search {
+  position: relative;
   margin: 0 30px 0 30px;
   display: none;
   max-width: 508px;
@@ -6063,7 +6064,7 @@ body {
 
 @media (min-width: 1050px) {
   .settings-display__search {
-    display: block;
+    display: flex;
   }
 }
 
@@ -6309,9 +6310,8 @@ body {
   right: 0;
 }
 
-.filters-bg {
+.filters {
   position: fixed;
-  display: none;
   width: 100%;
   overflow: auto;
   justify-content: flex-end;
@@ -6319,23 +6319,50 @@ body {
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 1000;
-  background: rgba(228, 228, 228, 0.6);
-  backdrop-filter: blur(20px);
+  transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+  background: rgba(228, 228, 228, 0);
+  z-index: -1000;
+  overflow-x: hidden;
 }
 
 @media (min-width: 1050px) {
-  .filters-bg {
+  .filters {
     z-index: 0;
     display: flex;
     position: sticky;
   }
 }
 
+.filters--closed {
+  z-index: 1000;
+}
+
+.filters--open {
+  z-index: 1000;
+  background: rgba(228, 228, 228, 0.6);
+  backdrop-filter: blur(20px);
+}
+
+.filters--open .filters-wrap {
+  transform: translate(0, 0);
+}
+
 .filters-wrap__inner {
   position: relative;
   border: 1px solid rgba(139, 139, 139, 0.3);
   background: #fff;
+}
+
+.filters-wrap {
+  margin-left: auto;
+  transform: translate(100%, 0);
+  transition: 0.3s ease-in-out;
+}
+
+@media (min-width: 1050px) {
+  .filters-wrap {
+    transform: translate(0, 0);
+  }
 }
 
 @media (min-width: 1050px) {
@@ -6367,10 +6394,6 @@ body {
   .filters-wrap {
     padding: 0;
   }
-}
-
-.filters {
-  border-top: 1px solid rgba(139, 139, 139, 0.3);
 }
 
 .filter__top {

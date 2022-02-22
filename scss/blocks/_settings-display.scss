@@ -4,12 +4,13 @@
 }
 
 .settings-display__search {
+  position: relative;
   margin: 0 30px 0 30px;
   display: none;
   max-width: 508px;
   width: 100%;
   @media (min-width: 1050px) {
-    display: block;
+    display: flex;
   }
   @media (min-width: 1230px) {
     margin: 0 30px 0 auto;

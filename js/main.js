@@ -2710,8 +2710,6 @@ class Filters {
     }
   }
 
-
-
   createPropsList = async ($filter) => {
     const $list = $filter.querySelector('[data-filter-list]');
     render.clearParent($list);
@@ -2808,14 +2806,29 @@ class FilterForm {
     if (!this.$form) {
       return;
     }
-    this.$searchInput = this.$form.querySelector('[data-search-input]')
+
+    this.$inputsSearchList = this.$form.querySelectorAll('[data-search-input]');
+    this.$filters = this.$form.querySelector('#filters');
+    this.$filtersWrap = this.$form.querySelector('#filtersWrap');
+    this.value = '';
     this.listeners();
   }
 
+  openFilters = () => {
+    this.$filters.classList.add('filters--closed');
+    this.$filters.classList.add('filters--open');
+  }
+
+  closeFilters = () => {
+    this.$filters.classList.remove('filters--open');
+    setTimeout(() => {
+      this.$filters.classList.remove('filters--closed');
+    }, 300);
+  }
 
   resetForm = () => {
     this.resetFilters();
-    this.clearSearchInput();
+    this.clearSearchInputs();
   }
 
   resetFilters = () => {
@@ -2827,13 +2840,33 @@ class FilterForm {
     })
   }
 
-  clearSearchInput = () => {
-    this.$searchInput.value = '';
+  setNewValue = () => {
+    this.$inputsSearchList.forEach(($input) => {
+      $input.value = this.value;
+    })
+  }
+
+  changeSearchInputValue = ($input) => {
+    this.value = $input.value;
+    this.setNewValue();
+
+  }
+
+  clearSearchInputs = () => {
+    this.value = '';
+    this.setNewValue();
   }
 
   clickHandler = (e) => {
     if (e.target.closest('[data-reset]')) {
-      this.resetForm()
+      this.resetForm();
+    }
+
+    if (e.target.closest('#openFiltersBtn')) {
+      this.openFilters();
+    }
+    if (e.target.closest('[data-close]')) {
+      this.closeFilters();
     }
   }
 
@@ -2841,11 +2874,22 @@ class FilterForm {
     if (e.target.closest('[data-radio]')) {
       this.$form.submit();
     }
+    if (e.target.closest('[data-search-input]')) {
+      this.changeSearchInputValue(e.target);
+    }
+  }
+
+  inputHandler = (e) => {
+    if (e.target.closest('[data-search-input]')) {
+      this.changeSearchInputValue(e.target);
+    }
+
   }
 
   listeners = () => {
     this.$form.addEventListener('click', this.clickHandler);
     this.$form.addEventListener('change', this.changeHandler);
+    this.$form.addEventListener('input', this.inputHandler);
   }
 }
 

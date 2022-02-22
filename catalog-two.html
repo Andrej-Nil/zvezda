@@ -243,11 +243,11 @@
 
       <div class="content container">
 
-        <div class="sidebar hide-for-mobile">
+        <div class="sidebar">
           <!-- sidebar__inner -->
           <div class="sidebar__inner">
             <!-- catalog__nav -->
-            <div class="filters-bg">
+            <div id="filters" class="filters">
 
               <div id="filtersWrap" data-category-id="id" class="filters-wrap">
                 <div class="filters__top">
@@ -290,6 +290,7 @@
                       </div>
                       <div data-filter-body class="dropdown__body">
                         <div data-filter-content class="filter__price">
+
                           <div class="filter__inputs">
                             <input type="text" class="filter__input" placeholder="от 0">
                             <input type="text" class="filter__input" placeholder="до 281 000">
@@ -300,6 +301,7 @@
                             <span class="range__line"></span>
                             <span class="range__slide range__slide--right"></span>
                           </div>
+
                         </div>
                       </div>
                     </li>
@@ -819,6 +821,18 @@
 
         </main>
       </div>
+      <div class="search-product">
+        <div class="search search-product__string">
+          <input data-search-input type="text" class="search-product__input settings-display__input search__input input"
+            placeholder="Введите запрос" />
+          <span class="search-form__btn search__btn"></span>
+        </div>
+
+        <div id="openFiltersBtn" class="search-product__btn">
+
+        </div>
+      </div>
+
     </form>
 
     <!-- Рекомендуем товары -->
@@ -1381,19 +1395,6 @@
       </div>
 
     </footer>
-
-    <div class="search-product">
-      <div class="search search-product__string">
-        <input data-search-input type="text" class="search-product__input search__input input"
-          placeholder="Введите запрос" />
-        <span class="search-form__btn search__btn"></span>
-      </div>
-
-      <div class="search-product__btn">
-
-      </div>
-    </div>
-
 
     <!--header-modals-->
 

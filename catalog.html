@@ -14,34 +14,46 @@
   <div class="app">
     <header class="header light-bg">
       <!-- header__top -->
-      <div class="header__top header__top--white light-bg">
+      <div id="headerTop" class="header__top header__top--white">
         <div class="header__top-inner container">
           <a href="index.html" class="header__logo"> </a>
 
           <nav class="header-nav">
             <ul class="header-nav__list">
-              <li class="header-nav__item">
-                <a href="catalog.html" class="header-nav__link">Каталог</a>
-                <span class="header-nav__arrow">
-                  <!--<span class="header-nav__modal-arrow"></span>-->
-                </span>
+              <li data-nav-item class="header-nav__item">
+
+                <a href="catalog.html" class="header-nav__link" data-header-modal-id="headerCatalogModal">
+                  <span class="header-nav__link-text">Каталог</span>
+                  <span class="header-nav__arrow">
+                    <span class="header-nav__modal-arrow"></span>
+                  </span>
+                </a>
+
               </li>
 
-              <li class="header-nav__item">
-                <a href="services.html" class="header-nav__link">Услуги</a>
+              <li data-nav-item class="header-nav__item">
+                <a href="" class="header-nav__link"></a>
+                <a href="services.html" class="header-nav__link">
+                  <span class="header-nav__link-text">Услуги</span>
+                </a>
               </li>
 
-              <li class="header-nav__item">
-                <a href="production.html" class="header-nav__link">Производство</a>
+              <li data-nav-item class="header-nav__item">
+                <a href="production.html" class="header-nav__link">
+                  <span class="header-nav__link-text">Производство</span>
+                </a>
               </li>
 
-              <li class="header-nav__item">
-                <a href="about.html" class="header-nav__link">О компании</a>
-                <span class="header-nav__arrow">
-                  <!--<span class="header-nav__modal-arrow"></span>-->
-                </span>
+              <li data-nav-item class="header-nav__item header-nav__item--about">
+                <a href="about.html" class="header-nav__link">
+                  <span class="header-nav__link-text">О компании</span>
+                  <span class="header-nav__arrow">
+                    <span class="header-nav__modal-arrow"></span>
+                  </span>
+                </a>
+
                 <!--about-nav-->
-                <div class="about-nav header-modal--hide">
+                <div class="about-nav">
                   <ul class="about-nav__list">
                     <li class="about-nav__item">
                       <a href="about.html" class="about-nav__link">О компании</a>
@@ -67,23 +79,26 @@
             <a href="mailto:" class="header__contact header__contact--mail">info@zvezda.ru</a>
           </div>
           <!-- header__connection -->
+          <div data-nav-item class="header-nav__item header-city">
 
-          <div class="header-city">
-            <span class="header-city__name">Екатеринбург</span>
-            <span class="header-city__arrow header-nav__arrow">
-              <!--<span class="header-nav__modal-arrow"></span>-->
-            </span>
+            <div class="header-nav__link" data-header-modal-id="selectCityModal">
+              <span class="header-nav__link-text header-city__name">Екатеринбург</span>
+              <span class="header-nav__arrow header-city__arrow">
+                <span class="header-nav__modal-arrow"></span>
+              </span>
+            </div>
+
           </div>
 
           <nav class="nav-icon">
             <ul class="nav-icon__list">
               <li class="nav-icon__item">
                 <a href="basket.html" class="nav-icon__link nav-icon__link--basket"></a>
-                <span class="nav-icon__count">22</span>
+                <span id="totalItemInBasket" class="nav-icon__count nav-icon__count--empty">0</span>
               </li>
 
               <li class="nav-icon__item">
-                <span class="nav-icon__link nav-icon__link--search"></span>
+                <span id="searchOpenBtn" class="nav-icon__link nav-icon__link--search"></span>
               </li>
 
             </ul>
@@ -101,8 +116,8 @@
 
         </div>
         <div class="mobile-city">
-          <div class="mobile-city__inner mobile-city__inner--white">
-            <span class="mobile-city__name ">Екатеринбург</span>
+          <div class="mobile-city__inner">
+            <span class="mobile-city__name">Екатеринбург</span>
             <span class="mobile-city__arrow"></span>
           </div>
         </div>
@@ -112,20 +127,21 @@
       <div class="path mt125 container">
         <a href="index.html" class="path__link">Главная</a>
 
-        <a href="catalog.html" class="path__link path__link--active"><span class="path__dash"></span>Каталог</a>
+        <a href="catalog.html" class="path__link"><span class="path__dash"></span>Каталог</a>
+
+        <a href="catalog.html" class="path__link path__link--active"><span class="path__dash"></span>Лист
+          металлический</a>
       </div>
 
       <!--header__content-->
       <div class="header__content container">
         <div class="header-card">
           <div class="header-card__text">
-            <h1 class="header-card__title">Каталог продукции</h1>
+            <h1 class="header-card__title">Лист металлический</h1>
 
             <p class="header-card__desc">
-              Компания «Звезда» – это один из крупнейших поставщиков стального
-              металлопроката. Cклад компании наполнен широким ассортиментом
-              продукции металлопроката, что позволяет оперативно исполнять
-              любой индивидуальный заказ.
+              Наша компания предлагает широкий выбор стального листа: холодной и горячей прокатки, с чечевичным и
+              ромбическим рифление оцинкованного и нержавеющего.
             </p>
           </div>
 
@@ -133,12 +149,13 @@
         </div>
       </div>
       <!--header__content-->
+
     </header>
 
     <main class="main container">
 
       <div class="main__search search">
-        <input data-search-input type="text" class=" search__input search__input--light-bd input"
+        <input data-search-input type="text" class="settings-display__input search__input search__input--light-bd input"
           placeholder="Введите запрос и нажмите Enter" />
         <span class="search-form__btn search__btn"></span>
       </div>
@@ -319,72 +336,18 @@
 
       <!-- Рекомендуем товары -->
       <section class="section product-card-slider">
-        <div class="section__inner">
+        <div class="section__inner container">
           <h2 class="section__title">
             Рекомендуем товары
           </h2>
           <!-- section__content -->
           <div class="section__content">
             <!-- slider -->
-            <div class="slider slider--with-padding">
+            <div id="productSlider" class="slider slider--with-padding">
               <!-- track -->
-              <div class="slider__track">
+              <div data-track class="slider__track">
 
-                <div class="product-card product-card--slider">
-                  <h3 class="product-card__title">
-                    <a href="product-page.html" class="product-card__link">
-                      Лист вольфрамовый 0,1 мм ВЧ
-                    </a>
-                  </h3>
-                  <div class="product-card__preview">
-                    <a href="product-page.html" class="product-card__link-img">
-                      <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                    </a>
-                  </div>
-                  <p class="product-card__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                    поперечное сечение.
-                  </p>
-                  <div class="product-card__bottom">
-                    <div class="product-card__price">
-                      <p class="product-card__current">1200 ₽/м2</p>
-                      <p class="product-card__old">2400 ₽/м2</p>
-                    </div>
-
-                    <span class="product-card__btn btn yellow-btn">
-                      <span class="product-card__value btn__value basket-icon">В корзину</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="product-card product-card--slider">
-                  <h3 class="product-card__title">
-                    <a href="product-page.html" class="product-card__link">
-                      Лист вольфрамовый 0,1 мм ВЧ
-                    </a>
-                  </h3>
-                  <div class="product-card__preview">
-                    <a href="product-page.html" class="product-card__link-img">
-                      <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                    </a>
-                  </div>
-                  <p class="product-card__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                    поперечное сечение.
-                  </p>
-                  <div class="product-card__bottom">
-                    <div class="product-card__price">
-                      <p class="product-card__current">1200 ₽/м2</p>
-                      <p class="product-card__old">2400 ₽/м2</p>
-                    </div>
-
-                    <span class="product-card__btn btn yellow-btn">
-                      <span class="product-card__value btn__value basket-icon">В корзину</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="product-card product-card--slider">
+                <div data-product="34545" data-slide data-in-basket="0" class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -404,93 +367,19 @@
                       <p class="product-card__current">1200 ₽/м2</p>
                     </div>
 
-                    <span class="product-card__btn btn yellow-btn">
+                    <span data-in-basket-btn class="product-card__btn btn yellow-btn">
                       <span class="product-card__value btn__value basket-icon">В корзину</span>
                     </span>
-                  </div>
-                </div>
 
-                <div class="product-card product-card--slider">
-                  <h3 class="product-card__title">
-                    <a href="product-page.html" class="product-card__link">
-                      Лист вольфрамовый 0,1 мм ВЧ
-                    </a>
-                  </h3>
-                  <div class="product-card__preview">
-                    <a href="product-page.html" class="product-card__link-img">
-                      <img src="./img/image/product-card/product4.jpg" alt="" class="product-card__img">
-                    </a>
-                  </div>
-                  <p class="product-card__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                    поперечное сечение.
-                  </p>
-                  <div class="product-card__bottom">
-                    <div class="product-card__price">
-                      <p class="product-card__current">1200 ₽/м2</p>
-                      <p class="product-card__old">2400 ₽/м2</p>
+                    <div data-counter class="product-counter product-counter--hide counter">
+                      <span data-dec class="product-card__counter-btn counter__btn">-</span>
+                      <input data-product-input class="counter__input" type="text" value="1">
+                      <span data-inc class="product-card__counter-btn counter__btn">+</span>
                     </div>
-
-                    <span class="product-card__btn btn yellow-btn">
-                      <span class="product-card__value btn__value basket-icon">В корзину</span>
-                    </span>
                   </div>
                 </div>
 
-                <div class="product-card product-card--slider">
-                  <h3 class="product-card__title">
-                    <a href="product-page.html" class="product-card__link">
-                      Лист вольфрамовый 0,1 мм ВЧ
-                    </a>
-                  </h3>
-                  <div class="product-card__preview">
-                    <a href="product-page.html" class="product-card__link-img">
-                      <img src="./img/image/product-card/product1.jpg" alt="" class="product-card__img">
-                    </a>
-                  </div>
-                  <p class="product-card__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                    поперечное сечение.
-                  </p>
-                  <div class="product-card__bottom">
-                    <div class="product-card__price">
-                      <p class="product-card__current">12 000 678 ₽/м2</p>
-                      <p class="product-card__old">24 006 570 ₽/м2</p>
-                    </div>
-
-                    <span class="product-card__btn btn yellow-btn">
-                      <span class="product-card__value btn__value basket-icon">В корзину</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="product-card product-card--slider">
-                  <h3 class="product-card__title">
-                    <a href="product-page.html" class="product-card__link">
-                      Лист вольфрамовый 0,1 мм ВЧ
-                    </a>
-                  </h3>
-                  <div class="product-card__preview">
-                    <a href="product-page.html" class="product-card__link-img">
-                      <img src="./img/image/product-card/product2.jpg" alt="" class="product-card__img">
-                    </a>
-                  </div>
-                  <p class="product-card__desc">
-                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
-                    поперечное сечение.
-                  </p>
-                  <div class="product-card__bottom">
-                    <div class="product-card__price">
-                      <p class="product-card__current product-card__current--text">Цена по запросу</p>
-                    </div>
-
-                    <span class="product-card__btn btn yellow-btn">
-                      <span class="product-card__value btn__value basket-icon">В корзину</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="product-card product-card--slider">
+                <div data-product="34545" data-slide data-in-basket="0" class="product-card product-card--slider">
                   <h3 class="product-card__title">
                     <a href="product-page.html" class="product-card__link">
                       Лист вольфрамовый 0,1 мм ВЧ
@@ -508,20 +397,191 @@
                   <div class="product-card__bottom">
                     <div class="product-card__price">
                       <p class="product-card__current">1200 ₽/м2</p>
-                      <p class="product-card__old">2400 ₽/м2</p>
+
+
+
+                      <p class="product-card__old">1200 ₽/м2</p>
                     </div>
 
-                    <span class="product-card__btn btn yellow-btn">
+                    <span data-in-basket-btn class="product-card__btn btn yellow-btn">
                       <span class="product-card__value btn__value basket-icon">В корзину</span>
                     </span>
+
+                    <div data-counter class="product-counter product-counter--hide counter">
+                      <span data-dec class="product-card__counter-btn counter__btn">-</span>
+                      <input data-product-input class="counter__input" type="text" value="1">
+                      <span data-inc class="product-card__counter-btn counter__btn">+</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-product="345" data-in-basket="0" data-slide class="product-card product-card--slider">
+                  <h3 class="product-card__title">
+                    <a href="product-page.html" class="product-card__link">
+                      Лист вольфрамовый 0,1 мм ВЧ
+                    </a>
+                  </h3>
+                  <div class="product-card__preview">
+                    <a href="product-page.html" class="product-card__link-img">
+                      <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
+                    </a>
+                  </div>
+                  <p class="product-card__desc">
+                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                    поперечное сечение.
+                  </p>
+                  <div class="product-card__bottom">
+                    <div class="product-card__price">
+                      <p class="product-card__current">1200 ₽/м2</p>
+                    </div>
+
+                    <span data-in-basket-btn class="product-card__btn btn yellow-btn">
+                      <span class="product-card__value btn__value basket-icon">В корзину</span>
+                    </span>
+
+                    <div data-counter class="product-counter product-counter--hide counter">
+                      <span data-dec class="product-card__counter-btn counter__btn">-</span>
+                      <input data-product-input class="counter__input" type="text" value="0">
+                      <span data-inc class="product-card__counter-btn counter__btn">+</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-product="45427" data-in-basket="0" data-slide class="product-card product-card--slider">
+                  <h3 class="product-card__title">
+                    <a href="product-page.html" class="product-card__link">
+                      Лист вольфрамовый 0,1 мм ВЧ
+                    </a>
+                  </h3>
+                  <div class="product-card__preview">
+                    <a href="product-page.html" class="product-card__link-img">
+                      <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
+                    </a>
+                  </div>
+                  <p class="product-card__desc">
+                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                    поперечное сечение.
+                  </p>
+                  <div class="product-card__bottom">
+                    <div class="product-card__price">
+                      <p class="product-card__current">1200 ₽/м2</p>
+                    </div>
+
+                    <span data-in-basket-btn class="product-card__btn btn yellow-btn">
+                      <span class="product-card__value btn__value basket-icon">В корзину</span>
+                    </span>
+
+                    <div data-counter class="product-counter product-counter--hide counter">
+                      <span data-dec class="product-card__counter-btn counter__btn">-</span>
+                      <input data-product-input class="counter__input" type="text" value="1">
+                      <span data-inc class="product-card__counter-btn counter__btn">+</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-product="856756" data-in-basket="0" data-slide class="product-card product-card--slider">
+                  <h3 class="product-card__title">
+                    <a href="product-page.html" class="product-card__link">
+                      Лист вольфрамовый 0,1 мм ВЧ
+                    </a>
+                  </h3>
+                  <div class="product-card__preview">
+                    <a href="product-page.html" class="product-card__link-img">
+                      <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
+                    </a>
+                  </div>
+                  <p class="product-card__desc">
+                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                    поперечное сечение.
+                  </p>
+                  <div class="product-card__bottom">
+                    <div class="product-card__price">
+                      <p class="product-card__current">1200 ₽/м2</p>
+                    </div>
+
+                    <span data-in-basket-btn class="product-card__btn btn yellow-btn">
+                      <span class="product-card__value btn__value basket-icon">В корзину</span>
+                    </span>
+
+                    <div data-counter class="product-counter product-counter--hide counter">
+                      <span data-dec class="product-card__counter-btn counter__btn">-</span>
+                      <input data-product-input class="counter__input" type="text" value="1">
+                      <span data-inc class="product-card__counter-btn counter__btn">+</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-product="467" data-in-basket="0" data-slide class="product-card product-card--slider">
+                  <h3 class="product-card__title">
+                    <a href="product-page.html" class="product-card__link">
+                      Лист вольфрамовый 0,1 мм ВЧ
+                    </a>
+                  </h3>
+                  <div class="product-card__preview">
+                    <a href="product-page.html" class="product-card__link-img">
+                      <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
+                    </a>
+                  </div>
+                  <p class="product-card__desc">
+                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                    поперечное сечение.
+                  </p>
+                  <div class="product-card__bottom">
+                    <div class="product-card__price">
+                      <p class="product-card__current">1200 ₽/м2</p>
+                    </div>
+
+                    <span data-in-basket-btn class="product-card__btn btn yellow-btn">
+                      <span class="product-card__value btn__value basket-icon">В корзину</span>
+                    </span>
+
+                    <div data-counter class="product-counter product-counter--hide counter">
+                      <span data-dec class="product-card__counter-btn counter__btn">-</span>
+                      <input data-product-input class="counter__input" type="text" value="1">
+                      <span data-inc class="product-card__counter-btn counter__btn">+</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-product="9890" data-in-basket="0" data-slide class="product-card product-card--slider">
+                  <h3 class="product-card__title">
+                    <a href="product-page.html" class="product-card__link">
+                      Лист вольфрамовый 0,1 мм ВЧ
+                    </a>
+                  </h3>
+                  <div class="product-card__preview">
+                    <a href="product-page.html" class="product-card__link-img">
+                      <img src="./img/image/product-card/product3.jpg" alt="" class="product-card__img">
+                    </a>
+                  </div>
+                  <p class="product-card__desc">
+                    Вольфрамовая пластина равномерой толщины, которая имеет прямоугольное
+                    поперечное сечение.
+                  </p>
+                  <div class="product-card__bottom">
+                    <div class="product-card__price">
+                      <p class="product-card__current">1200 ₽/м2</p>
+                    </div>
+
+                    <span data-in-basket-btn class="product-card__btn btn yellow-btn">
+                      <span class="product-card__value btn__value basket-icon">В корзину</span>
+                    </span>
+
+                    <div data-counter class="product-counter product-counter--hide counter">
+                      <span data-dec class="product-card__counter-btn counter__btn">-</span>
+                      <input data-product-input class="counter__input" type="text" value="1">
+                      <span data-inc class="product-card__counter-btn counter__btn">+</span>
+                    </div>
                   </div>
                 </div>
 
               </div>
               <!-- track -->
-              <div class="products-arrow section-controls">
-                <span class="section-controls__btn section-controls__prev"></span>
-                <span class="section-controls__btn section-controls__next"></span>
+              <div data-controls class="section-controls">
+                <div class="section-controls__inner">
+                  <span data-prev class="section-controls__btn hide-arrow section-controls__prev"></span>
+                  <span data-next class="section-controls__btn section-controls__next"></span>
+                </div>
               </div>
             </div>
             <!-- slider -->
@@ -683,398 +743,697 @@
     <!--header-modals-->
 
     <!-- headerCatalogModal -->
-    <div id="headerCatalogModal" class="header-modal header-modal--hide">
+    <div id="headerCatalogModal" class="header-modal">
       <!-- header-modal__inner -->
-      <div class="header-modal__inner container">
-        <div class="header-modal__search search">
-          <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу" />
-          <span class="search__btn"></span>
+      <div class="header-modal__bd"></div>
+      <div class="header-modal__inner" data-modal-inner>
+        <div class="header-modal__content container">
+
+          <div class="header-modal__main">
+
+            <nav data-catalog-list class="header-catalog">
+
+            </nav>
+          </div>
+          <!-- header-modal__main -->
         </div>
-        <!-- header-modal__main -->
-        <div class="header-modal__main">
-          <nav class="header-catalog">
-            <!-- header-catalog__list -->
-            <ul class="header-catalog__list">
-              <!-- header-catalog__item -->
-              <li class="header-catalog__item">
-                <a href="#!" class="
-                      header-catalog__link header-catalog__link--with-sublist
-                    ">
-                  Полоса металлическая
-                </a>
-                <!-- header-catalog__sublist -->
-                <ul class="header-catalog__sublist">
-                  <!-- header-catalog__item -->
-                  <li class="header-catalog__item">
-                    <a href="#!" class="
-                          header-catalog__link
-                          header-catalog__link--with-sublist
-                        ">
-                      Полоса металлическая
-                    </a>
-                    <!-- header-catalog__sublist -->
-                    <ul class="header-catalog__sublist">
-                      <!-- header-catalog__item -->
-                      <li class="header-catalog__item">
-                        <a href="#!" class="header-catalog__link">
-                          Полоса металлическая
-                        </a>
-                      </li>
-                      <!-- header-catalog__item -->
-                    </ul>
-                    <!--header-catalog__sublist-->
-                  </li>
-                  <!-- header-catalog__item -->
-                </ul>
-                <!-- header-catalog__sublist -->
-              </li>
-              <!-- header-catalog__item -->
-            </ul>
-            <!-- header-catalog__list -->
-          </nav>
-        </div>
-        <!-- header-modal__main -->
       </div>
       <!-- header-modal__inner -->
     </div>
     <!-- headerCatalogModal -->
 
     <!--search-city-->
-    <div id="selectCityModal" class="header-modal header-modal--hide">
+    <div id="selectCityModal" class="header-modal">
       <!-- header-modal__inner -->
-      <div class="header-modal__inner container">
-        <div class="header-modal__search search">
-          <input data-search-input type="text" class="search__input input" placeholder="Поиск по каталогу" />
-          <span class="search__btn"></span>
-        </div>
-        <!-- header-modal__main -->
+      <div class="header-modal__bd"></div>
+      <div class="header-modal__inner" data-modal-inner>
+        <div class="header-modal__content container">
 
-        <div class="header-modal__main">
-          <!-- cities -->
-
-          <div class="cities">
-            <!-- city-card -->
-            <div class="city-card">
-              <h4 class="city-card__title">Екатеринбург</h4>
-              <div class="city-card__contacts">
-                <div class="city-card__contact contact">
-                  <span class="contact__title">Звонок по России бесплатный:</span>
-                  <a href="tel:+73433180170" class="contact__link">+7 (343) 3-180-170</a>
-                </div>
-
-                <div class="city-card__contact contact">
-                  <span class="contact__title">Напишите нам:</span>
-                  <a href="mailto:info@ntmk.ru" class="contact__link">info@ntmk.ru</a>
-                </div>
-              </div>
-
-              <div class="city-card__addresses">
-                <div class="address">
-                  <span class="address__title">Наш адрес:</span>
-
-                  <p class="address__info">
-                    Россия, Свердловская область, Екатеринбург, улица
-                    Малышева, 51, оф 16/05
-                  </p>
-                </div>
-                <div class="address">
-                  <span class="address__title">Режим работы:</span>
-
-                  <p class="address__info">ПН-ПТ: с 9.00 до 18.00</p>
-                  <p class="address__info">СБ-ВС: Выходной</p>
-                </div>
-              </div>
-
-              <span class="city-card__btn btn clear-btn">
-                Оставить заявку
-              </span>
-            </div>
-            <!-- city-card -->
-
-            <!-- cities__regions -->
-            <div class="cities__regions">
-              <!-- region -->
-              <div class="region">
-                <h4 class="region__title">Центральный федеральный округ</h4>
-                <!-- region__list -->
-                <ul class="region__list">
-                  <li class="region__item">
-                    <!-- region__area -->
-                    <div class="area">
-                      <h5 class="area__title">Белгородская область</h5>
-                      <!-- area__list -->
-                      <ul class="area__list">
-                        <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
-                        </li>
-
-                        <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
-                        </li>
-                      </ul>
-                      <!-- area__list -->
-                    </div>
-                    <!-- region__area -->
-                  </li>
-                </ul>
-                <!-- region__list -->
-              </div>
-              <!-- region -->
-
-              <!-- region -->
-              <div class="region">
-                <h4 class="region__title">Центральный федеральный округ</h4>
-                <!-- region__list -->
-                <ul class="region__list">
-                  <li class="region__item">
-                    <!-- region__area -->
-                    <div class="area">
-                      <h5 class="area__title">Белгородская область</h5>
-                      <!-- area__list -->
-                      <ul class="area__list">
-                        <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
-                        </li>
-
-                        <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
-                        </li>
-                      </ul>
-                      <!-- area__list -->
-                    </div>
-                    <!-- region__area -->
-                  </li>
-                </ul>
-                <!-- region__list -->
-              </div>
-              <!-- region -->
-
-              <!-- region -->
-              <div class="region">
-                <h4 class="region__title">Центральный федеральный округ</h4>
-                <!-- region__list -->
-                <ul class="region__list">
-                  <li class="region__item">
-                    <!-- region__area -->
-                    <div class="area">
-                      <h5 class="area__title">Белгородская область</h5>
-                      <!-- area__list -->
-                      <ul class="area__list">
-                        <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
-                        </li>
-
-                        <li class="area__item">
-                          <a href="" class="area__city"> Екатеринбург </a>
-                        </li>
-                      </ul>
-                      <!-- area__list -->
-                    </div>
-                    <!-- region__area -->
-                  </li>
-                </ul>
-                <!-- region__list -->
-              </div>
-              <!-- region -->
-            </div>
-            <!-- cities__regions -->
+          <div class="header-modal__search search">
+            <input id="searchCityInput" type="text" class="search__input input" placeholder="Поиск по каталогу"
+              autocomplete="off">
+            <span class="search__btn"></span>
           </div>
-          <!-- cities -->
+          <!-- header-modal__main -->
+
+          <div class="header-modal__main">
+            <!-- cities -->
+
+            <div class="cities">
+              <!-- city-card -->
+              <div class="city-card">
+                <h4 class="city-card__title">Екатеринбург</h4>
+                <div class="city-card__contacts">
+                  <div class="city-card__contact contact">
+                    <span class="contact__title">Звонок по России бесплатный:</span>
+                    <a href="tel:+73433180170" class=" contact__link">+7 (343) 3-180-170</a>
+                  </div>
+
+                  <div class="city-card__contact contact">
+                    <span class=" contact__title">Напишите нам:</span>
+                    <a href="mailto:info@ntmk.ru" class=" contact__link">info@ntmk.ru</a>
+                  </div>
+                </div>
+
+                <div class="city-card__addresses">
+                  <div class="address">
+                    <span class="address__title">Наш адрес:</span>
+
+                    <p class="address__info">
+                      Россия, Свердловская область, Екатеринбург,
+                      улица Малышева, 51, оф 16/05
+                    </p>
+                  </div>
+                  <div class="address">
+                    <span class="address__title">Режим работы:</span>
+
+                    <p class="address__info">
+                      ПН-ПТ: с 9.00 до 18.00
+                    </p>
+                    <p class="address__info">
+                      СБ-ВС: Выходной
+                    </p>
+                  </div>
+                </div>
+
+                <span data-query-btn class="city-card__btn btn clear-btn">
+                  Оставить заявку
+                </span>
+
+              </div>
+              <!-- city-card -->
+
+              <!-- cities__regions -->
+              <div data-region-list class="regions">
+
+              </div>
+              <div data-city-list class="regions__cities">
+
+              </div>
+              <!-- cities__regions -->
+            </div>
+            <!-- cities -->
+
+          </div>
+          <!-- header-modal__main -->
         </div>
-        <!-- header-modal__main -->
+        <!-- header-modal__inner -->
       </div>
-      <!-- header-modal__inner -->
     </div>
     <!--search-city-->
     <!--header-modals-->
 
     <!--modal-->
 
-    <!-- supportModal -->
-    <div data-close id="supportModal" class="modal">
+
+    <!-- queryModal -->
+    <div id="queryModal" class="modal modal--is-hide">
       <!--modal__inner-->
-      <div class="modal__inner">
+      <div data-modal-body class="modal__body modal__body--big">
         <span data-close class="modal__close close-btn">Закрыть</span>
 
-        <h3 class="modal__title">Обращение в техподдержку</h3>
+        <h3 class="modal__title">
+          Оформление заявки
+        </h3>
 
-        <form class="modal__form">
+        <form action="./json/send-form.json" enctype="multipart/form-data" method="POST" id="queryModalForm"
+          class="modal__form">
+
+          <div class="form-block">
+            <p class="form-block__title">Общая информация</p>
+            <div class="form-block__inputs">
+
+              <div data-dropdown="close" class="modal__select select mb0">
+                <span data-dropdown-btn data-select-title class="select__title ">
+                  Выбрать форму заявки
+                </span>
+                <div data-dropdown-body class="select__body">
+                  <ul data-dropdown-content class="select__list">
+                    <li class="select__item">
+                      <label class="select__label">
+                        <span class="select__text">
+                          Поставка продукции
+                        </span>
+                        <input data-radio class="select__radio radio" type="radio" name="delivery"
+                          value="Поставка продукции">
+                      </label>
+                    </li>
+                    <li class="select__item">
+                      <label class="select__label">
+                        <span class="select__text">
+                          Производство продукции
+                        </span>
+                        <input data-radio class="select__radio radio" type="radio" name="delivery"
+                          value="Производство продукции">
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="name" type="text" />
+
+                <span class="place-entry__placeholder">ФИО<span class="place-entry__star">*</span></span>
+
+              </label>
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="phone" type="text" />
+
+                <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
+              </label>
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="mail" type="text" />
+
+                <span class="place-entry__placeholder">E-mail</span>
+              </label>
+
+              <label class="modal__input place-entry span2 mb0">
+                <input data-input class="place-entry__input" name="message" type="text" />
+
+                <span class="place-entry__placeholder">Комментарий к заказу</span>
+
+              </label>
+
+            </div>
+          </div>
+          <div class="form-block__info">
+            <div class="form-block">
+              <p class="form-block__title">Информация о продукции</p>
+              <div class="form-selects">
+
+                <div class="form-selects__group">
+                  <p class="form-selects__title">Выбор продукции:</p>
+
+                  <div class="form-selects__list">
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Черный металлопрокат
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Цветной металлопрокат
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Медный металлопрокат
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Выберите категорию
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Лист стальной
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Труба стальная
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Выберите продукцию
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Лист рифленый стальной
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Лист обычный стальной
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-selects__group">
+                  <p class="form-selects__title">Характеристики:</p>
+
+                  <div class="form-selects__list">
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Тип рефления
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Ромб
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                Волна
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Ширина
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                30
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                40
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div data-dropdown="close" class="select mb0">
+                      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+                        Длина
+                      </span>
+                      <div data-dropdown-body class="select__body">
+                        <ul data-dropdown-content class="select__list">
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                70
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Поставка продукции">
+                            </label>
+                          </li>
+                          <li class="select__item">
+                            <label class="select__label">
+                              <span class="select__text">
+                                80
+                              </span>
+                              <input data-radio class="select__radio radio" type="radio" name="delivery"
+                                value="Производство продукции">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+            <span data-add class="form-block__add">Добавить позицию +</span>
+          </div>
+
+          <div class="form-block">
+            <p class="form-block__title">Информация о производстве</p>
+            <div class="form-block__inputs">
+
+              <label class="modal__input place-entry span3 mb0">
+                <input data-input class="place-entry__input" name="message" type="text" />
+
+                <span class="place-entry__placeholder">Комментарий к производству</span>
+
+              </label>
+
+
+              <div data-file-block class="modal__file span2 file mb0">
+                <label data-file-label class="file__label form-block__file-label">
+                  <span class="form-block__file-side">
+                    <span data-file-text class="file__text">Прикрепить файл</span>
+                    <input data-input type="file" name="file" class="file__input">
+                  </span>
+                  <span class="form-block__file-side">
+                    <span class="file__clear-btn mt0" data-clear-file>очистить файл</span>
+                  </span>
+                </label>
+              </div>
+
+
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="mail" type="number" />
+
+                <span class="place-entry__placeholder">Количество</span>
+              </label>
+
+
+
+            </div>
+          </div>
+
+          <div class="form-block">
+            <p class="form-block__title">Информация об организации</p>
+            <div class="form-block__inputs">
+
+              <label class="modal__input place-entry mb0">
+                <input data-input class="place-entry__input" name="mail" type="number" />
+
+                <span class="place-entry__placeholder">Наименование организации</span>
+              </label>
+
+              <div data-file-block class="modal__file span2 file mb0">
+                <label data-file-label class="file__label form-block__file-label">
+                  <span class="form-block__file-side">
+                    <span data-file-text class="file__text">Добавить реквизиты</span>
+                    <input data-input type="file" name="file" class="file__input">
+                  </span>
+                  <span class="form-block__file-side">
+                    <span class="file__clear-btn mt0" data-clear-file>очистить файл</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-block__footer">
+            <input data-submit type="submit" class="form-block__submit btn yellow-btn hover-yellow-light"
+              value="Отправить заявку">
+
+            <label data-checkbox class="checkbox">
+              <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
+              <span class="checkbox__fake"></span>
+              <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
+            </label>
+          </div>
+
+        </form>
+
+      </div>
+      <!--modal__inner-->
+    </div>
+    <!-- queryModal -->
+
+    <!-- supportModal -->
+    <div id="supportModal" class="modal modal--is-hide">
+      <!--modal__inner-->
+      <div data-modal-body class="modal__body">
+        <span data-close class="modal__close close-btn">Закрыть</span>
+
+        <h3 class="modal__title">
+          Обращение в техподдержку
+        </h3>
+
+        <form action="./json/send-form.json" enctype="multipart/form-data" method="POST" id="supportModalForm"
+          class="modal__form">
           <div class="modal__inputs-block">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*" />
-            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail" />
-            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*" />
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="name" type="text" />
 
-            <textarea data-textarea name="message" class="modal__input modal__textarea textarea"
+              <span class="place-entry__placeholder">ФИО<span class="place-entry__star">*</span></span>
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="mail" type="text" />
+
+              <span class="place-entry__placeholder">E-mail</span>
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="phone" type="text" />
+
+              <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
+
+            </label>
+
+            <textarea data-input name="message" class="modal__input modal__textarea textarea"
               placeholder="Опишите проблему"></textarea>
           </div>
-          <div class="modal__file file">
-            <label class="file__label">
-              <span class="file__text">Прикрепить файл</span>
-              <input data-file type="file" name="file" class="file__input" />
+          <div data-file-block class="modal__file file">
+            <label data-file-label class="file__label">
+              <span data-file-text class="file__text">Прикрепить файл</span>
+              <input data-input type="file" name="file" class="file__input">
             </label>
-            <p class="file__desc">
-              Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png,
-              xls, xlsx или zip.
+            <span class="file__clear-btn" data-clear-file>очистить файл</span>
+            <p data-info="" class="file__desc">
+              Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
           </div>
 
-          <input type="text" class="modal__submit btn yellow-btn hover-yellow-light" value="Отправить заявку" />
+          <input data-submit type="submit" class="modal__submit btn yellow-btn hover-yellow-light"
+            value="Отправить заявку">
 
-          <label class="checkbox" data-label>
-            <input data-checkbox type="checkbox" checked class="checkbox__input" />
+          <label data-checkbox class="checkbox">
+            <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
             <span class="checkbox__fake"></span>
             <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
           </label>
         </form>
+
       </div>
       <!--modal__inner-->
     </div>
     <!-- supportModal -->
 
+
     <!-- orderModal -->
-    <div id="orderModal" class="modal">
+    <div id="orderModal" class="modal modal--is-hide">
       <!--modal__inner-->
-      <div class="modal__inner">
+      <div data-modal-body class="modal__body">
         <span data-close class="modal__close close-btn">Закрыть</span>
 
-        <h3 class="modal__title">Обращение в техподдержку</h3>
+        <h3 class="modal__title">
+          Оформление заказа
+        </h3>
 
-        <form class="modal__form">
+        <form id="orderModalForm" action="./json/send-form.json" enctype="multipart/form-data" method="POST"
+          class="modal__form">
           <div class="modal__inputs-block">
-            <input data-input type="text" name="name" class="modal__input input" placeholder="ФИО*" />
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="name" type="text" />
 
-            <input data-input type="text" name="company" class="modal__input input"
-              placeholder="Название организации" />
+              <span class="place-entry__placeholder">ФИО<span class="place-entry__star">*</span></span>
 
-            <input data-input type="text" name="name" class="modal__input input" placeholder="E-mail" />
+            </label>
 
-            <input data-input type="text" name="name" class="modal__input input" placeholder="Телефон*" />
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="company" type="text" />
 
-            <input data-input type="text" name="address" class="modal__input input" placeholder="Адрес доставки*" />
+              <span class="place-entry__placeholder">Название организации</span>
 
-            <div class="modal__select select">
-              <span class="select__title">
-                Доставка транспортной компанией
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="mail" type="text" />
+
+              <span class="place-entry__placeholder">E-mail</span>
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="phone" type="text" />
+
+              <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
+
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="address" type="text" />
+
+              <span class="place-entry__placeholder">Адрес доставки<span class="place-entry__star">*</span></span>
+
+            </label>
+
+            <div data-dropdown="close" class="modal__select select">
+              <span data-dropdown-btn data-select-title class="select__title ">
+                Выбрать форму заявки
               </span>
-              <div class="select__body">
-                <ul class="select__list">
+              <div data-dropdown-body class="select__body">
+                <ul data-dropdown-content class="select__list">
                   <li class="select__item">
                     <label class="select__label">
-                      <span class="select__text"> Кит </span>
-                      <input class="radio" type="radio" name="delivery" value="" />
+                      <span class="select__text">
+                        Поставка продукции
+                      </span>
+                      <input data-radio class="select__radio radio" type="radio" name="delivery" value="кит">
                     </label>
                   </li>
                   <li class="select__item">
                     <label class="select__label">
-                      <span class="select__text"> сдек </span>
-                      <input class="radio" type="radio" name="delivery" value="" />
+                      <span class="select__text">
+                        Производство продукции
+                      </span>
+                      <input data-radio class="select__radio radio" type="radio" name="delivery" value="сдек">
                     </label>
                   </li>
                 </ul>
               </div>
+
+
             </div>
 
-            <textarea data-textarea name="message" class="modal__input modal__textarea textarea"
-              placeholder="Комменатрий к заказу"></textarea>
+            <textarea data-input name="message" class="modal__input modal__textarea textarea"
+              placeholder="Коментарий к заказу"></textarea>
           </div>
-          <div class="modal__file file">
-            <label class="file__label">
-              <span class="file__text">Добавить реквизиты</span>
-              <input data-file type="file" name="file" class="file__input" />
+          <div data-file-block class="modal__file file">
+            <label data-file-label class="file__label">
+              <span data-file-text class="file__text">Добавить реквизиты</span>
+              <input data-input type="file" name="file" class="file__input">
             </label>
+            <span class="file__clear-btn" data-clear-file>очистить файл</span>
             <p class="file__desc">
-              Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png,
-              xls, xlsx или zip.
+              Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
             </p>
           </div>
 
-          <input type="text" class="modal__submit btn yellow-btn hover-yellow-light" value="Оформить заявку" />
+          <input data-submit type="submit" class="modal__submit btn yellow-btn hover-yellow-light"
+            value="Отправить заявку">
 
-          <label class="checkbox" data-label>
-            <input data-checkbox type="checkbox" checked class="checkbox__input" />
+          <label data-checkbox class="checkbox">
+            <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
             <span class="checkbox__fake"></span>
             <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
           </label>
         </form>
+
       </div>
       <!--modal__inner-->
     </div>
     <!-- orderModal -->
 
     <!-- searchModal -->
-    <div id="searchModal" class="modal">
-      <div class="modal__inner search-modal container">
-        <span data-close class="modal__close close-btn">Закрыть</span>
+    <div id="searchModal" class="modal search-modal modal--is-hide">
+      <div class="search-modal__inner container">
+        <span data-close class="search-modal__close close-btn">Закрыть</span>
+        <div id="SearchContent" class="search-modal__content">
+          <form action="./json/search.json" method="GET" class="search-form mt50">
+            <!-- selecting-area -->
+            <div id="searchArea" class="selecting-area">
+              <label class="selecting-area__item">
+                <input data-area class="selecting-area__radio" type="radio" name="type" value="all" checked />
+                <span class="selecting-area__place">
+                  <span class="selecting-area__place-name">Поиск по сайту</span>
+                  <span class="selecting-area__place-name selecting-area__place-name--m">По сайту</span>
+                </span>
+              </label>
 
-        <form action="" class="search-form">
-          <!-- selecting-area -->
-          <div class="selecting-area">
-            <label class="selecting-area__item">
-              <input class="selecting-area__radio" type="radio" name="area" value="0" />
-              <span class="selecting-area__area-name">Поиск по сайту</span>
-            </label>
-
-            <label class="selecting-area__area">
-              <input class="selecting-area__radio" type="radio" name="area" value="1" />
-              <span class="selecting-area__area-name">Поиск по каталогу</span>
-            </label>
-          </div>
-          <!-- selecting-area -->
-
-          <div class="search-form__string search">
-            <input data-search-input type="text" class="search-form__input search__input input"
-              placeholder="Введите запрос и нажмите Enter" />
-            <span class="search-form__btn search__btn"></span>
-          </div>
-        </form>
-
-        <div class="search-result">
-          <span class="search-result__count">Найдено 45 результатов:</span>
-        </div>
-
-        <!-- search-result__list -->
-        <div class="search-result__list">
-          <div class="result-card">
-            <div class="result-card__header">
-              <a href="news.html" class="result-card__area">Новости</a>
-              <h3 class="result-card__title">
-                <a href="news-one.html" class="result-card__link">Поступление на склады оцинкованной продукции</a>
-              </h3>
+              <label class="selecting-area__item">
+                <input data-area class="selecting-area__radio" type="radio" name="type" value="production" />
+                <span class="selecting-area__place">
+                  <span class="selecting-area__place-name">Поиск по каталогу</span>
+                  <span class="selecting-area__place-name selecting-area__place-name--m">По каталогу</span>
+                </span>
+              </label>
             </div>
+            <!-- selecting-area -->
 
-            <p class="result-card__desc">
-              Одним из самых востребованных продуктов
-              <span class="result-card__light">никелевог</span>о
-              металлопроката является лист никелевый 5 мм Н-0 ГОСТ 6235-91,
-              который благодаря своим качественным показателям используется
-              при изготовлении спецоборудования, высокоточных приборов, котлов
-              требующих повышенной устойчивости к коррозии.
-            </p>
-          </div>
-          <div class="result-card">
-            <div class="result-card__header">
-              <a href="services.html" class="result-card__area">Услуги</a>
-              <h3 class="result-card__title">
-                <a href="service-one.html" class="result-card__link">Анализ металла</a>
-              </h3>
+            <div class="search-form__string  search">
+              <input id="searchInput" type="text" class="search-form__input search__input search__input--light-bd input"
+                placeholder="Введите запрос и нажмите Enter" />
+              <span class="search-form__btn search__btn"></span>
             </div>
+          </form>
+          <!-- search-result__list -->
+          <div id="searchResult" class="search__result">
 
-            <p class="result-card__desc">
-              Одним из самых востребованных продуктов
-              <span class="result-card__light">никелевог</span>о
-              металлопроката является лист никелевый 5 мм Н-0 ГОСТ 6235-91,
-              который благодаря своим качественным показателям используется
-              при изготовлении спецоборудования, высокоточных приборов, котлов
-              требующих повышенной устойчивости к коррозии.
-            </p>
           </div>
+          <!-- search-result__list -->
         </div>
-        <!-- search-result__list -->
+      </div>
+
+      <div id="blinds" class="blinds">
+        <div class="blind blind--up"></div>
+        <div class="blind blind--down"></div>
       </div>
     </div>
     <!-- searchModal -->
 
+    <div id="galeriaModal" class="galeria-modal modal modal--is-hide">
+      <div data-modal-inner class="galeria-modal__inner">
+        <span data-close class="galeria-modal__close close-btn">Закрыть</span>
+        <picture>
+          <source srcset="./img/image/other/1.svg" type="image/webp">
+          <img src="./img/image/other/1.svg" alt="" class="galeria-modal__img">
+        </picture>
+      </div>
+    </div>
+
+    <div id="succsesModal" data-info-modal class="info-modal info-modal--close">
+      <span data-close-info class="info-modal__close close-btn">Закрыть</span>
+      <div data-modal-inner class="info-modal__inner container">
+        <!--<p class="info-modal__text">Спасибо. Заказ успешно оформлен!</p>
+        <p class="info-modal__subtext">Мы выслали электронный чек и трек номер заказа на почту и номер телефона.</p>-->
+      </div>
+    </div>
+
+    <div id="errorModal" data-info-modal class="info-modal info-modal--error info-modal--close">
+      <span data-close-info class="info-modal__close close-btn white-color">Закрыть</span>
+      <div data-modal-inner class="info-modal__inner container">
+      </div>
+    </div>
     <!--modal-->
+
   </div>
   <script src="js/main.js"></script>
 </body>
