@@ -660,7 +660,7 @@ class Render {
   getCityListHtml = (cityList) => {
     const cityListHtml = this.getListHtml(this.getAreaItemHtml, cityList)
     return (/*html*/`
-    <ul class="region-list">
+    <ul class="city-list">
       ${cityListHtml}
     </ul>`)
   }
@@ -3329,6 +3329,7 @@ const partnersSlider = new Slider('#partnersSlider');
 const certificatesSlider = new Slider('#certificates');
 const reviewsSlider = new Slider('#reviewsSlider');
 const productSlider = new Slider('#productSlider');
+const newsSlider = new Slider('#newsSlider');
 
 
 const certificatesGaleria = new Galeria('#certificates');
@@ -3368,12 +3369,9 @@ if ($mobileMenu && $mobileMenuBtn) {
   $mobileMenuBtn.addEventListener('click', openMobileModal);
 }
 
-
 if ($openCityModal) {
   $openCityModal.addEventListener('click', openCityModal);
 }
-
-
 
 function openSearchModal() {
   searchModal.openSearchModal();
@@ -3382,11 +3380,13 @@ function openSearchModal() {
 function openSupportModal() {
   supportModal.open();
 }
+
 function openOrderModal() {
   ordenModal.open();
 }
 
 function openCityModal() {
+  cityModal.createRegions()
   cityModal.open();
 }
 
