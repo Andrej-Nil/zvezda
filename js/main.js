@@ -2,12 +2,17 @@
 const $body = document.querySelector('body');
 const $searchOpenBtn = document.querySelector('#searchOpenBtn');
 const $searchModal = document.querySelector('#searchModal');
-const $supportModalBtn = document.querySelector('#supportModalBtn');
+//const $supportModalBtn = document.querySelector('#supportModalBtn');
 const $supportModal = document.querySelector('#supportModal');
 const $orderModalBtn = document.querySelector('#orderModalBtn');
 const $orderModal = document.querySelector('#orderModal');
 
 const $queryModal = document.querySelector('#orderModal');
+
+const $mobileMenu = document.querySelector('#mobileMenu');
+const $mobileMenuBtn = document.querySelector('#mobileMenuBtn');
+
+const $openCityModal = document.querySelector('#openCityModal');
 
 class Debaunce {
   constructor() { }
@@ -1259,6 +1264,9 @@ class CityModal extends HeaderModal {
       this.$btn = e.target.closest('[data-area-btn]');
       this.toggleAreaList();
     }
+    if (e.target.closest('[data-close]')) {
+      this.close()
+    }
   }
 
   hoverHandler = () => {
@@ -1670,6 +1678,42 @@ class QueryModal extends Modal {
       this.close();
       errorModal.close();
     }
+  }
+
+  listeners = () => {
+    this.$modal.addEventListener('click', this.clickHandler)
+  }
+}
+
+class MobileMenu extends Modal {
+  constructor(modalId) {
+    super(modalId);
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$modal) {
+      return;
+    }
+    this.$modalBody = this.$modal.querySelector('[data-modal-body]');
+    this.listeners()
+  }
+
+  clickHandler = (e) => {
+    if (e.target.hasAttribute('data-close')) {
+      this.close();
+    }
+    if (e.target.closest('#orderBtn')) {
+      this.close();
+      ordenModal.open()
+    }
+
+    if (e.target.closest('#supportBtn')) {
+      this.close();
+      supportModal.open();
+    }
+
+
   }
 
   listeners = () => {
@@ -3227,6 +3271,37 @@ class AboutMap {
 
 }
 
+class ContactMap {
+  constructor(mapId) {
+    this.$map = document.querySelector('#' + mapId);
+    this.mapId = mapId;
+    this.init();
+  }
+
+  init = () => {
+
+    this.createMap();
+
+  }
+
+  createMap = () => {
+    this.map = new google.maps.Map(this.$map, {
+      center: { lat: -34.397, lng: 150.644 },
+      zoom: 8,
+    });
+
+  }
+
+  initMap = () => {
+    //this.map = new ymaps.Map(
+    //  this.mapId,
+    //  this.baseSettingsMap,
+    //);
+  }
+
+
+}
+
 const server = new Server();
 const render = new Render();
 const debaunce = new Debaunce();
@@ -3236,6 +3311,7 @@ const supportModal = new CommunicationModal('#supportModal', '#supportModalForm'
 const succsesModal = new SuccsesModal('#succsesModal');
 const confirmationModal = new ConfirmationModal('#confirmationModal');
 const ordenModal = new CommunicationModal('#orderModal', '#orderModalForm');
+const mobileMenu = new MobileMenu('#mobileMenu')
 
 const queryModal = new QueryModal('#queryModal', '#queryModalForm');
 const errorModal = new ErrorModal('#errorModal');
@@ -3265,14 +3341,19 @@ const filters = new Filters('#filtersWrap');
 const filterForm = new FilterForm('#filterForm');
 const about = new About('#about');
 const aboutMap = new AboutMap('aboutMap');
+//const contactMap = new ContactMap('contactMap');
 const description = new Description('#description');
 
 if ($searchOpenBtn && $searchModal) {
   $searchOpenBtn.addEventListener('click', openSearchModal);
 }
 
-if ($supportModalBtn && $supportModal) {
-  $supportModalBtn.addEventListener('click', openSupportModal);
+if ($supportModal) {
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-support-btn]')) {
+      openSupportModal()
+    }
+  });
 }
 
 if ($orderModalBtn && $orderModal) {
@@ -3283,6 +3364,17 @@ if ($queryModal) {
   document.addEventListener('click', openQueryModal);
 }
 
+if ($mobileMenu && $mobileMenuBtn) {
+  $mobileMenuBtn.addEventListener('click', openMobileModal);
+}
+
+
+if ($openCityModal) {
+  $openCityModal.addEventListener('click', openCityModal);
+}
+
+
+
 function openSearchModal() {
   searchModal.openSearchModal();
 }
@@ -3292,6 +3384,14 @@ function openSupportModal() {
 }
 function openOrderModal() {
   ordenModal.open();
+}
+
+function openCityModal() {
+  cityModal.open();
+}
+
+function openMobileModal() {
+  mobileMenu.open();
 }
 
 function openQueryModal(e) {

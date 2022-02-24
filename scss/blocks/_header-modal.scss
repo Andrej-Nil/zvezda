@@ -9,22 +9,31 @@
   background: rgba(228, 228, 228, 0.4);
   backdrop-filter: blur(20px);
   min-height: 100vh;
-  z-index: 500;
+  z-index: 1000;
+  @media (min-width: 1280px) {
+    z-index: 500;
+  }
 }
 
 .header-modal__bd {
-  border-top: 110px solid $bgBlack;
+  @media (min-width: 1280px) {
+    border-top: 110px solid $bgBlack;
+  }
 }
 .header-modal__bd--white {
   border-color: $white;
 }
+
 .header-modal--show {
   display: block;
 }
 
 .header-modal__inner {
   background: $blackMain;
-  padding: 40px 0;
+  padding: 100px 0 40px;
+  @media (min-width: 1280px) {
+    padding: 40px 0;
+  }
 }
 
 .header-modal__search {

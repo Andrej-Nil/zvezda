@@ -105,7 +105,7 @@
 
           </nav>
 
-          <div class="menu-btn">
+          <div id="mobileMenuBtn" class="menu-btn">
             <div class="menu-btn__icon">
               <span class="menu-btn__line"></span>
               <span class="menu-btn__line menu-btn__line--long"></span>
@@ -115,7 +115,7 @@
 
 
         </div>
-        <div class="mobile-city">
+        <div id="openCityModal" class="mobile-city">
           <div class="mobile-city__inner">
             <span class="mobile-city__name">Екатеринбург</span>
             <span class="mobile-city__arrow"></span>
@@ -1618,7 +1618,7 @@
         <div class="footer-main__inner container">
           <div class="footer-main__left">
             <div class="footer-main__support footer__col">
-              <span id="supportModalBtn" class="footer__support">
+              <span data-support-btn class="footer__support">
                 Написать в техподдержку
               </span>
             </div>
@@ -1746,7 +1746,9 @@
     <div id="selectCityModal" class="header-modal">
       <!-- header-modal__inner -->
       <div class="header-modal__bd"></div>
+
       <div class="header-modal__inner" data-modal-inner>
+        <span data-close class="mobile-menu__close"></span>
         <div class="header-modal__content container">
 
           <div class="header-modal__search search">
@@ -1824,6 +1826,62 @@
     <!--header-modals-->
 
     <!--modal-->
+
+    <!--mobile-menu-->
+    <div id="mobileMenu" class="modal modal--is-hide">
+      <div data-modal-body class="mobile-menu modal__body">
+        <span data-close class="mobile-menu__close">
+
+        </span>
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a href="#!" class="mobile-menu__link">
+              <span class="mobile-menu__link-num">01</span>
+              <span class="mobile-menu__link-text">Каталог</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#!" class="mobile-menu__link">
+              <span class="mobile-menu__link-num">02</span>
+              <span class="mobile-menu__link-text">Услуги</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#!" class="mobile-menu__link">
+              <span class="mobile-menu__link-num">03</span>
+              <span class="mobile-menu__link-text">Производство</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#!" class="mobile-menu__link">
+              <span class="mobile-menu__link-num">04</span>
+              <span class="mobile-menu__link-text">О компании</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#!" class="mobile-menu__link">
+              <span class="mobile-menu__link-num">05</span>
+              <span class="mobile-menu__link-text">Новости</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#!" class="mobile-menu__link">
+              <span class="mobile-menu__link-num">06</span>
+              <span class="mobile-menu__link-text">Контакты</span>
+            </a>
+          </li>
+        </ul>
+        <div class="mobile-menu__footer">
+          <span id="orderBtn" class="mobile-menu__btn btn clear-yellow-btn">
+            Оставить заявку
+          </span>
+          <span id="supportBtn" class="mobile-menu__btn btn clear-btn">
+            Написать в техподдержку
+          </span>
+        </div>
+      </div>
+    </div>
+    <!--mobile-menu-->
 
 
     <!-- queryModal -->

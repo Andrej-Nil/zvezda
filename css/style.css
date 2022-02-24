@@ -6338,7 +6338,6 @@ body {
 }
 
 .filters--open {
-  z-index: 1000;
   background: rgba(228, 228, 228, 0.6);
   backdrop-filter: blur(20px);
 }
@@ -7216,6 +7215,8 @@ body {
 
 .map {
   max-height: 600px;
+  height: 600px;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -8136,15 +8137,28 @@ body {
   background: rgba(228, 228, 228, 0.4);
   backdrop-filter: blur(20px);
   min-height: 100vh;
-  z-index: 500;
+  z-index: 1000;
 }
 
-.header-modal__bd {
-  border-top: 110px solid #2d3035;
+@media (min-width: 1280px) {
+  .header-modal {
+    z-index: 500;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header-modal__bd {
+    border-top: 110px solid #2d3035;
+  }
 }
 
 .header-modal__bd--white {
   border-color: #fff;
+}
+
+.header-modal__close {
+  position: absolute;
+  color: #fff;
 }
 
 .header-modal--show {
@@ -8153,7 +8167,13 @@ body {
 
 .header-modal__inner {
   background: #444a52;
-  padding: 40px 0;
+  padding: 100px 0 40px;
+}
+
+@media (min-width: 1280px) {
+  .header-modal__inner {
+    padding: 40px 0;
+  }
 }
 
 .header-modal__search {
@@ -8389,6 +8409,82 @@ body {
 
 .info-modal__btn:last-child {
   margin-right: 0;
+}
+
+.mobile-menu {
+  background: #444a52;
+  padding: 105px 15px 60px;
+}
+
+.mobile-menu__close {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  display: block;
+  width: 45px;
+  height: 45px;
+  background: #fba50d;
+  cursor: pointer;
+}
+
+.mobile-menu__close:before {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  line-height: 1;
+  content: "";
+  font-size: 18px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mobile-menu__list {
+  margin-bottom: 50px;
+}
+
+.mobile-menu__item {
+  margin-bottom: 20px;
+}
+
+.mobile-menu__item:last-child {
+  margin-bottom: 0;
+}
+
+.mobile-menu__link {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu__link-num {
+  margin-right: 13px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fba50d;
+}
+
+.mobile-menu__link-text {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+}
+
+.mobile-menu__btn {
+  display: block;
+  max-width: 217px;
+  margin-bottom: 20px;
+}
+
+.mobile-menu__btn:last-child {
+  margin-bottom: 0;
 }
 
 .form-selects {
