@@ -52,7 +52,7 @@
   }
 }
 
-.partners-slider__item--active .partners-slider__icon {
+.partners-slider__item.active .partners-slider__icon {
   color: $white;
   cursor: default;
   &:hover {

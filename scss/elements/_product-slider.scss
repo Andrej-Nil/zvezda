@@ -11,6 +11,7 @@
   margin-bottom: 10px;
   max-width: 628px;
   width: 100%;
+  transition: 0.3s ease-in-out;
 }
 
 .product-slider__item {
@@ -29,6 +30,7 @@
 
 .product-dots__track {
   display: none;
+  transition: 0.3s ease-in-out;
   @media (min-width: 700px) {
     display: flex;
   }
@@ -44,9 +46,10 @@
   min-height: 108px;
   margin-right: 23px;
   opacity: 0.3;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
 }
-.product-dots__item--active {
+.product-dots__item.active {
   opacity: 1;
 }
 

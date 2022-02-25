@@ -2079,7 +2079,7 @@ class Slider {
     this.$nextArrow = this.$slider.querySelector('[data-next]');
 
     this.$dotsWrap = this.$slider.querySelector('[data-dots-track]');
-    this.$activeDot = this.$slider.querySelector('.partners-slider__item--active');
+    this.$activeDot = this.$slider.querySelector('.active');
     this.displaySlides = this.setDisplaySlides(this.$slider, this.$slides[0]);
     this.displayDotSlides = this.setDisplaySlides(this.$dotsWrap, this.$activeDot);
     this.i = 0;
@@ -2177,6 +2177,7 @@ class Slider {
   }
 
   getSlideWidth = ($slide) => {
+
     const slideWidth = $slide.offsetWidth;
     const slideMarginRight = parseInt(getComputedStyle($slide, true).marginRight);
     const slideMarginLeft = parseInt(getComputedStyle($slide, true).marginLeft);
@@ -2184,9 +2185,11 @@ class Slider {
   }
 
   setDisplaySlides = ($slider, $slide) => {
+
     if (!$slider) {
       return;
     }
+
     const sliderWidth = $slider.offsetWidth;
     const slideWidth = this.getSlideWidth($slide)
     return Math.ceil(sliderWidth / slideWidth);
@@ -2201,11 +2204,11 @@ class Slider {
 
   changeActiveDot = () => {
     const $dot = this.$slider.querySelector(`[data-dot="${this.i}"]`)
-    this.$activeDot.classList.remove('partners-slider__item--active');
+    this.$activeDot.classList.remove('active');
 
     this.$activeDot = $dot;
 
-    this.$activeDot.classList.add('partners-slider__item--active');
+    this.$activeDot.classList.add('active');
   }
 
   clickHandler = (e) => {
@@ -2402,10 +2405,10 @@ class Product {
 
   }
   showProductBtn = ($product) => {
-    $product.querySelector('[data-in-basket-btn]').classList.remove('product-card__btn--hide');
+    $product.querySelector('[data-in-basket-btn]').classList.remove('hide');
   }
   hideProductBtn = ($product) => {
-    $product.querySelector('[data-in-basket-btn]').classList.add('product-card__btn--hide');
+    $product.querySelector('[data-in-basket-btn]').classList.add('hide');
   }
 
   showProductCounter = ($product) => {
@@ -3329,6 +3332,7 @@ const partnersSlider = new Slider('#partnersSlider');
 const certificatesSlider = new Slider('#certificates');
 const reviewsSlider = new Slider('#reviewsSlider');
 const productSlider = new Slider('#productSlider');
+const mainProductSlider = new Slider('#mainProductSlider');
 const newsSlider = new Slider('#newsSlider');
 
 
