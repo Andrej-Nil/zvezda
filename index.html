@@ -531,14 +531,14 @@
 
             <form id="feedbackForm" action="./json/send-form-error.json" class="feedback-form">
               <div class="feedback__body">
-                <label class="place-entry">
+                <label class="feedback__label place-entry">
                   <input data-input class="feedback__input place-entry__input" name="phone" type="text" />
 
                   <span class="place-entry__placeholder">+7 (999)-999-99-99<span
                       class="place-entry__star">*</span></span>
                 </label>
 
-                <label class="place-entry">
+                <label class="feedback__label place-entry">
                   <input data-input class="feedback__input place-entry__input" name="name" type="text" />
 
                   <span class="place-entry__placeholder">Иванов Иван<span class="place-entry__star">*</span></span>
@@ -547,7 +547,7 @@
                 <input data-submit type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
                   value="Отправить запрос">
 
-                <label data-checkbox class="feedback__label  checkbox">
+                <label data-checkbox class="feedback__conditions checkbox">
                   <input data-input type="checkbox" name="consent" checked class="feedback__checkbox checkbox__input" />
                   <span class="feedback__fake checkbox__fake"></span>
                   <span class="feedback__label-text checkbox__text">я принимаю условия политики
@@ -1571,6 +1571,7 @@
       <!--Оставьте заявку-->
 
     </main>
+
     <footer class="footer">
       <!-- footer-top -->
       <div class="footer-top">
@@ -1717,8 +1718,6 @@
       </div>
 
     </footer>
-
-
 
     <!--header-modals-->
 

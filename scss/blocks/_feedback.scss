@@ -8,7 +8,10 @@
 .feedback__inner {
   width: 100%;
   display: flex;
-  padding: 0 15px;
+  padding: 0;
+  @media (min-width: 700px) {
+    padding: 0 15px;
+  }
 }
 .feedback__left {
   padding: 50px 0;
@@ -48,20 +51,34 @@
 .feedback__body {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   //margin-bottom: 50px;
   width: 100%;
   @media (min-width: 700px) {
+    flex-direction: row;
     width: 640px;
+  }
+}
+
+.feedback__label {
+  margin: 0 0 20px 0;
+  @media (min-width: 700px) {
+    margin: 0;
   }
 }
 .feedback__input {
   width: 100%;
-  margin: 0 0 20px 0;
+  //margin: 0 0 20px 0;
   @media (min-width: 700px) {
     margin: 0 20px 0 0;
     width: 197px;
   }
 }
+
+.feedback__conditions {
+  margin: 20px 0 20px 0;
+}
+
 .feedback__submit {
   width: 100%;
   padding: 12px 0 13px;
@@ -77,13 +94,13 @@
   }
 }
 
-.feedback__label {
-  position: relative;
-  margin: 20px 0 40px;
-  @media (min-width: 700px) {
-    margin: 40px 0 0;
-  }
-}
+//.feedback__label {
+//  position: relative;
+//  margin: 20px 0 40px;
+//  @media (min-width: 700px) {
+//    margin: 40px 0 0;
+//  }
+//}
 
 .feedback__img {
   display: none;
@@ -94,14 +111,18 @@
   }
 }
 
-.feedback--light-bg {
-  .feedback__title {
-    color: $blackMain;
-  }
-  .feedback__desc {
-    color: $blackMain;
-  }
-  .feedback__input {
-    border: 1px solid $blackMain;
-  }
+.feedback__text--black {
+  color: $blackMain;
 }
+
+//.feedback--light-bg {
+//  .feedback__title {
+//    color: $blackMain;
+//  }
+//  .feedback__desc {
+//    color: $blackMain;
+//  }
+//  .feedback__input {
+//    border: 1px solid $blackMain;
+//  }
+//}

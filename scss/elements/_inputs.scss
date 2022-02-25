@@ -6,6 +6,10 @@
   color: $blackMain;
 }
 
+.input--dark-bd {
+  border: 1px solid $blackMain;
+}
+
 .input::-webkit-input-placeholder {
   font-family: $manrope;
   color: #a7a7a7;
@@ -133,6 +137,7 @@
   font-size: 16px;
   line-height: 180%;
   outline: none;
+
   transition: 0.2s ease-in-out;
   z-index: 100;
 }
@@ -176,6 +181,11 @@
   font-size: 14px;
   line-height: 180%;
   color: $white;
+}
+
+.feedback__input--dark {
+  border: 2px solid $text;
+  color: $blackMain;
 }
 
 .feedback__input::-webkit-input-placeholder {
