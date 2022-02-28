@@ -4746,6 +4746,7 @@ body {
 }
 
 .page-nav {
+  bottom: 0;
   padding: 60px 0 0;
   width: 100%;
 }
@@ -4753,6 +4754,20 @@ body {
 @media (min-width: 1050px) {
   .page-nav {
     padding: 100px 0 80px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .page-nav--fixed {
+    position: fixed;
+    top: 0;
+  }
+}
+
+@media (min-width: 1050px) {
+  .page-nav--absolute {
+    position: absolute;
+    bottom: 0;
   }
 }
 

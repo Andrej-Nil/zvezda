@@ -1,8 +1,23 @@
 .page-nav {
+  bottom: 0;
   padding: 60px 0 0;
   width: 100%;
   @media (min-width: 1050px) {
     padding: 100px 0 80px;
+  }
+}
+
+.page-nav--fixed {
+  @media (min-width: 1050px) {
+    position: fixed;
+    top: 0;
+  }
+}
+
+.page-nav--absolute {
+  @media (min-width: 1050px) {
+    position: absolute;
+    bottom: 0;
   }
 }
 

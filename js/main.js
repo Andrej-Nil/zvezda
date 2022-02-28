@@ -3305,6 +3305,73 @@ class ContactMap {
 
 }
 
+class LinkNavigation {
+  constructor(linkNavigationId) {
+    this.linkNavigation = document.querySelector(linkNavigationId)
+    this.init();
+  }
+
+  init = () => {
+    if (!this.linkNavigation) {
+      return;
+    }
+    this.anchors = this.linkNavigation.querySelectorAll('[data-anchor]');
+    this.sidebar = document.querySelector('#sidebar');
+    this.footer = document.querySelector('footer');
+    this.listners();
+  }
+
+  scrollToBlock = (e) => {
+    e.preventDefault();
+    const id = e.target.getAttribute('href');
+    const block = document.querySelector(id);
+    block.scrollIntoView({
+      behavior: 'smooth',
+      block: "start"
+    })
+  }
+
+  movingNav = () => {
+    const sidebarCoords = this.sidebar.getBoundingClientRect();
+    const stopPoint = sidebarCoords.bottom - this.footer.offsetHeight;
+    if (sidebarCoords.top < 0 && stopPoint > 0) {
+      this.fixNavigation()
+    } else if (stopPoint < 0) {
+      this.stopNavogation()
+    } else {
+      this.cancelNavigationPosition()
+    }
+  }
+
+  fixNavigation = () => {
+    this.linkNavigation.classList.add('page-nav--fixed');
+    this.linkNavigation.classList.remove('page-nav--absolute');
+  }
+
+  stopNavogation = () => {
+    this.linkNavigation.classList.remove('page-nav--fixed');
+    this.linkNavigation.classList.add('page-nav--absolute');
+  }
+
+  cancelNavigationPosition = () => {
+    this.linkNavigation.classList.remove('page-nav--absolute');
+    this.linkNavigation.classList.remove('page-nav--fixed');
+  }
+
+  clickHandler = (e) => {
+    if (e.target.closest('[data-anchor]')) {
+      this.scrollToBlock(e)
+    }
+  }
+
+
+
+  listners = () => {
+    document.addEventListener('click', this.clickHandler);
+    document.addEventListener('scroll', this.movingNav);
+  }
+}
+
 const server = new Server();
 const render = new Render();
 const debaunce = new Debaunce();
@@ -3348,6 +3415,7 @@ const about = new About('#about');
 const aboutMap = new AboutMap('aboutMap');
 //const contactMap = new ContactMap('contactMap');
 const description = new Description('#description');
+const linkNavigation = new LinkNavigation('#linkNavigation');
 
 if ($searchOpenBtn && $searchModal) {
   $searchOpenBtn.addEventListener('click', openSearchModal);
