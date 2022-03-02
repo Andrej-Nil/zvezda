@@ -3372,6 +3372,111 @@ class LinkNavigation {
   }
 }
 
+class ProductionsPage {
+  constructor() {
+    this.$productionsPage = document.querySelector('#productionsPage');
+    this.$productionTabsWrap = document.querySelector('#productions');
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$productionsPage) {
+      return;
+    }
+    this.$serialContent = document.querySelectorAll('[data-content="serial"]');
+    this.$individualContent = document.querySelectorAll('[data-content="individual"]');
+    this.listeners();
+  }
+
+  previewTab = ($tab) => {
+    if ($tab.closest('.productions__tab--preview')) {
+      return;
+    }
+    const $showTab = document.querySelector('[data-production="show"]');
+    $tab.classList.add('productions__tab--preview');
+    $showTab.classList.add('productions__tab--shift');
+  }
+
+  backPreviewTab = ($tab) => {
+    const $showTab = document.querySelector('[data-production="show"]');
+    $tab.classList.remove('productions__tab--preview');
+    $showTab.classList.remove('productions__tab--shift');
+  }
+
+
+  switchTab = ($tab) => {
+    const $showTab = document.querySelector('[data-production="show"]');
+    $showTab.classList.add('productions__tab--hide');
+    $showTab.classList.remove('productions__tab--show');
+    $showTab.classList.remove('productions__tab--shift');
+    $showTab.dataset.production = "hide";
+
+    $tab.classList.remove('productions__tab--hide');
+    $tab.classList.add('productions__tab--show');
+    $tab.classList.remove('productions__tab--preview');
+    $tab.dataset.production = "show"
+
+  }
+
+  showContent = ($contentList) => {
+    $contentList.forEach(($block) => {
+      $block.classList.remove('production-block--hide');
+    })
+  }
+
+
+  hideContent = ($contentList) => {
+    $contentList.forEach(($block) => {
+      $block.classList.add('production-block--hide');
+    })
+  }
+
+
+  switchContent = ($tab) => {
+    if ($tab.id == 'serial') {
+      this.showContent(this.$serialContent);
+      this.hideContent(this.$individualContent);
+    }
+
+    if ($tab.id == 'individual') {
+      console.log($tab.id)
+      this.showContent(this.$individualContent);
+      this.hideContent(this.$serialContent);
+    }
+
+
+  }
+  mouseoverHandler = (e) => {
+    if (e.target.closest('[data-production="hide"]')) {
+      const $tab = e.target.closest('[data-production="hide"]');
+      this.previewTab($tab);
+    }
+  }
+  mouseoutHandler = (e) => {
+    if (!e.target) {
+      return;
+    }
+    if (e.target.closest('[data-production="hide"]')) {
+      const $tab = e.target.closest('[data-production="hide"]');
+      this.backPreviewTab($tab);
+    }
+  }
+  clickHandler = (e) => {
+    if (e.target.closest('[data-production="hide"]')) {
+      const $tab = e.target.closest('[data-production="hide"]');
+      this.switchContent($tab);
+      this.switchTab($tab);
+
+    }
+  }
+
+  listeners = () => {
+    this.$productionTabsWrap.addEventListener('mouseover', this.mouseoverHandler);
+    this.$productionTabsWrap.addEventListener('mouseout', this.mouseoutHandler);
+    this.$productionTabsWrap.addEventListener('click', this.clickHandler);
+  }
+}
+
 const server = new Server();
 const render = new Render();
 const debaunce = new Debaunce();
@@ -3416,6 +3521,7 @@ const aboutMap = new AboutMap('aboutMap');
 //const contactMap = new ContactMap('contactMap');
 const description = new Description('#description');
 const linkNavigation = new LinkNavigation('#linkNavigation');
+const productionsPage = new ProductionsPage();
 
 if ($searchOpenBtn && $searchModal) {
   $searchOpenBtn.addEventListener('click', openSearchModal);

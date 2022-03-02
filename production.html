@@ -12,1133 +12,1146 @@
 
 <body>
   <div class="app">
-    <header class="header">
+    <div id="productionsPage">
+      <header class="header">
 
-      <!-- header__top -->
-      <div id="headerTop" class="header__top header__top--absolute">
-        <div class="header__top-inner container">
-          <a href="index.html" class="header__logo"> </a>
+        <!-- header__top -->
+        <div id="headerTop" class="header__top header__top--absolute">
+          <div class="header__top-inner container">
+            <a href="index.html" class="header__logo"> </a>
 
-          <nav class="header-nav">
-            <ul class="header-nav__list">
-              <li data-nav-item class="header-nav__item">
+            <nav class="header-nav">
+              <ul class="header-nav__list">
+                <li data-nav-item class="header-nav__item">
 
-                <a href="catalog.html" class="header-nav__link" data-header-modal-id="headerCatalogModal">
-                  <span class="header-nav__link-text">Каталог</span>
-                  <span class="header-nav__arrow">
-                    <span class="header-nav__modal-arrow"></span>
-                  </span>
-                </a>
-
-              </li>
-
-              <li data-nav-item class="header-nav__item">
-                <a href="" class="header-nav__link"></a>
-                <a href="services.html" class="header-nav__link">
-                  <span class="header-nav__link-text">Услуги</span>
-                </a>
-              </li>
-
-              <li data-nav-item class="header-nav__item">
-                <a href="production.html" class="header-nav__link">
-                  <span class="header-nav__link-text">Производство</span>
-                </a>
-              </li>
-
-              <li data-nav-item class="header-nav__item header-nav__item--about">
-                <a href="about.html" class="header-nav__link">
-                  <span class="header-nav__link-text">О компании</span>
-                  <span class="header-nav__arrow">
-                    <span class="header-nav__modal-arrow"></span>
-                  </span>
-                </a>
-
-                <!--about-nav-->
-                <div class="about-nav">
-                  <ul class="about-nav__list">
-                    <li class="about-nav__item">
-                      <a href="about.html" class="about-nav__link">О компании</a>
-                    </li>
-
-                    <li class="about-nav__item">
-                      <a href="news.html" class="about-nav__link">Новости</a>
-                    </li>
-                  </ul>
-                </div>
-                <!-- about-nav -->
-              </li>
-
-              <li class="header-nav__item">
-                <a href="contacts.html" class="header-nav__link">Контакты</a>
-              </li>
-            </ul>
-          </nav>
-
-          <!-- header__connection -->
-          <div class="header__connection">
-            <a href="tel:+7343318017" class="header__contact">+7 (343) 3-180-170</a>
-            <a href="mailto:" class="header__contact header__contact--mail">info@zvezda.ru</a>
-          </div>
-          <!-- header__connection -->
-          <div data-nav-item class="header-nav__item header-city">
-
-            <div class="header-nav__link" data-header-modal-id="selectCityModal">
-              <span class="header-nav__link-text header-city__name">Екатеринбург</span>
-              <span class="header-nav__arrow header-city__arrow">
-                <span class="header-nav__modal-arrow"></span>
-              </span>
-            </div>
-
-          </div>
-
-          <nav class="nav-icon">
-            <ul class="nav-icon__list">
-              <li class="nav-icon__item">
-                <a href="basket.html" class="nav-icon__link nav-icon__link--basket"></a>
-                <span id="totalItemInBasket" class="nav-icon__count nav-icon__count--empty">0</span>
-              </li>
-
-              <li class="nav-icon__item">
-                <span id="searchOpenBtn" class="nav-icon__link nav-icon__link--search"></span>
-              </li>
-
-            </ul>
-
-          </nav>
-
-          <div id="mobileMenuBtn" class="menu-btn">
-            <div class="menu-btn__icon">
-              <span class="menu-btn__line"></span>
-              <span class="menu-btn__line menu-btn__line--long"></span>
-              <span class="menu-btn__line"></span>
-            </div>
-          </div>
-
-
-        </div>
-        <div id="openCityModal" class="mobile-city">
-          <div class="mobile-city__inner">
-            <span class="mobile-city__name">Екатеринбург</span>
-            <span class="mobile-city__arrow"></span>
-          </div>
-        </div>
-      </div>
-      <!--header__top-->
-
-      <!--header-content-->
-      <div class="header-content">
-
-        <!-- header__bg -->
-        <div class="header__bg">
-          <div class="production-select">
-            <div class="production-select__tab production-select__tab--serial">
-              <picture>
-                <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
-                <img class="production-select__img production-select__img--left" src="./img/image/bg/serial.jpg" alt="">
-              </picture>
-              <div class="production-select__wrap ">
-
-                <div class="production-select__desc container">
-                  <h2 class="header__title">
-                    Серийное производство
-                  </h2>
-
-                  <p class="production-select__text ">
-                    Безпрерывное конвейреное производство изделий на нашем заводе. Самая популярная продукция из стали и
-                    металлопрокат с гарантией качества
-                  </p>
-                  <a href="services.html" class="production-select__btn btn clear-btn hover-yellow">
-                    Каталог продукции
+                  <a href="catalog.html" class="header-nav__link" data-header-modal-id="headerCatalogModal">
+                    <span class="header-nav__link-text">Каталог</span>
+                    <span class="header-nav__arrow">
+                      <span class="header-nav__modal-arrow"></span>
+                    </span>
                   </a>
-                </div>
 
+                </li>
+
+                <li data-nav-item class="header-nav__item">
+                  <a href="" class="header-nav__link"></a>
+                  <a href="services.html" class="header-nav__link">
+                    <span class="header-nav__link-text">Услуги</span>
+                  </a>
+                </li>
+
+                <li data-nav-item class="header-nav__item">
+                  <a href="production.html" class="header-nav__link">
+                    <span class="header-nav__link-text">Производство</span>
+                  </a>
+                </li>
+
+                <li data-nav-item class="header-nav__item header-nav__item--about">
+                  <a href="about.html" class="header-nav__link">
+                    <span class="header-nav__link-text">О компании</span>
+                    <span class="header-nav__arrow">
+                      <span class="header-nav__modal-arrow"></span>
+                    </span>
+                  </a>
+
+                  <!--about-nav-->
+                  <div class="about-nav">
+                    <ul class="about-nav__list">
+                      <li class="about-nav__item">
+                        <a href="about.html" class="about-nav__link">О компании</a>
+                      </li>
+
+                      <li class="about-nav__item">
+                        <a href="news.html" class="about-nav__link">Новости</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- about-nav -->
+                </li>
+
+                <li class="header-nav__item">
+                  <a href="contacts.html" class="header-nav__link">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- header__connection -->
+            <div class="header__connection">
+              <a href="tel:+7343318017" class="header__contact">+7 (343) 3-180-170</a>
+              <a href="mailto:" class="header__contact header__contact--mail">info@zvezda.ru</a>
+            </div>
+            <!-- header__connection -->
+            <div data-nav-item class="header-nav__item header-city">
+
+              <div class="header-nav__link" data-header-modal-id="selectCityModal">
+                <span class="header-nav__link-text header-city__name">Екатеринбург</span>
+                <span class="header-nav__arrow header-city__arrow">
+                  <span class="header-nav__modal-arrow"></span>
+                </span>
+              </div>
+
+            </div>
+
+            <nav class="nav-icon">
+              <ul class="nav-icon__list">
+                <li class="nav-icon__item">
+                  <a href="basket.html" class="nav-icon__link nav-icon__link--basket"></a>
+                  <span id="totalItemInBasket" class="nav-icon__count nav-icon__count--empty">0</span>
+                </li>
+
+                <li class="nav-icon__item">
+                  <span id="searchOpenBtn" class="nav-icon__link nav-icon__link--search"></span>
+                </li>
+
+              </ul>
+
+            </nav>
+
+            <div id="mobileMenuBtn" class="menu-btn">
+              <div class="menu-btn__icon">
+                <span class="menu-btn__line"></span>
+                <span class="menu-btn__line menu-btn__line--long"></span>
+                <span class="menu-btn__line"></span>
               </div>
             </div>
 
-            <div class="production-select__tab production-select__tab--individual">
-              <picture>
-                <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
-                <img class="production-select__img" src="./img/image/bg/individual.jpg" alt="">
-              </picture>
-              <!--<div class="production-select__wrap">
-
-                <div class="production-select__desc container">
-                  <h2 class="header__title">
-                    Индивидуальное производство
-                  </h2>
-
-                  <p class="production-select__text ">
-                    Изучим чертежи и произведём конструкцию под Ваши нужды. Металлопрокат и металлоконструкции любой
-                    сложности и из любого металла.
-                  </p>
-                  <a href="services.html" class="production-select__btn btn clear-btn hover-yellow">
-                    Каталог продукции
-                  </a>
-                </div>
-
-              </div>-->
-            </div>
 
           </div>
-
-
-
+          <div id="openCityModal" class="mobile-city">
+            <div class="mobile-city__inner mobile-city__inner--clear">
+              <span class="mobile-city__name">Екатеринбург</span>
+              <span class="mobile-city__arrow"></span>
+            </div>
+          </div>
         </div>
+        <!--header__top-->
 
-        <!-- header__bg -->
+        <!--header-content-->
+        <div class="header-content">
 
-      </div>
-      <!--header-content-->
-    </header>
-    <main class="main">
-
-      <div id="serial" class="production-block">
-        <!-- about-production -->
-        <div class="section">
-          <div class="section__inner container">
-            <!-- section__content -->
-            <div class="section__content">
-              <!-- about-production -->
-              <div class="about-production">
-                <div class="about-production__desc">
-                  <h3 class="about-production__title">
-                    Отлаженное производство продукции точно в срок
-                  </h3>
-                  <p class="about-production__text">Мы используем автоматизированные системы производства. Конвейер
-                    работает без остановки, что позволяет производить металлопрокат в промышленных масштабах. </p>
-                </div>
-
+          <!-- header__bg -->
+          <div class="header__bg">
+            <div id="productions" class="productions">
+              <div id="serial" data-production="show"
+                class="productions__tab productions__tab--serial productions__tab--show">
                 <picture>
-                  <img class="about-production__img" src="./img/image/production/production2.png" alt="">
+                  <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
+                  <img class="productions__img productions__img--left" src="./img/image/bg/serial.jpg" alt="">
                 </picture>
-              </div>
+                <div class="productions__wrap">
 
-              <div class="about-production about-production--reverse">
-                <div class="about-production__desc">
-                  <h3 class="about-production__title">
-                    Предоставляем сертификаты качества и соблюдаем ГОСТы
-                  </h3>
-                  <p class="about-production__text">Весь металл для производства проходит через процедуру анализа
-                    металла.
-                    Закупаемая продукция приобретается только у проверенных поставщиков с соблюдением всех
-                    нормативно-правовых норм. На каждое изделие у нас есть сертификат качества и мы даём гарантию на все
-                    виды продукции. </p>
+                  <div class="productions__desc container">
+                    <h2 class="productions__title header__title">
+                      Серийное <br />
+                      производство
+                    </h2>
+
+                    <p class="productions__text ">
+                      Безпрерывное конвейреное производство изделий на нашем заводе. Самая популярная продукция из стали
+                      и
+                      металлопрокат с гарантией качества
+                    </p>
+                    <a href="services.html" class="productions__btn btn clear-btn hover-yellow">
+                      Каталог продукции
+                    </a>
+                  </div>
+
                 </div>
-
-                <picture>
-                  <img class="about-production__img" src="./img/image/production/production3.png" alt="">
-                </picture>
               </div>
 
-              <div class="about-production">
-                <div class="about-production__desc">
-                  <h3 class="about-production__title">
-                    Отлаженное производство продукции точно в срок
-                  </h3>
-                  <p class="about-production__text">Мы используем автоматизированные системы производства. Конвейер
-                    работает без остановки, что позволяет производить металлопрокат в промышленных масштабах. </p>
+              <div id="individual" data-production="hide" class="productions__tab productions__tab--individual
+              productions__tab--hide">
+                <picture>
+                  <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
+                  <img class="productions__img" src="./img/image/bg/individual.jpg" alt="">
+                </picture>
+                <div class="productions__wrap">
+
+                  <div class="productions__desc">
+                    <h2 class="productions__title header__title">
+                      Индивидуальное <br />
+                      производство
+                    </h2>
+
+                    <p class="productions__text ">
+                      Изучим чертежи и произведём конструкцию под Ваши нужды. Металлопрокат и металлоконструкции любой
+                      сложности и из любого металла.
+                    </p>
+                    <span data-query-btn class="productions__btn btn clear-btn hover-yellow">
+                      Оставить заявку
+                    </span>
+                  </div>
                 </div>
-
-                <picture>
-                  <img class="about-production__img" src="./img/image/production/production1.png" alt="">
-                </picture>
               </div>
-              <!-- about-production -->
             </div>
-            <!-- section__content -->
+            <div class="productions-mobile__control">
+              <span class="productions-mobile__btn productions-mobile__btn--active ">Серийное
+                производство</span>
+              <span class="productions-mobile__btn">Индивидуальное
+                производство</span>
+            </div>
           </div>
+
+          <!-- header__bg -->
+
         </div>
-        <!-- about-production -->
+        <!--header-content-->
+      </header>
+      <main class="main">
 
-        <!-- Мы производим -->
-        <section class="section">
-          <div class="section__inner container">
-
-            <h2 class="section__title">
-              Мы производим
-            </h2>
-
-            <!-- section__content -->
-            <div class="section__content">
-              <!-- card-list -->
-              <div class="product-tile product-tile--four-coll">
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product1.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product2.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product3.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product4.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product5.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product6.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product7.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product8.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product9.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product10.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product11.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product12.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product13.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-                <div class="product-type-card">
-                  <a href="category.html" class="product-type-card__link">
-                    <div class="product-type-card__top">
-                      <h4 class="product-type-card__title">Лист металлический</h4>
-                      <p class="product-type-card__count">120 товаров</p>
-                    </div>
-                    <div class="product-type-card__preview">
-                      <img src="./img/image/product/product14.png" alt="" class="product-type-card__img">
-                    </div>
-                  </a>
-                </div>
-
-
-
-                <a href="" class="product-type-more more-card more-card--big">
-                  <div class="more-card__content">
-                    <p class="more-card__count">30 акционных товаров</p>
-                    <p class="product-more__all more-card__all">Смотреть все</p>
+        <div data-content="serial" class="production-block">
+          <!-- about-production -->
+          <div class="section">
+            <div class="section__inner container">
+              <!-- section__content -->
+              <div class="section__content">
+                <!-- about-production -->
+                <div class="about-production">
+                  <div class="about-production__desc">
+                    <h3 class="about-production__title">
+                      Отлаженное производство продукции точно в срок
+                    </h3>
+                    <p class="about-production__text">Мы используем автоматизированные системы производства. Конвейер
+                      работает без остановки, что позволяет производить металлопрокат в промышленных масштабах. </p>
                   </div>
-                </a>
 
+                  <picture>
+                    <img class="about-production__img" src="./img/image/production/production2.png" alt="">
+                  </picture>
+                </div>
+
+                <div class="about-production about-production--reverse">
+                  <div class="about-production__desc">
+                    <h3 class="about-production__title">
+                      Предоставляем сертификаты качества и соблюдаем ГОСТы
+                    </h3>
+                    <p class="about-production__text">Весь металл для производства проходит через процедуру анализа
+                      металла.
+                      Закупаемая продукция приобретается только у проверенных поставщиков с соблюдением всех
+                      нормативно-правовых норм. На каждое изделие у нас есть сертификат качества и мы даём гарантию на
+                      все
+                      виды продукции. </p>
+                  </div>
+
+                  <picture>
+                    <img class="about-production__img" src="./img/image/production/production3.png" alt="">
+                  </picture>
+                </div>
+
+                <div class="about-production">
+                  <div class="about-production__desc">
+                    <h3 class="about-production__title">
+                      Отлаженное производство продукции точно в срок
+                    </h3>
+                    <p class="about-production__text">Мы используем автоматизированные системы производства. Конвейер
+                      работает без остановки, что позволяет производить металлопрокат в промышленных масштабах. </p>
+                  </div>
+
+                  <picture>
+                    <img class="about-production__img" src="./img/image/production/production1.png" alt="">
+                  </picture>
+                </div>
+                <!-- about-production -->
               </div>
-              <!-- card-list -->
+              <!-- section__content -->
             </div>
-            <!-- section__content -->
           </div>
-        </section>
-        <!-- Мы производим -->
+          <!-- about-production -->
 
-        <!-- Сфера применения металлов -->
-        <section class="section">
-          <div class="section__inner container">
+          <!-- Мы производим -->
+          <section class="section">
+            <div class="section__inner container">
 
-            <h2 class="section__title">
-              Сфера применения металлов
-            </h2>
+              <h2 class="section__title">
+                Мы производим
+              </h2>
 
-            <!-- section__content -->
-            <div class="section__content">
-
-              <!-- areas-application -->
-              <div class="areas-application">
-                <div class="application-card">
-                  <div class="application-card__desc">
-                    <h3 class="application-card__title">В ядерной энергетике</h3>
-                    <p class="application-card__text">
-                      В качестве конструкционных материалов в ядерной технике используют редкоземельные металлы и
-                      сплавы
-                    </p>
+              <!-- section__content -->
+              <div class="section__content">
+                <!-- card-list -->
+                <div class="product-tile product-tile--four-coll">
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product1.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
                   </div>
 
-                  <img src="./img/image/application/application1.png" alt="" class="application-card__img">
-
-                </div>
-
-                <div class="application-card">
-                  <div class="application-card__desc">
-                    <h3 class="application-card__title">Нефтехимической области</h3>
-                    <p class="application-card__text">
-                      Используются в условиях низких температур цветные металлы и их сплавы, не подверженные
-                      хладноломкости.
-                    </p>
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product2.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
                   </div>
 
-                  <img src="./img/image/application/application2.png" alt="" class="application-card__img">
-
-                </div>
-
-                <div class="application-card">
-                  <div class="application-card__desc">
-                    <h3 class="application-card__title">В ракетостроении</h3>
-                    <p class="application-card__text">
-                      Из титана делают детали жидко- и твердотопливных двигателей, обшивку космических аппаратов,
-                      стыковые конструкции жилых отсеков и баллоны
-                    </p>
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product3.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
                   </div>
 
-                  <img src="./img/image/application/application3.png" alt="" class="application-card__img">
-
-                </div>
-
-                <div class="application-card">
-                  <div class="application-card__desc">
-                    <h3 class="application-card__title">Электронной промышленности</h3>
-                    <p class="application-card__text">
-                      Сплавы служат незаменимым материалом при изготовлении особо чувствительных и высокоточных
-                      приборов
-                    </p>
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product4.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
                   </div>
 
-                  <img src="./img/image/application/application4.png" alt="" class="application-card__img">
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product5.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product6.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product7.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product8.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product9.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product10.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product11.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product12.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product13.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="product-type-card">
+                    <a href="category.html" class="product-type-card__link">
+                      <div class="product-type-card__top">
+                        <h4 class="product-type-card__title">Лист металлический</h4>
+                        <p class="product-type-card__count">120 товаров</p>
+                      </div>
+                      <div class="product-type-card__preview">
+                        <img src="./img/image/product/product14.png" alt="" class="product-type-card__img">
+                      </div>
+                    </a>
+                  </div>
+
+
+
+                  <a href="" class="product-type-more more-card more-card--big">
+                    <div class="more-card__content">
+                      <p class="more-card__count">30 акционных товаров</p>
+                      <p class="product-more__all more-card__all">Смотреть все</p>
+                    </div>
+                  </a>
 
                 </div>
+                <!-- card-list -->
+              </div>
+              <!-- section__content -->
+            </div>
+          </section>
+          <!-- Мы производим -->
+
+          <!-- Сфера применения металлов -->
+          <section class="section">
+            <div class="section__inner container">
+
+              <h2 class="section__title">
+                Сфера применения металлов
+              </h2>
+
+              <!-- section__content -->
+              <div class="section__content">
+
                 <!-- areas-application -->
+                <div class="areas-application">
+                  <div class="application-card">
+                    <div class="application-card__desc">
+                      <h3 class="application-card__title">В ядерной энергетике</h3>
+                      <p class="application-card__text">
+                        В качестве конструкционных материалов в ядерной технике используют редкоземельные металлы и
+                        сплавы
+                      </p>
+                    </div>
+
+                    <img src="./img/image/application/application1.png" alt="" class="application-card__img">
+
+                  </div>
+
+                  <div class="application-card">
+                    <div class="application-card__desc">
+                      <h3 class="application-card__title">Нефтехимической области</h3>
+                      <p class="application-card__text">
+                        Используются в условиях низких температур цветные металлы и их сплавы, не подверженные
+                        хладноломкости.
+                      </p>
+                    </div>
+
+                    <img src="./img/image/application/application2.png" alt="" class="application-card__img">
+
+                  </div>
+
+                  <div class="application-card">
+                    <div class="application-card__desc">
+                      <h3 class="application-card__title">В ракетостроении</h3>
+                      <p class="application-card__text">
+                        Из титана делают детали жидко- и твердотопливных двигателей, обшивку космических аппаратов,
+                        стыковые конструкции жилых отсеков и баллоны
+                      </p>
+                    </div>
+
+                    <img src="./img/image/application/application3.png" alt="" class="application-card__img">
+
+                  </div>
+
+                  <div class="application-card">
+                    <div class="application-card__desc">
+                      <h3 class="application-card__title">Электронной промышленности</h3>
+                      <p class="application-card__text">
+                        Сплавы служат незаменимым материалом при изготовлении особо чувствительных и высокоточных
+                        приборов
+                      </p>
+                    </div>
+
+                    <img src="./img/image/application/application4.png" alt="" class="application-card__img">
+
+                  </div>
+                  <!-- areas-application -->
+
+                </div>
+              </div>
+              <!-- section__content -->
+            </div>
+          </section>
+          <!-- Сфера применения металлов -->
+        </div>
+
+        <div data-content="individual" class="production-block production-block--hide">
+          <div class="section ">
+            <div class="section__inner container">
+              <!-- section__content -->
+              <div class="section__content">
+                <!-- about-production -->
+                <div class="about-production">
+                  <div class="about-production__desc">
+                    <h3 class="about-production__title">
+                      Любое изделие по Вашему макету или чертежам
+                    </h3>
+                    <p class="about-production__text">Изучим Вашу задачу и произведём нужную продукцию. Сроки
+                      производства
+                      изделия под заказ не отличаются от сроков серийного производства. Мы используем станки с ЧПУ и
+                      самое
+                      современное оборудование производства </p>
+                  </div>
+
+                  <picture>
+                    <img class="about-production__img" src="./img/image/production/production5.png" alt="">
+                  </picture>
+                </div>
+
+                <div class="about-production about-production--reverse">
+                  <div class="about-production__desc">
+                    <h3 class="about-production__title">
+                      Изготовление из металла высокого качества по ГОСТу
+                    </h3>
+                    <p class="about-production__text">Мы используем только качественный и сертифицированный металл,
+                      соблюдаем все ГОСТы производства и обработки </p>
+                  </div>
+
+                  <picture>
+                    <img class="about-production__img" src="./img/image/production/production4.png" alt="">
+                  </picture>
+                </div>
+
+                <div class="about-production">
+                  <div class="about-production__desc">
+                    <h3 class="about-production__title">
+                      Гарантия качества изготавливаемой продукции
+                    </h3>
+                    <p class="about-production__text">Строго и внимательно относимся к качеству материалов и
+                      изготовления.
+                      На все виды продукции мы даём гарантию качества, а в случае брака изделия, мы оперативно его
+                      заменим
+                      или исправим допущенные ошибки </p>
+                  </div>
+
+                  <picture>
+                    <img class="about-production__img" src="./img/image/production/production6.png" alt="">
+                  </picture>
+                </div>
+                <!-- about-production -->
+              </div>
+
+            </div>
+            <!-- section__content -->
+          </div>
+        </div>
+
+
+        <!-- Услуги компании -->
+        <section id="servise" class="section dark-bg">
+          <div class="section__inner container">
+            <h2 class="section__title section__title--white mb30">
+              Услуги компании
+            </h2>
+
+            <p class="section__text">
+              В широком ассортименте освоено производство закладных деталей, фундаментных блоков и фундаментных болтов
+              различной конфигурации, из черных и нержавеющих сталей.
+            </p>
+            <!-- section__content -->
+            <div class="section__content">
+              <!-- services -->
+
+              <div class="service">
+                <div data-bg-img class="services__bg">
+                  <picture>
+                    <source data-bg-src media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
+                    <img src="./img/image/other/1.svg" alt="" class="services__img">
+                  </picture>
+                </div>
+                <div class="services__list">
+
+
+
+
+                  <div class="service-card service-card--big" data-big-img-src="./img/image/servises/servise-big-1.jpg">
+                    <div class="service-card__bg">
+                      <picture>
+                        <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
+                        <img src="./img/image/servises/servise400-1.jpg" alt="" class="service-card__img">
+                      </picture>
+                    </div>
+
+
+                    <a href="service-one.html" class="service-card__link">
+                      <h4 class="service-card__title">Анализ металла</h4>
+
+                      <div class="service-card__curtain">
+                        <p class="service-card__desc">
+                          Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                          металлопродукции
+                        </p>
+                        <div class="servise-card__bottom">
+                          <span class="service-card__detail">
+                            Подробнее
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="service-card" data-big-img-src="./img/image/servises/servise-big-2.jpg">
+
+
+                    <div class="service-card__bg">
+                      <picture>
+                        <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
+                        <img src="./img/image/servises/servise400-2.jpg" alt="" class="service-card__img">
+                      </picture>
+                    </div>
+
+                    <a href="service-one.html" class="service-card__link">
+
+                      <h4 class="service-card__title">Гибка листа</h4>
+
+                      <div class="service-card__curtain">
+                        <p class="service-card__desc">
+                          Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                          металлопродукции
+                        </p>
+                        <div class="servise-card__bottom">
+                          <span class="service-card__detail">
+                            Подробнее
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+
+                  </div>
+
+                  <div class="service-card" data-big-img-src="./img/image/servises/servise-big-3.jpg">
+
+                    <div class="service-card__bg">
+                      <picture>
+                        <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
+                        <img src="./img/image/servises/servise400-3.jpg" alt="" class="service-card__img">
+                      </picture>
+                    </div>
+
+                    <a href="service-one.html" class="service-card__link">
+                      <h4 class="service-card__title">Гибка арматуры</h4>
+
+                      <div class="service-card__curtain">
+                        <p class="service-card__desc">
+                          Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                          металлопродукции
+                        </p>
+                        <div class="servise-card__bottom">
+                          <span class="service-card__detail">
+                            Подробнее
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+
+                  </div>
+
+                  <div class="service-card" data-big-img-src="./img/image/servises/servise-big-4.jpg">
+
+                    <div class="service-card__bg">
+                      <picture>
+                        <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
+                        <img src="./img/image/servises/servise400-4.jpg" alt="" class="service-card__img">
+                      </picture>
+                    </div>
+
+                    <a href="service-one.html" class="service-card__link">
+                      <h4 class="service-card__title">Резка металла</h4>
+
+                      <div class="service-card__curtain">
+                        <p class="service-card__desc">
+                          Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                          металлопродукции
+                        </p>
+                        <div class="servise-card__bottom">
+                          <span class="service-card__detail">
+                            Подробнее
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+
+                  </div>
+
+                  <div class="service-card service-card--big" data-big-img-src="./img/image/servises/servise-big-5.jpg">
+
+                    <div class="service-card__bg">
+                      <picture>
+                        <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
+                        <img src="./img/image/servises/servise400-5.jpg" alt="" class="service-card__img">
+                      </picture>
+                    </div>
+                    <a href="service-one.html" class="service-card__link">
+                      <h4 class="service-card__title">Доставка</h4>
+
+                      <div class="service-card__curtain">
+                        <p class="service-card__desc">
+                          Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
+                          металлопродукции
+                        </p>
+                        <div class="servise-card__bottom">
+                          <span class="service-card__detail">
+                            Подробнее
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+
+                  </div>
+
+                  <a href="" class="service-card service-more more-card">
+                    <div class="service-more__bg"></div>
+                    <div class="more-card__content">
+                      <p class="more-card__count">14 услуг компании</p>
+                      <p class="service-more_all more-card__all">Все услуги</p>
+                    </div>
+
+                  </a>
+
+                </div>
+              </div>
+              <!-- services -->
+            </div>
+          </div>
+          <!-- section__content -->
+        </section>
+        <!-- Услуги компании -->
+
+        <!-- Наши преимущества -->
+        <section class="section">
+          <div class="section__inner container">
+
+            <h2 class="section__title">
+              Наши преимущества
+            </h2>
+
+            <!-- section__content -->
+            <div class="section__content">
+              <!-- advantages -->
+              <div id="advantages" class="advantages">
+
+                <div data-card="close" class="advantage-card advantage-card--hover">
+                  <div data-content class="advantage-card__contect">
+                    <img data-img src="./img/image/advantages/advantage1.png" alt="" class="advantage-card__img">
+
+                    <span data-close-btn class="advantage-card__close close-btn">Закрыть</span>
+                    <div class="advantage-card__header">
+                      <span class="advantage-card__num">01</span>
+                      <h3 class="advantage-card__title">
+                        Быстрая отгрузка продукции
+                      </h3>
+
+
+                      <span data-stiker class="advantage-card__open">
+                        Подробнее
+                      </span>
+                    </div>
+
+                    <p data-text class="advantage-card__desc">
+                      Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
+                      Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
+                      погрузки железнодорожных вагонов.
+                    </p>
+                    <!-- advantage__list -->
+                    <div data-cards class="advantage__list">
+                      <div class="advantage-item">
+                        <div class="advantage-item__icon">
+                          <span class="advantage-item__quarter lt"></span>
+                          <i class="advantage-item__img advantage-item__img--clock"></i>
+                        </div>
+                        <h4 class="advantage-item__title">Соблюдаем сроки</h4>
+                      </div>
+
+                      <div class="advantage-item">
+                        <div class="advantage-item__icon">
+                          <span class="advantage-item__quarter lb"></span>
+                          <i class="advantage-item__img advantage-item__img--box"></i>
+                        </div>
+                        <h4 class="advantage-item__title">Соблюдаем сроки</h4>
+                      </div>
+                    </div>
+
+                    <!--advantage__list-->
+
+                    <span data-roll-up class="advantage-card__roll-up">
+                      Свертуть
+                    </span>
+                  </div>
+                </div>
+
+                <div data-card="close" class="advantage-card advantage-card--hover">
+                  <div data-content class="advantage-card__contect">
+                    <img data-img src="./img/image/advantages/advantage2.png" alt="" class="advantage-card__img">
+
+                    <span data-close-btn class="advantage-card__close close-btn">Закрыть</span>
+                    <div class="advantage-card__header">
+                      <span class="advantage-card__num">02</span>
+                      <h3 class="advantage-card__title">
+                        Удобные способы оплаты
+                      </h3>
+
+                      <span data-stiker class="advantage-card__open">
+                        Подробнее
+                      </span>
+
+
+                    </div>
+                    <p data-text class="advantage-card__desc">
+                      Мы представим все необходимые документы и сертификаты. В условиях долгосрочных партнёрских
+                      отношений, предложим Вам хорошие скидки и отсрочку платежей.Наша компания принимает оплату
+                      следующими способами:
+                    </p>
+                    <!-- advantage__list -->
+                    <div data-cards class="advantage__list">
+                      <div class="advantage-item">
+                        <div class="advantage-item__icon">
+                          <span class="advantage-item__quarter lt"></span>
+                          <i class="advantage-item__img advantage-item__img--pay-card"></i>
+                        </div>
+                        <h4 class="advantage-item__title">Безналичный расчет</h4>
+                      </div>
+
+                      <div class="advantage-item">
+                        <div class="advantage-item__icon">
+                          <span class="advantage-item__quarter rb"></span>
+                          <i class="advantage-item__img advantage-item__img--cash"></i>
+                        </div>
+                        <h4 class="advantage-item__title">Наличными в офисе</h4>
+                      </div>
+
+                      <div class="advantage-item">
+                        <div class="advantage-item__icon">
+                          <span class="advantage-item__quarter rt"></span>
+                          <i class="advantage-item__img advantage-item__img--doc"></i>
+                        </div>
+                        <h4 class="advantage-item__title">Оплата на расчетнй счет</h4>
+                      </div>
+                    </div>
+
+                    <!--advantage__list-->
+
+                    <span data-roll-up class="advantage-card__roll-up">
+                      Свертуть
+                    </span>
+                  </div>
+                </div>
+
+                <div data-card="close" class="advantage-card advantage-card--hover">
+                  <div data-content class="advantage-card__contect">
+
+                    <img data-img src="./img/image/advantages/advantage3.png" alt="" class="advantage-card__img">
+
+                    <span data-close-btn class="advantage-card__close close-btn">Закрыть</span>
+                    <div class="advantage-card__header">
+                      <span class="advantage-card__num">03</span>
+                      <h3 class="advantage-card__title">
+                        Персональный менеджер круглосуточно
+                      </h3>
+
+                      <span data-stiker class="advantage-card__open">
+                        Подробнее
+                      </span>
+
+                    </div>
+                    <p data-text class="advantage-card__desc">
+                      Для удобной работы каждому клиенту предоставляется персональный менеджер, который ответим на ваши
+                      вопросыо производстве и переработке металлопроката, его свойствах и особенностях применения, а
+                      также
+                      будет сопровождать сделку с вами от и до.
+                    </p>
+                    <!-- advantage__list -->
+                    <div data-cards class="advantage__list">
+                      <div class="advantage-item">
+                        <div class="advantage-item__icon">
+                          <span class="advantage-item__quarter lt"></span>
+                          <i class="advantage-item__img advantage-item__img--time"></i>
+                        </div>
+                        <h4 class="advantage-item__title">Всегда на связи</h4>
+                      </div>
+
+                      <div class="advantage-item">
+                        <div class="advantage-item__icon">
+                          <span class="advantage-item__quarter rb"></span>
+                          <i class="advantage-item__img advantage-item__img--clock"></i>
+                        </div>
+                        <h4 class="advantage-item__title">Оперативное решение</h4>
+                      </div>
+
+                      <div class="advantage-item">
+                        <div class="advantage-item__icon">
+                          <span class="advantage-item__quarter rt"></span>
+                          <i class="advantage-item__img advantage-item__img--question"></i>
+                        </div>
+                        <h4 class="advantage-item__title">Любые вопросы</h4>
+                      </div>
+                    </div>
+
+                    <!--advantage__list-->
+
+                    <span data-roll-up class="advantage-card__roll-up">
+                      Свертуть
+                    </span>
+                  </div>
+                </div>
+
+                <div data-card="close" class="advantage-card advantage-card--hover">
+                  <div data-content class="advantage-card__contect">
+
+                    <img data-img src="./img/image/advantages/advantage4.png" alt="" class="advantage-card__img">
+
+                    <span data-close-btn class="advantage-card__close close-btn">Закрыть</span>
+                    <div class="advantage-card__header">
+                      <span class="advantage-card__num">04</span>
+                      <h3 class="advantage-card__title">
+                        Собственный рабочий автопарк
+                      </h3>
+
+                      <span data-stiker class="advantage-card__open">
+                        Подробнее
+                      </span>
+
+                    </div>
+                    <p data-text class="advantage-card__desc">
+                      Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
+                      Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
+                      погрузки железнодорожных вагонов.
+                    </p>
+                    <!-- advantage__list -->
+                    <div data-cards class="advantage__list">
+                      <div class="advantage-item">
+                        <div class="advantage-item__icon">
+                          <span class="advantage-item__quarter rt"></span>
+                          <span class="advantage-item__count">114</span>
+                        </div>
+                        <h4 class="advantage-item__title">Седельных тягача</h4>
+                      </div>
+
+                      <div class="advantage-item">
+                        <div class="advantage-item__icon">
+                          <span class="advantage-item__quarter rt"></span>
+                          <span class="advantage-item__count">32</span>
+                        </div>
+                        <h4 class="advantage-item__title">Манипулятора</h4>
+                      </div>
+
+                      <div class="advantage-item">
+                        <div class="advantage-item__icon">
+                          <span class="advantage-item__quarter rt"></span>
+                          <span class="advantage-item__count">20</span>
+                        </div>
+                        <h4 class="advantage-item__title">Тонн грузоподъёмность</h4>
+                      </div>
+                    </div>
+
+                    <!--advantage__list-->
+
+                    <span data-roll-up class="advantage-card__roll-up">
+                      Свертуть
+                    </span>
+                  </div>
+                </div>
 
               </div>
+
+              <!-- advantages -->
             </div>
             <!-- section__content -->
           </div>
         </section>
-        <!-- Сфера применения металлов -->
-      </div>
+        <!-- Наши преимущества -->
 
-      <div id="individual" class="production-block production-block--hide">
-        <div class="section ">
-          <div class="section__inner container">
-            <!-- section__content -->
-            <div class="section__content">
-              <!-- about-production -->
-              <div class="about-production">
-                <div class="about-production__desc">
-                  <h3 class="about-production__title">
-                    Любое изделие по Вашему макету или чертежам
-                  </h3>
-                  <p class="about-production__text">Изучим Вашу задачу и произведём нужную продукцию. Сроки производства
-                    изделия под заказ не отличаются от сроков серийного производства. Мы используем станки с ЧПУ и самое
-                    современное оборудование производства </p>
+        <!-- Есть вопросы -->
+        <section data-content="serial" id="serialForm" class="section light-bg">
+          <div class="feedback mb60 container">
+            <div class="feedback__inner">
+
+
+              <div class="feedback__left">
+                <div class="feedback__text ">
+                  <h2 class="feedback__title feedback__text--black">
+                    Есть вопросы по нашей продукции?
+                  </h2>
+
+                  <p class="feedback__desc feedback__text--black">
+                    Оставьте заявку и наши менеджеры свяжуться с Вами, чтобы обсудить все вопросы
+                  </p>
                 </div>
 
-                <picture>
-                  <img class="about-production__img" src="./img/image/production/production5.png" alt="">
-                </picture>
+
+                <form id="feedbackForm" action="./json/send-form-error.json" class="feedback-form">
+                  <div class="feedback__body">
+                    <label class="feedback__label place-entry">
+                      <input data-input class="feedback__input feedback__input--dark place-entry__input" name="phone"
+                        type="text" />
+
+                      <span class="place-entry__placeholder">+7 (999)-999-99-99<span
+                          class="place-entry__star">*</span></span>
+                    </label>
+
+                    <label class="feedback__label place-entry">
+                      <input data-input class="feedback__input feedback__input--dark place-entry__input" name="name"
+                        type="text" />
+
+                      <span class="place-entry__placeholder">Иванов Иван<span class="place-entry__star">*</span></span>
+                    </label>
+
+                    <input data-submit type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
+                      value="Отправить запрос">
+
+                    <label data-checkbox class="feedback__conditions checkbox">
+                      <input data-input type="checkbox" name="consent" checked
+                        class="feedback__checkbox checkbox__input" />
+                      <span class="feedback__fake checkbox__fake"></span>
+                      <span class="feedback__label-text checkbox__text">я принимаю условия политики
+                        конфиденциальности</span>
+
+                    </label>
+                  </div>
+                </form>
               </div>
 
-              <div class="about-production about-production--reverse">
-                <div class="about-production__desc">
-                  <h3 class="about-production__title">
-                    Изготовление из металла высокого качества по ГОСТу
-                  </h3>
-                  <p class="about-production__text">Мы используем только качественный и сертифицированный металл,
-                    соблюдаем все ГОСТы производства и обработки </p>
-                </div>
-
-                <picture>
-                  <img class="about-production__img" src="./img/image/production/production4.png" alt="">
-                </picture>
+              <div class="feedback__right">
+                <img src="./img/image/other/manager.png" alt="" class="feedback__img">
               </div>
 
-              <div class="about-production">
-                <div class="about-production__desc">
-                  <h3 class="about-production__title">
-                    Гарантия качества изготавливаемой продукции
-                  </h3>
-                  <p class="about-production__text">Строго и внимательно относимся к качеству материалов и изготовления.
-                    На все виды продукции мы даём гарантию качества, а в случае брака изделия, мы оперативно его заменим
-                    или исправим допущенные ошибки </p>
-                </div>
-
-                <picture>
-                  <img class="about-production__img" src="./img/image/production/production6.png" alt="">
-                </picture>
-              </div>
-              <!-- about-production -->
             </div>
 
           </div>
-          <!-- section__content -->
-        </div>
-      </div>
-
-
-      <!-- Услуги компании -->
-      <section id="servise" class="section dark-bg">
-        <div class="section__inner container">
-          <h2 class="section__title section__title--white mb30">
-            Услуги компании
-          </h2>
-
-          <p class="section__text">
-            В широком ассортименте освоено производство закладных деталей, фундаментных блоков и фундаментных болтов
-            различной конфигурации, из черных и нержавеющих сталей.
-          </p>
-          <!-- section__content -->
-          <div class="section__content">
-            <!-- services -->
-
-            <div class="service">
-              <div data-bg-img class="services__bg">
-                <picture>
-                  <source data-bg-src media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
-                  <img src="./img/image/other/1.svg" alt="" class="services__img">
-                </picture>
-              </div>
-              <div class="services__list">
-
-
-
-
-                <div class="service-card service-card--big" data-big-img-src="./img/image/servises/servise-big-1.jpg">
-                  <div class="service-card__bg">
-                    <picture>
-                      <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
-                      <img src="./img/image/servises/servise400-1.jpg" alt="" class="service-card__img">
-                    </picture>
-                  </div>
-
-
-                  <a href="service-one.html" class="service-card__link">
-                    <h4 class="service-card__title">Анализ металла</h4>
-
-                    <div class="service-card__curtain">
-                      <p class="service-card__desc">
-                        Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
-                        металлопродукции
-                      </p>
-                      <div class="servise-card__bottom">
-                        <span class="service-card__detail">
-                          Подробнее
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="service-card" data-big-img-src="./img/image/servises/servise-big-2.jpg">
-
-
-                  <div class="service-card__bg">
-                    <picture>
-                      <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
-                      <img src="./img/image/servises/servise400-2.jpg" alt="" class="service-card__img">
-                    </picture>
-                  </div>
-
-                  <a href="service-one.html" class="service-card__link">
-
-                    <h4 class="service-card__title">Гибка листа</h4>
-
-                    <div class="service-card__curtain">
-                      <p class="service-card__desc">
-                        Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
-                        металлопродукции
-                      </p>
-                      <div class="servise-card__bottom">
-                        <span class="service-card__detail">
-                          Подробнее
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-
-                </div>
-
-                <div class="service-card" data-big-img-src="./img/image/servises/servise-big-3.jpg">
-
-                  <div class="service-card__bg">
-                    <picture>
-                      <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
-                      <img src="./img/image/servises/servise400-3.jpg" alt="" class="service-card__img">
-                    </picture>
-                  </div>
-
-                  <a href="service-one.html" class="service-card__link">
-                    <h4 class="service-card__title">Гибка арматуры</h4>
-
-                    <div class="service-card__curtain">
-                      <p class="service-card__desc">
-                        Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
-                        металлопродукции
-                      </p>
-                      <div class="servise-card__bottom">
-                        <span class="service-card__detail">
-                          Подробнее
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-
-                </div>
-
-                <div class="service-card" data-big-img-src="./img/image/servises/servise-big-4.jpg">
-
-                  <div class="service-card__bg">
-                    <picture>
-                      <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
-                      <img src="./img/image/servises/servise400-4.jpg" alt="" class="service-card__img">
-                    </picture>
-                  </div>
-
-                  <a href="service-one.html" class="service-card__link">
-                    <h4 class="service-card__title">Резка металла</h4>
-
-                    <div class="service-card__curtain">
-                      <p class="service-card__desc">
-                        Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
-                        металлопродукции
-                      </p>
-                      <div class="servise-card__bottom">
-                        <span class="service-card__detail">
-                          Подробнее
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-
-                </div>
-
-                <div class="service-card service-card--big" data-big-img-src="./img/image/servises/servise-big-5.jpg">
-
-                  <div class="service-card__bg">
-                    <picture>
-                      <source media="(min-width: 1280px)" srcset="./img/image/other/1.svg">
-                      <img src="./img/image/servises/servise400-5.jpg" alt="" class="service-card__img">
-                    </picture>
-                  </div>
-                  <a href="service-one.html" class="service-card__link">
-                    <h4 class="service-card__title">Доставка</h4>
-
-                    <div class="service-card__curtain">
-                      <p class="service-card__desc">
-                        Важная процедура позволяющая на начальном этапе определить физико-химические свойства будущей
-                        металлопродукции
-                      </p>
-                      <div class="servise-card__bottom">
-                        <span class="service-card__detail">
-                          Подробнее
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-
-                </div>
-
-                <a href="" class="service-card service-more more-card">
-                  <div class="service-more__bg"></div>
-                  <div class="more-card__content">
-                    <p class="more-card__count">14 услуг компании</p>
-                    <p class="service-more_all more-card__all">Все услуги</p>
-                  </div>
-
-                </a>
-
-              </div>
-            </div>
-            <!-- services -->
-          </div>
-        </div>
-        <!-- section__content -->
-      </section>
-      <!-- Услуги компании -->
-
-      <!-- Наши преимущества -->
-      <section class="section">
-        <div class="section__inner container">
-
-          <h2 class="section__title">
-            Наши преимущества
-          </h2>
-
-          <!-- section__content -->
-          <div class="section__content">
-            <!-- advantages -->
-            <div id="advantages" class="advantages">
-
-              <div data-card="close" class="advantage-card advantage-card--hover">
-                <div data-content class="advantage-card__contect">
-                  <img data-img src="./img/image/advantages/advantage1.png" alt="" class="advantage-card__img">
-
-                  <span data-close-btn class="advantage-card__close close-btn">Закрыть</span>
-                  <div class="advantage-card__header">
-                    <span class="advantage-card__num">01</span>
-                    <h3 class="advantage-card__title">
-                      Быстрая отгрузка продукции
-                    </h3>
-
-
-                    <span data-stiker class="advantage-card__open">
-                      Подробнее
-                    </span>
-                  </div>
-
-                  <p data-text class="advantage-card__desc">
-                    Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
-                    Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
-                    погрузки железнодорожных вагонов.
-                  </p>
-                  <!-- advantage__list -->
-                  <div data-cards class="advantage__list">
-                    <div class="advantage-item">
-                      <div class="advantage-item__icon">
-                        <span class="advantage-item__quarter lt"></span>
-                        <i class="advantage-item__img advantage-item__img--clock"></i>
-                      </div>
-                      <h4 class="advantage-item__title">Соблюдаем сроки</h4>
-                    </div>
-
-                    <div class="advantage-item">
-                      <div class="advantage-item__icon">
-                        <span class="advantage-item__quarter lb"></span>
-                        <i class="advantage-item__img advantage-item__img--box"></i>
-                      </div>
-                      <h4 class="advantage-item__title">Соблюдаем сроки</h4>
-                    </div>
-                  </div>
-
-                  <!--advantage__list-->
-
-                  <span data-roll-up class="advantage-card__roll-up">
-                    Свертуть
-                  </span>
-                </div>
-              </div>
-
-              <div data-card="close" class="advantage-card advantage-card--hover">
-                <div data-content class="advantage-card__contect">
-                  <img data-img src="./img/image/advantages/advantage2.png" alt="" class="advantage-card__img">
-
-                  <span data-close-btn class="advantage-card__close close-btn">Закрыть</span>
-                  <div class="advantage-card__header">
-                    <span class="advantage-card__num">02</span>
-                    <h3 class="advantage-card__title">
-                      Удобные способы оплаты
-                    </h3>
-
-                    <span data-stiker class="advantage-card__open">
-                      Подробнее
-                    </span>
-
-
-                  </div>
-                  <p data-text class="advantage-card__desc">
-                    Мы представим все необходимые документы и сертификаты. В условиях долгосрочных партнёрских
-                    отношений, предложим Вам хорошие скидки и отсрочку платежей.Наша компания принимает оплату
-                    следующими способами:
-                  </p>
-                  <!-- advantage__list -->
-                  <div data-cards class="advantage__list">
-                    <div class="advantage-item">
-                      <div class="advantage-item__icon">
-                        <span class="advantage-item__quarter lt"></span>
-                        <i class="advantage-item__img advantage-item__img--pay-card"></i>
-                      </div>
-                      <h4 class="advantage-item__title">Безналичный расчет</h4>
-                    </div>
-
-                    <div class="advantage-item">
-                      <div class="advantage-item__icon">
-                        <span class="advantage-item__quarter rb"></span>
-                        <i class="advantage-item__img advantage-item__img--cash"></i>
-                      </div>
-                      <h4 class="advantage-item__title">Наличными в офисе</h4>
-                    </div>
-
-                    <div class="advantage-item">
-                      <div class="advantage-item__icon">
-                        <span class="advantage-item__quarter rt"></span>
-                        <i class="advantage-item__img advantage-item__img--doc"></i>
-                      </div>
-                      <h4 class="advantage-item__title">Оплата на расчетнй счет</h4>
-                    </div>
-                  </div>
-
-                  <!--advantage__list-->
-
-                  <span data-roll-up class="advantage-card__roll-up">
-                    Свертуть
-                  </span>
-                </div>
-              </div>
-
-              <div data-card="close" class="advantage-card advantage-card--hover">
-                <div data-content class="advantage-card__contect">
-
-                  <img data-img src="./img/image/advantages/advantage3.png" alt="" class="advantage-card__img">
-
-                  <span data-close-btn class="advantage-card__close close-btn">Закрыть</span>
-                  <div class="advantage-card__header">
-                    <span class="advantage-card__num">03</span>
-                    <h3 class="advantage-card__title">
-                      Персональный менеджер круглосуточно
-                    </h3>
-
-                    <span data-stiker class="advantage-card__open">
-                      Подробнее
-                    </span>
-
-                  </div>
-                  <p data-text class="advantage-card__desc">
-                    Для удобной работы каждому клиенту предоставляется персональный менеджер, который ответим на ваши
-                    вопросыо производстве и переработке металлопроката, его свойствах и особенностях применения, а
-                    также
-                    будет сопровождать сделку с вами от и до.
-                  </p>
-                  <!-- advantage__list -->
-                  <div data-cards class="advantage__list">
-                    <div class="advantage-item">
-                      <div class="advantage-item__icon">
-                        <span class="advantage-item__quarter lt"></span>
-                        <i class="advantage-item__img advantage-item__img--time"></i>
-                      </div>
-                      <h4 class="advantage-item__title">Всегда на связи</h4>
-                    </div>
-
-                    <div class="advantage-item">
-                      <div class="advantage-item__icon">
-                        <span class="advantage-item__quarter rb"></span>
-                        <i class="advantage-item__img advantage-item__img--clock"></i>
-                      </div>
-                      <h4 class="advantage-item__title">Оперативное решение</h4>
-                    </div>
-
-                    <div class="advantage-item">
-                      <div class="advantage-item__icon">
-                        <span class="advantage-item__quarter rt"></span>
-                        <i class="advantage-item__img advantage-item__img--question"></i>
-                      </div>
-                      <h4 class="advantage-item__title">Любые вопросы</h4>
-                    </div>
-                  </div>
-
-                  <!--advantage__list-->
-
-                  <span data-roll-up class="advantage-card__roll-up">
-                    Свертуть
-                  </span>
-                </div>
-              </div>
-
-              <div data-card="close" class="advantage-card advantage-card--hover">
-                <div data-content class="advantage-card__contect">
-
-                  <img data-img src="./img/image/advantages/advantage4.png" alt="" class="advantage-card__img">
-
-                  <span data-close-btn class="advantage-card__close close-btn">Закрыть</span>
-                  <div class="advantage-card__header">
-                    <span class="advantage-card__num">04</span>
-                    <h3 class="advantage-card__title">
-                      Собственный рабочий автопарк
-                    </h3>
-
-                    <span data-stiker class="advantage-card__open">
-                      Подробнее
-                    </span>
-
-                  </div>
-                  <p data-text class="advantage-card__desc">
-                    Большой парк автотехники позволяет нам осуществлять дешёвые для клиентов авто-доставки грузов по
-                    Российской Федерации и в страны СНГ. На всех складах нашей компании оборудованы ЖД тупики для
-                    погрузки железнодорожных вагонов.
-                  </p>
-                  <!-- advantage__list -->
-                  <div data-cards class="advantage__list">
-                    <div class="advantage-item">
-                      <div class="advantage-item__icon">
-                        <span class="advantage-item__quarter rt"></span>
-                        <span class="advantage-item__count">114</span>
-                      </div>
-                      <h4 class="advantage-item__title">Седельных тягача</h4>
-                    </div>
-
-                    <div class="advantage-item">
-                      <div class="advantage-item__icon">
-                        <span class="advantage-item__quarter rt"></span>
-                        <span class="advantage-item__count">32</span>
-                      </div>
-                      <h4 class="advantage-item__title">Манипулятора</h4>
-                    </div>
-
-                    <div class="advantage-item">
-                      <div class="advantage-item__icon">
-                        <span class="advantage-item__quarter rt"></span>
-                        <span class="advantage-item__count">20</span>
-                      </div>
-                      <h4 class="advantage-item__title">Тонн грузоподъёмность</h4>
-                    </div>
-                  </div>
-
-                  <!--advantage__list-->
-
-                  <span data-roll-up class="advantage-card__roll-up">
-                    Свертуть
-                  </span>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- advantages -->
-          </div>
-          <!-- section__content -->
-        </div>
-      </section>
-      <!-- Наши преимущества -->
-
-      <!-- Есть вопросы -->
-      <section id="serialForm" class="section ">
-        <div class="feedback mb60 light-bg  container">
-          <div class="feedback__inner">
-
-
-            <div class="feedback__left">
-              <div class="feedback__text ">
-                <h2 class="feedback__title feedback__text--black">
-                  Есть вопросы по нашей продукции?
-                </h2>
-
-                <p class="feedback__desc feedback__text--black">
-                  Оставьте заявку и наши менеджеры свяжуться с Вами, чтобы обсудить все вопросы
-                </p>
-              </div>
-
-
-              <form id="feedbackForm" action="./json/send-form-error.json" class="feedback-form">
-                <div class="feedback__body">
-                  <label class="feedback__label place-entry">
-                    <input data-input class="feedback__input feedback__input--dark place-entry__input" name="phone"
-                      type="text" />
-
-                    <span class="place-entry__placeholder">+7 (999)-999-99-99<span
-                        class="place-entry__star">*</span></span>
-                  </label>
-
-                  <label class="feedback__label place-entry">
-                    <input data-input class="feedback__input feedback__input--dark place-entry__input" name="name"
-                      type="text" />
-
-                    <span class="place-entry__placeholder">Иванов Иван<span class="place-entry__star">*</span></span>
-                  </label>
-
-                  <input data-submit type="submit" class="feedback__submit btn clear-yellow-btn hover-yellow"
-                    value="Отправить запрос">
-
-                  <label data-checkbox class="feedback__conditions checkbox">
-                    <input data-input type="checkbox" name="consent" checked
-                      class="feedback__checkbox checkbox__input" />
-                    <span class="feedback__fake checkbox__fake"></span>
-                    <span class="feedback__label-text checkbox__text">я принимаю условия политики
-                      конфиденциальности</span>
-
-                  </label>
-                </div>
-              </form>
-            </div>
-
-            <div class="feedback__right">
-              <img src="./img/image/other/manager.png" alt="" class="feedback__img">
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-      <!-- Есть вопросы -->
-
-      <!-- Хотите заказать услугу? -->
-      <div id="individualForm" class="application  container">
-        <div class="application__title">Оставить заявку на производство</div>
-        <p class="application__text">Вы можете прикрепить документ чертежа или другую техническую документацию изделия.
-          Также можно оставить заявку и наши специалист свяжуться с Вами для уточнения деталей.</p>
-
-        <form id="productionOrderForm" action="./json/send-form.json" enctype="multipart/form-data" method="POST"
-          class="application__form form">
-          <div class="form__body">
-            <div class="form__side">
-              <label class="form__input place-entry">
-                <input data-input class="place-entry__input" name="name" type="text" />
-                <span class="place-entry__placeholder">ФИО<span class="place-entry__star">*</span></span>
-              </label>
-              <div class="form__input-block">
-                <label class="form__input mr20 place-entry">
-                  <input data-input class="place-entry__input" name="mail" type="text" />
-
-                  <span class="place-entry__placeholder">E-mail</span>
-
-                </label>
-
+        </section>
+        <!-- Есть вопросы -->
+
+        <!-- Хотите заказать услугу? -->
+        <div data-content="individual" id="individualForm" class="application container production-block--hide">
+          <div class="application__title">Оставить заявку на производство</div>
+          <p class="application__text">Вы можете прикрепить документ чертежа или другую техническую документацию
+            изделия.
+            Также можно оставить заявку и наши специалист свяжуться с Вами для уточнения деталей.</p>
+
+          <form id="productionOrderForm" action="./json/send-form.json" enctype="multipart/form-data" method="POST"
+            class="application__form form">
+            <div class="form__body">
+              <div class="form__side">
                 <label class="form__input place-entry">
-                  <input data-input class="place-entry__input" name="phone" type="text" />
-
-                  <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
-
-
+                  <input data-input class="place-entry__input" name="name" type="text" />
+                  <span class="place-entry__placeholder">ФИО<span class="place-entry__star">*</span></span>
                 </label>
+                <div class="form__input-block">
+                  <label class="form__input mr20 place-entry">
+                    <input data-input class="place-entry__input" name="mail" type="text" />
+
+                    <span class="place-entry__placeholder">E-mail</span>
+
+                  </label>
+
+                  <label class="form__input place-entry">
+                    <input data-input class="place-entry__input" name="phone" type="text" />
+
+                    <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
+
+
+                  </label>
+                </div>
+
+                <div data-file-block class="file">
+                  <label data-file-label class="form__file file__label">
+                    <span data-file-text class="form__file-text">Добавить реквизиты</span>
+                    <input data-input type="file" name="file" class="file__input">
+                  </label>
+                  <span class="file__clear-btn" data-clear-file>очистить файл</span>
+                </div>
+
               </div>
 
-              <div data-file-block class="file">
-                <label data-file-label class="form__file file__label">
-                  <span data-file-text class="form__file-text">Добавить реквизиты</span>
-                  <input data-input type="file" name="file" class="file__input">
+              <div class="form__side">
+                <textarea data-textarea name="message" class="form__textarea textarea"
+                  placeholder="Комменатрий к заказу"></textarea>
+              </div>
+            </div>
+
+            <div class="form__bottom">
+              <div class="form__file-wrap">
+
+
+                <label class="form__file form__file--mobile">
+                  <span class="form__file-text">Добавить реквизиты</span>
+                  <input data-file type="file" name="file" class="file__input">
                 </label>
-                <span class="file__clear-btn" data-clear-file>очистить файл</span>
+                <p class="form__file-desc">Файл до 10 МБ в формате doc, docx, pdf</p>
               </div>
 
-            </div>
 
-            <div class="form__side">
-              <textarea data-textarea name="message" class="form__textarea textarea"
-                placeholder="Комменатрий к заказу"></textarea>
-            </div>
-          </div>
+              <input data-submit type="submit" class="form__submit btn yellow-btn hover-yellow-light"
+                value="Отправить заявку">
+              <label data-checkbox class="application__checkbox checkbox">
+                <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
+                <span class="checkbox__fake"></span>
+                <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
 
-          <div class="form__bottom">
-            <div class="form__file-wrap">
-
-
-              <label class="form__file form__file--mobile">
-                <span class="form__file-text">Добавить реквизиты</span>
-                <input data-file type="file" name="file" class="file__input">
               </label>
-              <p class="form__file-desc">Файл до 10 МБ в формате doc, docx, pdf</p>
             </div>
 
 
-            <input data-submit type="submit" class="form__submit btn yellow-btn hover-yellow-light"
-              value="Отправить заявку">
-            <label data-checkbox class="application__checkbox checkbox">
-              <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
-              <span class="checkbox__fake"></span>
-              <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
 
-            </label>
-          </div>
+          </form>
+        </div>
+        <!-- Хотите заказать услугу? -->
+      </main>
 
-
-
-        </form>
-      </div>
-      <!-- Хотите заказать услугу? -->
-    </main>
-
-
+    </div>
 
     <footer class="footer">
       <!-- footer-top -->
