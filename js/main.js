@@ -3005,13 +3005,11 @@ class About {
       this.changeImg()
     }
   }
-
   changeAndShowNewPic = (src) => {
     this.$newPic.src = src;
     this.$newPic.style.transition = 'opacity 0.3s';
     this.$newPic.style.opacity = '1';
   }
-
   changeCurrentPic = (src) => {
     this.$currentPic.src = src;
   }
@@ -3385,6 +3383,8 @@ class ProductionsPage {
     }
     this.$serialContent = document.querySelectorAll('[data-content="serial"]');
     this.$individualContent = document.querySelectorAll('[data-content="individual"]');
+    this.$serialSwitchBtn = this.$productionTabsWrap.querySelector('[data-switch-btn="serial"]')
+    this.$individualSwitchBtn = this.$productionTabsWrap.querySelector('[data-switch-btn="individual"]')
     this.listeners();
   }
 
@@ -3403,8 +3403,8 @@ class ProductionsPage {
     $showTab.classList.remove('productions__tab--shift');
   }
 
-
-  switchTab = ($tab) => {
+  switchTab = (id) => {
+    const $tab = this.$productionTabsWrap.querySelector(`#${id}`)
     const $showTab = document.querySelector('[data-production="show"]');
     $showTab.classList.add('productions__tab--hide');
     $showTab.classList.remove('productions__tab--show');
@@ -3431,15 +3431,24 @@ class ProductionsPage {
     })
   }
 
+  switchActiveBtn = (id) => {
+    if (id == 'serial') {
+      this.$serialSwitchBtn.classList.add('productions-mobile__btn--active')
+      this.$individualSwitchBtn.classList.remove('productions-mobile__btn--active')
+    }
 
-  switchContent = ($tab) => {
-    if ($tab.id == 'serial') {
+    if (id == 'individual') {
+      this.$serialSwitchBtn.classList.remove('productions-mobile__btn--active')
+      this.$individualSwitchBtn.classList.add('productions-mobile__btn--active')
+    }
+  }
+  switchContent = (id) => {
+    if (id == 'serial') {
       this.showContent(this.$serialContent);
       this.hideContent(this.$individualContent);
     }
 
-    if ($tab.id == 'individual') {
-      console.log($tab.id)
+    if (id == 'individual') {
       this.showContent(this.$individualContent);
       this.hideContent(this.$serialContent);
     }
@@ -3464,10 +3473,19 @@ class ProductionsPage {
   clickHandler = (e) => {
     if (e.target.closest('[data-production="hide"]')) {
       const $tab = e.target.closest('[data-production="hide"]');
-      this.switchContent($tab);
-      this.switchTab($tab);
-
+      this.switchContent($tab.id);
+      this.switchTab($tab.id);
+      this.switchActiveBtn($tab.id)
     }
+
+    if (e.target.closest('[data-switch-btn]')) {
+      const $btn = e.target.closest('[data-switch-btn]');
+      this.switchContent($btn.dataset.switchBtn);
+      this.switchTab($btn.dataset.switchBtn);
+      this.switchActiveBtn($btn.dataset.switchBtn)
+    }
+
+
   }
 
   listeners = () => {

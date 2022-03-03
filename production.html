@@ -130,8 +130,8 @@
         <div class="header-content">
 
           <!-- header__bg -->
-          <div class="header__bg">
-            <div id="productions" class="productions">
+          <div id="productions" class="header__bg header__bg">
+            <div class="productions">
               <div id="serial" data-production="show"
                 class="productions__tab productions__tab--serial productions__tab--show">
                 <picture>
@@ -185,9 +185,11 @@
               </div>
             </div>
             <div class="productions-mobile__control">
-              <span class="productions-mobile__btn productions-mobile__btn--active ">Серийное
+              <span data-switch-btn="serial"
+                class="productions-mobile__btn productions-mobile__btn--active ">Серийное<br />
                 производство</span>
-              <span class="productions-mobile__btn">Индивидуальное
+              <span data-switch-btn="individual" class="productions-mobile__btn">Индивидуально
+                <br />
                 производство</span>
             </div>
           </div>
