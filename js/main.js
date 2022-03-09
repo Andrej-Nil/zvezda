@@ -430,7 +430,14 @@ class Render {
   renderInfoModalConfirmation = (message) => {
     this.clearParent(this.$parent);
     this._render(this.$parent, this.getInfoModalConfirmationHtml, message);
-  };
+  }
+
+  renderProductionQuery = () => {
+    this.clearParent(this.$parent);
+    this._render(this.$parent, this.getProductionQueryHtml);
+  }
+
+
   //разметка
 
   getModalCatalogHtml = (catalogList) => {
@@ -716,6 +723,47 @@ class Render {
         ${city.title}
         </a>
       </li>
+    `)
+  }
+
+  getProductionQueryHtml = () => {
+    return (/*html*/`
+      <div class="form-block">
+        <p class="form-block__title">Информация о производстве</p>
+        <div class="form-block__inputs">
+
+          <label class="modal__input place-entry span3 mb0">
+            <input data-input class="place-entry__input" name="message" type="text" />
+
+            <span class="place-entry__placeholder">Комментарий к производству</span>
+
+          </label>
+
+
+          <div data-file-block class="modal__file span2 file mb0">
+            <label data-file-label class="file__label form-block__file-label">
+              <span class="form-block__file-side">
+                <span data-file-text class="file__text">Прикрепить файл</span>
+                <input data-input type="file" name="file" class="file__input">
+              </span>
+              <span class="form-block__file-side">
+                <span class="file__clear-btn mt0" data-clear-file>очистить файл</span>
+              </span>
+            </label>
+          </div>
+
+
+
+          <label class="modal__input place-entry mb0">
+            <input data-input class="place-entry__input" name="mail" type="number" />
+
+            <span class="place-entry__placeholder">Количество</span>
+          </label>
+
+
+
+      </div>
+    </div>
     `)
   }
 
@@ -1664,7 +1712,28 @@ class QueryModal extends Modal {
     }
     this.$modalBody = this.$modal.querySelector('[data-modal-body]');
     this.form = new Form(this.formId);
+    this.formFooter = this.$modal.querySelector('[data-form-footer]');
+    this.dynamic = this.$modal.querySelector('[data-dynamic]');
+
+    this.render = new Render(this.dynamic);
     this.listeners()
+  }
+  createProductionQuery = () => {
+    this.formFooter.classList.remove('form-block__footer--hide');
+    this.render.renderProductionQuery()
+
+  }
+  toggleQuery = (option) => {
+    if (option.name === 'production') {
+      this.createProductionQuery();
+    }
+
+  }
+
+  changeHandler = (e) => {
+    if (e.target.closest('[data-radio]')) {
+      this.toggleQuery(e.target);
+    }
   }
 
   clickHandler = (e) => {
@@ -1674,7 +1743,6 @@ class QueryModal extends Modal {
     //  errorModal.close();
     //}
     if ($target.hasAttribute('data-close')) {
-
       this.close();
       errorModal.close();
     }
@@ -1682,6 +1750,7 @@ class QueryModal extends Modal {
 
   listeners = () => {
     this.$modal.addEventListener('click', this.clickHandler)
+    this.$modal.addEventListener('change', this.changeHandler)
   }
 }
 
@@ -2677,12 +2746,26 @@ class Dropdown {
     }
   }
 
+  setActiveOption = ($dropdown) => {
+    const $labelList = $dropdown.querySelectorAll('[data-select-label]');
+    $labelList.forEach(($item) => {
+      const $input = $item.querySelector('.select__radio');
+      $item.classList.remove('select__label--active');
+      if ($input.checked) {
+        $item.classList.add('select__label--active');
+      }
+    })
+  }
+
   setDeliveryCompany = ($radio) => {
     const $dropdown = $radio.closest('[data-dropdown]');
+    const $label = $dropdown.querySelector('[data-select-label]');
+    //setActiveOption
     const $selectTitle = $dropdown.querySelector('[data-select-title]');
     const value = $radio.value;
     $selectTitle.innerHTML = value;
-    this.close()
+    this.setActiveOption($dropdown, $label)
+    this.close();
   }
 
   clickHandler = (e) => {

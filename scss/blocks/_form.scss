@@ -55,10 +55,6 @@
   margin: 0;
 }
 
-.form-block__footer {
-  display: flex;
-}
-
 .form-block__submit {
   margin-right: 20px;
   width: 200px;
@@ -181,6 +177,10 @@
     flex-direction: row;
     margin-top: 0;
   }
+}
+
+.form-block__footer--hide {
+  display: none;
 }
 
 .form-block__submit {

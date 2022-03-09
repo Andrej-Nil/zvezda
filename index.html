@@ -197,7 +197,7 @@
 
               <div data-idx="1" data-video-tab="./video/video1.webm" class="header-tab header-tab--active">
                 <p class="header-tab__title">Поставка продукции</p>
-                <span data-tab class="video-dots__item video-dots__item--active"></span>
+                <span class="video-dots__item video-dots__item--active"></span>
                 <div class="header-tab__line">
                   <div class="header-tab__line-bg"></div>
                   <div data-progress class="header-tab__progress"></div>
@@ -206,7 +206,7 @@
 
               <div data-idx="2" data-video-tab="./video/video2.webm" class="header-tab">
                 <p class="header-tab__title">Услуги компании</p>
-                <span data-tab class="video-dots__item"></span>
+                <span class="video-dots__item"></span>
                 <div class="header-tab__line">
                   <div class="header-tab__line-bg"></div>
                   <div data-progress class="header-tab__progress"></div>
@@ -215,7 +215,7 @@
 
               <div data-idx="3" data-video-tab="./video/video3.webm" class="header-tab">
                 <p class="header-tab__title">Производство</p>
-                <span data-tab class="video-dots__item"></span>
+                <span class="video-dots__item"></span>
                 <div class="header-tab__line">
                   <div class="header-tab__line-bg"></div>
                   <div data-progress class="header-tab__progress"></div>
@@ -1910,20 +1910,20 @@
                 <div data-dropdown-body class="select__body">
                   <ul data-dropdown-content class="select__list">
                     <li class="select__item">
-                      <label class="select__label">
+                      <label data-select-label class="select__label">
                         <span class="select__text">
                           Поставка продукции
                         </span>
-                        <input data-radio class="select__radio radio" type="radio" name="delivery"
+                        <input data-radio="production" class="select__radio radio" type="radio" name="query"
                           value="Поставка продукции">
                       </label>
                     </li>
                     <li class="select__item">
-                      <label class="select__label">
+                      <label data-select-label class="select__label">
                         <span class="select__text">
                           Производство продукции
                         </span>
-                        <input data-radio class="select__radio radio" type="radio" name="delivery"
+                        <input data-radio="production" class="select__radio radio" type="radio" name="query"
                           value="Производство продукции">
                       </label>
                     </li>
@@ -1959,7 +1959,10 @@
 
             </div>
           </div>
-          <div class="form-block__info">
+          <div data-dynamic class="modal__dynamic-content">
+
+          </div>
+          <!--<div class="form-block__info">
             <div class="form-block">
               <p class="form-block__title">Информация о продукции</p>
               <div class="form-selects">
@@ -1975,21 +1978,21 @@
                       <div data-dropdown-body class="select__body">
                         <ul data-dropdown-content class="select__list">
                           <li class="select__item">
-                            <label class="select__label">
+                            <label data-select-label class="select__label">
                               <span class="select__text">
                                 Цветной металлопрокат
                               </span>
                               <input data-radio class="select__radio radio" type="radio" name="delivery"
-                                value="Поставка продукции">
+                                value="Цветной металлопрокат">
                             </label>
                           </li>
                           <li class="select__item">
-                            <label class="select__label">
+                            <label data-select-label class="select__label">
                               <span class="select__text">
                                 Медный металлопрокат
                               </span>
                               <input data-radio class="select__radio radio" type="radio" name="delivery"
-                                value="Производство продукции">
+                                value="Медный металлопрокат">
                             </label>
                           </li>
                         </ul>
@@ -2003,7 +2006,7 @@
                       <div data-dropdown-body class="select__body">
                         <ul data-dropdown-content class="select__list">
                           <li class="select__item">
-                            <label class="select__label">
+                            <label data-select-label class="select__label">
                               <span class="select__text">
                                 Лист стальной
                               </span>
@@ -2012,7 +2015,7 @@
                             </label>
                           </li>
                           <li class="select__item">
-                            <label class="select__label">
+                            <label data-select-label class="select__label">
                               <span class="select__text">
                                 Труба стальная
                               </span>
@@ -2031,7 +2034,7 @@
                       <div data-dropdown-body class="select__body">
                         <ul data-dropdown-content class="select__list">
                           <li class="select__item">
-                            <label class="select__label">
+                            <label data-select-label class="select__label">
                               <span class="select__text">
                                 Лист рифленый стальной
                               </span>
@@ -2040,7 +2043,7 @@
                             </label>
                           </li>
                           <li class="select__item">
-                            <label class="select__label">
+                            <label data-select-label class="select__label">
                               <span class="select__text">
                                 Лист обычный стальной
                               </span>
@@ -2065,7 +2068,7 @@
                       <div data-dropdown-body class="select__body">
                         <ul data-dropdown-content class="select__list">
                           <li class="select__item">
-                            <label class="select__label">
+                            <label data-select-label class="select__label">
                               <span class="select__text">
                                 Ромб
                               </span>
@@ -2074,7 +2077,7 @@
                             </label>
                           </li>
                           <li class="select__item">
-                            <label class="select__label">
+                            <label data-select-label class="select__label">
                               <span class="select__text">
                                 Волна
                               </span>
@@ -2093,7 +2096,7 @@
                       <div data-dropdown-body class="select__body">
                         <ul data-dropdown-content class="select__list">
                           <li class="select__item">
-                            <label class="select__label">
+                            <label data-select-label class="select__label">
                               <span class="select__text">
                                 30
                               </span>
@@ -2102,7 +2105,7 @@
                             </label>
                           </li>
                           <li class="select__item">
-                            <label class="select__label">
+                            <label data-select-label class="select__label">
                               <span class="select__text">
                                 40
                               </span>
@@ -2121,7 +2124,7 @@
                       <div data-dropdown-body class="select__body">
                         <ul data-dropdown-content class="select__list">
                           <li class="select__item">
-                            <label class="select__label">
+                            <label data-select-label class="select__label">
                               <span class="select__text">
                                 70
                               </span>
@@ -2130,7 +2133,7 @@
                             </label>
                           </li>
                           <li class="select__item">
-                            <label class="select__label">
+                            <label data-select-label class="select__label">
                               <span class="select__text">
                                 80
                               </span>
@@ -2148,9 +2151,9 @@
               </div>
             </div>
             <span data-add class="form-block__add">Добавить позицию +</span>
-          </div>
+          </div>-->
 
-          <div class="form-block">
+          <!--<div class="form-block">
             <p class="form-block__title">Информация о производстве</p>
             <div class="form-block__inputs">
 
@@ -2185,9 +2188,9 @@
 
 
             </div>
-          </div>
+          </div>-->
 
-          <div class="form-block">
+          <!--<div class="form-block">
             <p class="form-block__title">Информация об организации</p>
             <div class="form-block__inputs">
 
@@ -2209,9 +2212,9 @@
                 </label>
               </div>
             </div>
-          </div>
+          </div>-->
 
-          <div class="form-block__footer">
+          <div data-form-footer class="form-block__footer form-block__footer--hide">
             <input data-submit type="submit" class="form-block__submit btn yellow-btn hover-yellow-light"
               value="Отправить заявку">
 
@@ -2351,7 +2354,7 @@
               <div data-dropdown-body class="select__body">
                 <ul data-dropdown-content class="select__list">
                   <li class="select__item">
-                    <label class="select__label">
+                    <label data-select-label class="select__label">
                       <span class="select__text">
                         Поставка продукции
                       </span>
@@ -2359,7 +2362,7 @@
                     </label>
                   </li>
                   <li class="select__item">
-                    <label class="select__label">
+                    <label data-select-label class="select__label">
                       <span class="select__text">
                         Производство продукции
                       </span>
