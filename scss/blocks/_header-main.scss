@@ -5,7 +5,10 @@
   left: 0;
   z-index: 100;
   @media (min-width: 1050px) {
-    top: 30%;
+    top: 25%;
+  }
+  @media (min-width: 1280px) {
+    top: 25%;
   }
 }
 

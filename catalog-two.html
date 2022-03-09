@@ -289,17 +289,24 @@
 
                       </div>
                       <div data-filter-body class="dropdown__body">
-                        <div data-filter-content class="filter__price">
+                        <div id="priceRange" data-filter-content class="filter__price">
 
                           <div class="filter__inputs">
-                            <input type="text" class="filter__input" placeholder="от 0">
-                            <input type="text" class="filter__input" placeholder="до 281 000">
+
+                            <input type="number" class="filter__input" name="min" placeholder="от 0" value="">
+                            <input type="number" class="filter__input" name="max" placeholder="до 281 000" value="">
                           </div>
 
-                          <div class="range">
-                            <span class="range__slide range__slide--left"></span>
-                            <span class="range__line"></span>
-                            <span class="range__slide range__slide--right"></span>
+                          <div id="range" class="range">
+                            <div id="rangeBg" class="range__bg"></div>
+                            <div class="range__front">
+                              <span id="leftSlide" class="range__slide range__slide--left"></span>
+
+                              <span id="areaRange" class="range__line"></span>
+
+                              <span id="rightSlide" class="range__slide range__slide--right"></span>
+                            </div>
+
                           </div>
 
                         </div>

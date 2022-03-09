@@ -3,9 +3,10 @@
   left: 0;
   bottom: 0;
   width: 100%;
-
+  display: flex;
+  justify-content: center;
   z-index: 500;
-  display: none;
+  //display: none;
   @media (min-width: 1050px) {
     display: flex;
   }
@@ -13,7 +14,7 @@
 
 .header-tab {
   display: block;
-  height: 70px;
+  height: 50px;
   text-align: center;
   font-weight: bold;
   font-size: 18px;
@@ -21,14 +22,23 @@
   color: $white;
   transition: 0.5s ease-in-out;
   position: relative;
-  width: 33.5%;
+  margin-right: 30px;
   cursor: pointer;
+  &:last-child {
+    margin-right: 0;
+  }
   &:hover {
     color: $yellowMain;
   }
 
   &:hover .header-tab__line-bg {
     width: 100%;
+  }
+
+  @media (min-width: 1050px) {
+    margin-right: 0px;
+    height: 70px;
+    width: 33.5%;
   }
 }
 
@@ -37,6 +47,9 @@
 
   & .header-tab__line-bg {
     width: 100%;
+  }
+  .video-dots__item {
+    background: $yellowMain;
   }
 }
 
@@ -53,31 +66,49 @@
   }
 }
 
+.header-tab__title {
+  display: none;
+  @media (min-width: 1050px) {
+    display: block;
+  }
+}
+
 .video-dots__item {
   display: block;
   width: 15px;
   height: 15px;
-  margin-right: 30px;
+  //margin-right: 30px;
   border-radius: 50%;
   background: #595959;
   transition: 0.2s ease-in-out;
   &:last-child {
     margin-right: 0;
   }
+  @media (min-width: 1050px) {
+    display: none;
+  }
 }
 
 .header-tab__line {
+  display: none;
   position: absolute;
   left: 0;
   bottom: 0px;
   width: 100%;
+  @media (min-width: 1050px) {
+    display: block;
+  }
 }
 
 .header-tab__line-bg {
+  display: none;
   width: 0;
   height: 5px;
   background: $grey;
   transition: 0.5s ease-in-out;
+  @media (min-width: 1050px) {
+    display: block;
+  }
 }
 
 .header-tab--leave {
@@ -87,6 +118,7 @@
 }
 
 .header-tab__progress {
+  display: none;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -94,4 +126,7 @@
   height: 5px;
   background: $yellowMain;
   transition: 0.25s linear;
+  @media (min-width: 1050px) {
+    display: block;
+  }
 }

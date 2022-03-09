@@ -2939,6 +2939,159 @@ class FilterForm {
     this.$form.addEventListener('input', this.inputHandler);
   }
 }
+class PriceRange {
+  constructor() {
+    this.$priceRange = document.querySelector('#priceRange');
+    this.init();
+  }
+
+  init = () => {
+    if (!this.$priceRange) {
+      return;
+    }
+    this.$areaRange = this.$priceRange.querySelector('#areaRange');
+    this.$rangeBg = this.$priceRange.querySelector('#rangeBg');
+    this.$leftSlide = this.$priceRange.querySelector('#leftSlide');
+    this.$rightSlide = this.$priceRange.querySelector('#rightSlide');
+
+    this.$inputMin = this.$priceRange.querySelector('[name="min"]');
+    this.$inputMax = this.$priceRange.querySelector('[name="max"]');
+
+    this.rangeBgCoord = this.$rangeBg.getBoundingClientRect();
+
+    this.shiftLeftSlide = 0;
+    this.coordLeftSlide = this.$leftSlide.getBoundingClientRect();
+
+    this.shiftRightSlide = 0;
+    this.coordRightSlide = this.$rightSlide.getBoundingClientRect();
+
+    this.widthSlide = this.$leftSlide.offsetWidth;
+    this.halfWidthSlide = this.widthSlide / 2;
+    this.listeners()
+  }
+
+
+  // левый слайд
+  leftSlideStartMove = (e) => {
+    e.preventDefault();
+    this.updateCoords();
+    this.shiftLeftSlide = e.clientX - this.rangeBgCoord.x - this.halfWidthSlide;
+    this.changePosLeftSlide(e);
+    document.addEventListener('mousemove', this.leftSlideMove);
+  }
+
+  leftSlideMove = (e) => {
+    this.shiftLeftSlide = e.clientX - this.rangeBgCoord.x - this.halfWidthSlide;
+    this.updateCoords()
+    this.changePosLeftSlide(e);
+  }
+
+
+  leftSlideEndMove = () => {
+    document.removeEventListener('mousemove', this.leftSlideMove);
+  }
+
+  changePosLeftSlide = (e) => {
+    if (this.shiftLeftSlide <= 0) {
+      this.shiftLeftSlide = 0;
+    }
+    if (e.clientX + this.halfWidthSlide > this.coordRightSlide.x) {
+      this.shiftLeftSlide = this.getRightStopPoint()
+    }
+    this.$leftSlide.style.left = this.shiftLeftSlide + 'px';
+    this.$areaRange.style.marginLeft = this.shiftLeftSlide + 'px';
+
+  }
+
+  // правый слайд
+
+  rightSlideStartMove = (e) => {
+    e.preventDefault();
+    this.updateCoords();
+
+    this.shiftRightSlide = this.rangeBgCoord.right - e.clientX - this.halfWidthSlide;
+    //this.shiftLeftSlide = e.clientX - this.rangeBgCoord.x - this.halfWidthSlide;
+    this.changePosRightSlide(e);
+    document.addEventListener('mousemove', this.rightSlideMove);
+  }
+
+  changePosRightSlide = (e) => {
+    if (this.rangeBgCoord.right <= e.clientX + this.halfWidthSlide) {
+      this.shiftRightSlide = 0;
+    }
+
+    if (this.coordLeftSlide.right >= e.clientX - this.halfWidthSlide) {
+      this.shiftRightSlide = this.getLeftStopPoint();
+      console.log(this.coordLeftSlide.right, e.clientX - this.halfWidthSlide)
+    }
+
+    //console.log(this.coordLeftSlide.right);
+    //console.log(this.coordRightSlide.x);
+
+    //if (e.clientX + this.halfWidthSlide > this.coordRightSlide.x) {
+    //  this.shiftLeftSlide = this.getRightStopPoint()
+    //}
+
+
+
+    this.$rightSlide.style.right = this.shiftRightSlide + 'px';
+    this.$areaRange.style.marginRight = this.shiftRightSlide + 'px';
+
+
+
+    //if (this.shiftRightSlide <= 0) {
+    //  this.shiftRightSlide = 0;
+    //}
+    //if (e.clientX + this.halfWidthSlide > this.coordRightSlide.x) {
+    //  this.shiftRightSlide = this.getRightStopPoint()
+    //}
+    //this.$leftSlide.style.left = this.shiftLeftSlide + 'px';
+    //this.$areaRange.style.marginLeft = this.shiftLeftSlide + 'px';
+
+  }
+
+  rightSlideMove = (e) => {
+    this.shiftRightSlide = this.rangeBgCoord.right - e.clientX - this.halfWidthSlide;
+    this.updateCoords()
+    this.changePosRightSlide(e);
+  }
+
+  rightSlideEndMove = () => {
+    document.removeEventListener('mousemove', this.rightSlideMove);
+  }
+
+
+  //getShift = (mouseCoordX) => {
+  //  return mouseCoordX - this.rangeBgCoord.x;
+  //}
+
+  updateCoords = () => {
+    this.coordLeftSlide = this.$leftSlide.getBoundingClientRect();
+    this.coordRightSlide = this.$rightSlide.getBoundingClientRect();
+    this.rangeBgCoord = this.$rangeBg.getBoundingClientRect();
+  }
+
+  getRightStopPoint = () => {
+    return this.coordRightSlide.x -
+      this.rangeBgCoord.x - this.widthSlide;
+  }
+
+  getLeftStopPoint = () => {
+    console.log(this.rangeBgCoord.right - this.coordLeftSlide.right - this.widthSlide)
+    return this.rangeBgCoord.right - this.coordLeftSlide.right - this.widthSlide
+
+    //console.log(, )
+    //return this.coordRightSlide.x -
+    //  this.rangeBgCoord.x - this.widthSlide;
+  }
+
+  listeners = () => {
+    this.$leftSlide.addEventListener('mousedown', this.leftSlideStartMove);
+    document.addEventListener('mouseup', this.leftSlideEndMove);
+    this.$rightSlide.addEventListener('mousedown', this.rightSlideStartMove);
+    document.addEventListener('mouseup', this.rightSlideEndMove);
+  }
+}
 
 class About {
   constructor(aboutListId) {
@@ -3424,7 +3577,6 @@ class ProductionsPage {
     })
   }
 
-
   hideContent = ($contentList) => {
     $contentList.forEach(($block) => {
       $block.classList.add('production-block--hide');
@@ -3484,8 +3636,6 @@ class ProductionsPage {
       this.switchTab($btn.dataset.switchBtn);
       this.switchActiveBtn($btn.dataset.switchBtn)
     }
-
-
   }
 
   listeners = () => {
@@ -3534,6 +3684,7 @@ const basket = new Basket('#basket');
 const dropdown = new Dropdown();
 const filters = new Filters('#filtersWrap');
 const filterForm = new FilterForm('#filterForm');
+const priceRange = new PriceRange();
 const about = new About('#about');
 const aboutMap = new AboutMap('aboutMap');
 //const contactMap = new ContactMap('contactMap');

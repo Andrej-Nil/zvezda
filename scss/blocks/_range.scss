@@ -2,22 +2,34 @@
   position: relative;
   margin-bottom: 25px;
 }
+.range__bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: $greyLight;
+}
 
 .range__line {
+  position: relative;
   display: block;
-  height: 1px;
+  height: 2px;
+  //width: 100%;
+  //padding: 0 40px;
   background: $yellowMain;
 }
 
 .range__slide {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  //transform: translateY(-50%);
   display: block;
   height: 20px;
   width: 20px;
+  z-index: 10;
+  border: 1px solid #000;
   background: $yellowMain;
-  border-radius: 50%;
+  //border-radius: 50%;
   cursor: pointer;
 }
 
