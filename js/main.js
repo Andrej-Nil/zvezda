@@ -47,6 +47,7 @@ class Server {
     this.filterApi = '../json/filter.json';
     this.filterCheckboxApi = '../json/checkbox.json';
     this.catalogApi = '../json/catalog.json';
+    this.queryModalStage
   }
 
   getMenu = async () => {
@@ -437,6 +438,11 @@ class Render {
     this._render(this.$parent, this.getProductionQueryHtml);
   }
 
+  renderDeliveryQuery = () => {
+    this.clearParent(this.$parent);
+    this._render(this.$parent, this.getDeliveryQueryHtml);
+  }
+
 
   //разметка
 
@@ -764,6 +770,51 @@ class Render {
 
       </div>
     </div>
+    `)
+  }
+
+  getDeliveryQueryHtml = () => {
+
+    const deliveryQueryFooter = this.getDeliveryQueryFooterHtml()
+    return (/*html*/`
+      <div class="form-block__info">
+        <div class="form-block">
+          <p class="form-block__title">Информация о продукции</p>
+          <div class="form-selects">
+            
+          </div>
+        </div>
+        <span data-add class="form-block__add">Добавить позицию +</span>
+      </div>
+
+      ${deliveryQueryFooter}
+    `)
+  }
+
+  getDeliveryQueryFooterHtml = () => {
+    return (/*html*/`
+      <div class="form-block">
+        <p class="form-block__title">Информация об организации</p>
+        <div class="form-block__inputs">
+          <label class="modal__input place-entry mb0">
+            <input data-input class="place-entry__input" name="mail" type="number" />
+
+            <span class="place-entry__placeholder">Наименование организации</span>
+          </label>
+
+          <div data-file-block class="modal__file span2 file mb0">
+            <label data-file-label class="file__label form-block__file-label">
+              <span class="form-block__file-side">
+                <span data-file-text class="file__text">Добавить реквизиты</span>
+                <input data-input type="file" name="file" class="file__input">
+              </span>
+              <span class="form-block__file-side">
+                <span class="file__clear-btn mt0" data-clear-file>очистить файл</span>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
     `)
   }
 
@@ -1339,8 +1390,6 @@ class Modal {
   constructor(id) {
     this.$modal = document.querySelector(id);
   }
-
-
   open = () => {
     this.$modal.classList.remove('modal--is-hide');
     this.$modal.classList.add('modal--is-open');
@@ -1713,18 +1762,29 @@ class QueryModal extends Modal {
     this.$modalBody = this.$modal.querySelector('[data-modal-body]');
     this.form = new Form(this.formId);
     this.formFooter = this.$modal.querySelector('[data-form-footer]');
-    this.dynamic = this.$modal.querySelector('[data-dynamic]');
-
-    this.render = new Render(this.dynamic);
+    this.$dynamic = this.$modal.querySelector('[data-dynamic]');
+    this.render = new Render(this.$dynamic);
     this.listeners()
   }
+
   createProductionQuery = () => {
+
     this.formFooter.classList.remove('form-block__footer--hide');
     this.render.renderProductionQuery()
 
   }
+
+  createDeliveryQuery = () => {
+
+    this.formFooter.classList.remove('form-block__footer--hide');
+    this.render.renderDeliveryQuery();
+  }
+
   toggleQuery = (option) => {
-    if (option.name === 'production') {
+    if (option.dataset.radio === 'delivery') {
+      this.createDeliveryQuery();
+    }
+    if (option.dataset.radio === 'production') {
       this.createProductionQuery();
     }
 
@@ -2789,6 +2849,7 @@ class Dropdown {
     document.addEventListener('change', this.changeHandler);
   }
 }
+
 class Filters {
   constructor(filtersWrapId) {
     this.$filtersWrap = document.querySelector(filtersWrapId);
@@ -3022,6 +3083,7 @@ class FilterForm {
     this.$form.addEventListener('input', this.inputHandler);
   }
 }
+
 class PriceRange {
   constructor() {
     this.$priceRange = document.querySelector('#priceRange');
