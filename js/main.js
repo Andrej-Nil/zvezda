@@ -47,7 +47,7 @@ class Server {
     this.filterApi = '../json/filter.json';
     this.filterCheckboxApi = '../json/checkbox.json';
     this.catalogApi = '../json/catalog.json';
-    this.queryModalStage
+    this.queryCardSelect = '../json/queryModal.json'
   }
 
   getMenu = async () => {
@@ -56,6 +56,15 @@ class Server {
     }
     const formData = this.createFormData(data);
     return await this.getResponse(this.POST, formData, this.catalogApi);
+  }
+
+  getQueryCardSelect = async (id = 0) => {
+    const data = {
+      _token: this._token,
+      id: id
+    }
+    const formData = this.createFormData(data);
+    return await this.getResponse(this.POST, formData, this.queryCardSelect);
   }
 
   getRegions = async () => {
@@ -369,9 +378,17 @@ class Render {
     this._render($parent, this.getSpinnerHtml, spinnerText);
   }
 
+
+
   renderErrorMessage = (messageText = '', $parent = this.$parent) => {
     this._render($parent, this.getErrorMessageHtml, messageText);
   }
+
+  renderErrorForQueryModal = (messageText = '', $parent = this.$parent) => {
+
+    this._render($parent, this.getErrorForQueryModal, messageText);
+  }
+
 
   renderCatalogList = (catalogList) => {
     this._render(this.$parent, this.getModalCatalogHtml, catalogList);
@@ -443,6 +460,28 @@ class Render {
     this._render(this.$parent, this.getDeliveryQueryHtml);
   }
 
+  renderFooterDeliveryQuery = () => {
+    this.clearParent(this.$parent);
+    this._render(this.$parent, this.getFooterDeliveryQueryHtml);
+  }
+
+
+  renderQueryItem = ($parent, id) => {
+
+    this._render($parent, this.getQueryItemHtml, id);
+  }
+
+  renderSelectGroup = ($cardContent, data) => {
+    this._render($cardContent, this.getSelectGroupHtml, data);
+  }
+
+  renderSelect = ($selectWrap, data) => {
+    this._render($selectWrap, this.getSelectHtml, data);
+  }
+
+  renderQuestionConfirm = ($spinner) => {
+    this._render($spinner, this.getQuestionConfirmHtml)
+  }
 
   //разметка
 
@@ -493,7 +532,6 @@ class Render {
     </ul>
    `)
   }
-
   getSubcatalogListHtml = (li) => {
     let ul = ''
     if (li.isSubmenu) {
@@ -647,7 +685,7 @@ class Render {
   }
 
   getErrorMessageHtml = (text = '') => {
-    return `<p class="error-message">${text}</p>`;
+    return `<p data-error-message class="error-message">${text}</p>`;
   }
   getSpinnerHtml = (text = '') => {
     const spinnerText = `<p class="spinner__text">${text}</p>`
@@ -703,7 +741,6 @@ class Render {
       </ul>
     </div>`)
   }
-
   getAreaHtml = (area) => {
     const cityList = this.getListHtml(this.getAreaItemHtml, area.parent);
     return (/*html*/`
@@ -721,7 +758,6 @@ class Render {
     </li>
     `)
   }
-
   getAreaItemHtml = (city) => {
     return (/*html*/`
     <li class="area__item">
@@ -731,7 +767,6 @@ class Render {
       </li>
     `)
   }
-
   getProductionQueryHtml = () => {
     return (/*html*/`
       <div class="form-block">
@@ -745,7 +780,6 @@ class Render {
 
           </label>
 
-
           <div data-file-block class="modal__file span2 file mb0">
             <label data-file-label class="file__label form-block__file-label">
               <span class="form-block__file-side">
@@ -758,46 +792,33 @@ class Render {
             </label>
           </div>
 
-
-
           <label class="modal__input place-entry mb0">
             <input data-input class="place-entry__input" name="mail" type="number" />
 
             <span class="place-entry__placeholder">Количество</span>
           </label>
-
-
-
       </div>
     </div>
     `)
   }
-
   getDeliveryQueryHtml = () => {
-
-    const deliveryQueryFooter = this.getDeliveryQueryFooterHtml()
     return (/*html*/`
-      <div class="form-block__info">
-        <div class="form-block">
-          <p class="form-block__title">Информация о продукции</p>
-          <div class="form-selects">
-            
-          </div>
-        </div>
-        <span data-add class="form-block__add">Добавить позицию +</span>
+    <div data-block-query class="form-block">
+      <p class="form-block__title">Информация о продукции</p>
+      <div data-prod-list class="form-block__list">
       </div>
-
-      ${deliveryQueryFooter}
+    </div>
     `)
   }
-
-  getDeliveryQueryFooterHtml = () => {
+  getFooterDeliveryQueryHtml = () => {
     return (/*html*/`
+    <span data-add class="form-block__add">Добавить позицию +</span>
+
       <div class="form-block">
         <p class="form-block__title">Информация об организации</p>
         <div class="form-block__inputs">
           <label class="modal__input place-entry mb0">
-            <input data-input class="place-entry__input" name="mail" type="number" />
+            <input data-input class="place-entry__input" name="mail" type="text" />
 
             <span class="place-entry__placeholder">Наименование организации</span>
           </label>
@@ -817,7 +838,6 @@ class Render {
       </div>
     `)
   }
-
   getInfoModalErrorHtml = (errorMessage) => {
     const errorMsg = 'Произошла ошибка, попробуйте позже.';
     const message = errorMessage ? errorMessage : errorMsg
@@ -826,7 +846,6 @@ class Render {
       <p class="info-modal__subtext white-color">Вы можете с вязаться с нами по телефону <a href="tel:+78987775544" class="info-modal__link white-color">+7 898 777 55 44</a> или написат нам на почту <a href="mailto:info@ntmk.ru" class="info-modal__link white-color">info@ntmk.ru</a></p>
     `)
   }
-
   getInfoModalSuccsesHtml = (message) => {
     const text = 'Успешная отправка!'
     const desc = message ? message : text
@@ -835,7 +854,6 @@ class Render {
       <p class="info-modal__subtext">Если у вас появились вопросы вы можете связаться с  нами по телефону <a href="tel:+78987775544" class="info-modal__link">+7 898 777 55 44</a> или написат нам на почту <a href="mailto:info@ntmk.ru" class="info-modal__link">info@ntmk.ru</a></p>
     `)
   }
-
   getInfoModalConfirmationHtml = (message) => {
     return ( /*html*/`
     <p class="info-modal__text white-color">${message}</p>
@@ -845,7 +863,120 @@ class Render {
     </div>
     `)
   }
+  getQueryItemHtml = (id) => {
+    return (/*html*/ `
+    <div data-query-card="${id}" class="form-query-card">
+    <span data-delete class="form-query-card__delete close-btn">Убрать позицию</span>
+      <div data-spinner class="form-block__spinner form-block__spinner--show"></div>
+      <div data-query-card-content class="form-query-card__content">
 
+      </div>
+
+    </div>
+    `)
+  }
+  getSelectGroupHtml = (data) => {
+    const selectMark = this.getSelectsHtml(data);
+    return (/*html*/ `
+    <div data-type-${data.type} class="form-block__group">
+      <p class="form-block__group-title">${data.titleGroup}</p>
+      <div data-selects class="form-selects">
+       ${selectMark}
+      </div>
+    </div>
+    `)
+  }
+  getSelectsHtml = (data) => {
+    if (data.type === 'category') {
+      return this.getSelectHtml(data);
+    }
+
+    if (data.type === 'property') {
+      return this.getSelectPropsListHtml(data);
+    }
+
+  }
+  getSelectPropsListHtml = (data) => {
+    return this.getListHtml(this.getSelectPropsHtml, data.value)
+  }
+  getSelectPropsHtml = (data) => {
+    const itemListMark = this.getListHtml(this.getSelectPropsItemHtml, data.value)
+    return (/*html*/`
+    <div data-select="${data.title}" data-dropdown="close" class="select mb0">
+      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+        ${data.title}
+      </span>
+      <div data-dropdown-body class="select__body dropdown__body">
+        <ul data-dropdown-content class="select__list">
+        ${itemListMark} 
+        </ul>
+      </div>
+    </div>
+    `)
+  }
+  getErrorForQueryModal = (messageText) => {
+    return (/*html*/`
+    <div class="form-block__error">
+      ${this.getErrorMessageHtml(messageText)}
+      <span data-repeat class="form-block__error-btn btn yellow-btn hover-yellow-light">Повторить попытку</span>
+    </div>
+      
+    `)
+  }
+  getSelectHtml = (data) => {
+    //itemListMark
+    const itemListMark = this.getListHtml(this.getSelectProdItemHtml, data.value);
+    return (/*html*/`
+    <div data-select data-dropdown="close" class="select mb0">
+      <span data-dropdown-btn data-select-title class="select__title form-selects__item">
+        ${data.title}
+      </span>
+      <div data-dropdown-body class="select__body dropdown__body">
+        <ul data-dropdown-content class="select__list">
+          ${itemListMark}
+        </ul>
+      </div>
+    </div>
+    `)
+  }
+  getSelectProdItemHtml = (item) => {
+    return (/*html*/ `
+      <li class="select__item">
+        <div data-select-value data-select-item="${item.title}" data-id="${item.id}" class="select__label">
+          <span class="select__text">
+           ${item.title}
+          </span>
+        </div>
+      </li>
+    `);
+  }
+  getSelectPropsItemHtml = (title) => {
+    return (/*html*/ `
+    <li class="select__item">
+      <div data-select-item="${title}" class="select__label">
+        <span class="select__text">
+         ${title}
+        </span>
+      </div>
+    </li>
+  `);
+  }
+
+  getQuestionConfirmHtml = () => {
+    return (/*html*/`
+    <div data-confirm class="question-confirm">
+      <p class="question-confirm__title">
+        Позиция будет удалена!
+      </p>
+
+      <div class="question-confirm__answer">
+        <span data-answer="false" class="question-confirm__btn btn yellow-btn hover-yellow-light">Отмена</span>
+        <span data-answer="true"
+          class="question-confirm__btn btn yellow-btn hover-yellow-light">Потвердить</span>
+      </div>
+    </div>
+    `)
+  }
   getListHtml = (getHtmlFn, arr) => {
     let list = '';
     arr.forEach((item) => {
@@ -883,6 +1014,9 @@ class Render {
   }
 
   delete = ($el) => {
+    if (!$el) {
+      return;
+    }
     $el.remove()
   }
 
@@ -1072,7 +1206,6 @@ class Form {
     }
   }
 
-
   changeHandler = (e) => {
     const $target = e.target;
     if ($target.closest('[data-file-block]')) {
@@ -1161,6 +1294,22 @@ class FormPage extends Form {
 
   }
 
+}
+
+class QueryForm extends Form {
+  constructor(selectorForm) {
+    super(selectorForm);
+    this.initQueryForm();
+  }
+
+  initQueryForm = () => {
+    this.listeners()
+  }
+
+
+  listeners = () => {
+
+  }
 }
 
 class HeaderModal {
@@ -1760,26 +1909,148 @@ class QueryModal extends Modal {
       return;
     }
     this.$modalBody = this.$modal.querySelector('[data-modal-body]');
-    this.form = new Form(this.formId);
-    this.formFooter = this.$modal.querySelector('[data-form-footer]');
+    this.form = new QueryForm(this.formId);
+    this.$formFooter = this.$modal.querySelector('[data-form-footer]');
     this.$dynamic = this.$modal.querySelector('[data-dynamic]');
-    this.render = new Render(this.$dynamic);
-    this.listeners()
+    this.$dynamicFooter = this.$modal.querySelector('[data-dynamic-footer]');
+    this.dynamicRender = new Render(this.$dynamic);
+    this.dynamicFooterRender = new Render(this.$dynamicFooter);
+    this.startResponse = {};
+    this.$queryItemList = null;
+    this.key = 0;
+    //this.radioName = this.name
+    this.listeners();
   }
 
   createProductionQuery = () => {
-
-    this.formFooter.classList.remove('form-block__footer--hide');
-    this.render.renderProductionQuery()
-
+    this.$formFooter.classList.remove('form-block__footer--hide');
+    this.dynamicRender.renderProductionQuery();
+    this.dynamicFooterRender.clearParent();
   }
 
   createDeliveryQuery = () => {
+    this.$formFooter.classList.remove('form-block__footer--hide');
+    this.dynamicRender.renderDeliveryQuery();
+    this.dynamicFooterRender.renderFooterDeliveryQuery();
+    this.$queryItemList = this.$modal.querySelector('[data-prod-list]');
+    this.addQueryCard();
 
-    this.formFooter.classList.remove('form-block__footer--hide');
-    this.render.renderDeliveryQuery();
   }
 
+  addQueryCard = async () => {
+    render.renderQueryItem(this.$queryItemList, this.key);
+    const $card = this.$queryItemList.querySelector(`[data-query-card="${this.key}"`);
+    this.key += 1;
+    this.createContentQueryCard($card);
+
+  }
+  createContentQueryCard = async ($card) => {
+    const $spinner = $card.querySelector('[data-spinner]');
+    render.clearParent($spinner);
+    render.renderSpiner('Загружаю...', $spinner);
+
+    const response = await server.getQueryCardSelect();
+
+    if (response.rez == 0) {
+      render.clearParent($spinner);
+      render.renderErrorForQueryModal(response.error.desc, $spinner);
+      console.log(`Ошибка: id ${response.error.id}`);
+    }
+    if (response.rez == 1) {
+      $spinner.classList.remove('form-block__spinner--show')
+      render.clearParent($spinner);
+      this.createSelectGroup($card, response)
+    }
+  }
+
+  createSelectGroup = ($card, response) => {
+    const $cardContent = $card.querySelector('[data-query-card-content]');
+    if (response.children.length) {
+      const data = {
+        value: response.children,
+        titleGroup: 'Выбор продукции',
+        title: 'Выберите категорию',
+        type: 'category'
+      }
+      render.renderSelectGroup($cardContent, data)
+    }
+
+  }
+  reapitQueryCard = ($target) => {
+    const $card = $target.closest('[data-query-card]');
+    this.createContentQueryCard($card);
+  }
+
+  updateSelects = ($item) => {
+    const $selectWrap = $item.closest('[data-selects]');
+    render.delete($selectWrap.querySelector('[data-spinner]'));
+    render.delete($selectWrap.querySelector('[data-error-message]'));
+    this.deleteIrrelevantSelects($selectWrap, $item);
+    this.addSelect($item);
+  }
+
+  deleteIrrelevantSelects = ($selectWrap, $item) => {
+    const $currentSelect = $item.closest('[data-select]');
+    const $allSelects = $selectWrap.querySelectorAll('[data-select]');
+    let count = false
+    $allSelects.forEach(($select) => {
+      if (count) {
+        render.delete($select);
+      }
+      if ($select === $currentSelect) {
+        count = true;
+      }
+    })
+  }
+
+  createSelect = ($selectWrap, response) => {
+    if (response.children.length) {
+      const data = {
+        value: response.children,
+        title: 'Выберите категорию',
+        //type: 'category'
+      };
+      render.renderSelect($selectWrap, data);
+    }
+
+    if (response.filds.length) {
+      const $cardContent = $selectWrap.closest('[data-query-card-content]');
+      const data = {
+        value: response.filds,
+        titleGroup: "Характеристики:",
+        type: "property"
+      }
+      const $propsGroup = this.$modal.querySelector('[data-type-property]');
+      render.delete($propsGroup);
+      render.renderSelectGroup($cardContent, data);
+    }
+  }
+  addSelect = async ($item) => {
+    const id = $item.dataset.id
+    const $selectWrap = $item.closest('[data-selects]');
+    render.renderSpiner('', $selectWrap);
+
+    const response = await server.getQueryCardSelect(id);
+    //render.delete($selectWrap.querySelector('[data-spinner]'));
+
+    if (response.rez == 0) {
+      render.delete($selectWrap.querySelector('[data-spinner]'));
+      render.renderErrorMessage(response.error.desc, $selectWrap);
+    }
+    if (response.rez == 1) {
+      render.delete($selectWrap.querySelector('[data-spinner]'));
+      this.createSelect($selectWrap, response);
+    }
+
+
+  }
+
+  createQuestionDeletion = ($deleteBtn) => {
+    const $card = $deleteBtn.closest('[data-query-card]');
+    const $spinner = $card.querySelector('[data-spinner]');
+    $spinner.classList.add('form-block__spinner--show');
+    render.renderQuestionConfirm($spinner);
+  }
   toggleQuery = (option) => {
     if (option.dataset.radio === 'delivery') {
       this.createDeliveryQuery();
@@ -1787,6 +2058,28 @@ class QueryModal extends Modal {
     if (option.dataset.radio === 'production') {
       this.createProductionQuery();
     }
+  }
+
+
+  answerHandler = ($btn) => {
+    if ($btn.dataset.answer === 'true') {
+      this.deleteQueryCard($btn)
+    }
+    if ($btn.dataset.answer === 'false') {
+      this.canselDeleteQueryCard($btn)
+    }
+  }
+
+  deleteQueryCard = ($btn) => {
+    render.delete($btn.closest('[data-query-card]'));
+  }
+
+  canselDeleteQueryCard = ($btn) => {
+    const $card = $btn.closest('[data-query-card]');
+    const $spinner = $card.querySelector('[data-spinner]');
+    render.delete($btn.closest('[data-confirm]'));
+    $spinner.classList.remove('form-block__spinner--show');
+
 
   }
 
@@ -1798,19 +2091,32 @@ class QueryModal extends Modal {
 
   clickHandler = (e) => {
     const $target = e.target
-    //if ($target.closest('[data-submit]')) {
-    //  this.sendForm();
-    //  errorModal.close();
-    //}
     if ($target.hasAttribute('data-close')) {
       this.close();
       errorModal.close();
+    }
+    if ($target.closest('[data-repeat]')) {
+      this.reapitQueryCard($target);
+    }
+    if ($target.closest('[data-select-value]')) {
+      this.updateSelects(e.target);
+    }
+
+    if ($target.closest('[data-add]')) {
+      this.addQueryCard();
+    }
+    if ($target.closest('[data-delete]')) {
+      this.createQuestionDeletion($target)
+    }
+
+    if ($target.closest('[data-answer]')) {
+      this.answerHandler($target);
     }
   }
 
   listeners = () => {
     this.$modal.addEventListener('click', this.clickHandler)
-    this.$modal.addEventListener('change', this.changeHandler)
+    document.addEventListener('change', this.changeHandler)
   }
 }
 
@@ -2775,6 +3081,7 @@ class Dropdown {
     const widthContent = $content.offsetHeight;
     $btn.classList.add('select-arrow-up');
     $body.style.height = widthContent + 'px';
+    $dropdown.classList.add('select--open');
     $dropdown.dataset.dropdown = 'open';
     this.$openedDropdown = $dropdown;
   }
@@ -2786,8 +3093,10 @@ class Dropdown {
     const $btn = this.$openedDropdown.querySelector('[data-dropdown-btn]');
     const $body = this.$openedDropdown.querySelector('[data-dropdown-body]');
     $body.style.height = '0px';
+
     $btn.classList.remove('select-arrow-up');
     this.$openedDropdown.dataset.dropdown = 'close';
+    this.$openedDropdown.classList.remove('select--open');
     this.$openedDropdown = null;
   }
 
@@ -2806,7 +3115,7 @@ class Dropdown {
     }
   }
 
-  setActiveOption = ($dropdown) => {
+  setActiveOptionWithChange = ($dropdown) => {
     const $labelList = $dropdown.querySelectorAll('[data-select-label]');
     $labelList.forEach(($item) => {
       const $input = $item.querySelector('.select__radio');
@@ -2816,16 +3125,42 @@ class Dropdown {
       }
     })
   }
+  setActiveOptionWithClick = ($dropdown, $selectItem) => {
+    const $labelList = $dropdown.querySelectorAll('[data-select-item]');
+    $labelList.forEach(($item) => {
+      $item.classList.remove('select__label--active');
+      if ($item === $selectItem) {
+        $item.classList.add('select__label--active');
+      }
+    })
+  }
+  changeDropdownTitle = ($radio) => {
 
-  setDeliveryCompany = ($radio) => {
     const $dropdown = $radio.closest('[data-dropdown]');
     const $label = $dropdown.querySelector('[data-select-label]');
     //setActiveOption
     const $selectTitle = $dropdown.querySelector('[data-select-title]');
     const value = $radio.value;
     $selectTitle.innerHTML = value;
-    this.setActiveOption($dropdown, $label)
+    this.setActiveOptionWithChange($dropdown, $label)
     this.close();
+  }
+
+  changeSelectTitle = ($selectItem) => {
+    const $dropdown = $selectItem.closest('[data-dropdown]');
+    const $selectTitle = $dropdown.querySelector('[data-select-title]');
+    //const title = $selectItem.dataset.selectItem;
+
+    $selectTitle.innerHTML = this.getTitle($dropdown, $selectItem);;
+    this.setActiveOptionWithClick($dropdown, $selectItem)
+    this.close();
+  }
+
+  getTitle = ($dropdown, $selectItem) => {
+    const titleOne = $dropdown.dataset.select
+    const titleTwo = $selectItem.dataset.selectItem
+    return `${titleOne} ${titleTwo}`
+
   }
 
   clickHandler = (e) => {
@@ -2837,11 +3172,14 @@ class Dropdown {
       const $dropdown = e.target.closest('[data-dropdown]');
       this.toggleDropdown($dropdown)
     }
+    if (e.target.closest('[data-select-item]')) {
+      this.changeSelectTitle(e.target.closest('[data-select-item]'));
+    }
   }
 
   changeHandler = (e) => {
     if (e.target.closest('[data-radio]'))
-      this.setDeliveryCompany(e.target.closest('[data-radio]'));
+      this.changeDropdownTitle(e.target.closest('[data-radio]'));
   }
 
   listeners = () => {

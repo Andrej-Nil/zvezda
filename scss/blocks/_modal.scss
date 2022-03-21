@@ -51,7 +51,9 @@
 //  margin: auto;
 //  background: $white;
 //}
-
+.modal-dynamic__content {
+  min-height: 150px;
+}
 .modal__close {
   position: absolute;
   top: 40px;

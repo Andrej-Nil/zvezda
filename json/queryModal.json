@@ -1,0 +1,118 @@
+{
+	"rez": 1,
+	"resTest" : 0,
+	"desc": "",
+	"error": {
+		"id": 456454,
+		"desc": "Произошла ошибка!"
+	},
+	"children": [
+		{
+			"id": "515461",
+			"slug":"list-latunny", 
+			"title": "Лист латунный", 
+			"show_title": "Перейти в категорию...",
+			"photo_webp": "",
+			"photo": "",
+			"desc": "",
+      "isActive": false,
+			"isSubmenu": false
+		},
+    {
+			"id": "515",
+			"slug":"#!", 
+			"title": "Лист алюминовый", 
+			"show_title": "Перейти в категорию...",
+			"photo_webp": "",
+			"photo": "",
+			"desc": "",
+      "isActive": false,
+			"isSubmenu": false
+		},
+    {
+			"id": "5161",
+			"slug":"#!", 
+			"title": "Лист стальной", 
+			"show_title": "Перейти в категорию...",
+			"photo_webp": "",
+			"photo": "",
+			"desc": "",
+      "isActive": false,
+			"isSubmenu": false
+		},
+    {
+			"id": "554451",
+			"slug":"#!", 
+			"title": "Лист свинцовый", 
+			"show_title": "Перейти в категорию...",
+			"photo_webp": "",
+			"photo": "",
+			"desc": "",
+      "isActive": false,
+			"isSubmenu": false
+		},
+    {
+			"id": "51",
+			"slug":"#!", 
+			"title": "Лист стекляный", 
+			"show_title": "Перейти в категорию...",
+			"photo_webp": "",
+			"photo": "",
+			"desc": "",
+      "isActive": false,
+			"isSubmenu": false
+		},
+    {
+			"id": "5201",
+			"slug":"#!", 
+			"title": "Лист медный", 
+			"show_title": "Перейти в категорию...",
+			"photo_webp": "",
+			"photo": "",
+			"desc": "",
+      "isActive": false,
+			"isSubmenu": false
+		},
+    {
+			"id": "5109861",
+			"slug":"#!", 
+			"title": "Лист цинковый", 
+			"show_title": "Перейти в категорию...",
+			"photo_webp": "",
+			"photo": "",
+			"desc": "",
+      "isActive": false,
+			"isSubmenu": false
+		}
+	],
+
+	"filds" : [
+		{
+			"title": "ширина",
+			"value": [ 
+				"30",
+				"40",
+				"50",
+				"60"
+			]
+		},
+		{
+			"title": "толщина",
+			"value": [
+				"3",
+				"4",
+				"5",
+				"6"
+			]
+		},
+		{
+			"title": "длинна",
+			"value": [
+				"300",
+				"400",
+				"500",
+				"600"
+			]
+		}
+	]
+}

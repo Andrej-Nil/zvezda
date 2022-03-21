@@ -1,9 +1,9 @@
 .form-selects {
-  background: $pearl;
-  padding: 25px 10px;
-  margin-bottom: 20px;
+  display: grid;
+
   @media (min-width: 1050px) {
-    padding: 40px 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 }
 

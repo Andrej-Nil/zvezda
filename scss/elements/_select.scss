@@ -1,6 +1,13 @@
 .select {
   position: relative;
   width: 100%;
+  transition: z-index 0s ease 0.3s;
+  z-index: 150;
+}
+
+.select--open {
+  z-index: 200;
+  transition: z-index 0.3s ease 0s;
 }
 
 .select__title {
@@ -33,6 +40,10 @@
   //}
 }
 
+.select__title--white-bg {
+  background: $white;
+}
+
 .select-arrow-up {
   &::before {
     transform: rotateX(-180deg);
@@ -44,8 +55,7 @@
   width: 100%;
   overflow: hidden;
   height: 0;
-  z-index: 100;
-  transition: 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
 }
 
 .select__list {
