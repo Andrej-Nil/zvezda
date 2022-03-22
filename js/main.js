@@ -43,11 +43,12 @@ class Server {
     this.searchApi = '../json/search.json';
     this.removeProductApi = '../json/removeBasket.json';
     this.menuApi = '../json/sidebar.json';
-    //this.sidebarApi = '/json/sidebar.json';
     this.filterApi = '../json/filter.json';
     this.filterCheckboxApi = '../json/checkbox.json';
     this.catalogApi = '../json/catalog.json';
-    this.queryCardSelect = '../json/queryModal.json'
+    this.queryCardSelectApi = '../json/queryModal.json';
+    this.formApi = '../json/send-form.json';
+    this.formErrorApi = '../json/send-form-error.json';
   }
 
   getMenu = async () => {
@@ -64,7 +65,7 @@ class Server {
       id: id
     }
     const formData = this.createFormData(data);
-    return await this.getResponse(this.POST, formData, this.queryCardSelect);
+    return await this.getResponse(this.POST, formData, this.queryCardSelectApi);
   }
 
   getRegions = async () => {
@@ -128,6 +129,11 @@ class Server {
     const api = $form.action;
     const data = this.getFormData($form);
     return await this.getResponse(this.POST, data, api);
+  }
+
+  postQueryForm = async (formData) => {
+    formData.append('_token', this._token);
+    return await this.getResponse(this.POST, formData, this.formApi);
   }
 
   getFormData = ($form) => {
@@ -252,15 +258,12 @@ class InputFile {
     return fsize
 
   }
-
-
   getInfoFile = () => {
     if (!this.$input.files[0]) {
       return false;
     }
     return this.$input.files[0];
   }
-
   clear = () => {
     this.$label.remove();
     this.$inputFileBlock.insertAdjacentElement('afterbegin', this.$cloneLabel);
@@ -787,9 +790,10 @@ class Render {
                 <input data-input type="file" name="file" class="file__input">
               </span>
               <span class="form-block__file-side">
-                <span class="file__clear-btn mt0" data-clear-file>очистить файл</span>
+                
               </span>
             </label>
+            <span class="file__clear-btn mt0" data-clear-file>очистить файл</span>
           </div>
 
           <label class="modal__input place-entry mb0">
@@ -823,6 +827,8 @@ class Render {
             <span class="place-entry__placeholder">Наименование организации</span>
           </label>
 
+          
+
           <div data-file-block class="modal__file span2 file mb0">
             <label data-file-label class="file__label form-block__file-label">
               <span class="form-block__file-side">
@@ -830,9 +836,10 @@ class Render {
                 <input data-input type="file" name="file" class="file__input">
               </span>
               <span class="form-block__file-side">
-                <span class="file__clear-btn mt0" data-clear-file>очистить файл</span>
+               
               </span>
             </label>
+            <span class=" file__clear-btn mt0" data-clear-file>очистить файл</span>
           </div>
         </div>
       </div>
@@ -1307,8 +1314,98 @@ class QueryForm extends Form {
   }
 
 
-  listeners = () => {
+  queryFormSubmit = () => {
+    const rez = this.formCheck();
+    if (rez) {
+      this.sendQueryForm();
+    } else {
+      return;
+    }
+  }
 
+  getQueryCardInfo = () => {
+    const $queryCardList = this.$form.querySelectorAll('[data-query-card]');
+    const cardData = [];
+    $queryCardList.forEach(($card) => {
+      const $categoryWrap = $card.querySelector('[data-type-category]');
+      const $propertyWrap = $card.querySelector('[data-type-property');
+
+      cardData.push({
+        id: this.getId($categoryWrap),
+        props: this.getProps($propertyWrap)
+      })
+    })
+
+    return cardData
+  }
+
+  getId = ($categoryWrap) => {
+    if (!$categoryWrap) {
+      return
+    }
+    const $selectedOptions = $categoryWrap.querySelectorAll('.select__label--active');
+    if (!$selectedOptions.length) {
+      return;
+    }
+    return $selectedOptions[$selectedOptions.length - 1].dataset.id;
+  }
+
+  getProps = ($propertyWrap) => {
+    if (!$propertyWrap) {
+      return
+    }
+    const $selectedOptions = $propertyWrap.querySelectorAll('.select__label--active')
+    const props = [];
+    $selectedOptions.forEach(($option) => {
+      const property = $option.closest('[data-select]').dataset.select;
+      const value = $option.dataset.selectItem;
+      const str = `${property} ${value}`
+      props.push(str);
+    })
+
+    return props;
+  }
+
+  getFormData = () => {
+    const queryCardInfo = this.getQueryCardInfo();
+    const queryList = JSON.stringify(queryCardInfo);
+    const formData = new FormData(this.$form);
+    formData.append('queryList', queryList);
+    return formData;
+  }
+
+  clearQueryForm = () => {
+    const $prodList = this.$form.querySelector('[data-prod-list]');
+    if ($prodList) {
+      render.clearParent($prodList);
+    }
+    this.clearForm();
+  }
+
+  sendQueryForm = async () => {
+    const formData = this.getFormData();
+    const response = await server.postQueryForm(formData);
+    if (response.rez == 0) {
+      console.log(`Ошибка: ${response.error.id}`);
+      succsesModal.close()
+      errorModal.showError(response.error.desc);
+    }
+    if (response.rez == 1) {
+      queryModal.close();
+      errorModal.close();
+      setTimeout(() => {
+        this.clearQueryForm();
+        succsesModal.showSuccses(response.desc);
+      }, 300)
+
+
+
+    }
+
+  }
+
+  listeners = () => {
+    this.$form.addEventListener('submit', this.queryFormSubmit)
   }
 }
 
@@ -1926,6 +2023,7 @@ class QueryModal extends Modal {
     this.$formFooter.classList.remove('form-block__footer--hide');
     this.dynamicRender.renderProductionQuery();
     this.dynamicFooterRender.clearParent();
+    this.defineFile();
   }
 
   createDeliveryQuery = () => {
@@ -1933,10 +2031,15 @@ class QueryModal extends Modal {
     this.dynamicRender.renderDeliveryQuery();
     this.dynamicFooterRender.renderFooterDeliveryQuery();
     this.$queryItemList = this.$modal.querySelector('[data-prod-list]');
+    this.defineFile();
     this.addQueryCard();
 
   }
 
+  defineFile = () => {
+    this.form.$inputFileBlock = this.$modal.querySelector('[data-file-block]');
+    this.form.defineInputFileClass()
+  }
   addQueryCard = async () => {
     render.renderQueryItem(this.$queryItemList, this.key);
     const $card = this.$queryItemList.querySelector(`[data-query-card="${this.key}"`);
@@ -2020,7 +2123,7 @@ class QueryModal extends Modal {
         titleGroup: "Характеристики:",
         type: "property"
       }
-      const $propsGroup = this.$modal.querySelector('[data-type-property]');
+      const $propsGroup = $cardContent.querySelector('[data-type-property]');
       render.delete($propsGroup);
       render.renderSelectGroup($cardContent, data);
     }
