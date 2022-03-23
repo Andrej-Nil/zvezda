@@ -8605,13 +8605,14 @@ body {
 }
 
 .header-modal__inner {
+  position: relative;
   background: #444a52;
   padding: 100px 0 40px;
 }
 
 @media (min-width: 1280px) {
   .header-modal__inner {
-    padding: 40px 0;
+    padding: 60px 0;
   }
 }
 
@@ -8889,7 +8890,9 @@ body {
 
 @media (min-width: 1280px) {
   .mobile-menu__close {
-    display: none;
+    width: 35px;
+    height: 35px;
+    top: 10px;
   }
 }
 

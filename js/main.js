@@ -1398,8 +1398,6 @@ class QueryForm extends Form {
         succsesModal.showSuccses(response.desc);
       }, 300)
 
-
-
     }
 
   }
@@ -1428,12 +1426,27 @@ class HeaderModal {
 
 
   open = () => {
+    this.closeOtherOpenModals();
     this.$modal.classList.add('header-modal--show');
     this.$target.classList.add('header-nav__item--action');
   }
   close = () => {
     this.$modal.classList.remove('header-modal--show');
     this.$target.classList.remove('header-nav__item--action');
+  }
+
+  closeOtherOpenModals = () => {
+    const $opensModals = document.querySelectorAll('.header-modal--show');
+    const $activeTabs = document.querySelectorAll('.header-nav__item--action');
+    $opensModals.forEach(($modal) => {
+      $modal.classList.remove('header-modal--show');
+    })
+
+    $activeTabs.forEach(($tab) => {
+      $tab.classList.remove('header-nav__item--action');
+    })
+
+
   }
 
   targetParentLeaveHandler = (e) => {
@@ -1450,14 +1463,20 @@ class HeaderModal {
       this.close();
     }
   }
+
+  clickHandler = (e) => {
+    if (e.target.closest('[data-close]')) {
+      this.close()
+    }
+  }
   listener = () => {
     this.$target.addEventListener('mouseover', this.open);
-    this.$modalInner.addEventListener('mouseleave', this.modalLeaveHandler);
-    this.$targetParent.addEventListener('mouseleave', this.targetParentLeaveHandler);
+    this.$modal.addEventListener('click', this.clickHandler);
+    //this.$modalInner.addEventListener('mouseleave', this.modalLeaveHandler);
+    //this.$targetParent.addEventListener('mouseleave', this.targetParentLeaveHandler);
   }
 
 }
-
 class CatalogModal extends HeaderModal {
   constructor(modalId) {
     super(modalId)
@@ -1608,9 +1627,6 @@ class CityModal extends HeaderModal {
     if (e.target.closest('[data-area-btn]')) {
       this.$btn = e.target.closest('[data-area-btn]');
       this.toggleAreaList();
-    }
-    if (e.target.closest('[data-close]')) {
-      this.close()
     }
   }
 

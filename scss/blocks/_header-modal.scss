@@ -29,10 +29,11 @@
 }
 
 .header-modal__inner {
+  position: relative;
   background: $blackMain;
   padding: 100px 0 40px;
   @media (min-width: 1280px) {
-    padding: 40px 0;
+    padding: 60px 0;
   }
 }
 

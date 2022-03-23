@@ -23,7 +23,9 @@
     transform: translate(-50%, -50%);
   }
   @media (min-width: 1280px) {
-    display: none;
+    width: 35px;
+    height: 35px;
+    top: 10px;
   }
 }
 
