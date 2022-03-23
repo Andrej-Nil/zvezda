@@ -3891,6 +3891,7 @@ class AboutMap {
       this.baseSettingsMap,
       this.zoneMap
     );
+
     this.map.behaviors.disable('scrollZoom');
     this.map.panes.append('greyBackground', this.getBgColor());
     this.map.geoObjects.add(await this.getCountryArea('RU', '#3b3f45', '#212f41'));
@@ -4019,26 +4020,55 @@ class ContactMap {
   }
 
   init = () => {
-
+    if (!this.$map) {
+      return;
+    }
+    this.currentCityCoords = this.$map.dataset.coord.split(',');
+    this.map = null;
+    this.response = null;
+    this.baseSettingsMap = {
+      center: this.currentCityCoords,
+      zoom: 16,
+      controls: ['zoomControl'],
+    }
+    this.zoneMap = {
+      restrictMapArea: [
+        [80, 0],
+        [20, 220]
+      ],
+    }
     this.createMap();
-
   }
 
   createMap = () => {
-    this.map = new google.maps.Map(this.$map, {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 8,
-    });
-
+    ymaps.ready(this.initMap);
   }
 
   initMap = () => {
-    //this.map = new ymaps.Map(
-    //  this.mapId,
-    //  this.baseSettingsMap,
-    //);
+    this.map = new ymaps.Map(
+      this.mapId,
+      this.baseSettingsMap,
+    );
+
+    this.map.geoObjects.add(this.getMark())
   }
 
+  getMark = () => {
+    const markHtml = ymaps.templateLayoutFactory.createClass(
+      '<span class="map__mark"></span>'
+    )
+
+    return new ymaps.Placemark(this.currentCityCoords, {
+      hintContent: 'Звезда',
+      balloonContent: 'Звезда',
+    }, {
+      iconLayout: 'default#imageWithContent',
+      iconImageHref: '../img/star.svg',
+      iconImageSize: [0, 0],
+      iconImageOffset: [-30, -30],
+      iconContentLayout: markHtml
+    });
+  }
 
 }
 
@@ -4273,7 +4303,7 @@ const filterForm = new FilterForm('#filterForm');
 const priceRange = new PriceRange();
 const about = new About('#about');
 const aboutMap = new AboutMap('aboutMap');
-//const contactMap = new ContactMap('contactMap');
+const contactMap = new ContactMap('contactMap');
 const description = new Description('#description');
 const linkNavigation = new LinkNavigation('#linkNavigation');
 const productionsPage = new ProductionsPage();

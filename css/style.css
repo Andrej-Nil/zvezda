@@ -7631,6 +7631,7 @@ body {
 }
 
 .map {
+  position: relative;
   max-height: 600px;
   height: 600px;
   width: 100%;
@@ -7638,8 +7639,34 @@ body {
 }
 
 .map__stopper {
+  position: absolute;
+  top: 0;
+  left: 0;
   margin: 0 auto;
   width: 100%;
+}
+
+.map__mark {
+  position: relative;
+  border-radius: 50%;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: #444a52;
+}
+
+.map__mark::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -40%);
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/star.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .about {
