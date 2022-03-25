@@ -374,14 +374,10 @@ class Render {
     //this.spinnerText = '';
   }
 
-
-
   //Методы отресовки элементов
   renderSpiner = (spinnerText = '', $parent = this.$parent) => {
     this._render($parent, this.getSpinnerHtml, spinnerText);
   }
-
-
 
   renderErrorMessage = (messageText = '', $parent = this.$parent) => {
     this._render($parent, this.getErrorMessageHtml, messageText);
@@ -391,7 +387,6 @@ class Render {
 
     this._render($parent, this.getErrorForQueryModal, messageText);
   }
-
 
   renderCatalogList = (catalogList) => {
     this._render(this.$parent, this.getModalCatalogHtml, catalogList);
@@ -468,7 +463,6 @@ class Render {
     this._render(this.$parent, this.getFooterDeliveryQueryHtml);
   }
 
-
   renderQueryItem = ($parent, id) => {
 
     this._render($parent, this.getQueryItemHtml, id);
@@ -535,6 +529,7 @@ class Render {
     </ul>
    `)
   }
+
   getSubcatalogListHtml = (li) => {
     let ul = ''
     if (li.isSubmenu) {
@@ -550,6 +545,7 @@ class Render {
       </li>
     `)
   }
+
   getSearchResultAllWrapHtml = () => {
     return (/*html*/`
     <div data-result-all class="result__all">
@@ -690,6 +686,7 @@ class Render {
   getErrorMessageHtml = (text = '') => {
     return `<p data-error-message class="error-message">${text}</p>`;
   }
+
   getSpinnerHtml = (text = '') => {
     const spinnerText = `<p class="spinner__text">${text}</p>`
     return (/*html*/`
@@ -711,6 +708,7 @@ class Render {
       ${regeonListHtml}
     </div>`)
   }
+
   getCityListHtml = (cityList) => {
     const cityListHtml = this.getListHtml(this.getAreaItemHtml, cityList)
     return (/*html*/`
@@ -744,6 +742,7 @@ class Render {
       </ul>
     </div>`)
   }
+
   getAreaHtml = (area) => {
     const cityList = this.getListHtml(this.getAreaItemHtml, area.parent);
     return (/*html*/`
@@ -761,6 +760,7 @@ class Render {
     </li>
     `)
   }
+
   getAreaItemHtml = (city) => {
     return (/*html*/`
     <li class="area__item">
@@ -770,6 +770,7 @@ class Render {
       </li>
     `)
   }
+
   getProductionQueryHtml = () => {
     return (/*html*/`
       <div class="form-block">
@@ -805,6 +806,7 @@ class Render {
     </div>
     `)
   }
+
   getDeliveryQueryHtml = () => {
     return (/*html*/`
     <div data-block-query class="form-block">
@@ -814,6 +816,7 @@ class Render {
     </div>
     `)
   }
+
   getFooterDeliveryQueryHtml = () => {
     return (/*html*/`
     <span data-add class="form-block__add">Добавить позицию +</span>
@@ -845,6 +848,7 @@ class Render {
       </div>
     `)
   }
+
   getInfoModalErrorHtml = (errorMessage) => {
     const errorMsg = 'Произошла ошибка, попробуйте позже.';
     const message = errorMessage ? errorMessage : errorMsg
@@ -853,6 +857,7 @@ class Render {
       <p class="info-modal__subtext white-color">Вы можете с вязаться с нами по телефону <a href="tel:+78987775544" class="info-modal__link white-color">+7 898 777 55 44</a> или написат нам на почту <a href="mailto:info@ntmk.ru" class="info-modal__link white-color">info@ntmk.ru</a></p>
     `)
   }
+
   getInfoModalSuccsesHtml = (message) => {
     const text = 'Успешная отправка!'
     const desc = message ? message : text
@@ -861,6 +866,7 @@ class Render {
       <p class="info-modal__subtext">Если у вас появились вопросы вы можете связаться с  нами по телефону <a href="tel:+78987775544" class="info-modal__link">+7 898 777 55 44</a> или написат нам на почту <a href="mailto:info@ntmk.ru" class="info-modal__link">info@ntmk.ru</a></p>
     `)
   }
+
   getInfoModalConfirmationHtml = (message) => {
     return ( /*html*/`
     <p class="info-modal__text white-color">${message}</p>
@@ -870,6 +876,7 @@ class Render {
     </div>
     `)
   }
+
   getQueryItemHtml = (id) => {
     return (/*html*/ `
     <div data-query-card="${id}" class="form-query-card">
@@ -882,6 +889,7 @@ class Render {
     </div>
     `)
   }
+
   getSelectGroupHtml = (data) => {
     const selectMark = this.getSelectsHtml(data);
     return (/*html*/ `
@@ -893,6 +901,7 @@ class Render {
     </div>
     `)
   }
+
   getSelectsHtml = (data) => {
     if (data.type === 'category') {
       return this.getSelectHtml(data);
@@ -903,9 +912,11 @@ class Render {
     }
 
   }
+
   getSelectPropsListHtml = (data) => {
     return this.getListHtml(this.getSelectPropsHtml, data.value)
   }
+
   getSelectPropsHtml = (data) => {
     const itemListMark = this.getListHtml(this.getSelectPropsItemHtml, data.value)
     return (/*html*/`
@@ -921,6 +932,7 @@ class Render {
     </div>
     `)
   }
+
   getErrorForQueryModal = (messageText) => {
     return (/*html*/`
     <div class="form-block__error">
@@ -930,6 +942,7 @@ class Render {
       
     `)
   }
+
   getSelectHtml = (data) => {
     //itemListMark
     const itemListMark = this.getListHtml(this.getSelectProdItemHtml, data.value);
@@ -946,6 +959,7 @@ class Render {
     </div>
     `)
   }
+
   getSelectProdItemHtml = (item) => {
     return (/*html*/ `
       <li class="select__item">
@@ -957,6 +971,7 @@ class Render {
       </li>
     `);
   }
+
   getSelectPropsItemHtml = (title) => {
     return (/*html*/ `
     <li class="select__item">
@@ -984,6 +999,7 @@ class Render {
     </div>
     `)
   }
+
   getListHtml = (getHtmlFn, arr) => {
     let list = '';
     arr.forEach((item) => {
@@ -3390,7 +3406,6 @@ class Filters {
   findProps = ($propsList, value) => {
     $propsList.forEach(($item) => {
       const propsValue = $item.dataset.filterItem.trim().toLowerCase();
-      console.log(value, propsValue)
       if (propsValue.includes(value)) {
         this.showProperty($item);
 
@@ -3556,10 +3571,12 @@ class PriceRange {
     this.$leftSlide = this.$priceRange.querySelector('#leftSlide');
     this.$rightSlide = this.$priceRange.querySelector('#rightSlide');
 
-    this.$inputMin = this.$priceRange.querySelector('[name="min"]');
-    this.$inputMax = this.$priceRange.querySelector('[name="max"]');
+    this.$inputMin = this.$priceRange.querySelector('[data-type="min"]');
+    this.$inputMax = this.$priceRange.querySelector('[data-type="max"]');
 
     this.rangeBgCoord = this.$rangeBg.getBoundingClientRect();
+
+    this.areaRangeCoord = this.$areaRange.getBoundingClientRect();
 
     this.shiftLeftSlide = 0;
     this.coordLeftSlide = this.$leftSlide.getBoundingClientRect();
@@ -3569,7 +3586,11 @@ class PriceRange {
 
     this.widthSlide = this.$leftSlide.offsetWidth;
     this.halfWidthSlide = this.widthSlide / 2;
-    this.listeners()
+    this.maxValue = +this.$priceRange.dataset.maxPrice;
+    this.activeAreaRangeWidth = this.getActiveAreaRangeWidth();
+    this.listeners();
+    this.changeMinValue();
+    this.changeMaxValue();
   }
 
 
@@ -3580,14 +3601,16 @@ class PriceRange {
     this.shiftLeftSlide = e.clientX - this.rangeBgCoord.x - this.halfWidthSlide;
     this.changePosLeftSlide(e);
     document.addEventListener('mousemove', this.leftSlideMove);
+
+
   }
 
   leftSlideMove = (e) => {
     this.shiftLeftSlide = e.clientX - this.rangeBgCoord.x - this.halfWidthSlide;
-    this.updateCoords()
+    //this.updateCoords();
     this.changePosLeftSlide(e);
+    this.setNewMinValue();
   }
-
 
   leftSlideEndMove = () => {
     document.removeEventListener('mousemove', this.leftSlideMove);
@@ -3600,21 +3623,58 @@ class PriceRange {
     if (e.clientX + this.halfWidthSlide > this.coordRightSlide.x) {
       this.shiftLeftSlide = this.getRightStopPoint()
     }
-    this.$leftSlide.style.left = this.shiftLeftSlide + 'px';
-    this.$areaRange.style.marginLeft = this.shiftLeftSlide + 'px';
+    this.setShifhLeft()
 
+  }
+
+  setNewMinValue = () => {
+    const progress = this.getMoveProgressLeftSlide();
+    console.log()
+    const minValue = this.getMinValue(progress);
+    this.setMinValue(minValue);
+
+  }
+
+  getMoveProgressLeftSlide = () => {
+    this.coordLeftSlide = this.$leftSlide.getBoundingClientRect();
+    const positionSlide = this.coordLeftSlide.right - this.areaRangeCoord.x - this.widthSlide;
+    return (positionSlide / this.activeAreaRangeWidth * 100).toFixed(2);
+  }
+
+  getMinValue = (progress) => {
+    if (isNaN(progress)) {
+      return 0
+    }
+    return (this.maxValue / 100 * progress).toFixed(0);
+  }
+
+  setMinValue = (value) => {
+    if (value == 0) {
+      this.$inputMin.value = '';
+    } else if (value > this.maxValue) {
+      this.$inputMin.value = this.maxValue.toLocaleString();
+    } else {
+      this.$inputMin.value = (+value).toLocaleString();
+    }
   }
 
   // правый слайд
 
   rightSlideStartMove = (e) => {
+
     e.preventDefault();
     this.updateCoords();
 
     this.shiftRightSlide = this.rangeBgCoord.right - e.clientX - this.halfWidthSlide;
-    //this.shiftLeftSlide = e.clientX - this.rangeBgCoord.x - this.halfWidthSlide;
     this.changePosRightSlide(e);
     document.addEventListener('mousemove', this.rightSlideMove);
+  }
+
+  rightSlideMove = (e) => {
+    this.shiftRightSlide = this.rangeBgCoord.right - e.clientX - this.halfWidthSlide;
+    //this.updateCoords();
+    this.changePosRightSlide(e);
+    this.setNewMaxValue();
   }
 
   changePosRightSlide = (e) => {
@@ -3624,53 +3684,50 @@ class PriceRange {
 
     if (this.coordLeftSlide.right >= e.clientX - this.halfWidthSlide) {
       this.shiftRightSlide = this.getLeftStopPoint();
-      console.log(this.coordLeftSlide.right, e.clientX - this.halfWidthSlide)
     }
-
-    //console.log(this.coordLeftSlide.right);
-    //console.log(this.coordRightSlide.x);
-
-    //if (e.clientX + this.halfWidthSlide > this.coordRightSlide.x) {
-    //  this.shiftLeftSlide = this.getRightStopPoint()
-    //}
-
-
-
     this.$rightSlide.style.right = this.shiftRightSlide + 'px';
     this.$areaRange.style.marginRight = this.shiftRightSlide + 'px';
-
-
-
-    //if (this.shiftRightSlide <= 0) {
-    //  this.shiftRightSlide = 0;
-    //}
-    //if (e.clientX + this.halfWidthSlide > this.coordRightSlide.x) {
-    //  this.shiftRightSlide = this.getRightStopPoint()
-    //}
-    //this.$leftSlide.style.left = this.shiftLeftSlide + 'px';
-    //this.$areaRange.style.marginLeft = this.shiftLeftSlide + 'px';
-
-  }
-
-  rightSlideMove = (e) => {
-    this.shiftRightSlide = this.rangeBgCoord.right - e.clientX - this.halfWidthSlide;
-    this.updateCoords()
-    this.changePosRightSlide(e);
   }
 
   rightSlideEndMove = () => {
     document.removeEventListener('mousemove', this.rightSlideMove);
   }
 
+  setNewMaxValue = () => {
+    const progress = this.getMoveProgressRightSlide();
+    const maxValue = this.getMaxValue(progress);
+    this.setMaxValue(maxValue);
 
-  //getShift = (mouseCoordX) => {
-  //  return mouseCoordX - this.rangeBgCoord.x;
-  //}
+  }
+
+  getMoveProgressRightSlide = () => {
+    this.coordRightSlide = this.$rightSlide.getBoundingClientRect();
+    const positionSlide = this.coordRightSlide.x - this.areaRangeCoord.x - this.widthSlide;
+    return +(positionSlide / this.activeAreaRangeWidth * 100).toFixed(2);
+  }
+
+  getMaxValue = (progress) => {
+    if (progress >= 100) {
+      return 100;
+    }
+    return (this.maxValue / 100 * progress).toFixed(0);
+  }
+
+  setMaxValue = (value) => {
+    if (value == 100) {
+      this.$inputMax.value = this.maxValue;
+    } else {
+      this.$inputMax.value = (+value).toLocaleString();
+    }
+  }
+
+
 
   updateCoords = () => {
     this.coordLeftSlide = this.$leftSlide.getBoundingClientRect();
     this.coordRightSlide = this.$rightSlide.getBoundingClientRect();
     this.rangeBgCoord = this.$rangeBg.getBoundingClientRect();
+    this.areaRangeCoord = this.$areaRange.getBoundingClientRect();
   }
 
   getRightStopPoint = () => {
@@ -3679,12 +3736,115 @@ class PriceRange {
   }
 
   getLeftStopPoint = () => {
-    console.log(this.rangeBgCoord.right - this.coordLeftSlide.right - this.widthSlide)
-    return this.rangeBgCoord.right - this.coordLeftSlide.right - this.widthSlide
+    return this.rangeBgCoord.right - this.coordLeftSlide.right - this.widthSlide;
+  }
 
-    //console.log(, )
-    //return this.coordRightSlide.x -
-    //  this.rangeBgCoord.x - this.widthSlide;
+  getActiveAreaRangeWidth = () => {
+    return this.$areaRange.offsetWidth - (this.widthSlide * 2);
+  }
+
+  //изменение значений в инпутах
+
+  changeMinValue = () => {
+    const minValue = this.preparingVerification(this.$inputMin.value);
+    const maxValue = this.preparingVerification(this.$inputMax.value);
+    const readyValue = this.checkMinValueLimit(minValue, maxValue);
+    this.changeShiftLeftSlide(readyValue);
+    this.setInputValue(this.$inputMin, readyValue);
+  }
+
+  changeMaxValue = () => {
+    const minValue = this.preparingVerification(this.$inputMin.value);
+    const maxValue = this.preparingVerification(this.$inputMax.value);
+    const readyValue = this.checkMaxValueLimit(minValue, maxValue);
+    this.changeShiftRightSlide(readyValue);
+    this.setInputValue(this.$inputMax, readyValue);
+  }
+
+  deleteSpace = (value) => {
+    return value.replace(/\s/g, '')
+  }
+
+  leadToNumber = (value) => {
+    value = parseInt(value);
+
+    if (isNaN(value)) {
+      return '';
+    }
+    return value;
+  }
+
+  checkMinValueLimit = (min, max) => {
+    if (max == '') {
+      max = this.maxValue;
+    }
+
+    if (min < 0) {
+      return 0;
+    } else if (min > max) {
+      return max;
+    } else {
+      return min;
+    }
+  }
+
+  checkMaxValueLimit = (min, max) => {
+    if (min == '') {
+      min = 0;
+    }
+
+    if (max > this.maxValue) {
+      return this.maxValue;
+    } else if (max < min) {
+      return min;
+    } else {
+      return max;
+    }
+
+  }
+
+  preparingVerification = (value) => {
+    value = this.deleteSpace(value);
+    value = this.leadToNumber(value);
+    return value
+  }
+
+  setInputValue = ($input, value) => {
+    $input.value = value.toLocaleString();
+  }
+
+  changeShiftLeftSlide = (value) => {
+
+    const percentOfTotalProce = (value / this.maxValue * 100).toFixed(2);
+    this.shiftLeftSlide = (this.activeAreaRangeWidth / 100 * +percentOfTotalProce).toFixed(0)
+    this.setShifhLeft()
+  }
+
+  changeShiftRightSlide = (value) => {
+    const percentOfTotalProce = 100 - (value / this.maxValue * 100).toFixed(2);
+    this.shiftRightSlide = (this.activeAreaRangeWidth / 100 * +percentOfTotalProce).toFixed(0);
+    this.setShifhRight();
+  }
+
+  setShifhLeft = () => {
+    this.$leftSlide.style.left = this.shiftLeftSlide + 'px';
+    this.$areaRange.style.marginLeft = this.shiftLeftSlide + 'px';
+  }
+
+  setShifhRight = () => {
+    this.$rightSlide.style.right = this.shiftRightSlide + 'px';
+    this.$areaRange.style.marginRight = this.shiftRightSlide + 'px';
+  }
+
+  changeHandler = (e) => {
+
+    if (e.target.closest('[data-type="min"]')) {
+      this.changeMinValue()
+    }
+
+    if (e.target.closest('[data-type="max"]')) {
+      this.changeMaxValue(e.target)
+    }
   }
 
   listeners = () => {
@@ -3692,6 +3852,10 @@ class PriceRange {
     document.addEventListener('mouseup', this.leftSlideEndMove);
     this.$rightSlide.addEventListener('mousedown', this.rightSlideStartMove);
     document.addEventListener('mouseup', this.rightSlideEndMove);
+    this.$priceRange.addEventListener('input', this.changeHandler);
+    window.addEventListener('resize', () => {
+      this.updateCoords();
+    })
   }
 }
 

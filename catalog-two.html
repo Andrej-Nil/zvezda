@@ -289,12 +289,13 @@
 
                       </div>
                       <div data-filter-body class="dropdown__body">
-                        <div id="priceRange" data-filter-content class="filter__price">
+                        <div id="priceRange" data-filter-content data-max-price="281000" class="filter__price">
 
                           <div class="filter__inputs">
 
-                            <input type="number" class="filter__input" name="min" placeholder="от 0" value="">
-                            <input type="number" class="filter__input" name="max" placeholder="до 281 000" value="">
+                            <input type="text" class="filter__input" placeholder="от 0" data-type="min" value="">
+                            <input type="text" class="filter__input" placeholder="до 281 000" data-type="max"
+                              value="281 000">
                           </div>
 
                           <div id="range" class="range">

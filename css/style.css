@@ -6706,12 +6706,13 @@ body {
 .range__slide {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   display: block;
   height: 20px;
   width: 20px;
   z-index: 10;
-  border: 1px solid #000;
   background: #fba50d;
+  border-radius: 50%;
   cursor: pointer;
 }
 
