@@ -1,17 +1,25 @@
 .review-card {
   min-width: 100%;
   background: $pearl;
-  min-height: 387px;
-  padding: 30px 20px;
-  margin-right: 20px;
+  margin: 0 0 30px 0;
+  padding: 30px 10px;
   @media (min-width: 800px) {
+    padding: 20px 50px 50px;
+  }
+}
+
+.review-card--slide {
+  padding: 30px 10px;
+  min-height: 387px;
+  margin: 0 20px 0 0;
+  @media (min-width: 800px) {
+    padding: 30px 20px;
     min-width: 49%;
   }
   @media (min-width: 1310px) {
     min-width: 630px;
 
     padding: 50px;
-    margin-right: 20px;
   }
 }
 
@@ -34,6 +42,12 @@
 .review-card__img--severstal {
   &::before {
     @include font-icon-style("\e921", 45px);
+  }
+}
+
+.review-card__img--nlmk {
+  &::before {
+    @include font-icon-style("\e904", 60px);
   }
 }
 

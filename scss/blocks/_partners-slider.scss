@@ -36,125 +36,45 @@
 }
 
 .partners-slider__item {
+  position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   min-width: 160px;
-
-  //height: 95px;
+  height: 100%;
   cursor: pointer;
-  &:hover .partners-slider__icon {
-    color: $yellowMain;
+  &:hover .partners-slider__icon--hover {
+    opacity: 1;
   }
   @media (min-width: 1310px) {
     min-width: 234px;
-    height: 95px;
-  }
-}
-
-.partners-slider__item.active .partners-slider__icon {
-  color: $white;
-  cursor: default;
-  &:hover {
-    color: $white;
   }
 }
 
 .partners-slider__icon {
   position: relative;
+  max-width: 160px;
   height: 100%;
-
+  opacity: 0.3;
   color: #898989;
   transition: 0.3s ease-in-out;
-  &::before {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
   @media (min-width: 1310px) {
-    min-width: 234px;
-    &::before {
-      position: absolute;
-      bottom: auto;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+    max-width: 200px;
   }
 }
 
-.icon-gasprom {
-  &::before {
-    @include font-icon-style("\e906", 48px);
-  }
-  @media (min-width: 1310px) {
-    &::before {
-      @include font-icon-style("\e906", 60px);
-    }
-  }
+.partners-slider__icon--hover {
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  opacity: 0;
 }
 
-.icon-sibur {
-  &::before {
-    @include font-icon-style("\e901", 20px);
-  }
-  @media (min-width: 1310px) {
-    &::before {
-      @include font-icon-style("\e901", 30px);
-    }
-  }
+.partners-slider__item.active .partners-slider__icon {
+  opacity: 1;
 }
 
-.icon-luk {
-  &::before {
-    @include font-icon-style("\e905", 40px);
-  }
-  @media (min-width: 1310px) {
-    &::before {
-      @include font-icon-style("\e905", 55px);
-    }
-  }
-}
-
-.icon-sng {
-  &::before {
-    @include font-icon-style("\e900", 45px);
-  }
-  @media (min-width: 1310px) {
-    &::before {
-      @include font-icon-style("\e900", 65px);
-    }
-  }
-}
-
-.icon-nlmk {
-  &::before {
-    @include font-icon-style("\e904", 50px);
-  }
-
-  @media (min-width: 1310px) {
-    &::before {
-      @include font-icon-style("\e904", 65px);
-    }
-  }
-}
-
-.icon-rosatom {
-  &::before {
-    @include font-icon-style("\e902", 30px);
-  }
-}
-
-.icon-rd {
-  &::before {
-    @include font-icon-style("\e903", 30px);
-  }
-  @media (min-width: 1310px) {
-    &::before {
-      @include font-icon-style("\e903", 45px);
-    }
-  }
+.partners-slider__item.active .partners-slider__icon--hover {
+  opacity: 0;
 }
 
 .partners-slider__control {
