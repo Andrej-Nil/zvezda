@@ -4150,9 +4150,6 @@ class AboutMap {
       },
       options
     );
-    //mark.events.add('click', function (e) {
-    //  location = e.get('target').options.get('href');
-    //});
     return mark;
   }
 
@@ -4228,15 +4225,16 @@ class ContactMap {
     this.map = new ymaps.Map(
       this.mapId,
       this.baseSettingsMap,
-    );
 
-    this.map.geoObjects.add(this.getMark())
+    );
+    this.map.behaviors.disable('scrollZoom');
+    this.map.geoObjects.add(this.getMark());
   }
 
   getMark = () => {
     const markHtml = ymaps.templateLayoutFactory.createClass(
       '<span class="map__mark"></span>'
-    )
+    );
 
     return new ymaps.Placemark(this.currentCityCoords, {
       hintContent: 'Звезда',

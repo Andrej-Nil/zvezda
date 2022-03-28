@@ -29,13 +29,16 @@
 }
 
 .about-company__text-wrap {
-  height: 110px;
+  height: 107px;
   overflow: hidden;
   transition: 0.5s ease-in-out;
 }
 
 .about-company__text {
-  padding: 30px 40px;
+  padding: 15px 15px;
+  @media (min-width: 1050px) {
+    padding: 30px 40px;
+  }
 }
 
 .about-company__blink {

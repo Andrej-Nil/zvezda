@@ -1,8 +1,10 @@
 .branches-map {
   position: relative;
   padding: 0 15px 0;
-  min-height: 727px;
-  height: 100vh;
+  min-height: 500px;
+  @media (min-width: 1050px) {
+    height: 100vh;
+  }
   @media (min-width: 1280px) {
     padding: 0 0;
   }

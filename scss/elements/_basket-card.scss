@@ -86,9 +86,14 @@
 
 .basket-card__link {
   color: $blackMain;
-  font-size: 20px;
-  line-height: 27px;
+  font-size: 16px;
+  line-height: 22px;
   transition: 0.2s ease-in-out;
+
+  @media (min-width: 1050px) {
+    font-size: 20px;
+    line-height: 27px;
+  }
 
   &:hover {
     color: $yellowMain;

@@ -32,19 +32,27 @@
 }
 
 .info-modal__text {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 
   color: $black;
   text-align: center;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 33px;
+  @media (min-width: 1050px) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 }
 
 .info-modal__subtext {
   text-align: center;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 25px;
+  @media (min-width: 1050px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 
 .info-modal__link {

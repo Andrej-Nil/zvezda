@@ -3,13 +3,14 @@
   flex-direction: column;
   border: 1px solid $line;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
   transition: 0.2s ease-in-out;
   &:hover {
     border: 1px solid $yellowMain;
   }
   @media (min-width: 768px) {
     //padding: 0 48px 0 20px;
+    padding: 20px;
     align-items: center;
     flex-direction: row;
     height: 124px;
