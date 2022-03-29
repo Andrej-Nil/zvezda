@@ -3469,7 +3469,8 @@ class FilterForm {
     if (!this.$form) {
       return;
     }
-
+    this.$searchMobile = document.querySelector('#searchProductMobile');
+    this.$footer = document.querySelector('footer');
     this.$inputsSearchList = this.$form.querySelectorAll('[data-search-input]');
     this.$filters = this.$form.querySelector('#filters');
     this.$filtersWrap = this.$form.querySelector('#filtersWrap');
@@ -3542,6 +3543,25 @@ class FilterForm {
     }
   }
 
+  showSearchMobile = () => {
+    this.$searchMobile.classList.add('search-product-mobile--show');
+  }
+
+  hideSearchMobile = () => {
+    this.$searchMobile.classList.remove('search-product-mobile--show');
+  }
+
+  toggleSearchMobile = () => {
+    const footerCoords = this.$footer.getBoundingClientRect()
+    const searchMobilecoords = this.$searchMobile.getBoundingClientRect()
+
+    if (pageYOffset > 200 && footerCoords.top > searchMobilecoords.top) {
+      this.showSearchMobile();
+    } else {
+      this.hideSearchMobile();
+    }
+  }
+
   inputHandler = (e) => {
     if (e.target.closest('[data-search-input]')) {
       this.changeSearchInputValue(e.target);
@@ -3549,10 +3569,20 @@ class FilterForm {
 
   }
 
+  scrollHandler = () => {
+
+    if (this.$searchMobile) {
+      this.toggleSearchMobile();
+    }
+  }
+
+
   listeners = () => {
     this.$form.addEventListener('click', this.clickHandler);
     this.$form.addEventListener('change', this.changeHandler);
     this.$form.addEventListener('input', this.inputHandler);
+    window.addEventListener('scroll', this.scrollHandler);
+
   }
 }
 
