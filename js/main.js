@@ -3334,8 +3334,8 @@ class Filters {
       return;
     }
     this.categoryId = this.$filtersWrap.dataset.categoryId;
-    this.searchProductsInput =
-      this.listeners();
+    //this.searchProductsInput =
+    this.listeners();
   }
 
   open = async ($filter) => {
@@ -3630,20 +3630,19 @@ class PriceRange {
     this.updateCoords();
     this.shiftLeftSlide = e.clientX - this.rangeBgCoord.x - this.halfWidthSlide;
     this.changePosLeftSlide(e);
-    document.addEventListener('mousemove', this.leftSlideMove);
-
-
+    document.addEventListener('pointermove', this.leftSlideMove);
   }
 
   leftSlideMove = (e) => {
     this.shiftLeftSlide = e.clientX - this.rangeBgCoord.x - this.halfWidthSlide;
-    //this.updateCoords();
     this.changePosLeftSlide(e);
     this.setNewMinValue();
+    this.changeMinValue();
   }
 
   leftSlideEndMove = () => {
-    document.removeEventListener('mousemove', this.leftSlideMove);
+    document.removeEventListener('pointermove', this.leftSlideMove);
+
   }
 
   changePosLeftSlide = (e) => {
@@ -3659,7 +3658,6 @@ class PriceRange {
 
   setNewMinValue = () => {
     const progress = this.getMoveProgressLeftSlide();
-    console.log()
     const minValue = this.getMinValue(progress);
     this.setMinValue(minValue);
 
@@ -3667,7 +3665,7 @@ class PriceRange {
 
   getMoveProgressLeftSlide = () => {
     this.coordLeftSlide = this.$leftSlide.getBoundingClientRect();
-    const positionSlide = this.coordLeftSlide.right - this.areaRangeCoord.x - this.widthSlide;
+    const positionSlide = this.coordLeftSlide.right - this.rangeBgCoord.x - this.widthSlide;
     return (positionSlide / this.activeAreaRangeWidth * 100).toFixed(2);
   }
 
@@ -3691,20 +3689,18 @@ class PriceRange {
   // правый слайд
 
   rightSlideStartMove = (e) => {
-
     e.preventDefault();
     this.updateCoords();
-
     this.shiftRightSlide = this.rangeBgCoord.right - e.clientX - this.halfWidthSlide;
     this.changePosRightSlide(e);
-    document.addEventListener('mousemove', this.rightSlideMove);
+    document.addEventListener('pointermove', this.rightSlideMove);
   }
 
   rightSlideMove = (e) => {
     this.shiftRightSlide = this.rangeBgCoord.right - e.clientX - this.halfWidthSlide;
-    //this.updateCoords();
     this.changePosRightSlide(e);
     this.setNewMaxValue();
+    this.changeMaxValue();
   }
 
   changePosRightSlide = (e) => {
@@ -3720,7 +3716,7 @@ class PriceRange {
   }
 
   rightSlideEndMove = () => {
-    document.removeEventListener('mousemove', this.rightSlideMove);
+    document.removeEventListener('pointermove', this.rightSlideMove);
   }
 
   setNewMaxValue = () => {
@@ -3731,8 +3727,9 @@ class PriceRange {
   }
 
   getMoveProgressRightSlide = () => {
+
     this.coordRightSlide = this.$rightSlide.getBoundingClientRect();
-    const positionSlide = this.coordRightSlide.x - this.areaRangeCoord.x - this.widthSlide;
+    const positionSlide = this.coordRightSlide.x - this.rangeBgCoord.x - this.widthSlide;
     return +(positionSlide / this.activeAreaRangeWidth * 100).toFixed(2);
   }
 
@@ -3770,7 +3767,7 @@ class PriceRange {
   }
 
   getActiveAreaRangeWidth = () => {
-    return this.$areaRange.offsetWidth - (this.widthSlide * 2);
+    return this.$rangeBg.offsetWidth - (this.widthSlide * 2);
   }
 
   //изменение значений в инпутах
@@ -3808,7 +3805,6 @@ class PriceRange {
     if (max == '') {
       max = this.maxValue;
     }
-
     if (min < 0) {
       return 0;
     } else if (min > max) {
@@ -3822,7 +3818,6 @@ class PriceRange {
     if (min == '') {
       min = 0;
     }
-
     if (max > this.maxValue) {
       return this.maxValue;
     } else if (max < min) {
@@ -3851,6 +3846,9 @@ class PriceRange {
   }
 
   changeShiftRightSlide = (value) => {
+    if (value == '') {
+      return;
+    }
     const percentOfTotalProce = 100 - (value / this.maxValue * 100).toFixed(2);
     this.shiftRightSlide = (this.activeAreaRangeWidth / 100 * +percentOfTotalProce).toFixed(0);
     this.setShifhRight();
@@ -3873,19 +3871,22 @@ class PriceRange {
     }
 
     if (e.target.closest('[data-type="max"]')) {
-      this.changeMaxValue(e.target)
+      this.changeMaxValue();
     }
   }
 
+  resizeHandler = () => {
+    this.updateCoords();
+    this.activeAreaRangeWidth = this.getActiveAreaRangeWidth();
+  }
+
   listeners = () => {
-    this.$leftSlide.addEventListener('mousedown', this.leftSlideStartMove);
-    document.addEventListener('mouseup', this.leftSlideEndMove);
-    this.$rightSlide.addEventListener('mousedown', this.rightSlideStartMove);
-    document.addEventListener('mouseup', this.rightSlideEndMove);
+    this.$leftSlide.addEventListener('pointerdown', this.leftSlideStartMove);
+    document.addEventListener('pointerup', this.leftSlideEndMove);
+    this.$rightSlide.addEventListener('pointerdown', this.rightSlideStartMove);
+    document.addEventListener('pointerup', this.rightSlideEndMove);
     this.$priceRange.addEventListener('input', this.changeHandler);
-    window.addEventListener('resize', () => {
-      this.updateCoords();
-    })
+    window.addEventListener('resize', this.resizeHandler);
   }
 }
 
