@@ -9085,6 +9085,36 @@ body {
   margin-bottom: 0;
 }
 
+.site-map {
+  font-size: 18px;
+  margin: 30px 0 60px;
+}
+
+.site-map__item {
+  margin: 10px 0 20px;
+}
+
+.site-map__link {
+  font-weight: bold;
+}
+
+.site-map__link:hover {
+  color: #fba50d;
+}
+
+.site-map__sublist {
+  margin: 10px 0 20px 30px;
+}
+
+.site-map__subitem {
+  list-style-type: disc;
+  margin-bottom: 10px;
+}
+
+.site-map__sublink:hover {
+  color: #fba50d;
+}
+
 .slider {
   overflow: hidden;
 }
