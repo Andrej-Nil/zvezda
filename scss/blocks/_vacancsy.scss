@@ -1,0 +1,47 @@
+.vacancsy {
+  margin: 30px 0 60px;
+}
+
+.vacancsy-card {
+  display: block;
+  height: auto;
+  margin-bottom: 60px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.vacancsy-card__wages {
+  margin-bottom: 30px;
+
+  font-size: 22px;
+  color: $blackMain;
+  font-weight: bold;
+}
+
+.vacancsy-card__link {
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: $yellowMain;
+  }
+}
+
+.vacancsy-card__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vacancsy-card__btn {
+  display: inline-block;
+  width: 200px;
+}
+
+.vacancsy-card__release {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.vacancsy-card__release-date {
+  margin-top: auto;
+}

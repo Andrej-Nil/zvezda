@@ -15,6 +15,8 @@ const $mobileMenuBtn = document.querySelector('#mobileMenuBtn');
 const $openCityModal = document.querySelector('#openCityModal');
 const $videoModal = document.querySelector('#videoModal');
 
+const $vacancsyModal = document.querySelector('#vacancsyModal');
+
 class Debaunce {
   constructor() { }
   debaunce = (fn, ms) => {
@@ -2024,6 +2026,41 @@ class CommunicationModal extends Modal {
 
   listeners = () => {
     this.$modal.addEventListener('click', this.clickHandler)
+  }
+}
+
+class VacancsyModal extends CommunicationModal {
+  constructor(modalId, formId) {
+    super(modalId);
+    this.formId = formId;
+    this.init()
+  }
+
+  init = () => {
+    if (!this.$modal) {
+      return;
+    }
+
+    this.$modalBody = this.$modal.querySelector('[data-modal-body]');
+    this.$vacancsyTitle = this.$modal.querySelector('[data-vacancsy-name]');
+    this.$vacancsyNameInput = this.$modal.querySelector('[name="vacancsy"]');
+    this.form = new Form(this.formId);
+
+
+
+    //this.listeners();
+  }
+
+  setVacancsyTitle = (target) => {
+    const $card = target.closest('[data-vacancsy]');
+    const vacancsyTitle = $card.querySelector('[data-vacancsy-title]').innerHTML;
+    this.$vacancsyTitle.innerHTML = vacancsyTitle;
+    this.$vacancsyNameInput.value = vacancsyTitle;
+  }
+
+  openVacancsyModal = (target) => {
+    this.setVacancsyTitle(target)
+    this.open();
   }
 }
 
@@ -4513,6 +4550,7 @@ const debaunce = new Debaunce();
 const mainScreen = new MainScreen('#mainVideo');
 const searchModal = new SearchModal('#searchModal');
 const supportModal = new CommunicationModal('#supportModal', '#supportModalForm');
+const vacancsyModal = new VacancsyModal('#vacancsyModal', '#vacancsyModalForm');
 const succsesModal = new SuccsesModal('#succsesModal');
 const confirmationModal = new ConfirmationModal('#confirmationModal');
 const ordenModal = new CommunicationModal('#orderModal', '#orderModalForm');
@@ -4608,6 +4646,10 @@ function openVideoModal() {
   videoModal.openVideo();
 }
 
+function openVacancsyModal(target) {
+  vacancsyModal.openVacancsyModal(target);
+}
+
 function documentClickHandler(e) {
   if (e.target.closest('[data-support-btn]')) {
     if ($supportModal) openSupportModal();
@@ -4615,5 +4657,8 @@ function documentClickHandler(e) {
 
   if (e.target.closest('[data-video-btn]')) {
     if ($videoModal) openVideoModal();
+  }
+  if (e.target.closest('[data-vacancsy-btn]')) {
+    if ($vacancsyModal) openVacancsyModal(e.target);
   }
 }

@@ -709,6 +709,10 @@ body {
   border-color: #ea2d2d;
 }
 
+.hide-input {
+  display: none;
+}
+
 .search {
   position: relative;
 }
@@ -8056,6 +8060,55 @@ body {
   }
 }
 
+.vacancsy {
+  margin: 30px 0 60px;
+}
+
+.vacancsy-card {
+  display: block;
+  height: auto;
+  margin-bottom: 60px;
+}
+
+.vacancsy-card:last-child {
+  margin-bottom: 0;
+}
+
+.vacancsy-card__wages {
+  margin-bottom: 30px;
+  font-size: 22px;
+  color: #444a52;
+  font-weight: bold;
+}
+
+.vacancsy-card__link {
+  transition: 0.3s ease-in-out;
+}
+
+.vacancsy-card__link:hover {
+  color: #fba50d;
+}
+
+.vacancsy-card__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vacancsy-card__btn {
+  display: inline-block;
+  width: 200px;
+}
+
+.vacancsy-card__release {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.vacancsy-card__release-date {
+  margin-top: auto;
+}
+
 .footer {
   background: #2d3035;
 }
@@ -8130,7 +8183,7 @@ body {
     border: none;
     flex-direction: row;
     padding: 30px 15px 0 15px;
-    height: 235px;
+    min-height: 235px;
   }
 }
 
@@ -8138,7 +8191,6 @@ body {
   .footer-main__inner {
     flex-direction: row;
     padding: 30px 0 0 0;
-    height: 235px;
   }
 }
 
@@ -8533,6 +8585,13 @@ body {
   .modal__title {
     margin-bottom: 50px;
   }
+}
+
+.modal__subtitle {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: normal;
+  color: #2d3035;
 }
 
 .modal__inputs-block {

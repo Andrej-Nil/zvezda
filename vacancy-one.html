@@ -7,15 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.min.css" />
   <meta name="csrf-token" content="p5q8mFhMdAS9z3KSayI05bO34EEXjhMl9ysZOAS3">
-  <title>Одна новость</title>
+  <title>Вакансии</title>
 </head>
 
 <body>
   <div class="app">
     <header class="header">
-
       <!-- header__top -->
-      <div id="headerTop" class="header__top header__top--absolute">
+      <div id="headerTop" class="header__top header__top--white">
         <div class="header__top-inner container">
           <a href="index.html" class="header__logo"> </a>
 
@@ -124,245 +123,115 @@
         </div>
       </div>
       <!--header__top-->
-
-      <!--header-content-->
-      <div class="header-content">
-
-        <!--header__main-->
-        <div class="header__main">
-          <div class="news__content">
-            <div class="header__center container">
-              <span class="header__date">2019-06-26</span>
-              <h2 class="header__title">
-                Поступление на склады оцинкованной продукции
-              </h2>
-              <a href="news.html" class="header__more">
-                Все новости
-              </a>
-            </div>
-          </div>
-
-
-        </div>
-        <!-- header__main -->
-
-        <!-- header__bg -->
-        <div class="header__bg">
-          <picture>
-            <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
-            <img class="header__img" src="./img/image/other/img-bg3.jpg" alt="">
-          </picture>
-        </div>
-
-        <!-- header__bg -->
-
-      </div>
-      <!--header-content-->
     </header>
 
-    <section class="news">
-      <div class="news__content">
-        <h2 class="news__title">
-          Поступление на склады оцинкованной продукции
-        </h2>
 
-        <p class="news__desc">
-          11.09.2018 на склады ПАО «ТНМК» Поступило более 1000 тонн оцинкованного металлопроката: полоса, круг,
-          проволока, труба, уголок и лист оцинкованный теперь всегда в наличии. С сегодняшнего дня клиентам компании
-          не придётся ждать пока оцинкуется их заказ, потому-что всё есть в наличии. Самая конкурентная цена теперь
-          в
-          «ТНМК», ждём ваших заявок на приобретение продукции.
-        </p>
-      </div>
+    <main class="main container">
+      <div class="vacancsy">
+        <h1 class="section__title">Вакансии</h1>
+        <!--vacancsy__list-->
+        <div class="vacancsy__list">
+          <!--vacancsy-card-->
+          <div data-vacancsy class="vacancsy-card product-line">
 
-    </section>
+            <p class="vacancsy-card__title review-card__title">
+              <a href="vacancy-one.html" data-vacancsy-title class="vacancsy-card__link">Вакансия Бухгалтер по расчету
+                заработной платы в Екатеринбурге</a>
+            </p>
 
-    <img src="./img/image/other/img3.jpg" alt="" class="news__img">
+            <p class="vacancsy-card__wages">
+              от 50 000 ₽
+            </p>
 
-    <section class="news">
-      <div class="news__content">
-        <h2 class="news__title">
-          Лист из оцинкованной стали купить недорого!
-        </h2>
+            <div class="vacancsy-card__bottom">
+              <span data-vacancsy-btn class="vacancsy-card__btn btn hover-yellow-light yellow-btn">Откликнуться</span>
 
-        <p class="news__desc">
-          В связи с тем, что цинк как химический элемент не подвергается окислению, его использование широко
-          распространено для изготовления продукции с антикоррозийной поверхностью. Лист оцинкованный 0.5 и 0.7
-          применяется в таких отраслях, как строительство, промышленность и машиностроение. Кроме того, из него
-          изготавливаются оцинкованные трубы.
-
-          Лист из оцинкованной стали очень прост в дальнейшей обработке и прекрасно подвергается различным
-          механическим воздействиям, например резке, вытягиванию, гибке или штамповке. Если смотреть в целом, то
-          оцинковка нужна для холодного профилирования, изготовления тары и прочей металлической продукции.
-          Выпускается в рулонах и листах.
-        </p>
-
-        <div class="news__nav">
-          <a href="news.html" class="news-arrow news-arrow--prev"></a>
-          <a href="news.html" class="news-arrow news-arrow--next">Следующая статья</a>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- Другие новости  -->
-    <section class="section">
-      <div class="section__inner container">
-        <h2 class="section__title">
-          Другие новости
-        </h2>
-        <!-- section__content -->
-        <div class="section__content">
-          <!-- reviews-block__slider -->
-          <div id="newsSlider" class="news__slider slider">
-            <!-- track -->
-            <div data-track class="slider__track">
-
-              <div data-slide class="news-card slide slide--big">
-                <a href="#!" class="news-card_link-img">
-                  <picture>
-                    <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
-                    <img class="news-card__img" src="./img/image/news/news-card1.jpg" alt="">
-
-                  </picture>
-                </a>
-                <div class="news-card__title">
-                  <span class="news-card__date">
-                    2019-06-26
-                  </span>
-
-                  <h2 class="news-card__title">
-                    <a href="#!" class="news-card__link">
-                      Поступление на склады оцинкованной продукции
-                    </a>
-
-                  </h2>
-                  <p class="news-card__desc">
-                    11.09.2018 на склады ПАО «ТНМК» Поступило более 1000 тонн оцинкованного металлопроката: полоса,
-                    круг....
-                  </p>
-                </div>
-              </div>
-
-              <div data-slide class="news-card slide slide--big">
-                <a href="#!" class="news-card_link-img">
-                  <picture>
-                    <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
-                    <img class="news-card__img" src="./img/image/news/news-card2.jpg" alt="">
-
-                  </picture>
-                </a>
-                <div class="news-card__title">
-                  <span class="news-card__date">
-                    2019-06-26
-                  </span>
-
-                  <h2 class="news-card__title">
-                    <a href="#!" class="news-card__link">
-                      Поступление на склады оцинкованной продукции
-                    </a>
-
-                  </h2>
-                  <p class="news-card__desc">
-                    11.09.2018 на склады ПАО «ТНМК» Поступило более 1000 тонн оцинкованного металлопроката: полоса,
-                    круг....
-                  </p>
-                </div>
-              </div>
-
-              <div data-slide class="news-card slide slide--big">
-                <a href="#!" class="news-card_link-img">
-                  <picture>
-                    <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
-                    <img class="news-card__img" src="./img/image/news/news-card3.jpg" alt="">
-
-                  </picture>
-                </a>
-                <div class="news-card__title">
-                  <span class="news-card__date">
-                    2019-06-26
-                  </span>
-
-                  <h2 class="news-card__title">
-                    <a href="#!" class="news-card__link">
-                      Поступление на склады оцинкованной продукции
-                    </a>
-
-                  </h2>
-                  <p class="news-card__desc">
-                    11.09.2018 на склады ПАО «ТНМК» Поступило более 1000 тонн оцинкованного металлопроката: полоса,
-                    круг....
-                  </p>
-                </div>
-              </div>
-
-              <div data-slide class="news-card slide slide--big">
-                <a href="#!" class="news-card_link-img">
-                  <picture>
-                    <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
-                    <img class="news-card__img" src="./img/image/news/news-card2.jpg" alt="">
-
-                  </picture>
-                </a>
-                <div class="news-card__title">
-                  <span class="news-card__date">
-                    2019-06-26
-                  </span>
-
-                  <h2 class="news-card__title">
-                    <a href="#!" class="news-card__link">
-                      Поступление на склады оцинкованной продукции
-                    </a>
-
-                  </h2>
-                  <p class="news-card__desc">
-                    11.09.2018 на склады ПАО «ТНМК» Поступило более 1000 тонн оцинкованного металлопроката: полоса,
-                    круг....
-                  </p>
-                </div>
-              </div>
-
-              <div data-slide class="news-card slide slide--big">
-                <a href="#!" class="news-card_link-img">
-                  <picture>
-                    <!--<source srcset="./img/image/other/img-bg2.webp" type="image/webp">-->
-                    <img class="news-card__img" src="./img/image/news/news-card3.jpg" alt="">
-
-                  </picture>
-                </a>
-                <div class="news-card__title">
-                  <span class="news-card__date">
-                    2019-06-26
-                  </span>
-
-                  <h2 class="news-card__title">
-                    <a href="#!" class="news-card__link">
-                      Поступление на склады оцинкованной продукции
-                    </a>
-
-                  </h2>
-                  <p class="news-card__desc">
-                    11.09.2018 на склады ПАО «ТНМК» Поступило более 1000 тонн оцинкованного металлопроката: полоса,
-                    круг....
-                  </p>
-                </div>
-              </div>
-
-            </div>
-            <!-- track -->
-            <div data-controls class="section-controls">
-              <div class="section-controls__inner">
-                <span data-prev class="section-controls__btn hide-arrow section-controls__prev"></span>
-                <span data-next class="section-controls__btn section-controls__next"></span>
+              <div class="vacancsy-card__release">
+                <p class="vacancsy-card__release-title">Опубликовано</p>
+                <p class="vacancsy-card__release-date">27.03.2022 06:02</p>
               </div>
             </div>
           </div>
-          <!-- _slider -->
+          <!--vacancsy-card-->
+
+          <!--vacancsy-card-->
+          <div data-vacancsy class="vacancsy-card product-line">
+
+            <p class="vacancsy-card__title review-card__title">
+              <a href="vacancy-one.html" data-vacancsy-title class="vacancsy-card__link">Вакансия Бухгалтер по расчету
+                заработной платы в
+                Екатеринбурге</a>
+            </p>
+
+            <p class="vacancsy-card__wages">
+              от 50 000 ₽
+            </p>
+
+            <div class="vacancsy-card__bottom">
+              <span data-vacancsy-btn class="vacancsy-card__btn btn hover-yellow-light yellow-btn">Откликнуться</span>
+
+              <div class="vacancsy-card__release">
+                <p class="vacancsy-card__release-title">Опубликовано</p>
+                <p class="vacancsy-card__release-date">27.03.2022 06:02</p>
+              </div>
+            </div>
+          </div>
+          <!--vacancsy-card-->
+
+          <!--vacancsy-card-->
+          <div data-vacancsy class="vacancsy-card product-line">
+
+            <p class="vacancsy-card__title review-card__title">
+              <a href="vacancy-one.html" data-vacancsy-title class="vacancsy-card__link">Вакансия Бухгалтер по расчету
+                заработной платы в
+                Екатеринбурге</a>
+            </p>
+
+            <p class="vacancsy-card__wages">
+              от 50 000 ₽
+            </p>
+
+            <div class="vacancsy-card__bottom">
+              <span data-vacancsy-btn class="vacancsy-card__btn btn hover-yellow-light yellow-btn">Откликнуться</span>
+
+              <div class="vacancsy-card__release">
+                <p class="vacancsy-card__release-title">Опубликовано</p>
+                <p class="vacancsy-card__release-date">27.03.2022 06:02</p>
+              </div>
+            </div>
+          </div>
+          <!--vacancsy-card-->
+
+          <!--vacancsy-card-->
+          <div data-vacancsy class="vacancsy-card product-line">
+
+            <p class="vacancsy-card__title review-card__title">
+              <a href="vacancy-one.html" data-vacancsy-title class="vacancsy-card__link">Вакансия Бухгалтер по расчету
+                заработной платы в
+                Екатеринбурге</a>
+            </p>
+
+            <p class="vacancsy-card__wages">
+              от 50 000 ₽
+            </p>
+
+            <div class="vacancsy-card__bottom">
+              <span data-vacancsy-btn class="vacancsy-card__btn btn hover-yellow-light yellow-btn">Откликнуться</span>
+
+              <div class="vacancsy-card__release">
+                <p class="vacancsy-card__release-title">Опубликовано</p>
+                <p class="vacancsy-card__release-date">27.03.2022 06:02</p>
+              </div>
+            </div>
+          </div>
+          <!--vacancsy-card-->
+
         </div>
+        <!--vacancsy__list-->
       </div>
-      <!-- section__content -->
-    </section>
-    <!-- Другие новости  -->
+
+    </main>
+
 
 
     <footer class="footer">
@@ -522,7 +391,6 @@
       </div>
 
     </footer>
-
 
     <!--header-modals-->
 
@@ -687,6 +555,7 @@
       </div>
     </div>
     <!--mobile-menu-->
+
     <!-- queryModal -->
     <div id="queryModal" class="modal modal--is-hide">
       <!--modal__inner-->
@@ -915,7 +784,6 @@
       <!--modal__inner-->
     </div>
     <!-- vacancsyModal -->
-
 
     <!-- orderModal -->
     <div id="orderModal" class="modal modal--is-hide">
