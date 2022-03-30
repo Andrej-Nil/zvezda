@@ -10,13 +10,45 @@
     margin-bottom: 0;
   }
 }
-
+.vacancsy-card__title {
+  font-size: 18px;
+  @media (min-width: 1050px) {
+    font-size: 24px;
+  }
+}
 .vacancsy-card__wages {
   margin-bottom: 30px;
 
   font-size: 22px;
   color: $blackMain;
   font-weight: bold;
+}
+
+.vacancsy-info__desc {
+  font-size: 16px;
+  color: $blackMain;
+  margin-bottom: 60px;
+  p {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    margin-bottom: 20px;
+    list-style-type: disc;
+  }
+
+  li {
+    margin-bottom: 5px;
+    list-style-type: disc;
+    margin-left: 30px;
+  }
+  @media (min-width: 1050px) {
+    font-size: 18px;
+    li {
+      margin-bottom: 10px;
+      margin-left: 40px;
+    }
+  }
 }
 
 .vacancsy-card__link {
@@ -28,18 +60,33 @@
 
 .vacancsy-card__bottom {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  @media (min-width: 480px) {
+    flex-direction: row;
+  }
 }
 
 .vacancsy-card__btn {
   display: inline-block;
-  width: 200px;
+  width: 100%;
+  margin-bottom: 20px;
+
+  @media (min-width: 480px) {
+    margin-bottom: 0;
+    width: 200px;
+  }
 }
 
 .vacancsy-card__release {
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  @media (min-width: 480px) {
+    font-size: 16px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 
 .vacancsy-card__release-date {
