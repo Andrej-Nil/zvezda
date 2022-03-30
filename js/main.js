@@ -13,6 +13,7 @@ const $mobileMenu = document.querySelector('#mobileMenu');
 const $mobileMenuBtn = document.querySelector('#mobileMenuBtn');
 
 const $openCityModal = document.querySelector('#openCityModal');
+const $videoModal = document.querySelector('#videoModal');
 
 class Debaunce {
   constructor() { }
@@ -1488,8 +1489,8 @@ class HeaderModal {
   listener = () => {
     this.$target.addEventListener('mouseover', this.open);
     this.$modal.addEventListener('click', this.clickHandler);
-    //this.$modalInner.addEventListener('mouseleave', this.modalLeaveHandler);
-    //this.$targetParent.addEventListener('mouseleave', this.targetParentLeaveHandler);
+    this.$modalInner.addEventListener('mouseleave', this.modalLeaveHandler);
+    this.$targetParent.addEventListener('mouseleave', this.targetParentLeaveHandler);
   }
 
 }
@@ -1928,7 +1929,7 @@ class GaliriaModal extends Modal {
       return;
     }
 
-    this.$modalInner = this.$modal.querySelector('[data-modal-inner]')
+    this.$modalInner = this.$modal.querySelector('[data-modal-inner]');
     this.$source = this.$modal.querySelector('[srcset]');
     this.$img = this.$modal.querySelector('[src]');
     this.listners()
@@ -2853,15 +2854,13 @@ class Galeria {
     if (!this.$galeria) {
       return;
     }
-    this.modal = new GaliriaModal('#galeriaModal');
-    //this.modal.openGaleriaModal(srcImg);
+    this.$modal = new GaliriaModal('#galeriaModal');
     this.listeners();
-    //./img/image/other/certificateBig
   }
 
   openModal = ($card) => {
     const srcBigImg = $card.dataset.imgBigSrc;
-    this.modal.openGaleriaModal(srcBigImg);
+    this.$modal.openGaleriaModal(srcBigImg);
   }
   clickHandler = (e) => {
     const $target = e.target;
@@ -2873,6 +2872,44 @@ class Galeria {
   listeners = () => {
     this.$galeria.addEventListener('click', this.clickHandler)
   }
+}
+
+class VideoModal extends Modal {
+  constructor(id) {
+    super(id);
+    this.$modal = document.querySelector(id);
+    this.init();
+  }
+  init = () => {
+    if (!this.$modal) {
+      return
+    }
+    this.$modalInner = this.$modal.querySelector('[data-modal-inner]');
+    this.$video = this.$modal.querySelector('[data-video]');
+    this.listeners();
+  }
+
+  openVideo = () => {
+    this.$modalInner.classList.add('galeria-modal__inner--show');
+    this.open()
+  }
+
+  closeVideo = () => {
+    this.$modalInner.classList.remove('galeria-modal__inner--show');
+    this.$video.pause();
+    this.close();
+  }
+
+  clickHandler = (e) => {
+    if (e.target.closest('[data-close]')) {
+      this.closeVideo()
+    }
+  }
+
+  listeners = () => {
+    this.$modal.addEventListener('click', this.clickHandler);
+  }
+
 }
 
 class Product {
@@ -4502,6 +4539,7 @@ const newsSlider = new Slider('#newsSlider');
 
 
 const certificatesGaleria = new Galeria('#certificates');
+const videoModal = new VideoModal('#videoModal');
 
 const product = new Product();
 const basket = new Basket('#basket');
@@ -4521,13 +4559,7 @@ if ($searchOpenBtn && $searchModal) {
   $searchOpenBtn.addEventListener('click', openSearchModal);
 }
 
-if ($supportModal) {
-  document.addEventListener('click', (e) => {
-    if (e.target.closest('[data-support-btn]')) {
-      openSupportModal()
-    }
-  });
-}
+document.addEventListener('click', documentClickHandler);
 
 if ($orderModalBtn && $orderModal) {
   $orderModalBtn.addEventListener('click', openOrderModal);
@@ -4570,6 +4602,18 @@ function openQueryModal(e) {
   if (e.target.closest(`[data-query-btn]`)) {
     queryModal.open();
   }
-
 }
 
+function openVideoModal() {
+  videoModal.openVideo();
+}
+
+function documentClickHandler(e) {
+  if (e.target.closest('[data-support-btn]')) {
+    if ($supportModal) openSupportModal();
+  }
+
+  if (e.target.closest('[data-video-btn]')) {
+    if ($videoModal) openVideoModal();
+  }
+}

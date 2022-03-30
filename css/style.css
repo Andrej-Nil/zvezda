@@ -7905,6 +7905,7 @@ body {
     font-size: 23px;
     line-height: 32px;
     padding-right: 40px;
+    transition: 0.3s ease-in-out;
   }
   .presentation__play::before {
     font-family: "icomoon";
@@ -7914,6 +7915,9 @@ body {
     line-height: 1;
     content: "";
     font-size: 28px;
+  }
+  .presentation__play:hover {
+    color: #fba50d;
   }
 }
 
@@ -8615,6 +8619,29 @@ body {
 
 .galeria-modal__img {
   height: 80vh;
+}
+
+.video-modal__inner {
+  max-height: 90vh;
+  max-width: 100%;
+  padding: 30px 50px;
+  background: #fff;
+}
+
+.video-modal__wrap {
+  height: 100%;
+  width: 100%;
+}
+
+.video-modal__item {
+  height: 100%;
+  width: 100%;
+}
+
+.video-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 30px;
 }
 
 .info-modal {

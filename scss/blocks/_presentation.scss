@@ -44,8 +44,13 @@
     font-size: 23px;
     line-height: 32px;
     padding-right: 40px;
+    transition: 0.3s ease-in-out;
     &::before {
       @include font-icon-style("\e90e", 28px);
+    }
+
+    &:hover {
+      color: $yellowMain;
     }
   }
 }
