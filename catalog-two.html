@@ -1806,6 +1806,75 @@
     </div>
     <!-- vacancsyModal -->
 
+    <!-- vacancsyRequestModal -->
+    <div id="vacancsyRequestModal" class="modal modal--is-hide">
+      <!--modal__inner-->
+      <div data-modal-body class="modal__body">
+        <span data-close class="modal__close close-btn">Закрыть</span>
+
+        <p class="modal__title mb30">
+          Заявка на вакансию:
+        </p>
+
+        <form action="./json/send-form.json" enctype="multipart/form-data" method="POST" id="vacancsyRequestModalForm"
+          class="modal__form">
+          <div class="modal__inputs-block">
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="vacancsy" type="text" />
+
+              <span class="place-entry__placeholder">Должность<span class="place-entry__star">*</span></span>
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="name" type="text" />
+
+              <span class="place-entry__placeholder">ФИО<span class="place-entry__star">*</span></span>
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="mail" type="text" />
+
+              <span class="place-entry__placeholder">E-mail</span>
+
+            </label>
+
+            <label class="modal__input place-entry">
+              <input data-input class="place-entry__input" name="phone" type="text" />
+
+              <span class="place-entry__placeholder">Телефон<span class="place-entry__star">*</span></span>
+
+            </label>
+          </div>
+          <div data-file-block class="modal__file file">
+            <label data-file-label class="file__label">
+              <span data-file-text class="file__text">Прикрепить резюме</span>
+              <input data-input type="file" name="file" class="file__input">
+            </label>
+            <span class="file__clear-btn" data-clear-file>очистить файл</span>
+            <p data-info class="file__desc">
+              Необязательно. Файл до 10 МБ в формате doc, docx, pdf, jpg, png, xls, xlsx или zip.
+            </p>
+          </div>
+
+          <input data-submit type="submit" class="modal__submit btn yellow-btn hover-yellow-light"
+            value="Отправить заявку">
+
+          <label data-checkbox class="checkbox">
+            <input data-input type="checkbox" name="consent" checked class="checkbox__input" />
+            <span class="checkbox__fake"></span>
+            <span class="checkbox__text">я принимаю условия политики конфиденциальности</span>
+
+          </label>
+        </form>
+
+      </div>
+      <!--modal__inner-->
+    </div>
+    <!-- vacancsyRequestModal -->
+
     <!-- orderModal -->
     <div id="orderModal" class="modal modal--is-hide">
       <!--modal__inner-->

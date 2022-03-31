@@ -1243,20 +1243,18 @@ class Form {
     }
   }
 
+  inputHandler = (e) => {
+    const $target = e.target;
+    if ($target.closest('[data-input]')) {
+      this.tooglePlaceholder($target);
+    }
+  }
   focusoutHandler = (e) => {
     const $target = e.target
     if (!e.target.closest('[data-input]')) {
       return;
     }
     this.checkInput($target);
-  }
-
-  inputHandler = (e) => {
-    const $target = e.target;
-
-    if ($target.closest('[data-input]')) {
-      this.tooglePlaceholder($target);
-    }
   }
 
   defineInputFileClass = () => {
@@ -1269,7 +1267,6 @@ class Form {
     const target = e.target;
     if (target.closest('[data-clear-file]')) {
       this.inputFile.clear();
-
     }
   }
   formListener = () => {
@@ -4550,6 +4547,7 @@ const mainScreen = new MainScreen('#mainVideo');
 const searchModal = new SearchModal('#searchModal');
 const supportModal = new CommunicationModal('#supportModal', '#supportModalForm');
 const vacancsyModal = new VacancsyModal('#vacancsyModal', '#vacancsyModalForm');
+const vacancsyRequestModal = new CommunicationModal('#vacancsyRequestModal', '#vacancsyRequestModalForm');
 const succsesModal = new SuccsesModal('#succsesModal');
 const confirmationModal = new ConfirmationModal('#confirmationModal');
 const ordenModal = new CommunicationModal('#orderModal', '#orderModalForm');
@@ -4661,5 +4659,8 @@ function documentClickHandler(e) {
   }
   if (e.target.closest('[data-vacancsy-btn]')) {
     if ($vacancsyModal) openVacancsyModal(e.target);
+  }
+  if (e.target.closest('[data-vacancsy-empty]')) {
+    if ($vacancsyModal) vacancsyRequestModal.open();
   }
 }
