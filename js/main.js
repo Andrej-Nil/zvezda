@@ -2891,13 +2891,12 @@ class Galeria {
     if (!this.$galeria) {
       return;
     }
-    this.$modal = new GaliriaModal('#galeriaModal');
     this.listeners();
   }
 
   openModal = ($card) => {
     const srcBigImg = $card.dataset.imgBigSrc;
-    this.$modal.openGaleriaModal(srcBigImg);
+    galiriaModal.openGaleriaModal(srcBigImg);
   }
   clickHandler = (e) => {
     const $target = e.target;
@@ -4576,7 +4575,9 @@ const mainProductSlider = new Slider('#mainProductSlider');
 const newsSlider = new Slider('#newsSlider');
 
 
-const certificatesGaleria = new Galeria('#certificates');
+const certificatesGaleria = new Galeria('#galiriaWrap');
+
+const galiriaModal = new GaliriaModal('#galeriaModal');
 const videoModal = new VideoModal('#videoModal');
 
 const product = new Product();

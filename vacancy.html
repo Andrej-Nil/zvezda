@@ -942,21 +942,24 @@
     <div id="galeriaModal" class="galeria-modal modal modal--is-hide">
       <div data-modal-inner class="galeria-modal__inner">
         <span data-close class="galeria-modal__close close-btn">Закрыть</span>
-        <picture>
-          <source srcset="./img/image/other/1.svg" type="image/webp">
-          <img src="./img/image/other/1.svg" alt="" class="galeria-modal__img">
-        </picture>
+        <div class="galeria-modal__wrap">
+          <picture>
+            <source srcset="./img/image/other/1.svg" type="image/webp">
+            <img src="./img/image/other/1.svg" alt="" class="galeria-modal__item">
+          </picture>
+        </div>
       </div>
     </div>
 
     <div id="videoModal" class="galeria-modal modal modal--is-hide">
-      <div data-modal-inner class="galeria-modal__inner video-modal__inner">
-        <span data-close class="video-modal__close close-btn">Закрыть</span>
-        <div class="video-modal__wrap">
-          <video data-video controls class="video-modal__item">
+      <div data-modal-inner class="galeria-modal__inner">
+        <span data-close class="galeria-modal__close close-btn">Закрыть</span>
+        <div class="galeria-modal__wrap">
+          <video data-video controls class="galeria-modal__item">
             <source src="./video/video1.webm" type="video/webm">
           </video>
         </div>
+
       </div>
     </div>
 

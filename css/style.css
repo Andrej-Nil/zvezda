@@ -8173,6 +8173,68 @@ body {
   margin-top: auto;
 }
 
+.galereya {
+  margin: 30px 0 60px;
+}
+
+.galereya__list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+@media (min-width: 480px) {
+  .galereya__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (min-width: 786px) {
+  .galereya__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .galereya__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.galerey-card {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border: 1px solid rgba(139, 139, 139, 0.3);
+}
+
+.galerey-card:hover {
+  border: 1px solid #ffc201;
+}
+
+.galerey-card:hover .galerey-card__img {
+  transform: scale(1.05);
+}
+
+.galerey-card__pic {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.galerey-card__img {
+  width: 100%;
+  transition: 0.2s ease-in-out;
+}
+
+.galerey-card__desc {
+  margin-top: 15px;
+}
+
 .footer {
   background: #2d3035;
 }
@@ -8718,16 +8780,21 @@ body {
   align-items: center;
 }
 
+.galeria-modal__wrap {
+  height: 100%;
+  width: 100%;
+}
+
 .galeria-modal__close {
   position: absolute;
-  right: 60px;
-  top: 60px;
+  top: 10px;
+  right: 30px;
 }
 
 .galeria-modal__inner {
-  padding: 30px;
   display: flex;
-  height: 100vh;
+  max-height: 90vh;
+  max-width: 90%;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -8736,35 +8803,22 @@ body {
   opacity: 0;
 }
 
-.galeria-modal__inner--show {
-  opacity: 1;
-}
-
-.galeria-modal__img {
-  height: 80vh;
-}
-
-.video-modal__inner {
-  max-height: 90vh;
-  max-width: 100%;
-  padding: 30px 50px;
+.galeria-modal__item {
+  max-height: 100%;
+  height: auto;
+  width: 100%;
+  padding: 10px 15px;
   background: #fff;
 }
 
-.video-modal__wrap {
-  height: 100%;
-  width: 100%;
+@media (min-width: 1050px) {
+  .galeria-modal__item {
+    padding: 30px 50px;
+  }
 }
 
-.video-modal__item {
-  height: 100%;
-  width: 100%;
-}
-
-.video-modal__close {
-  position: absolute;
-  top: 10px;
-  right: 30px;
+.galeria-modal__inner--show {
+  opacity: 1;
 }
 
 .info-modal {
