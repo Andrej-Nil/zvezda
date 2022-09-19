@@ -99,6 +99,7 @@ class Server {
   getPropertyData = async (data) => {
     data._token = this._token;
     const formData = this.createFormData(data);
+    console.log(formData.get('_token'))
     return await this.getResponse(this.POST, formData, this.filterApi);
   }
 
@@ -3449,11 +3450,12 @@ class Filters {
     render.clearParent($list);
     render.renderSpiner('Идет загрузка...', $list);
     const data = {
-      categotyId: this.categoryId,
+      categoryId: this.categoryId,
       filterId: $filter.dataset.filterId,
     }
-
+    console.log(data);
     const response = await server.getPropertyData(data);
+
     if (response.rez === 0) {
       console.log(`Ошибка: id ${response.error.id}`);
       render.clearParent($list);
