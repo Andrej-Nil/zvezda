@@ -6,9 +6,6 @@
   //padding-top: 110px;
   width: 100%;
   //background: $blackMain;
-  background: rgba(228, 228, 228, 0.4);
-  backdrop-filter: blur(20px);
-  min-height: 100vh;
   z-index: 1000;
   @media (min-width: 1280px) {
     z-index: 500;
@@ -32,11 +29,35 @@
   position: relative;
   background: $blackMain;
   padding: 100px 0 40px;
+  height: 1000px;
   @media (min-width: 1280px) {
     padding: 60px 0;
   }
 }
 
+.header-modal__main {
+  margin-bottom: 30px;
+}
+
+.header-modal__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.header-modal__title {
+  color: $white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .header-modal__search {
   margin-bottom: 40px;
+}
+
+.header-modal__more {
+  transition: 0.2s ease-in-out;
+  display: inline-block;
+  padding: 15px 30px;
 }

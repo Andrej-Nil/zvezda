@@ -723,10 +723,11 @@ class Render {
 
   getPropertyListHtml = (property) => {
     const isCheck = property.checked ? 'checked' : ''
+    console.log(property)
     return (/*html*/`
       <li data-filter-item="${property.field_value_name}" class="dropdown__item">
         <label class="filter__label">
-          <input data-checkbox-input type="checkbox" class="filter__checkbox" name="Матерьял" ${isCheck} value="Лист">
+          <input data-checkbox-input type="checkbox" class="filter__checkbox" name="${property.field_slug}" ${isCheck} value=${property.field_value_slug}>
           <span data-name class="dropdown__link dropdown__item-link">${property.field_value_name}</span>
         </label>
       </li>

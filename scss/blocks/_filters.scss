@@ -8,7 +8,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
   background: rgba(228, 228, 228, 0);
   z-index: -1000;
   overflow-x: hidden;
@@ -26,7 +26,6 @@
 
 .filters--open {
   background: rgba(228, 228, 228, 0.6);
-  backdrop-filter: blur(20px);
   .filters-wrap {
     transform: translate(0, 0);
   }
