@@ -36,22 +36,32 @@ class Server {
     this._token = this.getToken();
     this.POST = 'GET';
     this.GET = 'GET';
-    this.regionsApi = '../json/regions.json';
-    this.cityApi = '../json/city.json';
-    this.citiesDataApi = '../json/cityData.json';
-    this.fastOrderApi = '../json/getProd.json';
-    this.addFavoriteApi = '../json/addFavorite.json';
-    this.addBasketApi = '../json/addBasket.json';
-    this.clearBasketApi = '../json/clearBasket.json';
-    this.searchApi = '../json/search.json';
-    this.removeProductApi = '../json/removeBasket.json';
-    this.menuApi = '../json/sidebar.json';
-    this.filterApi = '../json/filter.json';
-    this.filterCheckboxApi = '../json/checkbox.json';
-    this.catalogApi = '../json/catalog.json';
-    this.queryCardSelectApi = '../json/queryModal.json';
-    this.formApi = '../json/send-form.json';
-    this.formErrorApi = '../json/send-form-error.json';
+
+
+    this.regionsApi = 'api/branch';
+    this.filterApi = 'api/filter';
+    this.catalogApi = 'api/catalog';
+    this.cityApi = 'api/city';
+
+
+    //this.regionsApi = '../json/regions.json';
+    //this.cityApi = '../json/city.json';
+    //this.citiesDataApi = '../json/cityData.json';
+    //this.fastOrderApi = '../json/getProd.json';
+    //this.addFavoriteApi = '../json/addFavorite.json';
+    //this.addBasketApi = '../json/addBasket.json';
+    //this.clearBasketApi = '../json/clearBasket.json';
+    //this.searchApi = '../json/search.json';
+    //this.removeProductApi = '../json/removeBasket.json';
+    //this.menuApi = '../json/sidebar.json';
+    //this.filterApi = '../json/filter.json';
+    //this.filterCheckboxApi = '../json/checkbox.json';
+    //this.catalogApi = '../json/catalog.json';
+    //this.queryCardSelectApi = '../json/queryModal.json';
+    //this.formApi = '../json/send-form.json';
+    //this.formErrorApi = '../json/send-form-error.json';
+
+
   }
 
   getMenu = async () => {
@@ -410,6 +420,10 @@ class Render {
     this._render(this.$parent, this.getRegionsHtml, regionsList);
   }
 
+  renderAreas = (areaList) => {
+    this._render(this.$parent, this.getAreaListHtml, areaList);
+  }
+
   renderCityList = (cityList) => {
     this._render(this.$parent, this.getCityListHtml, cityList);
   }
@@ -433,7 +447,6 @@ class Render {
   }
 
   renderBasketCard = ($parent, cardData) => {
-
     this._render($parent, this.getBasketCardHtml, cardData, false, 'afterbegin')
   }
 
@@ -468,7 +481,6 @@ class Render {
   }
 
   renderQueryItem = ($parent, id) => {
-
     this._render($parent, this.getQueryItemHtml, id);
   }
 
@@ -706,15 +718,24 @@ class Render {
   }
 
   getRegionsHtml = (regionList) => {
-    const regeonListHtml = this.getListHtml(this.getRegionHtml, regionList)
+    const regeonListHtml = this.getListHtml(this.getRegionHtml, regionList);
     return (/*html*/`
     <div class="region-list">
       ${regeonListHtml}
     </div>`)
   }
 
+  getAreaListHtml = (areaList) => {
+    //const regeonListHtml = this.getListHtml(this.getRegionHtml, regionList);
+    const areaListHtml = this.getListHtml(this.getAreaHtml, areaList);
+    return (/*html*/`
+    <div class="region-list">
+      ${areaListHtml}
+    </div>`)
+  }
+
   getCityListHtml = (cityList) => {
-    const cityListHtml = this.getListHtml(this.getAreaItemHtml, cityList)
+    const cityListHtml = this.getListHtml(this.getAreaItemHtml, cityList);
     return (/*html*/`
     <ul class="city-list">
       ${cityListHtml}
@@ -1574,7 +1595,8 @@ class CityModal extends HeaderModal {
     }
     if (this.regionsData.rez == 1) {
       this.regionRender.clearParent();
-      this.regionRender.renderRegions(this.regionsData.content);
+      //this.regionRender.renderRegions(this.regionsData.content);
+      this.regionRender.renderAreas(this.regionsData.content);
     }
   }
 
