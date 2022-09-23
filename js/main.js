@@ -38,28 +38,28 @@ class Server {
     this.GET = 'GET';
 
 
-    this.regionsApi = 'api/branch';
-    this.filterApi = 'api/filter';
-    this.catalogApi = 'api/catalog';
-    this.cityApi = 'api/city';
+    //this.regionsApi = 'api/branch';
+    //this.filterApi = 'api/filter';
+    //this.catalogApi = 'api/catalog';
+    //this.cityApi = 'api/city';
 
 
-    //this.regionsApi = '../json/regions.json';
-    //this.cityApi = '../json/city.json';
-    //this.citiesDataApi = '../json/cityData.json';
-    //this.fastOrderApi = '../json/getProd.json';
-    //this.addFavoriteApi = '../json/addFavorite.json';
-    //this.addBasketApi = '../json/addBasket.json';
-    //this.clearBasketApi = '../json/clearBasket.json';
-    //this.searchApi = '../json/search.json';
-    //this.removeProductApi = '../json/removeBasket.json';
-    //this.menuApi = '../json/sidebar.json';
-    //this.filterApi = '../json/filter.json';
-    //this.filterCheckboxApi = '../json/checkbox.json';
-    //this.catalogApi = '../json/catalog.json';
-    //this.queryCardSelectApi = '../json/queryModal.json';
-    //this.formApi = '../json/send-form.json';
-    //this.formErrorApi = '../json/send-form-error.json';
+    this.regionsApi = '../json/regions.json';
+    this.cityApi = '../json/city.json';
+    this.citiesDataApi = '../json/cityData.json';
+    this.fastOrderApi = '../json/getProd.json';
+    this.addFavoriteApi = '../json/addFavorite.json';
+    this.addBasketApi = '../json/addBasket.json';
+    this.clearBasketApi = '../json/clearBasket.json';
+    this.searchApi = '../json/search.json';
+    this.removeProductApi = '../json/removeBasket.json';
+    this.menuApi = '../json/sidebar.json';
+    this.filterApi = '../json/filter.json';
+    this.filterCheckboxApi = '../json/checkbox.json';
+    this.catalogApi = '../json/catalog.json';
+    this.queryCardSelectApi = '../json/queryModal.json';
+    this.formApi = '../json/send-form.json';
+    this.formErrorApi = '../json/send-form-error.json';
 
 
   }

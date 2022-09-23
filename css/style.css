@@ -8202,7 +8202,6 @@ body {
   position: relative;
   background: #444a52;
   padding: 100px 0 40px;
-  height: 1000px;
 }
 @media (min-width: 1280px) {
   .header-modal__inner {
