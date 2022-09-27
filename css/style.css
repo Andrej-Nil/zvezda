@@ -8716,6 +8716,10 @@ body {
   transition: 0.3s ease-in-out;
 }
 
+.search-form__string {
+  margin-bottom: 30px;
+}
+
 .search-form__input {
   color: #444a52;
 }
@@ -8724,13 +8728,41 @@ body {
   color: #444a52;
 }
 
+.search-result {
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .search-result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 .search-result__count {
   display: block;
-  margin-bottom: 30px;
   color: #444a52;
   font-weight: bold;
   font-size: 18px;
   line-height: 25px;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .search-result__count {
+    margin-bottom: 0;
+  }
+}
+
+.search-result__more {
+  color: #fba50d;
+  text-align: left;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.search-result__more:hover {
+  color: #ffc201;
+  text-decoration: underline;
 }
 
 .selecting-area {

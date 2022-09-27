@@ -61,6 +61,9 @@
   transition: 0.3s ease-in-out;
 }
 
+.search-form__string {
+  margin-bottom: 30px;
+}
 .search-form__input {
   color: $blackMain;
 }
@@ -69,12 +72,35 @@
   color: $blackMain;
 }
 
+.search-result {
+  margin-bottom: 30px;
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 .search-result__count {
   display: block;
-  margin-bottom: 30px;
-
   color: $blackMain;
   font-weight: bold;
   font-size: 18px;
   line-height: 25px;
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
+.search-result__more {
+  color: $yellowMain;
+  text-align: left;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: $yellowHover;
+    text-decoration: underline;
+  }
 }

@@ -577,8 +577,18 @@ class Render {
   getProductCardHtml = (card) => {
     const img = this.getImgHtml(card);
     const unit = card.unit ? `/${card.unit}` : '';
+    const oldPrice = card.price_old ? `${card.price_old} ₽${unit}` : '';
+    const isBasket = card.isBasket ? 1 : 0;
+    const countClass = ['product-counter', 'counter'];
+    const btnClass = ['product-card__btn', 'btn', 'yellow-btn'];
+    if (isBasket) {
+      btnClass.push('hide');
+    } else {
+      countClass.push('product-counter--hide');
+
+    }
     return (/*html*/
-      `<div data-id="${card.id}" class="product-card">
+      `<div data-product="${card.id}" data-in-basket="${isBasket}" class="product-card">
     <h3 class="product-card__title">
       <a href="product-page.html" class="product-card__link">
         ${card.title}
@@ -594,13 +604,19 @@ class Render {
     </p>
     <div class="product-card__bottom">
       <div class="product-card__price">
-        <p class="product-card__current">${card.price_old} ₽${unit}</p>
-        <p class="product-card__old">${card.price} ₽${unit}</p>
+        <p class="product-card__current">${card.price} ₽${unit}</p>
+        <p class="product-card__old">${oldPrice}</p>
       </div>
 
-      <span class="product-card__btn btn yellow-btn">
+      <span data-in-basket-btn class="${btnClass.join(' ')}">
         <span class="product-card__value btn__value basket-icon">В корзину</span>
       </span>
+
+      <div data-counter class="${countClass.join(' ')}">
+        <span data-dec class="product-card__counter-btn counter__btn">-</span>
+        <input data-product-input class="counter__input" type="text" value="${card.count}">
+        <span data-inc class="product-card__counter-btn counter__btn">+</span>
+      </div>
     </div>
   </div>`
     )
@@ -683,6 +699,8 @@ class Render {
     return (/*html*/`
       <div class="search-result">
         <span class="search-result__count">Найдено ${count} результат${decl}${end}</span>
+
+        <input class="search-result__more" type='submit' value="Просмотреть все результаты"/>
       </div>
     `)
   }
@@ -2981,6 +2999,7 @@ class Product {
   }
 
   addBasket = async ($product) => {
+
     const data = this.getData($product);
     this.response = await server.addBsasket(data);
     this.$products = document.querySelectorAll(`[data-product="${data.id}"]`)
@@ -3108,6 +3127,7 @@ class Product {
   }
 
   getData = ($product) => {
+
     const value = $product.querySelector('[data-product-input]').value;
     return {
       id: $product.dataset.product,

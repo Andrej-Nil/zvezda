@@ -22,7 +22,7 @@
 			"percent": "10%",
 			"price_old": "3500", 
 			"isFavorite": false,
-			"isBusket": false,
+			"isBasket": true,
 			"total_price": "6000"
 		},
     {
@@ -38,9 +38,9 @@
 			"count": 2,
 			"isSale": true, 
 			"percent": "10%",
-			"price_old": "3500", 
+			"price_old": "", 
 			"isFavorite": false,
-			"isBusket": false,
+			"isBasket": false,
 			"total_price": "6000"
 		},
     {
@@ -58,7 +58,7 @@
 			"percent": "10%",
 			"price_old": "3500", 
 			"isFavorite": false,
-			"isBusket": false,
+			"isBasket": false,
 			"total_price": "6000"
 		},
     {
@@ -76,7 +76,7 @@
 			"percent": "10%",
 			"price_old": "3500", 
 			"isFavorite": false,
-			"isBusket": false,
+			"isBasket": false,
 			"total_price": "6000"
 		},
     {
@@ -92,9 +92,9 @@
 			"count": 2,
 			"isSale": true, 
 			"percent": "10%",
-			"price_old": "3500", 
+			"price_old": "", 
 			"isFavorite": false,
-			"isBusket": false,
+			"isBasket": false,
 			"total_price": "6000"
 		},
     {
@@ -112,7 +112,7 @@
 			"percent": "10%",
 			"price_old": "3500", 
 			"isFavorite": false,
-			"isBusket": false,
+			"isBasket": true,
 			"total_price": "6000"
 		},
     {
@@ -128,9 +128,9 @@
 			"count": 2,
 			"isSale": true, 
 			"percent": "10%",
-			"price_old": "3500", 
+			"price_old": "", 
 			"isFavorite": false,
-			"isBusket": false,
+			"isBasket": false,
 			"total_price": "6000"
 		},
     {
@@ -148,7 +148,7 @@
 			"percent": "10%",
 			"price_old": "3500", 
 			"isFavorite": false,
-			"isBusket": false,
+			"isBasket": true,
 			"total_price": "6000"
 		}
     
@@ -186,6 +186,5 @@
     "str": "это", 
     "desc": "Описание этой штуки, которое мы выводим, что бы могли читать, повтори это дважды! Описание этой штуки, которое мы выводим, что бы могли читать, повтори это дважды!"
   }
-  
   ]
 }
