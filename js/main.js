@@ -72,11 +72,13 @@ class Server {
     return await this.getResponse(this.POST, formData, this.catalogApi);
   }
 
-  getQueryCardSelect = async (id = 0) => {
+  getQueryCardSelect = async (id) => {
     const data = {
       _token: this._token,
       id: id
     }
+
+    console.log(data);
     const formData = this.createFormData(data);
     return await this.getResponse(this.POST, formData, this.queryCardSelectApi);
   }
@@ -109,7 +111,6 @@ class Server {
   getPropertyData = async (data) => {
     data._token = this._token;
     const formData = this.createFormData(data);
-    console.log(formData.get('_token'))
     return await this.getResponse(this.POST, formData, this.filterApi);
   }
 
@@ -761,8 +762,7 @@ class Render {
   }
 
   getPropertyListHtml = (property) => {
-    const isCheck = property.checked ? 'checked' : ''
-    console.log(property)
+    const isCheck = property.checked ? 'checked' : '';
     return (/*html*/`
       <li data-filter-item="${property.field_value_name}" class="dropdown__item">
         <label class="filter__label">
@@ -2161,7 +2161,7 @@ class QueryModal extends Modal {
     render.clearParent($spinner);
     render.renderSpiner('Загружаю...', $spinner);
 
-    const response = await server.getQueryCardSelect();
+    const response = await server.getQueryCardSelect(0);
 
     if (response.rez == 0) {
       render.clearParent($spinner);
@@ -2193,7 +2193,8 @@ class QueryModal extends Modal {
     this.createContentQueryCard($card);
   }
 
-  updateSelects = ($item) => {
+  updateSelects = ($target) => {
+    const $item = $target.closest('[data-select-value]');
     const $selectWrap = $item.closest('[data-selects]');
     render.delete($selectWrap.querySelector('[data-spinner]'));
     render.delete($selectWrap.querySelector('[data-error-message]'));
@@ -2241,7 +2242,6 @@ class QueryModal extends Modal {
     const id = $item.dataset.id
     const $selectWrap = $item.closest('[data-selects]');
     render.renderSpiner('', $selectWrap);
-
     const response = await server.getQueryCardSelect(id);
     //render.delete($selectWrap.querySelector('[data-spinner]'));
 
@@ -3448,8 +3448,11 @@ class Filters {
       return;
     }
     this.categoryId = this.$filtersWrap.dataset.categoryId;
+    this.params = document.location.search;
     //this.searchProductsInput =
     this.listeners();
+
+
   }
 
   open = async ($filter) => {
@@ -3493,10 +3496,10 @@ class Filters {
     render.clearParent($list);
     render.renderSpiner('Идет загрузка...', $list);
     const data = {
+      params: this.params,
       categoryId: this.categoryId,
       filterId: $filter.dataset.filterId,
     }
-    console.log(data);
     const response = await server.getPropertyData(data);
 
     if (response.rez === 0) {
