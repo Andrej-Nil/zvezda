@@ -70,6 +70,11 @@
 
 .search-form__btn {
   color: $blackMain;
+  border: none;
+  background: $white;
+  outline: none;
+  border: 1px solid $line;
+  border-left: none;
 }
 
 .search-result {

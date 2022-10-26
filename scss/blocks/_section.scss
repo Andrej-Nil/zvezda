@@ -111,8 +111,11 @@
     left: 0;
     transform: translate(0, -50%);
   }
-  &:hover {
-    color: $yellowMain;
+
+  @media (min-width: 1280px) {
+    &:hover {
+      color: $yellowMain;
+    }
   }
 }
 

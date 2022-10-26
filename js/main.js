@@ -697,11 +697,15 @@ class Render {
 
     const decl = this.getDeclOfNum(count, ['', 'а', 'ов']);
     const end = count ? ':' : '.'
+
+    const submit = count <= 8
+      ? `<input class="search-result__more" type='submit' value="Просмотреть все результаты" />`
+      : ''
     return (/*html*/`
       <div class="search-result">
         <span class="search-result__count">Найдено ${count} результат${decl}${end}</span>
 
-        <input class="search-result__more" type='submit' value="Просмотреть все результаты"/>
+        ${submit}
       </div>
     `)
   }
@@ -915,8 +919,8 @@ class Render {
     return ( /*html*/`
     <p class="info-modal__text white-color">${message}</p>
     <div class="info-modal__btns">
-      <span data-answer="0" class="info-modal__btn btn clear-btn">Отмена</span>
-      <span data-answer="1" class="info-modal__btn btn clear-btn">Очистить корзину</span>
+      <span data-answer="cancel" class="info-modal__btn btn clear-btn">Отмена</span>
+      <span data-answer="confirmation" class="info-modal__btn btn clear-btn">Очистить корзину</span>
     </div>
     `)
   }
@@ -1036,8 +1040,8 @@ class Render {
       </p>
 
       <div class="question-confirm__answer">
-        <span data-answer="false" class="question-confirm__btn btn yellow-btn hover-yellow-light">Отмена</span>
-        <span data-answer="true"
+        <span data-answer="cancel" class="question-confirm__btn btn yellow-btn hover-yellow-light">Отмена</span>
+        <span data-answer="confirmation"
           class="question-confirm__btn btn yellow-btn hover-yellow-light">Потвердить</span>
       </div>
     </div>
@@ -2274,10 +2278,10 @@ class QueryModal extends Modal {
 
 
   answerHandler = ($btn) => {
-    if ($btn.dataset.answer === 'true') {
+    if ($btn.dataset.answer === 'confirmation') {
       this.deleteQueryCard($btn)
     }
-    if ($btn.dataset.answer === 'false') {
+    if ($btn.dataset.answer === 'cancel') {
       this.canselDeleteQueryCard($btn)
     }
   }
@@ -3226,20 +3230,31 @@ class Basket {
     render.renderBasketCard(this.$basketList, cardData);
   };
 
+  showConfirmationModal = () => {
+    this.confirmationModal.showConfirmation(this.confirmationQuestion);
+  }
+
   clearBasket = async () => {
     const response = await server.clearBasket();
+
     if (response.rez == 0) {
       console.log(`Ошибка: ${response.error.id}`);
       errorModal.showError(response.error.desc);
 
     }
     if (response.rez == 1) {
-      this.confirmationModal.showConfirmation(this.confirmationQuestion);
-
+      this.confirmationModal.close();
+      this.clearContentBasket();
     }
   }
   showBlockEmptyBasket = () => {
     this.blockEmptyBasket.classList.remove('basket-empty--hide');
+  }
+
+  clearContentBasket = () => {
+    this.deleteBasketContent();
+    product.setTotalItemInBasket(0)
+    this.showBlockEmptyBasket();
   }
 
   deleteProduct = async ($product) => {
@@ -3277,21 +3292,21 @@ class Basket {
       this.$totalBasketDiscont.innerHTML = `Ваша скидка ${discont} ₽`
     }
   }
+
+
   answerHandler = (btn) => {
-    const answer = +btn.dataset.answer;
-    if (answer) {
+    const answer = btn.dataset.answer;
+    if (answer === 'cancel') {
       this.confirmationModal.close();
-      this.deleteBasketContent();
-      product.setTotalItemInBasket(0)
-      this.showBlockEmptyBasket();
-    } else {
-      this.confirmationModal.close();
+    }
+    if (answer === 'confirmation') {
+      this.clearBasket();
     }
   }
 
   clickHandler = (e) => {
     if (e.target.closest('[data-clear-basket]')) {
-      this.clearBasket();
+      this.showConfirmationModal();
     }
     if (e.target.closest('[data-delete-product]')) {
       const $product = e.target.closest('[data-product]');
