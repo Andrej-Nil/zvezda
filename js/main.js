@@ -38,10 +38,18 @@ class Server {
     this.GET = 'GET';
 
 
-    //this.regionsApi = 'api/branch';
+
+
     //this.filterApi = 'api/filter';
     //this.catalogApi = 'api/catalog';
     //this.cityApi = 'api/city';
+    //this.addBasketApi = 'api/cartToggle';
+    //this.removeProductApi = 'api/cartToggleDelete';
+    //this.searchApi = 'api/search';
+    //this.formApi = 'api/formApi';
+    //this.queryCardSelectApi = 'api/queryModal';
+    //this.citiesDataApi = 'api/citiesData';
+    //this.clearBasketApi = 'api/clearBasket';
 
 
     this.regionsApi = '../json/regions.json';
