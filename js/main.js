@@ -18,7 +18,9 @@ const $videoModal = document.querySelector('#videoModal');
 const $vacancsyModal = document.querySelector('#vacancsyModal');
 
 class Debaunce {
-  constructor() { }
+  constructor() {
+  }
+
   debaunce = (fn, ms) => {
     let timeout;
     return function () {
@@ -36,7 +38,6 @@ class Server {
     this._token = this.getToken();
     this.POST = 'GET';
     this.GET = 'GET';
-
 
 
 
@@ -85,8 +86,6 @@ class Server {
       _token: this._token,
       id: id
     }
-
-    console.log(data);
     const formData = this.createFormData(data);
     return await this.getResponse(this.POST, formData, this.queryCardSelectApi);
   }
@@ -231,7 +230,8 @@ class InputFile {
     this.infoFile = null;
   }
   createCloneLabel = () => {
-    return this.$label.cloneNode(true);;
+    return this.$label.cloneNode(true);
+    ;
   }
   changeFileName = () => {
     this.infoFile = this.getInfoFile();
@@ -519,8 +519,6 @@ class Render {
         ${list}
       </ul>
     `)
-
-
   }
 
   getCatalogListHtml = (list) => {
@@ -599,17 +597,17 @@ class Render {
     return (/*html*/
       `<div data-product="${card.id}" data-in-basket="${isBasket}" class="product-card">
     <h3 class="product-card__title">
-      <a href="product-page.html" class="product-card__link">
+      <a href="${card.slug}" class="product-card__link">
         ${card.title}
       </a>
     </h3>
     <div class="product-card__preview">
-      <a href="product-page.html" class="product-card__link-img">
+      <a href="${card.slug}" class="product-card__link-img">
         ${img}
       </a>
     </div>
     <p class="product-card__desc">
-     
+
     </p>
     <div class="product-card__bottom">
       <div class="product-card__price">
@@ -778,7 +776,7 @@ class Render {
     return (/*html*/`
       <li data-filter-item="${property.field_value_name}" class="dropdown__item">
         <label class="filter__label">
-          <input data-checkbox-input type="checkbox" class="filter__checkbox" name="${property.field_slug}" ${isCheck} value=${property.field_value_slug}>
+          <input data-checkbox-input type="checkbox" class="filter__checkbox" name="${property.field_slug}[]" ${isCheck} value='${property.field_value_name}'>
           <span data-name class="dropdown__link dropdown__item-link">${property.field_value_name}</span>
         </label>
       </li>
@@ -834,7 +832,7 @@ class Render {
         <div class="form-block__inputs">
 
           <label class="modal__input place-entry span3 mb0">
-            <input data-input class="place-entry__input" name="message" type="text" />
+            <input data-input class="place-entry__input" name="comment" type="text" />
 
             <span class="place-entry__placeholder">Комментарий к производству</span>
 
@@ -847,14 +845,14 @@ class Render {
                 <input data-input type="file" name="file" class="file__input">
               </span>
               <span class="form-block__file-side">
-                
+
               </span>
             </label>
             <span class="file__clear-btn mt0" data-clear-file>очистить файл</span>
           </div>
 
           <label class="modal__input place-entry mb0">
-            <input data-input class="place-entry__input" name="mail" type="number" />
+            <input data-input class="place-entry__input" name="count" type="number" />
 
             <span class="place-entry__placeholder">Количество</span>
           </label>
@@ -881,12 +879,12 @@ class Render {
         <p class="form-block__title">Информация об организации</p>
         <div class="form-block__inputs">
           <label class="modal__input place-entry mb0">
-            <input data-input class="place-entry__input" name="mail" type="text" />
+            <input data-input class="place-entry__input" name="info" type="text" />
 
             <span class="place-entry__placeholder">Наименование организации</span>
           </label>
 
-          
+
 
           <div data-file-block class="modal__file span2 file mb0">
             <label data-file-label class="file__label form-block__file-label">
@@ -895,7 +893,7 @@ class Render {
                 <input data-input type="file" name="file" class="file__input">
               </span>
               <span class="form-block__file-side">
-               
+
               </span>
             </label>
             <span class=" file__clear-btn mt0" data-clear-file>очистить файл</span>
@@ -910,7 +908,7 @@ class Render {
     const message = errorMessage ? errorMessage : errorMsg
     return ( /*html*/`
       <p class="info-modal__text white-color">${message}</p>
-      <p class="info-modal__subtext white-color">Вы можете с вязаться с нами по телефону <a href="tel:+78987775544" class="info-modal__link white-color">+7 898 777 55 44</a> или написат нам на почту <a href="mailto:info@ntmk.ru" class="info-modal__link white-color">info@ntmk.ru</a></p>
+      <p class="info-modal__subtext white-color">Вы можете с вязаться с нами по телефону <a href="tel:+73433027851" class="info-modal__link white-color">+7 (343) 302-78-51</a> или написать нам на почту <a href="mailto:info@tnmk.ru" class="info-modal__link white-color">info@tnmk.ru</a></p>
     `)
   }
 
@@ -919,7 +917,7 @@ class Render {
     const desc = message ? message : text
     return ( /*html*/`
       <p class="info-modal__text">${desc}</p>
-      <p class="info-modal__subtext">Если у вас появились вопросы вы можете связаться с  нами по телефону <a href="tel:+78987775544" class="info-modal__link">+7 898 777 55 44</a> или написат нам на почту <a href="mailto:info@ntmk.ru" class="info-modal__link">info@ntmk.ru</a></p>
+      <p class="info-modal__subtext">Если у вас появились вопросы вы можете связаться с  нами по телефону <a href="tel:+73433027851" class="info-modal__link">+7 (343) 302-78-51</a> или написать нам на почту <a href="mailto:info@tnmk.ru" class="info-modal__link">info@tnmk.ru</a></p>
     `)
   }
 
@@ -982,7 +980,7 @@ class Render {
       </span>
       <div data-dropdown-body class="select__body dropdown__body">
         <ul data-dropdown-content class="select__list">
-        ${itemListMark} 
+        ${itemListMark}
         </ul>
       </div>
     </div>
@@ -995,7 +993,7 @@ class Render {
       ${this.getErrorMessageHtml(messageText)}
       <span data-repeat class="form-block__error-btn btn yellow-btn hover-yellow-light">Повторить попытку</span>
     </div>
-      
+
     `)
   }
 
@@ -1020,7 +1018,7 @@ class Render {
     return (/*html*/ `
       <li class="select__item">
         <div data-select-value data-select-item="${item.title}" data-id="${item.id}" class="select__label">
-          <span class="select__text">
+          <span  data-select-value="test" class="select__text">
            ${item.title}
           </span>
         </div>
@@ -1032,7 +1030,7 @@ class Render {
     return (/*html*/ `
     <li class="select__item">
       <div data-select-item="${title}" class="select__label">
-        <span class="select__text">
+        <span  data-select-value="test" class="select__text">
          ${title}
         </span>
       </div>
@@ -1135,13 +1133,15 @@ class Form {
     e.preventDefault();
   }
 
-  formSubmit = () => {
+  formSubmit = (e) => {
 
     const result = this.formCheck();
 
     if (!result) {
       return null;
     }
+
+
     return this.sendForm(this.form);
   }
 
@@ -1181,7 +1181,8 @@ class Form {
       //statusVisualInput(input, result);
       //break;
 
-      default: result = true;
+      default:
+        result = true;
     }
     return result;
   }
@@ -1337,6 +1338,7 @@ class FormPage extends Form {
     super(selectorForm);
     this.initFeedbackForm();
   }
+
   initFeedbackForm = () => {
     if (!this.$form) {
       return;
@@ -1546,6 +1548,7 @@ class HeaderModal {
   }
 
 }
+
 class CatalogModal extends HeaderModal {
   constructor(modalId) {
     super(modalId)
@@ -1722,6 +1725,7 @@ class Modal {
   constructor(id) {
     this.$modal = document.querySelector(id);
   }
+
   open = () => {
     this.$modal.classList.remove('modal--is-hide');
     this.$modal.classList.add('modal--is-open');
@@ -1828,6 +1832,7 @@ class ConfirmationModal extends InfoModal {
     super(modalId);
     this.init();
   }
+
   showConfirmation = async (message = false) => {
     this.render.renderInfoModalConfirmation(message);
     this.open();
@@ -2009,6 +2014,7 @@ class GaliriaModal extends Modal {
   }
 
   clickHandler = (e) => {
+
     const $target = e.target;
     if ($target.closest('[data-close]')) {
       this.closeGaleriaModal();
@@ -2096,7 +2102,6 @@ class VacancsyModal extends CommunicationModal {
     this.$vacancsyTitle = this.$modal.querySelector('[data-vacancsy-name]');
     this.$vacancsyNameInput = this.$modal.querySelector('[name="vacancsy"]');
     this.form = new Form(this.formId);
-
 
 
     //this.listeners();
@@ -2208,6 +2213,7 @@ class QueryModal extends Modal {
   updateSelects = ($target) => {
     const $item = $target.closest('[data-select-value]');
     const $selectWrap = $item.closest('[data-selects]');
+    if (!$selectWrap) return
     render.delete($selectWrap.querySelector('[data-spinner]'));
     render.delete($selectWrap.querySelector('[data-error-message]'));
     this.deleteIrrelevantSelects($selectWrap, $item);
@@ -2432,7 +2438,6 @@ class BigBgImg {
     this.$bg.classList.remove('services__bg--show');
     this.$currentCardUnderCursor = null;
   }
-
 
 
   mouseoverHandler = (e) => {
@@ -2924,9 +2929,15 @@ class Slider {
   listeners = () => {
     const resizeHandler = debaunce.debaunce(this.resizeHandler, 200);
     this.$slider.addEventListener('click', this.clickHandler);
-    this.$slider.addEventListener('touchstart', (e) => { this.startTouchMove(e) });
-    this.$slider.addEventListener('touchmove', (e) => { this.touchMove(e) });
-    this.$slider.addEventListener('touchend', () => { this.touchEnd() });
+    this.$slider.addEventListener('touchstart', (e) => {
+      this.startTouchMove(e)
+    });
+    this.$slider.addEventListener('touchmove', (e) => {
+      this.touchMove(e)
+    });
+    this.$slider.addEventListener('touchend', () => {
+      this.touchEnd()
+    });
     window.addEventListener('resize', resizeHandler);
   }
 }
@@ -2967,6 +2978,7 @@ class VideoModal extends Modal {
     this.$modal = document.querySelector(id);
     this.init();
   }
+
   init = () => {
     if (!this.$modal) {
       return
@@ -3003,6 +3015,7 @@ class Product {
   constructor() {
     this.init();
   }
+
   init = () => {
     this.$totalItemInBasket = document.querySelector('#totalItemInBasket');
     this.response = null;
@@ -3227,7 +3240,7 @@ class Basket {
     this.confirmationModal = new ConfirmationModal('#confirmationModal');
     this.$confirmationModal = document.querySelector('#confirmationModal');
     this.blockEmptyBasket = document.querySelector('#emptyBasket');
-    this.confirmationQuestion = 'Это дествия очистить Вашу карзину. Удалить все товары?';
+    this.confirmationQuestion = 'Эти дествия очистят Вашу корзину. Удалить все товары?';
     this.listeners();
   }
 
@@ -3407,42 +3420,40 @@ class Dropdown {
     })
   }
   changeDropdownTitle = ($radio) => {
-
     const $dropdown = $radio.closest('[data-dropdown]');
-    const $label = $dropdown.querySelector('[data-select-label]');
-    //setActiveOption
+    const $label = $radio.closest('[data-select-label]');
+    const $labelTitle = $label.querySelector('[data-select-value]');
     const $selectTitle = $dropdown.querySelector('[data-select-title]');
-    const value = $radio.value;
-    $selectTitle.innerHTML = value;
+    $selectTitle.innerHTML = $labelTitle.innerHTML;
     this.setActiveOptionWithChange($dropdown, $label)
     this.close();
   }
-
   changeSelectTitle = ($selectItem) => {
     const $dropdown = $selectItem.closest('[data-dropdown]');
     const $selectTitle = $dropdown.querySelector('[data-select-title]');
     //const title = $selectItem.dataset.selectItem;
 
-    $selectTitle.innerHTML = this.getTitle($dropdown, $selectItem);;
+    $selectTitle.innerHTML = this.getTitle($dropdown, $selectItem);
+    ;
     this.setActiveOptionWithClick($dropdown, $selectItem)
     this.close();
   }
 
   getTitle = ($dropdown, $selectItem) => {
-    const titleOne = $dropdown.dataset.select
-    const titleTwo = $selectItem.dataset.selectItem
-    return `${titleOne} ${titleTwo}`
+    const titleOne = $dropdown.dataset.select;
+    const titleTwo = $selectItem.dataset.selectItem;
+    return `${titleOne} ${titleTwo}`;
 
   }
 
   clickHandler = (e) => {
     if (e.target.closest('[data-dropdown-btn]')) {
       const $dropdown = e.target.closest('[data-dropdown]');
-      this.toggleDropdown($dropdown)
+      this.toggleDropdown($dropdown);
     }
     if (!e.target.closest('[data-dropdown]')) {
       const $dropdown = e.target.closest('[data-dropdown]');
-      this.toggleDropdown($dropdown)
+      this.toggleDropdown($dropdown);
     }
     if (e.target.closest('[data-select-item]')) {
       this.changeSelectTitle(e.target.closest('[data-select-item]'));
@@ -3611,6 +3622,7 @@ class FilterForm {
       return;
     }
     this.$searchMobile = document.querySelector('#searchProductMobile');
+    this.$inputText = this.$form.querySelectorAll('[type="text"]');
     this.$footer = document.querySelector('footer');
     this.$inputsSearchList = this.$form.querySelectorAll('[data-search-input]');
     this.$filters = this.$form.querySelector('#filters');
@@ -3675,14 +3687,7 @@ class FilterForm {
     }
   }
 
-  changeHandler = (e) => {
-    if (e.target.closest('[data-radio]')) {
-      this.$form.submit();
-    }
-    if (e.target.closest('[data-search-input]')) {
-      this.changeSearchInputValue(e.target);
-    }
-  }
+
 
   showSearchMobile = () => {
     this.$searchMobile.classList.add('search-product-mobile--show');
@@ -3710,6 +3715,15 @@ class FilterForm {
 
   }
 
+
+  changeHandler = (e) => {
+    if (e.target.closest('[data-radio]')) {
+      this.$form.submit();
+    }
+    if (e.target.closest('[data-search-input]')) {
+      this.changeSearchInputValue(e.target);
+    }
+  }
   scrollHandler = () => {
 
     if (this.$searchMobile) {
@@ -3717,8 +3731,24 @@ class FilterForm {
     }
   }
 
+  setDisabledForEmptyInput = () => {
+    this.$inputText.forEach(($input) => {
+      if ($input.value === '') {
+        $input.disabled = true;
+      };
+    })
+  }
+
+  submitHandler = (e) => {
+    e.preventDefault()
+    this.setDisabledForEmptyInput();
+    this.$form.submit();
+  }
+
 
   listeners = () => {
+
+    this.$form.addEventListener('submit', this.submitHandler);
     this.$form.addEventListener('click', this.clickHandler);
     this.$form.addEventListener('change', this.changeHandler);
     this.$form.addEventListener('input', this.inputHandler);
@@ -3890,7 +3920,6 @@ class PriceRange {
   }
 
 
-
   updateCoords = () => {
     this.coordLeftSlide = this.$leftSlide.getBoundingClientRect();
     this.coordRightSlide = this.$rightSlide.getBoundingClientRect();
@@ -4036,6 +4065,7 @@ class About {
     this.$about = document.querySelector(aboutListId);
     this.init();
   }
+
   init = () => {
     if (!this.$about) {
       return;
@@ -4397,7 +4427,6 @@ class ContactMap {
     this.map = new ymaps.Map(
       this.mapId,
       this.baseSettingsMap,
-
     );
     this.map.behaviors.disable('scrollZoom');
     this.map.geoObjects.add(this.getMark());
@@ -4480,7 +4509,6 @@ class LinkNavigation {
       this.scrollToBlock(e)
     }
   }
-
 
 
   listners = () => {
