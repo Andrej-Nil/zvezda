@@ -704,7 +704,7 @@ class Render {
     const decl = this.getDeclOfNum(count, ['', 'а', 'ов']);
     const end = count ? ':' : '.'
 
-    const submit = count <= 8
+    const submit = count >= 20
       ? `<input class="search-result__more" type='submit' value="Просмотреть все результаты" />`
       : ''
     return (/*html*/`

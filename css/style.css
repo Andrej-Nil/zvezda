@@ -769,7 +769,7 @@ body {
   right: 0;
   transform: translate(0, -50%);
   width: 44px;
-  height: 44px;
+  height: 100%;
   color: #fff;
   cursor: pointer;
 }
