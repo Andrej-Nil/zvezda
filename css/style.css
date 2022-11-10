@@ -1505,6 +1505,10 @@ body {
   justify-content: space-between;
   padding: 10px;
   transition: 0.2s ease-in-out;
+  margin-bottom: 20px;
+}
+.product-line:last-child {
+  margin-bottom: 0;
 }
 .product-line:hover {
   border: 1px solid #fba50d;
@@ -3152,7 +3156,7 @@ body {
 @media (min-width: 600px) {
   .pagination {
     flex-wrap: nowrap;
-    max-width: 470px;
+    max-width: 750px;
   }
 }
 
@@ -8959,6 +8963,7 @@ body {
 .slider__track {
   padding: 5px 0;
   display: flex;
+  margin-bottom: 20px;
   transition: 0.3s ease-in-out;
 }
 
