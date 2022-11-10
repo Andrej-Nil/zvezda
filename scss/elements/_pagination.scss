@@ -6,7 +6,7 @@
   margin: 30px auto 60px;
   @media (min-width: 600px) {
     flex-wrap: nowrap;
-    max-width: 750px;
+    max-width: 450px;
   }
 }
 
@@ -65,7 +65,7 @@
   order: 0;
   display: flex;
   justify-content: center;
-  padding: 0 15px;
+  //padding: 0 15px;
   width: 100%;
   margin-bottom: 40px;
   @media (min-width: 600px) {
