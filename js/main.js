@@ -3687,8 +3687,6 @@ class FilterForm {
     }
   }
 
-
-
   showSearchMobile = () => {
     this.$searchMobile.classList.add('search-product-mobile--show');
   }
