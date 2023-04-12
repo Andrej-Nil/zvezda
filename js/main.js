@@ -3491,6 +3491,7 @@ class Filters {
 
   open = async ($filter) => {
     if (!$filter.dataset.loading) {
+      $filter.dataset.loading = 1;
       await this.createPropsList($filter);
     }
     this.openList($filter);
@@ -3529,6 +3530,7 @@ class Filters {
     const $list = $filter.querySelector('[data-filter-list]');
     render.clearParent($list);
     render.renderSpiner('Идет загрузка...', $list);
+    this.openList($filter);
     const data = {
       params: this.params,
       categoryId: this.categoryId,
@@ -3540,11 +3542,12 @@ class Filters {
       console.log(`Ошибка: id ${response.error.id}`);
       render.clearParent($list);
       render.renderErrorMessage(response.error.desc, $list)
+      $filter.dataset.loading = '';
     }
     if (response.rez === 1) {
       render.clearParent($list);
       render.renderProperty(response.content, $list);
-      $filter.dataset.loading = 1;
+
     }
   }
 
